@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>bug on Norwegian Wood</title>
+    <link>/tags/bug/</link>
+    <description>Recent content in bug on Norwegian Wood</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Jzh</copyright>
+    <lastBuildDate>Fri, 04 Nov 2022 22:53:34 +0800</lastBuildDate><atom:link href="/tags/bug/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python开发中遇到的bug记录</title>
+      <link>/posts/2022/11/record-of-bugs-encountered-in-python-development/</link>
+      <pubDate>Fri, 04 Nov 2022 22:53:34 +0800</pubDate>
+      
+      <guid>/posts/2022/11/record-of-bugs-encountered-in-python-development/</guid>
+      <description>持续更新中。
+pipenv无法正常install 1 2 3 4 PS C:\Users\akyna\Codes\test\test_py&amp;gt; pipenv install Usage: pipenv install [OPTIONS] [PACKAGES]... ERROR:: --system is intended to be used for pre-existing Pipfile installation, not installation of specific packages. Aborting. 解决方法：
+因为pipenv检测到之前在该目录下创建过了环境，需要先删除之前的环境才可以：
+1 2 PS C:\Users\akyna\Codes\test\test_py&amp;gt; pipenv --rm Removing virtualenv (C:\Users\akyna\.virtualenvs\test_py-_qApXuy4)... requests库headers字段编码错误 1 UnicodeEncodeError: &amp;#39;latin-1&amp;#39; codec can&amp;#39;t encode characters in position 30-34: ordinal not in range(256) 解决方法：
+加上.encode(&amp;lsquo;utf-8&amp;rsquo;)：
+1 2 3 4 5 6 7 8 return { &amp;#39;User-Agent&amp;#39;: &amp;#39;Mozilla/5.</description>
+    </item>
+    
+    <item>
+      <title>Java开发中遇到的bug记录</title>
+      <link>/posts/2022/01/record-of-bugs-encountered-in-java-development/</link>
+      <pubDate>Thu, 06 Jan 2022 17:23:00 +0800</pubDate>
+      
+      <guid>/posts/2022/01/record-of-bugs-encountered-in-java-development/</guid>
+      <description>持续更新中。
+BufferedWriter无法正确写出问题 这是一段客户端代码，向服务器端发送消息，然后接收服务器端的回复：
+1 2 3 4 5 6 7 8 9 10 11 12 13 try ( BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream())); BufferedWriter out = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream())) ) { String message; while((message = stdIn.readLine()) != null) { out.write(message); out.flush(); System.out.println(&amp;#34;Receive from server: &amp;#34; + in.readLine()); } } catch (Exception e) { System.out.println(e.getMessage()); } 这是服务端代码的一部分，接收客户端消息，并向客户端回复：
+1 2 3 4 5 6 7 8 9 10 11 12 13 try ( BufferedReader in = new BufferedReader(new InputStreamReader(socket.</description>
+    </item>
+    
+  </channel>
+</rss>

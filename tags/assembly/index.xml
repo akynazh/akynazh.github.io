@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>assembly on Norwegian Wood</title>
+    <link>/tags/assembly/</link>
+    <description>Recent content in assembly on Norwegian Wood</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Jzh</copyright>
+    <lastBuildDate>Tue, 04 Oct 2022 23:18:24 +0800</lastBuildDate><atom:link href="/tags/assembly/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>8086汇编学习记录</title>
+      <link>/posts/2022/10/8086-assembly-learning-record/</link>
+      <pubDate>Tue, 04 Oct 2022 23:18:24 +0800</pubDate>
+      
+      <guid>/posts/2022/10/8086-assembly-learning-record/</guid>
+      <description>8086PC机内存地址空间分配 00000~9FFFF: 主存储器地址空间（RAM） A0000~BFFFF: 显存地址空间 C0000~FFFFF: 各类ROM地址空间 段寄存器 8086CPU不支持将数据直接送入段寄存器的操作，ds 是一个段寄存器，所以mov ds，1000H这条指令是非法的。
+要将1000H送入ds，只好用一个寄存器来进行中转，即先将1000H送入一个一般的寄存器，如bx，再将bx中的内容送入ds。
+为什么8086CPU不支持将数据直接送入段寄存器的操作?
+这属于8086CPU硬件设计的问题。
+关于SS，SP 8086CPU中，有两个寄存器，段寄存器 SS 和寄存器 SP，栈顶的段地址存放在SS中，偏移地址存放在SP中。
+任意时刻，SS∶SP指向栈顶元素。push指令和pop指令执行时，CPU从SS和SP中得到栈顶的地址。
+伪指令 在汇编语言源程序中，包含两种指令，一种是汇编指令，一种是伪指令。
+汇编指令是有对应的机器码的指令，可以被编译为机器指令，最终为CPU所执行。
+而伪指令没有对应的机器指令，最终不被 CPU 所执行。那么谁来执行伪指令呢?
+伪指令是由编译器来执行的指令，编译器根据伪指令来进行相关的编译工作。
+汇编程序 在汇编源程序中，数据不能以字母开头，所以要在前面加0。比如，9138h在汇编源程序中可以直接写为“9138h”，而A000h在汇编源程序中要写为“0A000h”。
+对于mov al,[0]，是将常量0送入al中，等同于mov al,0； 对于mov al,ds:[0]，含义是(al)=((ds)*16+0)； 对于mov al,[bx]，含义是(al)=((ds)*16+(bx))； 对于mov al,ds:[bx]，含义等同于上者。 Debug R命令：查看、改变CPU寄存器的内容； D命令：查看内存中的内容； E命令：改写内存中的内容； U命令：将内存中的机器指令翻译成汇编指令； T命令：执行一条机器指令； A命令：以汇编指令的格式在内存中写入一条机器指令； P命令：可用于快速结束一段LOOP，遇到loop时使用； G命令：可以让指令直接执行到某个地址处，如-g 0016执行到0016处代码。 实模式和保护模式 实模式是Intel 80286和之后的x86兼容CPU的操作模式。
+实模式的特性是一个20位元的区段存储器地址空间（意思为只有1MB的存储器可以被寻址），软件可以直接访问BIOS例程以及周边硬件，没有任何硬件等级的存储器保护观念或多任务。
+保护模式是一种80286系列和之后的x86兼容CPU的运行模式。
+保护模式有一些新的特性，如存储器保护，标签页系统以及硬件支持的虚拟内存，能够增强多任务处理和系统稳定度。
+现今大部分的x86操作系统都在保护模式下运行，包含Linux、FreeBSD、以及微软Windows 2.0和之后版本。
+在纯 DOS 方式（实模式）下，可以不理会 DOS，直接用汇编语言去操作真实的硬件。
+因为运行在 CPU 实模式下的 DOS，没有能力对硬件系统进行全面、严格的管理。
+但在Windows 2000、Unix 这些运行于CPU保护模式下的操作系统中，不理会操作系统，用汇编语言去操作真实的硬件，是根本不可能的。硬件已被这些操作系统利用 CPU 保护模式所提供的功能全面而严格地管理了。
+问题 向内存0:200~0:23F依次传送0~63(3FH)：</description>
+    </item>
+    
+    <item>
+      <title>使用x86_64汇编写一个自旋锁</title>
+      <link>/posts/2022/06/use-x86-64-assemble-and-write-a-spin-lock/</link>
+      <pubDate>Thu, 09 Jun 2022 23:37:51 +0800</pubDate>
+      
+      <guid>/posts/2022/06/use-x86-64-assemble-and-write-a-spin-lock/</guid>
+      <description>一、理论分析 自旋锁，顾名思义，即自己不断旋转重复进行的锁，当多个线程访问同一资源时，为实现互斥访问，必须给目标资源加锁，此时只允许一个线程访问，此时其他线程无法访问，并且一直重复请求访问，直到该锁被释放。访问完资源的线程及时释放锁以供其他资源访问。
+自旋锁可以通过比较替换算法实现：设锁为1时被占用，为0时空闲。当一个线程请求锁时，即进入请求锁循环“spinlock”，设预期值为0，修改值为1，让锁值与预期值比较，若锁值等于预期值，则锁空闲，将锁值置为修改值，退出spinlock循环；若锁值不等于预期值，则证明锁被占用，继续spinlock循环。
+为验证是否成功实现自旋，开启一个释放锁线程，请求锁线程自旋一段时间后，释放锁线程进行锁的释放，即把锁值置为预期值0。此时，请求锁线程成功获得锁并退出spinlock循环。
+二、设计与实现 使用x86_64汇编实现自旋锁：
+Intel语法 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 // 尝试获取锁 void lock(long *p) { long a = 0, c = 1; printf(&amp;#34;try to get lock...\n&amp;#34;); __asm__( &amp;#34;push rax \n\t&amp;#34; &amp;#34;push rcx \n\t&amp;#34; &amp;#34;spin_lock: \n\t&amp;#34; &amp;#34;mov rcx, %[c] \n\t&amp;#34; &amp;#34;mov rax, %[a] \n\t&amp;#34; // 比较并替换算法，若p==rax==0则获得锁并使p=rcx(==1)，若p(==1)!=rax则进入自旋。 &amp;#34;lock cmpxchg %[p], rcx \n\t&amp;#34; &amp;#34;jne spin_lock \n\t&amp;#34; &amp;#34;pop rcx \n\t&amp;#34; &amp;#34;pop rax \n\t&amp;#34; : [p]&amp;#34;+m&amp;#34;(*p) : [a]&amp;#34;r&amp;#34;(a), [c]&amp;#34;r&amp;#34;(c) : &amp;#34;rcx&amp;#34;, &amp;#34;rax&amp;#34; ); } // 释放锁 void unlock(long *p) { __asm__( &amp;#34;mov %[p], 0; \n\t&amp;#34; : [p]&amp;#34;+m&amp;#34;(*p) ); } AT&amp;amp;T语法 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 void lock(long *p) { long a = 0, c = 1; printf(&amp;#34;try to get lock.</description>
+    </item>
+    
+  </channel>
+</rss>

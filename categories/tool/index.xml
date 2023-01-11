@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tool on Norwegian Wood</title>
+    <link>/categories/tool/</link>
+    <description>Recent content in Tool on Norwegian Wood</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Jzh</copyright>
+    <lastBuildDate>Tue, 06 Dec 2022 11:42:39 +0800</lastBuildDate><atom:link href="/categories/tool/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Git版本与提交管理</title>
+      <link>/posts/2022/12/git-version-and-submission-management/</link>
+      <pubDate>Tue, 06 Dec 2022 11:42:39 +0800</pubDate>
+      
+      <guid>/posts/2022/12/git-version-and-submission-management/</guid>
+      <description>关于HEAD HEAD 代表当前分支的最新提交名称，它可以由一些修饰符进行修饰进而产生不同的含义。
+关于 HEAD~{n}
+~ 是用来在当前提交路径上回溯的修饰符。
+HEAD~{n} 表示当前所在的提交路径上的前 n 个提交（n &amp;gt;= 0）：
+HEAD = HEAD~0 （即当前最新的一次commit） HEAD~ = HEAD~1 HEAD~~ = HEAD~2 关于 HEAD^{n}
+^ 是用来切换父级提交路径的修饰符。
+当我们始终在一个分支比如 dev 开发/提交代码时，每个 commit 都只会有一个父级提交，就是上一次提交。此时 HEAD~1 等价于 HEAD^。
+当并行多个分支开发，feat1, feat2, feat3，完成后 merge feat1 feat2 feat3 回 dev 分支后，此次的 merge commit 就会有多个父级提交。
+HEAD^ = HEAD^1 第一个父级提交 HEAD^2~1 第二个父级提交的上一次提交 强行覆盖本地分支（不关心本地修改） 若在其它分支上进行了修改，而本地也有了一定的修改，但本地的修改是可以忽略的（或者你不小心放入了一些无关文件），那么，这时你很需要用强行覆盖这个操作。
+1 2 3 git fetch git reset --hard HEAD git merge origin/$CURRENT_BRANCH # 若已做映射：git merge 修改提交过的版本 修改上次提交 这里对提交的信息和作者进行修改，注意邮箱两侧由&amp;lt;&amp;gt;包括住</description>
+    </item>
+    
+    <item>
+      <title>关于hwbk文件问题的解决和思考</title>
+      <link>/posts/2022/10/solution-and-thinking-about-hwbk/</link>
+      <pubDate>Mon, 03 Oct 2022 20:52:12 +0800</pubDate>
+      
+      <guid>/posts/2022/10/solution-and-thinking-about-hwbk/</guid>
+      <description>hwbk文件问题 假如你知道hwbk是什么，那么你肯定为它的存在而烦恼过。
+在华为系的机子上，任何第三方工具想要删除相册的一张图片，系统都会做出保护，你使用的第三方工具并没有真的删除那张图片，系统拦截了删除操作并再对文件添加后缀名.hwbk。
+更新：现在只要不卸载系统图库，系统会拦截第三方软件的删除操作，并将删除的照片送进图库的回收站，并不会生成hwbk文件。如果卸载了系统自带图库，则可以参考本文。
+其它类似的问题 还有一个例子就是默认桌面程序了，第三方软件nova launcher比系统自带的桌面程序好用得多，而实际上却完全无法使用，因为默认程序无法修改，系统直接锁死。
+同时，现在华为系的机子，只要是Android8以后的，似乎已经再也无法解开bootloader锁，官方不再给你申请的机会了，获取root，刷机已经成为一种幻想。
+如何看待这些问题 商家总会告诉你这是处于安全保护的考虑，可以防止你误删了东西。其实完全没有必要，第三方软件也有回收站功能，只要自己注意不要安装来路不明的软件，病毒也不会莫名其妙找上门。
+他不会给你一个选项，删除是否做出hwbk保护，而是直接强行做出保护，拒绝第三方的删除，这就等同于直接废了第三方软件的删除功能。这让许多人不得不使用系统自带软件，否则就是两头跑，这边删了，再到系统自带软件删一次。
+你可以说这是为了更好的安全性用户所必须做出的牺牲，但也可以说这只是商家为了利益而主动选择的一种控制用户的手段。
+从本质上看，无疑是一种很单纯的商业考量。他们让自己的系统封闭起来，强行让用户推动，发展自己的生态。
+如果华为自带的软件够好，我想慢慢地，用户也会主动选择自带的软件（就像apple一样）。他们不是从自身找问题，改善自己的产品，而是强迫用户去适应，剥夺自由选择的权力。
+如果是为了安全方面的问题，我想，一定也不只有这种一刀切的手段吧？对于安全方面的问题，我觉得应该让用户自己做决定，自己负责。就像有的人想获取root权限，他首先应该已经明白了获取root的后果是什么，愿意承担相应的风险。
+为用户体验着想，绝不是强迫用户干什么，而是让用户自己决定干什么。
+然而，他们凭什么为用户体验着想，能赚到钱不就完了？呵呵。
+当然，对于大多普通用户而言，或许从来都遇不到这些问题，但是当有一天你遇到这些问题并为之困扰时，你多少会感觉自由被剥夺了。毕竟，我们自己花钱买的东西，为什么不能让我们自己自由支配呢？
+通过adb干掉系统自带软件 电脑安装adb kits，adb所在目录加入环境变量（只是为了方便使用） 手机加入开发者模式 手机连接电脑，开启usb调试 命令行运行：adb devices 运行：adb shell 获取软件包名，写入applist.txt：pm list packages &amp;gt; applist.txt 通过包名卸载软件：pm uninstall --user 0 {pkg_name}（包名可自行google） 这是一个可选项，在你很反感系统自带软件时可以进行操作。
+下面，回到hwbk问题。
+让脚本帮我们自动消灭hwbk吧 假设你使用的是第三方的图库或者文件管理器，为了安全的考量，建议开启第三方软件的回收站。
+当存在大量hwbk文件时，一个个手动删除是不存在的，而且每天都可能产生新的hwbk，所以定时地进行扫描删除也是必要的。
+另外，通过尝试，将.hwbk后缀进行更改即可删除该文件。
+通过脚本可以方便地进行操作，这里我通过js完成工作。
+使用javascript进行删除操作 做法：每天固定一个时间（建议是在自己睡觉时）完成自动的清除。对所有目标文件夹进行扫描（递归性地），如果找到了.hwbk文件，将其后缀重命名为.hwbk.fuck_hwbk，再执行删除操作即可。
+kill_hwbk.js
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 function kill_hwbk_r(parent_dir) { let child_dirs = files.</description>
+    </item>
+    
+    <item>
+      <title>Wsl自定义安装位置</title>
+      <link>/posts/2022/07/wsl-custom-installation-location/</link>
+      <pubDate>Sat, 23 Jul 2022 17:27:31 +0800</pubDate>
+      
+      <guid>/posts/2022/07/wsl-custom-installation-location/</guid>
+      <description>自定义wsl安装位置 下载wsl-ubuntu： 20.04版本：https://aka.ms/wslubuntu2004 18.04版本：https://aka.ms/wsl-ubuntu-1804 其他版本自行前往官网查找。
+修改后缀名 下载后得到AppxBundle文件，将后缀名改为zip，然后解压。
+解压后得到如下内容：
+选择x64或ARM64的安装包均可均可，将后缀名改为zip，然后解压。
+开始安装wsl-ubuntu 解压后得到如下内容：
+双击ubuntu.exe，即可开始安装wsl-ubuntu。
+安装完成后在该目录下得到虚拟盘：
+注：虚拟盘也可能变成rootfs文件。
+登录wsl 安装时会让你指定用户名和密码，这个用户是默认添加到sudoers里的。
+如果想用root登录，通过sudo passwd root可以设置root密码（root刚开始没有密码），接着通过su即可登录root。
+From My Blog: akynazh.
+Over.</description>
+    </item>
+    
+    <item>
+      <title>Hugo通过Algolia添加站内搜索功能</title>
+      <link>/posts/2022/07/hugo-adds-onsite-search-function-through-algolia/</link>
+      <pubDate>Wed, 20 Jul 2022 23:46:01 +0800</pubDate>
+      
+      <guid>/posts/2022/07/hugo-adds-onsite-search-function-through-algolia/</guid>
+      <description>注册账号并创建Index 官网链接：Algolia，注册完成后保存好ApiID和ApiKey。
+接着，创建一个Index，保存好Index的名称。
+数据生成以及上传Algolia 方法一：通过hugo-algolia插件的方式 一、下载hugo-algolia： npm install -g hugo-algolia
+二、编写config.yaml
+网站根目录下创建config.yaml，编写参数如下：
+1 2 3 4 5 6 --- algolia: index: &amp;#34;{indexName}&amp;#34; key: &amp;#34;{key}&amp;#34; appID: &amp;#34;{appID}&amp;#34; --- 三、生成algolia.json
+网站根目录下运行： hugo-algolia -s，即可生成 {site}/public/algolia.json，同时该数据也同步到了algolia账户下，可以去官网查看。
+四、前往algolia的indices进行搜索类型的设置
+可以选择按tag，category，content等内容进行搜索，并指定优先级。
+方法二：通过GithubAction的方式 这里不通过插件而是通过hugo定制化地生成algolia.json，然后通过GithubAction在每次push时上传数据。
+个人更推荐这样做，更好定制化且方便。同时上面方法一有个bug，对中文数据好像不支持。
+一、配置algolia输出文件 1 2 3 4 5 6 7 8 9 10 outputs: home: - HTML - RSS - Algolia outputFormats: Algolia: mediaType: application/json baseName: algolia isPlainText: true 二、生成algolia.json 编辑 {site}/themes/layouts/_default/list.algolia.json 如下：
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 [ {{- range $index, $entry := .</description>
+    </item>
+    
+    <item>
+      <title>通过Wireshark分析TCP原理</title>
+      <link>/posts/2022/06/analyze-tcp-principle-through-wireshark/</link>
+      <pubDate>Thu, 09 Jun 2022 23:18:55 +0800</pubDate>
+      
+      <guid>/posts/2022/06/analyze-tcp-principle-through-wireshark/</guid>
+      <description>使用Wireshark作为抓包工具，通过ftp文件上传过程分析tcp原理，主要分析过程包括三次握手建立连接的过程，文件传输的过程，四次挥手断开连接的过程。
+设备信息 主机：安装了ftp的window11（ip:172.23.224.1） 虚拟机：安装了vsftpd的wsl2（ubuntu18）(ip:172.23.234.65) 操作与分析过程 打开Wireshark进行捕获 选择**vEthernet(WSL)**连接进行捕获。 使用过滤表达式ip.addr==172.23.234.65&amp;amp;&amp;amp;tcp进行捕获。 通过ftp上传文件 1 2 3 4 5 6 7 8 9 10 11 12 13 14 PS C:\Users\akyna&amp;gt; ftp 172.23.234.65 连接到 172.23.234.65。 220 (vsFTPd 3.0.3) 200 Always in UTF8 mode. 用户(172.23.234.65:(none)): akyna 331 Please specify the password. 密码: 230 Login successful. ftp&amp;gt; put a.txt 200 PORT command successful. Consider using PASV. 150 Ok to send data. 226 Transfer complete. ftp: 发送 42 字节，用时 0.</description>
+    </item>
+    
+    <item>
+      <title>Git快速初始化操作</title>
+      <link>/posts/2021/12/git-quick-initialization-operation/</link>
+      <pubDate>Fri, 10 Dec 2021 18:10:07 +0800</pubDate>
+      
+      <guid>/posts/2021/12/git-quick-initialization-operation/</guid>
+      <description>git初次拉取远程仓库 首先从github建立一个仓库，获取仓库地址url，然后进入项目所在文件夹，运行以下代码：
+1 2 3 4 5 6 7 8 9 &amp;gt; git init # 初始化仓库，生成.git文件 &amp;gt; git add . # 将项目文件的修改信息添加到.git内的一个暂存区（index） &amp;gt; git commit -m “init” # 将暂存区的修改信息提交到分支 &amp;gt; git remote add origin ${url} # 添加远程仓库 &amp;gt; git push origin master # 将本地分支推送到远程仓库 这里执行完 git commit -m &amp;quot;init&amp;quot; 后，我们查看一下本地分支信息：
+1 2 &amp;gt; git branch * master 可见git自动为我们本地创建了一个master分支。
+执行完 git push origin master 后，我们查看一下本地分支与远程分支的映射关系：
+1 2 3 4 5 6 &amp;gt; git branch -a * master remotes/origin/master &amp;gt; git branch -vv * master 3a31f4c init 可见并没有产生映射。</description>
+    </item>
+    
+    <item>
+      <title>Window增加右键打开选项</title>
+      <link>/posts/2021/11/add-right-click-open-option-in-window/</link>
+      <pubDate>Sat, 20 Nov 2021 18:10:30 +0800</pubDate>
+      
+      <guid>/posts/2021/11/add-right-click-open-option-in-window/</guid>
+      <description>加入注册表界面 win+R
+regedit
+增加右键操作文件选项 以vscode作为编辑文件实例 注册表页面下进入：
+计算机\HKEY_CLASSES_ROOT*\shell
+新建项 Vscode
+右键Vscode并新建项command
+编辑command默认选项值为： ${vscodepath}\Code.exe %1 %1是可选的参数，这里必须要加，表示作用于该文件。
+编辑Vscode值
+编辑右键显示名称：默认值改为Open with vscode （不编辑则为新建项的名称）
+编辑右键显示图标：新建字符串值icon 添加：${vscodepath}\Code.exe (有些可以这样，但一般为ico文件)
+增加目录下右键打开选项 以window terminal作为实例 注册表页面下进入：
+计算机\HKEY_CLASSES_ROOT\Directory\Background\shell
+新建项 Terminal
+右键Terminal 新建项command
+编辑command默认选项值为：${terminalpath}\wt.exe 编辑Terminal值
+编辑右键显示名称：默认值改为Open in terminal （不编辑则为新建项的名称）
+编辑右键显示图标：新建字符串值icon 添加：${terminalicon}
+编辑window terminal的json配置文件
+对应位置修改如下，&amp;quot;.&amp;ldquo;即表示当前目录。 1 2 3 4 5 6 7 8 &amp;#34;profiles&amp;#34;: { &amp;#34;defaults&amp;#34;: { &amp;#34;startingDirectory&amp;#34; : &amp;#34;.&amp;#34; }, ... } over</description>
+    </item>
+    
+    <item>
+      <title>Docker简单使用记录</title>
+      <link>/posts/2021/05/docker-simple-use-process-record/</link>
+      <pubDate>Wed, 19 May 2021 22:52:52 +0800</pubDate>
+      
+      <guid>/posts/2021/05/docker-simple-use-process-record/</guid>
+      <description>下载并运行ubuntu镜像 1 2 [root@VM-0-11-centos ~]# docker run ubuntu:15.10 /bin/echo &amp;#34;crazy thursday&amp;#34; crazy thursday 运行ubuntu并开启bash交互 1 2 3 4 5 6 7 8 9 10 [root@VM-0-11-centos ~]# docker run -i -t ubuntu:15.10 /bin/bash root@fda3220ed59f:/# echo hello hello root@fda3220ed59f:/# cat /proc/version Linux version 3.10.0-1160.45.1.el7.x86_64 (mockbuild@kbuilder.bsys.centos.org) (gcc version 4.8.5 20150623 (Red Hat 4.8.5-44) (GCC) ) #1 SMP Wed Oct 13 17:20:51 UTC 2021 root@fda3220ed59f:/# ls bin dev home lib64 mnt proc run srv tmp var boot etc lib media opt root sbin sys usr root@fda3220ed59f:/# exit exit 运行进程并观察 1 2 3 4 5 [root@VM-0-11-centos ~]# docker run -d ubuntu:15.</description>
+    </item>
+    
+  </channel>
+</rss>

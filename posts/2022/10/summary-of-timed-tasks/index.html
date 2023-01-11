@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> 关于定时任务的总结 | Norwegian Wood</title>
+  <link rel='canonical' href='/posts/2022/10/summary-of-timed-tasks/'>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:title" content="关于定时任务的总结" />
+<meta property="og:description" content="Linux下的定时任务 规则 */1 * * * * cmd
+5个单元：
+分钟（0-59） 小时（0-23 日期（1-31） 月份（1-12） 星期几（0-6，其中0代表星期日）
+例子 每分钟执行一次：* * * * * cmd
+或者：*/1 * * * * cmd
+每天早上6点10分执行一次：10 6 * * * cmd
+每两个小时执行一次：0 */2 * * * cmd
+在1月1日早上4点执行一次：0 4 1 1 * cmd
+注意事项 一、crontab不会使用在.bashrc之类的文件中定义的变量。
+解决方法：
+若为python脚本，可以通过`os.environ.get(&rsquo;{env}&rsquo;)在脚本中访问变量； 若为shell脚本，可以在脚本中执行source {your_env_file}; 类似于2，可以在crontab语句中执行source {your_env_file}。 二、crontab用户配置位于：/var/spool/cron/{用户名}
+可见，每个用户对应一个crontab配置，所以在crontab语句中使用~是可以的。
+三、crontab日志位于：/var/log/cron
+Windows下的定时任务 规则 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 SCHTASKS /parameter [arguments] Parameter List: /Create Creates a new scheduled task." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/2022/10/summary-of-timed-tasks/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-10-03T17:22:29+08:00" />
+<meta property="article:modified_time" content="2022-10-03T17:22:29+08:00" /><meta property="og:site_name" content="Norwegian Wood" />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="关于定时任务的总结"/>
+<meta name="twitter:description" content="Linux下的定时任务 规则 */1 * * * * cmd
+5个单元：
+分钟（0-59） 小时（0-23 日期（1-31） 月份（1-12） 星期几（0-6，其中0代表星期日）
+例子 每分钟执行一次：* * * * * cmd
+或者：*/1 * * * * cmd
+每天早上6点10分执行一次：10 6 * * * cmd
+每两个小时执行一次：0 */2 * * * cmd
+在1月1日早上4点执行一次：0 4 1 1 * cmd
+注意事项 一、crontab不会使用在.bashrc之类的文件中定义的变量。
+解决方法：
+若为python脚本，可以通过`os.environ.get(&rsquo;{env}&rsquo;)在脚本中访问变量； 若为shell脚本，可以在脚本中执行source {your_env_file}; 类似于2，可以在crontab语句中执行source {your_env_file}。 二、crontab用户配置位于：/var/spool/cron/{用户名}
+可见，每个用户对应一个crontab配置，所以在crontab语句中使用~是可以的。
+三、crontab日志位于：/var/log/cron
+Windows下的定时任务 规则 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 SCHTASKS /parameter [arguments] Parameter List: /Create Creates a new scheduled task."/>
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/styles.85c751845c7b44f9a8e060d72dddf4328dc305143a48ef19710acd3196f361a029ecebf1a6650c3d3abdb95bc5cd7483473052be7e84b180fa2dcacd7383ee3a.css" integrity="sha512-hcdRhFx7RPmo4GDXLd30Mo3DBRQ6SO8ZcQrNMZbzYaAp7OvxpmUMPTq9uVvFzXSDRzBSvn6EsYD6LcrNc4PuOg==">
+  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+  
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+  <link rel="icon" type="image/png" href="/image/base/favicon.ico" />
+
+  
+  
+</head>
+<body class="max-width-blog mx-auto px3 ltr">
+  <div class="content index py4">
+  <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Archives</a></li>
+         
+        <li><a href="/projects">Projects</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" /posts/2022/10/process-management-of-linux-practical-operation/" aria-label="Previous">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="/posts/2022/10/solution-and-thinking-about-hwbk/" aria-label="Next">
+            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
+          </a>
+        </li>
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#" aria-label="Search" id="searchBtn">
+            <i class="fa fa-search" aria-hidden="true" onmouseover="$('#i-search').toggle();" onmouseout="$('#i-search').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#" aria-label="Share">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-search" class="info" style="display:none;">Search</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=%2fposts%2f2022%2f10%2fsummary-of-timed-tasks%2f" aria-label="Facebook">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=%2fposts%2f2022%2f10%2fsummary-of-timed-tasks%2f&text=%e5%85%b3%e4%ba%8e%e5%ae%9a%e6%97%b6%e4%bb%bb%e5%8a%a1%e7%9a%84%e6%80%bb%e7%bb%93" aria-label="Twitter">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fposts%2f2022%2f10%2fsummary-of-timed-tasks%2f&title=%e5%85%b3%e4%ba%8e%e5%ae%9a%e6%97%b6%e4%bb%bb%e5%8a%a1%e7%9a%84%e6%80%bb%e7%bb%93" aria-label="Linkedin">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fposts%2f2022%2f10%2fsummary-of-timed-tasks%2f&is_video=false&description=%e5%85%b3%e4%ba%8e%e5%ae%9a%e6%97%b6%e4%bb%bb%e5%8a%a1%e7%9a%84%e6%80%bb%e7%bb%93" aria-label="Pinterest">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=%e5%85%b3%e4%ba%8e%e5%ae%9a%e6%97%b6%e4%bb%bb%e5%8a%a1%e7%9a%84%e6%80%bb%e7%bb%93&body=Check out this article: %2fposts%2f2022%2f10%2fsummary-of-timed-tasks%2f" aria-label="Email">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=%2fposts%2f2022%2f10%2fsummary-of-timed-tasks%2f&title=%e5%85%b3%e4%ba%8e%e5%ae%9a%e6%97%b6%e4%bb%bb%e5%8a%a1%e7%9a%84%e6%80%bb%e7%bb%93" aria-label="Pocket">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=%2fposts%2f2022%2f10%2fsummary-of-timed-tasks%2f&title=%e5%85%b3%e4%ba%8e%e5%ae%9a%e6%97%b6%e4%bb%bb%e5%8a%a1%e7%9a%84%e6%80%bb%e7%bb%93" aria-label="reddit">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f10%2fsummary-of-timed-tasks%2f&name=%e5%85%b3%e4%ba%8e%e5%ae%9a%e6%97%b6%e4%bb%bb%e5%8a%a1%e7%9a%84%e6%80%bb%e7%bb%93&description=Linux%e4%b8%8b%e7%9a%84%e5%ae%9a%e6%97%b6%e4%bb%bb%e5%8a%a1%20%e8%a7%84%e5%88%99%20%2a%2f1%20%2a%20%2a%20%2a%20%2a%20cmd%0a5%e4%b8%aa%e5%8d%95%e5%85%83%ef%bc%9a%0a%e5%88%86%e9%92%9f%ef%bc%880-59%ef%bc%89%20%e5%b0%8f%e6%97%b6%ef%bc%880-23%20%e6%97%a5%e6%9c%9f%ef%bc%881-31%ef%bc%89%20%e6%9c%88%e4%bb%bd%ef%bc%881-12%ef%bc%89%20%e6%98%9f%e6%9c%9f%e5%87%a0%ef%bc%880-6%ef%bc%8c%e5%85%b6%e4%b8%ad0%e4%bb%a3%e8%a1%a8%e6%98%9f%e6%9c%9f%e6%97%a5%ef%bc%89%0a%e4%be%8b%e5%ad%90%20%e6%af%8f%e5%88%86%e9%92%9f%e6%89%a7%e8%a1%8c%e4%b8%80%e6%ac%a1%ef%bc%9a%2a%20%2a%20%2a%20%2a%20%2a%20cmd%0a%e6%88%96%e8%80%85%ef%bc%9a%2a%2f1%20%2a%20%2a%20%2a%20%2a%20cmd%0a%e6%af%8f%e5%a4%a9%e6%97%a9%e4%b8%8a6%e7%82%b910%e5%88%86%e6%89%a7%e8%a1%8c%e4%b8%80%e6%ac%a1%ef%bc%9a10%206%20%2a%20%2a%20%2a%20cmd%0a%e6%af%8f%e4%b8%a4%e4%b8%aa%e5%b0%8f%e6%97%b6%e6%89%a7%e8%a1%8c%e4%b8%80%e6%ac%a1%ef%bc%9a0%20%2a%2f2%20%2a%20%2a%20%2a%20cmd%0a%e5%9c%a81%e6%9c%881%e6%97%a5%e6%97%a9%e4%b8%8a4%e7%82%b9%e6%89%a7%e8%a1%8c%e4%b8%80%e6%ac%a1%ef%bc%9a0%204%201%201%20%2a%20cmd%0a%e6%b3%a8%e6%84%8f%e4%ba%8b%e9%a1%b9%20%e4%b8%80%e3%80%81crontab%e4%b8%8d%e4%bc%9a%e4%bd%bf%e7%94%a8%e5%9c%a8.bashrc%e4%b9%8b%e7%b1%bb%e7%9a%84%e6%96%87%e4%bb%b6%e4%b8%ad%e5%ae%9a%e4%b9%89%e7%9a%84%e5%8f%98%e9%87%8f%e3%80%82%0a%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95%ef%bc%9a%0a%e8%8b%a5%e4%b8%bapython%e8%84%9a%e6%9c%ac%ef%bc%8c%e5%8f%af%e4%bb%a5%e9%80%9a%e8%bf%87%60os.environ.get%28%26rsquo%3b%7benv%7d%26rsquo%3b%29%e5%9c%a8%e8%84%9a%e6%9c%ac%e4%b8%ad%e8%ae%bf%e9%97%ae%e5%8f%98%e9%87%8f%ef%bc%9b%20%e8%8b%a5%e4%b8%bashell%e8%84%9a%e6%9c%ac%ef%bc%8c%e5%8f%af%e4%bb%a5%e5%9c%a8%e8%84%9a%e6%9c%ac%e4%b8%ad%e6%89%a7%e8%a1%8csource%20%7byour_env_file%7d%3b%20%e7%b1%bb%e4%bc%bc%e4%ba%8e2%ef%bc%8c%e5%8f%af%e4%bb%a5%e5%9c%a8crontab%e8%af%ad%e5%8f%a5%e4%b8%ad%e6%89%a7%e8%a1%8csource%20%7byour_env_file%7d%e3%80%82%20%e4%ba%8c%e3%80%81crontab%e7%94%a8%e6%88%b7%e9%85%8d%e7%bd%ae%e4%bd%8d%e4%ba%8e%ef%bc%9a%2fvar%2fspool%2fcron%2f%7b%e7%94%a8%e6%88%b7%e5%90%8d%7d%0a%e5%8f%af%e8%a7%81%ef%bc%8c%e6%af%8f%e4%b8%aa%e7%94%a8%e6%88%b7%e5%af%b9%e5%ba%94%e4%b8%80%e4%b8%aacrontab%e9%85%8d%e7%bd%ae%ef%bc%8c%e6%89%80%e4%bb%a5%e5%9c%a8crontab%e8%af%ad%e5%8f%a5%e4%b8%ad%e4%bd%bf%e7%94%a8~%e6%98%af%e5%8f%af%e4%bb%a5%e7%9a%84%e3%80%82%0a%e4%b8%89%e3%80%81crontab%e6%97%a5%e5%bf%97%e4%bd%8d%e4%ba%8e%ef%bc%9a%2fvar%2flog%2fcron%0aWindows%e4%b8%8b%e7%9a%84%e5%ae%9a%e6%97%b6%e4%bb%bb%e5%8a%a1%20%e8%a7%84%e5%88%99%201%202%203%204%205%206%207%208%209%2010%2011%2012%2013%2014%2015%2016%2017%2018%20SCHTASKS%20%2fparameter%20%5barguments%5d%20Parameter%20List%3a%20%2fCreate%20Creates%20a%20new%20scheduled%20task." aria-label="Tumblr">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fposts%2f2022%2f10%2fsummary-of-timed-tasks%2f&t=%e5%85%b3%e4%ba%8e%e5%ae%9a%e6%97%b6%e4%bb%bb%e5%8a%a1%e7%9a%84%e6%80%bb%e7%bb%93" aria-label="Hacker News">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#linux下的定时任务">Linux下的定时任务</a>
+      <ul>
+        <li><a href="#规则">规则</a></li>
+        <li><a href="#例子">例子</a></li>
+        <li><a href="#注意事项">注意事项</a></li>
+      </ul>
+    </li>
+    <li><a href="#windows下的定时任务">Windows下的定时任务</a>
+      <ul>
+        <li><a href="#规则-1">规则</a></li>
+        <li><a href="#例子-1">例子</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+    
+  </span>
+</div>
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        关于定时任务的总结
+      </h1>
+      <div class="meta">
+        
+        <div class="postdate">
+          
+          <time datetime="2022-10-03 17:22:29 &#43;0800 CST" itemprop="datePublished">2022-10-03</time>
+          
+        </div>
+        
+        
+        <div class="article-read-time">
+          <i class="far fa-clock"></i>
+          
+          5 minute read
+        </div>
+        
+        
+        <div class="article-category">
+            <i class="fas fa-archive"></i>
+            
+            
+            <a class="category-link" href="/categories/os">OS</a>
+            
+        </div>
+        
+        
+        <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+            
+            <a class="tag-link" href="/tags/crontab" rel="tag">crontab</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/schtasks" rel="tag">schtasks</a>
+            
+        </div>
+        
+      </div>
+    </header>
+    
+    <div class="content" itemprop="articleBody">
+      <h2 id="linux下的定时任务">Linux下的定时任务</h2>
+<h3 id="规则">规则</h3>
+<p><code>*/1 * * * * cmd</code></p>
+<p>5个单元：</p>
+<p>分钟（0-59） 小时（0-23  日期（1-31） 月份（1-12） 星期几（0-6，其中0代表星期日）</p>
+<h3 id="例子">例子</h3>
+<p>每分钟执行一次：<code>* * * * * cmd</code></p>
+<p>或者：<code>*/1 * * * * cmd</code></p>
+<p>每天早上6点10分执行一次：<code>10 6 * * * cmd</code></p>
+<p>每两个小时执行一次：<code>0 */2 * * * cmd</code></p>
+<p>在1月1日早上4点执行一次：<code>0 4 1 1 * cmd</code></p>
+<h3 id="注意事项">注意事项</h3>
+<p>一、crontab不会使用在.bashrc之类的文件中定义的变量。</p>
+<p>解决方法：</p>
+<ol>
+<li>若为python脚本，可以通过`os.environ.get(&rsquo;{env}&rsquo;)在脚本中访问变量；</li>
+<li>若为shell脚本，可以在脚本中执行<code>source {your_env_file}</code>;</li>
+<li>类似于2，可以在crontab语句中执行<code>source {your_env_file}</code>。</li>
+</ol>
+<p>二、crontab用户配置位于：/var/spool/cron/{用户名}</p>
+<p>可见，每个用户对应一个crontab配置，所以在crontab语句中使用~是可以的。</p>
+<p>三、crontab日志位于：/var/log/cron</p>
+<h2 id="windows下的定时任务">Windows下的定时任务</h2>
+<h3 id="规则-1">规则</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>SCHTASKS /parameter [arguments]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Parameter List:
+</span></span><span style="display:flex;"><span>    /Create         Creates a new scheduled task.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    /Delete         Deletes the scheduled task(s).
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    /Query          Displays all scheduled tasks.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    /Change         Changes the properties of scheduled task.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    /Run            Runs the scheduled task on demand.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    /End            Stops the currently running scheduled task.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    /ShowSid        Shows the security identifier corresponding to a scheduled task name.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    /?              Displays this help message.
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>查询某个操作的具体用法：</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>schtasks /create /?
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>SCHTASKS /Create [/S system [/U username [/P [password]]]]
+</span></span><span style="display:flex;"><span>    [/RU username [/RP password]] /SC schedule [/MO modifier] [/D day]
+</span></span><span style="display:flex;"><span>    [/M months] [/I idletime] /TN taskname /TR taskrun [/ST starttime]
+</span></span><span style="display:flex;"><span>    [/RI interval] [ {/ET endtime | /DU duration} [/K] [/XML xmlfile] [/V1]]
+</span></span><span style="display:flex;"><span>    [/SD startdate] [/ED enddate] [/IT | /NP] [/Z] [/F] [/HRESULT] [/?]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    ...
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="例子-1">例子</h3>
+<p><strong>一、每30分钟运行一次：</strong></p>
+<p><code>schtasks /create /sc minute /mo 30 /tn &quot;{task_name}&quot; /tr &quot;{task}&quot;</code></p>
+<p>阅读可知：</p>
+<p>/sc，指定频率的单位：</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>/SC   schedule     Specifies the schedule frequency.
+</span></span><span style="display:flex;"><span>                    Valid schedule types: MINUTE, HOURLY, DAILY, WEEKLY,
+</span></span><span style="display:flex;"><span>                    MONTHLY, ONCE, ONSTART, ONLOGON, ONIDLE, ONEVENT.
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>/mo，在/sc的基础上，指定大小（可以的情况下使用，如MINUTE可以，而ONSTART不可以）：</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>Modifiers: Valid values for the /MO switch per schedule type:
+</span></span><span style="display:flex;"><span>    MINUTE:  1 - 1439 minutes.
+</span></span><span style="display:flex;"><span>    HOURLY:  1 - 23 hours.
+</span></span><span style="display:flex;"><span>    DAILY:   1 - 365 days.
+</span></span><span style="display:flex;"><span>    WEEKLY:  weeks 1 - 52.
+</span></span><span style="display:flex;"><span>    ONCE:    No modifiers.
+</span></span><span style="display:flex;"><span>    ONSTART: No modifiers.
+</span></span><span style="display:flex;"><span>    ONLOGON: No modifiers.
+</span></span><span style="display:flex;"><span>    ONIDLE:  No modifiers.
+</span></span><span style="display:flex;"><span>    MONTHLY: 1 - 12, or
+</span></span><span style="display:flex;"><span>             FIRST, SECOND, THIRD, FOURTH, LAST, LASTDAY.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    ONEVENT:  XPath event query string.
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>/tn，即“task name”，注意是unique的，不能与其它任务重名。</p>
+<p>/tr，即“task run”，指定任务，即一个可执行的程序，如exe，bat。</p>
+<p><strong>二、开机启动程序</strong></p>
+<p>需要通过管理员模式运行以下命令：</p>
+<p><code>schtasks /create /tn &quot;{task_name}&quot; /sc onlogon /tr &quot;{task}&quot;</code></p>
+<p><strong>三、每天22:00:00执行一次</strong></p>
+<p><code>schtasks /create /tn &quot;{task_name}&quot; /sc daily /st 22:00:00 /tr &quot;{task}&quot;</code></p>
+<p>阅读可知：</p>
+<p>/st，用于指定执行的具体时刻：</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>/ST   starttime    Specifies the start time to run the task. The time
+</span></span><span style="display:flex;"><span>                    format is HH:mm (24 hour time) for example, 14:30 for
+</span></span><span style="display:flex;"><span>                    2:30 PM. Defaults to current time if /ST is not
+</span></span><span style="display:flex;"><span>                    specified.  This option is required with /SC ONCE.
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>四、删除定时任务</strong></p>
+<p><code>schtasks /delete /tn &quot;{task_name}&quot;</code></p>
+<p>由于任务名是唯一的，所以通过/tn指定任务名即可删除任务。</p>
+<hr>
+<p><strong>From My Blog: <a href="https://akynazh.site">akynazh</a></strong>.</p>
+<p><strong>Over.</strong></p>
+
+    </div>
+  </article>
+  
+  
+
+
+
+
+  <div class="blog-post-comments">
+    
+      <div id="disquss_thread">
+  <script src="https://utteranc.es/client.js"
+    repo="akynazh/hugo-comment"
+    issue-term="pathname"
+    label="akynazh"
+    theme="github-dark"
+    crossorigin="anonymous"
+    async>
+  </script>
+</div>
+    
+  </div>
+
+
+    
+    <div id="fastSearch">
+      <input id="searchInput" tabindex="0"/>
+      <ul id="searchResults"></ul>
+    </div>
+  <div id="footer-post-container">
+  <div id="footer-post">
+    
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#linux下的定时任务">Linux下的定时任务</a>
+      <ul>
+        <li><a href="#规则">规则</a></li>
+        <li><a href="#例子">例子</a></li>
+        <li><a href="#注意事项">注意事项</a></li>
+      </ul>
+    </li>
+    <li><a href="#windows下的定时任务">Windows下的定时任务</a>
+      <ul>
+        <li><a href="#规则-1">规则</a></li>
+        <li><a href="#例子-1">例子</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+    
+    
+    <div id="nav-footer" style="display: none">
+      
+      <ul style="display:inline;"><li><a href="/">Home</a></li></ul>
+      
+      <ul style="display:inline;"><li><a href="/posts">Archives</a></li></ul>
+      
+      <ul style="display:inline;"><li><a href="/projects">Projects</a></li></ul>
+      
+      <ul style="display:inline;"><li><a href="/about">About</a></li></ul>
+      
+    </div>
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=%2fposts%2f2022%2f10%2fsummary-of-timed-tasks%2f" aria-label="Facebook">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=%2fposts%2f2022%2f10%2fsummary-of-timed-tasks%2f&text=%e5%85%b3%e4%ba%8e%e5%ae%9a%e6%97%b6%e4%bb%bb%e5%8a%a1%e7%9a%84%e6%80%bb%e7%bb%93" aria-label="Twitter">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fposts%2f2022%2f10%2fsummary-of-timed-tasks%2f&title=%e5%85%b3%e4%ba%8e%e5%ae%9a%e6%97%b6%e4%bb%bb%e5%8a%a1%e7%9a%84%e6%80%bb%e7%bb%93" aria-label="Linkedin">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fposts%2f2022%2f10%2fsummary-of-timed-tasks%2f&is_video=false&description=%e5%85%b3%e4%ba%8e%e5%ae%9a%e6%97%b6%e4%bb%bb%e5%8a%a1%e7%9a%84%e6%80%bb%e7%bb%93" aria-label="Pinterest">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=%e5%85%b3%e4%ba%8e%e5%ae%9a%e6%97%b6%e4%bb%bb%e5%8a%a1%e7%9a%84%e6%80%bb%e7%bb%93&body=Check out this article: %2fposts%2f2022%2f10%2fsummary-of-timed-tasks%2f" aria-label="Email">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=%2fposts%2f2022%2f10%2fsummary-of-timed-tasks%2f&title=%e5%85%b3%e4%ba%8e%e5%ae%9a%e6%97%b6%e4%bb%bb%e5%8a%a1%e7%9a%84%e6%80%bb%e7%bb%93" aria-label="Pocket">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=%2fposts%2f2022%2f10%2fsummary-of-timed-tasks%2f&title=%e5%85%b3%e4%ba%8e%e5%ae%9a%e6%97%b6%e4%bb%bb%e5%8a%a1%e7%9a%84%e6%80%bb%e7%bb%93" aria-label="reddit">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f10%2fsummary-of-timed-tasks%2f&name=%e5%85%b3%e4%ba%8e%e5%ae%9a%e6%97%b6%e4%bb%bb%e5%8a%a1%e7%9a%84%e6%80%bb%e7%bb%93&description=Linux%e4%b8%8b%e7%9a%84%e5%ae%9a%e6%97%b6%e4%bb%bb%e5%8a%a1%20%e8%a7%84%e5%88%99%20%2a%2f1%20%2a%20%2a%20%2a%20%2a%20cmd%0a5%e4%b8%aa%e5%8d%95%e5%85%83%ef%bc%9a%0a%e5%88%86%e9%92%9f%ef%bc%880-59%ef%bc%89%20%e5%b0%8f%e6%97%b6%ef%bc%880-23%20%e6%97%a5%e6%9c%9f%ef%bc%881-31%ef%bc%89%20%e6%9c%88%e4%bb%bd%ef%bc%881-12%ef%bc%89%20%e6%98%9f%e6%9c%9f%e5%87%a0%ef%bc%880-6%ef%bc%8c%e5%85%b6%e4%b8%ad0%e4%bb%a3%e8%a1%a8%e6%98%9f%e6%9c%9f%e6%97%a5%ef%bc%89%0a%e4%be%8b%e5%ad%90%20%e6%af%8f%e5%88%86%e9%92%9f%e6%89%a7%e8%a1%8c%e4%b8%80%e6%ac%a1%ef%bc%9a%2a%20%2a%20%2a%20%2a%20%2a%20cmd%0a%e6%88%96%e8%80%85%ef%bc%9a%2a%2f1%20%2a%20%2a%20%2a%20%2a%20cmd%0a%e6%af%8f%e5%a4%a9%e6%97%a9%e4%b8%8a6%e7%82%b910%e5%88%86%e6%89%a7%e8%a1%8c%e4%b8%80%e6%ac%a1%ef%bc%9a10%206%20%2a%20%2a%20%2a%20cmd%0a%e6%af%8f%e4%b8%a4%e4%b8%aa%e5%b0%8f%e6%97%b6%e6%89%a7%e8%a1%8c%e4%b8%80%e6%ac%a1%ef%bc%9a0%20%2a%2f2%20%2a%20%2a%20%2a%20cmd%0a%e5%9c%a81%e6%9c%881%e6%97%a5%e6%97%a9%e4%b8%8a4%e7%82%b9%e6%89%a7%e8%a1%8c%e4%b8%80%e6%ac%a1%ef%bc%9a0%204%201%201%20%2a%20cmd%0a%e6%b3%a8%e6%84%8f%e4%ba%8b%e9%a1%b9%20%e4%b8%80%e3%80%81crontab%e4%b8%8d%e4%bc%9a%e4%bd%bf%e7%94%a8%e5%9c%a8.bashrc%e4%b9%8b%e7%b1%bb%e7%9a%84%e6%96%87%e4%bb%b6%e4%b8%ad%e5%ae%9a%e4%b9%89%e7%9a%84%e5%8f%98%e9%87%8f%e3%80%82%0a%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95%ef%bc%9a%0a%e8%8b%a5%e4%b8%bapython%e8%84%9a%e6%9c%ac%ef%bc%8c%e5%8f%af%e4%bb%a5%e9%80%9a%e8%bf%87%60os.environ.get%28%26rsquo%3b%7benv%7d%26rsquo%3b%29%e5%9c%a8%e8%84%9a%e6%9c%ac%e4%b8%ad%e8%ae%bf%e9%97%ae%e5%8f%98%e9%87%8f%ef%bc%9b%20%e8%8b%a5%e4%b8%bashell%e8%84%9a%e6%9c%ac%ef%bc%8c%e5%8f%af%e4%bb%a5%e5%9c%a8%e8%84%9a%e6%9c%ac%e4%b8%ad%e6%89%a7%e8%a1%8csource%20%7byour_env_file%7d%3b%20%e7%b1%bb%e4%bc%bc%e4%ba%8e2%ef%bc%8c%e5%8f%af%e4%bb%a5%e5%9c%a8crontab%e8%af%ad%e5%8f%a5%e4%b8%ad%e6%89%a7%e8%a1%8csource%20%7byour_env_file%7d%e3%80%82%20%e4%ba%8c%e3%80%81crontab%e7%94%a8%e6%88%b7%e9%85%8d%e7%bd%ae%e4%bd%8d%e4%ba%8e%ef%bc%9a%2fvar%2fspool%2fcron%2f%7b%e7%94%a8%e6%88%b7%e5%90%8d%7d%0a%e5%8f%af%e8%a7%81%ef%bc%8c%e6%af%8f%e4%b8%aa%e7%94%a8%e6%88%b7%e5%af%b9%e5%ba%94%e4%b8%80%e4%b8%aacrontab%e9%85%8d%e7%bd%ae%ef%bc%8c%e6%89%80%e4%bb%a5%e5%9c%a8crontab%e8%af%ad%e5%8f%a5%e4%b8%ad%e4%bd%bf%e7%94%a8~%e6%98%af%e5%8f%af%e4%bb%a5%e7%9a%84%e3%80%82%0a%e4%b8%89%e3%80%81crontab%e6%97%a5%e5%bf%97%e4%bd%8d%e4%ba%8e%ef%bc%9a%2fvar%2flog%2fcron%0aWindows%e4%b8%8b%e7%9a%84%e5%ae%9a%e6%97%b6%e4%bb%bb%e5%8a%a1%20%e8%a7%84%e5%88%99%201%202%203%204%205%206%207%208%209%2010%2011%2012%2013%2014%2015%2016%2017%2018%20SCHTASKS%20%2fparameter%20%5barguments%5d%20Parameter%20List%3a%20%2fCreate%20Creates%20a%20new%20scheduled%20task." aria-label="Tumblr">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fposts%2f2022%2f10%2fsummary-of-timed-tasks%2f&t=%e5%85%b3%e4%ba%8e%e5%ae%9a%e6%97%b6%e4%bb%bb%e5%8a%a1%e7%9a%84%e6%80%bb%e7%bb%93" aria-label="Hacker News">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').show();$('#toc-footer').hide();$('#share-footer').hide();return false;" aria-label="Menu">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+        <a id="toc-toggle" class="icon" href="#" onclick="$('#toc-footer').show();$('#nav-footer').hide();$('#share-footer').hide();return false;" aria-label="TOC">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+        <a id="searchBtn1" class="icon" href="#" aria-label="Search">
+          <i class="fa fa-search" aria-hidden="true"></i> Search</a>
+        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').show();$('#toc-footer').hide();$('#nav-footer').hide();return false;" aria-label="Share">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+    </div>
+
+  </div>
+</div>
+
+  <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2023  Jzh 
+    | <a href='https://beian.miit.gov.cn/' style="text-decoration:none;">陕ICP备2022007986号-1</a>
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Archives</a></li>
+         
+        <li><a href="/projects">Projects</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+  </div>
+</body>
+<script src="/js/fuse.min.js"></script>
+<script src="/js/fastsearch.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+</html>

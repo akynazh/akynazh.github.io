@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>git on Norwegian Wood</title>
+    <link>/tags/git/</link>
+    <description>Recent content in git on Norwegian Wood</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Jzh</copyright>
+    <lastBuildDate>Tue, 06 Dec 2022 11:42:39 +0800</lastBuildDate><atom:link href="/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Git版本与提交管理</title>
+      <link>/posts/2022/12/git-version-and-submission-management/</link>
+      <pubDate>Tue, 06 Dec 2022 11:42:39 +0800</pubDate>
+      
+      <guid>/posts/2022/12/git-version-and-submission-management/</guid>
+      <description>关于HEAD HEAD 代表当前分支的最新提交名称，它可以由一些修饰符进行修饰进而产生不同的含义。
+关于 HEAD~{n}
+~ 是用来在当前提交路径上回溯的修饰符。
+HEAD~{n} 表示当前所在的提交路径上的前 n 个提交（n &amp;gt;= 0）：
+HEAD = HEAD~0 （即当前最新的一次commit） HEAD~ = HEAD~1 HEAD~~ = HEAD~2 关于 HEAD^{n}
+^ 是用来切换父级提交路径的修饰符。
+当我们始终在一个分支比如 dev 开发/提交代码时，每个 commit 都只会有一个父级提交，就是上一次提交。此时 HEAD~1 等价于 HEAD^。
+当并行多个分支开发，feat1, feat2, feat3，完成后 merge feat1 feat2 feat3 回 dev 分支后，此次的 merge commit 就会有多个父级提交。
+HEAD^ = HEAD^1 第一个父级提交 HEAD^2~1 第二个父级提交的上一次提交 强行覆盖本地分支（不关心本地修改） 若在其它分支上进行了修改，而本地也有了一定的修改，但本地的修改是可以忽略的（或者你不小心放入了一些无关文件），那么，这时你很需要用强行覆盖这个操作。
+1 2 3 git fetch git reset --hard HEAD git merge origin/$CURRENT_BRANCH # 若已做映射：git merge 修改提交过的版本 修改上次提交 这里对提交的信息和作者进行修改，注意邮箱两侧由&amp;lt;&amp;gt;包括住</description>
+    </item>
+    
+    <item>
+      <title>Git快速初始化操作</title>
+      <link>/posts/2021/12/git-quick-initialization-operation/</link>
+      <pubDate>Fri, 10 Dec 2021 18:10:07 +0800</pubDate>
+      
+      <guid>/posts/2021/12/git-quick-initialization-operation/</guid>
+      <description>git初次拉取远程仓库 首先从github建立一个仓库，获取仓库地址url，然后进入项目所在文件夹，运行以下代码：
+1 2 3 4 5 6 7 8 9 &amp;gt; git init # 初始化仓库，生成.git文件 &amp;gt; git add . # 将项目文件的修改信息添加到.git内的一个暂存区（index） &amp;gt; git commit -m “init” # 将暂存区的修改信息提交到分支 &amp;gt; git remote add origin ${url} # 添加远程仓库 &amp;gt; git push origin master # 将本地分支推送到远程仓库 这里执行完 git commit -m &amp;quot;init&amp;quot; 后，我们查看一下本地分支信息：
+1 2 &amp;gt; git branch * master 可见git自动为我们本地创建了一个master分支。
+执行完 git push origin master 后，我们查看一下本地分支与远程分支的映射关系：
+1 2 3 4 5 6 &amp;gt; git branch -a * master remotes/origin/master &amp;gt; git branch -vv * master 3a31f4c init 可见并没有产生映射。</description>
+    </item>
+    
+  </channel>
+</rss>

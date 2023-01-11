@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> 代理模式 | Norwegian Wood</title>
+  <link rel='canonical' href='/posts/2022/08/proxy-pattern/'>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:title" content="代理模式" />
+<meta property="og:description" content="定义 代理模式为另一个对象提供一个替身或占位符以控制对这个对象的访问。
+我们对一个对象的使用或者一个对象中方法的调用，可以通过这个对象的代理人进行访问，这个代理人可以方便地控制这个对象，让对象的功能更为强大或更易于使用。
+常见的代理有：远程代理，虚拟代理，动态代理。
+远程代理 对于远程代理，其实就是本地调用远程的方法，本地堆（客户端）有一个Stub代理对象，这个对象负责完成RMI操作，也就是远程方法调用，而远程堆（服务端）有一个Skeleton代理对象，它接收客户端的RMI操作，并传递给真正的服务对象进行服务，之后再返回给客户端结果。
+使用过程中需要注意调用的对象必须是可序列化的，无需序列化的对象可以添加transient关键字。通过rmiregistry &amp;开启RMI，之后进行服务注册。服务端通过Naming.rebind()绑定服务地址，客户端通过Naming.lookup()调用远程方法。另外，远程传输对象需要继承于UnicastRemoteObject。
+在Java5中，RMI和动态代理搭配使用，动态代理动态产生Stub，远程对象的Stub是Proxy实例，它是自动产生的，来处理所有把客户的本地调用变成远程调用的细节。
+虚拟代理 对于虚拟代理，也就是说这个代理对象是虚拟的，由代理来扮演对象的替身。
+比如对于从网络加载一副图像展现给用户，我们可能需要等待一定时间，这段时间内图像应该展现为用户友好的“等待中”字样，而在网络图像获取成功后进行网络图像的展现。
+这个过程可以通过代理的方式方便地完成：虚拟代理对象扮演图像的替身，它通过创建一个线程加载网络图像，加载期间将图像动态地变为用户友好字样，完成加载后改为网络图像。
+可以发现我们不是直接使用图像本身，而使用了代理对象作为图像，也就是说，代理扮演了图像这个角色。
+下面是一个图像代理对象：
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 class ImageProxy implements Icon { volatile ImageIcon imageIcon; final URL imageURL; Thread retrievalThread; boolean retrieving = false; public ImageProxy(URL url) { imageURL = url; } public int getIconWidth() { ." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/2022/08/proxy-pattern/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-08-26T10:41:19+08:00" />
+<meta property="article:modified_time" content="2022-08-26T10:41:19+08:00" /><meta property="og:site_name" content="Norwegian Wood" />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="代理模式"/>
+<meta name="twitter:description" content="定义 代理模式为另一个对象提供一个替身或占位符以控制对这个对象的访问。
+我们对一个对象的使用或者一个对象中方法的调用，可以通过这个对象的代理人进行访问，这个代理人可以方便地控制这个对象，让对象的功能更为强大或更易于使用。
+常见的代理有：远程代理，虚拟代理，动态代理。
+远程代理 对于远程代理，其实就是本地调用远程的方法，本地堆（客户端）有一个Stub代理对象，这个对象负责完成RMI操作，也就是远程方法调用，而远程堆（服务端）有一个Skeleton代理对象，它接收客户端的RMI操作，并传递给真正的服务对象进行服务，之后再返回给客户端结果。
+使用过程中需要注意调用的对象必须是可序列化的，无需序列化的对象可以添加transient关键字。通过rmiregistry &amp;开启RMI，之后进行服务注册。服务端通过Naming.rebind()绑定服务地址，客户端通过Naming.lookup()调用远程方法。另外，远程传输对象需要继承于UnicastRemoteObject。
+在Java5中，RMI和动态代理搭配使用，动态代理动态产生Stub，远程对象的Stub是Proxy实例，它是自动产生的，来处理所有把客户的本地调用变成远程调用的细节。
+虚拟代理 对于虚拟代理，也就是说这个代理对象是虚拟的，由代理来扮演对象的替身。
+比如对于从网络加载一副图像展现给用户，我们可能需要等待一定时间，这段时间内图像应该展现为用户友好的“等待中”字样，而在网络图像获取成功后进行网络图像的展现。
+这个过程可以通过代理的方式方便地完成：虚拟代理对象扮演图像的替身，它通过创建一个线程加载网络图像，加载期间将图像动态地变为用户友好字样，完成加载后改为网络图像。
+可以发现我们不是直接使用图像本身，而使用了代理对象作为图像，也就是说，代理扮演了图像这个角色。
+下面是一个图像代理对象：
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 class ImageProxy implements Icon { volatile ImageIcon imageIcon; final URL imageURL; Thread retrievalThread; boolean retrieving = false; public ImageProxy(URL url) { imageURL = url; } public int getIconWidth() { ."/>
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/styles.85c751845c7b44f9a8e060d72dddf4328dc305143a48ef19710acd3196f361a029ecebf1a6650c3d3abdb95bc5cd7483473052be7e84b180fa2dcacd7383ee3a.css" integrity="sha512-hcdRhFx7RPmo4GDXLd30Mo3DBRQ6SO8ZcQrNMZbzYaAp7OvxpmUMPTq9uVvFzXSDRzBSvn6EsYD6LcrNc4PuOg==">
+  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+  
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+  <link rel="icon" type="image/png" href="/image/base/favicon.ico" />
+
+  
+  
+</head>
+<body class="max-width-blog mx-auto px3 ltr">
+  <div class="content index py4">
+  <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Archives</a></li>
+         
+        <li><a href="/projects">Projects</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" /posts/2022/08/status-mode/" aria-label="Previous">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="/posts/2022/08/policy-mode/" aria-label="Next">
+            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
+          </a>
+        </li>
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#" aria-label="Search" id="searchBtn">
+            <i class="fa fa-search" aria-hidden="true" onmouseover="$('#i-search').toggle();" onmouseout="$('#i-search').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#" aria-label="Share">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-search" class="info" style="display:none;">Search</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=%2fposts%2f2022%2f08%2fproxy-pattern%2f" aria-label="Facebook">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=%2fposts%2f2022%2f08%2fproxy-pattern%2f&text=%e4%bb%a3%e7%90%86%e6%a8%a1%e5%bc%8f" aria-label="Twitter">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fposts%2f2022%2f08%2fproxy-pattern%2f&title=%e4%bb%a3%e7%90%86%e6%a8%a1%e5%bc%8f" aria-label="Linkedin">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fposts%2f2022%2f08%2fproxy-pattern%2f&is_video=false&description=%e4%bb%a3%e7%90%86%e6%a8%a1%e5%bc%8f" aria-label="Pinterest">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=%e4%bb%a3%e7%90%86%e6%a8%a1%e5%bc%8f&body=Check out this article: %2fposts%2f2022%2f08%2fproxy-pattern%2f" aria-label="Email">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=%2fposts%2f2022%2f08%2fproxy-pattern%2f&title=%e4%bb%a3%e7%90%86%e6%a8%a1%e5%bc%8f" aria-label="Pocket">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=%2fposts%2f2022%2f08%2fproxy-pattern%2f&title=%e4%bb%a3%e7%90%86%e6%a8%a1%e5%bc%8f" aria-label="reddit">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f08%2fproxy-pattern%2f&name=%e4%bb%a3%e7%90%86%e6%a8%a1%e5%bc%8f&description=%e5%ae%9a%e4%b9%89%20%e4%bb%a3%e7%90%86%e6%a8%a1%e5%bc%8f%e4%b8%ba%e5%8f%a6%e4%b8%80%e4%b8%aa%e5%af%b9%e8%b1%a1%e6%8f%90%e4%be%9b%e4%b8%80%e4%b8%aa%e6%9b%bf%e8%ba%ab%e6%88%96%e5%8d%a0%e4%bd%8d%e7%ac%a6%e4%bb%a5%e6%8e%a7%e5%88%b6%e5%af%b9%e8%bf%99%e4%b8%aa%e5%af%b9%e8%b1%a1%e7%9a%84%e8%ae%bf%e9%97%ae%e3%80%82%0a%e6%88%91%e4%bb%ac%e5%af%b9%e4%b8%80%e4%b8%aa%e5%af%b9%e8%b1%a1%e7%9a%84%e4%bd%bf%e7%94%a8%e6%88%96%e8%80%85%e4%b8%80%e4%b8%aa%e5%af%b9%e8%b1%a1%e4%b8%ad%e6%96%b9%e6%b3%95%e7%9a%84%e8%b0%83%e7%94%a8%ef%bc%8c%e5%8f%af%e4%bb%a5%e9%80%9a%e8%bf%87%e8%bf%99%e4%b8%aa%e5%af%b9%e8%b1%a1%e7%9a%84%e4%bb%a3%e7%90%86%e4%ba%ba%e8%bf%9b%e8%a1%8c%e8%ae%bf%e9%97%ae%ef%bc%8c%e8%bf%99%e4%b8%aa%e4%bb%a3%e7%90%86%e4%ba%ba%e5%8f%af%e4%bb%a5%e6%96%b9%e4%be%bf%e5%9c%b0%e6%8e%a7%e5%88%b6%e8%bf%99%e4%b8%aa%e5%af%b9%e8%b1%a1%ef%bc%8c%e8%ae%a9%e5%af%b9%e8%b1%a1%e7%9a%84%e5%8a%9f%e8%83%bd%e6%9b%b4%e4%b8%ba%e5%bc%ba%e5%a4%a7%e6%88%96%e6%9b%b4%e6%98%93%e4%ba%8e%e4%bd%bf%e7%94%a8%e3%80%82%0a%e5%b8%b8%e8%a7%81%e7%9a%84%e4%bb%a3%e7%90%86%e6%9c%89%ef%bc%9a%e8%bf%9c%e7%a8%8b%e4%bb%a3%e7%90%86%ef%bc%8c%e8%99%9a%e6%8b%9f%e4%bb%a3%e7%90%86%ef%bc%8c%e5%8a%a8%e6%80%81%e4%bb%a3%e7%90%86%e3%80%82%0a%e8%bf%9c%e7%a8%8b%e4%bb%a3%e7%90%86%20%e5%af%b9%e4%ba%8e%e8%bf%9c%e7%a8%8b%e4%bb%a3%e7%90%86%ef%bc%8c%e5%85%b6%e5%ae%9e%e5%b0%b1%e6%98%af%e6%9c%ac%e5%9c%b0%e8%b0%83%e7%94%a8%e8%bf%9c%e7%a8%8b%e7%9a%84%e6%96%b9%e6%b3%95%ef%bc%8c%e6%9c%ac%e5%9c%b0%e5%a0%86%ef%bc%88%e5%ae%a2%e6%88%b7%e7%ab%af%ef%bc%89%e6%9c%89%e4%b8%80%e4%b8%aaStub%e4%bb%a3%e7%90%86%e5%af%b9%e8%b1%a1%ef%bc%8c%e8%bf%99%e4%b8%aa%e5%af%b9%e8%b1%a1%e8%b4%9f%e8%b4%a3%e5%ae%8c%e6%88%90RMI%e6%93%8d%e4%bd%9c%ef%bc%8c%e4%b9%9f%e5%b0%b1%e6%98%af%e8%bf%9c%e7%a8%8b%e6%96%b9%e6%b3%95%e8%b0%83%e7%94%a8%ef%bc%8c%e8%80%8c%e8%bf%9c%e7%a8%8b%e5%a0%86%ef%bc%88%e6%9c%8d%e5%8a%a1%e7%ab%af%ef%bc%89%e6%9c%89%e4%b8%80%e4%b8%aaSkeleton%e4%bb%a3%e7%90%86%e5%af%b9%e8%b1%a1%ef%bc%8c%e5%ae%83%e6%8e%a5%e6%94%b6%e5%ae%a2%e6%88%b7%e7%ab%af%e7%9a%84RMI%e6%93%8d%e4%bd%9c%ef%bc%8c%e5%b9%b6%e4%bc%a0%e9%80%92%e7%bb%99%e7%9c%9f%e6%ad%a3%e7%9a%84%e6%9c%8d%e5%8a%a1%e5%af%b9%e8%b1%a1%e8%bf%9b%e8%a1%8c%e6%9c%8d%e5%8a%a1%ef%bc%8c%e4%b9%8b%e5%90%8e%e5%86%8d%e8%bf%94%e5%9b%9e%e7%bb%99%e5%ae%a2%e6%88%b7%e7%ab%af%e7%bb%93%e6%9e%9c%e3%80%82%0a%e4%bd%bf%e7%94%a8%e8%bf%87%e7%a8%8b%e4%b8%ad%e9%9c%80%e8%a6%81%e6%b3%a8%e6%84%8f%e8%b0%83%e7%94%a8%e7%9a%84%e5%af%b9%e8%b1%a1%e5%bf%85%e9%a1%bb%e6%98%af%e5%8f%af%e5%ba%8f%e5%88%97%e5%8c%96%e7%9a%84%ef%bc%8c%e6%97%a0%e9%9c%80%e5%ba%8f%e5%88%97%e5%8c%96%e7%9a%84%e5%af%b9%e8%b1%a1%e5%8f%af%e4%bb%a5%e6%b7%bb%e5%8a%a0transient%e5%85%b3%e9%94%ae%e5%ad%97%e3%80%82%e9%80%9a%e8%bf%87rmiregistry%20%26amp%3b%e5%bc%80%e5%90%afRMI%ef%bc%8c%e4%b9%8b%e5%90%8e%e8%bf%9b%e8%a1%8c%e6%9c%8d%e5%8a%a1%e6%b3%a8%e5%86%8c%e3%80%82%e6%9c%8d%e5%8a%a1%e7%ab%af%e9%80%9a%e8%bf%87Naming.rebind%28%29%e7%bb%91%e5%ae%9a%e6%9c%8d%e5%8a%a1%e5%9c%b0%e5%9d%80%ef%bc%8c%e5%ae%a2%e6%88%b7%e7%ab%af%e9%80%9a%e8%bf%87Naming.lookup%28%29%e8%b0%83%e7%94%a8%e8%bf%9c%e7%a8%8b%e6%96%b9%e6%b3%95%e3%80%82%e5%8f%a6%e5%a4%96%ef%bc%8c%e8%bf%9c%e7%a8%8b%e4%bc%a0%e8%be%93%e5%af%b9%e8%b1%a1%e9%9c%80%e8%a6%81%e7%bb%a7%e6%89%bf%e4%ba%8eUnicastRemoteObject%e3%80%82%0a%e5%9c%a8Java5%e4%b8%ad%ef%bc%8cRMI%e5%92%8c%e5%8a%a8%e6%80%81%e4%bb%a3%e7%90%86%e6%90%ad%e9%85%8d%e4%bd%bf%e7%94%a8%ef%bc%8c%e5%8a%a8%e6%80%81%e4%bb%a3%e7%90%86%e5%8a%a8%e6%80%81%e4%ba%a7%e7%94%9fStub%ef%bc%8c%e8%bf%9c%e7%a8%8b%e5%af%b9%e8%b1%a1%e7%9a%84Stub%e6%98%afProxy%e5%ae%9e%e4%be%8b%ef%bc%8c%e5%ae%83%e6%98%af%e8%87%aa%e5%8a%a8%e4%ba%a7%e7%94%9f%e7%9a%84%ef%bc%8c%e6%9d%a5%e5%a4%84%e7%90%86%e6%89%80%e6%9c%89%e6%8a%8a%e5%ae%a2%e6%88%b7%e7%9a%84%e6%9c%ac%e5%9c%b0%e8%b0%83%e7%94%a8%e5%8f%98%e6%88%90%e8%bf%9c%e7%a8%8b%e8%b0%83%e7%94%a8%e7%9a%84%e7%bb%86%e8%8a%82%e3%80%82%0a%e8%99%9a%e6%8b%9f%e4%bb%a3%e7%90%86%20%e5%af%b9%e4%ba%8e%e8%99%9a%e6%8b%9f%e4%bb%a3%e7%90%86%ef%bc%8c%e4%b9%9f%e5%b0%b1%e6%98%af%e8%af%b4%e8%bf%99%e4%b8%aa%e4%bb%a3%e7%90%86%e5%af%b9%e8%b1%a1%e6%98%af%e8%99%9a%e6%8b%9f%e7%9a%84%ef%bc%8c%e7%94%b1%e4%bb%a3%e7%90%86%e6%9d%a5%e6%89%ae%e6%bc%94%e5%af%b9%e8%b1%a1%e7%9a%84%e6%9b%bf%e8%ba%ab%e3%80%82%0a%e6%af%94%e5%a6%82%e5%af%b9%e4%ba%8e%e4%bb%8e%e7%bd%91%e7%bb%9c%e5%8a%a0%e8%bd%bd%e4%b8%80%e5%89%af%e5%9b%be%e5%83%8f%e5%b1%95%e7%8e%b0%e7%bb%99%e7%94%a8%e6%88%b7%ef%bc%8c%e6%88%91%e4%bb%ac%e5%8f%af%e8%83%bd%e9%9c%80%e8%a6%81%e7%ad%89%e5%be%85%e4%b8%80%e5%ae%9a%e6%97%b6%e9%97%b4%ef%bc%8c%e8%bf%99%e6%ae%b5%e6%97%b6%e9%97%b4%e5%86%85%e5%9b%be%e5%83%8f%e5%ba%94%e8%af%a5%e5%b1%95%e7%8e%b0%e4%b8%ba%e7%94%a8%e6%88%b7%e5%8f%8b%e5%a5%bd%e7%9a%84%e2%80%9c%e7%ad%89%e5%be%85%e4%b8%ad%e2%80%9d%e5%ad%97%e6%a0%b7%ef%bc%8c%e8%80%8c%e5%9c%a8%e7%bd%91%e7%bb%9c%e5%9b%be%e5%83%8f%e8%8e%b7%e5%8f%96%e6%88%90%e5%8a%9f%e5%90%8e%e8%bf%9b%e8%a1%8c%e7%bd%91%e7%bb%9c%e5%9b%be%e5%83%8f%e7%9a%84%e5%b1%95%e7%8e%b0%e3%80%82%0a%e8%bf%99%e4%b8%aa%e8%bf%87%e7%a8%8b%e5%8f%af%e4%bb%a5%e9%80%9a%e8%bf%87%e4%bb%a3%e7%90%86%e7%9a%84%e6%96%b9%e5%bc%8f%e6%96%b9%e4%be%bf%e5%9c%b0%e5%ae%8c%e6%88%90%ef%bc%9a%e8%99%9a%e6%8b%9f%e4%bb%a3%e7%90%86%e5%af%b9%e8%b1%a1%e6%89%ae%e6%bc%94%e5%9b%be%e5%83%8f%e7%9a%84%e6%9b%bf%e8%ba%ab%ef%bc%8c%e5%ae%83%e9%80%9a%e8%bf%87%e5%88%9b%e5%bb%ba%e4%b8%80%e4%b8%aa%e7%ba%bf%e7%a8%8b%e5%8a%a0%e8%bd%bd%e7%bd%91%e7%bb%9c%e5%9b%be%e5%83%8f%ef%bc%8c%e5%8a%a0%e8%bd%bd%e6%9c%9f%e9%97%b4%e5%b0%86%e5%9b%be%e5%83%8f%e5%8a%a8%e6%80%81%e5%9c%b0%e5%8f%98%e4%b8%ba%e7%94%a8%e6%88%b7%e5%8f%8b%e5%a5%bd%e5%ad%97%e6%a0%b7%ef%bc%8c%e5%ae%8c%e6%88%90%e5%8a%a0%e8%bd%bd%e5%90%8e%e6%94%b9%e4%b8%ba%e7%bd%91%e7%bb%9c%e5%9b%be%e5%83%8f%e3%80%82%0a%e5%8f%af%e4%bb%a5%e5%8f%91%e7%8e%b0%e6%88%91%e4%bb%ac%e4%b8%8d%e6%98%af%e7%9b%b4%e6%8e%a5%e4%bd%bf%e7%94%a8%e5%9b%be%e5%83%8f%e6%9c%ac%e8%ba%ab%ef%bc%8c%e8%80%8c%e4%bd%bf%e7%94%a8%e4%ba%86%e4%bb%a3%e7%90%86%e5%af%b9%e8%b1%a1%e4%bd%9c%e4%b8%ba%e5%9b%be%e5%83%8f%ef%bc%8c%e4%b9%9f%e5%b0%b1%e6%98%af%e8%af%b4%ef%bc%8c%e4%bb%a3%e7%90%86%e6%89%ae%e6%bc%94%e4%ba%86%e5%9b%be%e5%83%8f%e8%bf%99%e4%b8%aa%e8%a7%92%e8%89%b2%e3%80%82%0a%e4%b8%8b%e9%9d%a2%e6%98%af%e4%b8%80%e4%b8%aa%e5%9b%be%e5%83%8f%e4%bb%a3%e7%90%86%e5%af%b9%e8%b1%a1%ef%bc%9a%0a1%202%203%204%205%206%207%208%209%2010%2011%2012%2013%2014%2015%2016%2017%2018%2019%2020%2021%2022%2023%2024%2025%2026%2027%2028%2029%2030%2031%2032%2033%2034%2035%2036%2037%2038%2039%2040%20class%20ImageProxy%20implements%20Icon%20%7b%20volatile%20ImageIcon%20imageIcon%3b%20final%20URL%20imageURL%3b%20Thread%20retrievalThread%3b%20boolean%20retrieving%20%3d%20false%3b%20public%20ImageProxy%28URL%20url%29%20%7b%20imageURL%20%3d%20url%3b%20%7d%20public%20int%20getIconWidth%28%29%20%7b%20." aria-label="Tumblr">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fposts%2f2022%2f08%2fproxy-pattern%2f&t=%e4%bb%a3%e7%90%86%e6%a8%a1%e5%bc%8f" aria-label="Hacker News">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#定义">定义</a></li>
+    <li><a href="#远程代理">远程代理</a></li>
+    <li><a href="#虚拟代理">虚拟代理</a></li>
+    <li><a href="#动态代理">动态代理</a>
+      <ul>
+        <li><a href="#创建类">创建类</a></li>
+        <li><a href="#创建invocationhandler">创建InvocationHandler</a></li>
+        <li><a href="#测试代码">测试代码</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+    
+  </span>
+</div>
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        代理模式
+      </h1>
+      <div class="meta">
+        
+        <div class="postdate">
+          
+          <time datetime="2022-08-26 10:41:19 &#43;0800 CST" itemprop="datePublished">2022-08-26</time>
+          
+        </div>
+        
+        
+        <div class="article-read-time">
+          <i class="far fa-clock"></i>
+          
+          6 minute read
+        </div>
+        
+        
+        <div class="article-category">
+            <i class="fas fa-archive"></i>
+            
+            
+            <a class="category-link" href="/categories/language">Language</a>
+            
+        </div>
+        
+        
+        <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+            
+            <a class="tag-link" href="/tags/design" rel="tag">design</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/java" rel="tag">java</a>
+            
+        </div>
+        
+      </div>
+    </header>
+    
+    <div class="content" itemprop="articleBody">
+      <h2 id="定义">定义</h2>
+<p>代理模式为另一个对象提供一个替身或占位符以控制对这个对象的访问。</p>
+<p>我们对一个对象的使用或者一个对象中方法的调用，可以通过这个对象的代理人进行访问，这个代理人可以方便地控制这个对象，让对象的功能更为强大或更易于使用。</p>
+<p>常见的代理有：远程代理，虚拟代理，动态代理。</p>
+<h2 id="远程代理">远程代理</h2>
+<p>对于远程代理，其实就是本地调用远程的方法，本地堆（客户端）有一个Stub代理对象，这个对象负责完成RMI操作，也就是远程方法调用，而远程堆（服务端）有一个Skeleton代理对象，它接收客户端的RMI操作，并传递给真正的服务对象进行服务，之后再返回给客户端结果。</p>
+<p>使用过程中需要注意调用的对象必须是可序列化的，无需序列化的对象可以添加<code>transient</code>关键字。通过<code>rmiregistry &amp;</code>开启RMI，之后进行服务注册。服务端通过<code>Naming.rebind()</code>绑定服务地址，客户端通过<code>Naming.lookup()</code>调用远程方法。另外，远程传输对象需要继承于<code>UnicastRemoteObject</code>。</p>
+<p>在Java5中，RMI和动态代理搭配使用，动态代理动态产生Stub，远程对象的Stub是Proxy实例，它是自动产生的，来处理所有把客户的本地调用变成远程调用的细节。</p>
+<h2 id="虚拟代理">虚拟代理</h2>
+<p>对于虚拟代理，也就是说这个代理对象是虚拟的，由代理来扮演对象的替身。</p>
+<p>比如对于从网络加载一副图像展现给用户，我们可能需要等待一定时间，这段时间内图像应该展现为用户友好的“等待中”字样，而在网络图像获取成功后进行网络图像的展现。</p>
+<p>这个过程可以通过代理的方式方便地完成：虚拟代理对象扮演图像的替身，它通过创建一个线程加载网络图像，加载期间将图像动态地变为用户友好字样，完成加载后改为网络图像。</p>
+<p>可以发现我们不是直接使用图像本身，而使用了代理对象作为图像，也就是说，代理扮演了图像这个角色。</p>
+<p>下面是一个图像代理对象：</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">ImageProxy</span> <span style="color:#8be9fd;font-style:italic">implements</span> Icon <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#8be9fd;font-style:italic">volatile</span> ImageIcon imageIcon<span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#8be9fd;font-style:italic">final</span> URL imageURL<span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>	Thread retrievalThread<span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#8be9fd">boolean</span> retrieving <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">false</span><span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>     
+</span></span><span style="display:flex;"><span>	<span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#50fa7b">ImageProxy</span><span style="color:#ff79c6">(</span>URL url<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span> imageURL <span style="color:#ff79c6">=</span> url<span style="color:#ff79c6">;</span> <span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span>     
+</span></span><span style="display:flex;"><span>	<span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">int</span> <span style="color:#50fa7b">getIconWidth</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">...</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>	<span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">int</span> <span style="color:#50fa7b">getIconHeight</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">...</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>	<span style="color:#8be9fd;font-style:italic">synchronized</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">setImageIcon</span><span style="color:#ff79c6">(</span>ImageIcon imageIcon<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">imageIcon</span> <span style="color:#ff79c6">=</span> imageIcon<span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span>     
+</span></span><span style="display:flex;"><span>	<span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">paintIcon</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd;font-style:italic">final</span> Component c<span style="color:#ff79c6">,</span> Graphics  g<span style="color:#ff79c6">,</span> <span style="color:#8be9fd">int</span> x<span style="color:#ff79c6">,</span>  <span style="color:#8be9fd">int</span> y<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>imageIcon <span style="color:#ff79c6">!=</span> <span style="color:#ff79c6">null</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>			imageIcon<span style="color:#ff79c6">.</span><span style="color:#50fa7b">paintIcon</span><span style="color:#ff79c6">(</span>c<span style="color:#ff79c6">,</span> g<span style="color:#ff79c6">,</span> x<span style="color:#ff79c6">,</span> y<span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#ff79c6">}</span> <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>			g<span style="color:#ff79c6">.</span><span style="color:#50fa7b">drawString</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;Loading album cover, please wait...&#34;</span><span style="color:#ff79c6">,</span> x<span style="color:#ff79c6">+</span>300<span style="color:#ff79c6">,</span> y<span style="color:#ff79c6">+</span>190<span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(!</span>retrieving<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>				retrieving <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">true</span><span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>				retrievalThread <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Thread<span style="color:#ff79c6">(()</span> <span style="color:#ff79c6">-&gt;</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>						<span style="color:#ff79c6">try</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>							setImageIcon<span style="color:#ff79c6">(</span><span style="color:#ff79c6">new</span> ImageIcon<span style="color:#ff79c6">(</span>imageURL<span style="color:#ff79c6">,</span> <span style="color:#f1fa8c">&#34;Album Cover&#34;</span><span style="color:#ff79c6">));</span>
+</span></span><span style="display:flex;"><span>							c<span style="color:#ff79c6">.</span><span style="color:#50fa7b">repaint</span><span style="color:#ff79c6">();</span>
+</span></span><span style="display:flex;"><span>						<span style="color:#ff79c6">}</span> <span style="color:#ff79c6">catch</span> <span style="color:#ff79c6">(</span>Exception e<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>							e<span style="color:#ff79c6">.</span><span style="color:#50fa7b">printStackTrace</span><span style="color:#ff79c6">();</span>
+</span></span><span style="display:flex;"><span>						<span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span>				<span style="color:#ff79c6">});</span>
+</span></span><span style="display:flex;"><span>				retrievalThread<span style="color:#ff79c6">.</span><span style="color:#50fa7b">start</span><span style="color:#ff79c6">();</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="动态代理">动态代理</h2>
+<p>对于动态代理，代理对象在运行时才被创建，可以通过人为设定值来修改原本的对象，这样也就让一个代理对象可以获得不同的功能或属性，也就是说，代理对象增强了一个对象的功能。</p>
+<p>下面以一个简单例子说明动态代理的使用过程：</p>
+<h3 id="创建类">创建类</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">interface</span> <span style="color:#50fa7b">Person</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>	String <span style="color:#50fa7b">getName</span><span style="color:#ff79c6">();</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6272a4">// ...
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">setName</span><span style="color:#ff79c6">(</span>String name<span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6272a4">// ...
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span><span style="color:#ff79c6">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">PersonImpl</span> <span style="color:#8be9fd;font-style:italic">implements</span> Person <span style="color:#6272a4">/*, {其它接口} */</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>	String name<span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>	String gender<span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>	String interests<span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#8be9fd">int</span> rating<span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#8be9fd">int</span> ratingCount <span style="color:#ff79c6">=</span> 0<span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>	<span style="color:#8be9fd;font-style:italic">public</span> String <span style="color:#50fa7b">getName</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#ff79c6">return</span> name<span style="color:#ff79c6">;</span>	
+</span></span><span style="display:flex;"><span>	<span style="color:#ff79c6">}</span> 
+</span></span><span style="display:flex;"><span>    <span style="color:#6272a4">// ...
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>	<span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">setName</span><span style="color:#ff79c6">(</span>String name<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">name</span> <span style="color:#ff79c6">=</span> name<span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6272a4">// ...
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span><span style="color:#ff79c6">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="创建invocationhandler">创建InvocationHandler</h3>
+<p>实现invoke方法，设置该对象不允许setGeekRating。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">OwnerInvocationHandler</span> <span style="color:#8be9fd;font-style:italic">implements</span> InvocationHandler <span style="color:#ff79c6">{</span> 
+</span></span><span style="display:flex;"><span>	Person person<span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>	<span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#50fa7b">OwnerInvocationHandler</span><span style="color:#ff79c6">(</span>Person person<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">person</span> <span style="color:#ff79c6">=</span> person<span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>	<span style="color:#8be9fd;font-style:italic">public</span> Object <span style="color:#50fa7b">invoke</span><span style="color:#ff79c6">(</span>Object proxy<span style="color:#ff79c6">,</span> Method method<span style="color:#ff79c6">,</span> Object<span style="color:#ff79c6">[]</span> args<span style="color:#ff79c6">)</span> 
+</span></span><span style="display:flex;"><span>			<span style="color:#8be9fd;font-style:italic">throws</span> IllegalAccessException <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>		<span style="color:#ff79c6">try</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>method<span style="color:#ff79c6">.</span><span style="color:#50fa7b">getName</span><span style="color:#ff79c6">().</span><span style="color:#50fa7b">startsWith</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;get&#34;</span><span style="color:#ff79c6">))</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>				<span style="color:#ff79c6">return</span> method<span style="color:#ff79c6">.</span><span style="color:#50fa7b">invoke</span><span style="color:#ff79c6">(</span>person<span style="color:#ff79c6">,</span> args<span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span>   			<span style="color:#ff79c6">}</span> <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>method<span style="color:#ff79c6">.</span><span style="color:#50fa7b">getName</span><span style="color:#ff79c6">().</span><span style="color:#50fa7b">equals</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;setGeekRating&#34;</span><span style="color:#ff79c6">))</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>				<span style="color:#ff79c6">throw</span> <span style="color:#ff79c6">new</span> IllegalAccessException<span style="color:#ff79c6">();</span> <span style="color:#6272a4">// 不允许setGeekRating
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>			<span style="color:#ff79c6">}</span> <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>method<span style="color:#ff79c6">.</span><span style="color:#50fa7b">getName</span><span style="color:#ff79c6">().</span><span style="color:#50fa7b">startsWith</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;set&#34;</span><span style="color:#ff79c6">))</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>				<span style="color:#ff79c6">return</span> method<span style="color:#ff79c6">.</span><span style="color:#50fa7b">invoke</span><span style="color:#ff79c6">(</span>person<span style="color:#ff79c6">,</span> args<span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#ff79c6">}</span> 
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">}</span> <span style="color:#ff79c6">catch</span> <span style="color:#ff79c6">(</span>InvocationTargetException e<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>            e<span style="color:#ff79c6">.</span><span style="color:#50fa7b">printStackTrace</span><span style="color:#ff79c6">();</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">}</span> 
+</span></span><span style="display:flex;"><span>		<span style="color:#ff79c6">return</span> <span style="color:#ff79c6">null</span><span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="测试代码">测试代码</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#6272a4">// 初始化一些对象
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>initializeDatabase<span style="color:#ff79c6">();</span> 
+</span></span><span style="display:flex;"><span><span style="color:#6272a4">// 获取对象
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>Person joe <span style="color:#ff79c6">=</span> getPersonFromDatabase<span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;Joe Javabean&#34;</span><span style="color:#ff79c6">);</span> 
+</span></span><span style="display:flex;"><span><span style="color:#6272a4">// 获取代理对象
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>Person ownerProxy <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">(</span>Person<span style="color:#ff79c6">)</span> Proxy<span style="color:#ff79c6">.</span><span style="color:#50fa7b">newProxyInstance</span><span style="color:#ff79c6">(</span> 
+</span></span><span style="display:flex;"><span>        joe<span style="color:#ff79c6">.</span><span style="color:#50fa7b">getClass</span><span style="color:#ff79c6">().</span><span style="color:#50fa7b">getClassLoader</span><span style="color:#ff79c6">(),</span>
+</span></span><span style="display:flex;"><span>        joe<span style="color:#ff79c6">.</span><span style="color:#50fa7b">getClass</span><span style="color:#ff79c6">().</span><span style="color:#50fa7b">getInterfaces</span><span style="color:#ff79c6">(),</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">new</span> OwnerInvocationHandler<span style="color:#ff79c6">(</span>joe<span style="color:#ff79c6">));</span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4">// 进行测试
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;Name is &#34;</span> <span style="color:#ff79c6">+</span> ownerProxy<span style="color:#ff79c6">.</span><span style="color:#50fa7b">getName</span><span style="color:#ff79c6">());</span>
+</span></span><span style="display:flex;"><span>ownerProxy<span style="color:#ff79c6">.</span><span style="color:#50fa7b">setInterests</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;bowling, Go&#34;</span><span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">try</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>    ownerProxy<span style="color:#ff79c6">.</span><span style="color:#50fa7b">setGeekRating</span><span style="color:#ff79c6">(</span>10<span style="color:#ff79c6">);</span> <span style="color:#6272a4">// 将会抛出异常
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span><span style="color:#ff79c6">}</span> <span style="color:#ff79c6">catch</span> <span style="color:#ff79c6">(</span>Exception e<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>    System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;Can&#39;t set rating from owner proxy&#34;</span><span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span>System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;Rating is &#34;</span> <span style="color:#ff79c6">+</span> ownerProxy<span style="color:#ff79c6">.</span><span style="color:#50fa7b">getGeekRating</span><span style="color:#ff79c6">());</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<p><strong>参考：《HeadFist设计模式》</strong></p>
+<p><strong>From My Blog: <a href="https://akynazh.site">akynazh</a></strong>.</p>
+<p><strong>Over.</strong></p>
+
+    </div>
+  </article>
+  
+  
+
+
+
+
+  <div class="blog-post-comments">
+    
+      <div id="disquss_thread">
+  <script src="https://utteranc.es/client.js"
+    repo="akynazh/hugo-comment"
+    issue-term="pathname"
+    label="akynazh"
+    theme="github-dark"
+    crossorigin="anonymous"
+    async>
+  </script>
+</div>
+    
+  </div>
+
+
+    
+    <div id="fastSearch">
+      <input id="searchInput" tabindex="0"/>
+      <ul id="searchResults"></ul>
+    </div>
+  <div id="footer-post-container">
+  <div id="footer-post">
+    
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#定义">定义</a></li>
+    <li><a href="#远程代理">远程代理</a></li>
+    <li><a href="#虚拟代理">虚拟代理</a></li>
+    <li><a href="#动态代理">动态代理</a>
+      <ul>
+        <li><a href="#创建类">创建类</a></li>
+        <li><a href="#创建invocationhandler">创建InvocationHandler</a></li>
+        <li><a href="#测试代码">测试代码</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+    
+    
+    <div id="nav-footer" style="display: none">
+      
+      <ul style="display:inline;"><li><a href="/">Home</a></li></ul>
+      
+      <ul style="display:inline;"><li><a href="/posts">Archives</a></li></ul>
+      
+      <ul style="display:inline;"><li><a href="/projects">Projects</a></li></ul>
+      
+      <ul style="display:inline;"><li><a href="/about">About</a></li></ul>
+      
+    </div>
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=%2fposts%2f2022%2f08%2fproxy-pattern%2f" aria-label="Facebook">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=%2fposts%2f2022%2f08%2fproxy-pattern%2f&text=%e4%bb%a3%e7%90%86%e6%a8%a1%e5%bc%8f" aria-label="Twitter">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fposts%2f2022%2f08%2fproxy-pattern%2f&title=%e4%bb%a3%e7%90%86%e6%a8%a1%e5%bc%8f" aria-label="Linkedin">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fposts%2f2022%2f08%2fproxy-pattern%2f&is_video=false&description=%e4%bb%a3%e7%90%86%e6%a8%a1%e5%bc%8f" aria-label="Pinterest">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=%e4%bb%a3%e7%90%86%e6%a8%a1%e5%bc%8f&body=Check out this article: %2fposts%2f2022%2f08%2fproxy-pattern%2f" aria-label="Email">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=%2fposts%2f2022%2f08%2fproxy-pattern%2f&title=%e4%bb%a3%e7%90%86%e6%a8%a1%e5%bc%8f" aria-label="Pocket">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=%2fposts%2f2022%2f08%2fproxy-pattern%2f&title=%e4%bb%a3%e7%90%86%e6%a8%a1%e5%bc%8f" aria-label="reddit">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f08%2fproxy-pattern%2f&name=%e4%bb%a3%e7%90%86%e6%a8%a1%e5%bc%8f&description=%e5%ae%9a%e4%b9%89%20%e4%bb%a3%e7%90%86%e6%a8%a1%e5%bc%8f%e4%b8%ba%e5%8f%a6%e4%b8%80%e4%b8%aa%e5%af%b9%e8%b1%a1%e6%8f%90%e4%be%9b%e4%b8%80%e4%b8%aa%e6%9b%bf%e8%ba%ab%e6%88%96%e5%8d%a0%e4%bd%8d%e7%ac%a6%e4%bb%a5%e6%8e%a7%e5%88%b6%e5%af%b9%e8%bf%99%e4%b8%aa%e5%af%b9%e8%b1%a1%e7%9a%84%e8%ae%bf%e9%97%ae%e3%80%82%0a%e6%88%91%e4%bb%ac%e5%af%b9%e4%b8%80%e4%b8%aa%e5%af%b9%e8%b1%a1%e7%9a%84%e4%bd%bf%e7%94%a8%e6%88%96%e8%80%85%e4%b8%80%e4%b8%aa%e5%af%b9%e8%b1%a1%e4%b8%ad%e6%96%b9%e6%b3%95%e7%9a%84%e8%b0%83%e7%94%a8%ef%bc%8c%e5%8f%af%e4%bb%a5%e9%80%9a%e8%bf%87%e8%bf%99%e4%b8%aa%e5%af%b9%e8%b1%a1%e7%9a%84%e4%bb%a3%e7%90%86%e4%ba%ba%e8%bf%9b%e8%a1%8c%e8%ae%bf%e9%97%ae%ef%bc%8c%e8%bf%99%e4%b8%aa%e4%bb%a3%e7%90%86%e4%ba%ba%e5%8f%af%e4%bb%a5%e6%96%b9%e4%be%bf%e5%9c%b0%e6%8e%a7%e5%88%b6%e8%bf%99%e4%b8%aa%e5%af%b9%e8%b1%a1%ef%bc%8c%e8%ae%a9%e5%af%b9%e8%b1%a1%e7%9a%84%e5%8a%9f%e8%83%bd%e6%9b%b4%e4%b8%ba%e5%bc%ba%e5%a4%a7%e6%88%96%e6%9b%b4%e6%98%93%e4%ba%8e%e4%bd%bf%e7%94%a8%e3%80%82%0a%e5%b8%b8%e8%a7%81%e7%9a%84%e4%bb%a3%e7%90%86%e6%9c%89%ef%bc%9a%e8%bf%9c%e7%a8%8b%e4%bb%a3%e7%90%86%ef%bc%8c%e8%99%9a%e6%8b%9f%e4%bb%a3%e7%90%86%ef%bc%8c%e5%8a%a8%e6%80%81%e4%bb%a3%e7%90%86%e3%80%82%0a%e8%bf%9c%e7%a8%8b%e4%bb%a3%e7%90%86%20%e5%af%b9%e4%ba%8e%e8%bf%9c%e7%a8%8b%e4%bb%a3%e7%90%86%ef%bc%8c%e5%85%b6%e5%ae%9e%e5%b0%b1%e6%98%af%e6%9c%ac%e5%9c%b0%e8%b0%83%e7%94%a8%e8%bf%9c%e7%a8%8b%e7%9a%84%e6%96%b9%e6%b3%95%ef%bc%8c%e6%9c%ac%e5%9c%b0%e5%a0%86%ef%bc%88%e5%ae%a2%e6%88%b7%e7%ab%af%ef%bc%89%e6%9c%89%e4%b8%80%e4%b8%aaStub%e4%bb%a3%e7%90%86%e5%af%b9%e8%b1%a1%ef%bc%8c%e8%bf%99%e4%b8%aa%e5%af%b9%e8%b1%a1%e8%b4%9f%e8%b4%a3%e5%ae%8c%e6%88%90RMI%e6%93%8d%e4%bd%9c%ef%bc%8c%e4%b9%9f%e5%b0%b1%e6%98%af%e8%bf%9c%e7%a8%8b%e6%96%b9%e6%b3%95%e8%b0%83%e7%94%a8%ef%bc%8c%e8%80%8c%e8%bf%9c%e7%a8%8b%e5%a0%86%ef%bc%88%e6%9c%8d%e5%8a%a1%e7%ab%af%ef%bc%89%e6%9c%89%e4%b8%80%e4%b8%aaSkeleton%e4%bb%a3%e7%90%86%e5%af%b9%e8%b1%a1%ef%bc%8c%e5%ae%83%e6%8e%a5%e6%94%b6%e5%ae%a2%e6%88%b7%e7%ab%af%e7%9a%84RMI%e6%93%8d%e4%bd%9c%ef%bc%8c%e5%b9%b6%e4%bc%a0%e9%80%92%e7%bb%99%e7%9c%9f%e6%ad%a3%e7%9a%84%e6%9c%8d%e5%8a%a1%e5%af%b9%e8%b1%a1%e8%bf%9b%e8%a1%8c%e6%9c%8d%e5%8a%a1%ef%bc%8c%e4%b9%8b%e5%90%8e%e5%86%8d%e8%bf%94%e5%9b%9e%e7%bb%99%e5%ae%a2%e6%88%b7%e7%ab%af%e7%bb%93%e6%9e%9c%e3%80%82%0a%e4%bd%bf%e7%94%a8%e8%bf%87%e7%a8%8b%e4%b8%ad%e9%9c%80%e8%a6%81%e6%b3%a8%e6%84%8f%e8%b0%83%e7%94%a8%e7%9a%84%e5%af%b9%e8%b1%a1%e5%bf%85%e9%a1%bb%e6%98%af%e5%8f%af%e5%ba%8f%e5%88%97%e5%8c%96%e7%9a%84%ef%bc%8c%e6%97%a0%e9%9c%80%e5%ba%8f%e5%88%97%e5%8c%96%e7%9a%84%e5%af%b9%e8%b1%a1%e5%8f%af%e4%bb%a5%e6%b7%bb%e5%8a%a0transient%e5%85%b3%e9%94%ae%e5%ad%97%e3%80%82%e9%80%9a%e8%bf%87rmiregistry%20%26amp%3b%e5%bc%80%e5%90%afRMI%ef%bc%8c%e4%b9%8b%e5%90%8e%e8%bf%9b%e8%a1%8c%e6%9c%8d%e5%8a%a1%e6%b3%a8%e5%86%8c%e3%80%82%e6%9c%8d%e5%8a%a1%e7%ab%af%e9%80%9a%e8%bf%87Naming.rebind%28%29%e7%bb%91%e5%ae%9a%e6%9c%8d%e5%8a%a1%e5%9c%b0%e5%9d%80%ef%bc%8c%e5%ae%a2%e6%88%b7%e7%ab%af%e9%80%9a%e8%bf%87Naming.lookup%28%29%e8%b0%83%e7%94%a8%e8%bf%9c%e7%a8%8b%e6%96%b9%e6%b3%95%e3%80%82%e5%8f%a6%e5%a4%96%ef%bc%8c%e8%bf%9c%e7%a8%8b%e4%bc%a0%e8%be%93%e5%af%b9%e8%b1%a1%e9%9c%80%e8%a6%81%e7%bb%a7%e6%89%bf%e4%ba%8eUnicastRemoteObject%e3%80%82%0a%e5%9c%a8Java5%e4%b8%ad%ef%bc%8cRMI%e5%92%8c%e5%8a%a8%e6%80%81%e4%bb%a3%e7%90%86%e6%90%ad%e9%85%8d%e4%bd%bf%e7%94%a8%ef%bc%8c%e5%8a%a8%e6%80%81%e4%bb%a3%e7%90%86%e5%8a%a8%e6%80%81%e4%ba%a7%e7%94%9fStub%ef%bc%8c%e8%bf%9c%e7%a8%8b%e5%af%b9%e8%b1%a1%e7%9a%84Stub%e6%98%afProxy%e5%ae%9e%e4%be%8b%ef%bc%8c%e5%ae%83%e6%98%af%e8%87%aa%e5%8a%a8%e4%ba%a7%e7%94%9f%e7%9a%84%ef%bc%8c%e6%9d%a5%e5%a4%84%e7%90%86%e6%89%80%e6%9c%89%e6%8a%8a%e5%ae%a2%e6%88%b7%e7%9a%84%e6%9c%ac%e5%9c%b0%e8%b0%83%e7%94%a8%e5%8f%98%e6%88%90%e8%bf%9c%e7%a8%8b%e8%b0%83%e7%94%a8%e7%9a%84%e7%bb%86%e8%8a%82%e3%80%82%0a%e8%99%9a%e6%8b%9f%e4%bb%a3%e7%90%86%20%e5%af%b9%e4%ba%8e%e8%99%9a%e6%8b%9f%e4%bb%a3%e7%90%86%ef%bc%8c%e4%b9%9f%e5%b0%b1%e6%98%af%e8%af%b4%e8%bf%99%e4%b8%aa%e4%bb%a3%e7%90%86%e5%af%b9%e8%b1%a1%e6%98%af%e8%99%9a%e6%8b%9f%e7%9a%84%ef%bc%8c%e7%94%b1%e4%bb%a3%e7%90%86%e6%9d%a5%e6%89%ae%e6%bc%94%e5%af%b9%e8%b1%a1%e7%9a%84%e6%9b%bf%e8%ba%ab%e3%80%82%0a%e6%af%94%e5%a6%82%e5%af%b9%e4%ba%8e%e4%bb%8e%e7%bd%91%e7%bb%9c%e5%8a%a0%e8%bd%bd%e4%b8%80%e5%89%af%e5%9b%be%e5%83%8f%e5%b1%95%e7%8e%b0%e7%bb%99%e7%94%a8%e6%88%b7%ef%bc%8c%e6%88%91%e4%bb%ac%e5%8f%af%e8%83%bd%e9%9c%80%e8%a6%81%e7%ad%89%e5%be%85%e4%b8%80%e5%ae%9a%e6%97%b6%e9%97%b4%ef%bc%8c%e8%bf%99%e6%ae%b5%e6%97%b6%e9%97%b4%e5%86%85%e5%9b%be%e5%83%8f%e5%ba%94%e8%af%a5%e5%b1%95%e7%8e%b0%e4%b8%ba%e7%94%a8%e6%88%b7%e5%8f%8b%e5%a5%bd%e7%9a%84%e2%80%9c%e7%ad%89%e5%be%85%e4%b8%ad%e2%80%9d%e5%ad%97%e6%a0%b7%ef%bc%8c%e8%80%8c%e5%9c%a8%e7%bd%91%e7%bb%9c%e5%9b%be%e5%83%8f%e8%8e%b7%e5%8f%96%e6%88%90%e5%8a%9f%e5%90%8e%e8%bf%9b%e8%a1%8c%e7%bd%91%e7%bb%9c%e5%9b%be%e5%83%8f%e7%9a%84%e5%b1%95%e7%8e%b0%e3%80%82%0a%e8%bf%99%e4%b8%aa%e8%bf%87%e7%a8%8b%e5%8f%af%e4%bb%a5%e9%80%9a%e8%bf%87%e4%bb%a3%e7%90%86%e7%9a%84%e6%96%b9%e5%bc%8f%e6%96%b9%e4%be%bf%e5%9c%b0%e5%ae%8c%e6%88%90%ef%bc%9a%e8%99%9a%e6%8b%9f%e4%bb%a3%e7%90%86%e5%af%b9%e8%b1%a1%e6%89%ae%e6%bc%94%e5%9b%be%e5%83%8f%e7%9a%84%e6%9b%bf%e8%ba%ab%ef%bc%8c%e5%ae%83%e9%80%9a%e8%bf%87%e5%88%9b%e5%bb%ba%e4%b8%80%e4%b8%aa%e7%ba%bf%e7%a8%8b%e5%8a%a0%e8%bd%bd%e7%bd%91%e7%bb%9c%e5%9b%be%e5%83%8f%ef%bc%8c%e5%8a%a0%e8%bd%bd%e6%9c%9f%e9%97%b4%e5%b0%86%e5%9b%be%e5%83%8f%e5%8a%a8%e6%80%81%e5%9c%b0%e5%8f%98%e4%b8%ba%e7%94%a8%e6%88%b7%e5%8f%8b%e5%a5%bd%e5%ad%97%e6%a0%b7%ef%bc%8c%e5%ae%8c%e6%88%90%e5%8a%a0%e8%bd%bd%e5%90%8e%e6%94%b9%e4%b8%ba%e7%bd%91%e7%bb%9c%e5%9b%be%e5%83%8f%e3%80%82%0a%e5%8f%af%e4%bb%a5%e5%8f%91%e7%8e%b0%e6%88%91%e4%bb%ac%e4%b8%8d%e6%98%af%e7%9b%b4%e6%8e%a5%e4%bd%bf%e7%94%a8%e5%9b%be%e5%83%8f%e6%9c%ac%e8%ba%ab%ef%bc%8c%e8%80%8c%e4%bd%bf%e7%94%a8%e4%ba%86%e4%bb%a3%e7%90%86%e5%af%b9%e8%b1%a1%e4%bd%9c%e4%b8%ba%e5%9b%be%e5%83%8f%ef%bc%8c%e4%b9%9f%e5%b0%b1%e6%98%af%e8%af%b4%ef%bc%8c%e4%bb%a3%e7%90%86%e6%89%ae%e6%bc%94%e4%ba%86%e5%9b%be%e5%83%8f%e8%bf%99%e4%b8%aa%e8%a7%92%e8%89%b2%e3%80%82%0a%e4%b8%8b%e9%9d%a2%e6%98%af%e4%b8%80%e4%b8%aa%e5%9b%be%e5%83%8f%e4%bb%a3%e7%90%86%e5%af%b9%e8%b1%a1%ef%bc%9a%0a1%202%203%204%205%206%207%208%209%2010%2011%2012%2013%2014%2015%2016%2017%2018%2019%2020%2021%2022%2023%2024%2025%2026%2027%2028%2029%2030%2031%2032%2033%2034%2035%2036%2037%2038%2039%2040%20class%20ImageProxy%20implements%20Icon%20%7b%20volatile%20ImageIcon%20imageIcon%3b%20final%20URL%20imageURL%3b%20Thread%20retrievalThread%3b%20boolean%20retrieving%20%3d%20false%3b%20public%20ImageProxy%28URL%20url%29%20%7b%20imageURL%20%3d%20url%3b%20%7d%20public%20int%20getIconWidth%28%29%20%7b%20." aria-label="Tumblr">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fposts%2f2022%2f08%2fproxy-pattern%2f&t=%e4%bb%a3%e7%90%86%e6%a8%a1%e5%bc%8f" aria-label="Hacker News">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').show();$('#toc-footer').hide();$('#share-footer').hide();return false;" aria-label="Menu">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+        <a id="toc-toggle" class="icon" href="#" onclick="$('#toc-footer').show();$('#nav-footer').hide();$('#share-footer').hide();return false;" aria-label="TOC">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+        <a id="searchBtn1" class="icon" href="#" aria-label="Search">
+          <i class="fa fa-search" aria-hidden="true"></i> Search</a>
+        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').show();$('#toc-footer').hide();$('#nav-footer').hide();return false;" aria-label="Share">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+    </div>
+
+  </div>
+</div>
+
+  <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2023  Jzh 
+    | <a href='https://beian.miit.gov.cn/' style="text-decoration:none;">陕ICP备2022007986号-1</a>
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Archives</a></li>
+         
+        <li><a href="/projects">Projects</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+  </div>
+</body>
+<script src="/js/fuse.min.js"></script>
+<script src="/js/fastsearch.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+</html>

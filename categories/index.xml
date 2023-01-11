@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Norwegian Wood</title>
+    <link>/categories/</link>
+    <description>Recent content in Categories on Norwegian Wood</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Jzh</copyright>
+    <lastBuildDate>Fri, 06 Jan 2023 17:22:27 +0800</lastBuildDate><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Life</title>
+      <link>/categories/life/</link>
+      <pubDate>Fri, 06 Jan 2023 17:22:27 +0800</pubDate>
+      
+      <guid>/categories/life/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Language</title>
+      <link>/categories/language/</link>
+      <pubDate>Wed, 04 Jan 2023 22:55:27 +0800</pubDate>
+      
+      <guid>/categories/language/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Web</title>
+      <link>/categories/web/</link>
+      <pubDate>Thu, 08 Dec 2022 16:35:54 +0800</pubDate>
+      
+      <guid>/categories/web/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tool</title>
+      <link>/categories/tool/</link>
+      <pubDate>Tue, 06 Dec 2022 11:42:39 +0800</pubDate>
+      
+      <guid>/categories/tool/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bug</title>
+      <link>/categories/bug/</link>
+      <pubDate>Fri, 04 Nov 2022 22:53:34 +0800</pubDate>
+      
+      <guid>/categories/bug/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>OS</title>
+      <link>/categories/os/</link>
+      <pubDate>Wed, 19 Oct 2022 22:44:10 +0800</pubDate>
+      
+      <guid>/categories/os/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Book</title>
+      <link>/categories/book/</link>
+      <pubDate>Tue, 06 Sep 2022 17:16:05 +0800</pubDate>
+      
+      <guid>/categories/book/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Algorithm</title>
+      <link>/categories/algorithm/</link>
+      <pubDate>Thu, 21 Jul 2022 20:44:54 +0800</pubDate>
+      
+      <guid>/categories/algorithm/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

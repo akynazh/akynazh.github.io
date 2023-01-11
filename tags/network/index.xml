@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>network on Norwegian Wood</title>
+    <link>/tags/network/</link>
+    <description>Recent content in network on Norwegian Wood</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Jzh</copyright>
+    <lastBuildDate>Sun, 03 Jan 2021 00:27:58 +0800</lastBuildDate><atom:link href="/tags/network/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux实用操作之网络管理</title>
+      <link>/posts/2021/01/network-management-of-linux-practical-operation/</link>
+      <pubDate>Sun, 03 Jan 2021 00:27:58 +0800</pubDate>
+      
+      <guid>/posts/2021/01/network-management-of-linux-practical-operation/</guid>
+      <description>查看内网IP grep抓取inet行，sed删除inet字串和netmask.*字串
+1 alias myip=&amp;#34; ifconfig eth0 | grep &amp;#39;inet &amp;#39; | sed &amp;#39;s/inet//g&amp;#39; | sed &amp;#39;s/netmask.*$//g&amp;#39;&amp;#34; test:
+1 2 [root@VM-0-11-centos ~]# myip 172.17.0.11 查看外网IP 1 curl cip.cc show:
+IP : ${my_ip} 地址 : 中国 中国
+数据二 : 上海市 | 腾讯云
+数据三 : 中国北京北京 | 腾讯
+URL : http://www.cip.cc/${my_ip}
+查看IP端口状况 1 2 3 4 5 6 [root@VM-0-11-centos ~]# netstat -ntlp Active Internet connections (only servers) Proto Recv-Q Send-Q Local Address Foreign Address State PID/Program name tcp 0 0 0.</description>
+    </item>
+    
+  </channel>
+</rss>

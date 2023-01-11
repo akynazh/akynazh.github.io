@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>music on Norwegian Wood</title>
+    <link>/tags/music/</link>
+    <description>Recent content in music on Norwegian Wood</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Jzh</copyright>
+    <lastBuildDate>Fri, 06 Jan 2023 17:22:27 +0800</lastBuildDate><atom:link href="/tags/music/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>基本乐理知识记录</title>
+      <link>/posts/2023/01/record-of-basic-music-theory-knowledge/</link>
+      <pubDate>Fri, 06 Jan 2023 17:22:27 +0800</pubDate>
+      
+      <guid>/posts/2023/01/record-of-basic-music-theory-knowledge/</guid>
+      <description>八度 我们可以用唱名Do[1] Re[2] Mi[3] Fa[4] Sol[5] La[6] Ti[7] Do[8]唱出歌曲的旋律，“[]”中的数字就是 音级（Degree ）。
+我们以Do[1]到Do[1]为一度，Do[1]到Re[2]为二度，以此类推。于是从Do[1]到上面Do[8]之间音高上的距离(音程，Interval)就叫做 八度（Octave），因此说Do[8]比Do[1]高了一个八度。
+音名和唱名 音名：用C，D，E，F，G，A，B来标记基本音级的，叫做音名，它们表示一定的音高。
+唱名：与C，D，E，F，G，A，B对应的唱名用do、re、mi、fa、so、la、si来作为 音级 名称。
+在吉他中，从六弦到一弦，音名依次为E，B，G，D，A，E。
+半音与十二平均律 在乐音体系中，音高关系最小的计量单位叫 半音（Semitone），两个半音就是一个全音。
+在C，D，E，F，G，A，B，C中，EF和BC 之间相差一个半音，其它相邻音相差一个全音。
+在吉他中，相邻两个品格之间相差半音。
+十二平均律（Equal temperament），或平均律, 是将八度的二倍音程等比例地划分为十二份的定律方式。它让每一个临近的音在音程上都是同样的倍数关系。这每一个音和主音Do[1]组成的音程的倍数关系分别是 $2^{n/12}$，n=0到12。
+当 n=12，倍数正好是 二倍 即纯八度，它对应的音名和当 n=0 时纯一度上的音是一样的。所以去掉12，从0数到11正好产生十二个不一样的音名。
+对于C大调，如果是以国际标准音 A-la-440HZ 为准，通过十二平均律可以计算出各个音的频率（单位：HZ）为：
+C C#/Db D D#/Eb E F F#/Gb G G#/Ab A A#/Bb B 261.6 277.2 293.7 311.1 329.6 349.2 370.0 392.0 415.3 440.0 466.2 493.9 可以看出，根据十二平均律分出了12个音，每个音之间相差的频率大小就是一个半音的大小。
+音组 不同八度的音名如果都长一样会造成误解，因此有必要用不同的标记以示区分。
+音高的标记国际上通用两套体系：科学音高记号法 与 亥姆霍兹音高记号法。
+科学音高记号法 我们把从C开始的一个八度设定为一个音组，音组中的音名用大写英文字母CDEFGAB和升降符号标记。每个音组都把C作为音组的第一个音，B作为音组的最后一个音。</description>
+    </item>
+    
+    <item>
+      <title>《挪威的森林》中的披头士</title>
+      <link>/posts/2022/05/the-beatles-in-norwegian-forest/</link>
+      <pubDate>Sat, 14 May 2022 11:47:43 +0800</pubDate>
+      
+      <guid>/posts/2022/05/the-beatles-in-norwegian-forest/</guid>
+      <description>“飞机一着陆，禁烟显示牌倏然消失，天花板扩音器中低声流出背景音乐，那是一个管弦乐队自鸣得意地演奏的甲壳虫乐队的《挪威的森林》。那旋律一如往日地使我难以自已，不，比往日还要强烈地摇撼着我的身心。
+《挪威的森林》—— Norwegian Wood “她一边这样说着，一边弹起《米歇尔》，弹得极其精彩。“好曲子，我，无比喜欢！”说完，玲子喝了一口葡萄酒，吸了口烟，“简直就像霏霏细雨轻轻洒在无边无际的草原。”
+《米歇尔》—— Michelle “接着，她弹了《没有归宿的人》，弹了《朱丽娅》。有时边弹边闭上眼摇着头，然后又呷口酒吸口烟。
+《没有归宿的人》—— Nowhere Man 《朱丽娅》—— Julia “店里的女孩说，如果肯弹甲壳虫乐队的《太阳从这里升起》，冷藏牛奶可算店里请客。玲子伸出拇指，做出OK的表示，随即边哼歌词边弹《太阳从这里升起》。音量并不大，而且大概由于过度吸烟的关系，嗓音有些沙哑，但很有厚度，娓娓动人。我喝着啤酒，望着远山，耳听她的歌声，恍惚觉得太阳会再次从那里探出脸来，那心境实在太温馨、太平和了。
+《太阳从这里升起》—— Here Comes The Sun ““我也喜爱，非常委婉感人。”她又轻轻弹了几小节《宝贝儿》的旋律，呷了口葡萄酒。“喝醉之前能弹上几首呢。嗯，这样的葬礼不凄凉，还可以吧？”玲子转向甲壳虫。弹了《挪威的森林》，弹了《昨日》，弹了《米歇尔》，弹了《有一件事》，边唱边弹了《太阳从这里升起》，弹了《山峰上的傻子》。我排出了七根火柴。
+《昨日》—— Yesterday 《有一件事》—— Something 《山峰上的傻子》—— The Fool On The Hill ““七首，”玲子说着，呷口酒，吸口烟。“这几个人对人生的伤感和温情确实深有体会啊。”这几个人当然是Ｊ．列农、Ｐ．麦卡特尼，加上Ｇ．哈里森。她换了口气，熄掉烟，又抱起吉他。弹了《细雨》，弹了《黑鸟》，弹了《朱莉娅》，弹了《年届六十四》，弹了《没有归宿的人》，弹了《而且我爱她》，弹了《喂，乔德》。
+《细雨》—— Penny Lane 《黑鸟》—— Black Bird 《年届六十四》—— When I&amp;rsquo;m Sixty Four 《而且我爱她》—— And I Love Her 《喂，乔德》—— Hey, Jude “我放上唱片，第一张听完便把唱针移到第二张。全部听完之后，又从头听起。唱片只有六张。第一张是《佩珀军士寂寞的心俱乐部乐队》，最后是比尔·埃文斯的《献给黛比的华尔兹》。窗外雨下个不停，时间缓缓流逝，直子一个人絮絮不止。
+《佩珀军士寂寞的心俱乐部乐队》—— Sgt. Pepper&amp;rsquo;s Lonely Hearts Club Band </description>
+    </item>
+    
+  </channel>
+</rss>

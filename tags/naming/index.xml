@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>naming on Norwegian Wood</title>
+    <link>/tags/naming/</link>
+    <description>Recent content in naming on Norwegian Wood</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Jzh</copyright>
+    <lastBuildDate>Thu, 08 Dec 2022 15:40:09 +0800</lastBuildDate><atom:link href="/tags/naming/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>开发中遇到的命名规范问题</title>
+      <link>/posts/2022/12/naming-standard-problems-encountered-in-development/</link>
+      <pubDate>Thu, 08 Dec 2022 15:40:09 +0800</pubDate>
+      
+      <guid>/posts/2022/12/naming-standard-problems-encountered-in-development/</guid>
+      <description>后端中与数据库交互时 数据库一般采用下划线命名，而对于 java 而言，实体类的命名应当是驼峰式的命名，所以在与数据库交互时需要注意进行转换。
+对于采用了 Mybatis-plus 框架的应用，无需考虑此问题，因为它已经帮我们做好转换了，对应的配置如下：
+1 2 3 mybatis-plus: configuration: map-underscore-to-camel-case: true 如果你数据库命名已经采用了驼峰式命名，需要将该配置置为 false。（默认为 true）
+对于没采用该框架的应用，需要注意在编写的 sql 语句中进行转换。
+关于后端返回的 json 数据 首先注意，json 采用驼峰命名法。
+一般对于前后端分离的项目，后端都是返回 json 格式数据，比如使用 @RestController 进行自动的转换。
+对于一个采用驼峰命名法命名的变量，比如 userId，转换后返回前端的 json 属性名是 userId，没有问题。
+但是当变量名为 uId时，转换后则变为 uid，这就产生了问题。我还测试了其它一些变量，如下：
+1 2 3 4 5 6 7 8 # userId {&amp;#34;code&amp;#34;:200,&amp;#34;msg&amp;#34;:&amp;#34;ok&amp;#34;,&amp;#34;obj&amp;#34;:{&amp;#34;userId&amp;#34;:&amp;#34;hello&amp;#34;}} # uId {&amp;#34;code&amp;#34;:200,&amp;#34;msg&amp;#34;:&amp;#34;ok&amp;#34;,&amp;#34;obj&amp;#34;:{&amp;#34;uid&amp;#34;:&amp;#34;hello&amp;#34;}} # Id {&amp;#34;code&amp;#34;:200,&amp;#34;msg&amp;#34;:&amp;#34;ok&amp;#34;,&amp;#34;obj&amp;#34;:{&amp;#34;id&amp;#34;:&amp;#34;hello&amp;#34;}} # uuId {&amp;#34;code&amp;#34;:200,&amp;#34;msg&amp;#34;:&amp;#34;ok&amp;#34;,&amp;#34;obj&amp;#34;:{&amp;#34;uuId&amp;#34;:&amp;#34;hello&amp;#34;}} 可见当为 uId 和 Id 时，都会出现问题。
+一般可以考虑在后端变量命名时，不让第二个字符大写，或者采用 @JsonProperty(&amp;quot;uId&amp;quot;) 进行解决。
+关于前端的命名问题 css 采用串式命名法（kebab-case）。
+在串式命名法中，各个单词之间通过下划线“-”连接，比如：</description>
+    </item>
+    
+  </channel>
+</rss>
