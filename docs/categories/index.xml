@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Jzh</copyright>
-    <lastBuildDate>Fri, 06 Jan 2023 17:22:27 +0800</lastBuildDate><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 13 Jan 2023 21:43:06 +0800</lastBuildDate><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tool</title>
+      <link>/categories/tool/</link>
+      <pubDate>Fri, 13 Jan 2023 21:43:06 +0800</pubDate>
+      
+      <guid>/categories/tool/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Life</title>
       <link>/categories/life/</link>
@@ -32,15 +41,6 @@
       <pubDate>Thu, 08 Dec 2022 16:35:54 +0800</pubDate>
       
       <guid>/categories/web/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Tool</title>
-      <link>/categories/tool/</link>
-      <pubDate>Tue, 06 Dec 2022 11:42:39 +0800</pubDate>
-      
-      <guid>/categories/tool/</guid>
       <description></description>
     </item>
     

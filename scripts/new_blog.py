@@ -22,9 +22,9 @@ slug = util_slug.get_slug(title)
 
 # 新建文章文件，写入必要内容
 file_parent_dir = f'{PATH_DRAFT}/{slug}'
-file_path = 'f{file_parent_dir}/index.md'
+file_path = f'{file_parent_dir}/index.md'
 os.makedirs(file_parent_dir)
-with open(file_path, 'w', encoding='utf8') as f:
+with open(file_path, 'w') as f:
     f.write('---\n')
     f.write(f'title: {title}\n')
     f.write(f'date: {strftime("%Y-%m-%dT%H:%M:%S+08:00", localtime())}\n')

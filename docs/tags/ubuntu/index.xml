@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ubuntu on Norwegian Wood</title>
+    <link>/tags/ubuntu/</link>
+    <description>Recent content in ubuntu on Norwegian Wood</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Jzh</copyright>
+    <lastBuildDate>Fri, 13 Jan 2023 21:09:27 +0800</lastBuildDate><atom:link href="/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ubuntu桌面使用记录</title>
+      <link>/posts/2023/01/ubuntu-desktop-usage-record/</link>
+      <pubDate>Fri, 13 Jan 2023 21:09:27 +0800</pubDate>
+      
+      <guid>/posts/2023/01/ubuntu-desktop-usage-record/</guid>
+      <description>共享文件夹 C:/Users/akyna/Codes &amp;lt;&amp;mdash;&amp;mdash;&amp;gt; /home/jzh/Codes
+虚拟机面板 -&amp;gt; 共享文件夹 -&amp;gt; 选择位置，勾选固定分配和自动挂载
+-&amp;gt; 执行命令将 jzh 加入共享组，然后重启：
+1 2 usermod -a -G vboxsf jzh reboot 共享宿主机代理 宿主机 clash 勾选 ALLOW_LAN 宿主机防火墙开放 7890 号端口 进入 Ubuntu Desktop settings，根据主机局域网ip进行配置 命令行也无需配置 http_proxy 等变量，自动配好了！
+解决自动生成文件夹的问题 vim ~/.config/user-dirs.dirs
+1 2 3 4 5 6 # 将类似如下行删除 XDG_PUBLICSHARE_DIR=&amp;#34;$HOME/Public&amp;#34; XDG_DOCUMENTS_DIR=&amp;#34;$HOME/Documents&amp;#34; XDG_MUSIC_DIR=&amp;#34;$HOME/Music&amp;#34; XDG_PICTURES_DIR=&amp;#34;$HOME/Pictures&amp;#34; XDG_VIDEOS_DIR=&amp;#34;$HOME/Videos&amp;#34; sudo vim /etc/xdg/user-dirs.conf
+1 enabled=False 然后重启即可。
+解决点击无响应的Bug 1 2 sudo apt-get update sudo apt-get install --reinstall gnome-control-center 屏幕分辨率 设备 -&amp;gt; 安装增强功能</description>
+    </item>
+    
+  </channel>
+</rss>

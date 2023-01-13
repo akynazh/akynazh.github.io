@@ -3,21 +3,57 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>/categories/</loc>
-    <lastmod>2023-01-06T17:22:27+08:00</lastmod>
+    <lastmod>2023-01-13T21:43:06+08:00</lastmod>
+  </url><url>
+    <loc>/posts/2023/01/clash-linux-configuration-usage-record/</loc>
+    <lastmod>2023-01-13T21:43:06+08:00</lastmod>
+  </url><url>
+    <loc>/</loc>
+    <lastmod>2023-01-13T21:43:06+08:00</lastmod>
+  </url><url>
+    <loc>/posts/</loc>
+    <lastmod>2023-01-13T21:43:06+08:00</lastmod>
+  </url><url>
+    <loc>/tags/proxy/</loc>
+    <lastmod>2023-01-13T21:43:06+08:00</lastmod>
+  </url><url>
+    <loc>/tags/</loc>
+    <lastmod>2023-01-13T21:43:06+08:00</lastmod>
+  </url><url>
+    <loc>/categories/tool/</loc>
+    <lastmod>2023-01-13T21:43:06+08:00</lastmod>
+  </url><url>
+    <loc>/tags/docker/</loc>
+    <lastmod>2023-01-13T21:28:37+08:00</lastmod>
+  </url><url>
+    <loc>/posts/2023/01/docker-software-installation-record/</loc>
+    <lastmod>2023-01-13T21:28:37+08:00</lastmod>
+  </url><url>
+    <loc>/tags/linux/</loc>
+    <lastmod>2023-01-13T21:21:50+08:00</lastmod>
+  </url><url>
+    <loc>/posts/2023/01/linux-display-content-configuration-record/</loc>
+    <lastmod>2023-01-13T21:21:50+08:00</lastmod>
+  </url><url>
+    <loc>/tags/network/</loc>
+    <lastmod>2023-01-13T21:20:01+08:00</lastmod>
+  </url><url>
+    <loc>/posts/2023/01/configure-the-network-to-realize-the-interworking-between-host-and-virtual-machine-system/</loc>
+    <lastmod>2023-01-13T21:20:01+08:00</lastmod>
+  </url><url>
+    <loc>/tags/software/</loc>
+    <lastmod>2023-01-13T21:09:27+08:00</lastmod>
+  </url><url>
+    <loc>/tags/ubuntu/</loc>
+    <lastmod>2023-01-13T21:09:27+08:00</lastmod>
+  </url><url>
+    <loc>/posts/2023/01/ubuntu-desktop-usage-record/</loc>
+    <lastmod>2023-01-13T21:09:27+08:00</lastmod>
   </url><url>
     <loc>/categories/life/</loc>
     <lastmod>2023-01-06T17:22:27+08:00</lastmod>
   </url><url>
     <loc>/tags/music/</loc>
-    <lastmod>2023-01-06T17:22:27+08:00</lastmod>
-  </url><url>
-    <loc>/</loc>
-    <lastmod>2023-01-06T17:22:27+08:00</lastmod>
-  </url><url>
-    <loc>/posts/</loc>
-    <lastmod>2023-01-06T17:22:27+08:00</lastmod>
-  </url><url>
-    <loc>/tags/</loc>
     <lastmod>2023-01-06T17:22:27+08:00</lastmod>
   </url><url>
     <loc>/posts/2023/01/record-of-basic-music-theory-knowledge/</loc>
@@ -59,8 +95,8 @@
     <loc>/posts/2022/12/git-version-and-submission-management/</loc>
     <lastmod>2022-12-06T11:42:39+08:00</lastmod>
   </url><url>
-    <loc>/categories/tool/</loc>
-    <lastmod>2022-12-06T11:42:39+08:00</lastmod>
+    <loc>/posts/2022/11/linux-software-installation-and-configuration-records/</loc>
+    <lastmod>2022-11-13T21:15:53+08:00</lastmod>
   </url><url>
     <loc>/tags/bug/</loc>
     <lastmod>2022-11-04T22:53:34+08:00</lastmod>
@@ -71,9 +107,6 @@
     <loc>/posts/2022/11/record-of-bugs-encountered-in-python-development/</loc>
     <lastmod>2022-11-04T22:53:34+08:00</lastmod>
   </url><url>
-    <loc>/tags/linux/</loc>
-    <lastmod>2022-10-19T22:44:10+08:00</lastmod>
-  </url><url>
     <loc>/categories/os/</loc>
     <lastmod>2022-10-19T22:44:10+08:00</lastmod>
   </url><url>
@@ -82,6 +115,9 @@
   </url><url>
     <loc>/posts/2022/10/linux-files-section-summary/</loc>
     <lastmod>2022-10-19T22:43:03+08:00</lastmod>
+  </url><url>
+    <loc>/posts/2022/10/git-configuration-record/</loc>
+    <lastmod>2022-10-13T21:40:46+08:00</lastmod>
   </url><url>
     <loc>/posts/2022/10/8086-assembly-learning-record/</loc>
     <lastmod>2022-10-04T23:18:24+08:00</lastmod>
@@ -193,9 +229,6 @@
   </url><url>
     <loc>/posts/2022/08/sentinel-usage-record/</loc>
     <lastmod>2022-08-08T17:46:49+08:00</lastmod>
-  </url><url>
-    <loc>/tags/docker/</loc>
-    <lastmod>2022-08-07T16:02:27+08:00</lastmod>
   </url><url>
     <loc>/posts/2022/08/docker-compose-quickly-configures-nacos-cluster-environment/</loc>
     <lastmod>2022-08-07T16:02:27+08:00</lastmod>
@@ -386,6 +419,9 @@
     <loc>/posts/2022/02/the-beauty-of-simplicity/</loc>
     <lastmod>2022-02-06T21:42:50+08:00</lastmod>
   </url><url>
+    <loc>/posts/2022/01/idea-configuration-usage-record/</loc>
+    <lastmod>2022-01-13T21:46:42+08:00</lastmod>
+  </url><url>
     <loc>/posts/2022/01/record-of-bugs-encountered-in-java-development/</loc>
     <lastmod>2022-01-06T17:23:00+08:00</lastmod>
   </url><url>
@@ -461,10 +497,13 @@
     <loc>/posts/2021/04/spring-abstracts-i/</loc>
     <lastmod>2021-04-11T11:51:03+08:00</lastmod>
   </url><url>
-    <loc>/posts/2021/01/network-management-of-linux-practical-operation/</loc>
-    <lastmod>2021-01-03T00:27:58+08:00</lastmod>
+    <loc>/tags/ssh/</loc>
+    <lastmod>2021-01-13T21:53:43+08:00</lastmod>
   </url><url>
-    <loc>/tags/network/</loc>
+    <loc>/posts/2021/01/realize-ssh-ipfree-and-secret-free-login/</loc>
+    <lastmod>2021-01-13T21:53:43+08:00</lastmod>
+  </url><url>
+    <loc>/posts/2021/01/network-management-of-linux-practical-operation/</loc>
     <lastmod>2021-01-03T00:27:58+08:00</lastmod>
   </url><url>
     <loc>/posts/2020/12/summary-of-coloring-problems-of-graphs/</loc>
