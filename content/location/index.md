@@ -1,4 +1,0 @@
----
-title: Location
-type: location
----
