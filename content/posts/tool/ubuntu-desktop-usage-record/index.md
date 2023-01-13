@@ -1,6 +1,6 @@
 ---
 title: Ubuntu桌面使用记录
-date: 2023-01-13T21:09:27+08:00
+date: 2023-11-13T21:09:27+08:00
 categories: [Tool]
 tags: [ubuntu, software]
 slug: ubuntu-desktop-usage-record

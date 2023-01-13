@@ -23,33 +23,6 @@
     <loc>/categories/tool/</loc>
     <lastmod>2023-01-13T21:43:06+08:00</lastmod>
   </url><url>
-    <loc>/tags/docker/</loc>
-    <lastmod>2023-01-13T21:28:37+08:00</lastmod>
-  </url><url>
-    <loc>/posts/2023/01/docker-software-installation-record/</loc>
-    <lastmod>2023-01-13T21:28:37+08:00</lastmod>
-  </url><url>
-    <loc>/tags/linux/</loc>
-    <lastmod>2023-01-13T21:21:50+08:00</lastmod>
-  </url><url>
-    <loc>/posts/2023/01/linux-display-content-configuration-record/</loc>
-    <lastmod>2023-01-13T21:21:50+08:00</lastmod>
-  </url><url>
-    <loc>/tags/network/</loc>
-    <lastmod>2023-01-13T21:20:01+08:00</lastmod>
-  </url><url>
-    <loc>/posts/2023/01/configure-the-network-to-realize-the-interworking-between-host-and-virtual-machine-system/</loc>
-    <lastmod>2023-01-13T21:20:01+08:00</lastmod>
-  </url><url>
-    <loc>/tags/software/</loc>
-    <lastmod>2023-01-13T21:09:27+08:00</lastmod>
-  </url><url>
-    <loc>/tags/ubuntu/</loc>
-    <lastmod>2023-01-13T21:09:27+08:00</lastmod>
-  </url><url>
-    <loc>/posts/2023/01/ubuntu-desktop-usage-record/</loc>
-    <lastmod>2023-01-13T21:09:27+08:00</lastmod>
-  </url><url>
     <loc>/categories/life/</loc>
     <lastmod>2023-01-06T17:22:27+08:00</lastmod>
   </url><url>
@@ -95,7 +68,13 @@
     <loc>/posts/2022/12/git-version-and-submission-management/</loc>
     <lastmod>2022-12-06T11:42:39+08:00</lastmod>
   </url><url>
+    <loc>/tags/linux/</loc>
+    <lastmod>2022-11-13T21:15:53+08:00</lastmod>
+  </url><url>
     <loc>/posts/2022/11/linux-software-installation-and-configuration-records/</loc>
+    <lastmod>2022-11-13T21:15:53+08:00</lastmod>
+  </url><url>
+    <loc>/tags/software/</loc>
     <lastmod>2022-11-13T21:15:53+08:00</lastmod>
   </url><url>
     <loc>/tags/bug/</loc>
@@ -118,6 +97,12 @@
   </url><url>
     <loc>/posts/2022/10/git-configuration-record/</loc>
     <lastmod>2022-10-13T21:40:46+08:00</lastmod>
+  </url><url>
+    <loc>/tags/docker/</loc>
+    <lastmod>2022-10-13T21:28:37+08:00</lastmod>
+  </url><url>
+    <loc>/posts/2022/10/docker-software-installation-record/</loc>
+    <lastmod>2022-10-13T21:28:37+08:00</lastmod>
   </url><url>
     <loc>/posts/2022/10/8086-assembly-learning-record/</loc>
     <lastmod>2022-10-04T23:18:24+08:00</lastmod>
@@ -311,6 +296,9 @@
     <loc>/posts/2022/07/eureka-configuration-process-and-understanding/</loc>
     <lastmod>2022-07-17T11:39:35+08:00</lastmod>
   </url><url>
+    <loc>/posts/2022/07/linux-display-content-configuration-record/</loc>
+    <lastmod>2022-07-13T21:21:50+08:00</lastmod>
+  </url><url>
     <loc>/posts/2022/07/snow-country-abstract/</loc>
     <lastmod>2022-07-12T23:11:48+08:00</lastmod>
   </url><url>
@@ -409,6 +397,12 @@
   </url><url>
     <loc>/posts/2022/03/mountain-tour-1/</loc>
     <lastmod>2022-03-21T18:02:04+08:00</lastmod>
+  </url><url>
+    <loc>/tags/network/</loc>
+    <lastmod>2022-02-13T21:20:01+08:00</lastmod>
+  </url><url>
+    <loc>/posts/2022/02/configure-the-network-to-realize-the-interworking-between-host-and-virtual-machine-system/</loc>
+    <lastmod>2022-02-13T21:20:01+08:00</lastmod>
   </url><url>
     <loc>/posts/2022/02/implementation-method-of-interactive-data-display-without-separation-of-front-and-back-ends/</loc>
     <lastmod>2022-02-11T00:05:25+08:00</lastmod>

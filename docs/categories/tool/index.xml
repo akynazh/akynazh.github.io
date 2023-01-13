@@ -22,59 +22,6 @@
     </item>
     
     <item>
-      <title>Docker软件安装记录</title>
-      <link>/posts/2023/01/docker-software-installation-record/</link>
-      <pubDate>Fri, 13 Jan 2023 21:28:37 +0800</pubDate>
-      
-      <guid>/posts/2023/01/docker-software-installation-record/</guid>
-      <description>Docker 1 2 curl -fsSL https://get.docker.com | bash -s docker # curl -sSL https://get.daocloud.io/docker | sh Mirror 1 2 3 4 5 6 7 8 9 10 11 12 13 vim /etc/docker/daemon.json { &amp;#34;registry-mirrors&amp;#34;: [ &amp;#34;https://docker.mirrors.ustc.edu.cn&amp;#34;, &amp;#34;http://hub-mirror.c.163.com&amp;#34;, &amp;#34;https://registry.docker-cn.com&amp;#34; ] } ---------------------------------------------- systemctl restart docker Docker-compose 1 2 3 4 5 6 curl -L &amp;#34;https://github.com/docker/compose/releases/download/v2.2.2/docker-compose-$(uname -s)-$(uname -m)&amp;#34; -o /usr/local/bin/docker-compose # curl -L https://get.daocloud.io/docker/compose/releases/download/v2.4.1/docker-compose-`uname -s`-`uname -m` &amp;gt; /usr/local/bin/docker-compose chmod +x /usr/local/bin/docker-compose ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose # ln -s /usr/local/bin/docker-compose /usr/bin/dockerc 运行权限问题 1 2 sudo usermod -aG docker $USER sudo reboot MySQL 1 2 3 4 5 6 7 8 9 10 11 12 13 docker pull mysql:5.</description>
-    </item>
-    
-    <item>
-      <title>Linux展示性内容配置记录</title>
-      <link>/posts/2023/01/linux-display-content-configuration-record/</link>
-      <pubDate>Fri, 13 Jan 2023 21:21:50 +0800</pubDate>
-      
-      <guid>/posts/2023/01/linux-display-content-configuration-record/</guid>
-      <description>Vim 1 2 3 4 5 vim /etc/vimrc set tabstop=4 # 修改vim中tab长度 set shiftwidth=4 # 修改vim自动缩进长度 set noeb vb t_vb= # 禁用vim蜂鸣声 1 2 3 vim /etc/inputrc set bell-style none # 禁用bash蜂鸣声 主机名称 1 2 3 hostnamectl hostnamectl set-hostname xxx 登录欢迎信息配置 1 vim /etc/update-motd.d 自行修改基本欢迎信息。
-1 2 3 vim /etc/ssh/sshd_config PrintLastLog no 不打印上次登录信息。
-命令提示符 1 2 3 vim ~/.bashrc export PS1=&amp;#34;[\u =&amp;gt; \w]\$ &amp;#34; 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 \a	铃声字符	\d	格式为“日 月 年”的日期 \e	ASCII 转义字符	\h	本地主机名 \H	完全合格的限定域主机名	\j	shell 当前管理的作业数 \1	shell 终端设备名的基本名称	\n	ASCII 换行字符 \r	ASCII 回车	\s	shell 的名称 \t	格式为“小时:分钟:秒”的24小时制的当前时间	\T	格式为“小时:分钟:秒”的12小时制的当前时间 \A	格式为“小时:分钟”的24小时制的当前时间	@	格式为 am/pm 的12小时制的当前时间 \s	shell的名字	\u	当前用户的用户名 \v	bash shell 的版本	\V	bash shell 的发布级别 \w	当前工作目录	\W	当前工作目录的基本名称 !</description>
-    </item>
-    
-    <item>
-      <title>配置网络以实现主机和虚拟机系统互通</title>
-      <link>/posts/2023/01/configure-the-network-to-realize-the-interworking-between-host-and-virtual-machine-system/</link>
-      <pubDate>Fri, 13 Jan 2023 21:20:01 +0800</pubDate>
-      
-      <guid>/posts/2023/01/configure-the-network-to-realize-the-interworking-between-host-and-virtual-machine-system/</guid>
-      <description>主机配置防火墙入站规则 主机如果没开启防火墙则可以跳过这一步。
-进入防火墙管理界面，新建入站规则放通目标虚拟机系统IP即可。
-选择桥接模式 默认好像是NAT模式，改为桥接模式，指定网卡为当前主机网络的网卡，我的是“Realtek PCIe.GBE Family Controller”。
-我的主机网络网关是192.168.1.1，子网掩码为255.255.255.0，IP为192.168.1.126，我想配置虚拟机网络IP为192.168.1.127 或者 192.168.1.128。
-Ubuntu配置静态IP 通过netplan的方法进行，编辑/etc/netplan/00-installer-config.yaml如下：
-1 2 3 4 5 6 7 8 9 10 network: ethernets: enp0s3: dhcp4: no optional: no nameservers: addresses: [114.114.114.114, 8.8.8.8] gateway4: 192.168.1.1 addresses: [192.168.1.128/24] version: 2 然后执行sudo netplan apply即可。
-CentOS配置静态IP 找到当前网络下网卡名，然后编辑/etc/sysconfig/network-scripts下的ifcfg-{网卡名}文件如下：
-1 2 3 4 5 6 7 BOOTPROTO=&amp;#34;static&amp;#34; # 静态IP IPADDR=192.168.1.127 # IP NETMASK=255.255.255.0 # 子网掩码 GATEWAY=192.168.1.1 # 网关 DNS1=114.114.114.114 DNS2=8.8.8.8 ONBOOT=yes 之后再重启网络服务即可：
-1 systemctl restart network From my blog: akynazh.</description>
-    </item>
-    
-    <item>
-      <title>Ubuntu桌面使用记录</title>
-      <link>/posts/2023/01/ubuntu-desktop-usage-record/</link>
-      <pubDate>Fri, 13 Jan 2023 21:09:27 +0800</pubDate>
-      
-      <guid>/posts/2023/01/ubuntu-desktop-usage-record/</guid>
-      <description>共享文件夹 C:/Users/akyna/Codes &amp;lt;&amp;mdash;&amp;mdash;&amp;gt; /home/jzh/Codes
-虚拟机面板 -&amp;gt; 共享文件夹 -&amp;gt; 选择位置，勾选固定分配和自动挂载
--&amp;gt; 执行命令将 jzh 加入共享组，然后重启：
-1 2 usermod -a -G vboxsf jzh reboot 共享宿主机代理 宿主机 clash 勾选 ALLOW_LAN 宿主机防火墙开放 7890 号端口 进入 Ubuntu Desktop settings，根据主机局域网ip进行配置 命令行也无需配置 http_proxy 等变量，自动配好了！
-解决自动生成文件夹的问题 vim ~/.config/user-dirs.dirs
-1 2 3 4 5 6 # 将类似如下行删除 XDG_PUBLICSHARE_DIR=&amp;#34;$HOME/Public&amp;#34; XDG_DOCUMENTS_DIR=&amp;#34;$HOME/Documents&amp;#34; XDG_MUSIC_DIR=&amp;#34;$HOME/Music&amp;#34; XDG_PICTURES_DIR=&amp;#34;$HOME/Pictures&amp;#34; XDG_VIDEOS_DIR=&amp;#34;$HOME/Videos&amp;#34; sudo vim /etc/xdg/user-dirs.conf
-1 enabled=False 然后重启即可。
-解决点击无响应的Bug 1 2 sudo apt-get update sudo apt-get install --reinstall gnome-control-center 屏幕分辨率 设备 -&amp;gt; 安装增强功能</description>
-    </item>
-    
-    <item>
       <title>Git版本与提交管理</title>
       <link>/posts/2022/12/git-version-and-submission-management/</link>
       <pubDate>Tue, 06 Dec 2022 11:42:39 +0800</pubDate>
@@ -108,6 +55,15 @@ HEAD^ = HEAD^1 第一个父级提交 HEAD^2~1 第二个父级提交的上一次�
       
       <guid>/posts/2022/10/git-configuration-record/</guid>
       <description>Git 初始化 1 2 git config --global user.name=&amp;#34;akynazh&amp;#34; git config --global user.email=&amp;#34;akynazh@qq.com&amp;#34; 配置 Http 代理 1 git config --global http.https://github.com.proxy socks5://127.0.0.1:7890 配置 SSH 代理 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 # ~/.ssh/config Host github.com User git Port 22 Hostname github.com IdentityFile ~/.ssh/id_rsa ProxyCommand connect -S 127.0.0.1:7890 -a none %h %p Host ssh.github.com User git Port 443 Hostname ssh.github.com IdentityFile ~/.ssh/id_rsa ProxyCommand connect -S 127.</description>
+    </item>
+    
+    <item>
+      <title>Docker软件安装记录</title>
+      <link>/posts/2022/10/docker-software-installation-record/</link>
+      <pubDate>Thu, 13 Oct 2022 21:28:37 +0800</pubDate>
+      
+      <guid>/posts/2022/10/docker-software-installation-record/</guid>
+      <description>Docker 1 2 curl -fsSL https://get.docker.com | bash -s docker # curl -sSL https://get.daocloud.io/docker | sh Mirror 1 2 3 4 5 6 7 8 9 10 11 12 13 vim /etc/docker/daemon.json { &amp;#34;registry-mirrors&amp;#34;: [ &amp;#34;https://docker.mirrors.ustc.edu.cn&amp;#34;, &amp;#34;http://hub-mirror.c.163.com&amp;#34;, &amp;#34;https://registry.docker-cn.com&amp;#34; ] } ---------------------------------------------- systemctl restart docker Docker-compose 1 2 3 4 5 6 curl -L &amp;#34;https://github.com/docker/compose/releases/download/v2.2.2/docker-compose-$(uname -s)-$(uname -m)&amp;#34; -o /usr/local/bin/docker-compose # curl -L https://get.daocloud.io/docker/compose/releases/download/v2.4.1/docker-compose-`uname -s`-`uname -m` &amp;gt; /usr/local/bin/docker-compose chmod +x /usr/local/bin/docker-compose ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose # ln -s /usr/local/bin/docker-compose /usr/bin/dockerc 运行权限问题 1 2 sudo usermod -aG docker $USER sudo reboot MySQL 1 2 3 4 5 6 7 8 9 10 11 12 13 docker pull mysql:5.</description>
     </item>
     
     <item>
@@ -183,6 +139,17 @@ Over.</description>
     </item>
     
     <item>
+      <title>Linux展示性内容配置记录</title>
+      <link>/posts/2022/07/linux-display-content-configuration-record/</link>
+      <pubDate>Wed, 13 Jul 2022 21:21:50 +0800</pubDate>
+      
+      <guid>/posts/2022/07/linux-display-content-configuration-record/</guid>
+      <description>Vim 1 2 3 4 5 vim /etc/vimrc set tabstop=4 # 修改vim中tab长度 set shiftwidth=4 # 修改vim自动缩进长度 set noeb vb t_vb= # 禁用vim蜂鸣声 1 2 3 vim /etc/inputrc set bell-style none # 禁用bash蜂鸣声 主机名称 1 2 3 hostnamectl hostnamectl set-hostname xxx 登录欢迎信息配置 1 vim /etc/update-motd.d 自行修改基本欢迎信息。
+1 2 3 vim /etc/ssh/sshd_config PrintLastLog no 不打印上次登录信息。
+命令提示符 1 2 3 vim ~/.bashrc export PS1=&amp;#34;[\u =&amp;gt; \w]\$ &amp;#34; 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 \a	铃声字符 \d	格式为“日 月 年”的日期 \e	ASCII 转义字符 \h	本地主机名 \H	完全合格的限定域主机名 \j	shell 当前管理的作业数 \1	shell 终端设备名的基本名称 \n	ASCII 换行字符 \r	ASCII 回车 \s	shell 的名称 \t	格式为“小时:分钟:秒”的24小时制的当前时间 \T	格式为“小时:分钟:秒”的12小时制的当前时间 \A	格式为“小时:分钟”的24小时制的当前时间 @	格式为 am/pm 的12小时制的当前时间 \s	shell的名字 \u	当前用户的用户名 \v	bash shell 的版本 \V	bash shell 的发布级别 \w	当前工作目录 \W	当前工作目录的基本名称 !</description>
+    </item>
+    
+    <item>
       <title>通过Wireshark分析TCP原理</title>
       <link>/posts/2022/06/analyze-tcp-principle-through-wireshark/</link>
       <pubDate>Thu, 09 Jun 2022 23:18:55 +0800</pubDate>
@@ -190,6 +157,22 @@ Over.</description>
       <guid>/posts/2022/06/analyze-tcp-principle-through-wireshark/</guid>
       <description>使用Wireshark作为抓包工具，通过ftp文件上传过程分析tcp原理，主要分析过程包括三次握手建立连接的过程，文件传输的过程，四次挥手断开连接的过程。
 设备信息 主机：安装了ftp的window11（ip:172.23.224.1） 虚拟机：安装了vsftpd的wsl2（ubuntu18）(ip:172.23.234.65) 操作与分析过程 打开Wireshark进行捕获 选择**vEthernet(WSL)**连接进行捕获。 使用过滤表达式ip.addr==172.23.234.65&amp;amp;&amp;amp;tcp进行捕获。 通过ftp上传文件 1 2 3 4 5 6 7 8 9 10 11 12 13 14 PS C:\Users\akyna&amp;gt; ftp 172.23.234.65 连接到 172.23.234.65。 220 (vsFTPd 3.0.3) 200 Always in UTF8 mode. 用户(172.23.234.65:(none)): akyna 331 Please specify the password. 密码: 230 Login successful. ftp&amp;gt; put a.txt 200 PORT command successful. Consider using PASV. 150 Ok to send data. 226 Transfer complete. ftp: 发送 42 字节，用时 0.</description>
+    </item>
+    
+    <item>
+      <title>配置网络以实现主机和虚拟机系统互通</title>
+      <link>/posts/2022/02/configure-the-network-to-realize-the-interworking-between-host-and-virtual-machine-system/</link>
+      <pubDate>Sun, 13 Feb 2022 21:20:01 +0800</pubDate>
+      
+      <guid>/posts/2022/02/configure-the-network-to-realize-the-interworking-between-host-and-virtual-machine-system/</guid>
+      <description>主机配置防火墙入站规则 主机如果没开启防火墙则可以跳过这一步。
+进入防火墙管理界面，新建入站规则放通目标虚拟机系统IP即可。
+选择桥接模式 默认好像是NAT模式，改为桥接模式，指定网卡为当前主机网络的网卡，我的是“Realtek PCIe.GBE Family Controller”。
+我的主机网络网关是 192.168.1.1，子网掩码为 255.255.255.0，IP为 192.168.1.126，我想配置虚拟机网络IP为 192.168.1.127 或者 192.168.1.128。
+Ubuntu配置静态IP 通过netplan的方法进行，编辑 /etc/netplan/00-installer-config.yaml如下：
+1 2 3 4 5 6 7 8 9 10 network: ethernets: enp0s3: dhcp4: no optional: no nameservers: addresses: [114.114.114.114, 8.8.8.8] gateway4: 192.168.1.1 addresses: [192.168.1.128/24] version: 2 然后执行 sudo netplan apply即可。
+CentOS配置静态IP 找到当前网络下网卡名，然后编辑/etc/sysconfig/network-scripts下的ifcfg-{网卡名}文件如下：
+1 2 3 4 5 6 7 BOOTPROTO=&amp;#34;static&amp;#34; # 静态IP IPADDR=192.168.1.127 # IP NETMASK=255.255.255.0 # 子网掩码 GATEWAY=192.168.1.1 # 网关 DNS1=114.</description>
     </item>
     
     <item>

@@ -7,13 +7,13 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Jzh</copyright>
-    <lastBuildDate>Fri, 13 Jan 2023 21:28:37 +0800</lastBuildDate><atom:link href="/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 13 Oct 2022 21:28:37 +0800</lastBuildDate><atom:link href="/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Docker软件安装记录</title>
-      <link>/posts/2023/01/docker-software-installation-record/</link>
-      <pubDate>Fri, 13 Jan 2023 21:28:37 +0800</pubDate>
+      <link>/posts/2022/10/docker-software-installation-record/</link>
+      <pubDate>Thu, 13 Oct 2022 21:28:37 +0800</pubDate>
       
-      <guid>/posts/2023/01/docker-software-installation-record/</guid>
+      <guid>/posts/2022/10/docker-software-installation-record/</guid>
       <description>Docker 1 2 curl -fsSL https://get.docker.com | bash -s docker # curl -sSL https://get.daocloud.io/docker | sh Mirror 1 2 3 4 5 6 7 8 9 10 11 12 13 vim /etc/docker/daemon.json { &amp;#34;registry-mirrors&amp;#34;: [ &amp;#34;https://docker.mirrors.ustc.edu.cn&amp;#34;, &amp;#34;http://hub-mirror.c.163.com&amp;#34;, &amp;#34;https://registry.docker-cn.com&amp;#34; ] } ---------------------------------------------- systemctl restart docker Docker-compose 1 2 3 4 5 6 curl -L &amp;#34;https://github.com/docker/compose/releases/download/v2.2.2/docker-compose-$(uname -s)-$(uname -m)&amp;#34; -o /usr/local/bin/docker-compose # curl -L https://get.daocloud.io/docker/compose/releases/download/v2.4.1/docker-compose-`uname -s`-`uname -m` &amp;gt; /usr/local/bin/docker-compose chmod +x /usr/local/bin/docker-compose ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose # ln -s /usr/local/bin/docker-compose /usr/bin/dockerc 运行权限问题 1 2 sudo usermod -aG docker $USER sudo reboot MySQL 1 2 3 4 5 6 7 8 9 10 11 12 13 docker pull mysql:5.</description>
     </item>
     

@@ -1,11 +1,10 @@
 ---
 title: Docker软件安装记录
-date: 2023-01-13T21:28:37+08:00
+date: 2022-10-13T21:28:37+08:00
 categories: [Tool]
 tags: [docker]
 slug: docker-software-installation-record
 ---
-
 ## Docker
 
 ```bash
