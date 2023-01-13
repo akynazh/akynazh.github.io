@@ -1,0 +1,49 @@
+<br>
+<h2>Geo_Api_Info</h2>
+<h3>未格式化数据：</h3>
+<code id="geo_info" style="white-space:nowrap; overflow-x: scroll">
+    获取定位中...
+</code>
+<h3>格式化数据：</h3>
+<code id="geo_info_read">
+    ...
+</code>
+<script type="text/javascript">
+    window._AMapSecurityConfig = {
+        securityJsCode:'17f9e897e62e3ce272b2e7c14c5d1726',
+    }
+</script>
+<script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.15&key=afd26a2a0a138ba7510c246214324ee0&plugin=AMap.Driving"></script>
+<script type="text/javascript">
+    function onSuccess(res) {
+        geo_info = document.getElementById("geo_info");
+        geo_info_read = document.getElementById("geo_info_read");
+        geo_info.innerText = JSON.stringify(res)
+        geo_info_read.innerText = JSON.stringify(res, null, '    ');
+    }
+    function onFailure() {
+        geo_info = document.getElementById("geo_info");
+        geo_info.innerText = "定位失败，请刷新重试";
+    }
+    function getLocation() {
+        mapObj = new AMap.Map('iCenter');
+        mapObj.plugin('AMap.Geolocation', function () {
+            geolocation = new AMap.Geolocation({
+                enableHighAccuracy: true,// 是否使用高精度定位，默认:true
+                timeout: 10000,          // 超过10秒后停止定位，默认：无穷大
+                maximumAge: 0,           // 定位结果缓存0毫秒，默认：0
+                convert: true,           // 自动偏移坐标，偏移后的坐标为高德坐标，默认：true
+                showButton: true,        // 显示定位按钮，默认：true
+                buttonPosition: 'LB',    // 定位按钮停靠位置，默认：'LB'，左下角
+                buttonOffset: new AMap.Pixel(10, 20),// 定位按钮与设置的停靠位置的偏移量，默认：Pixel(10, 20)
+                panToLocation: false,     // 定位成功后将定位到的位置作为地图中心点，默认：true
+                zoomToAccuracy: false      // 定位成功后调整地图视野范围使定位位置及精度范围视野内可见，默认：false
+            });
+            mapObj.addControl(geolocation);
+            geolocation.getCurrentPosition();
+            AMap.event.addListener(geolocation, 'complete', onSuccess);// 返回定位信息
+            AMap.event.addListener(geolocation, 'error', onFailure);      // 返回定位出错信息
+        });
+    }
+    getLocation();
+</script>

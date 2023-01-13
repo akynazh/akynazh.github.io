@@ -1,0 +1,251 @@
+// line overflow ...
+.ellipsis-line {
+  white-space:nowrap; 
+  overflow: hidden; 
+  text-overflow: ellipsis;
+}
+
+// about: 时间线
+.timeline {
+  ul, li {
+    list-style: none;
+    padding: 0;
+  }
+  .sessions {
+    border-radius: 12px;
+    position: relative;
+  }
+  li {
+    padding-bottom: 1.5rem;
+    // border-left: 1px solid $color-accent-1;
+    position: relative;
+    // padding-left: 20px;
+    // margin-left: 10px;
+    &:last-child {
+      border: 0px;
+      padding-bottom: 0;
+    }
+    &:before {
+      // content: "";
+      width: 15px;
+      height: 15px;
+      background: white;
+      border: 1px solid $color-accent-1;
+      box-shadow: 2px 2px 0px $color-accent-1;
+      border-radius: 50%;
+      position: absolute;
+      left: -7px;
+      top: 0px;
+    }
+  }
+  .time {
+    color: $color-meta;
+    font-family: "Poppins", sans-serif;
+    font-weight: lighter;
+    font-size: 14px;
+  }
+  p {
+    color: $color-text;
+    font-family: sans-serif;
+    line-height: 1.5;
+    margin-top: 0.4rem;
+  }
+}
+
+/* 用于雪花旋转 */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+img {
+  border-radius: 15px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  @media (max-width: 683px) {
+    height: auto;
+  }
+}
+
+/* 引用块 */
+#my-quote {
+  font-size: 1em;
+  margin: 0 auto;
+  padding: 15px 35px 10px 50px;
+  border-left: 8px solid $color-quote-border;
+  line-height: 1.8;
+  position: relative;
+  color: $color-quote-font;
+  background: $color-quote-bg;
+}
+#my-quote-s {
+  font-family: Arial;
+  color: $color-quote-border;
+  font-size: 4em;
+  position: absolute;
+  left: 10px;
+  top: -10px;
+}
+
+// 滚动条样式
+// 滚动条轨道
+::-webkit-scrollbar-track {
+  // -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+  background-color: $color-scrollbar-track;
+}
+// 整个滚动条
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+// 滚动条上的滚动滑块
+::-webkit-scrollbar-thumb {
+  // -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, .3);
+  background-color: $color-scrollbar-thumb;
+}
+
+/* 定义好段落间距 */
+p {
+  margin: 6px 0 6px 0;
+}
+
+// 首页分类字体颜色
+#category-name {
+  color: $color-link;
+}
+
+// $base-style
+
+h1,
+.h1 {
+  display: block;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  color: $color-accent-1;
+  letter-spacing: 0.01em;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 1.5em;
+
+  @include antialias();
+}
+
+h2,
+.h2 {
+  position: relative;
+  display: block;
+  margin-top: 0.2rem;
+  margin-bottom: 0.2rem;
+  color: $color-accent-2;
+  text-transform: none;
+  letter-spacing: normal;
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+h3,
+.h3 {
+  color: $color-accent-3;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+h4 h5 h6 {
+  display: inline;
+  text-decoration: none;
+  color: $color-accent-4;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+h3 h4 h5 h6 {
+  margin-top: 0.1rem;
+  margin-bottom: 0.1rem;
+}
+
+hr {
+  border: 0.5px dashed $color-accent-3;
+  opacity: 0.5;
+  margin: 0;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+strong {
+  font-weight: bold;
+}
+
+em cite {
+  font-style: italic;
+}
+
+sup sub {
+  position: relative;
+  vertical-align: baseline;
+  font-size: 0.75em;
+  line-height: 0;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.2em;
+}
+
+small {
+  font-size: 0.85em;
+}
+
+acronym abbr {
+  border-bottom: 1px dotted;
+}
+
+ul ol dl {
+  line-height: $line-height;
+}
+
+ul ul,
+ol ul,
+ul ol,
+ol ol {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+ol {
+  list-style: decimal;
+}
+
+dt {
+  font-weight: bold;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: $font-size - 2px;
+  overflow: auto;
+  display: block;
+}
+
+th {
+  padding: 8px;
+  border-bottom: 1px dashed $color-border;
+  color: $color-accent-2;
+  font-weight: bold;
+  font-size: $font-size - 1px;
+}
+
+td {
+  padding: 0 8px;
+  border-bottom: none;
+}

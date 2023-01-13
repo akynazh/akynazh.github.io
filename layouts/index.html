@@ -1,0 +1,47 @@
+{{ define "main" }}
+<!-- about -->
+<section id="about">
+  <!--Header-->
+  <p>{{ .Site.Params.desc }}</p>
+  <!--Social-->
+  <p style="font-weight: bold;">
+    Contact me via
+    <a class="icon" target="_blank" rel="noopener" href="mailto:akynazh@qq.com" aria-label="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a> 
+    or 
+    <a class="icon" target="_blank" rel="noopener" href="https://github.com/akynazh" aria-label="github"><i class='fab fa-github' aria-hidden="true"></i></a>
+    ,
+    subscribe via
+    <a class="icon" target="_blank" rel="noopener" href="/index.xml" aria-label="github"><i class='fa fa-rss' aria-hidden="true"></i></a>
+    .
+  </p>
+  Click <a class="icon" href="#" id="searchBtn"><i class="fa fa-search"></i></a> to search for what you need.
+</section>
+<!--Article-->
+<section id="writing">
+  {{ $dataFormat := .Site.Params.dateFormat | default "2006-01-02" }}
+  <!-- <h2><a href="{{ .Site.Params.mainSection | absURL }}">Posts</a></h2> -->
+  {{ $mainPosts := (sort ( where site.RegularPages "Type" "in" site.Params.mainSections ) "Date" "desc") }}
+  <ul class="post-list">
+    {{ .Scratch.Set "count" 5 }}
+    {{ if isset .Site.Params "postsonhomepage" }}
+    {{ .Scratch.Set "count" .Site.Params.postsOnHomePage }}
+    {{ end }}
+    {{ range (first (.Scratch.Get "count") $mainPosts) }}
+      <li class="post-item ellipsis-line">
+        <nobr><time class="meta" datetime="{{ time .Date }}" itemprop="datePublished">{{ .Date.Format $dataFormat }}</time>
+          ·······&nbsp&nbsp&nbsp<a href="{{ .Permalink }}">{{ if .Title }} {{- .Title -}} {{ else }} {{- print "Untitled" -}}{{ end }}</a>
+        </nobr>
+      </li>
+    {{ end }}
+    {{ range  $mainPosts }}
+      {{ if .Params.recommand }}
+      <li class="post-item ellipsis-line">
+        <nobr><time class="meta" datetime="{{ time .Date }}" itemprop="datePublished">{{ .Date.Format $dataFormat }}</time>
+          ·······&nbsp&nbsp&nbsp<a href="{{ .Permalink }}">{{ if .Title }} {{- .Title -}} {{ else }} {{- print "Untitled" -}}{{ end }}</a>
+        </nobr>
+      </li>
+      {{ end }}
+    {{ end }}
+  </ul>
+</section>
+{{ end }}

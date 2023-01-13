@@ -1,0 +1,81 @@
+{
+    "my": [
+        {
+            "name": "LonersHub",
+            "url": "https://github.com/akynazh/LonersHub",
+            "desc": "😙 Seek fun and share your emotion with others."
+        },
+        {
+            "name": "form-team-talent",
+            "url": "https://github.com/akynazh/form-team-talent",
+            "desc": "一个简洁的小程序，可以快速，方便，高效地进行课外活动，课题研究，大作业等的组队。"
+        },
+        {
+            "name": "haunted-house",
+            "url": "https://github.com/akynazh/haunted-house",
+            "desc": "A 3D game made by Unity."
+        },
+        {
+            "name": "ins-bat",
+            "url": "https://github.com/akynazh/ins-bat",
+            "desc": "⭐ Instagram: download new saved posts and record download history, with telegram bot support."
+        },
+        {
+            "name": "springboot-vue-shiro-demo",
+            "url": "https://github.com/akynazh/springboot-vue-shiro-demo",
+            "desc": "SpringBoot整合Vue和Shiro的一个Demo。"
+        },
+        {
+            "name": "diary",
+            "url": "https://github.com/akynazh/diary",
+            "desc": "📘 Record your life."
+        },
+        {
+            "name": "dxball",
+            "url": "https://github.com/akynazh/dxball",
+            "desc": "A simple game developed by java."
+        }
+    ],
+    "other": [
+        {
+            "name": "ZeroTierOne",
+            "url": "https://github.com/zerotier/ZeroTierOne",
+            "desc": "A Smart Ethernet Switch for Earth."
+        },
+        {
+            "name": "FFmpeg",
+            "url": "https://github.com/FFmpeg/FFmpeg",
+            "desc": "A complete, cross-platform solution to record, convert and stream audio and video."
+        },
+        {
+            "name": "hugo",
+            "url": "https://github.com/gohugoio/hugo",
+            "desc": "The world's fastest framework for building websites."
+        },        
+        {
+            "name": "python-telegram-bot",
+            "url": "https://github.com/python-telegram-bot/python-telegram-bot",
+            "desc": "We have made you a wrapper you can't refuse."
+        },
+        {
+            "name": "Auto.js",
+            "url": "https://github.com/hyb1996/Auto.js",
+            "desc": "A UiAutomator on android, does not need root access."
+        },
+        {
+            "name": "lux",
+            "url": "https://github.com/iawia002/lux",
+            "desc": "👾 Fast and simple video download library and CLI tool written in Go"
+        },
+        {
+            "name": "lossless-cut",
+            "url": "https://github.com/mifi/lossless-cut",
+            "desc": "The swiss army knife of lossless video/audio editing."
+        },
+        {
+            "name": "syncthing",
+            "url": "https://github.com/syncthing/syncthing",
+            "desc": "Open Source Continuous File Synchronization."
+        }
+    ]
+}

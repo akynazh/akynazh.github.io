@@ -26,7 +26,6 @@ service下的方法指定好关于生产者的服务限流，降级或熔断等�
 <meta property="article:published_time" content="2022-08-08T17:46:49+08:00" />
 <meta property="article:modified_time" content="2022-08-08T17:46:49+08:00" /><meta property="og:site_name" content="Norwegian Wood" />
 
-
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Sentinel使用记录"/>
 <meta name="twitter:description" content="Sentinel是什么 Sentinel 是面向分布式、多语言异构化服务架构的流量治理组件，主要以流量为切入点，从流量路由、流量控制、流量整形、熔断降级、系统自适应过载保护、热点流量防护等多个维度来帮助开发者保障微服务的稳定性。（来源于官方文档）
@@ -468,7 +467,7 @@ service下的方法指定好关于生产者的服务限流，降级或熔断等�
 </span></span><span style="display:flex;"><span>            blockHandlerClass <span style="color:#ff79c6">=</span> GlobalBlockHandler<span style="color:#ff79c6">.</span><span style="color:#50fa7b">class</span><span style="color:#ff79c6">,</span> blockHandler <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;block1&#34;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">)</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">public</span> String <span style="color:#50fa7b">paymentInfo</span><span style="color:#ff79c6">()</span>  <span style="color:#ff79c6">{</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#8be9fd">int</span> a <span style="color:#ff79c6">=</span> 1 <span style="color:#ff79c6">/</span> 0<span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#8be9fd">int</span> a <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">1</span> <span style="color:#ff79c6">/</span> <span style="color:#bd93f9">0</span><span style="color:#ff79c6">;</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">return</span> paymentService<span style="color:#ff79c6">.</span><span style="color:#50fa7b">paymentInfo</span><span style="color:#ff79c6">();</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">}</span>
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">}</span>

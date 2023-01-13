@@ -23,7 +23,6 @@
 <meta property="article:published_time" content="2022-07-26T10:59:08+08:00" />
 <meta property="article:modified_time" content="2022-07-26T10:59:08+08:00" /><meta property="og:site_name" content="Norwegian Wood" />
 
-
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Hystrix实现服务降级"/>
 <meta name="twitter:description" content="什么是服务降级 概念 一般指在服务器压力剧增的时候，根据实际业务使用情况以及流量，对一些服务和页面有策略的不处理或者用一种简单的方式进行处理，从而释放服务器资源的资源以保证核心业务的正常高效运行。
@@ -370,7 +369,7 @@
 </span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">...</span>
 </span></span><span style="display:flex;"><span>    @Override
 </span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">public</span> CommonResult<span style="color:#ff79c6">&lt;</span>Object<span style="color:#ff79c6">&gt;</span> <span style="color:#50fa7b">timeoutTest</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">{</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">new</span> CommonResult<span style="color:#ff79c6">&lt;&gt;(</span>500<span style="color:#ff79c6">,</span> <span style="color:#f1fa8c">&#34;error&#34;</span><span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">new</span> CommonResult<span style="color:#ff79c6">&lt;&gt;(</span><span style="color:#bd93f9">500</span><span style="color:#ff79c6">,</span> <span style="color:#f1fa8c">&#34;error&#34;</span><span style="color:#ff79c6">);</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">}</span>
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">}</span>
 </span></span></code></pre></td></tr></table>

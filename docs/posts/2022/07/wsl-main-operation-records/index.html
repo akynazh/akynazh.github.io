@@ -22,7 +22,6 @@ wsl一些常用命令 wsl ~ -u jzh: 以jzh用户登录并进入用户文件夹 w
 <meta property="article:published_time" content="2022-07-23T17:34:52+08:00" />
 <meta property="article:modified_time" content="2022-07-23T17:34:52+08:00" /><meta property="og:site_name" content="Norwegian Wood" />
 
-
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Wsl主要操作记录"/>
 <meta name="twitter:description" content="wsl在window开机后自启ssh服务 wsl下创建脚本，执行：vim /etc/init.wsl，并根据需要写入服务：
@@ -244,7 +243,7 @@ wsl一些常用命令 wsl ~ -u jzh: 以jzh用户登录并进入用户文件夹 w
 <pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>/etc/init.d/<span style="color:#f1fa8c">${</span><span style="color:#8be9fd;font-style:italic">需要的服务</span><span style="color:#f1fa8c">}</span> <span style="color:#6272a4"># 或者使用service/systemctl命令</span>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>/etc/init.d/<span style="color:#f1fa8c">${</span>需要的服务<span style="color:#f1fa8c">}</span> <span style="color:#6272a4"># 或者使用service/systemctl命令</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>再赋予init.wsl执行权限，执行：<code>chmod +x /etc/init.wsl</code></p>

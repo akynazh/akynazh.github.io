@@ -1,0 +1,72 @@
+# 语言代码
+languageCode: zh-cn
+# 页面title
+# title: 我的学习记录 # fuck review
+title: Norwegian Wood
+# 底部copyright
+copyright: Jzh
+# 基本参数
+params:
+  # 网站首页标题
+  title: Norwegian Wood
+  # 首页封面内容
+  desc: He's a really nowhere man, sitting in his nowhere land, making all his nowhere
+    plans for nobody.
+  # 网站配色
+  colortheme: dark
+  # 是否下雪
+  snow: 1
+  # 是否展现所有文章
+  showAllPostsArchive: true
+  # 评论系统
+  comments:
+    enabled: true
+    engine: utterances
+    utterances:
+      repo: akynazh/hugo-comment
+      label: akynazh
+      theme: github-dark
+  # 首页展示文章数量
+  postsOnHomePage: 5
+  # 文章展现的日期格式
+  dateFormat: 2006-01-02
+  # 展示文章阅读时间
+  show_updated: true
+  showReadTime: true
+# 配置页面导航顺序
+menus:
+  main:
+  - name: Home
+    url: /
+    weight: 1
+  - name: Archives
+    url: /posts
+    weight: 2
+  - name: Projects
+    url: /projects
+    weight: 3
+  - name: About
+    url: /about
+    weight: 4
+# 配置代码块风格
+markup:
+  tableOfContents:
+    endLevel: 4
+    ordered: false
+    startLevel: 2
+  highlight:
+    codeFences: true
+    guessSyntax: true
+    hl_Lines: ''
+    lineNoStart: 1
+    lineNos: true
+    lineNumbersInTable: true
+    noClasses: true
+    style: dracula       # 查看https://xyproto.github.io/splash/docs/all.html
+    tabWidth: 4
+# 永久链接格式
+permalinks:
+  posts: /posts/:year/:month/:slug/
+# 输出格式
+outputs:
+  home: [HTML, JSON, RSS]       # 分别生成index.html, index.json, index.xml

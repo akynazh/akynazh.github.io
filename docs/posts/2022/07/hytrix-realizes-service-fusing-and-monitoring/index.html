@@ -24,7 +24,6 @@ Hystrix实现服务熔断 环境搭建 1. 关于pom.xml 1 2 3 4 5 6 7 8 &lt;depe
 <meta property="article:published_time" content="2022-07-26T11:39:11+08:00" />
 <meta property="article:modified_time" content="2022-07-26T11:39:11+08:00" /><meta property="og:site_name" content="Norwegian Wood" />
 
-
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Hystrix实现服务熔断与监控"/>
 <meta name="twitter:description" content="什么是服务熔断 概念 应对微服务雪崩效应的一种链路保护机制，类似保险丝。
@@ -389,7 +388,7 @@ Hystrix实现服务熔断 环境搭建 1. 关于pom.xml 1 2 3 4 5 6 7 8 &lt;depe
 </span></span><span style="display:flex;"><span>                    @HystrixProperty<span style="color:#ff79c6">(</span>name <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;circuitBreaker.errorThresholdPercentage&#34;</span><span style="color:#ff79c6">,</span> value <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;60&#34;</span><span style="color:#ff79c6">)</span>
 </span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">})</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">public</span> String <span style="color:#50fa7b">circuitBreaker</span><span style="color:#ff79c6">(</span>Integer id<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>id <span style="color:#ff79c6">&lt;</span> 0<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">throw</span> <span style="color:#ff79c6">new</span> RuntimeException<span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;id 不能小于0&#34;</span><span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>id <span style="color:#ff79c6">&lt;</span> <span style="color:#bd93f9">0</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">throw</span> <span style="color:#ff79c6">new</span> RuntimeException<span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;id 不能小于0&#34;</span><span style="color:#ff79c6">);</span>
 </span></span><span style="display:flex;"><span>        String uuid <span style="color:#ff79c6">=</span> IdUtil<span style="color:#ff79c6">.</span><span style="color:#50fa7b">simpleUUID</span><span style="color:#ff79c6">();</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">return</span> Thread<span style="color:#ff79c6">.</span><span style="color:#50fa7b">currentThread</span><span style="color:#ff79c6">().</span><span style="color:#50fa7b">getName</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#34;\t&#34;</span> <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#34;uuid:&#34;</span> <span style="color:#ff79c6">+</span> uuid<span style="color:#ff79c6">;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">}</span>

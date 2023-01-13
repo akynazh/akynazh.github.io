@@ -1,0 +1,5 @@
+/resources
+__pycache__
+.hugo_build.lock
+cfg.py
+/lib

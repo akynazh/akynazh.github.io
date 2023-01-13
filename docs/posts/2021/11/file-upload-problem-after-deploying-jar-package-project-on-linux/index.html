@@ -33,7 +33,6 @@ e.g. ${project}/target/classes/static/avatar/test.jpg
 <meta property="article:published_time" content="2021-11-03T00:38:12+08:00" />
 <meta property="article:modified_time" content="2021-11-03T00:38:12+08:00" /><meta property="og:site_name" content="Norwegian Wood" />
 
-
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Linux上部署JAR包项目后的文件上传问题"/>
 <meta name="twitter:description" content="在进行上传文件时，一般会先获取项目类路径：
@@ -403,7 +402,7 @@ e.g. ${project}/target/classes/static/avatar/test.jpg
 </span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>type <span style="color:#ff79c6">==</span> <span style="color:#ff79c6">null</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">null</span><span style="color:#ff79c6">;</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">{</span>
 </span></span><span style="display:flex;"><span>            <span style="color:#6272a4">// type -&gt; img/jpg
-</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>            fileType <span style="color:#ff79c6">=</span> type<span style="color:#ff79c6">.</span><span style="color:#50fa7b">substring</span><span style="color:#ff79c6">(</span>type<span style="color:#ff79c6">.</span><span style="color:#50fa7b">indexOf</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#39;/&#39;</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">+</span> 1<span style="color:#ff79c6">);</span>
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>            fileType <span style="color:#ff79c6">=</span> type<span style="color:#ff79c6">.</span><span style="color:#50fa7b">substring</span><span style="color:#ff79c6">(</span>type<span style="color:#ff79c6">.</span><span style="color:#50fa7b">indexOf</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#39;/&#39;</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">1</span><span style="color:#ff79c6">);</span>
 </span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">return</span> fileType<span style="color:#ff79c6">;</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">}</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">}</span>

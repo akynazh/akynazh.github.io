@@ -1,0 +1,50 @@
+#fastSearch {
+    visibility: hidden;
+    width: 300px;
+    font-size: 15px;
+    z-index: 99999;
+}
+
+#searchInput {
+    color: $color-search-text;
+    background-color: $color-search-bg;
+    position: fixed;
+    display: inline;
+    top: 30px;
+    right: 8px;
+    height: 30px;
+    width: inherit;
+    padding: 4px;
+    border-radius: 8px;
+    border: 1px solid $color-search-border;
+    outline: none;
+}
+
+#searchResults {
+    visibility: inherit;
+    display: inline;
+    position: fixed;
+    top: 50px;
+    right: 8px;
+    width: 340px;
+    li {
+        padding: 4px;
+        list-style: none;
+        background-color: $color-search-bg;
+        border-bottom: 1px dotted $color-search-border;
+    }
+}
+
+@media (max-width:683px) {    
+    #searchInput {
+        top: 20px;
+        left: 30px;
+        right: auto;
+    }
+    
+    #searchResults {
+        top: 40px;
+        left: -10px;
+        right: auto;
+    }
+}

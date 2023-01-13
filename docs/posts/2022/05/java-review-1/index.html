@@ -34,7 +34,6 @@ Java 语言既具有编译型语言的特征，也具有解释型语言的特征
 <meta property="article:published_time" content="2022-05-15T15:15:51+08:00" />
 <meta property="article:modified_time" content="2022-05-15T15:15:51+08:00" /><meta property="og:site_name" content="Norwegian Wood" />
 
-
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Java复习记录（一）"/>
 <meta name="twitter:description" content="JDK JRE JVM 关系 为什么说 Java 语言“编译与解释并存”？ 高级编程语言按照程序的执行方式分为编译型和解释型两种。
@@ -359,24 +358,24 @@ Java 语言既具有编译型语言的特征，也具有解释型语言的特征
 <pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">TryReturnTest</span> <span style="color:#ff79c6">{</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">int</span> <span style="color:#50fa7b">test1</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> x<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">try</span> <span style="color:#ff79c6">{</span>
-</span></span><span style="display:flex;"><span>            x <span style="color:#ff79c6">+=</span> 1<span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>            x <span style="color:#ff79c6">+=</span> <span style="color:#bd93f9">1</span><span style="color:#ff79c6">;</span>
 </span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">++</span>x<span style="color:#ff79c6">;</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">}</span> <span style="color:#ff79c6">catch</span> <span style="color:#ff79c6">(</span>Exception e<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
 </span></span><span style="display:flex;"><span>            e<span style="color:#ff79c6">.</span><span style="color:#50fa7b">printStackTrace</span><span style="color:#ff79c6">();</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">}</span> <span style="color:#ff79c6">finally</span> <span style="color:#ff79c6">{</span>
-</span></span><span style="display:flex;"><span>            x <span style="color:#ff79c6">+=</span> 5<span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>            x <span style="color:#ff79c6">+=</span> <span style="color:#bd93f9">5</span><span style="color:#ff79c6">;</span>
 </span></span><span style="display:flex;"><span>            System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;finally&#34;</span><span style="color:#ff79c6">);</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">}</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">return</span> x<span style="color:#ff79c6">;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">}</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">int</span> <span style="color:#50fa7b">test2</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> x<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">try</span> <span style="color:#ff79c6">{</span>
-</span></span><span style="display:flex;"><span>            x <span style="color:#ff79c6">+=</span> 1<span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>            x <span style="color:#ff79c6">+=</span> <span style="color:#bd93f9">1</span><span style="color:#ff79c6">;</span>
 </span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">++</span>x<span style="color:#ff79c6">;</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">}</span> <span style="color:#ff79c6">catch</span> <span style="color:#ff79c6">(</span>Exception e<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
 </span></span><span style="display:flex;"><span>            e<span style="color:#ff79c6">.</span><span style="color:#50fa7b">printStackTrace</span><span style="color:#ff79c6">();</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">}</span> <span style="color:#ff79c6">finally</span> <span style="color:#ff79c6">{</span>
-</span></span><span style="display:flex;"><span>            x <span style="color:#ff79c6">+=</span> 5<span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>            x <span style="color:#ff79c6">+=</span> <span style="color:#bd93f9">5</span><span style="color:#ff79c6">;</span>
 </span></span><span style="display:flex;"><span>            System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;finally&#34;</span><span style="color:#ff79c6">);</span>
 </span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">return</span> x<span style="color:#ff79c6">;</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">}</span>
@@ -384,8 +383,8 @@ Java 语言既具有编译型语言的特征，也具有解释型语言的特征
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">main</span><span style="color:#ff79c6">(</span>String<span style="color:#ff79c6">[]</span> args<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
 </span></span><span style="display:flex;"><span>        TryReturnTest test <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> TryReturnTest<span style="color:#ff79c6">();</span>
-</span></span><span style="display:flex;"><span>        System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span>test<span style="color:#ff79c6">.</span><span style="color:#50fa7b">test1</span><span style="color:#ff79c6">(</span>0<span style="color:#ff79c6">));</span> <span style="color:#6272a4">// finally 2
-</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span>test<span style="color:#ff79c6">.</span><span style="color:#50fa7b">test2</span><span style="color:#ff79c6">(</span>0<span style="color:#ff79c6">));</span> <span style="color:#6272a4">// finally 7
+</span></span><span style="display:flex;"><span>        System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span>test<span style="color:#ff79c6">.</span><span style="color:#50fa7b">test1</span><span style="color:#ff79c6">(</span><span style="color:#bd93f9">0</span><span style="color:#ff79c6">));</span> <span style="color:#6272a4">// finally 2
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span>test<span style="color:#ff79c6">.</span><span style="color:#50fa7b">test2</span><span style="color:#ff79c6">(</span><span style="color:#bd93f9">0</span><span style="color:#ff79c6">));</span> <span style="color:#6272a4">// finally 7
 </span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    <span style="color:#ff79c6">}</span>
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">}</span>
 </span></span></code></pre></td></tr></table>
@@ -415,14 +414,14 @@ Java 语言既具有编译型语言的特征，也具有解释型语言的特征
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">main</span><span style="color:#ff79c6">(</span>String<span style="color:#ff79c6">[]</span> args<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
-</span></span><span style="display:flex;"><span>    Integer a <span style="color:#ff79c6">=</span> 127<span style="color:#ff79c6">;</span>
-</span></span><span style="display:flex;"><span>    Integer b <span style="color:#ff79c6">=</span> 127<span style="color:#ff79c6">;</span>
-</span></span><span style="display:flex;"><span>    Integer b1 <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Integer<span style="color:#ff79c6">(</span>127<span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span>    Integer a <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">127</span><span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>    Integer b <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">127</span><span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>    Integer b1 <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Integer<span style="color:#ff79c6">(</span><span style="color:#bd93f9">127</span><span style="color:#ff79c6">);</span>
 </span></span><span style="display:flex;"><span>    System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span>a <span style="color:#ff79c6">==</span> b<span style="color:#ff79c6">);</span> <span style="color:#6272a4">//true
 </span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span>b <span style="color:#ff79c6">==</span> b1<span style="color:#ff79c6">);</span>  <span style="color:#6272a4">//false
 </span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>
-</span></span><span style="display:flex;"><span>    Integer c <span style="color:#ff79c6">=</span> 128<span style="color:#ff79c6">;</span>
-</span></span><span style="display:flex;"><span>    Integer d <span style="color:#ff79c6">=</span> 128<span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>    Integer c <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">128</span><span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>    Integer d <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">128</span><span style="color:#ff79c6">;</span>
 </span></span><span style="display:flex;"><span>    System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span>c <span style="color:#ff79c6">==</span> d<span style="color:#ff79c6">);</span>  <span style="color:#6272a4">//false
 </span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span><span style="color:#ff79c6">}</span>
 </span></span></code></pre></td></tr></table>
@@ -452,7 +451,7 @@ Java 语言既具有编译型语言的特征，也具有解释型语言的特征
 </span></span><span style="display:flex;"><span>    ……
 </span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#ff79c6">{</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#6272a4">//创建Integer对象存储
-</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        <span style="color:#ff79c6">for</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> k <span style="color:#ff79c6">=</span> 0<span style="color:#ff79c6">;</span> k <span style="color:#ff79c6">&lt;</span> cache<span style="color:#ff79c6">.</span><span style="color:#50fa7b">length</span><span style="color:#ff79c6">;</span> k<span style="color:#ff79c6">++)</span>
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        <span style="color:#ff79c6">for</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> k <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span><span style="color:#ff79c6">;</span> k <span style="color:#ff79c6">&lt;</span> cache<span style="color:#ff79c6">.</span><span style="color:#50fa7b">length</span><span style="color:#ff79c6">;</span> k<span style="color:#ff79c6">++)</span>
 </span></span><span style="display:flex;"><span>            cache<span style="color:#ff79c6">[</span>k<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Integer<span style="color:#ff79c6">(</span>j<span style="color:#ff79c6">++);</span>
 </span></span><span style="display:flex;"><span>        ……
 </span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">}</span>

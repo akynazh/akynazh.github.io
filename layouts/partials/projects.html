@@ -1,0 +1,11 @@
+<div>
+  <!-- <h2><a href="https://github.com/akynazh">Mine</a></h2> -->
+    {{ range .Site.Data.projects.my }}
+      <p class="ellipsis-line" style="line-height: 2.2;"><b><a href="{{ .url }}">{{ .name }}</a></b>:&nbsp{{ .desc }}</p>
+    {{ end }}
+  <!-- <h2><a href="https://github.com">Others</a></h2> -->
+    {{ range .Site.Data.projects.other }}
+      <p class="ellipsis-line"><b><a href="{{ .url }}">{{ .name }}</a></b>:&nbsp{{ .desc }}</p>
+    {{ end }}
+  </ul>
+</div>

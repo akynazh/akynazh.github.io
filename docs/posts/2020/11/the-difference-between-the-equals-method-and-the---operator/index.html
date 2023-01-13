@@ -21,7 +21,6 @@ equals 比较时进行值的比较
 <meta property="article:published_time" content="2020-11-25T00:21:05+08:00" />
 <meta property="article:modified_time" content="2020-11-25T00:21:05+08:00" /><meta property="og:site_name" content="Norwegian Wood" />
 
-
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="equals方法和==运算符的作用区别"/>
 <meta name="twitter:description" content="equals方法与&quot;==&ldquo;的比较与分析 首先提出一个重要的点:
@@ -404,8 +403,8 @@ equals 比较时进行值的比较
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Person p1 <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Person<span style="color:#ff79c6">(</span>15<span style="color:#ff79c6">,</span> <span style="color:#f1fa8c">&#34;Mary&#34;</span><span style="color:#ff79c6">);</span>
-</span></span><span style="display:flex;"><span>Person p2 <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Person<span style="color:#ff79c6">(</span>15<span style="color:#ff79c6">,</span> <span style="color:#f1fa8c">&#34;Mark&#34;</span><span style="color:#ff79c6">);</span>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Person p1 <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Person<span style="color:#ff79c6">(</span><span style="color:#bd93f9">15</span><span style="color:#ff79c6">,</span> <span style="color:#f1fa8c">&#34;Mary&#34;</span><span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span>Person p2 <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Person<span style="color:#ff79c6">(</span><span style="color:#bd93f9">15</span><span style="color:#ff79c6">,</span> <span style="color:#f1fa8c">&#34;Mark&#34;</span><span style="color:#ff79c6">);</span>
 </span></span><span style="display:flex;"><span>System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span>p1<span style="color:#ff79c6">.</span><span style="color:#50fa7b">equals</span><span style="color:#ff79c6">(</span>p2<span style="color:#ff79c6">));</span> <span style="color:#6272a4">// true
 </span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span>p1 <span style="color:#ff79c6">==</span> p2<span style="color:#ff79c6">);</span> <span style="color:#6272a4">// false
 </span></span></span></code></pre></td></tr></table>

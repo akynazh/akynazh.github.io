@@ -20,7 +20,6 @@
 <meta property="article:published_time" content="2022-08-22T11:41:33+08:00" />
 <meta property="article:modified_time" content="2022-08-22T11:41:33+08:00" /><meta property="og:site_name" content="Norwegian Wood" />
 
-
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="命令模式"/>
 <meta name="twitter:description" content="定义 命令模式将“请求”封装成对象，以便使用不同的请求、队列或者日志来参数化其他对象。命令模式也支持可撤销的操作。
@@ -406,11 +405,11 @@
 </span></span><span style="display:flex;"><span>	Command<span style="color:#ff79c6">[]</span> offCommands<span style="color:#ff79c6">;</span>
 </span></span><span style="display:flex;"><span> 
 </span></span><span style="display:flex;"><span>	<span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#50fa7b">RemoteControl</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">{</span>
-</span></span><span style="display:flex;"><span>		onCommands <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Command<span style="color:#ff79c6">[</span>7<span style="color:#ff79c6">];</span>
-</span></span><span style="display:flex;"><span>		offCommands <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Command<span style="color:#ff79c6">[</span>7<span style="color:#ff79c6">];</span>
+</span></span><span style="display:flex;"><span>		onCommands <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Command<span style="color:#ff79c6">[</span><span style="color:#bd93f9">7</span><span style="color:#ff79c6">];</span>
+</span></span><span style="display:flex;"><span>		offCommands <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Command<span style="color:#ff79c6">[</span><span style="color:#bd93f9">7</span><span style="color:#ff79c6">];</span>
 </span></span><span style="display:flex;"><span> 
 </span></span><span style="display:flex;"><span>		Command noCommand <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> NoCommand<span style="color:#ff79c6">();</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> 0<span style="color:#ff79c6">;</span> i <span style="color:#ff79c6">&lt;</span> 7<span style="color:#ff79c6">;</span> i<span style="color:#ff79c6">++)</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span><span style="color:#ff79c6">;</span> i <span style="color:#ff79c6">&lt;</span> <span style="color:#bd93f9">7</span><span style="color:#ff79c6">;</span> i<span style="color:#ff79c6">++)</span> <span style="color:#ff79c6">{</span>
 </span></span><span style="display:flex;"><span>			onCommands<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">=</span> noCommand<span style="color:#ff79c6">;</span>
 </span></span><span style="display:flex;"><span>			offCommands<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">=</span> noCommand<span style="color:#ff79c6">;</span>
 </span></span><span style="display:flex;"><span>		<span style="color:#ff79c6">}</span>
@@ -519,21 +518,21 @@
 </span></span><span style="display:flex;"><span>StereoOffCommand  stereoOff <span style="color:#ff79c6">=</span>
 </span></span><span style="display:flex;"><span>		<span style="color:#ff79c6">new</span> StereoOffCommand<span style="color:#ff79c6">(</span>stereo<span style="color:#ff79c6">);</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>remoteControl<span style="color:#ff79c6">.</span><span style="color:#50fa7b">setCommand</span><span style="color:#ff79c6">(</span>0<span style="color:#ff79c6">,</span> livingRoomLightOn<span style="color:#ff79c6">,</span> livingRoomLightOff<span style="color:#ff79c6">);</span>
-</span></span><span style="display:flex;"><span>remoteControl<span style="color:#ff79c6">.</span><span style="color:#50fa7b">setCommand</span><span style="color:#ff79c6">(</span>1<span style="color:#ff79c6">,</span> kitchenLightOn<span style="color:#ff79c6">,</span> kitchenLightOff<span style="color:#ff79c6">);</span>
-</span></span><span style="display:flex;"><span>remoteControl<span style="color:#ff79c6">.</span><span style="color:#50fa7b">setCommand</span><span style="color:#ff79c6">(</span>2<span style="color:#ff79c6">,</span> ceilingFanOn<span style="color:#ff79c6">,</span> ceilingFanOff<span style="color:#ff79c6">);</span>
-</span></span><span style="display:flex;"><span>remoteControl<span style="color:#ff79c6">.</span><span style="color:#50fa7b">setCommand</span><span style="color:#ff79c6">(</span>3<span style="color:#ff79c6">,</span> stereoOnWithCD<span style="color:#ff79c6">,</span> stereoOff<span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span>remoteControl<span style="color:#ff79c6">.</span><span style="color:#50fa7b">setCommand</span><span style="color:#ff79c6">(</span><span style="color:#bd93f9">0</span><span style="color:#ff79c6">,</span> livingRoomLightOn<span style="color:#ff79c6">,</span> livingRoomLightOff<span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span>remoteControl<span style="color:#ff79c6">.</span><span style="color:#50fa7b">setCommand</span><span style="color:#ff79c6">(</span><span style="color:#bd93f9">1</span><span style="color:#ff79c6">,</span> kitchenLightOn<span style="color:#ff79c6">,</span> kitchenLightOff<span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span>remoteControl<span style="color:#ff79c6">.</span><span style="color:#50fa7b">setCommand</span><span style="color:#ff79c6">(</span><span style="color:#bd93f9">2</span><span style="color:#ff79c6">,</span> ceilingFanOn<span style="color:#ff79c6">,</span> ceilingFanOff<span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span>remoteControl<span style="color:#ff79c6">.</span><span style="color:#50fa7b">setCommand</span><span style="color:#ff79c6">(</span><span style="color:#bd93f9">3</span><span style="color:#ff79c6">,</span> stereoOnWithCD<span style="color:#ff79c6">,</span> stereoOff<span style="color:#ff79c6">);</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span>remoteControl<span style="color:#ff79c6">);</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>remoteControl<span style="color:#ff79c6">.</span><span style="color:#50fa7b">onButtonWasPushed</span><span style="color:#ff79c6">(</span>0<span style="color:#ff79c6">);</span>
-</span></span><span style="display:flex;"><span>remoteControl<span style="color:#ff79c6">.</span><span style="color:#50fa7b">offButtonWasPushed</span><span style="color:#ff79c6">(</span>0<span style="color:#ff79c6">);</span>
-</span></span><span style="display:flex;"><span>remoteControl<span style="color:#ff79c6">.</span><span style="color:#50fa7b">onButtonWasPushed</span><span style="color:#ff79c6">(</span>1<span style="color:#ff79c6">);</span>
-</span></span><span style="display:flex;"><span>remoteControl<span style="color:#ff79c6">.</span><span style="color:#50fa7b">offButtonWasPushed</span><span style="color:#ff79c6">(</span>1<span style="color:#ff79c6">);</span>
-</span></span><span style="display:flex;"><span>remoteControl<span style="color:#ff79c6">.</span><span style="color:#50fa7b">onButtonWasPushed</span><span style="color:#ff79c6">(</span>2<span style="color:#ff79c6">);</span>
-</span></span><span style="display:flex;"><span>remoteControl<span style="color:#ff79c6">.</span><span style="color:#50fa7b">offButtonWasPushed</span><span style="color:#ff79c6">(</span>2<span style="color:#ff79c6">);</span>
-</span></span><span style="display:flex;"><span>remoteControl<span style="color:#ff79c6">.</span><span style="color:#50fa7b">onButtonWasPushed</span><span style="color:#ff79c6">(</span>3<span style="color:#ff79c6">);</span>
-</span></span><span style="display:flex;"><span>remoteControl<span style="color:#ff79c6">.</span><span style="color:#50fa7b">offButtonWasPushed</span><span style="color:#ff79c6">(</span>3<span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span>remoteControl<span style="color:#ff79c6">.</span><span style="color:#50fa7b">onButtonWasPushed</span><span style="color:#ff79c6">(</span><span style="color:#bd93f9">0</span><span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span>remoteControl<span style="color:#ff79c6">.</span><span style="color:#50fa7b">offButtonWasPushed</span><span style="color:#ff79c6">(</span><span style="color:#bd93f9">0</span><span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span>remoteControl<span style="color:#ff79c6">.</span><span style="color:#50fa7b">onButtonWasPushed</span><span style="color:#ff79c6">(</span><span style="color:#bd93f9">1</span><span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span>remoteControl<span style="color:#ff79c6">.</span><span style="color:#50fa7b">offButtonWasPushed</span><span style="color:#ff79c6">(</span><span style="color:#bd93f9">1</span><span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span>remoteControl<span style="color:#ff79c6">.</span><span style="color:#50fa7b">onButtonWasPushed</span><span style="color:#ff79c6">(</span><span style="color:#bd93f9">2</span><span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span>remoteControl<span style="color:#ff79c6">.</span><span style="color:#50fa7b">offButtonWasPushed</span><span style="color:#ff79c6">(</span><span style="color:#bd93f9">2</span><span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span>remoteControl<span style="color:#ff79c6">.</span><span style="color:#50fa7b">onButtonWasPushed</span><span style="color:#ff79c6">(</span><span style="color:#bd93f9">3</span><span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span>remoteControl<span style="color:#ff79c6">.</span><span style="color:#50fa7b">offButtonWasPushed</span><span style="color:#ff79c6">(</span><span style="color:#bd93f9">3</span><span style="color:#ff79c6">);</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><hr>

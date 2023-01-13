@@ -19,7 +19,6 @@
 <meta property="article:published_time" content="2020-07-21T20:43:04+08:00" />
 <meta property="article:modified_time" content="2020-07-21T20:43:04+08:00" /><meta property="og:site_name" content="Norwegian Wood" />
 
-
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="有关素数的一些算法"/>
 <meta name="twitter:description" content="埃氏筛法 问1000000000000以内有多少个素数？
@@ -310,16 +309,16 @@
 证明如下：</p>
 <p>（1）当a为该素数（i）的倍数时，设倍为x，则a等于ix，可以推出如下结果：</p>
 <p>$$\begin{aligned}
-(a+i-1)\div i \times i 
+(a+i-1)\div i \times i
 &amp;= (ix + i - 1) \div i \times i \<br>
 &amp;= [ix \div i + (i - 1) / i] * i \
 &amp;= ix
 \end{aligned}$$</p>
 <p>（2）当a不为该素数（i）的倍数时，设$a=ix + t$, $t &gt;= 1 且 t &lt; x$，从而可以推出如下结果：
 $$\begin{aligned}
-(ix + t + i - 1) / i \times i 
-&amp;= [ix \div i + (i - 1 + t) / i] * i \ 
-&amp;= (x + 1) * i \ 
+(ix + t + i - 1) / i \times i
+&amp;= [ix \div i + (i - 1 + t) / i] * i \
+&amp;= (x + 1) * i \
 &amp;= ix + i &gt; ix + t
 \end{aligned}$$</p>
 <p>易知ix+i为i的倍数，证毕。</p>
