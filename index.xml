@@ -991,9 +991,9 @@ Over.</description>
 二、 配置环境变量
 1 2 3 # zookeeper export ZOOKEEPER_HOME=/usr/local/zookeeper3.7.1 export PATH=$PATH:$ZOOKEEPER_HOME/bin 接着通过source命令生效。
 开启zookeeper连接 （前置条件是已配好java环境）
-执行zkServer.sh start即可。
+执行 zkServer.sh start即可。
 查看连接情况： 1 2 3 4 5 6 zkServer.sh status ZooKeeper JMX enabled by default Using config: /usr/local/zookeeper3.7.1/bin/../conf/zoo.cfg Client port found: 2181. Client address: localhost. Client SSL: false. Mode: standalone 可见已经开启成功了。
-客户端进行连接： 执行zkCli.sh，连接成功后可查看：
+客户端进行连接： 执行 zkCli.sh，连接成功后可查看：
 1 2 3 [zk: localhost:2181(CONNECTED) 1] ls / [zookeeper] [zk: localhost:2181(CONNECTED) 2] get /zookeeper 编写springcloud服务代码 一、关于pom.</description>
     </item>
     
@@ -2261,7 +2261,7 @@ equals 比较时进行值的比较
       <description>And when I awoke I was alone
 This bird had flown
 So I lit a fire
-Isn&amp;rsquo;t it good Norwegian Wood</description>
+Isn&amp;rsquo;t it good Norwegian wood</description>
     </item>
     
   </channel>
