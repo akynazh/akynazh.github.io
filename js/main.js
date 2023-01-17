@@ -9,7 +9,7 @@ $(document).ready(function() {
 
 
   /**
-   * Controls the different versions of  the menu in blog post articles 
+   * Controls the different versions of the menu in blog post articles 
    * for Desktop, tablet and mobile.
    */
   if ($(".post").length) {
@@ -45,13 +45,6 @@ $(document).ready(function() {
     if (menu.length) {
       $(window).on("scroll", function() {
         var topDistance = menu.offset().top;
-
-        // hide only the navigation links on desktop
-        if (topDistance <= 150.0) {
-          nav.show();
-        } else {
-          nav.hide();
-        }
 
         // on tablet, hide the navigation icon as well and show a "scroll to top
         // icon" instead
