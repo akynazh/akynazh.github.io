@@ -1566,15 +1566,6 @@ addFlashAttribute是把数据临时放在session中并在刷新页面后自动�
     </item>
     
     <item>
-      <title>IDEA配置使用记录</title>
-      <link>/posts/2022/01/idea-configuration-usage-record/</link>
-      <pubDate>Thu, 13 Jan 2022 21:46:42 +0800</pubDate>
-      
-      <guid>/posts/2022/01/idea-configuration-usage-record/</guid>
-      <description>控制台中文乱码解决 菜单栏HELP-&amp;gt;Edit Custom VM OPtions中加 -Dfile.encoding=utf-8 重启idea IDEA开启RunDashboard 1 2 3 4 5 6 7 8 9 # .idea/workspace.xml &amp;lt;component name=&amp;#34;RunDashboard&amp;#34;&amp;gt; &amp;lt;option name=&amp;#34;configurationTypes&amp;#34;&amp;gt; &amp;lt;set&amp;gt; &amp;lt;option value=&amp;#34;SpringBootApplicationConfigurationType&amp;#34; /&amp;gt; &amp;lt;/set&amp;gt; &amp;lt;/option&amp;gt; &amp;lt;/component&amp;gt; IDEA关闭拼写 1 Settings -&amp;gt; Editor -&amp;gt; Inspection -&amp;gt; Proofreading -&amp;gt; 关闭Typo IDEA配置快捷输入 1 editor -&amp;gt; live template IDEA常用快捷键 1 2 3 4 5 6 7 8 9 10 11 12 13 alt + ctrl + L : 格式化 ctrl + shift + r : 替换字符 ctrl + r : 在当前文件中替换字符 ctrl + shift + n : 搜索项目文件 ctrl + f : 在当前文件下搜索字符 ctrl + shift + t : 进行快捷抛异常 alt + 上下键 : 光标移到下或上一层 禁用 double shift 对于2021.</description>
-    </item>
-    
-    <item>
       <title>Java开发中遇到的bug记录</title>
       <link>/posts/2022/01/record-of-bugs-encountered-in-java-development/</link>
       <pubDate>Thu, 06 Jan 2022 17:23:00 +0800</pubDate>
