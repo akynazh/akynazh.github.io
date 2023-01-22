@@ -213,7 +213,7 @@
         <div class="article-read-time">
           <i class="far fa-clock"></i>
           
-          5 minute read
+          6 minute read
         </div>
         
         
@@ -325,22 +325,15 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>通过 <code>pipenv graph</code> 可以查看目前安装的库及其依赖。</p>
+<p>以后新安装任何依赖，如果处在虚拟环境下，都可以直接运行 <code>pip install {pkg}</code> 完成包的安装，但是如果这样安装，新的依赖信息并不会被添加到 <code>pipfile</code> 中，也就不利于之后重新初始化环境和生成正确的 <code>requirements.txt</code> 。因此，建议每次安装新的依赖包时都使用 <code>pipenv install {pkg}</code> ，这样新的依赖信息会被写入 <code>pipfile</code> 和 <code>pipfile.lock</code> 中。</p>
 <h2 id="关于pipfile和pipfilelock">关于Pipfile和Pipfile.lock</h2>
 <p>这两个文件是相互补充的关系。</p>
 <p>首先，对于pipfile, 里面一般记录了以下类似内容：</p>
 <ul>
-<li>
-<p>Source: 记录包的下载地址源</p>
-</li>
-<li>
-<p>Dev-packages : 记录当我们开发时所需要使用的包的相关信息</p>
-</li>
-<li>
-<p>Packages: 用于记录我们程序运行所依赖的包</p>
-</li>
-<li>
-<p>Requires: 指定了使用的python的版本</p>
-</li>
+<li>Source: 记录包的下载地址源</li>
+<li>Dev-packages : 记录当我们开发时所需要使用的包的相关信息</li>
+<li>Packages: 用于记录我们程序运行所依赖的包</li>
+<li>Requires: 指定了使用的python的版本</li>
 </ul>
 <p>然后，对于Pipfile.lock文件，</p>
 <p>这是一个json类型的文件，在这个文件里面，它记录了：</p>
@@ -352,6 +345,11 @@
 <p>对于 <code>Dev-packages</code> 字段，使用 <code>pipenv install</code> 创建虚拟环境时需要添加 <code>--dev</code> 才会安装它对应的包（默认只安装Packages下的包）。</p>
 <p>安装依赖时，添加 <code>--dev</code> 将会把包依赖记录到 <code>Dev-packages</code> 下而不是 <code>Packages</code> 下。</p>
 <h2 id="更新包">更新包</h2>
+<p><code>pipenv update</code> 想当于运行 <code>pipenv lock &amp;&amp; pipenv sync:</code></p>
+<ul>
+<li>lock: Generates Pipfile.lock.</li>
+<li>sync: Installs all packages specified in Pipfile.lock.</li>
+</ul>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1

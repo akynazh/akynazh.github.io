@@ -170,6 +170,7 @@ pipenv无法正常install 1 2 3 4 PS C:\Users\akyna\Codes\test\test_py&gt; pipen
     <li><a href="#pipenv无法正常install">pipenv无法正常install</a></li>
     <li><a href="#requests库headers字段编码错误">requests库headers字段编码错误</a></li>
     <li><a href="#python--crontab-环境变量">python + crontab 环境变量</a></li>
+    <li><a href="#关于爬虫所设置的-headers-中的-useragent">关于爬虫所设置的 Headers 中的 UserAgent</a></li>
   </ul>
 </nav>
     </div>
@@ -193,7 +194,7 @@ pipenv无法正常install 1 2 3 4 PS C:\Users\akyna\Codes\test\test_py&gt; pipen
         <div class="article-read-time">
           <i class="far fa-clock"></i>
           
-          1 minute read
+          2 minute read
         </div>
         
         
@@ -300,7 +301,10 @@ pipenv无法正常install 1 2 3 4 PS C:\Users\akyna\Codes\test\test_py&gt; pipen
 </span></span><span style="display:flex;"><span>0 8 * * * env code=/root/Codes /bin/python3 ~/Codes/scripts/py/submit_tg_send.py
 </span></span></code></pre></td></tr></table>
 </div>
-</div><hr>
+</div><h2 id="关于爬虫所设置的-headers-中的-useragent">关于爬虫所设置的 Headers 中的 UserAgent</h2>
+<p>这是一个很难以发现的点，但不能说是bug吧。</p>
+<p>Headers 中的 UserAgent 可以配置不同的设备端，如果设置了类似于 Android 这样的手机端，那从 <code>requests.get()</code> 返回得到的页面是手机端的界面！如果这个网站手机端的界面和电脑端的界面不是一样的，那么这个问题是很值得注意的。</p>
+<hr>
 <p><strong>From my blog: <a href="https://akynazh.site">akynazh</a></strong>.</p>
 <p><strong>Over.</strong></p>
 
@@ -342,6 +346,7 @@ pipenv无法正常install 1 2 3 4 PS C:\Users\akyna\Codes\test\test_py&gt; pipen
     <li><a href="#pipenv无法正常install">pipenv无法正常install</a></li>
     <li><a href="#requests库headers字段编码错误">requests库headers字段编码错误</a></li>
     <li><a href="#python--crontab-环境变量">python + crontab 环境变量</a></li>
+    <li><a href="#关于爬虫所设置的-headers-中的-useragent">关于爬虫所设置的 Headers 中的 UserAgent</a></li>
   </ul>
 </nav>
     </div>
