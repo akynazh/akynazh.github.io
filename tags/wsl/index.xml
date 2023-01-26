@@ -9,7 +9,7 @@
     <copyright>Jzh</copyright>
     <lastBuildDate>Sat, 23 Jul 2022 17:34:52 +0800</lastBuildDate><atom:link href="/tags/wsl/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Wsl主要操作记录</title>
+      <title>Wsl 主要操作记录</title>
       <link>/posts/2022/07/wsl-main-operation-records/</link>
       <pubDate>Sat, 23 Jul 2022 17:34:52 +0800</pubDate>
       
@@ -25,7 +25,7 @@ wsl一些常用命令 wsl ~ -u jzh: 以jzh用户登录并进入用户文件夹 w
     </item>
     
     <item>
-      <title>Wsl自定义安装位置</title>
+      <title>Wsl 自定义安装位置</title>
       <link>/posts/2022/07/wsl-custom-installation-location/</link>
       <pubDate>Sat, 23 Jul 2022 17:27:31 +0800</pubDate>
       

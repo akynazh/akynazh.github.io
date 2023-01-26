@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title> 实现SSH免IP免密登录 | Norwegian Wood</title>
+  <title> 实现 SSH 免 IP 免密登录 | Norwegian Wood</title>
   <link rel='canonical' href='/posts/2021/01/realize-ssh-ipfree-and-secret-free-login/'>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
-  <meta property="og:title" content="实现SSH免IP免密登录" />
+  <meta property="og:title" content="实现 SSH 免 IP 免密登录" />
 <meta property="og:description" content="编辑 ~/.ssh/config 1 2 3 4 5 6 7 8 9 Host 输入代替名 HostName 输入IP Port 输入端口号 User 输入用户名 # ProxyCommand &#34;C:\Program Files\Git\mingw64\bin\connect.exe&#34; -S 127.0.0.1:7890 -a none %h %p # 定时发送心跳确保不断开连接 ServerAliveInterval 30 # 每隔30秒发送一次 ServerAliveCountMax 60 # 连续60次服务端无响应断开连接 生成并发送密钥 1 ssh-keygen -t rsa 然后将公钥 ~/.ssh/id_rsa.pub 复制到目标主机 ~/.ssh/authorized_keys 文件中。
 可能出现的问题：密钥算法不匹配 如果出现以下错误：
 no matching key exchange method found. Their offer: diffie-hellman-group1-sha1
@@ -21,7 +21,7 @@ no matching key exchange method found. Their offer: diffie-hellman-group1-sha1
 <meta property="article:modified_time" content="2021-01-13T21:53:43+08:00" /><meta property="og:site_name" content="Norwegian Wood" />
 
   <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="实现SSH免IP免密登录"/>
+<meta name="twitter:title" content="实现 SSH 免 IP 免密登录"/>
 <meta name="twitter:description" content="编辑 ~/.ssh/config 1 2 3 4 5 6 7 8 9 Host 输入代替名 HostName 输入IP Port 输入端口号 User 输入用户名 # ProxyCommand &#34;C:\Program Files\Git\mingw64\bin\connect.exe&#34; -S 127.0.0.1:7890 -a none %h %p # 定时发送心跳确保不断开连接 ServerAliveInterval 30 # 每隔30秒发送一次 ServerAliveCountMax 60 # 连续60次服务端无响应断开连接 生成并发送密钥 1 ssh-keygen -t rsa 然后将公钥 ~/.ssh/id_rsa.pub 复制到目标主机 ~/.ssh/authorized_keys 文件中。
 可能出现的问题：密钥算法不匹配 如果出现以下错误：
 no matching key exchange method found. Their offer: diffie-hellman-group1-sha1
@@ -79,7 +79,7 @@ no matching key exchange method found. Their offer: diffie-hellman-group1-sha1
         
         
         <li>
-          <a class="icon" href="/posts/2021/04/spring-abstracts-i/" aria-label="Next">
+          <a class="icon" href="/posts/2021/01/idea-configuration-usage-record/" aria-label="Next">
             <i class="fas fa-chevron-right" aria-hidden="true"></i>
           </a>
         </li>
@@ -121,42 +121,42 @@ no matching key exchange method found. Their offer: diffie-hellman-group1-sha1
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=%2fposts%2f2021%2f01%2frealize-ssh-ipfree-and-secret-free-login%2f&text=%e5%ae%9e%e7%8e%b0SSH%e5%85%8dIP%e5%85%8d%e5%af%86%e7%99%bb%e5%bd%95" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=%2fposts%2f2021%2f01%2frealize-ssh-ipfree-and-secret-free-login%2f&text=%e5%ae%9e%e7%8e%b0%20SSH%20%e5%85%8d%20IP%20%e5%85%8d%e5%af%86%e7%99%bb%e5%bd%95" aria-label="Twitter">
       <i class="fab fa-twitter " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fposts%2f2021%2f01%2frealize-ssh-ipfree-and-secret-free-login%2f&title=%e5%ae%9e%e7%8e%b0SSH%e5%85%8dIP%e5%85%8d%e5%af%86%e7%99%bb%e5%bd%95" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fposts%2f2021%2f01%2frealize-ssh-ipfree-and-secret-free-login%2f&title=%e5%ae%9e%e7%8e%b0%20SSH%20%e5%85%8d%20IP%20%e5%85%8d%e5%af%86%e7%99%bb%e5%bd%95" aria-label="Linkedin">
       <i class="fab fa-linkedin " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fposts%2f2021%2f01%2frealize-ssh-ipfree-and-secret-free-login%2f&is_video=false&description=%e5%ae%9e%e7%8e%b0SSH%e5%85%8dIP%e5%85%8d%e5%af%86%e7%99%bb%e5%bd%95" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fposts%2f2021%2f01%2frealize-ssh-ipfree-and-secret-free-login%2f&is_video=false&description=%e5%ae%9e%e7%8e%b0%20SSH%20%e5%85%8d%20IP%20%e5%85%8d%e5%af%86%e7%99%bb%e5%bd%95" aria-label="Pinterest">
       <i class="fab fa-pinterest " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=%e5%ae%9e%e7%8e%b0SSH%e5%85%8dIP%e5%85%8d%e5%af%86%e7%99%bb%e5%bd%95&body=Check out this article: %2fposts%2f2021%2f01%2frealize-ssh-ipfree-and-secret-free-login%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=%e5%ae%9e%e7%8e%b0%20SSH%20%e5%85%8d%20IP%20%e5%85%8d%e5%af%86%e7%99%bb%e5%bd%95&body=Check out this article: %2fposts%2f2021%2f01%2frealize-ssh-ipfree-and-secret-free-login%2f" aria-label="Email">
       <i class="fas fa-envelope " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=%2fposts%2f2021%2f01%2frealize-ssh-ipfree-and-secret-free-login%2f&title=%e5%ae%9e%e7%8e%b0SSH%e5%85%8dIP%e5%85%8d%e5%af%86%e7%99%bb%e5%bd%95" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=%2fposts%2f2021%2f01%2frealize-ssh-ipfree-and-secret-free-login%2f&title=%e5%ae%9e%e7%8e%b0%20SSH%20%e5%85%8d%20IP%20%e5%85%8d%e5%af%86%e7%99%bb%e5%bd%95" aria-label="Pocket">
       <i class="fab fa-get-pocket " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=%2fposts%2f2021%2f01%2frealize-ssh-ipfree-and-secret-free-login%2f&title=%e5%ae%9e%e7%8e%b0SSH%e5%85%8dIP%e5%85%8d%e5%af%86%e7%99%bb%e5%bd%95" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=%2fposts%2f2021%2f01%2frealize-ssh-ipfree-and-secret-free-login%2f&title=%e5%ae%9e%e7%8e%b0%20SSH%20%e5%85%8d%20IP%20%e5%85%8d%e5%af%86%e7%99%bb%e5%bd%95" aria-label="reddit">
       <i class="fab fa-reddit " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2021%2f01%2frealize-ssh-ipfree-and-secret-free-login%2f&name=%e5%ae%9e%e7%8e%b0SSH%e5%85%8dIP%e5%85%8d%e5%af%86%e7%99%bb%e5%bd%95&description=%e7%bc%96%e8%be%91%20~%2f.ssh%2fconfig%201%202%203%204%205%206%207%208%209%20Host%20%e8%be%93%e5%85%a5%e4%bb%a3%e6%9b%bf%e5%90%8d%20HostName%20%e8%be%93%e5%85%a5IP%20Port%20%e8%be%93%e5%85%a5%e7%ab%af%e5%8f%a3%e5%8f%b7%20User%20%e8%be%93%e5%85%a5%e7%94%a8%e6%88%b7%e5%90%8d%20%23%20ProxyCommand%20%26%2334%3bC%3a%5cProgram%20Files%5cGit%5cmingw64%5cbin%5cconnect.exe%26%2334%3b%20-S%20127.0.0.1%3a7890%20-a%20none%20%25h%20%25p%20%23%20%e5%ae%9a%e6%97%b6%e5%8f%91%e9%80%81%e5%bf%83%e8%b7%b3%e7%a1%ae%e4%bf%9d%e4%b8%8d%e6%96%ad%e5%bc%80%e8%bf%9e%e6%8e%a5%20ServerAliveInterval%2030%20%23%20%e6%af%8f%e9%9a%9430%e7%a7%92%e5%8f%91%e9%80%81%e4%b8%80%e6%ac%a1%20ServerAliveCountMax%2060%20%23%20%e8%bf%9e%e7%bb%ad60%e6%ac%a1%e6%9c%8d%e5%8a%a1%e7%ab%af%e6%97%a0%e5%93%8d%e5%ba%94%e6%96%ad%e5%bc%80%e8%bf%9e%e6%8e%a5%20%e7%94%9f%e6%88%90%e5%b9%b6%e5%8f%91%e9%80%81%e5%af%86%e9%92%a5%201%20ssh-keygen%20-t%20rsa%20%e7%84%b6%e5%90%8e%e5%b0%86%e5%85%ac%e9%92%a5%20~%2f.ssh%2fid_rsa.pub%20%e5%a4%8d%e5%88%b6%e5%88%b0%e7%9b%ae%e6%a0%87%e4%b8%bb%e6%9c%ba%20~%2f.ssh%2fauthorized_keys%20%e6%96%87%e4%bb%b6%e4%b8%ad%e3%80%82%0a%e5%8f%af%e8%83%bd%e5%87%ba%e7%8e%b0%e7%9a%84%e9%97%ae%e9%a2%98%ef%bc%9a%e5%af%86%e9%92%a5%e7%ae%97%e6%b3%95%e4%b8%8d%e5%8c%b9%e9%85%8d%20%e5%a6%82%e6%9e%9c%e5%87%ba%e7%8e%b0%e4%bb%a5%e4%b8%8b%e9%94%99%e8%af%af%ef%bc%9a%0ano%20matching%20key%20exchange%20method%20found.%20Their%20offer%3a%20diffie-hellman-group1-sha1%0a%e5%88%99%e6%98%af%e6%9c%ac%e5%9c%b0%e5%af%86%e9%92%a5%e7%ae%97%e6%b3%95%e4%b8%8e%e8%bf%9c%e7%a8%8b%e4%b8%bb%e6%9c%ba%e5%af%86%e9%92%a5%e7%ae%97%e6%b3%95%e4%b8%8d%e5%8c%b9%e9%85%8d%e9%80%a0%e6%88%90%e7%9a%84%ef%bc%81%0a%e5%8f%af%e4%bb%a5%e5%9c%a8ssh_config%e6%88%96config%e6%96%87%e4%bb%b6%e4%b8%ad%e6%b7%bb%e5%8a%a0%e5%af%86%e9%92%a5%e7%ae%97%e6%b3%95%e9%85%8d%e7%bd%ae%ef%bc%9a%0a1%202%203%204%205%20Host%20%e8%be%93%e5%85%a5%e4%bb%a3%e6%9b%bf%e5%90%8d%20HostName%20%e8%be%93%e5%85%a5IP%20Port%20%e8%be%93%e5%85%a5%e7%ab%af%e5%8f%a3%e5%8f%b7%20User%20%e8%be%93%e5%85%a5%e7%94%a8%e6%88%b7%20KexAlgorithms%20%2bdiffie-hellman-group1-sha1%20From%20my%20blog%3a%20akynazh." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2021%2f01%2frealize-ssh-ipfree-and-secret-free-login%2f&name=%e5%ae%9e%e7%8e%b0%20SSH%20%e5%85%8d%20IP%20%e5%85%8d%e5%af%86%e7%99%bb%e5%bd%95&description=%e7%bc%96%e8%be%91%20~%2f.ssh%2fconfig%201%202%203%204%205%206%207%208%209%20Host%20%e8%be%93%e5%85%a5%e4%bb%a3%e6%9b%bf%e5%90%8d%20HostName%20%e8%be%93%e5%85%a5IP%20Port%20%e8%be%93%e5%85%a5%e7%ab%af%e5%8f%a3%e5%8f%b7%20User%20%e8%be%93%e5%85%a5%e7%94%a8%e6%88%b7%e5%90%8d%20%23%20ProxyCommand%20%26%2334%3bC%3a%5cProgram%20Files%5cGit%5cmingw64%5cbin%5cconnect.exe%26%2334%3b%20-S%20127.0.0.1%3a7890%20-a%20none%20%25h%20%25p%20%23%20%e5%ae%9a%e6%97%b6%e5%8f%91%e9%80%81%e5%bf%83%e8%b7%b3%e7%a1%ae%e4%bf%9d%e4%b8%8d%e6%96%ad%e5%bc%80%e8%bf%9e%e6%8e%a5%20ServerAliveInterval%2030%20%23%20%e6%af%8f%e9%9a%9430%e7%a7%92%e5%8f%91%e9%80%81%e4%b8%80%e6%ac%a1%20ServerAliveCountMax%2060%20%23%20%e8%bf%9e%e7%bb%ad60%e6%ac%a1%e6%9c%8d%e5%8a%a1%e7%ab%af%e6%97%a0%e5%93%8d%e5%ba%94%e6%96%ad%e5%bc%80%e8%bf%9e%e6%8e%a5%20%e7%94%9f%e6%88%90%e5%b9%b6%e5%8f%91%e9%80%81%e5%af%86%e9%92%a5%201%20ssh-keygen%20-t%20rsa%20%e7%84%b6%e5%90%8e%e5%b0%86%e5%85%ac%e9%92%a5%20~%2f.ssh%2fid_rsa.pub%20%e5%a4%8d%e5%88%b6%e5%88%b0%e7%9b%ae%e6%a0%87%e4%b8%bb%e6%9c%ba%20~%2f.ssh%2fauthorized_keys%20%e6%96%87%e4%bb%b6%e4%b8%ad%e3%80%82%0a%e5%8f%af%e8%83%bd%e5%87%ba%e7%8e%b0%e7%9a%84%e9%97%ae%e9%a2%98%ef%bc%9a%e5%af%86%e9%92%a5%e7%ae%97%e6%b3%95%e4%b8%8d%e5%8c%b9%e9%85%8d%20%e5%a6%82%e6%9e%9c%e5%87%ba%e7%8e%b0%e4%bb%a5%e4%b8%8b%e9%94%99%e8%af%af%ef%bc%9a%0ano%20matching%20key%20exchange%20method%20found.%20Their%20offer%3a%20diffie-hellman-group1-sha1%0a%e5%88%99%e6%98%af%e6%9c%ac%e5%9c%b0%e5%af%86%e9%92%a5%e7%ae%97%e6%b3%95%e4%b8%8e%e8%bf%9c%e7%a8%8b%e4%b8%bb%e6%9c%ba%e5%af%86%e9%92%a5%e7%ae%97%e6%b3%95%e4%b8%8d%e5%8c%b9%e9%85%8d%e9%80%a0%e6%88%90%e7%9a%84%ef%bc%81%0a%e5%8f%af%e4%bb%a5%e5%9c%a8ssh_config%e6%88%96config%e6%96%87%e4%bb%b6%e4%b8%ad%e6%b7%bb%e5%8a%a0%e5%af%86%e9%92%a5%e7%ae%97%e6%b3%95%e9%85%8d%e7%bd%ae%ef%bc%9a%0a1%202%203%204%205%20Host%20%e8%be%93%e5%85%a5%e4%bb%a3%e6%9b%bf%e5%90%8d%20HostName%20%e8%be%93%e5%85%a5IP%20Port%20%e8%be%93%e5%85%a5%e7%ab%af%e5%8f%a3%e5%8f%b7%20User%20%e8%be%93%e5%85%a5%e7%94%a8%e6%88%b7%20KexAlgorithms%20%2bdiffie-hellman-group1-sha1%20From%20my%20blog%3a%20akynazh." aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fposts%2f2021%2f01%2frealize-ssh-ipfree-and-secret-free-login%2f&t=%e5%ae%9e%e7%8e%b0SSH%e5%85%8dIP%e5%85%8d%e5%af%86%e7%99%bb%e5%bd%95" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fposts%2f2021%2f01%2frealize-ssh-ipfree-and-secret-free-login%2f&t=%e5%ae%9e%e7%8e%b0%20SSH%20%e5%85%8d%20IP%20%e5%85%8d%e5%af%86%e7%99%bb%e5%bd%95" aria-label="Hacker News">
       <i class="fab fa-hacker-news " aria-hidden="true"></i>
     </a>
   </li>
@@ -179,7 +179,7 @@ no matching key exchange method found. Their offer: diffie-hellman-group1-sha1
   <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
     <header>
       <h1 class="posttitle" itemprop="name headline">
-        实现SSH免IP免密登录
+        实现 SSH 免 IP 免密登录
       </h1>
       <div class="meta">
         
@@ -345,42 +345,42 @@ no matching key exchange method found. Their offer: diffie-hellman-group1-sha1
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=%2fposts%2f2021%2f01%2frealize-ssh-ipfree-and-secret-free-login%2f&text=%e5%ae%9e%e7%8e%b0SSH%e5%85%8dIP%e5%85%8d%e5%af%86%e7%99%bb%e5%bd%95" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=%2fposts%2f2021%2f01%2frealize-ssh-ipfree-and-secret-free-login%2f&text=%e5%ae%9e%e7%8e%b0%20SSH%20%e5%85%8d%20IP%20%e5%85%8d%e5%af%86%e7%99%bb%e5%bd%95" aria-label="Twitter">
       <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fposts%2f2021%2f01%2frealize-ssh-ipfree-and-secret-free-login%2f&title=%e5%ae%9e%e7%8e%b0SSH%e5%85%8dIP%e5%85%8d%e5%af%86%e7%99%bb%e5%bd%95" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fposts%2f2021%2f01%2frealize-ssh-ipfree-and-secret-free-login%2f&title=%e5%ae%9e%e7%8e%b0%20SSH%20%e5%85%8d%20IP%20%e5%85%8d%e5%af%86%e7%99%bb%e5%bd%95" aria-label="Linkedin">
       <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fposts%2f2021%2f01%2frealize-ssh-ipfree-and-secret-free-login%2f&is_video=false&description=%e5%ae%9e%e7%8e%b0SSH%e5%85%8dIP%e5%85%8d%e5%af%86%e7%99%bb%e5%bd%95" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fposts%2f2021%2f01%2frealize-ssh-ipfree-and-secret-free-login%2f&is_video=false&description=%e5%ae%9e%e7%8e%b0%20SSH%20%e5%85%8d%20IP%20%e5%85%8d%e5%af%86%e7%99%bb%e5%bd%95" aria-label="Pinterest">
       <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=%e5%ae%9e%e7%8e%b0SSH%e5%85%8dIP%e5%85%8d%e5%af%86%e7%99%bb%e5%bd%95&body=Check out this article: %2fposts%2f2021%2f01%2frealize-ssh-ipfree-and-secret-free-login%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=%e5%ae%9e%e7%8e%b0%20SSH%20%e5%85%8d%20IP%20%e5%85%8d%e5%af%86%e7%99%bb%e5%bd%95&body=Check out this article: %2fposts%2f2021%2f01%2frealize-ssh-ipfree-and-secret-free-login%2f" aria-label="Email">
       <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=%2fposts%2f2021%2f01%2frealize-ssh-ipfree-and-secret-free-login%2f&title=%e5%ae%9e%e7%8e%b0SSH%e5%85%8dIP%e5%85%8d%e5%af%86%e7%99%bb%e5%bd%95" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=%2fposts%2f2021%2f01%2frealize-ssh-ipfree-and-secret-free-login%2f&title=%e5%ae%9e%e7%8e%b0%20SSH%20%e5%85%8d%20IP%20%e5%85%8d%e5%af%86%e7%99%bb%e5%bd%95" aria-label="Pocket">
       <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=%2fposts%2f2021%2f01%2frealize-ssh-ipfree-and-secret-free-login%2f&title=%e5%ae%9e%e7%8e%b0SSH%e5%85%8dIP%e5%85%8d%e5%af%86%e7%99%bb%e5%bd%95" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=%2fposts%2f2021%2f01%2frealize-ssh-ipfree-and-secret-free-login%2f&title=%e5%ae%9e%e7%8e%b0%20SSH%20%e5%85%8d%20IP%20%e5%85%8d%e5%af%86%e7%99%bb%e5%bd%95" aria-label="reddit">
       <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2021%2f01%2frealize-ssh-ipfree-and-secret-free-login%2f&name=%e5%ae%9e%e7%8e%b0SSH%e5%85%8dIP%e5%85%8d%e5%af%86%e7%99%bb%e5%bd%95&description=%e7%bc%96%e8%be%91%20~%2f.ssh%2fconfig%201%202%203%204%205%206%207%208%209%20Host%20%e8%be%93%e5%85%a5%e4%bb%a3%e6%9b%bf%e5%90%8d%20HostName%20%e8%be%93%e5%85%a5IP%20Port%20%e8%be%93%e5%85%a5%e7%ab%af%e5%8f%a3%e5%8f%b7%20User%20%e8%be%93%e5%85%a5%e7%94%a8%e6%88%b7%e5%90%8d%20%23%20ProxyCommand%20%26%2334%3bC%3a%5cProgram%20Files%5cGit%5cmingw64%5cbin%5cconnect.exe%26%2334%3b%20-S%20127.0.0.1%3a7890%20-a%20none%20%25h%20%25p%20%23%20%e5%ae%9a%e6%97%b6%e5%8f%91%e9%80%81%e5%bf%83%e8%b7%b3%e7%a1%ae%e4%bf%9d%e4%b8%8d%e6%96%ad%e5%bc%80%e8%bf%9e%e6%8e%a5%20ServerAliveInterval%2030%20%23%20%e6%af%8f%e9%9a%9430%e7%a7%92%e5%8f%91%e9%80%81%e4%b8%80%e6%ac%a1%20ServerAliveCountMax%2060%20%23%20%e8%bf%9e%e7%bb%ad60%e6%ac%a1%e6%9c%8d%e5%8a%a1%e7%ab%af%e6%97%a0%e5%93%8d%e5%ba%94%e6%96%ad%e5%bc%80%e8%bf%9e%e6%8e%a5%20%e7%94%9f%e6%88%90%e5%b9%b6%e5%8f%91%e9%80%81%e5%af%86%e9%92%a5%201%20ssh-keygen%20-t%20rsa%20%e7%84%b6%e5%90%8e%e5%b0%86%e5%85%ac%e9%92%a5%20~%2f.ssh%2fid_rsa.pub%20%e5%a4%8d%e5%88%b6%e5%88%b0%e7%9b%ae%e6%a0%87%e4%b8%bb%e6%9c%ba%20~%2f.ssh%2fauthorized_keys%20%e6%96%87%e4%bb%b6%e4%b8%ad%e3%80%82%0a%e5%8f%af%e8%83%bd%e5%87%ba%e7%8e%b0%e7%9a%84%e9%97%ae%e9%a2%98%ef%bc%9a%e5%af%86%e9%92%a5%e7%ae%97%e6%b3%95%e4%b8%8d%e5%8c%b9%e9%85%8d%20%e5%a6%82%e6%9e%9c%e5%87%ba%e7%8e%b0%e4%bb%a5%e4%b8%8b%e9%94%99%e8%af%af%ef%bc%9a%0ano%20matching%20key%20exchange%20method%20found.%20Their%20offer%3a%20diffie-hellman-group1-sha1%0a%e5%88%99%e6%98%af%e6%9c%ac%e5%9c%b0%e5%af%86%e9%92%a5%e7%ae%97%e6%b3%95%e4%b8%8e%e8%bf%9c%e7%a8%8b%e4%b8%bb%e6%9c%ba%e5%af%86%e9%92%a5%e7%ae%97%e6%b3%95%e4%b8%8d%e5%8c%b9%e9%85%8d%e9%80%a0%e6%88%90%e7%9a%84%ef%bc%81%0a%e5%8f%af%e4%bb%a5%e5%9c%a8ssh_config%e6%88%96config%e6%96%87%e4%bb%b6%e4%b8%ad%e6%b7%bb%e5%8a%a0%e5%af%86%e9%92%a5%e7%ae%97%e6%b3%95%e9%85%8d%e7%bd%ae%ef%bc%9a%0a1%202%203%204%205%20Host%20%e8%be%93%e5%85%a5%e4%bb%a3%e6%9b%bf%e5%90%8d%20HostName%20%e8%be%93%e5%85%a5IP%20Port%20%e8%be%93%e5%85%a5%e7%ab%af%e5%8f%a3%e5%8f%b7%20User%20%e8%be%93%e5%85%a5%e7%94%a8%e6%88%b7%20KexAlgorithms%20%2bdiffie-hellman-group1-sha1%20From%20my%20blog%3a%20akynazh." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2021%2f01%2frealize-ssh-ipfree-and-secret-free-login%2f&name=%e5%ae%9e%e7%8e%b0%20SSH%20%e5%85%8d%20IP%20%e5%85%8d%e5%af%86%e7%99%bb%e5%bd%95&description=%e7%bc%96%e8%be%91%20~%2f.ssh%2fconfig%201%202%203%204%205%206%207%208%209%20Host%20%e8%be%93%e5%85%a5%e4%bb%a3%e6%9b%bf%e5%90%8d%20HostName%20%e8%be%93%e5%85%a5IP%20Port%20%e8%be%93%e5%85%a5%e7%ab%af%e5%8f%a3%e5%8f%b7%20User%20%e8%be%93%e5%85%a5%e7%94%a8%e6%88%b7%e5%90%8d%20%23%20ProxyCommand%20%26%2334%3bC%3a%5cProgram%20Files%5cGit%5cmingw64%5cbin%5cconnect.exe%26%2334%3b%20-S%20127.0.0.1%3a7890%20-a%20none%20%25h%20%25p%20%23%20%e5%ae%9a%e6%97%b6%e5%8f%91%e9%80%81%e5%bf%83%e8%b7%b3%e7%a1%ae%e4%bf%9d%e4%b8%8d%e6%96%ad%e5%bc%80%e8%bf%9e%e6%8e%a5%20ServerAliveInterval%2030%20%23%20%e6%af%8f%e9%9a%9430%e7%a7%92%e5%8f%91%e9%80%81%e4%b8%80%e6%ac%a1%20ServerAliveCountMax%2060%20%23%20%e8%bf%9e%e7%bb%ad60%e6%ac%a1%e6%9c%8d%e5%8a%a1%e7%ab%af%e6%97%a0%e5%93%8d%e5%ba%94%e6%96%ad%e5%bc%80%e8%bf%9e%e6%8e%a5%20%e7%94%9f%e6%88%90%e5%b9%b6%e5%8f%91%e9%80%81%e5%af%86%e9%92%a5%201%20ssh-keygen%20-t%20rsa%20%e7%84%b6%e5%90%8e%e5%b0%86%e5%85%ac%e9%92%a5%20~%2f.ssh%2fid_rsa.pub%20%e5%a4%8d%e5%88%b6%e5%88%b0%e7%9b%ae%e6%a0%87%e4%b8%bb%e6%9c%ba%20~%2f.ssh%2fauthorized_keys%20%e6%96%87%e4%bb%b6%e4%b8%ad%e3%80%82%0a%e5%8f%af%e8%83%bd%e5%87%ba%e7%8e%b0%e7%9a%84%e9%97%ae%e9%a2%98%ef%bc%9a%e5%af%86%e9%92%a5%e7%ae%97%e6%b3%95%e4%b8%8d%e5%8c%b9%e9%85%8d%20%e5%a6%82%e6%9e%9c%e5%87%ba%e7%8e%b0%e4%bb%a5%e4%b8%8b%e9%94%99%e8%af%af%ef%bc%9a%0ano%20matching%20key%20exchange%20method%20found.%20Their%20offer%3a%20diffie-hellman-group1-sha1%0a%e5%88%99%e6%98%af%e6%9c%ac%e5%9c%b0%e5%af%86%e9%92%a5%e7%ae%97%e6%b3%95%e4%b8%8e%e8%bf%9c%e7%a8%8b%e4%b8%bb%e6%9c%ba%e5%af%86%e9%92%a5%e7%ae%97%e6%b3%95%e4%b8%8d%e5%8c%b9%e9%85%8d%e9%80%a0%e6%88%90%e7%9a%84%ef%bc%81%0a%e5%8f%af%e4%bb%a5%e5%9c%a8ssh_config%e6%88%96config%e6%96%87%e4%bb%b6%e4%b8%ad%e6%b7%bb%e5%8a%a0%e5%af%86%e9%92%a5%e7%ae%97%e6%b3%95%e9%85%8d%e7%bd%ae%ef%bc%9a%0a1%202%203%204%205%20Host%20%e8%be%93%e5%85%a5%e4%bb%a3%e6%9b%bf%e5%90%8d%20HostName%20%e8%be%93%e5%85%a5IP%20Port%20%e8%be%93%e5%85%a5%e7%ab%af%e5%8f%a3%e5%8f%b7%20User%20%e8%be%93%e5%85%a5%e7%94%a8%e6%88%b7%20KexAlgorithms%20%2bdiffie-hellman-group1-sha1%20From%20my%20blog%3a%20akynazh." aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fposts%2f2021%2f01%2frealize-ssh-ipfree-and-secret-free-login%2f&t=%e5%ae%9e%e7%8e%b0SSH%e5%85%8dIP%e5%85%8d%e5%af%86%e7%99%bb%e5%bd%95" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fposts%2f2021%2f01%2frealize-ssh-ipfree-and-secret-free-login%2f&t=%e5%ae%9e%e7%8e%b0%20SSH%20%e5%85%8d%20IP%20%e5%85%8d%e5%af%86%e7%99%bb%e5%bd%95" aria-label="Hacker News">
       <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
     </a>
   </li>

@@ -204,7 +204,7 @@
     </item>
     
     <item>
-      <title>Quartz实现定时任务</title>
+      <title>Quartz 实现定时任务</title>
       <link>/posts/2022/06/quartz-implements-timed-tasks/</link>
       <pubDate>Wed, 15 Jun 2022 21:11:27 +0800</pubDate>
       
@@ -216,7 +216,7 @@
     </item>
     
     <item>
-      <title>Java复习记录（一）</title>
+      <title>Java 复习记录（一）</title>
       <link>/posts/2022/05/java-review-1/</link>
       <pubDate>Sun, 15 May 2022 15:15:51 +0800</pubDate>
       
@@ -244,19 +244,19 @@ Java 语言既具有编译型语言的特征，也具有解释型语言的特征
     </item>
     
     <item>
-      <title>Java开发中遇到的bug记录</title>
+      <title>Java 开发中遇到的 bug 记录</title>
       <link>/posts/2022/01/record-of-bugs-encountered-in-java-development/</link>
       <pubDate>Thu, 06 Jan 2022 17:23:00 +0800</pubDate>
       
       <guid>/posts/2022/01/record-of-bugs-encountered-in-java-development/</guid>
       <description>持续更新中。
-BufferedWriter无法正确写出问题 这是一段客户端代码，向服务器端发送消息，然后接收服务器端的回复：
+BufferedWriter 无法正确写出问题 这是一段客户端代码，向服务器端发送消息，然后接收服务器端的回复：
 1 2 3 4 5 6 7 8 9 10 11 12 13 try ( BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream())); BufferedWriter out = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream())) ) { String message; while((message = stdIn.readLine()) != null) { out.write(message); out.flush(); System.out.println(&amp;#34;Receive from server: &amp;#34; + in.readLine()); } } catch (Exception e) { System.out.println(e.getMessage()); } 这是服务端代码的一部分，接收客户端消息，并向客户端回复：
 1 2 3 4 5 6 7 8 9 10 11 12 13 try ( BufferedReader in = new BufferedReader(new InputStreamReader(socket.</description>
     </item>
     
     <item>
-      <title>Java重写equals方法的同时为什么要重写hashcode方法</title>
+      <title>Java 重写 equals 方法的同时为什么要重写 hashcode 方法</title>
       <link>/posts/2021/11/why-should-java-rewrite-the-hashcode-method-when-rewriting-the-equals-method/</link>
       <pubDate>Fri, 26 Nov 2021 09:23:27 +0800</pubDate>
       
@@ -267,7 +267,7 @@ BufferedWriter无法正确写出问题 这是一段客户端代码，向服务�
     </item>
     
     <item>
-      <title>Linux上部署JAR包项目后的文件上传问题</title>
+      <title>Linux 上部署 JAR 包项目后的文件上传问题</title>
       <link>/posts/2021/11/file-upload-problem-after-deploying-jar-package-project-on-linux/</link>
       <pubDate>Wed, 03 Nov 2021 00:38:12 +0800</pubDate>
       
@@ -294,7 +294,7 @@ e.g. ${project}/target/classes/static/avatar/test.jpg
     </item>
     
     <item>
-      <title>Linux主机部署springboot项目全过程</title>
+      <title>Linux 主机部署 springboot 项目全过程</title>
       <link>/posts/2021/11/the-whole-process-of-linux-host-deployment-springboot-project/</link>
       <pubDate>Wed, 03 Nov 2021 00:30:25 +0800</pubDate>
       
@@ -310,7 +310,7 @@ e.g. ${project}/target/classes/static/avatar/test.jpg
     </item>
     
     <item>
-      <title>Synchronized到底锁了谁</title>
+      <title>Synchronized 到底锁了谁</title>
       <link>/posts/2021/05/who-the-hell-is-synchronized-locking/</link>
       <pubDate>Wed, 19 May 2021 22:43:45 +0800</pubDate>
       
@@ -328,7 +328,7 @@ synchronized(obj){...} synchronized同步代码块对对象内部的实例加锁
     </item>
     
     <item>
-      <title>Java与C&#43;&#43;中的值传递和引用传递解析</title>
+      <title>Java 与 C&#43;&#43; 中的值传递和引用传递解析</title>
       <link>/posts/2021/05/value-passing-and-reference-passing-parsing-in-java-and-c/</link>
       <pubDate>Sat, 01 May 2021 20:16:39 +0800</pubDate>
       
@@ -340,7 +340,7 @@ Java的参数传递 先定义3个方法如下：
     </item>
     
     <item>
-      <title>equals方法和==运算符的作用区别</title>
+      <title>equals 方法和 == 运算符的作用区别</title>
       <link>/posts/2020/11/the-difference-between-the-equals-method-and-the---operator/</link>
       <pubDate>Wed, 25 Nov 2020 00:21:05 +0800</pubDate>
       

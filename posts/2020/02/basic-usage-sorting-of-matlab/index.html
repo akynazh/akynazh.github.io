@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title> Matlab基本用法整理 | Norwegian Wood</title>
+  <title> Matlab 基本用法整理 | Norwegian Wood</title>
   <link rel='canonical' href='/posts/2020/02/basic-usage-sorting-of-matlab/'>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
-  <meta property="og:title" content="Matlab基本用法整理" />
+  <meta property="og:title" content="Matlab 基本用法整理" />
 <meta property="og:description" content="基本语法方面 提取矩阵某行或某列 1 A(:, [2 3]) 返回第2和第3列 获取随机数 1 randi(100); % 1 到 100 之间的随机整数 初始化数组 1 zeros(1, 30); % 1行30列的全0数组 控制语句 1 2 3 4 5 6 7 8 9 10 for i = 0 : 100 for j = 1 : 10 if (...) ... else ... end end ... end 格式化输出 1 fprintf(&#34;若选手选择改变，则成功次数为：%d, 成功率为：%f\n&#34;, count, count / SUM); 初等数学方面 求解方程组 注：solve已经改版，不可传入字符串
 实例：求解二元一次方程
 1 2 3 4 syms x y; s = x - 6 * y == 2; t = 5 * x &#43; 4 * y == 3; result = solve(s, t); 求平均值，中值与标准差 1 2 3 4 5 A = [12 13 7 18 16 21 9 10 2 18]; A = sort(A); ave = mean(A); md = median(A); sigma = std(A); 解一阶导数方程 1 2 3 4 5 syms x y; y = -0." />
@@ -18,7 +18,7 @@
 <meta property="article:modified_time" content="2020-02-06T20:41:12+08:00" /><meta property="og:site_name" content="Norwegian Wood" />
 
   <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Matlab基本用法整理"/>
+<meta name="twitter:title" content="Matlab 基本用法整理"/>
 <meta name="twitter:description" content="基本语法方面 提取矩阵某行或某列 1 A(:, [2 3]) 返回第2和第3列 获取随机数 1 randi(100); % 1 到 100 之间的随机整数 初始化数组 1 zeros(1, 30); % 1行30列的全0数组 控制语句 1 2 3 4 5 6 7 8 9 10 for i = 0 : 100 for j = 1 : 10 if (...) ... else ... end end ... end 格式化输出 1 fprintf(&#34;若选手选择改变，则成功次数为：%d, 成功率为：%f\n&#34;, count, count / SUM); 初等数学方面 求解方程组 注：solve已经改版，不可传入字符串
 实例：求解二元一次方程
 1 2 3 4 syms x y; s = x - 6 * y == 2; t = 5 * x &#43; 4 * y == 3; result = solve(s, t); 求平均值，中值与标准差 1 2 3 4 5 A = [12 13 7 18 16 21 9 10 2 18]; A = sort(A); ave = mean(A); md = median(A); sigma = std(A); 解一阶导数方程 1 2 3 4 5 syms x y; y = -0."/>
@@ -115,42 +115,42 @@
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=%2fposts%2f2020%2f02%2fbasic-usage-sorting-of-matlab%2f&text=Matlab%e5%9f%ba%e6%9c%ac%e7%94%a8%e6%b3%95%e6%95%b4%e7%90%86" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=%2fposts%2f2020%2f02%2fbasic-usage-sorting-of-matlab%2f&text=Matlab%20%e5%9f%ba%e6%9c%ac%e7%94%a8%e6%b3%95%e6%95%b4%e7%90%86" aria-label="Twitter">
       <i class="fab fa-twitter " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fposts%2f2020%2f02%2fbasic-usage-sorting-of-matlab%2f&title=Matlab%e5%9f%ba%e6%9c%ac%e7%94%a8%e6%b3%95%e6%95%b4%e7%90%86" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fposts%2f2020%2f02%2fbasic-usage-sorting-of-matlab%2f&title=Matlab%20%e5%9f%ba%e6%9c%ac%e7%94%a8%e6%b3%95%e6%95%b4%e7%90%86" aria-label="Linkedin">
       <i class="fab fa-linkedin " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fposts%2f2020%2f02%2fbasic-usage-sorting-of-matlab%2f&is_video=false&description=Matlab%e5%9f%ba%e6%9c%ac%e7%94%a8%e6%b3%95%e6%95%b4%e7%90%86" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fposts%2f2020%2f02%2fbasic-usage-sorting-of-matlab%2f&is_video=false&description=Matlab%20%e5%9f%ba%e6%9c%ac%e7%94%a8%e6%b3%95%e6%95%b4%e7%90%86" aria-label="Pinterest">
       <i class="fab fa-pinterest " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=Matlab%e5%9f%ba%e6%9c%ac%e7%94%a8%e6%b3%95%e6%95%b4%e7%90%86&body=Check out this article: %2fposts%2f2020%2f02%2fbasic-usage-sorting-of-matlab%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=Matlab%20%e5%9f%ba%e6%9c%ac%e7%94%a8%e6%b3%95%e6%95%b4%e7%90%86&body=Check out this article: %2fposts%2f2020%2f02%2fbasic-usage-sorting-of-matlab%2f" aria-label="Email">
       <i class="fas fa-envelope " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=%2fposts%2f2020%2f02%2fbasic-usage-sorting-of-matlab%2f&title=Matlab%e5%9f%ba%e6%9c%ac%e7%94%a8%e6%b3%95%e6%95%b4%e7%90%86" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=%2fposts%2f2020%2f02%2fbasic-usage-sorting-of-matlab%2f&title=Matlab%20%e5%9f%ba%e6%9c%ac%e7%94%a8%e6%b3%95%e6%95%b4%e7%90%86" aria-label="Pocket">
       <i class="fab fa-get-pocket " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=%2fposts%2f2020%2f02%2fbasic-usage-sorting-of-matlab%2f&title=Matlab%e5%9f%ba%e6%9c%ac%e7%94%a8%e6%b3%95%e6%95%b4%e7%90%86" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=%2fposts%2f2020%2f02%2fbasic-usage-sorting-of-matlab%2f&title=Matlab%20%e5%9f%ba%e6%9c%ac%e7%94%a8%e6%b3%95%e6%95%b4%e7%90%86" aria-label="reddit">
       <i class="fab fa-reddit " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2020%2f02%2fbasic-usage-sorting-of-matlab%2f&name=Matlab%e5%9f%ba%e6%9c%ac%e7%94%a8%e6%b3%95%e6%95%b4%e7%90%86&description=%e5%9f%ba%e6%9c%ac%e8%af%ad%e6%b3%95%e6%96%b9%e9%9d%a2%20%e6%8f%90%e5%8f%96%e7%9f%a9%e9%98%b5%e6%9f%90%e8%a1%8c%e6%88%96%e6%9f%90%e5%88%97%201%20A%28%3a%2c%20%5b2%203%5d%29%20%e8%bf%94%e5%9b%9e%e7%ac%ac2%e5%92%8c%e7%ac%ac3%e5%88%97%20%e8%8e%b7%e5%8f%96%e9%9a%8f%e6%9c%ba%e6%95%b0%201%20randi%28100%29%3b%20%25%201%20%e5%88%b0%20100%20%e4%b9%8b%e9%97%b4%e7%9a%84%e9%9a%8f%e6%9c%ba%e6%95%b4%e6%95%b0%20%e5%88%9d%e5%a7%8b%e5%8c%96%e6%95%b0%e7%bb%84%201%20zeros%281%2c%2030%29%3b%20%25%201%e8%a1%8c30%e5%88%97%e7%9a%84%e5%85%a80%e6%95%b0%e7%bb%84%20%e6%8e%a7%e5%88%b6%e8%af%ad%e5%8f%a5%201%202%203%204%205%206%207%208%209%2010%20for%20i%20%3d%200%20%3a%20100%20for%20j%20%3d%201%20%3a%2010%20if%20%28...%29%20...%20else%20...%20end%20end%20...%20end%20%e6%a0%bc%e5%bc%8f%e5%8c%96%e8%be%93%e5%87%ba%201%20fprintf%28%26%2334%3b%e8%8b%a5%e9%80%89%e6%89%8b%e9%80%89%e6%8b%a9%e6%94%b9%e5%8f%98%ef%bc%8c%e5%88%99%e6%88%90%e5%8a%9f%e6%ac%a1%e6%95%b0%e4%b8%ba%ef%bc%9a%25d%2c%20%e6%88%90%e5%8a%9f%e7%8e%87%e4%b8%ba%ef%bc%9a%25f%5cn%26%2334%3b%2c%20count%2c%20count%20%2f%20SUM%29%3b%20%e5%88%9d%e7%ad%89%e6%95%b0%e5%ad%a6%e6%96%b9%e9%9d%a2%20%e6%b1%82%e8%a7%a3%e6%96%b9%e7%a8%8b%e7%bb%84%20%e6%b3%a8%ef%bc%9asolve%e5%b7%b2%e7%bb%8f%e6%94%b9%e7%89%88%ef%bc%8c%e4%b8%8d%e5%8f%af%e4%bc%a0%e5%85%a5%e5%ad%97%e7%ac%a6%e4%b8%b2%0a%e5%ae%9e%e4%be%8b%ef%bc%9a%e6%b1%82%e8%a7%a3%e4%ba%8c%e5%85%83%e4%b8%80%e6%ac%a1%e6%96%b9%e7%a8%8b%0a1%202%203%204%20syms%20x%20y%3b%20s%20%3d%20x%20-%206%20%2a%20y%20%3d%3d%202%3b%20t%20%3d%205%20%2a%20x%20%2b%204%20%2a%20y%20%3d%3d%203%3b%20result%20%3d%20solve%28s%2c%20t%29%3b%20%e6%b1%82%e5%b9%b3%e5%9d%87%e5%80%bc%ef%bc%8c%e4%b8%ad%e5%80%bc%e4%b8%8e%e6%a0%87%e5%87%86%e5%b7%ae%201%202%203%204%205%20A%20%3d%20%5b12%2013%207%2018%2016%2021%209%2010%202%2018%5d%3b%20A%20%3d%20sort%28A%29%3b%20ave%20%3d%20mean%28A%29%3b%20md%20%3d%20median%28A%29%3b%20sigma%20%3d%20std%28A%29%3b%20%e8%a7%a3%e4%b8%80%e9%98%b6%e5%af%bc%e6%95%b0%e6%96%b9%e7%a8%8b%201%202%203%204%205%20syms%20x%20y%3b%20y%20%3d%20-0." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2020%2f02%2fbasic-usage-sorting-of-matlab%2f&name=Matlab%20%e5%9f%ba%e6%9c%ac%e7%94%a8%e6%b3%95%e6%95%b4%e7%90%86&description=%e5%9f%ba%e6%9c%ac%e8%af%ad%e6%b3%95%e6%96%b9%e9%9d%a2%20%e6%8f%90%e5%8f%96%e7%9f%a9%e9%98%b5%e6%9f%90%e8%a1%8c%e6%88%96%e6%9f%90%e5%88%97%201%20A%28%3a%2c%20%5b2%203%5d%29%20%e8%bf%94%e5%9b%9e%e7%ac%ac2%e5%92%8c%e7%ac%ac3%e5%88%97%20%e8%8e%b7%e5%8f%96%e9%9a%8f%e6%9c%ba%e6%95%b0%201%20randi%28100%29%3b%20%25%201%20%e5%88%b0%20100%20%e4%b9%8b%e9%97%b4%e7%9a%84%e9%9a%8f%e6%9c%ba%e6%95%b4%e6%95%b0%20%e5%88%9d%e5%a7%8b%e5%8c%96%e6%95%b0%e7%bb%84%201%20zeros%281%2c%2030%29%3b%20%25%201%e8%a1%8c30%e5%88%97%e7%9a%84%e5%85%a80%e6%95%b0%e7%bb%84%20%e6%8e%a7%e5%88%b6%e8%af%ad%e5%8f%a5%201%202%203%204%205%206%207%208%209%2010%20for%20i%20%3d%200%20%3a%20100%20for%20j%20%3d%201%20%3a%2010%20if%20%28...%29%20...%20else%20...%20end%20end%20...%20end%20%e6%a0%bc%e5%bc%8f%e5%8c%96%e8%be%93%e5%87%ba%201%20fprintf%28%26%2334%3b%e8%8b%a5%e9%80%89%e6%89%8b%e9%80%89%e6%8b%a9%e6%94%b9%e5%8f%98%ef%bc%8c%e5%88%99%e6%88%90%e5%8a%9f%e6%ac%a1%e6%95%b0%e4%b8%ba%ef%bc%9a%25d%2c%20%e6%88%90%e5%8a%9f%e7%8e%87%e4%b8%ba%ef%bc%9a%25f%5cn%26%2334%3b%2c%20count%2c%20count%20%2f%20SUM%29%3b%20%e5%88%9d%e7%ad%89%e6%95%b0%e5%ad%a6%e6%96%b9%e9%9d%a2%20%e6%b1%82%e8%a7%a3%e6%96%b9%e7%a8%8b%e7%bb%84%20%e6%b3%a8%ef%bc%9asolve%e5%b7%b2%e7%bb%8f%e6%94%b9%e7%89%88%ef%bc%8c%e4%b8%8d%e5%8f%af%e4%bc%a0%e5%85%a5%e5%ad%97%e7%ac%a6%e4%b8%b2%0a%e5%ae%9e%e4%be%8b%ef%bc%9a%e6%b1%82%e8%a7%a3%e4%ba%8c%e5%85%83%e4%b8%80%e6%ac%a1%e6%96%b9%e7%a8%8b%0a1%202%203%204%20syms%20x%20y%3b%20s%20%3d%20x%20-%206%20%2a%20y%20%3d%3d%202%3b%20t%20%3d%205%20%2a%20x%20%2b%204%20%2a%20y%20%3d%3d%203%3b%20result%20%3d%20solve%28s%2c%20t%29%3b%20%e6%b1%82%e5%b9%b3%e5%9d%87%e5%80%bc%ef%bc%8c%e4%b8%ad%e5%80%bc%e4%b8%8e%e6%a0%87%e5%87%86%e5%b7%ae%201%202%203%204%205%20A%20%3d%20%5b12%2013%207%2018%2016%2021%209%2010%202%2018%5d%3b%20A%20%3d%20sort%28A%29%3b%20ave%20%3d%20mean%28A%29%3b%20md%20%3d%20median%28A%29%3b%20sigma%20%3d%20std%28A%29%3b%20%e8%a7%a3%e4%b8%80%e9%98%b6%e5%af%bc%e6%95%b0%e6%96%b9%e7%a8%8b%201%202%203%204%205%20syms%20x%20y%3b%20y%20%3d%20-0." aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fposts%2f2020%2f02%2fbasic-usage-sorting-of-matlab%2f&t=Matlab%e5%9f%ba%e6%9c%ac%e7%94%a8%e6%b3%95%e6%95%b4%e7%90%86" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fposts%2f2020%2f02%2fbasic-usage-sorting-of-matlab%2f&t=Matlab%20%e5%9f%ba%e6%9c%ac%e7%94%a8%e6%b3%95%e6%95%b4%e7%90%86" aria-label="Hacker News">
       <i class="fab fa-hacker-news " aria-hidden="true"></i>
     </a>
   </li>
@@ -208,7 +208,7 @@
   <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
     <header>
       <h1 class="posttitle" itemprop="name headline">
-        Matlab基本用法整理
+        Matlab 基本用法整理
       </h1>
       <div class="meta">
         
@@ -857,42 +857,42 @@
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=%2fposts%2f2020%2f02%2fbasic-usage-sorting-of-matlab%2f&text=Matlab%e5%9f%ba%e6%9c%ac%e7%94%a8%e6%b3%95%e6%95%b4%e7%90%86" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=%2fposts%2f2020%2f02%2fbasic-usage-sorting-of-matlab%2f&text=Matlab%20%e5%9f%ba%e6%9c%ac%e7%94%a8%e6%b3%95%e6%95%b4%e7%90%86" aria-label="Twitter">
       <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fposts%2f2020%2f02%2fbasic-usage-sorting-of-matlab%2f&title=Matlab%e5%9f%ba%e6%9c%ac%e7%94%a8%e6%b3%95%e6%95%b4%e7%90%86" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fposts%2f2020%2f02%2fbasic-usage-sorting-of-matlab%2f&title=Matlab%20%e5%9f%ba%e6%9c%ac%e7%94%a8%e6%b3%95%e6%95%b4%e7%90%86" aria-label="Linkedin">
       <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fposts%2f2020%2f02%2fbasic-usage-sorting-of-matlab%2f&is_video=false&description=Matlab%e5%9f%ba%e6%9c%ac%e7%94%a8%e6%b3%95%e6%95%b4%e7%90%86" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fposts%2f2020%2f02%2fbasic-usage-sorting-of-matlab%2f&is_video=false&description=Matlab%20%e5%9f%ba%e6%9c%ac%e7%94%a8%e6%b3%95%e6%95%b4%e7%90%86" aria-label="Pinterest">
       <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=Matlab%e5%9f%ba%e6%9c%ac%e7%94%a8%e6%b3%95%e6%95%b4%e7%90%86&body=Check out this article: %2fposts%2f2020%2f02%2fbasic-usage-sorting-of-matlab%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=Matlab%20%e5%9f%ba%e6%9c%ac%e7%94%a8%e6%b3%95%e6%95%b4%e7%90%86&body=Check out this article: %2fposts%2f2020%2f02%2fbasic-usage-sorting-of-matlab%2f" aria-label="Email">
       <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=%2fposts%2f2020%2f02%2fbasic-usage-sorting-of-matlab%2f&title=Matlab%e5%9f%ba%e6%9c%ac%e7%94%a8%e6%b3%95%e6%95%b4%e7%90%86" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=%2fposts%2f2020%2f02%2fbasic-usage-sorting-of-matlab%2f&title=Matlab%20%e5%9f%ba%e6%9c%ac%e7%94%a8%e6%b3%95%e6%95%b4%e7%90%86" aria-label="Pocket">
       <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=%2fposts%2f2020%2f02%2fbasic-usage-sorting-of-matlab%2f&title=Matlab%e5%9f%ba%e6%9c%ac%e7%94%a8%e6%b3%95%e6%95%b4%e7%90%86" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=%2fposts%2f2020%2f02%2fbasic-usage-sorting-of-matlab%2f&title=Matlab%20%e5%9f%ba%e6%9c%ac%e7%94%a8%e6%b3%95%e6%95%b4%e7%90%86" aria-label="reddit">
       <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2020%2f02%2fbasic-usage-sorting-of-matlab%2f&name=Matlab%e5%9f%ba%e6%9c%ac%e7%94%a8%e6%b3%95%e6%95%b4%e7%90%86&description=%e5%9f%ba%e6%9c%ac%e8%af%ad%e6%b3%95%e6%96%b9%e9%9d%a2%20%e6%8f%90%e5%8f%96%e7%9f%a9%e9%98%b5%e6%9f%90%e8%a1%8c%e6%88%96%e6%9f%90%e5%88%97%201%20A%28%3a%2c%20%5b2%203%5d%29%20%e8%bf%94%e5%9b%9e%e7%ac%ac2%e5%92%8c%e7%ac%ac3%e5%88%97%20%e8%8e%b7%e5%8f%96%e9%9a%8f%e6%9c%ba%e6%95%b0%201%20randi%28100%29%3b%20%25%201%20%e5%88%b0%20100%20%e4%b9%8b%e9%97%b4%e7%9a%84%e9%9a%8f%e6%9c%ba%e6%95%b4%e6%95%b0%20%e5%88%9d%e5%a7%8b%e5%8c%96%e6%95%b0%e7%bb%84%201%20zeros%281%2c%2030%29%3b%20%25%201%e8%a1%8c30%e5%88%97%e7%9a%84%e5%85%a80%e6%95%b0%e7%bb%84%20%e6%8e%a7%e5%88%b6%e8%af%ad%e5%8f%a5%201%202%203%204%205%206%207%208%209%2010%20for%20i%20%3d%200%20%3a%20100%20for%20j%20%3d%201%20%3a%2010%20if%20%28...%29%20...%20else%20...%20end%20end%20...%20end%20%e6%a0%bc%e5%bc%8f%e5%8c%96%e8%be%93%e5%87%ba%201%20fprintf%28%26%2334%3b%e8%8b%a5%e9%80%89%e6%89%8b%e9%80%89%e6%8b%a9%e6%94%b9%e5%8f%98%ef%bc%8c%e5%88%99%e6%88%90%e5%8a%9f%e6%ac%a1%e6%95%b0%e4%b8%ba%ef%bc%9a%25d%2c%20%e6%88%90%e5%8a%9f%e7%8e%87%e4%b8%ba%ef%bc%9a%25f%5cn%26%2334%3b%2c%20count%2c%20count%20%2f%20SUM%29%3b%20%e5%88%9d%e7%ad%89%e6%95%b0%e5%ad%a6%e6%96%b9%e9%9d%a2%20%e6%b1%82%e8%a7%a3%e6%96%b9%e7%a8%8b%e7%bb%84%20%e6%b3%a8%ef%bc%9asolve%e5%b7%b2%e7%bb%8f%e6%94%b9%e7%89%88%ef%bc%8c%e4%b8%8d%e5%8f%af%e4%bc%a0%e5%85%a5%e5%ad%97%e7%ac%a6%e4%b8%b2%0a%e5%ae%9e%e4%be%8b%ef%bc%9a%e6%b1%82%e8%a7%a3%e4%ba%8c%e5%85%83%e4%b8%80%e6%ac%a1%e6%96%b9%e7%a8%8b%0a1%202%203%204%20syms%20x%20y%3b%20s%20%3d%20x%20-%206%20%2a%20y%20%3d%3d%202%3b%20t%20%3d%205%20%2a%20x%20%2b%204%20%2a%20y%20%3d%3d%203%3b%20result%20%3d%20solve%28s%2c%20t%29%3b%20%e6%b1%82%e5%b9%b3%e5%9d%87%e5%80%bc%ef%bc%8c%e4%b8%ad%e5%80%bc%e4%b8%8e%e6%a0%87%e5%87%86%e5%b7%ae%201%202%203%204%205%20A%20%3d%20%5b12%2013%207%2018%2016%2021%209%2010%202%2018%5d%3b%20A%20%3d%20sort%28A%29%3b%20ave%20%3d%20mean%28A%29%3b%20md%20%3d%20median%28A%29%3b%20sigma%20%3d%20std%28A%29%3b%20%e8%a7%a3%e4%b8%80%e9%98%b6%e5%af%bc%e6%95%b0%e6%96%b9%e7%a8%8b%201%202%203%204%205%20syms%20x%20y%3b%20y%20%3d%20-0." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2020%2f02%2fbasic-usage-sorting-of-matlab%2f&name=Matlab%20%e5%9f%ba%e6%9c%ac%e7%94%a8%e6%b3%95%e6%95%b4%e7%90%86&description=%e5%9f%ba%e6%9c%ac%e8%af%ad%e6%b3%95%e6%96%b9%e9%9d%a2%20%e6%8f%90%e5%8f%96%e7%9f%a9%e9%98%b5%e6%9f%90%e8%a1%8c%e6%88%96%e6%9f%90%e5%88%97%201%20A%28%3a%2c%20%5b2%203%5d%29%20%e8%bf%94%e5%9b%9e%e7%ac%ac2%e5%92%8c%e7%ac%ac3%e5%88%97%20%e8%8e%b7%e5%8f%96%e9%9a%8f%e6%9c%ba%e6%95%b0%201%20randi%28100%29%3b%20%25%201%20%e5%88%b0%20100%20%e4%b9%8b%e9%97%b4%e7%9a%84%e9%9a%8f%e6%9c%ba%e6%95%b4%e6%95%b0%20%e5%88%9d%e5%a7%8b%e5%8c%96%e6%95%b0%e7%bb%84%201%20zeros%281%2c%2030%29%3b%20%25%201%e8%a1%8c30%e5%88%97%e7%9a%84%e5%85%a80%e6%95%b0%e7%bb%84%20%e6%8e%a7%e5%88%b6%e8%af%ad%e5%8f%a5%201%202%203%204%205%206%207%208%209%2010%20for%20i%20%3d%200%20%3a%20100%20for%20j%20%3d%201%20%3a%2010%20if%20%28...%29%20...%20else%20...%20end%20end%20...%20end%20%e6%a0%bc%e5%bc%8f%e5%8c%96%e8%be%93%e5%87%ba%201%20fprintf%28%26%2334%3b%e8%8b%a5%e9%80%89%e6%89%8b%e9%80%89%e6%8b%a9%e6%94%b9%e5%8f%98%ef%bc%8c%e5%88%99%e6%88%90%e5%8a%9f%e6%ac%a1%e6%95%b0%e4%b8%ba%ef%bc%9a%25d%2c%20%e6%88%90%e5%8a%9f%e7%8e%87%e4%b8%ba%ef%bc%9a%25f%5cn%26%2334%3b%2c%20count%2c%20count%20%2f%20SUM%29%3b%20%e5%88%9d%e7%ad%89%e6%95%b0%e5%ad%a6%e6%96%b9%e9%9d%a2%20%e6%b1%82%e8%a7%a3%e6%96%b9%e7%a8%8b%e7%bb%84%20%e6%b3%a8%ef%bc%9asolve%e5%b7%b2%e7%bb%8f%e6%94%b9%e7%89%88%ef%bc%8c%e4%b8%8d%e5%8f%af%e4%bc%a0%e5%85%a5%e5%ad%97%e7%ac%a6%e4%b8%b2%0a%e5%ae%9e%e4%be%8b%ef%bc%9a%e6%b1%82%e8%a7%a3%e4%ba%8c%e5%85%83%e4%b8%80%e6%ac%a1%e6%96%b9%e7%a8%8b%0a1%202%203%204%20syms%20x%20y%3b%20s%20%3d%20x%20-%206%20%2a%20y%20%3d%3d%202%3b%20t%20%3d%205%20%2a%20x%20%2b%204%20%2a%20y%20%3d%3d%203%3b%20result%20%3d%20solve%28s%2c%20t%29%3b%20%e6%b1%82%e5%b9%b3%e5%9d%87%e5%80%bc%ef%bc%8c%e4%b8%ad%e5%80%bc%e4%b8%8e%e6%a0%87%e5%87%86%e5%b7%ae%201%202%203%204%205%20A%20%3d%20%5b12%2013%207%2018%2016%2021%209%2010%202%2018%5d%3b%20A%20%3d%20sort%28A%29%3b%20ave%20%3d%20mean%28A%29%3b%20md%20%3d%20median%28A%29%3b%20sigma%20%3d%20std%28A%29%3b%20%e8%a7%a3%e4%b8%80%e9%98%b6%e5%af%bc%e6%95%b0%e6%96%b9%e7%a8%8b%201%202%203%204%205%20syms%20x%20y%3b%20y%20%3d%20-0." aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fposts%2f2020%2f02%2fbasic-usage-sorting-of-matlab%2f&t=Matlab%e5%9f%ba%e6%9c%ac%e7%94%a8%e6%b3%95%e6%95%b4%e7%90%86" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fposts%2f2020%2f02%2fbasic-usage-sorting-of-matlab%2f&t=Matlab%20%e5%9f%ba%e6%9c%ac%e7%94%a8%e6%b3%95%e6%95%b4%e7%90%86" aria-label="Hacker News">
       <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
     </a>
   </li>

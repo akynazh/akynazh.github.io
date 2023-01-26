@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title> Python开发中遇到的bug记录 | Norwegian Wood</title>
+  <title> Python 开发中遇到的 bug 记录 | Norwegian Wood</title>
   <link rel='canonical' href='/posts/2022/11/record-of-bugs-encountered-in-python-development/'>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
-  <meta property="og:title" content="Python开发中遇到的bug记录" />
+  <meta property="og:title" content="Python 开发中遇到的 bug 记录" />
 <meta property="og:description" content="持续更新中。
-pipenv无法正常install 1 2 3 4 PS C:\Users\akyna\Codes\test\test_py&gt; pipenv install Usage: pipenv install [OPTIONS] [PACKAGES]... ERROR:: --system is intended to be used for pre-existing Pipfile installation, not installation of specific packages. Aborting. 解决方法：
+pipenv 无法正常 install 1 2 3 4 PS C:\Users\akyna\Codes\test\test_py&gt; pipenv install Usage: pipenv install [OPTIONS] [PACKAGES]... ERROR:: --system is intended to be used for pre-existing Pipfile installation, not installation of specific packages. Aborting. 解决方法：
 因为pipenv检测到之前在该目录下创建过了环境，需要先删除之前的环境才可以：
-1 2 PS C:\Users\akyna\Codes\test\test_py&gt; pipenv --rm Removing virtualenv (C:\Users\akyna\.virtualenvs\test_py-_qApXuy4)... requests库headers字段编码错误 1 UnicodeEncodeError: &#39;latin-1&#39; codec can&#39;t encode characters in position 30-34: ordinal not in range(256) 解决方法：
+1 2 PS C:\Users\akyna\Codes\test\test_py&gt; pipenv --rm Removing virtualenv (C:\Users\akyna\.virtualenvs\test_py-_qApXuy4)... requests 库 headers 字段编码错误 1 UnicodeEncodeError: &#39;latin-1&#39; codec can&#39;t encode characters in position 30-34: ordinal not in range(256) 解决方法：
 加上.encode(&lsquo;utf-8&rsquo;)：
 1 2 3 4 5 6 7 8 return { &#39;User-Agent&#39;: &#39;Mozilla/5." />
 <meta property="og:type" content="article" />
@@ -21,11 +21,11 @@ pipenv无法正常install 1 2 3 4 PS C:\Users\akyna\Codes\test\test_py&gt; pipen
 <meta property="article:modified_time" content="2022-11-04T22:53:34+08:00" /><meta property="og:site_name" content="Norwegian Wood" />
 
   <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Python开发中遇到的bug记录"/>
+<meta name="twitter:title" content="Python 开发中遇到的 bug 记录"/>
 <meta name="twitter:description" content="持续更新中。
-pipenv无法正常install 1 2 3 4 PS C:\Users\akyna\Codes\test\test_py&gt; pipenv install Usage: pipenv install [OPTIONS] [PACKAGES]... ERROR:: --system is intended to be used for pre-existing Pipfile installation, not installation of specific packages. Aborting. 解决方法：
+pipenv 无法正常 install 1 2 3 4 PS C:\Users\akyna\Codes\test\test_py&gt; pipenv install Usage: pipenv install [OPTIONS] [PACKAGES]... ERROR:: --system is intended to be used for pre-existing Pipfile installation, not installation of specific packages. Aborting. 解决方法：
 因为pipenv检测到之前在该目录下创建过了环境，需要先删除之前的环境才可以：
-1 2 PS C:\Users\akyna\Codes\test\test_py&gt; pipenv --rm Removing virtualenv (C:\Users\akyna\.virtualenvs\test_py-_qApXuy4)... requests库headers字段编码错误 1 UnicodeEncodeError: &#39;latin-1&#39; codec can&#39;t encode characters in position 30-34: ordinal not in range(256) 解决方法：
+1 2 PS C:\Users\akyna\Codes\test\test_py&gt; pipenv --rm Removing virtualenv (C:\Users\akyna\.virtualenvs\test_py-_qApXuy4)... requests 库 headers 字段编码错误 1 UnicodeEncodeError: &#39;latin-1&#39; codec can&#39;t encode characters in position 30-34: ordinal not in range(256) 解决方法：
 加上.encode(&lsquo;utf-8&rsquo;)：
 1 2 3 4 5 6 7 8 return { &#39;User-Agent&#39;: &#39;Mozilla/5."/>
 
@@ -121,42 +121,42 @@ pipenv无法正常install 1 2 3 4 PS C:\Users\akyna\Codes\test\test_py&gt; pipen
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=%2fposts%2f2022%2f11%2frecord-of-bugs-encountered-in-python-development%2f&text=Python%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84bug%e8%ae%b0%e5%bd%95" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=%2fposts%2f2022%2f11%2frecord-of-bugs-encountered-in-python-development%2f&text=Python%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95" aria-label="Twitter">
       <i class="fab fa-twitter " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fposts%2f2022%2f11%2frecord-of-bugs-encountered-in-python-development%2f&title=Python%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84bug%e8%ae%b0%e5%bd%95" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fposts%2f2022%2f11%2frecord-of-bugs-encountered-in-python-development%2f&title=Python%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95" aria-label="Linkedin">
       <i class="fab fa-linkedin " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fposts%2f2022%2f11%2frecord-of-bugs-encountered-in-python-development%2f&is_video=false&description=Python%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84bug%e8%ae%b0%e5%bd%95" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fposts%2f2022%2f11%2frecord-of-bugs-encountered-in-python-development%2f&is_video=false&description=Python%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95" aria-label="Pinterest">
       <i class="fab fa-pinterest " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=Python%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84bug%e8%ae%b0%e5%bd%95&body=Check out this article: %2fposts%2f2022%2f11%2frecord-of-bugs-encountered-in-python-development%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=Python%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95&body=Check out this article: %2fposts%2f2022%2f11%2frecord-of-bugs-encountered-in-python-development%2f" aria-label="Email">
       <i class="fas fa-envelope " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=%2fposts%2f2022%2f11%2frecord-of-bugs-encountered-in-python-development%2f&title=Python%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84bug%e8%ae%b0%e5%bd%95" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=%2fposts%2f2022%2f11%2frecord-of-bugs-encountered-in-python-development%2f&title=Python%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95" aria-label="Pocket">
       <i class="fab fa-get-pocket " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=%2fposts%2f2022%2f11%2frecord-of-bugs-encountered-in-python-development%2f&title=Python%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84bug%e8%ae%b0%e5%bd%95" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=%2fposts%2f2022%2f11%2frecord-of-bugs-encountered-in-python-development%2f&title=Python%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95" aria-label="reddit">
       <i class="fab fa-reddit " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f11%2frecord-of-bugs-encountered-in-python-development%2f&name=Python%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84bug%e8%ae%b0%e5%bd%95&description=%e6%8c%81%e7%bb%ad%e6%9b%b4%e6%96%b0%e4%b8%ad%e3%80%82%0apipenv%e6%97%a0%e6%b3%95%e6%ad%a3%e5%b8%b8install%201%202%203%204%20PS%20C%3a%5cUsers%5cakyna%5cCodes%5ctest%5ctest_py%26gt%3b%20pipenv%20install%20Usage%3a%20pipenv%20install%20%5bOPTIONS%5d%20%5bPACKAGES%5d...%20ERROR%3a%3a%20--system%20is%20intended%20to%20be%20used%20for%20pre-existing%20Pipfile%20installation%2c%20not%20installation%20of%20specific%20packages.%20Aborting.%20%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95%ef%bc%9a%0a%e5%9b%a0%e4%b8%bapipenv%e6%a3%80%e6%b5%8b%e5%88%b0%e4%b9%8b%e5%89%8d%e5%9c%a8%e8%af%a5%e7%9b%ae%e5%bd%95%e4%b8%8b%e5%88%9b%e5%bb%ba%e8%bf%87%e4%ba%86%e7%8e%af%e5%a2%83%ef%bc%8c%e9%9c%80%e8%a6%81%e5%85%88%e5%88%a0%e9%99%a4%e4%b9%8b%e5%89%8d%e7%9a%84%e7%8e%af%e5%a2%83%e6%89%8d%e5%8f%af%e4%bb%a5%ef%bc%9a%0a1%202%20PS%20C%3a%5cUsers%5cakyna%5cCodes%5ctest%5ctest_py%26gt%3b%20pipenv%20--rm%20Removing%20virtualenv%20%28C%3a%5cUsers%5cakyna%5c.virtualenvs%5ctest_py-_qApXuy4%29...%20requests%e5%ba%93headers%e5%ad%97%e6%ae%b5%e7%bc%96%e7%a0%81%e9%94%99%e8%af%af%201%20UnicodeEncodeError%3a%20%26%2339%3blatin-1%26%2339%3b%20codec%20can%26%2339%3bt%20encode%20characters%20in%20position%2030-34%3a%20ordinal%20not%20in%20range%28256%29%20%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95%ef%bc%9a%0a%e5%8a%a0%e4%b8%8a.encode%28%26lsquo%3butf-8%26rsquo%3b%29%ef%bc%9a%0a1%202%203%204%205%206%207%208%20return%20%7b%20%26%2339%3bUser-Agent%26%2339%3b%3a%20%26%2339%3bMozilla%2f5." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f11%2frecord-of-bugs-encountered-in-python-development%2f&name=Python%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95&description=%e6%8c%81%e7%bb%ad%e6%9b%b4%e6%96%b0%e4%b8%ad%e3%80%82%0apipenv%20%e6%97%a0%e6%b3%95%e6%ad%a3%e5%b8%b8%20install%201%202%203%204%20PS%20C%3a%5cUsers%5cakyna%5cCodes%5ctest%5ctest_py%26gt%3b%20pipenv%20install%20Usage%3a%20pipenv%20install%20%5bOPTIONS%5d%20%5bPACKAGES%5d...%20ERROR%3a%3a%20--system%20is%20intended%20to%20be%20used%20for%20pre-existing%20Pipfile%20installation%2c%20not%20installation%20of%20specific%20packages.%20Aborting.%20%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95%ef%bc%9a%0a%e5%9b%a0%e4%b8%bapipenv%e6%a3%80%e6%b5%8b%e5%88%b0%e4%b9%8b%e5%89%8d%e5%9c%a8%e8%af%a5%e7%9b%ae%e5%bd%95%e4%b8%8b%e5%88%9b%e5%bb%ba%e8%bf%87%e4%ba%86%e7%8e%af%e5%a2%83%ef%bc%8c%e9%9c%80%e8%a6%81%e5%85%88%e5%88%a0%e9%99%a4%e4%b9%8b%e5%89%8d%e7%9a%84%e7%8e%af%e5%a2%83%e6%89%8d%e5%8f%af%e4%bb%a5%ef%bc%9a%0a1%202%20PS%20C%3a%5cUsers%5cakyna%5cCodes%5ctest%5ctest_py%26gt%3b%20pipenv%20--rm%20Removing%20virtualenv%20%28C%3a%5cUsers%5cakyna%5c.virtualenvs%5ctest_py-_qApXuy4%29...%20requests%20%e5%ba%93%20headers%20%e5%ad%97%e6%ae%b5%e7%bc%96%e7%a0%81%e9%94%99%e8%af%af%201%20UnicodeEncodeError%3a%20%26%2339%3blatin-1%26%2339%3b%20codec%20can%26%2339%3bt%20encode%20characters%20in%20position%2030-34%3a%20ordinal%20not%20in%20range%28256%29%20%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95%ef%bc%9a%0a%e5%8a%a0%e4%b8%8a.encode%28%26lsquo%3butf-8%26rsquo%3b%29%ef%bc%9a%0a1%202%203%204%205%206%207%208%20return%20%7b%20%26%2339%3bUser-Agent%26%2339%3b%3a%20%26%2339%3bMozilla%2f5." aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fposts%2f2022%2f11%2frecord-of-bugs-encountered-in-python-development%2f&t=Python%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84bug%e8%ae%b0%e5%bd%95" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fposts%2f2022%2f11%2frecord-of-bugs-encountered-in-python-development%2f&t=Python%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95" aria-label="Hacker News">
       <i class="fab fa-hacker-news " aria-hidden="true"></i>
     </a>
   </li>
@@ -167,8 +167,8 @@ pipenv无法正常install 1 2 3 4 PS C:\Users\akyna\Codes\test\test_py&gt; pipen
     <div id="toc">
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#pipenv无法正常install">pipenv无法正常install</a></li>
-    <li><a href="#requests库headers字段编码错误">requests库headers字段编码错误</a></li>
+    <li><a href="#pipenv-无法正常-install">pipenv 无法正常 install</a></li>
+    <li><a href="#requests-库-headers-字段编码错误">requests 库 headers 字段编码错误</a></li>
     <li><a href="#python--crontab-环境变量">python + crontab 环境变量</a></li>
     <li><a href="#关于爬虫所设置的-headers-中的-useragent">关于爬虫所设置的 Headers 中的 UserAgent</a></li>
   </ul>
@@ -180,7 +180,7 @@ pipenv无法正常install 1 2 3 4 PS C:\Users\akyna\Codes\test\test_py&gt; pipen
   <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
     <header>
       <h1 class="posttitle" itemprop="name headline">
-        Python开发中遇到的bug记录
+        Python 开发中遇到的 bug 记录
       </h1>
       <div class="meta">
         
@@ -223,7 +223,7 @@ pipenv无法正常install 1 2 3 4 PS C:\Users\akyna\Codes\test\test_py&gt; pipen
     
     <div class="content" itemprop="articleBody">
       <p>持续更新中。</p>
-<h2 id="pipenv无法正常install">pipenv无法正常install</h2>
+<h2 id="pipenv-无法正常-install">pipenv 无法正常 install</h2>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -250,7 +250,7 @@ pipenv无法正常install 1 2 3 4 PS C:\Users\akyna\Codes\test\test_py&gt; pipen
 </span></span><span style="display:flex;"><span>Removing virtualenv (C:\Users\akyna\.virtualenvs\test_py-_qApXuy4)...
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="requests库headers字段编码错误">requests库headers字段编码错误</h2>
+</div><h2 id="requests-库-headers-字段编码错误">requests 库 headers 字段编码错误</h2>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -286,7 +286,7 @@ pipenv无法正常install 1 2 3 4 PS C:\Users\akyna\Codes\test\test_py&gt; pipen
 </div><h2 id="python--crontab-环境变量">python + crontab 环境变量</h2>
 <p>crontab运行python时，如果python中使用了环境变量，将无法正常获取。</p>
 <p>解决方法：</p>
-<p>在crontab中配置好python中用到的环境变量：</p>
+<p>在crontab中配置好 python 中用到的环境变量：</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -343,8 +343,8 @@ pipenv无法正常install 1 2 3 4 PS C:\Users\akyna\Codes\test\test_py&gt; pipen
     <div id="toc-footer" style="display: none">
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#pipenv无法正常install">pipenv无法正常install</a></li>
-    <li><a href="#requests库headers字段编码错误">requests库headers字段编码错误</a></li>
+    <li><a href="#pipenv-无法正常-install">pipenv 无法正常 install</a></li>
+    <li><a href="#requests-库-headers-字段编码错误">requests 库 headers 字段编码错误</a></li>
     <li><a href="#python--crontab-环境变量">python + crontab 环境变量</a></li>
     <li><a href="#关于爬虫所设置的-headers-中的-useragent">关于爬虫所设置的 Headers 中的 UserAgent</a></li>
   </ul>
@@ -376,42 +376,42 @@ pipenv无法正常install 1 2 3 4 PS C:\Users\akyna\Codes\test\test_py&gt; pipen
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=%2fposts%2f2022%2f11%2frecord-of-bugs-encountered-in-python-development%2f&text=Python%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84bug%e8%ae%b0%e5%bd%95" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=%2fposts%2f2022%2f11%2frecord-of-bugs-encountered-in-python-development%2f&text=Python%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95" aria-label="Twitter">
       <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fposts%2f2022%2f11%2frecord-of-bugs-encountered-in-python-development%2f&title=Python%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84bug%e8%ae%b0%e5%bd%95" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fposts%2f2022%2f11%2frecord-of-bugs-encountered-in-python-development%2f&title=Python%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95" aria-label="Linkedin">
       <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fposts%2f2022%2f11%2frecord-of-bugs-encountered-in-python-development%2f&is_video=false&description=Python%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84bug%e8%ae%b0%e5%bd%95" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fposts%2f2022%2f11%2frecord-of-bugs-encountered-in-python-development%2f&is_video=false&description=Python%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95" aria-label="Pinterest">
       <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=Python%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84bug%e8%ae%b0%e5%bd%95&body=Check out this article: %2fposts%2f2022%2f11%2frecord-of-bugs-encountered-in-python-development%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=Python%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95&body=Check out this article: %2fposts%2f2022%2f11%2frecord-of-bugs-encountered-in-python-development%2f" aria-label="Email">
       <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=%2fposts%2f2022%2f11%2frecord-of-bugs-encountered-in-python-development%2f&title=Python%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84bug%e8%ae%b0%e5%bd%95" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=%2fposts%2f2022%2f11%2frecord-of-bugs-encountered-in-python-development%2f&title=Python%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95" aria-label="Pocket">
       <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=%2fposts%2f2022%2f11%2frecord-of-bugs-encountered-in-python-development%2f&title=Python%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84bug%e8%ae%b0%e5%bd%95" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=%2fposts%2f2022%2f11%2frecord-of-bugs-encountered-in-python-development%2f&title=Python%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95" aria-label="reddit">
       <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f11%2frecord-of-bugs-encountered-in-python-development%2f&name=Python%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84bug%e8%ae%b0%e5%bd%95&description=%e6%8c%81%e7%bb%ad%e6%9b%b4%e6%96%b0%e4%b8%ad%e3%80%82%0apipenv%e6%97%a0%e6%b3%95%e6%ad%a3%e5%b8%b8install%201%202%203%204%20PS%20C%3a%5cUsers%5cakyna%5cCodes%5ctest%5ctest_py%26gt%3b%20pipenv%20install%20Usage%3a%20pipenv%20install%20%5bOPTIONS%5d%20%5bPACKAGES%5d...%20ERROR%3a%3a%20--system%20is%20intended%20to%20be%20used%20for%20pre-existing%20Pipfile%20installation%2c%20not%20installation%20of%20specific%20packages.%20Aborting.%20%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95%ef%bc%9a%0a%e5%9b%a0%e4%b8%bapipenv%e6%a3%80%e6%b5%8b%e5%88%b0%e4%b9%8b%e5%89%8d%e5%9c%a8%e8%af%a5%e7%9b%ae%e5%bd%95%e4%b8%8b%e5%88%9b%e5%bb%ba%e8%bf%87%e4%ba%86%e7%8e%af%e5%a2%83%ef%bc%8c%e9%9c%80%e8%a6%81%e5%85%88%e5%88%a0%e9%99%a4%e4%b9%8b%e5%89%8d%e7%9a%84%e7%8e%af%e5%a2%83%e6%89%8d%e5%8f%af%e4%bb%a5%ef%bc%9a%0a1%202%20PS%20C%3a%5cUsers%5cakyna%5cCodes%5ctest%5ctest_py%26gt%3b%20pipenv%20--rm%20Removing%20virtualenv%20%28C%3a%5cUsers%5cakyna%5c.virtualenvs%5ctest_py-_qApXuy4%29...%20requests%e5%ba%93headers%e5%ad%97%e6%ae%b5%e7%bc%96%e7%a0%81%e9%94%99%e8%af%af%201%20UnicodeEncodeError%3a%20%26%2339%3blatin-1%26%2339%3b%20codec%20can%26%2339%3bt%20encode%20characters%20in%20position%2030-34%3a%20ordinal%20not%20in%20range%28256%29%20%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95%ef%bc%9a%0a%e5%8a%a0%e4%b8%8a.encode%28%26lsquo%3butf-8%26rsquo%3b%29%ef%bc%9a%0a1%202%203%204%205%206%207%208%20return%20%7b%20%26%2339%3bUser-Agent%26%2339%3b%3a%20%26%2339%3bMozilla%2f5." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f11%2frecord-of-bugs-encountered-in-python-development%2f&name=Python%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95&description=%e6%8c%81%e7%bb%ad%e6%9b%b4%e6%96%b0%e4%b8%ad%e3%80%82%0apipenv%20%e6%97%a0%e6%b3%95%e6%ad%a3%e5%b8%b8%20install%201%202%203%204%20PS%20C%3a%5cUsers%5cakyna%5cCodes%5ctest%5ctest_py%26gt%3b%20pipenv%20install%20Usage%3a%20pipenv%20install%20%5bOPTIONS%5d%20%5bPACKAGES%5d...%20ERROR%3a%3a%20--system%20is%20intended%20to%20be%20used%20for%20pre-existing%20Pipfile%20installation%2c%20not%20installation%20of%20specific%20packages.%20Aborting.%20%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95%ef%bc%9a%0a%e5%9b%a0%e4%b8%bapipenv%e6%a3%80%e6%b5%8b%e5%88%b0%e4%b9%8b%e5%89%8d%e5%9c%a8%e8%af%a5%e7%9b%ae%e5%bd%95%e4%b8%8b%e5%88%9b%e5%bb%ba%e8%bf%87%e4%ba%86%e7%8e%af%e5%a2%83%ef%bc%8c%e9%9c%80%e8%a6%81%e5%85%88%e5%88%a0%e9%99%a4%e4%b9%8b%e5%89%8d%e7%9a%84%e7%8e%af%e5%a2%83%e6%89%8d%e5%8f%af%e4%bb%a5%ef%bc%9a%0a1%202%20PS%20C%3a%5cUsers%5cakyna%5cCodes%5ctest%5ctest_py%26gt%3b%20pipenv%20--rm%20Removing%20virtualenv%20%28C%3a%5cUsers%5cakyna%5c.virtualenvs%5ctest_py-_qApXuy4%29...%20requests%20%e5%ba%93%20headers%20%e5%ad%97%e6%ae%b5%e7%bc%96%e7%a0%81%e9%94%99%e8%af%af%201%20UnicodeEncodeError%3a%20%26%2339%3blatin-1%26%2339%3b%20codec%20can%26%2339%3bt%20encode%20characters%20in%20position%2030-34%3a%20ordinal%20not%20in%20range%28256%29%20%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95%ef%bc%9a%0a%e5%8a%a0%e4%b8%8a.encode%28%26lsquo%3butf-8%26rsquo%3b%29%ef%bc%9a%0a1%202%203%204%205%206%207%208%20return%20%7b%20%26%2339%3bUser-Agent%26%2339%3b%3a%20%26%2339%3bMozilla%2f5." aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fposts%2f2022%2f11%2frecord-of-bugs-encountered-in-python-development%2f&t=Python%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84bug%e8%ae%b0%e5%bd%95" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fposts%2f2022%2f11%2frecord-of-bugs-encountered-in-python-development%2f&t=Python%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95" aria-label="Hacker News">
       <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
     </a>
   </li>

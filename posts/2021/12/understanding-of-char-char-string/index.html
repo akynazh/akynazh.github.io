@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title> 关于char*, char[], string的理解 | Norwegian Wood</title>
+  <title> 关于 char*, char[], string 的理解 | Norwegian Wood</title>
   <link rel='canonical' href='/posts/2021/12/understanding-of-char-char-string/'>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
-  <meta property="og:title" content="关于char*, char[], string的理解" />
+  <meta property="og:title" content="关于 char*, char[], string 的理解" />
 <meta property="og:description" content="关于char[]与char*的区别 1 2 3 4 char s1[] = &#34;abc&#34;; cout &lt;&lt; s1 &lt;&lt; endl; // abc s1[1] = &#39;d&#39;; // 改变值 cout &lt;&lt; s1 &lt;&lt; endl; // adc &ldquo;abc&quot;为字符串常量，s1为指针常量，即指针是一个常量，所以指向地址不能改变，指向地址的值可变
 1 2 3 4 const char* s2 = &#34;abc&#34;; // const是默认存在的 cout &lt;&lt; s2 &lt;&lt; endl; // abc s2 = &#34;dfs&#34;; // 改变地址 cout &lt;&lt; s2 &lt;&lt; endl; // dfs &ldquo;abc&quot;为字符串常量，s2为常量指针，指向地址可变，但指向的地址的值不能变
 以上两者皆可用于函数传值
@@ -19,7 +19,7 @@
 <meta property="article:modified_time" content="2021-12-05T12:37:32+08:00" /><meta property="og:site_name" content="Norwegian Wood" />
 
   <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="关于char*, char[], string的理解"/>
+<meta name="twitter:title" content="关于 char*, char[], string 的理解"/>
 <meta name="twitter:description" content="关于char[]与char*的区别 1 2 3 4 char s1[] = &#34;abc&#34;; cout &lt;&lt; s1 &lt;&lt; endl; // abc s1[1] = &#39;d&#39;; // 改变值 cout &lt;&lt; s1 &lt;&lt; endl; // adc &ldquo;abc&quot;为字符串常量，s1为指针常量，即指针是一个常量，所以指向地址不能改变，指向地址的值可变
 1 2 3 4 const char* s2 = &#34;abc&#34;; // const是默认存在的 cout &lt;&lt; s2 &lt;&lt; endl; // abc s2 = &#34;dfs&#34;; // 改变地址 cout &lt;&lt; s2 &lt;&lt; endl; // dfs &ldquo;abc&quot;为字符串常量，s2为常量指针，指向地址可变，但指向的地址的值不能变
 以上两者皆可用于函数传值
@@ -117,42 +117,42 @@
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=%2fposts%2f2021%2f12%2funderstanding-of-char-char-string%2f&text=%e5%85%b3%e4%ba%8echar%2a%2c%20char%5b%5d%2c%20string%e7%9a%84%e7%90%86%e8%a7%a3" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=%2fposts%2f2021%2f12%2funderstanding-of-char-char-string%2f&text=%e5%85%b3%e4%ba%8e%20char%2a%2c%20char%5b%5d%2c%20string%20%e7%9a%84%e7%90%86%e8%a7%a3" aria-label="Twitter">
       <i class="fab fa-twitter " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fposts%2f2021%2f12%2funderstanding-of-char-char-string%2f&title=%e5%85%b3%e4%ba%8echar%2a%2c%20char%5b%5d%2c%20string%e7%9a%84%e7%90%86%e8%a7%a3" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fposts%2f2021%2f12%2funderstanding-of-char-char-string%2f&title=%e5%85%b3%e4%ba%8e%20char%2a%2c%20char%5b%5d%2c%20string%20%e7%9a%84%e7%90%86%e8%a7%a3" aria-label="Linkedin">
       <i class="fab fa-linkedin " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fposts%2f2021%2f12%2funderstanding-of-char-char-string%2f&is_video=false&description=%e5%85%b3%e4%ba%8echar%2a%2c%20char%5b%5d%2c%20string%e7%9a%84%e7%90%86%e8%a7%a3" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fposts%2f2021%2f12%2funderstanding-of-char-char-string%2f&is_video=false&description=%e5%85%b3%e4%ba%8e%20char%2a%2c%20char%5b%5d%2c%20string%20%e7%9a%84%e7%90%86%e8%a7%a3" aria-label="Pinterest">
       <i class="fab fa-pinterest " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=%e5%85%b3%e4%ba%8echar%2a%2c%20char%5b%5d%2c%20string%e7%9a%84%e7%90%86%e8%a7%a3&body=Check out this article: %2fposts%2f2021%2f12%2funderstanding-of-char-char-string%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=%e5%85%b3%e4%ba%8e%20char%2a%2c%20char%5b%5d%2c%20string%20%e7%9a%84%e7%90%86%e8%a7%a3&body=Check out this article: %2fposts%2f2021%2f12%2funderstanding-of-char-char-string%2f" aria-label="Email">
       <i class="fas fa-envelope " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=%2fposts%2f2021%2f12%2funderstanding-of-char-char-string%2f&title=%e5%85%b3%e4%ba%8echar%2a%2c%20char%5b%5d%2c%20string%e7%9a%84%e7%90%86%e8%a7%a3" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=%2fposts%2f2021%2f12%2funderstanding-of-char-char-string%2f&title=%e5%85%b3%e4%ba%8e%20char%2a%2c%20char%5b%5d%2c%20string%20%e7%9a%84%e7%90%86%e8%a7%a3" aria-label="Pocket">
       <i class="fab fa-get-pocket " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=%2fposts%2f2021%2f12%2funderstanding-of-char-char-string%2f&title=%e5%85%b3%e4%ba%8echar%2a%2c%20char%5b%5d%2c%20string%e7%9a%84%e7%90%86%e8%a7%a3" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=%2fposts%2f2021%2f12%2funderstanding-of-char-char-string%2f&title=%e5%85%b3%e4%ba%8e%20char%2a%2c%20char%5b%5d%2c%20string%20%e7%9a%84%e7%90%86%e8%a7%a3" aria-label="reddit">
       <i class="fab fa-reddit " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2021%2f12%2funderstanding-of-char-char-string%2f&name=%e5%85%b3%e4%ba%8echar%2a%2c%20char%5b%5d%2c%20string%e7%9a%84%e7%90%86%e8%a7%a3&description=%e5%85%b3%e4%ba%8echar%5b%5d%e4%b8%8echar%2a%e7%9a%84%e5%8c%ba%e5%88%ab%201%202%203%204%20char%20s1%5b%5d%20%3d%20%26%2334%3babc%26%2334%3b%3b%20cout%20%26lt%3b%26lt%3b%20s1%20%26lt%3b%26lt%3b%20endl%3b%20%2f%2f%20abc%20s1%5b1%5d%20%3d%20%26%2339%3bd%26%2339%3b%3b%20%2f%2f%20%e6%94%b9%e5%8f%98%e5%80%bc%20cout%20%26lt%3b%26lt%3b%20s1%20%26lt%3b%26lt%3b%20endl%3b%20%2f%2f%20adc%20%26ldquo%3babc%26quot%3b%e4%b8%ba%e5%ad%97%e7%ac%a6%e4%b8%b2%e5%b8%b8%e9%87%8f%ef%bc%8cs1%e4%b8%ba%e6%8c%87%e9%92%88%e5%b8%b8%e9%87%8f%ef%bc%8c%e5%8d%b3%e6%8c%87%e9%92%88%e6%98%af%e4%b8%80%e4%b8%aa%e5%b8%b8%e9%87%8f%ef%bc%8c%e6%89%80%e4%bb%a5%e6%8c%87%e5%90%91%e5%9c%b0%e5%9d%80%e4%b8%8d%e8%83%bd%e6%94%b9%e5%8f%98%ef%bc%8c%e6%8c%87%e5%90%91%e5%9c%b0%e5%9d%80%e7%9a%84%e5%80%bc%e5%8f%af%e5%8f%98%0a1%202%203%204%20const%20char%2a%20s2%20%3d%20%26%2334%3babc%26%2334%3b%3b%20%2f%2f%20const%e6%98%af%e9%bb%98%e8%ae%a4%e5%ad%98%e5%9c%a8%e7%9a%84%20cout%20%26lt%3b%26lt%3b%20s2%20%26lt%3b%26lt%3b%20endl%3b%20%2f%2f%20abc%20s2%20%3d%20%26%2334%3bdfs%26%2334%3b%3b%20%2f%2f%20%e6%94%b9%e5%8f%98%e5%9c%b0%e5%9d%80%20cout%20%26lt%3b%26lt%3b%20s2%20%26lt%3b%26lt%3b%20endl%3b%20%2f%2f%20dfs%20%26ldquo%3babc%26quot%3b%e4%b8%ba%e5%ad%97%e7%ac%a6%e4%b8%b2%e5%b8%b8%e9%87%8f%ef%bc%8cs2%e4%b8%ba%e5%b8%b8%e9%87%8f%e6%8c%87%e9%92%88%ef%bc%8c%e6%8c%87%e5%90%91%e5%9c%b0%e5%9d%80%e5%8f%af%e5%8f%98%ef%bc%8c%e4%bd%86%e6%8c%87%e5%90%91%e7%9a%84%e5%9c%b0%e5%9d%80%e7%9a%84%e5%80%bc%e4%b8%8d%e8%83%bd%e5%8f%98%0a%e4%bb%a5%e4%b8%8a%e4%b8%a4%e8%80%85%e7%9a%86%e5%8f%af%e7%94%a8%e4%ba%8e%e5%87%bd%e6%95%b0%e4%bc%a0%e5%80%bc%0a1%202%203%204%205%206%20void%20print_str%28const%20char%20%2a%20str%29%20%7b%20printf%28%26%2334%3b%25s%5cn%26%2334%3b%2c%20str%29%3b%20%7d%20print_str%28s1%29%3b%20%2f%2f%20adc%20print_str%28s2%29%3b%20%2f%2f%20dfs%20%e5%85%b3%e4%ba%8estring%e5%92%8cchar%5b%5d%2cchar%2a%e7%9a%84%e5%85%b3%e7%b3%bb%20string%e6%98%af%e7%b1%bb%ef%bc%8cstring%e6%98%af%e5%af%b9%e4%b8%80%e4%b8%aa%e5%ad%97%e7%ac%a6%e4%b8%b2%e7%9a%84%e5%bc%95%e7%94%a8%e5%80%bc%201%202%203%204%205%206%207%20const%20char%2a%20s1%20%3d%20%26%2334%3babc%26%2334%3b%3b%20string%20s%20%3d%20s1%3b%20cout%20%26lt%3b%26lt%3b%20s%20%26lt%3b%26lt%3b%20endl%3b%20%2f%2f%20abc%20s%20%2b%3d%20%26%2334%3ba%26%2334%3b%3b%20cout%20%26lt%3b%26lt%3b%20s%20%26lt%3b%26lt%3b%20endl%3b%20%2f%2f%20abca%20cout%20%26lt%3b%26lt%3b%20s1%20%26lt%3b%26lt%3b%20endl%3b%20%2f%2f%20abc%20%e8%af%81%e6%98%8estring%e5%8f%aa%e6%98%af%e5%bc%95%e7%94%a8%e4%ba%86s1%20string%e5%bc%95%e7%94%a8%e5%ad%97%e7%ac%a6%e4%b8%b2%e7%a4%ba%e4%be%8b%201%202%203%204%205%206%207%20const%20char%20%2as1%20%3d%20%26%2334%3b123%26%2334%3b%3b%20string%20str1%20%3d%20s1%3b%20%2f%2f%20%e8%8b%a5%e8%a6%81%e8%bf%99%e6%a0%b7%e8%b5%8b%e5%80%bcs1%e5%bf%85%e9%a1%bb%e5%8a%a0const%20cout%20%26lt%3b%26lt%3b%20str1%20%26lt%3b%26lt%3b%20endl%3b%20%2f%2f%20123%20char%20s2%5b%5d%20%3d%20%26%2334%3b234%26%2334%3b%3b%20string%20str2%20%3d%20s2%3b%20cout%20%26lt%3b%26lt%3b%20str2%20%26lt%3b%26lt%3b%20endl%3b%20%2f%2f%20234%20string%e8%bd%acchar%2a%201%202%203%20const%20char%2a%20s1_1%20%3d%20str1." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2021%2f12%2funderstanding-of-char-char-string%2f&name=%e5%85%b3%e4%ba%8e%20char%2a%2c%20char%5b%5d%2c%20string%20%e7%9a%84%e7%90%86%e8%a7%a3&description=%e5%85%b3%e4%ba%8echar%5b%5d%e4%b8%8echar%2a%e7%9a%84%e5%8c%ba%e5%88%ab%201%202%203%204%20char%20s1%5b%5d%20%3d%20%26%2334%3babc%26%2334%3b%3b%20cout%20%26lt%3b%26lt%3b%20s1%20%26lt%3b%26lt%3b%20endl%3b%20%2f%2f%20abc%20s1%5b1%5d%20%3d%20%26%2339%3bd%26%2339%3b%3b%20%2f%2f%20%e6%94%b9%e5%8f%98%e5%80%bc%20cout%20%26lt%3b%26lt%3b%20s1%20%26lt%3b%26lt%3b%20endl%3b%20%2f%2f%20adc%20%26ldquo%3babc%26quot%3b%e4%b8%ba%e5%ad%97%e7%ac%a6%e4%b8%b2%e5%b8%b8%e9%87%8f%ef%bc%8cs1%e4%b8%ba%e6%8c%87%e9%92%88%e5%b8%b8%e9%87%8f%ef%bc%8c%e5%8d%b3%e6%8c%87%e9%92%88%e6%98%af%e4%b8%80%e4%b8%aa%e5%b8%b8%e9%87%8f%ef%bc%8c%e6%89%80%e4%bb%a5%e6%8c%87%e5%90%91%e5%9c%b0%e5%9d%80%e4%b8%8d%e8%83%bd%e6%94%b9%e5%8f%98%ef%bc%8c%e6%8c%87%e5%90%91%e5%9c%b0%e5%9d%80%e7%9a%84%e5%80%bc%e5%8f%af%e5%8f%98%0a1%202%203%204%20const%20char%2a%20s2%20%3d%20%26%2334%3babc%26%2334%3b%3b%20%2f%2f%20const%e6%98%af%e9%bb%98%e8%ae%a4%e5%ad%98%e5%9c%a8%e7%9a%84%20cout%20%26lt%3b%26lt%3b%20s2%20%26lt%3b%26lt%3b%20endl%3b%20%2f%2f%20abc%20s2%20%3d%20%26%2334%3bdfs%26%2334%3b%3b%20%2f%2f%20%e6%94%b9%e5%8f%98%e5%9c%b0%e5%9d%80%20cout%20%26lt%3b%26lt%3b%20s2%20%26lt%3b%26lt%3b%20endl%3b%20%2f%2f%20dfs%20%26ldquo%3babc%26quot%3b%e4%b8%ba%e5%ad%97%e7%ac%a6%e4%b8%b2%e5%b8%b8%e9%87%8f%ef%bc%8cs2%e4%b8%ba%e5%b8%b8%e9%87%8f%e6%8c%87%e9%92%88%ef%bc%8c%e6%8c%87%e5%90%91%e5%9c%b0%e5%9d%80%e5%8f%af%e5%8f%98%ef%bc%8c%e4%bd%86%e6%8c%87%e5%90%91%e7%9a%84%e5%9c%b0%e5%9d%80%e7%9a%84%e5%80%bc%e4%b8%8d%e8%83%bd%e5%8f%98%0a%e4%bb%a5%e4%b8%8a%e4%b8%a4%e8%80%85%e7%9a%86%e5%8f%af%e7%94%a8%e4%ba%8e%e5%87%bd%e6%95%b0%e4%bc%a0%e5%80%bc%0a1%202%203%204%205%206%20void%20print_str%28const%20char%20%2a%20str%29%20%7b%20printf%28%26%2334%3b%25s%5cn%26%2334%3b%2c%20str%29%3b%20%7d%20print_str%28s1%29%3b%20%2f%2f%20adc%20print_str%28s2%29%3b%20%2f%2f%20dfs%20%e5%85%b3%e4%ba%8estring%e5%92%8cchar%5b%5d%2cchar%2a%e7%9a%84%e5%85%b3%e7%b3%bb%20string%e6%98%af%e7%b1%bb%ef%bc%8cstring%e6%98%af%e5%af%b9%e4%b8%80%e4%b8%aa%e5%ad%97%e7%ac%a6%e4%b8%b2%e7%9a%84%e5%bc%95%e7%94%a8%e5%80%bc%201%202%203%204%205%206%207%20const%20char%2a%20s1%20%3d%20%26%2334%3babc%26%2334%3b%3b%20string%20s%20%3d%20s1%3b%20cout%20%26lt%3b%26lt%3b%20s%20%26lt%3b%26lt%3b%20endl%3b%20%2f%2f%20abc%20s%20%2b%3d%20%26%2334%3ba%26%2334%3b%3b%20cout%20%26lt%3b%26lt%3b%20s%20%26lt%3b%26lt%3b%20endl%3b%20%2f%2f%20abca%20cout%20%26lt%3b%26lt%3b%20s1%20%26lt%3b%26lt%3b%20endl%3b%20%2f%2f%20abc%20%e8%af%81%e6%98%8estring%e5%8f%aa%e6%98%af%e5%bc%95%e7%94%a8%e4%ba%86s1%20string%e5%bc%95%e7%94%a8%e5%ad%97%e7%ac%a6%e4%b8%b2%e7%a4%ba%e4%be%8b%201%202%203%204%205%206%207%20const%20char%20%2as1%20%3d%20%26%2334%3b123%26%2334%3b%3b%20string%20str1%20%3d%20s1%3b%20%2f%2f%20%e8%8b%a5%e8%a6%81%e8%bf%99%e6%a0%b7%e8%b5%8b%e5%80%bcs1%e5%bf%85%e9%a1%bb%e5%8a%a0const%20cout%20%26lt%3b%26lt%3b%20str1%20%26lt%3b%26lt%3b%20endl%3b%20%2f%2f%20123%20char%20s2%5b%5d%20%3d%20%26%2334%3b234%26%2334%3b%3b%20string%20str2%20%3d%20s2%3b%20cout%20%26lt%3b%26lt%3b%20str2%20%26lt%3b%26lt%3b%20endl%3b%20%2f%2f%20234%20string%e8%bd%acchar%2a%201%202%203%20const%20char%2a%20s1_1%20%3d%20str1." aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fposts%2f2021%2f12%2funderstanding-of-char-char-string%2f&t=%e5%85%b3%e4%ba%8echar%2a%2c%20char%5b%5d%2c%20string%e7%9a%84%e7%90%86%e8%a7%a3" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fposts%2f2021%2f12%2funderstanding-of-char-char-string%2f&t=%e5%85%b3%e4%ba%8e%20char%2a%2c%20char%5b%5d%2c%20string%20%e7%9a%84%e7%90%86%e8%a7%a3" aria-label="Hacker News">
       <i class="fab fa-hacker-news " aria-hidden="true"></i>
     </a>
   </li>
@@ -176,7 +176,7 @@
   <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
     <header>
       <h1 class="posttitle" itemprop="name headline">
-        关于char*, char[], string的理解
+        关于 char*, char[], string 的理解
       </h1>
       <div class="meta">
         
@@ -441,42 +441,42 @@
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=%2fposts%2f2021%2f12%2funderstanding-of-char-char-string%2f&text=%e5%85%b3%e4%ba%8echar%2a%2c%20char%5b%5d%2c%20string%e7%9a%84%e7%90%86%e8%a7%a3" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=%2fposts%2f2021%2f12%2funderstanding-of-char-char-string%2f&text=%e5%85%b3%e4%ba%8e%20char%2a%2c%20char%5b%5d%2c%20string%20%e7%9a%84%e7%90%86%e8%a7%a3" aria-label="Twitter">
       <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fposts%2f2021%2f12%2funderstanding-of-char-char-string%2f&title=%e5%85%b3%e4%ba%8echar%2a%2c%20char%5b%5d%2c%20string%e7%9a%84%e7%90%86%e8%a7%a3" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fposts%2f2021%2f12%2funderstanding-of-char-char-string%2f&title=%e5%85%b3%e4%ba%8e%20char%2a%2c%20char%5b%5d%2c%20string%20%e7%9a%84%e7%90%86%e8%a7%a3" aria-label="Linkedin">
       <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fposts%2f2021%2f12%2funderstanding-of-char-char-string%2f&is_video=false&description=%e5%85%b3%e4%ba%8echar%2a%2c%20char%5b%5d%2c%20string%e7%9a%84%e7%90%86%e8%a7%a3" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fposts%2f2021%2f12%2funderstanding-of-char-char-string%2f&is_video=false&description=%e5%85%b3%e4%ba%8e%20char%2a%2c%20char%5b%5d%2c%20string%20%e7%9a%84%e7%90%86%e8%a7%a3" aria-label="Pinterest">
       <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=%e5%85%b3%e4%ba%8echar%2a%2c%20char%5b%5d%2c%20string%e7%9a%84%e7%90%86%e8%a7%a3&body=Check out this article: %2fposts%2f2021%2f12%2funderstanding-of-char-char-string%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=%e5%85%b3%e4%ba%8e%20char%2a%2c%20char%5b%5d%2c%20string%20%e7%9a%84%e7%90%86%e8%a7%a3&body=Check out this article: %2fposts%2f2021%2f12%2funderstanding-of-char-char-string%2f" aria-label="Email">
       <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=%2fposts%2f2021%2f12%2funderstanding-of-char-char-string%2f&title=%e5%85%b3%e4%ba%8echar%2a%2c%20char%5b%5d%2c%20string%e7%9a%84%e7%90%86%e8%a7%a3" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=%2fposts%2f2021%2f12%2funderstanding-of-char-char-string%2f&title=%e5%85%b3%e4%ba%8e%20char%2a%2c%20char%5b%5d%2c%20string%20%e7%9a%84%e7%90%86%e8%a7%a3" aria-label="Pocket">
       <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=%2fposts%2f2021%2f12%2funderstanding-of-char-char-string%2f&title=%e5%85%b3%e4%ba%8echar%2a%2c%20char%5b%5d%2c%20string%e7%9a%84%e7%90%86%e8%a7%a3" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=%2fposts%2f2021%2f12%2funderstanding-of-char-char-string%2f&title=%e5%85%b3%e4%ba%8e%20char%2a%2c%20char%5b%5d%2c%20string%20%e7%9a%84%e7%90%86%e8%a7%a3" aria-label="reddit">
       <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2021%2f12%2funderstanding-of-char-char-string%2f&name=%e5%85%b3%e4%ba%8echar%2a%2c%20char%5b%5d%2c%20string%e7%9a%84%e7%90%86%e8%a7%a3&description=%e5%85%b3%e4%ba%8echar%5b%5d%e4%b8%8echar%2a%e7%9a%84%e5%8c%ba%e5%88%ab%201%202%203%204%20char%20s1%5b%5d%20%3d%20%26%2334%3babc%26%2334%3b%3b%20cout%20%26lt%3b%26lt%3b%20s1%20%26lt%3b%26lt%3b%20endl%3b%20%2f%2f%20abc%20s1%5b1%5d%20%3d%20%26%2339%3bd%26%2339%3b%3b%20%2f%2f%20%e6%94%b9%e5%8f%98%e5%80%bc%20cout%20%26lt%3b%26lt%3b%20s1%20%26lt%3b%26lt%3b%20endl%3b%20%2f%2f%20adc%20%26ldquo%3babc%26quot%3b%e4%b8%ba%e5%ad%97%e7%ac%a6%e4%b8%b2%e5%b8%b8%e9%87%8f%ef%bc%8cs1%e4%b8%ba%e6%8c%87%e9%92%88%e5%b8%b8%e9%87%8f%ef%bc%8c%e5%8d%b3%e6%8c%87%e9%92%88%e6%98%af%e4%b8%80%e4%b8%aa%e5%b8%b8%e9%87%8f%ef%bc%8c%e6%89%80%e4%bb%a5%e6%8c%87%e5%90%91%e5%9c%b0%e5%9d%80%e4%b8%8d%e8%83%bd%e6%94%b9%e5%8f%98%ef%bc%8c%e6%8c%87%e5%90%91%e5%9c%b0%e5%9d%80%e7%9a%84%e5%80%bc%e5%8f%af%e5%8f%98%0a1%202%203%204%20const%20char%2a%20s2%20%3d%20%26%2334%3babc%26%2334%3b%3b%20%2f%2f%20const%e6%98%af%e9%bb%98%e8%ae%a4%e5%ad%98%e5%9c%a8%e7%9a%84%20cout%20%26lt%3b%26lt%3b%20s2%20%26lt%3b%26lt%3b%20endl%3b%20%2f%2f%20abc%20s2%20%3d%20%26%2334%3bdfs%26%2334%3b%3b%20%2f%2f%20%e6%94%b9%e5%8f%98%e5%9c%b0%e5%9d%80%20cout%20%26lt%3b%26lt%3b%20s2%20%26lt%3b%26lt%3b%20endl%3b%20%2f%2f%20dfs%20%26ldquo%3babc%26quot%3b%e4%b8%ba%e5%ad%97%e7%ac%a6%e4%b8%b2%e5%b8%b8%e9%87%8f%ef%bc%8cs2%e4%b8%ba%e5%b8%b8%e9%87%8f%e6%8c%87%e9%92%88%ef%bc%8c%e6%8c%87%e5%90%91%e5%9c%b0%e5%9d%80%e5%8f%af%e5%8f%98%ef%bc%8c%e4%bd%86%e6%8c%87%e5%90%91%e7%9a%84%e5%9c%b0%e5%9d%80%e7%9a%84%e5%80%bc%e4%b8%8d%e8%83%bd%e5%8f%98%0a%e4%bb%a5%e4%b8%8a%e4%b8%a4%e8%80%85%e7%9a%86%e5%8f%af%e7%94%a8%e4%ba%8e%e5%87%bd%e6%95%b0%e4%bc%a0%e5%80%bc%0a1%202%203%204%205%206%20void%20print_str%28const%20char%20%2a%20str%29%20%7b%20printf%28%26%2334%3b%25s%5cn%26%2334%3b%2c%20str%29%3b%20%7d%20print_str%28s1%29%3b%20%2f%2f%20adc%20print_str%28s2%29%3b%20%2f%2f%20dfs%20%e5%85%b3%e4%ba%8estring%e5%92%8cchar%5b%5d%2cchar%2a%e7%9a%84%e5%85%b3%e7%b3%bb%20string%e6%98%af%e7%b1%bb%ef%bc%8cstring%e6%98%af%e5%af%b9%e4%b8%80%e4%b8%aa%e5%ad%97%e7%ac%a6%e4%b8%b2%e7%9a%84%e5%bc%95%e7%94%a8%e5%80%bc%201%202%203%204%205%206%207%20const%20char%2a%20s1%20%3d%20%26%2334%3babc%26%2334%3b%3b%20string%20s%20%3d%20s1%3b%20cout%20%26lt%3b%26lt%3b%20s%20%26lt%3b%26lt%3b%20endl%3b%20%2f%2f%20abc%20s%20%2b%3d%20%26%2334%3ba%26%2334%3b%3b%20cout%20%26lt%3b%26lt%3b%20s%20%26lt%3b%26lt%3b%20endl%3b%20%2f%2f%20abca%20cout%20%26lt%3b%26lt%3b%20s1%20%26lt%3b%26lt%3b%20endl%3b%20%2f%2f%20abc%20%e8%af%81%e6%98%8estring%e5%8f%aa%e6%98%af%e5%bc%95%e7%94%a8%e4%ba%86s1%20string%e5%bc%95%e7%94%a8%e5%ad%97%e7%ac%a6%e4%b8%b2%e7%a4%ba%e4%be%8b%201%202%203%204%205%206%207%20const%20char%20%2as1%20%3d%20%26%2334%3b123%26%2334%3b%3b%20string%20str1%20%3d%20s1%3b%20%2f%2f%20%e8%8b%a5%e8%a6%81%e8%bf%99%e6%a0%b7%e8%b5%8b%e5%80%bcs1%e5%bf%85%e9%a1%bb%e5%8a%a0const%20cout%20%26lt%3b%26lt%3b%20str1%20%26lt%3b%26lt%3b%20endl%3b%20%2f%2f%20123%20char%20s2%5b%5d%20%3d%20%26%2334%3b234%26%2334%3b%3b%20string%20str2%20%3d%20s2%3b%20cout%20%26lt%3b%26lt%3b%20str2%20%26lt%3b%26lt%3b%20endl%3b%20%2f%2f%20234%20string%e8%bd%acchar%2a%201%202%203%20const%20char%2a%20s1_1%20%3d%20str1." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2021%2f12%2funderstanding-of-char-char-string%2f&name=%e5%85%b3%e4%ba%8e%20char%2a%2c%20char%5b%5d%2c%20string%20%e7%9a%84%e7%90%86%e8%a7%a3&description=%e5%85%b3%e4%ba%8echar%5b%5d%e4%b8%8echar%2a%e7%9a%84%e5%8c%ba%e5%88%ab%201%202%203%204%20char%20s1%5b%5d%20%3d%20%26%2334%3babc%26%2334%3b%3b%20cout%20%26lt%3b%26lt%3b%20s1%20%26lt%3b%26lt%3b%20endl%3b%20%2f%2f%20abc%20s1%5b1%5d%20%3d%20%26%2339%3bd%26%2339%3b%3b%20%2f%2f%20%e6%94%b9%e5%8f%98%e5%80%bc%20cout%20%26lt%3b%26lt%3b%20s1%20%26lt%3b%26lt%3b%20endl%3b%20%2f%2f%20adc%20%26ldquo%3babc%26quot%3b%e4%b8%ba%e5%ad%97%e7%ac%a6%e4%b8%b2%e5%b8%b8%e9%87%8f%ef%bc%8cs1%e4%b8%ba%e6%8c%87%e9%92%88%e5%b8%b8%e9%87%8f%ef%bc%8c%e5%8d%b3%e6%8c%87%e9%92%88%e6%98%af%e4%b8%80%e4%b8%aa%e5%b8%b8%e9%87%8f%ef%bc%8c%e6%89%80%e4%bb%a5%e6%8c%87%e5%90%91%e5%9c%b0%e5%9d%80%e4%b8%8d%e8%83%bd%e6%94%b9%e5%8f%98%ef%bc%8c%e6%8c%87%e5%90%91%e5%9c%b0%e5%9d%80%e7%9a%84%e5%80%bc%e5%8f%af%e5%8f%98%0a1%202%203%204%20const%20char%2a%20s2%20%3d%20%26%2334%3babc%26%2334%3b%3b%20%2f%2f%20const%e6%98%af%e9%bb%98%e8%ae%a4%e5%ad%98%e5%9c%a8%e7%9a%84%20cout%20%26lt%3b%26lt%3b%20s2%20%26lt%3b%26lt%3b%20endl%3b%20%2f%2f%20abc%20s2%20%3d%20%26%2334%3bdfs%26%2334%3b%3b%20%2f%2f%20%e6%94%b9%e5%8f%98%e5%9c%b0%e5%9d%80%20cout%20%26lt%3b%26lt%3b%20s2%20%26lt%3b%26lt%3b%20endl%3b%20%2f%2f%20dfs%20%26ldquo%3babc%26quot%3b%e4%b8%ba%e5%ad%97%e7%ac%a6%e4%b8%b2%e5%b8%b8%e9%87%8f%ef%bc%8cs2%e4%b8%ba%e5%b8%b8%e9%87%8f%e6%8c%87%e9%92%88%ef%bc%8c%e6%8c%87%e5%90%91%e5%9c%b0%e5%9d%80%e5%8f%af%e5%8f%98%ef%bc%8c%e4%bd%86%e6%8c%87%e5%90%91%e7%9a%84%e5%9c%b0%e5%9d%80%e7%9a%84%e5%80%bc%e4%b8%8d%e8%83%bd%e5%8f%98%0a%e4%bb%a5%e4%b8%8a%e4%b8%a4%e8%80%85%e7%9a%86%e5%8f%af%e7%94%a8%e4%ba%8e%e5%87%bd%e6%95%b0%e4%bc%a0%e5%80%bc%0a1%202%203%204%205%206%20void%20print_str%28const%20char%20%2a%20str%29%20%7b%20printf%28%26%2334%3b%25s%5cn%26%2334%3b%2c%20str%29%3b%20%7d%20print_str%28s1%29%3b%20%2f%2f%20adc%20print_str%28s2%29%3b%20%2f%2f%20dfs%20%e5%85%b3%e4%ba%8estring%e5%92%8cchar%5b%5d%2cchar%2a%e7%9a%84%e5%85%b3%e7%b3%bb%20string%e6%98%af%e7%b1%bb%ef%bc%8cstring%e6%98%af%e5%af%b9%e4%b8%80%e4%b8%aa%e5%ad%97%e7%ac%a6%e4%b8%b2%e7%9a%84%e5%bc%95%e7%94%a8%e5%80%bc%201%202%203%204%205%206%207%20const%20char%2a%20s1%20%3d%20%26%2334%3babc%26%2334%3b%3b%20string%20s%20%3d%20s1%3b%20cout%20%26lt%3b%26lt%3b%20s%20%26lt%3b%26lt%3b%20endl%3b%20%2f%2f%20abc%20s%20%2b%3d%20%26%2334%3ba%26%2334%3b%3b%20cout%20%26lt%3b%26lt%3b%20s%20%26lt%3b%26lt%3b%20endl%3b%20%2f%2f%20abca%20cout%20%26lt%3b%26lt%3b%20s1%20%26lt%3b%26lt%3b%20endl%3b%20%2f%2f%20abc%20%e8%af%81%e6%98%8estring%e5%8f%aa%e6%98%af%e5%bc%95%e7%94%a8%e4%ba%86s1%20string%e5%bc%95%e7%94%a8%e5%ad%97%e7%ac%a6%e4%b8%b2%e7%a4%ba%e4%be%8b%201%202%203%204%205%206%207%20const%20char%20%2as1%20%3d%20%26%2334%3b123%26%2334%3b%3b%20string%20str1%20%3d%20s1%3b%20%2f%2f%20%e8%8b%a5%e8%a6%81%e8%bf%99%e6%a0%b7%e8%b5%8b%e5%80%bcs1%e5%bf%85%e9%a1%bb%e5%8a%a0const%20cout%20%26lt%3b%26lt%3b%20str1%20%26lt%3b%26lt%3b%20endl%3b%20%2f%2f%20123%20char%20s2%5b%5d%20%3d%20%26%2334%3b234%26%2334%3b%3b%20string%20str2%20%3d%20s2%3b%20cout%20%26lt%3b%26lt%3b%20str2%20%26lt%3b%26lt%3b%20endl%3b%20%2f%2f%20234%20string%e8%bd%acchar%2a%201%202%203%20const%20char%2a%20s1_1%20%3d%20str1." aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fposts%2f2021%2f12%2funderstanding-of-char-char-string%2f&t=%e5%85%b3%e4%ba%8echar%2a%2c%20char%5b%5d%2c%20string%e7%9a%84%e7%90%86%e8%a7%a3" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fposts%2f2021%2f12%2funderstanding-of-char-char-string%2f&t=%e5%85%b3%e4%ba%8e%20char%2a%2c%20char%5b%5d%2c%20string%20%e7%9a%84%e7%90%86%e8%a7%a3" aria-label="Hacker News">
       <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
     </a>
   </li>

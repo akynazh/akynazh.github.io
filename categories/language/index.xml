@@ -9,7 +9,7 @@
     <copyright>Jzh</copyright>
     <lastBuildDate>Wed, 04 Jan 2023 22:55:27 +0800</lastBuildDate><atom:link href="/categories/language/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>pipenv简单使用记录</title>
+      <title>pipenv 简单使用记录</title>
       <link>/posts/2023/01/simple-use-record-of-pipenv/</link>
       <pubDate>Wed, 04 Jan 2023 22:55:27 +0800</pubDate>
       
@@ -49,31 +49,30 @@
     </item>
     
     <item>
-      <title>8086汇编学习记录</title>
+      <title>8086 汇编学习记录</title>
       <link>/posts/2022/10/8086-assembly-learning-record/</link>
       <pubDate>Tue, 04 Oct 2022 23:18:24 +0800</pubDate>
       
       <guid>/posts/2022/10/8086-assembly-learning-record/</guid>
-      <description>8086PC机内存地址空间分配 00000~9FFFF: 主存储器地址空间（RAM） A0000~BFFFF: 显存地址空间 C0000~FFFFF: 各类ROM地址空间 段寄存器 8086CPU不支持将数据直接送入段寄存器的操作，ds 是一个段寄存器，所以mov ds，1000H这条指令是非法的。
+      <description>8086 PC 机内存地址空间分配 00000~9FFFF: 主存储器地址空间（RAM） A0000~BFFFF: 显存地址空间 C0000~FFFFF: 各类ROM地址空间 段寄存器 8086CPU不支持将数据直接送入段寄存器的操作，ds 是一个段寄存器，所以mov ds，1000H这条指令是非法的。
 要将1000H送入ds，只好用一个寄存器来进行中转，即先将1000H送入一个一般的寄存器，如bx，再将bx中的内容送入ds。
 为什么8086CPU不支持将数据直接送入段寄存器的操作?
 这属于8086CPU硬件设计的问题。
-关于SS，SP 8086CPU中，有两个寄存器，段寄存器 SS 和寄存器 SP，栈顶的段地址存放在SS中，偏移地址存放在SP中。
+关于 SS，SP 8086CPU中，有两个寄存器，段寄存器 SS 和寄存器 SP，栈顶的段地址存放在SS中，偏移地址存放在SP中。
 任意时刻，SS∶SP指向栈顶元素。push指令和pop指令执行时，CPU从SS和SP中得到栈顶的地址。
 伪指令 在汇编语言源程序中，包含两种指令，一种是汇编指令，一种是伪指令。
 汇编指令是有对应的机器码的指令，可以被编译为机器指令，最终为CPU所执行。
 而伪指令没有对应的机器指令，最终不被 CPU 所执行。那么谁来执行伪指令呢?
 伪指令是由编译器来执行的指令，编译器根据伪指令来进行相关的编译工作。
 汇编程序 在汇编源程序中，数据不能以字母开头，所以要在前面加0。比如，9138h在汇编源程序中可以直接写为“9138h”，而A000h在汇编源程序中要写为“0A000h”。
-对于mov al,[0]，是将常量0送入al中，等同于mov al,0； 对于mov al,ds:[0]，含义是(al)=((ds)*16+0)； 对于mov al,[bx]，含义是(al)=((ds)*16+(bx))； 对于mov al,ds:[bx]，含义等同于上者。 Debug R命令：查看、改变CPU寄存器的内容； D命令：查看内存中的内容； E命令：改写内存中的内容； U命令：将内存中的机器指令翻译成汇编指令； T命令：执行一条机器指令； A命令：以汇编指令的格式在内存中写入一条机器指令； P命令：可用于快速结束一段LOOP，遇到loop时使用； G命令：可以让指令直接执行到某个地址处，如-g 0016执行到0016处代码。 实模式和保护模式 实模式是Intel 80286和之后的x86兼容CPU的操作模式。
+对于mov al,[0]，是将常量0送入al中，等同于mov al,0； 对于mov al,ds:[0]，含义是(al)=((ds)*16+0)； 对于mov al,[bx]，含义是(al)=((ds)*16+(bx))； 对于mov al,ds:[bx]，含义等同于上者。 Debug R命令：查看、改变 CPU 寄存器的内容； D命令：查看内存中的内容； E命令：改写内存中的内容； U命令：将内存中的机器指令翻译成汇编指令； T命令：执行一条机器指令； A命令：以汇编指令的格式在内存中写入一条机器指令； P命令：可用于快速结束一段LOOP，遇到loop时使用； G命令：可以让指令直接执行到某个地址处，如-g 0016执行到0016处代码。 实模式和保护模式 实模式是Intel 80286和之后的x86兼容CPU的操作模式。
 实模式的特性是一个20位元的区段存储器地址空间（意思为只有1MB的存储器可以被寻址），软件可以直接访问BIOS例程以及周边硬件，没有任何硬件等级的存储器保护观念或多任务。
 保护模式是一种80286系列和之后的x86兼容CPU的运行模式。
 保护模式有一些新的特性，如存储器保护，标签页系统以及硬件支持的虚拟内存，能够增强多任务处理和系统稳定度。
 现今大部分的x86操作系统都在保护模式下运行，包含Linux、FreeBSD、以及微软Windows 2.0和之后版本。
 在纯 DOS 方式（实模式）下，可以不理会 DOS，直接用汇编语言去操作真实的硬件。
 因为运行在 CPU 实模式下的 DOS，没有能力对硬件系统进行全面、严格的管理。
-但在Windows 2000、Unix 这些运行于CPU保护模式下的操作系统中，不理会操作系统，用汇编语言去操作真实的硬件，是根本不可能的。硬件已被这些操作系统利用 CPU 保护模式所提供的功能全面而严格地管理了。
-问题 向内存0:200~0:23F依次传送0~63(3FH)：</description>
+但在Windows 2000、Unix 这些运行于CPU保护模式下的操作系统中，不理会操作系统，用汇编语言去操作真实的硬件，是根本不可能的。硬件已被这些操作系统利用 CPU 保护模式所提供的功能全面而严格地管理了。</description>
     </item>
     
     <item>
@@ -293,7 +292,7 @@ Over.</description>
     </item>
     
     <item>
-      <title>Batch基本编写方法记录</title>
+      <title>Batch 基本编写方法记录</title>
       <link>/posts/2022/08/batch-basic-compilation-method-record/</link>
       <pubDate>Wed, 03 Aug 2022 23:34:36 +0800</pubDate>
       
@@ -304,7 +303,7 @@ Over.</description>
     </item>
     
     <item>
-      <title>Window添加命令别名的方法</title>
+      <title>Window 添加命令别名的方法</title>
       <link>/posts/2022/06/how-to-add-command-alias-in-window/</link>
       <pubDate>Fri, 24 Jun 2022 22:52:59 +0800</pubDate>
       
@@ -322,7 +321,7 @@ PowerShell添加别名的方法 为PowerShell设置临时的别名 1 2 3 PS C:\U
     </item>
     
     <item>
-      <title>Quartz实现定时任务</title>
+      <title>Quartz 实现定时任务</title>
       <link>/posts/2022/06/quartz-implements-timed-tasks/</link>
       <pubDate>Wed, 15 Jun 2022 21:11:27 +0800</pubDate>
       
@@ -334,7 +333,7 @@ PowerShell添加别名的方法 为PowerShell设置临时的别名 1 2 3 PS C:\U
     </item>
     
     <item>
-      <title>Java复习记录（一）</title>
+      <title>Java 复习记录（一）</title>
       <link>/posts/2022/05/java-review-1/</link>
       <pubDate>Sun, 15 May 2022 15:15:51 +0800</pubDate>
       
@@ -362,7 +361,7 @@ Java 语言既具有编译型语言的特征，也具有解释型语言的特征
     </item>
     
     <item>
-      <title>Window实用命令记录之进程与网络控制</title>
+      <title>Window 实用命令记录之进程与网络控制</title>
       <link>/posts/2022/04/process-and-network-control-of-window-practical-command-recording/</link>
       <pubDate>Mon, 18 Apr 2022 23:10:39 +0800</pubDate>
       
@@ -375,19 +374,19 @@ Java 语言既具有编译型语言的特征，也具有解释型语言的特征
     </item>
     
     <item>
-      <title>Java开发中遇到的bug记录</title>
+      <title>Java 开发中遇到的 bug 记录</title>
       <link>/posts/2022/01/record-of-bugs-encountered-in-java-development/</link>
       <pubDate>Thu, 06 Jan 2022 17:23:00 +0800</pubDate>
       
       <guid>/posts/2022/01/record-of-bugs-encountered-in-java-development/</guid>
       <description>持续更新中。
-BufferedWriter无法正确写出问题 这是一段客户端代码，向服务器端发送消息，然后接收服务器端的回复：
+BufferedWriter 无法正确写出问题 这是一段客户端代码，向服务器端发送消息，然后接收服务器端的回复：
 1 2 3 4 5 6 7 8 9 10 11 12 13 try ( BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream())); BufferedWriter out = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream())) ) { String message; while((message = stdIn.readLine()) != null) { out.write(message); out.flush(); System.out.println(&amp;#34;Receive from server: &amp;#34; + in.readLine()); } } catch (Exception e) { System.out.println(e.getMessage()); } 这是服务端代码的一部分，接收客户端消息，并向客户端回复：
 1 2 3 4 5 6 7 8 9 10 11 12 13 try ( BufferedReader in = new BufferedReader(new InputStreamReader(socket.</description>
     </item>
     
     <item>
-      <title>关于char*, char[], string的理解</title>
+      <title>关于 char*, char[], string 的理解</title>
       <link>/posts/2021/12/understanding-of-char-char-string/</link>
       <pubDate>Sun, 05 Dec 2021 12:37:32 +0800</pubDate>
       
@@ -399,7 +398,7 @@ BufferedWriter无法正确写出问题 这是一段客户端代码，向服务�
     </item>
     
     <item>
-      <title>Java重写equals方法的同时为什么要重写hashcode方法</title>
+      <title>Java 重写 equals 方法的同时为什么要重写 hashcode 方法</title>
       <link>/posts/2021/11/why-should-java-rewrite-the-hashcode-method-when-rewriting-the-equals-method/</link>
       <pubDate>Fri, 26 Nov 2021 09:23:27 +0800</pubDate>
       
@@ -410,7 +409,7 @@ BufferedWriter无法正确写出问题 这是一段客户端代码，向服务�
     </item>
     
     <item>
-      <title>Synchronized到底锁了谁</title>
+      <title>Synchronized 到底锁了谁</title>
       <link>/posts/2021/05/who-the-hell-is-synchronized-locking/</link>
       <pubDate>Wed, 19 May 2021 22:43:45 +0800</pubDate>
       
@@ -428,7 +427,7 @@ synchronized(obj){...} synchronized同步代码块对对象内部的实例加锁
     </item>
     
     <item>
-      <title>Java与C&#43;&#43;中的值传递和引用传递解析</title>
+      <title>Java 与 C&#43;&#43; 中的值传递和引用传递解析</title>
       <link>/posts/2021/05/value-passing-and-reference-passing-parsing-in-java-and-c/</link>
       <pubDate>Sat, 01 May 2021 20:16:39 +0800</pubDate>
       
@@ -440,7 +439,7 @@ Java的参数传递 先定义3个方法如下：
     </item>
     
     <item>
-      <title>Window实用命令记录之文件操作</title>
+      <title>Window 实用命令记录之文件操作</title>
       <link>/posts/2021/04/file-operation-recorded-by-window-utility-command/</link>
       <pubDate>Mon, 19 Apr 2021 13:48:19 +0800</pubDate>
       
@@ -452,7 +451,7 @@ Java的参数传递 先定义3个方法如下：
     </item>
     
     <item>
-      <title>equals方法和==运算符的作用区别</title>
+      <title>equals 方法和 == 运算符的作用区别</title>
       <link>/posts/2020/11/the-difference-between-the-equals-method-and-the---operator/</link>
       <pubDate>Wed, 25 Nov 2020 00:21:05 +0800</pubDate>
       
@@ -467,7 +466,7 @@ equals 比较时进行值的比较
     </item>
     
     <item>
-      <title>Cmd重要且实用的一些命令</title>
+      <title>Cmd 重要且实用的一些命令</title>
       <link>/posts/2020/11/cmd-some-important-and-practical-commands/</link>
       <pubDate>Fri, 20 Nov 2020 18:17:33 +0800</pubDate>
       
@@ -486,7 +485,7 @@ equals 比较时进行值的比较
     </item>
     
     <item>
-      <title>Matlab基本用法整理</title>
+      <title>Matlab 基本用法整理</title>
       <link>/posts/2020/02/basic-usage-sorting-of-matlab/</link>
       <pubDate>Thu, 06 Feb 2020 20:41:12 +0800</pubDate>
       

@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title> Linux实用操作之进程管理 | Norwegian Wood</title>
+  <title> Linux 实用操作之进程管理 | Norwegian Wood</title>
   <link rel='canonical' href='/posts/2022/10/process-management-of-linux-practical-operation/'>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
-  <meta property="og:title" content="Linux实用操作之进程管理" />
+  <meta property="og:title" content="Linux 实用操作之进程管理" />
 <meta property="og:description" content="查看所有进程 ps -ef -e : all processes (-A) -f : full-format, including command lines 1 2 [root@VM-0-11-centos ~]# ps -ef | head -n 1 UID PID PPID C STIME TTY TIME CMD 解释如下：
 PPID 父进程ID C 占用CPU百分比 STIME 就是&quot;start time&quot; TTY 进程在哪个终端显示 CMD 命令的名称和参数 ps aux a: all with tty, including other users (和-a是不同的) u: user-oriented format x: processes without controlling ttys 1 2 [root@VM-0-11-centos ~]# ps -aux | head -n 1 USER PID %CPU %MEM VSZ RSS TTY STAT START TIME COMMAND 解释如下：" />
 <meta property="og:type" content="article" />
@@ -17,7 +17,7 @@ PPID 父进程ID C 占用CPU百分比 STIME 就是&quot;start time&quot; TTY 进
 <meta property="article:modified_time" content="2022-10-02T22:55:53+08:00" /><meta property="og:site_name" content="Norwegian Wood" />
 
   <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Linux实用操作之进程管理"/>
+<meta name="twitter:title" content="Linux 实用操作之进程管理"/>
 <meta name="twitter:description" content="查看所有进程 ps -ef -e : all processes (-A) -f : full-format, including command lines 1 2 [root@VM-0-11-centos ~]# ps -ef | head -n 1 UID PID PPID C STIME TTY TIME CMD 解释如下：
 PPID 父进程ID C 占用CPU百分比 STIME 就是&quot;start time&quot; TTY 进程在哪个终端显示 CMD 命令的名称和参数 ps aux a: all with tty, including other users (和-a是不同的) u: user-oriented format x: processes without controlling ttys 1 2 [root@VM-0-11-centos ~]# ps -aux | head -n 1 USER PID %CPU %MEM VSZ RSS TTY STAT START TIME COMMAND 解释如下："/>
 
@@ -113,42 +113,42 @@ PPID 父进程ID C 占用CPU百分比 STIME 就是&quot;start time&quot; TTY 进
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=%2fposts%2f2022%2f10%2fprocess-management-of-linux-practical-operation%2f&text=Linux%e5%ae%9e%e7%94%a8%e6%93%8d%e4%bd%9c%e4%b9%8b%e8%bf%9b%e7%a8%8b%e7%ae%a1%e7%90%86" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=%2fposts%2f2022%2f10%2fprocess-management-of-linux-practical-operation%2f&text=Linux%20%e5%ae%9e%e7%94%a8%e6%93%8d%e4%bd%9c%e4%b9%8b%e8%bf%9b%e7%a8%8b%e7%ae%a1%e7%90%86" aria-label="Twitter">
       <i class="fab fa-twitter " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fposts%2f2022%2f10%2fprocess-management-of-linux-practical-operation%2f&title=Linux%e5%ae%9e%e7%94%a8%e6%93%8d%e4%bd%9c%e4%b9%8b%e8%bf%9b%e7%a8%8b%e7%ae%a1%e7%90%86" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fposts%2f2022%2f10%2fprocess-management-of-linux-practical-operation%2f&title=Linux%20%e5%ae%9e%e7%94%a8%e6%93%8d%e4%bd%9c%e4%b9%8b%e8%bf%9b%e7%a8%8b%e7%ae%a1%e7%90%86" aria-label="Linkedin">
       <i class="fab fa-linkedin " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fposts%2f2022%2f10%2fprocess-management-of-linux-practical-operation%2f&is_video=false&description=Linux%e5%ae%9e%e7%94%a8%e6%93%8d%e4%bd%9c%e4%b9%8b%e8%bf%9b%e7%a8%8b%e7%ae%a1%e7%90%86" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fposts%2f2022%2f10%2fprocess-management-of-linux-practical-operation%2f&is_video=false&description=Linux%20%e5%ae%9e%e7%94%a8%e6%93%8d%e4%bd%9c%e4%b9%8b%e8%bf%9b%e7%a8%8b%e7%ae%a1%e7%90%86" aria-label="Pinterest">
       <i class="fab fa-pinterest " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=Linux%e5%ae%9e%e7%94%a8%e6%93%8d%e4%bd%9c%e4%b9%8b%e8%bf%9b%e7%a8%8b%e7%ae%a1%e7%90%86&body=Check out this article: %2fposts%2f2022%2f10%2fprocess-management-of-linux-practical-operation%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=Linux%20%e5%ae%9e%e7%94%a8%e6%93%8d%e4%bd%9c%e4%b9%8b%e8%bf%9b%e7%a8%8b%e7%ae%a1%e7%90%86&body=Check out this article: %2fposts%2f2022%2f10%2fprocess-management-of-linux-practical-operation%2f" aria-label="Email">
       <i class="fas fa-envelope " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=%2fposts%2f2022%2f10%2fprocess-management-of-linux-practical-operation%2f&title=Linux%e5%ae%9e%e7%94%a8%e6%93%8d%e4%bd%9c%e4%b9%8b%e8%bf%9b%e7%a8%8b%e7%ae%a1%e7%90%86" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=%2fposts%2f2022%2f10%2fprocess-management-of-linux-practical-operation%2f&title=Linux%20%e5%ae%9e%e7%94%a8%e6%93%8d%e4%bd%9c%e4%b9%8b%e8%bf%9b%e7%a8%8b%e7%ae%a1%e7%90%86" aria-label="Pocket">
       <i class="fab fa-get-pocket " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=%2fposts%2f2022%2f10%2fprocess-management-of-linux-practical-operation%2f&title=Linux%e5%ae%9e%e7%94%a8%e6%93%8d%e4%bd%9c%e4%b9%8b%e8%bf%9b%e7%a8%8b%e7%ae%a1%e7%90%86" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=%2fposts%2f2022%2f10%2fprocess-management-of-linux-practical-operation%2f&title=Linux%20%e5%ae%9e%e7%94%a8%e6%93%8d%e4%bd%9c%e4%b9%8b%e8%bf%9b%e7%a8%8b%e7%ae%a1%e7%90%86" aria-label="reddit">
       <i class="fab fa-reddit " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f10%2fprocess-management-of-linux-practical-operation%2f&name=Linux%e5%ae%9e%e7%94%a8%e6%93%8d%e4%bd%9c%e4%b9%8b%e8%bf%9b%e7%a8%8b%e7%ae%a1%e7%90%86&description=%e6%9f%a5%e7%9c%8b%e6%89%80%e6%9c%89%e8%bf%9b%e7%a8%8b%20ps%20-ef%20-e%20%3a%20all%20processes%20%28-A%29%20-f%20%3a%20full-format%2c%20including%20command%20lines%201%202%20%5broot%40VM-0-11-centos%20~%5d%23%20ps%20-ef%20%7c%20head%20-n%201%20UID%20PID%20PPID%20C%20STIME%20TTY%20TIME%20CMD%20%e8%a7%a3%e9%87%8a%e5%a6%82%e4%b8%8b%ef%bc%9a%0aPPID%20%e7%88%b6%e8%bf%9b%e7%a8%8bID%20C%20%e5%8d%a0%e7%94%a8CPU%e7%99%be%e5%88%86%e6%af%94%20STIME%20%e5%b0%b1%e6%98%af%26quot%3bstart%20time%26quot%3b%20TTY%20%e8%bf%9b%e7%a8%8b%e5%9c%a8%e5%93%aa%e4%b8%aa%e7%bb%88%e7%ab%af%e6%98%be%e7%a4%ba%20CMD%20%e5%91%bd%e4%bb%a4%e7%9a%84%e5%90%8d%e7%a7%b0%e5%92%8c%e5%8f%82%e6%95%b0%20ps%20aux%20a%3a%20all%20with%20tty%2c%20including%20other%20users%20%28%e5%92%8c-a%e6%98%af%e4%b8%8d%e5%90%8c%e7%9a%84%29%20u%3a%20user-oriented%20format%20x%3a%20processes%20without%20controlling%20ttys%201%202%20%5broot%40VM-0-11-centos%20~%5d%23%20ps%20-aux%20%7c%20head%20-n%201%20USER%20PID%20%25CPU%20%25MEM%20VSZ%20RSS%20TTY%20STAT%20START%20TIME%20COMMAND%20%e8%a7%a3%e9%87%8a%e5%a6%82%e4%b8%8b%ef%bc%9a" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f10%2fprocess-management-of-linux-practical-operation%2f&name=Linux%20%e5%ae%9e%e7%94%a8%e6%93%8d%e4%bd%9c%e4%b9%8b%e8%bf%9b%e7%a8%8b%e7%ae%a1%e7%90%86&description=%e6%9f%a5%e7%9c%8b%e6%89%80%e6%9c%89%e8%bf%9b%e7%a8%8b%20ps%20-ef%20-e%20%3a%20all%20processes%20%28-A%29%20-f%20%3a%20full-format%2c%20including%20command%20lines%201%202%20%5broot%40VM-0-11-centos%20~%5d%23%20ps%20-ef%20%7c%20head%20-n%201%20UID%20PID%20PPID%20C%20STIME%20TTY%20TIME%20CMD%20%e8%a7%a3%e9%87%8a%e5%a6%82%e4%b8%8b%ef%bc%9a%0aPPID%20%e7%88%b6%e8%bf%9b%e7%a8%8bID%20C%20%e5%8d%a0%e7%94%a8CPU%e7%99%be%e5%88%86%e6%af%94%20STIME%20%e5%b0%b1%e6%98%af%26quot%3bstart%20time%26quot%3b%20TTY%20%e8%bf%9b%e7%a8%8b%e5%9c%a8%e5%93%aa%e4%b8%aa%e7%bb%88%e7%ab%af%e6%98%be%e7%a4%ba%20CMD%20%e5%91%bd%e4%bb%a4%e7%9a%84%e5%90%8d%e7%a7%b0%e5%92%8c%e5%8f%82%e6%95%b0%20ps%20aux%20a%3a%20all%20with%20tty%2c%20including%20other%20users%20%28%e5%92%8c-a%e6%98%af%e4%b8%8d%e5%90%8c%e7%9a%84%29%20u%3a%20user-oriented%20format%20x%3a%20processes%20without%20controlling%20ttys%201%202%20%5broot%40VM-0-11-centos%20~%5d%23%20ps%20-aux%20%7c%20head%20-n%201%20USER%20PID%20%25CPU%20%25MEM%20VSZ%20RSS%20TTY%20STAT%20START%20TIME%20COMMAND%20%e8%a7%a3%e9%87%8a%e5%a6%82%e4%b8%8b%ef%bc%9a" aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fposts%2f2022%2f10%2fprocess-management-of-linux-practical-operation%2f&t=Linux%e5%ae%9e%e7%94%a8%e6%93%8d%e4%bd%9c%e4%b9%8b%e8%bf%9b%e7%a8%8b%e7%ae%a1%e7%90%86" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fposts%2f2022%2f10%2fprocess-management-of-linux-practical-operation%2f&t=Linux%20%e5%ae%9e%e7%94%a8%e6%93%8d%e4%bd%9c%e4%b9%8b%e8%bf%9b%e7%a8%8b%e7%ae%a1%e7%90%86" aria-label="Hacker News">
       <i class="fab fa-hacker-news " aria-hidden="true"></i>
     </a>
   </li>
@@ -185,7 +185,7 @@ PPID 父进程ID C 占用CPU百分比 STIME 就是&quot;start time&quot; TTY 进
   <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
     <header>
       <h1 class="posttitle" itemprop="name headline">
-        Linux实用操作之进程管理
+        Linux 实用操作之进程管理
       </h1>
       <div class="meta">
         
@@ -496,42 +496,42 @@ PPID 父进程ID C 占用CPU百分比 STIME 就是&quot;start time&quot; TTY 进
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=%2fposts%2f2022%2f10%2fprocess-management-of-linux-practical-operation%2f&text=Linux%e5%ae%9e%e7%94%a8%e6%93%8d%e4%bd%9c%e4%b9%8b%e8%bf%9b%e7%a8%8b%e7%ae%a1%e7%90%86" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=%2fposts%2f2022%2f10%2fprocess-management-of-linux-practical-operation%2f&text=Linux%20%e5%ae%9e%e7%94%a8%e6%93%8d%e4%bd%9c%e4%b9%8b%e8%bf%9b%e7%a8%8b%e7%ae%a1%e7%90%86" aria-label="Twitter">
       <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fposts%2f2022%2f10%2fprocess-management-of-linux-practical-operation%2f&title=Linux%e5%ae%9e%e7%94%a8%e6%93%8d%e4%bd%9c%e4%b9%8b%e8%bf%9b%e7%a8%8b%e7%ae%a1%e7%90%86" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fposts%2f2022%2f10%2fprocess-management-of-linux-practical-operation%2f&title=Linux%20%e5%ae%9e%e7%94%a8%e6%93%8d%e4%bd%9c%e4%b9%8b%e8%bf%9b%e7%a8%8b%e7%ae%a1%e7%90%86" aria-label="Linkedin">
       <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fposts%2f2022%2f10%2fprocess-management-of-linux-practical-operation%2f&is_video=false&description=Linux%e5%ae%9e%e7%94%a8%e6%93%8d%e4%bd%9c%e4%b9%8b%e8%bf%9b%e7%a8%8b%e7%ae%a1%e7%90%86" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fposts%2f2022%2f10%2fprocess-management-of-linux-practical-operation%2f&is_video=false&description=Linux%20%e5%ae%9e%e7%94%a8%e6%93%8d%e4%bd%9c%e4%b9%8b%e8%bf%9b%e7%a8%8b%e7%ae%a1%e7%90%86" aria-label="Pinterest">
       <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=Linux%e5%ae%9e%e7%94%a8%e6%93%8d%e4%bd%9c%e4%b9%8b%e8%bf%9b%e7%a8%8b%e7%ae%a1%e7%90%86&body=Check out this article: %2fposts%2f2022%2f10%2fprocess-management-of-linux-practical-operation%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=Linux%20%e5%ae%9e%e7%94%a8%e6%93%8d%e4%bd%9c%e4%b9%8b%e8%bf%9b%e7%a8%8b%e7%ae%a1%e7%90%86&body=Check out this article: %2fposts%2f2022%2f10%2fprocess-management-of-linux-practical-operation%2f" aria-label="Email">
       <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=%2fposts%2f2022%2f10%2fprocess-management-of-linux-practical-operation%2f&title=Linux%e5%ae%9e%e7%94%a8%e6%93%8d%e4%bd%9c%e4%b9%8b%e8%bf%9b%e7%a8%8b%e7%ae%a1%e7%90%86" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=%2fposts%2f2022%2f10%2fprocess-management-of-linux-practical-operation%2f&title=Linux%20%e5%ae%9e%e7%94%a8%e6%93%8d%e4%bd%9c%e4%b9%8b%e8%bf%9b%e7%a8%8b%e7%ae%a1%e7%90%86" aria-label="Pocket">
       <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=%2fposts%2f2022%2f10%2fprocess-management-of-linux-practical-operation%2f&title=Linux%e5%ae%9e%e7%94%a8%e6%93%8d%e4%bd%9c%e4%b9%8b%e8%bf%9b%e7%a8%8b%e7%ae%a1%e7%90%86" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=%2fposts%2f2022%2f10%2fprocess-management-of-linux-practical-operation%2f&title=Linux%20%e5%ae%9e%e7%94%a8%e6%93%8d%e4%bd%9c%e4%b9%8b%e8%bf%9b%e7%a8%8b%e7%ae%a1%e7%90%86" aria-label="reddit">
       <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f10%2fprocess-management-of-linux-practical-operation%2f&name=Linux%e5%ae%9e%e7%94%a8%e6%93%8d%e4%bd%9c%e4%b9%8b%e8%bf%9b%e7%a8%8b%e7%ae%a1%e7%90%86&description=%e6%9f%a5%e7%9c%8b%e6%89%80%e6%9c%89%e8%bf%9b%e7%a8%8b%20ps%20-ef%20-e%20%3a%20all%20processes%20%28-A%29%20-f%20%3a%20full-format%2c%20including%20command%20lines%201%202%20%5broot%40VM-0-11-centos%20~%5d%23%20ps%20-ef%20%7c%20head%20-n%201%20UID%20PID%20PPID%20C%20STIME%20TTY%20TIME%20CMD%20%e8%a7%a3%e9%87%8a%e5%a6%82%e4%b8%8b%ef%bc%9a%0aPPID%20%e7%88%b6%e8%bf%9b%e7%a8%8bID%20C%20%e5%8d%a0%e7%94%a8CPU%e7%99%be%e5%88%86%e6%af%94%20STIME%20%e5%b0%b1%e6%98%af%26quot%3bstart%20time%26quot%3b%20TTY%20%e8%bf%9b%e7%a8%8b%e5%9c%a8%e5%93%aa%e4%b8%aa%e7%bb%88%e7%ab%af%e6%98%be%e7%a4%ba%20CMD%20%e5%91%bd%e4%bb%a4%e7%9a%84%e5%90%8d%e7%a7%b0%e5%92%8c%e5%8f%82%e6%95%b0%20ps%20aux%20a%3a%20all%20with%20tty%2c%20including%20other%20users%20%28%e5%92%8c-a%e6%98%af%e4%b8%8d%e5%90%8c%e7%9a%84%29%20u%3a%20user-oriented%20format%20x%3a%20processes%20without%20controlling%20ttys%201%202%20%5broot%40VM-0-11-centos%20~%5d%23%20ps%20-aux%20%7c%20head%20-n%201%20USER%20PID%20%25CPU%20%25MEM%20VSZ%20RSS%20TTY%20STAT%20START%20TIME%20COMMAND%20%e8%a7%a3%e9%87%8a%e5%a6%82%e4%b8%8b%ef%bc%9a" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f10%2fprocess-management-of-linux-practical-operation%2f&name=Linux%20%e5%ae%9e%e7%94%a8%e6%93%8d%e4%bd%9c%e4%b9%8b%e8%bf%9b%e7%a8%8b%e7%ae%a1%e7%90%86&description=%e6%9f%a5%e7%9c%8b%e6%89%80%e6%9c%89%e8%bf%9b%e7%a8%8b%20ps%20-ef%20-e%20%3a%20all%20processes%20%28-A%29%20-f%20%3a%20full-format%2c%20including%20command%20lines%201%202%20%5broot%40VM-0-11-centos%20~%5d%23%20ps%20-ef%20%7c%20head%20-n%201%20UID%20PID%20PPID%20C%20STIME%20TTY%20TIME%20CMD%20%e8%a7%a3%e9%87%8a%e5%a6%82%e4%b8%8b%ef%bc%9a%0aPPID%20%e7%88%b6%e8%bf%9b%e7%a8%8bID%20C%20%e5%8d%a0%e7%94%a8CPU%e7%99%be%e5%88%86%e6%af%94%20STIME%20%e5%b0%b1%e6%98%af%26quot%3bstart%20time%26quot%3b%20TTY%20%e8%bf%9b%e7%a8%8b%e5%9c%a8%e5%93%aa%e4%b8%aa%e7%bb%88%e7%ab%af%e6%98%be%e7%a4%ba%20CMD%20%e5%91%bd%e4%bb%a4%e7%9a%84%e5%90%8d%e7%a7%b0%e5%92%8c%e5%8f%82%e6%95%b0%20ps%20aux%20a%3a%20all%20with%20tty%2c%20including%20other%20users%20%28%e5%92%8c-a%e6%98%af%e4%b8%8d%e5%90%8c%e7%9a%84%29%20u%3a%20user-oriented%20format%20x%3a%20processes%20without%20controlling%20ttys%201%202%20%5broot%40VM-0-11-centos%20~%5d%23%20ps%20-aux%20%7c%20head%20-n%201%20USER%20PID%20%25CPU%20%25MEM%20VSZ%20RSS%20TTY%20STAT%20START%20TIME%20COMMAND%20%e8%a7%a3%e9%87%8a%e5%a6%82%e4%b8%8b%ef%bc%9a" aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fposts%2f2022%2f10%2fprocess-management-of-linux-practical-operation%2f&t=Linux%e5%ae%9e%e7%94%a8%e6%93%8d%e4%bd%9c%e4%b9%8b%e8%bf%9b%e7%a8%8b%e7%ae%a1%e7%90%86" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fposts%2f2022%2f10%2fprocess-management-of-linux-practical-operation%2f&t=Linux%20%e5%ae%9e%e7%94%a8%e6%93%8d%e4%bd%9c%e4%b9%8b%e8%bf%9b%e7%a8%8b%e7%ae%a1%e7%90%86" aria-label="Hacker News">
       <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
     </a>
   </li>

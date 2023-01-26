@@ -9,7 +9,7 @@
     <copyright>Jzh</copyright>
     <lastBuildDate>Wed, 04 Jan 2023 22:55:27 +0800</lastBuildDate><atom:link href="/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>pipenv简单使用记录</title>
+      <title>pipenv 简单使用记录</title>
       <link>/posts/2023/01/simple-use-record-of-pipenv/</link>
       <pubDate>Wed, 04 Jan 2023 22:55:27 +0800</pubDate>
       
@@ -29,21 +29,21 @@
     </item>
     
     <item>
-      <title>Python开发中遇到的bug记录</title>
+      <title>Python 开发中遇到的 bug 记录</title>
       <link>/posts/2022/11/record-of-bugs-encountered-in-python-development/</link>
       <pubDate>Fri, 04 Nov 2022 22:53:34 +0800</pubDate>
       
       <guid>/posts/2022/11/record-of-bugs-encountered-in-python-development/</guid>
       <description>持续更新中。
-pipenv无法正常install 1 2 3 4 PS C:\Users\akyna\Codes\test\test_py&amp;gt; pipenv install Usage: pipenv install [OPTIONS] [PACKAGES]... ERROR:: --system is intended to be used for pre-existing Pipfile installation, not installation of specific packages. Aborting. 解决方法：
+pipenv 无法正常 install 1 2 3 4 PS C:\Users\akyna\Codes\test\test_py&amp;gt; pipenv install Usage: pipenv install [OPTIONS] [PACKAGES]... ERROR:: --system is intended to be used for pre-existing Pipfile installation, not installation of specific packages. Aborting. 解决方法：
 因为pipenv检测到之前在该目录下创建过了环境，需要先删除之前的环境才可以：
-1 2 PS C:\Users\akyna\Codes\test\test_py&amp;gt; pipenv --rm Removing virtualenv (C:\Users\akyna\.virtualenvs\test_py-_qApXuy4)... requests库headers字段编码错误 1 UnicodeEncodeError: &amp;#39;latin-1&amp;#39; codec can&amp;#39;t encode characters in position 30-34: ordinal not in range(256) 解决方法：
+1 2 PS C:\Users\akyna\Codes\test\test_py&amp;gt; pipenv --rm Removing virtualenv (C:\Users\akyna\.virtualenvs\test_py-_qApXuy4)... requests 库 headers 字段编码错误 1 UnicodeEncodeError: &amp;#39;latin-1&amp;#39; codec can&amp;#39;t encode characters in position 30-34: ordinal not in range(256) 解决方法：
 加上.encode(&amp;lsquo;utf-8&amp;rsquo;)：
 1 2 3 4 5 6 7 8 return { &amp;#39;User-Agent&amp;#39;: &amp;#39;Mozilla/5.</description>
     </item>
     
     <item>
-      <title>Python自动爬取花瓣网任意面板中所有图片</title>
+      <title>Python 自动爬取花瓣网任意面板中所有图片</title>
       <link>/posts/2020/02/python-automatically-crawls-all-pictures-in-any-panel-of-petal-net/</link>
       <pubDate>Thu, 13 Feb 2020 00:14:23 +0800</pubDate>
       

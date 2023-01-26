@@ -25,7 +25,7 @@ CentOS配置静态IP 找到当前网络下网卡名，然后编辑/etc/sysconfig
     </item>
     
     <item>
-      <title>Linux实用操作之网络管理</title>
+      <title>Linux 实用操作之网络管理</title>
       <link>/posts/2021/01/network-management-of-linux-practical-operation/</link>
       <pubDate>Sun, 03 Jan 2021 00:27:58 +0800</pubDate>
       

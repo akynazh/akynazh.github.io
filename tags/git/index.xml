@@ -9,7 +9,7 @@
     <copyright>Jzh</copyright>
     <lastBuildDate>Tue, 06 Dec 2022 11:42:39 +0800</lastBuildDate><atom:link href="/tags/git/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Git版本与提交管理</title>
+      <title>Git 版本与提交管理</title>
       <link>/posts/2022/12/git-version-and-submission-management/</link>
       <pubDate>Tue, 06 Dec 2022 11:42:39 +0800</pubDate>
       
@@ -27,7 +27,7 @@ HEAD^ = HEAD^1 第一个父级提交 HEAD^2~1 第二个父级提交的上一次�
     </item>
     
     <item>
-      <title>Git配置记录</title>
+      <title>Git 配置记录</title>
       <link>/posts/2022/10/git-configuration-record/</link>
       <pubDate>Thu, 13 Oct 2022 21:40:46 +0800</pubDate>
       
@@ -36,7 +36,7 @@ HEAD^ = HEAD^1 第一个父级提交 HEAD^2~1 第二个父级提交的上一次�
     </item>
     
     <item>
-      <title>Git快速初始化操作</title>
+      <title>Git 快速初始化操作</title>
       <link>/posts/2021/12/git-quick-initialization-operation/</link>
       <pubDate>Fri, 10 Dec 2021 18:10:07 +0800</pubDate>
       

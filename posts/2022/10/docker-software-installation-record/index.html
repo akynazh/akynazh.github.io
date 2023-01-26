@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title> Docker软件安装记录 | Norwegian Wood</title>
+  <title> Docker 软件安装记录 | Norwegian Wood</title>
   <link rel='canonical' href='/posts/2022/10/docker-software-installation-record/'>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
-  <meta property="og:title" content="Docker软件安装记录" />
+  <meta property="og:title" content="Docker 软件安装记录" />
 <meta property="og:description" content="Docker 1 2 curl -fsSL https://get.docker.com | bash -s docker # curl -sSL https://get.daocloud.io/docker | sh Mirror 1 2 3 4 5 6 7 8 9 10 11 12 13 vim /etc/docker/daemon.json { &#34;registry-mirrors&#34;: [ &#34;https://docker.mirrors.ustc.edu.cn&#34;, &#34;http://hub-mirror.c.163.com&#34;, &#34;https://registry.docker-cn.com&#34; ] } ---------------------------------------------- systemctl restart docker Docker-compose 1 2 3 4 5 6 curl -L &#34;https://github.com/docker/compose/releases/download/v2.2.2/docker-compose-$(uname -s)-$(uname -m)&#34; -o /usr/local/bin/docker-compose # curl -L https://get.daocloud.io/docker/compose/releases/download/v2.4.1/docker-compose-`uname -s`-`uname -m` &gt; /usr/local/bin/docker-compose chmod &#43;x /usr/local/bin/docker-compose ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose # ln -s /usr/local/bin/docker-compose /usr/bin/dockerc 运行权限问题 1 2 sudo usermod -aG docker $USER sudo reboot MySQL 1 2 3 4 5 6 7 8 9 10 11 12 13 docker pull mysql:5." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/2022/10/docker-software-installation-record/" /><meta property="article:section" content="posts" />
@@ -16,7 +16,7 @@
 <meta property="article:modified_time" content="2022-10-13T21:28:37+08:00" /><meta property="og:site_name" content="Norwegian Wood" />
 
   <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Docker软件安装记录"/>
+<meta name="twitter:title" content="Docker 软件安装记录"/>
 <meta name="twitter:description" content="Docker 1 2 curl -fsSL https://get.docker.com | bash -s docker # curl -sSL https://get.daocloud.io/docker | sh Mirror 1 2 3 4 5 6 7 8 9 10 11 12 13 vim /etc/docker/daemon.json { &#34;registry-mirrors&#34;: [ &#34;https://docker.mirrors.ustc.edu.cn&#34;, &#34;http://hub-mirror.c.163.com&#34;, &#34;https://registry.docker-cn.com&#34; ] } ---------------------------------------------- systemctl restart docker Docker-compose 1 2 3 4 5 6 curl -L &#34;https://github.com/docker/compose/releases/download/v2.2.2/docker-compose-$(uname -s)-$(uname -m)&#34; -o /usr/local/bin/docker-compose # curl -L https://get.daocloud.io/docker/compose/releases/download/v2.4.1/docker-compose-`uname -s`-`uname -m` &gt; /usr/local/bin/docker-compose chmod &#43;x /usr/local/bin/docker-compose ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose # ln -s /usr/local/bin/docker-compose /usr/bin/dockerc 运行权限问题 1 2 sudo usermod -aG docker $USER sudo reboot MySQL 1 2 3 4 5 6 7 8 9 10 11 12 13 docker pull mysql:5."/>
 
   
@@ -111,42 +111,42 @@
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=%2fposts%2f2022%2f10%2fdocker-software-installation-record%2f&text=Docker%e8%bd%af%e4%bb%b6%e5%ae%89%e8%a3%85%e8%ae%b0%e5%bd%95" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=%2fposts%2f2022%2f10%2fdocker-software-installation-record%2f&text=Docker%20%e8%bd%af%e4%bb%b6%e5%ae%89%e8%a3%85%e8%ae%b0%e5%bd%95" aria-label="Twitter">
       <i class="fab fa-twitter " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fposts%2f2022%2f10%2fdocker-software-installation-record%2f&title=Docker%e8%bd%af%e4%bb%b6%e5%ae%89%e8%a3%85%e8%ae%b0%e5%bd%95" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fposts%2f2022%2f10%2fdocker-software-installation-record%2f&title=Docker%20%e8%bd%af%e4%bb%b6%e5%ae%89%e8%a3%85%e8%ae%b0%e5%bd%95" aria-label="Linkedin">
       <i class="fab fa-linkedin " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fposts%2f2022%2f10%2fdocker-software-installation-record%2f&is_video=false&description=Docker%e8%bd%af%e4%bb%b6%e5%ae%89%e8%a3%85%e8%ae%b0%e5%bd%95" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fposts%2f2022%2f10%2fdocker-software-installation-record%2f&is_video=false&description=Docker%20%e8%bd%af%e4%bb%b6%e5%ae%89%e8%a3%85%e8%ae%b0%e5%bd%95" aria-label="Pinterest">
       <i class="fab fa-pinterest " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=Docker%e8%bd%af%e4%bb%b6%e5%ae%89%e8%a3%85%e8%ae%b0%e5%bd%95&body=Check out this article: %2fposts%2f2022%2f10%2fdocker-software-installation-record%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=Docker%20%e8%bd%af%e4%bb%b6%e5%ae%89%e8%a3%85%e8%ae%b0%e5%bd%95&body=Check out this article: %2fposts%2f2022%2f10%2fdocker-software-installation-record%2f" aria-label="Email">
       <i class="fas fa-envelope " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=%2fposts%2f2022%2f10%2fdocker-software-installation-record%2f&title=Docker%e8%bd%af%e4%bb%b6%e5%ae%89%e8%a3%85%e8%ae%b0%e5%bd%95" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=%2fposts%2f2022%2f10%2fdocker-software-installation-record%2f&title=Docker%20%e8%bd%af%e4%bb%b6%e5%ae%89%e8%a3%85%e8%ae%b0%e5%bd%95" aria-label="Pocket">
       <i class="fab fa-get-pocket " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=%2fposts%2f2022%2f10%2fdocker-software-installation-record%2f&title=Docker%e8%bd%af%e4%bb%b6%e5%ae%89%e8%a3%85%e8%ae%b0%e5%bd%95" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=%2fposts%2f2022%2f10%2fdocker-software-installation-record%2f&title=Docker%20%e8%bd%af%e4%bb%b6%e5%ae%89%e8%a3%85%e8%ae%b0%e5%bd%95" aria-label="reddit">
       <i class="fab fa-reddit " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f10%2fdocker-software-installation-record%2f&name=Docker%e8%bd%af%e4%bb%b6%e5%ae%89%e8%a3%85%e8%ae%b0%e5%bd%95&description=Docker%201%202%20curl%20-fsSL%20https%3a%2f%2fget.docker.com%20%7c%20bash%20-s%20docker%20%23%20curl%20-sSL%20https%3a%2f%2fget.daocloud.io%2fdocker%20%7c%20sh%20Mirror%201%202%203%204%205%206%207%208%209%2010%2011%2012%2013%20vim%20%2fetc%2fdocker%2fdaemon.json%20%7b%20%26%2334%3bregistry-mirrors%26%2334%3b%3a%20%5b%20%26%2334%3bhttps%3a%2f%2fdocker.mirrors.ustc.edu.cn%26%2334%3b%2c%20%26%2334%3bhttp%3a%2f%2fhub-mirror.c.163.com%26%2334%3b%2c%20%26%2334%3bhttps%3a%2f%2fregistry.docker-cn.com%26%2334%3b%20%5d%20%7d%20----------------------------------------------%20systemctl%20restart%20docker%20Docker-compose%201%202%203%204%205%206%20curl%20-L%20%26%2334%3bhttps%3a%2f%2fgithub.com%2fdocker%2fcompose%2freleases%2fdownload%2fv2.2.2%2fdocker-compose-%24%28uname%20-s%29-%24%28uname%20-m%29%26%2334%3b%20-o%20%2fusr%2flocal%2fbin%2fdocker-compose%20%23%20curl%20-L%20https%3a%2f%2fget.daocloud.io%2fdocker%2fcompose%2freleases%2fdownload%2fv2.4.1%2fdocker-compose-%60uname%20-s%60-%60uname%20-m%60%20%26gt%3b%20%2fusr%2flocal%2fbin%2fdocker-compose%20chmod%20%2bx%20%2fusr%2flocal%2fbin%2fdocker-compose%20ln%20-s%20%2fusr%2flocal%2fbin%2fdocker-compose%20%2fusr%2fbin%2fdocker-compose%20%23%20ln%20-s%20%2fusr%2flocal%2fbin%2fdocker-compose%20%2fusr%2fbin%2fdockerc%20%e8%bf%90%e8%a1%8c%e6%9d%83%e9%99%90%e9%97%ae%e9%a2%98%201%202%20sudo%20usermod%20-aG%20docker%20%24USER%20sudo%20reboot%20MySQL%201%202%203%204%205%206%207%208%209%2010%2011%2012%2013%20docker%20pull%20mysql%3a5." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f10%2fdocker-software-installation-record%2f&name=Docker%20%e8%bd%af%e4%bb%b6%e5%ae%89%e8%a3%85%e8%ae%b0%e5%bd%95&description=Docker%201%202%20curl%20-fsSL%20https%3a%2f%2fget.docker.com%20%7c%20bash%20-s%20docker%20%23%20curl%20-sSL%20https%3a%2f%2fget.daocloud.io%2fdocker%20%7c%20sh%20Mirror%201%202%203%204%205%206%207%208%209%2010%2011%2012%2013%20vim%20%2fetc%2fdocker%2fdaemon.json%20%7b%20%26%2334%3bregistry-mirrors%26%2334%3b%3a%20%5b%20%26%2334%3bhttps%3a%2f%2fdocker.mirrors.ustc.edu.cn%26%2334%3b%2c%20%26%2334%3bhttp%3a%2f%2fhub-mirror.c.163.com%26%2334%3b%2c%20%26%2334%3bhttps%3a%2f%2fregistry.docker-cn.com%26%2334%3b%20%5d%20%7d%20----------------------------------------------%20systemctl%20restart%20docker%20Docker-compose%201%202%203%204%205%206%20curl%20-L%20%26%2334%3bhttps%3a%2f%2fgithub.com%2fdocker%2fcompose%2freleases%2fdownload%2fv2.2.2%2fdocker-compose-%24%28uname%20-s%29-%24%28uname%20-m%29%26%2334%3b%20-o%20%2fusr%2flocal%2fbin%2fdocker-compose%20%23%20curl%20-L%20https%3a%2f%2fget.daocloud.io%2fdocker%2fcompose%2freleases%2fdownload%2fv2.4.1%2fdocker-compose-%60uname%20-s%60-%60uname%20-m%60%20%26gt%3b%20%2fusr%2flocal%2fbin%2fdocker-compose%20chmod%20%2bx%20%2fusr%2flocal%2fbin%2fdocker-compose%20ln%20-s%20%2fusr%2flocal%2fbin%2fdocker-compose%20%2fusr%2fbin%2fdocker-compose%20%23%20ln%20-s%20%2fusr%2flocal%2fbin%2fdocker-compose%20%2fusr%2fbin%2fdockerc%20%e8%bf%90%e8%a1%8c%e6%9d%83%e9%99%90%e9%97%ae%e9%a2%98%201%202%20sudo%20usermod%20-aG%20docker%20%24USER%20sudo%20reboot%20MySQL%201%202%203%204%205%206%207%208%209%2010%2011%2012%2013%20docker%20pull%20mysql%3a5." aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fposts%2f2022%2f10%2fdocker-software-installation-record%2f&t=Docker%e8%bd%af%e4%bb%b6%e5%ae%89%e8%a3%85%e8%ae%b0%e5%bd%95" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fposts%2f2022%2f10%2fdocker-software-installation-record%2f&t=Docker%20%e8%bd%af%e4%bb%b6%e5%ae%89%e8%a3%85%e8%ae%b0%e5%bd%95" aria-label="Hacker News">
       <i class="fab fa-hacker-news " aria-hidden="true"></i>
     </a>
   </li>
@@ -171,7 +171,7 @@
   <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
     <header>
       <h1 class="posttitle" itemprop="name headline">
-        Docker软件安装记录
+        Docker 软件安装记录
       </h1>
       <div class="meta">
         
@@ -390,42 +390,42 @@
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=%2fposts%2f2022%2f10%2fdocker-software-installation-record%2f&text=Docker%e8%bd%af%e4%bb%b6%e5%ae%89%e8%a3%85%e8%ae%b0%e5%bd%95" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=%2fposts%2f2022%2f10%2fdocker-software-installation-record%2f&text=Docker%20%e8%bd%af%e4%bb%b6%e5%ae%89%e8%a3%85%e8%ae%b0%e5%bd%95" aria-label="Twitter">
       <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fposts%2f2022%2f10%2fdocker-software-installation-record%2f&title=Docker%e8%bd%af%e4%bb%b6%e5%ae%89%e8%a3%85%e8%ae%b0%e5%bd%95" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fposts%2f2022%2f10%2fdocker-software-installation-record%2f&title=Docker%20%e8%bd%af%e4%bb%b6%e5%ae%89%e8%a3%85%e8%ae%b0%e5%bd%95" aria-label="Linkedin">
       <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fposts%2f2022%2f10%2fdocker-software-installation-record%2f&is_video=false&description=Docker%e8%bd%af%e4%bb%b6%e5%ae%89%e8%a3%85%e8%ae%b0%e5%bd%95" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fposts%2f2022%2f10%2fdocker-software-installation-record%2f&is_video=false&description=Docker%20%e8%bd%af%e4%bb%b6%e5%ae%89%e8%a3%85%e8%ae%b0%e5%bd%95" aria-label="Pinterest">
       <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=Docker%e8%bd%af%e4%bb%b6%e5%ae%89%e8%a3%85%e8%ae%b0%e5%bd%95&body=Check out this article: %2fposts%2f2022%2f10%2fdocker-software-installation-record%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=Docker%20%e8%bd%af%e4%bb%b6%e5%ae%89%e8%a3%85%e8%ae%b0%e5%bd%95&body=Check out this article: %2fposts%2f2022%2f10%2fdocker-software-installation-record%2f" aria-label="Email">
       <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=%2fposts%2f2022%2f10%2fdocker-software-installation-record%2f&title=Docker%e8%bd%af%e4%bb%b6%e5%ae%89%e8%a3%85%e8%ae%b0%e5%bd%95" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=%2fposts%2f2022%2f10%2fdocker-software-installation-record%2f&title=Docker%20%e8%bd%af%e4%bb%b6%e5%ae%89%e8%a3%85%e8%ae%b0%e5%bd%95" aria-label="Pocket">
       <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=%2fposts%2f2022%2f10%2fdocker-software-installation-record%2f&title=Docker%e8%bd%af%e4%bb%b6%e5%ae%89%e8%a3%85%e8%ae%b0%e5%bd%95" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=%2fposts%2f2022%2f10%2fdocker-software-installation-record%2f&title=Docker%20%e8%bd%af%e4%bb%b6%e5%ae%89%e8%a3%85%e8%ae%b0%e5%bd%95" aria-label="reddit">
       <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f10%2fdocker-software-installation-record%2f&name=Docker%e8%bd%af%e4%bb%b6%e5%ae%89%e8%a3%85%e8%ae%b0%e5%bd%95&description=Docker%201%202%20curl%20-fsSL%20https%3a%2f%2fget.docker.com%20%7c%20bash%20-s%20docker%20%23%20curl%20-sSL%20https%3a%2f%2fget.daocloud.io%2fdocker%20%7c%20sh%20Mirror%201%202%203%204%205%206%207%208%209%2010%2011%2012%2013%20vim%20%2fetc%2fdocker%2fdaemon.json%20%7b%20%26%2334%3bregistry-mirrors%26%2334%3b%3a%20%5b%20%26%2334%3bhttps%3a%2f%2fdocker.mirrors.ustc.edu.cn%26%2334%3b%2c%20%26%2334%3bhttp%3a%2f%2fhub-mirror.c.163.com%26%2334%3b%2c%20%26%2334%3bhttps%3a%2f%2fregistry.docker-cn.com%26%2334%3b%20%5d%20%7d%20----------------------------------------------%20systemctl%20restart%20docker%20Docker-compose%201%202%203%204%205%206%20curl%20-L%20%26%2334%3bhttps%3a%2f%2fgithub.com%2fdocker%2fcompose%2freleases%2fdownload%2fv2.2.2%2fdocker-compose-%24%28uname%20-s%29-%24%28uname%20-m%29%26%2334%3b%20-o%20%2fusr%2flocal%2fbin%2fdocker-compose%20%23%20curl%20-L%20https%3a%2f%2fget.daocloud.io%2fdocker%2fcompose%2freleases%2fdownload%2fv2.4.1%2fdocker-compose-%60uname%20-s%60-%60uname%20-m%60%20%26gt%3b%20%2fusr%2flocal%2fbin%2fdocker-compose%20chmod%20%2bx%20%2fusr%2flocal%2fbin%2fdocker-compose%20ln%20-s%20%2fusr%2flocal%2fbin%2fdocker-compose%20%2fusr%2fbin%2fdocker-compose%20%23%20ln%20-s%20%2fusr%2flocal%2fbin%2fdocker-compose%20%2fusr%2fbin%2fdockerc%20%e8%bf%90%e8%a1%8c%e6%9d%83%e9%99%90%e9%97%ae%e9%a2%98%201%202%20sudo%20usermod%20-aG%20docker%20%24USER%20sudo%20reboot%20MySQL%201%202%203%204%205%206%207%208%209%2010%2011%2012%2013%20docker%20pull%20mysql%3a5." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f10%2fdocker-software-installation-record%2f&name=Docker%20%e8%bd%af%e4%bb%b6%e5%ae%89%e8%a3%85%e8%ae%b0%e5%bd%95&description=Docker%201%202%20curl%20-fsSL%20https%3a%2f%2fget.docker.com%20%7c%20bash%20-s%20docker%20%23%20curl%20-sSL%20https%3a%2f%2fget.daocloud.io%2fdocker%20%7c%20sh%20Mirror%201%202%203%204%205%206%207%208%209%2010%2011%2012%2013%20vim%20%2fetc%2fdocker%2fdaemon.json%20%7b%20%26%2334%3bregistry-mirrors%26%2334%3b%3a%20%5b%20%26%2334%3bhttps%3a%2f%2fdocker.mirrors.ustc.edu.cn%26%2334%3b%2c%20%26%2334%3bhttp%3a%2f%2fhub-mirror.c.163.com%26%2334%3b%2c%20%26%2334%3bhttps%3a%2f%2fregistry.docker-cn.com%26%2334%3b%20%5d%20%7d%20----------------------------------------------%20systemctl%20restart%20docker%20Docker-compose%201%202%203%204%205%206%20curl%20-L%20%26%2334%3bhttps%3a%2f%2fgithub.com%2fdocker%2fcompose%2freleases%2fdownload%2fv2.2.2%2fdocker-compose-%24%28uname%20-s%29-%24%28uname%20-m%29%26%2334%3b%20-o%20%2fusr%2flocal%2fbin%2fdocker-compose%20%23%20curl%20-L%20https%3a%2f%2fget.daocloud.io%2fdocker%2fcompose%2freleases%2fdownload%2fv2.4.1%2fdocker-compose-%60uname%20-s%60-%60uname%20-m%60%20%26gt%3b%20%2fusr%2flocal%2fbin%2fdocker-compose%20chmod%20%2bx%20%2fusr%2flocal%2fbin%2fdocker-compose%20ln%20-s%20%2fusr%2flocal%2fbin%2fdocker-compose%20%2fusr%2fbin%2fdocker-compose%20%23%20ln%20-s%20%2fusr%2flocal%2fbin%2fdocker-compose%20%2fusr%2fbin%2fdockerc%20%e8%bf%90%e8%a1%8c%e6%9d%83%e9%99%90%e9%97%ae%e9%a2%98%201%202%20sudo%20usermod%20-aG%20docker%20%24USER%20sudo%20reboot%20MySQL%201%202%203%204%205%206%207%208%209%2010%2011%2012%2013%20docker%20pull%20mysql%3a5." aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fposts%2f2022%2f10%2fdocker-software-installation-record%2f&t=Docker%e8%bd%af%e4%bb%b6%e5%ae%89%e8%a3%85%e8%ae%b0%e5%bd%95" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fposts%2f2022%2f10%2fdocker-software-installation-record%2f&t=Docker%20%e8%bd%af%e4%bb%b6%e5%ae%89%e8%a3%85%e8%ae%b0%e5%bd%95" aria-label="Hacker News">
       <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
     </a>
   </li>

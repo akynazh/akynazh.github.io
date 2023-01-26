@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title> Redis学习记录二 | Norwegian Wood</title>
+  <title> Redis 学习记录二 | Norwegian Wood</title>
   <link rel='canonical' href='/posts/2021/12/redis-learning-record-ii/'>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
-  <meta property="og:title" content="Redis学习记录二" />
+  <meta property="og:title" content="Redis 学习记录二" />
 <meta property="og:description" content="事务 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 127.0.0.1:6379&gt; multi # 开启事务 OK 127.0.0.1:6379&gt; set book java QUEUED 127.0.0.1:6379&gt; get book QUEUED 127.0.0.1:6379&gt; exec # 执行事务 1) OK 2) &#34;java&#34; 127.0.0.1:6379&gt; get book &#34;java&#34; 127.0.0.1:6379&gt; multi OK 127.0.0.1:6379&gt; set name peter QUEUED 127.0.0.1:6379&gt; discard # 取消事务 OK 127.0.0.1:6379&gt; exec (error) ERR EXEC without MULTI 127.0.0.1:6379&gt; get name (nil) 获取key 获取指定key 1 keys * # 获取所有key 1 keys pattern # 根据pattern获取key 1 2 3 4 - * 代表匹配任意字符 - ?" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/2021/12/redis-learning-record-ii/" /><meta property="article:section" content="posts" />
@@ -16,7 +16,7 @@
 <meta property="article:modified_time" content="2021-12-20T10:15:05+08:00" /><meta property="og:site_name" content="Norwegian Wood" />
 
   <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Redis学习记录二"/>
+<meta name="twitter:title" content="Redis 学习记录二"/>
 <meta name="twitter:description" content="事务 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 127.0.0.1:6379&gt; multi # 开启事务 OK 127.0.0.1:6379&gt; set book java QUEUED 127.0.0.1:6379&gt; get book QUEUED 127.0.0.1:6379&gt; exec # 执行事务 1) OK 2) &#34;java&#34; 127.0.0.1:6379&gt; get book &#34;java&#34; 127.0.0.1:6379&gt; multi OK 127.0.0.1:6379&gt; set name peter QUEUED 127.0.0.1:6379&gt; discard # 取消事务 OK 127.0.0.1:6379&gt; exec (error) ERR EXEC without MULTI 127.0.0.1:6379&gt; get name (nil) 获取key 获取指定key 1 keys * # 获取所有key 1 keys pattern # 根据pattern获取key 1 2 3 4 - * 代表匹配任意字符 - ?"/>
 
   
@@ -111,42 +111,42 @@
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=%2fposts%2f2021%2f12%2fredis-learning-record-ii%2f&text=Redis%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95%e4%ba%8c" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=%2fposts%2f2021%2f12%2fredis-learning-record-ii%2f&text=Redis%20%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95%e4%ba%8c" aria-label="Twitter">
       <i class="fab fa-twitter " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fposts%2f2021%2f12%2fredis-learning-record-ii%2f&title=Redis%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95%e4%ba%8c" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fposts%2f2021%2f12%2fredis-learning-record-ii%2f&title=Redis%20%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95%e4%ba%8c" aria-label="Linkedin">
       <i class="fab fa-linkedin " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fposts%2f2021%2f12%2fredis-learning-record-ii%2f&is_video=false&description=Redis%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95%e4%ba%8c" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fposts%2f2021%2f12%2fredis-learning-record-ii%2f&is_video=false&description=Redis%20%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95%e4%ba%8c" aria-label="Pinterest">
       <i class="fab fa-pinterest " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=Redis%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95%e4%ba%8c&body=Check out this article: %2fposts%2f2021%2f12%2fredis-learning-record-ii%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=Redis%20%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95%e4%ba%8c&body=Check out this article: %2fposts%2f2021%2f12%2fredis-learning-record-ii%2f" aria-label="Email">
       <i class="fas fa-envelope " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=%2fposts%2f2021%2f12%2fredis-learning-record-ii%2f&title=Redis%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95%e4%ba%8c" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=%2fposts%2f2021%2f12%2fredis-learning-record-ii%2f&title=Redis%20%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95%e4%ba%8c" aria-label="Pocket">
       <i class="fab fa-get-pocket " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=%2fposts%2f2021%2f12%2fredis-learning-record-ii%2f&title=Redis%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95%e4%ba%8c" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=%2fposts%2f2021%2f12%2fredis-learning-record-ii%2f&title=Redis%20%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95%e4%ba%8c" aria-label="reddit">
       <i class="fab fa-reddit " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2021%2f12%2fredis-learning-record-ii%2f&name=Redis%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95%e4%ba%8c&description=%e4%ba%8b%e5%8a%a1%201%202%203%204%205%206%207%208%209%2010%2011%2012%2013%2014%2015%2016%2017%2018%2019%2020%2021%20127.0.0.1%3a6379%26gt%3b%20multi%20%23%20%e5%bc%80%e5%90%af%e4%ba%8b%e5%8a%a1%20OK%20127.0.0.1%3a6379%26gt%3b%20set%20book%20java%20QUEUED%20127.0.0.1%3a6379%26gt%3b%20get%20book%20QUEUED%20127.0.0.1%3a6379%26gt%3b%20exec%20%23%20%e6%89%a7%e8%a1%8c%e4%ba%8b%e5%8a%a1%201%29%20OK%202%29%20%26%2334%3bjava%26%2334%3b%20127.0.0.1%3a6379%26gt%3b%20get%20book%20%26%2334%3bjava%26%2334%3b%20127.0.0.1%3a6379%26gt%3b%20multi%20OK%20127.0.0.1%3a6379%26gt%3b%20set%20name%20peter%20QUEUED%20127.0.0.1%3a6379%26gt%3b%20discard%20%23%20%e5%8f%96%e6%b6%88%e4%ba%8b%e5%8a%a1%20OK%20127.0.0.1%3a6379%26gt%3b%20exec%20%28error%29%20ERR%20EXEC%20without%20MULTI%20127.0.0.1%3a6379%26gt%3b%20get%20name%20%28nil%29%20%e8%8e%b7%e5%8f%96key%20%e8%8e%b7%e5%8f%96%e6%8c%87%e5%ae%9akey%201%20keys%20%2a%20%23%20%e8%8e%b7%e5%8f%96%e6%89%80%e6%9c%89key%201%20keys%20pattern%20%23%20%e6%a0%b9%e6%8d%aepattern%e8%8e%b7%e5%8f%96key%201%202%203%204%20-%20%2a%20%e4%bb%a3%e8%a1%a8%e5%8c%b9%e9%85%8d%e4%bb%bb%e6%84%8f%e5%ad%97%e7%ac%a6%20-%20%3f" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2021%2f12%2fredis-learning-record-ii%2f&name=Redis%20%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95%e4%ba%8c&description=%e4%ba%8b%e5%8a%a1%201%202%203%204%205%206%207%208%209%2010%2011%2012%2013%2014%2015%2016%2017%2018%2019%2020%2021%20127.0.0.1%3a6379%26gt%3b%20multi%20%23%20%e5%bc%80%e5%90%af%e4%ba%8b%e5%8a%a1%20OK%20127.0.0.1%3a6379%26gt%3b%20set%20book%20java%20QUEUED%20127.0.0.1%3a6379%26gt%3b%20get%20book%20QUEUED%20127.0.0.1%3a6379%26gt%3b%20exec%20%23%20%e6%89%a7%e8%a1%8c%e4%ba%8b%e5%8a%a1%201%29%20OK%202%29%20%26%2334%3bjava%26%2334%3b%20127.0.0.1%3a6379%26gt%3b%20get%20book%20%26%2334%3bjava%26%2334%3b%20127.0.0.1%3a6379%26gt%3b%20multi%20OK%20127.0.0.1%3a6379%26gt%3b%20set%20name%20peter%20QUEUED%20127.0.0.1%3a6379%26gt%3b%20discard%20%23%20%e5%8f%96%e6%b6%88%e4%ba%8b%e5%8a%a1%20OK%20127.0.0.1%3a6379%26gt%3b%20exec%20%28error%29%20ERR%20EXEC%20without%20MULTI%20127.0.0.1%3a6379%26gt%3b%20get%20name%20%28nil%29%20%e8%8e%b7%e5%8f%96key%20%e8%8e%b7%e5%8f%96%e6%8c%87%e5%ae%9akey%201%20keys%20%2a%20%23%20%e8%8e%b7%e5%8f%96%e6%89%80%e6%9c%89key%201%20keys%20pattern%20%23%20%e6%a0%b9%e6%8d%aepattern%e8%8e%b7%e5%8f%96key%201%202%203%204%20-%20%2a%20%e4%bb%a3%e8%a1%a8%e5%8c%b9%e9%85%8d%e4%bb%bb%e6%84%8f%e5%ad%97%e7%ac%a6%20-%20%3f" aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fposts%2f2021%2f12%2fredis-learning-record-ii%2f&t=Redis%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95%e4%ba%8c" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fposts%2f2021%2f12%2fredis-learning-record-ii%2f&t=Redis%20%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95%e4%ba%8c" aria-label="Hacker News">
       <i class="fab fa-hacker-news " aria-hidden="true"></i>
     </a>
   </li>
@@ -175,7 +175,7 @@
   <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
     <header>
       <h1 class="posttitle" itemprop="name headline">
-        Redis学习记录二
+        Redis 学习记录二
       </h1>
       <div class="meta">
         
@@ -516,42 +516,42 @@
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=%2fposts%2f2021%2f12%2fredis-learning-record-ii%2f&text=Redis%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95%e4%ba%8c" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=%2fposts%2f2021%2f12%2fredis-learning-record-ii%2f&text=Redis%20%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95%e4%ba%8c" aria-label="Twitter">
       <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fposts%2f2021%2f12%2fredis-learning-record-ii%2f&title=Redis%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95%e4%ba%8c" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fposts%2f2021%2f12%2fredis-learning-record-ii%2f&title=Redis%20%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95%e4%ba%8c" aria-label="Linkedin">
       <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fposts%2f2021%2f12%2fredis-learning-record-ii%2f&is_video=false&description=Redis%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95%e4%ba%8c" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fposts%2f2021%2f12%2fredis-learning-record-ii%2f&is_video=false&description=Redis%20%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95%e4%ba%8c" aria-label="Pinterest">
       <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=Redis%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95%e4%ba%8c&body=Check out this article: %2fposts%2f2021%2f12%2fredis-learning-record-ii%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=Redis%20%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95%e4%ba%8c&body=Check out this article: %2fposts%2f2021%2f12%2fredis-learning-record-ii%2f" aria-label="Email">
       <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=%2fposts%2f2021%2f12%2fredis-learning-record-ii%2f&title=Redis%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95%e4%ba%8c" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=%2fposts%2f2021%2f12%2fredis-learning-record-ii%2f&title=Redis%20%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95%e4%ba%8c" aria-label="Pocket">
       <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=%2fposts%2f2021%2f12%2fredis-learning-record-ii%2f&title=Redis%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95%e4%ba%8c" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=%2fposts%2f2021%2f12%2fredis-learning-record-ii%2f&title=Redis%20%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95%e4%ba%8c" aria-label="reddit">
       <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2021%2f12%2fredis-learning-record-ii%2f&name=Redis%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95%e4%ba%8c&description=%e4%ba%8b%e5%8a%a1%201%202%203%204%205%206%207%208%209%2010%2011%2012%2013%2014%2015%2016%2017%2018%2019%2020%2021%20127.0.0.1%3a6379%26gt%3b%20multi%20%23%20%e5%bc%80%e5%90%af%e4%ba%8b%e5%8a%a1%20OK%20127.0.0.1%3a6379%26gt%3b%20set%20book%20java%20QUEUED%20127.0.0.1%3a6379%26gt%3b%20get%20book%20QUEUED%20127.0.0.1%3a6379%26gt%3b%20exec%20%23%20%e6%89%a7%e8%a1%8c%e4%ba%8b%e5%8a%a1%201%29%20OK%202%29%20%26%2334%3bjava%26%2334%3b%20127.0.0.1%3a6379%26gt%3b%20get%20book%20%26%2334%3bjava%26%2334%3b%20127.0.0.1%3a6379%26gt%3b%20multi%20OK%20127.0.0.1%3a6379%26gt%3b%20set%20name%20peter%20QUEUED%20127.0.0.1%3a6379%26gt%3b%20discard%20%23%20%e5%8f%96%e6%b6%88%e4%ba%8b%e5%8a%a1%20OK%20127.0.0.1%3a6379%26gt%3b%20exec%20%28error%29%20ERR%20EXEC%20without%20MULTI%20127.0.0.1%3a6379%26gt%3b%20get%20name%20%28nil%29%20%e8%8e%b7%e5%8f%96key%20%e8%8e%b7%e5%8f%96%e6%8c%87%e5%ae%9akey%201%20keys%20%2a%20%23%20%e8%8e%b7%e5%8f%96%e6%89%80%e6%9c%89key%201%20keys%20pattern%20%23%20%e6%a0%b9%e6%8d%aepattern%e8%8e%b7%e5%8f%96key%201%202%203%204%20-%20%2a%20%e4%bb%a3%e8%a1%a8%e5%8c%b9%e9%85%8d%e4%bb%bb%e6%84%8f%e5%ad%97%e7%ac%a6%20-%20%3f" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2021%2f12%2fredis-learning-record-ii%2f&name=Redis%20%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95%e4%ba%8c&description=%e4%ba%8b%e5%8a%a1%201%202%203%204%205%206%207%208%209%2010%2011%2012%2013%2014%2015%2016%2017%2018%2019%2020%2021%20127.0.0.1%3a6379%26gt%3b%20multi%20%23%20%e5%bc%80%e5%90%af%e4%ba%8b%e5%8a%a1%20OK%20127.0.0.1%3a6379%26gt%3b%20set%20book%20java%20QUEUED%20127.0.0.1%3a6379%26gt%3b%20get%20book%20QUEUED%20127.0.0.1%3a6379%26gt%3b%20exec%20%23%20%e6%89%a7%e8%a1%8c%e4%ba%8b%e5%8a%a1%201%29%20OK%202%29%20%26%2334%3bjava%26%2334%3b%20127.0.0.1%3a6379%26gt%3b%20get%20book%20%26%2334%3bjava%26%2334%3b%20127.0.0.1%3a6379%26gt%3b%20multi%20OK%20127.0.0.1%3a6379%26gt%3b%20set%20name%20peter%20QUEUED%20127.0.0.1%3a6379%26gt%3b%20discard%20%23%20%e5%8f%96%e6%b6%88%e4%ba%8b%e5%8a%a1%20OK%20127.0.0.1%3a6379%26gt%3b%20exec%20%28error%29%20ERR%20EXEC%20without%20MULTI%20127.0.0.1%3a6379%26gt%3b%20get%20name%20%28nil%29%20%e8%8e%b7%e5%8f%96key%20%e8%8e%b7%e5%8f%96%e6%8c%87%e5%ae%9akey%201%20keys%20%2a%20%23%20%e8%8e%b7%e5%8f%96%e6%89%80%e6%9c%89key%201%20keys%20pattern%20%23%20%e6%a0%b9%e6%8d%aepattern%e8%8e%b7%e5%8f%96key%201%202%203%204%20-%20%2a%20%e4%bb%a3%e8%a1%a8%e5%8c%b9%e9%85%8d%e4%bb%bb%e6%84%8f%e5%ad%97%e7%ac%a6%20-%20%3f" aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fposts%2f2021%2f12%2fredis-learning-record-ii%2f&t=Redis%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95%e4%ba%8c" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fposts%2f2021%2f12%2fredis-learning-record-ii%2f&t=Redis%20%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95%e4%ba%8c" aria-label="Hacker News">
       <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
     </a>
   </li>

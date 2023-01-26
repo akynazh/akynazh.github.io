@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title> 通过Wireshark分析TCP原理 | Norwegian Wood</title>
+  <title> 通过 Wireshark 分析 TCP 原理 | Norwegian Wood</title>
   <link rel='canonical' href='/posts/2022/06/analyze-tcp-principle-through-wireshark/'>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
-  <meta property="og:title" content="通过Wireshark分析TCP原理" />
+  <meta property="og:title" content="通过 Wireshark 分析 TCP 原理" />
 <meta property="og:description" content="使用Wireshark作为抓包工具，通过ftp文件上传过程分析tcp原理，主要分析过程包括三次握手建立连接的过程，文件传输的过程，四次挥手断开连接的过程。
 设备信息 主机：安装了ftp的window11（ip:172.23.224.1） 虚拟机：安装了vsftpd的wsl2（ubuntu18）(ip:172.23.234.65) 操作与分析过程 打开Wireshark进行捕获 选择**vEthernet(WSL)**连接进行捕获。 使用过滤表达式ip.addr==172.23.234.65&amp;&amp;tcp进行捕获。 通过ftp上传文件 1 2 3 4 5 6 7 8 9 10 11 12 13 14 PS C:\Users\akyna&gt; ftp 172.23.234.65 连接到 172.23.234.65。 220 (vsFTPd 3.0.3) 200 Always in UTF8 mode. 用户(172.23.234.65:(none)): akyna 331 Please specify the password. 密码: 230 Login successful. ftp&gt; put a.txt 200 PORT command successful. Consider using PASV. 150 Ok to send data. 226 Transfer complete. ftp: 发送 42 字节，用时 0." />
 <meta property="og:type" content="article" />
@@ -17,7 +17,7 @@
 <meta property="article:modified_time" content="2022-06-09T23:18:55+08:00" /><meta property="og:site_name" content="Norwegian Wood" />
 
   <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="通过Wireshark分析TCP原理"/>
+<meta name="twitter:title" content="通过 Wireshark 分析 TCP 原理"/>
 <meta name="twitter:description" content="使用Wireshark作为抓包工具，通过ftp文件上传过程分析tcp原理，主要分析过程包括三次握手建立连接的过程，文件传输的过程，四次挥手断开连接的过程。
 设备信息 主机：安装了ftp的window11（ip:172.23.224.1） 虚拟机：安装了vsftpd的wsl2（ubuntu18）(ip:172.23.234.65) 操作与分析过程 打开Wireshark进行捕获 选择**vEthernet(WSL)**连接进行捕获。 使用过滤表达式ip.addr==172.23.234.65&amp;&amp;tcp进行捕获。 通过ftp上传文件 1 2 3 4 5 6 7 8 9 10 11 12 13 14 PS C:\Users\akyna&gt; ftp 172.23.234.65 连接到 172.23.234.65。 220 (vsFTPd 3.0.3) 200 Always in UTF8 mode. 用户(172.23.234.65:(none)): akyna 331 Please specify the password. 密码: 230 Login successful. ftp&gt; put a.txt 200 PORT command successful. Consider using PASV. 150 Ok to send data. 226 Transfer complete. ftp: 发送 42 字节，用时 0."/>
 
@@ -113,42 +113,42 @@
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=%2fposts%2f2022%2f06%2fanalyze-tcp-principle-through-wireshark%2f&text=%e9%80%9a%e8%bf%87Wireshark%e5%88%86%e6%9e%90TCP%e5%8e%9f%e7%90%86" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=%2fposts%2f2022%2f06%2fanalyze-tcp-principle-through-wireshark%2f&text=%e9%80%9a%e8%bf%87%20Wireshark%20%e5%88%86%e6%9e%90%20TCP%20%e5%8e%9f%e7%90%86" aria-label="Twitter">
       <i class="fab fa-twitter " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fposts%2f2022%2f06%2fanalyze-tcp-principle-through-wireshark%2f&title=%e9%80%9a%e8%bf%87Wireshark%e5%88%86%e6%9e%90TCP%e5%8e%9f%e7%90%86" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fposts%2f2022%2f06%2fanalyze-tcp-principle-through-wireshark%2f&title=%e9%80%9a%e8%bf%87%20Wireshark%20%e5%88%86%e6%9e%90%20TCP%20%e5%8e%9f%e7%90%86" aria-label="Linkedin">
       <i class="fab fa-linkedin " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fposts%2f2022%2f06%2fanalyze-tcp-principle-through-wireshark%2f&is_video=false&description=%e9%80%9a%e8%bf%87Wireshark%e5%88%86%e6%9e%90TCP%e5%8e%9f%e7%90%86" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fposts%2f2022%2f06%2fanalyze-tcp-principle-through-wireshark%2f&is_video=false&description=%e9%80%9a%e8%bf%87%20Wireshark%20%e5%88%86%e6%9e%90%20TCP%20%e5%8e%9f%e7%90%86" aria-label="Pinterest">
       <i class="fab fa-pinterest " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=%e9%80%9a%e8%bf%87Wireshark%e5%88%86%e6%9e%90TCP%e5%8e%9f%e7%90%86&body=Check out this article: %2fposts%2f2022%2f06%2fanalyze-tcp-principle-through-wireshark%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=%e9%80%9a%e8%bf%87%20Wireshark%20%e5%88%86%e6%9e%90%20TCP%20%e5%8e%9f%e7%90%86&body=Check out this article: %2fposts%2f2022%2f06%2fanalyze-tcp-principle-through-wireshark%2f" aria-label="Email">
       <i class="fas fa-envelope " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=%2fposts%2f2022%2f06%2fanalyze-tcp-principle-through-wireshark%2f&title=%e9%80%9a%e8%bf%87Wireshark%e5%88%86%e6%9e%90TCP%e5%8e%9f%e7%90%86" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=%2fposts%2f2022%2f06%2fanalyze-tcp-principle-through-wireshark%2f&title=%e9%80%9a%e8%bf%87%20Wireshark%20%e5%88%86%e6%9e%90%20TCP%20%e5%8e%9f%e7%90%86" aria-label="Pocket">
       <i class="fab fa-get-pocket " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=%2fposts%2f2022%2f06%2fanalyze-tcp-principle-through-wireshark%2f&title=%e9%80%9a%e8%bf%87Wireshark%e5%88%86%e6%9e%90TCP%e5%8e%9f%e7%90%86" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=%2fposts%2f2022%2f06%2fanalyze-tcp-principle-through-wireshark%2f&title=%e9%80%9a%e8%bf%87%20Wireshark%20%e5%88%86%e6%9e%90%20TCP%20%e5%8e%9f%e7%90%86" aria-label="reddit">
       <i class="fab fa-reddit " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f06%2fanalyze-tcp-principle-through-wireshark%2f&name=%e9%80%9a%e8%bf%87Wireshark%e5%88%86%e6%9e%90TCP%e5%8e%9f%e7%90%86&description=%e4%bd%bf%e7%94%a8Wireshark%e4%bd%9c%e4%b8%ba%e6%8a%93%e5%8c%85%e5%b7%a5%e5%85%b7%ef%bc%8c%e9%80%9a%e8%bf%87ftp%e6%96%87%e4%bb%b6%e4%b8%8a%e4%bc%a0%e8%bf%87%e7%a8%8b%e5%88%86%e6%9e%90tcp%e5%8e%9f%e7%90%86%ef%bc%8c%e4%b8%bb%e8%a6%81%e5%88%86%e6%9e%90%e8%bf%87%e7%a8%8b%e5%8c%85%e6%8b%ac%e4%b8%89%e6%ac%a1%e6%8f%a1%e6%89%8b%e5%bb%ba%e7%ab%8b%e8%bf%9e%e6%8e%a5%e7%9a%84%e8%bf%87%e7%a8%8b%ef%bc%8c%e6%96%87%e4%bb%b6%e4%bc%a0%e8%be%93%e7%9a%84%e8%bf%87%e7%a8%8b%ef%bc%8c%e5%9b%9b%e6%ac%a1%e6%8c%a5%e6%89%8b%e6%96%ad%e5%bc%80%e8%bf%9e%e6%8e%a5%e7%9a%84%e8%bf%87%e7%a8%8b%e3%80%82%0a%e8%ae%be%e5%a4%87%e4%bf%a1%e6%81%af%20%e4%b8%bb%e6%9c%ba%ef%bc%9a%e5%ae%89%e8%a3%85%e4%ba%86ftp%e7%9a%84window11%ef%bc%88ip%3a172.23.224.1%ef%bc%89%20%e8%99%9a%e6%8b%9f%e6%9c%ba%ef%bc%9a%e5%ae%89%e8%a3%85%e4%ba%86vsftpd%e7%9a%84wsl2%ef%bc%88ubuntu18%ef%bc%89%28ip%3a172.23.234.65%29%20%e6%93%8d%e4%bd%9c%e4%b8%8e%e5%88%86%e6%9e%90%e8%bf%87%e7%a8%8b%20%e6%89%93%e5%bc%80Wireshark%e8%bf%9b%e8%a1%8c%e6%8d%95%e8%8e%b7%20%e9%80%89%e6%8b%a9%2a%2avEthernet%28WSL%29%2a%2a%e8%bf%9e%e6%8e%a5%e8%bf%9b%e8%a1%8c%e6%8d%95%e8%8e%b7%e3%80%82%20%e4%bd%bf%e7%94%a8%e8%bf%87%e6%bb%a4%e8%a1%a8%e8%be%be%e5%bc%8fip.addr%3d%3d172.23.234.65%26amp%3b%26amp%3btcp%e8%bf%9b%e8%a1%8c%e6%8d%95%e8%8e%b7%e3%80%82%20%e9%80%9a%e8%bf%87ftp%e4%b8%8a%e4%bc%a0%e6%96%87%e4%bb%b6%201%202%203%204%205%206%207%208%209%2010%2011%2012%2013%2014%20PS%20C%3a%5cUsers%5cakyna%26gt%3b%20ftp%20172.23.234.65%20%e8%bf%9e%e6%8e%a5%e5%88%b0%20172.23.234.65%e3%80%82%20220%20%28vsFTPd%203.0.3%29%20200%20Always%20in%20UTF8%20mode.%20%e7%94%a8%e6%88%b7%28172.23.234.65%3a%28none%29%29%3a%20akyna%20331%20Please%20specify%20the%20password.%20%e5%af%86%e7%a0%81%3a%20230%20Login%20successful.%20ftp%26gt%3b%20put%20a.txt%20200%20PORT%20command%20successful.%20Consider%20using%20PASV.%20150%20Ok%20to%20send%20data.%20226%20Transfer%20complete.%20ftp%3a%20%e5%8f%91%e9%80%81%2042%20%e5%ad%97%e8%8a%82%ef%bc%8c%e7%94%a8%e6%97%b6%200." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f06%2fanalyze-tcp-principle-through-wireshark%2f&name=%e9%80%9a%e8%bf%87%20Wireshark%20%e5%88%86%e6%9e%90%20TCP%20%e5%8e%9f%e7%90%86&description=%e4%bd%bf%e7%94%a8Wireshark%e4%bd%9c%e4%b8%ba%e6%8a%93%e5%8c%85%e5%b7%a5%e5%85%b7%ef%bc%8c%e9%80%9a%e8%bf%87ftp%e6%96%87%e4%bb%b6%e4%b8%8a%e4%bc%a0%e8%bf%87%e7%a8%8b%e5%88%86%e6%9e%90tcp%e5%8e%9f%e7%90%86%ef%bc%8c%e4%b8%bb%e8%a6%81%e5%88%86%e6%9e%90%e8%bf%87%e7%a8%8b%e5%8c%85%e6%8b%ac%e4%b8%89%e6%ac%a1%e6%8f%a1%e6%89%8b%e5%bb%ba%e7%ab%8b%e8%bf%9e%e6%8e%a5%e7%9a%84%e8%bf%87%e7%a8%8b%ef%bc%8c%e6%96%87%e4%bb%b6%e4%bc%a0%e8%be%93%e7%9a%84%e8%bf%87%e7%a8%8b%ef%bc%8c%e5%9b%9b%e6%ac%a1%e6%8c%a5%e6%89%8b%e6%96%ad%e5%bc%80%e8%bf%9e%e6%8e%a5%e7%9a%84%e8%bf%87%e7%a8%8b%e3%80%82%0a%e8%ae%be%e5%a4%87%e4%bf%a1%e6%81%af%20%e4%b8%bb%e6%9c%ba%ef%bc%9a%e5%ae%89%e8%a3%85%e4%ba%86ftp%e7%9a%84window11%ef%bc%88ip%3a172.23.224.1%ef%bc%89%20%e8%99%9a%e6%8b%9f%e6%9c%ba%ef%bc%9a%e5%ae%89%e8%a3%85%e4%ba%86vsftpd%e7%9a%84wsl2%ef%bc%88ubuntu18%ef%bc%89%28ip%3a172.23.234.65%29%20%e6%93%8d%e4%bd%9c%e4%b8%8e%e5%88%86%e6%9e%90%e8%bf%87%e7%a8%8b%20%e6%89%93%e5%bc%80Wireshark%e8%bf%9b%e8%a1%8c%e6%8d%95%e8%8e%b7%20%e9%80%89%e6%8b%a9%2a%2avEthernet%28WSL%29%2a%2a%e8%bf%9e%e6%8e%a5%e8%bf%9b%e8%a1%8c%e6%8d%95%e8%8e%b7%e3%80%82%20%e4%bd%bf%e7%94%a8%e8%bf%87%e6%bb%a4%e8%a1%a8%e8%be%be%e5%bc%8fip.addr%3d%3d172.23.234.65%26amp%3b%26amp%3btcp%e8%bf%9b%e8%a1%8c%e6%8d%95%e8%8e%b7%e3%80%82%20%e9%80%9a%e8%bf%87ftp%e4%b8%8a%e4%bc%a0%e6%96%87%e4%bb%b6%201%202%203%204%205%206%207%208%209%2010%2011%2012%2013%2014%20PS%20C%3a%5cUsers%5cakyna%26gt%3b%20ftp%20172.23.234.65%20%e8%bf%9e%e6%8e%a5%e5%88%b0%20172.23.234.65%e3%80%82%20220%20%28vsFTPd%203.0.3%29%20200%20Always%20in%20UTF8%20mode.%20%e7%94%a8%e6%88%b7%28172.23.234.65%3a%28none%29%29%3a%20akyna%20331%20Please%20specify%20the%20password.%20%e5%af%86%e7%a0%81%3a%20230%20Login%20successful.%20ftp%26gt%3b%20put%20a.txt%20200%20PORT%20command%20successful.%20Consider%20using%20PASV.%20150%20Ok%20to%20send%20data.%20226%20Transfer%20complete.%20ftp%3a%20%e5%8f%91%e9%80%81%2042%20%e5%ad%97%e8%8a%82%ef%bc%8c%e7%94%a8%e6%97%b6%200." aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fposts%2f2022%2f06%2fanalyze-tcp-principle-through-wireshark%2f&t=%e9%80%9a%e8%bf%87Wireshark%e5%88%86%e6%9e%90TCP%e5%8e%9f%e7%90%86" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fposts%2f2022%2f06%2fanalyze-tcp-principle-through-wireshark%2f&t=%e9%80%9a%e8%bf%87%20Wireshark%20%e5%88%86%e6%9e%90%20TCP%20%e5%8e%9f%e7%90%86" aria-label="Hacker News">
       <i class="fab fa-hacker-news " aria-hidden="true"></i>
     </a>
   </li>
@@ -176,7 +176,7 @@
   <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
     <header>
       <h1 class="posttitle" itemprop="name headline">
-        通过Wireshark分析TCP原理
+        通过 Wireshark 分析 TCP 原理
       </h1>
       <div class="meta">
         
@@ -380,42 +380,42 @@
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=%2fposts%2f2022%2f06%2fanalyze-tcp-principle-through-wireshark%2f&text=%e9%80%9a%e8%bf%87Wireshark%e5%88%86%e6%9e%90TCP%e5%8e%9f%e7%90%86" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=%2fposts%2f2022%2f06%2fanalyze-tcp-principle-through-wireshark%2f&text=%e9%80%9a%e8%bf%87%20Wireshark%20%e5%88%86%e6%9e%90%20TCP%20%e5%8e%9f%e7%90%86" aria-label="Twitter">
       <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fposts%2f2022%2f06%2fanalyze-tcp-principle-through-wireshark%2f&title=%e9%80%9a%e8%bf%87Wireshark%e5%88%86%e6%9e%90TCP%e5%8e%9f%e7%90%86" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fposts%2f2022%2f06%2fanalyze-tcp-principle-through-wireshark%2f&title=%e9%80%9a%e8%bf%87%20Wireshark%20%e5%88%86%e6%9e%90%20TCP%20%e5%8e%9f%e7%90%86" aria-label="Linkedin">
       <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fposts%2f2022%2f06%2fanalyze-tcp-principle-through-wireshark%2f&is_video=false&description=%e9%80%9a%e8%bf%87Wireshark%e5%88%86%e6%9e%90TCP%e5%8e%9f%e7%90%86" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fposts%2f2022%2f06%2fanalyze-tcp-principle-through-wireshark%2f&is_video=false&description=%e9%80%9a%e8%bf%87%20Wireshark%20%e5%88%86%e6%9e%90%20TCP%20%e5%8e%9f%e7%90%86" aria-label="Pinterest">
       <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=%e9%80%9a%e8%bf%87Wireshark%e5%88%86%e6%9e%90TCP%e5%8e%9f%e7%90%86&body=Check out this article: %2fposts%2f2022%2f06%2fanalyze-tcp-principle-through-wireshark%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=%e9%80%9a%e8%bf%87%20Wireshark%20%e5%88%86%e6%9e%90%20TCP%20%e5%8e%9f%e7%90%86&body=Check out this article: %2fposts%2f2022%2f06%2fanalyze-tcp-principle-through-wireshark%2f" aria-label="Email">
       <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=%2fposts%2f2022%2f06%2fanalyze-tcp-principle-through-wireshark%2f&title=%e9%80%9a%e8%bf%87Wireshark%e5%88%86%e6%9e%90TCP%e5%8e%9f%e7%90%86" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=%2fposts%2f2022%2f06%2fanalyze-tcp-principle-through-wireshark%2f&title=%e9%80%9a%e8%bf%87%20Wireshark%20%e5%88%86%e6%9e%90%20TCP%20%e5%8e%9f%e7%90%86" aria-label="Pocket">
       <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=%2fposts%2f2022%2f06%2fanalyze-tcp-principle-through-wireshark%2f&title=%e9%80%9a%e8%bf%87Wireshark%e5%88%86%e6%9e%90TCP%e5%8e%9f%e7%90%86" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=%2fposts%2f2022%2f06%2fanalyze-tcp-principle-through-wireshark%2f&title=%e9%80%9a%e8%bf%87%20Wireshark%20%e5%88%86%e6%9e%90%20TCP%20%e5%8e%9f%e7%90%86" aria-label="reddit">
       <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f06%2fanalyze-tcp-principle-through-wireshark%2f&name=%e9%80%9a%e8%bf%87Wireshark%e5%88%86%e6%9e%90TCP%e5%8e%9f%e7%90%86&description=%e4%bd%bf%e7%94%a8Wireshark%e4%bd%9c%e4%b8%ba%e6%8a%93%e5%8c%85%e5%b7%a5%e5%85%b7%ef%bc%8c%e9%80%9a%e8%bf%87ftp%e6%96%87%e4%bb%b6%e4%b8%8a%e4%bc%a0%e8%bf%87%e7%a8%8b%e5%88%86%e6%9e%90tcp%e5%8e%9f%e7%90%86%ef%bc%8c%e4%b8%bb%e8%a6%81%e5%88%86%e6%9e%90%e8%bf%87%e7%a8%8b%e5%8c%85%e6%8b%ac%e4%b8%89%e6%ac%a1%e6%8f%a1%e6%89%8b%e5%bb%ba%e7%ab%8b%e8%bf%9e%e6%8e%a5%e7%9a%84%e8%bf%87%e7%a8%8b%ef%bc%8c%e6%96%87%e4%bb%b6%e4%bc%a0%e8%be%93%e7%9a%84%e8%bf%87%e7%a8%8b%ef%bc%8c%e5%9b%9b%e6%ac%a1%e6%8c%a5%e6%89%8b%e6%96%ad%e5%bc%80%e8%bf%9e%e6%8e%a5%e7%9a%84%e8%bf%87%e7%a8%8b%e3%80%82%0a%e8%ae%be%e5%a4%87%e4%bf%a1%e6%81%af%20%e4%b8%bb%e6%9c%ba%ef%bc%9a%e5%ae%89%e8%a3%85%e4%ba%86ftp%e7%9a%84window11%ef%bc%88ip%3a172.23.224.1%ef%bc%89%20%e8%99%9a%e6%8b%9f%e6%9c%ba%ef%bc%9a%e5%ae%89%e8%a3%85%e4%ba%86vsftpd%e7%9a%84wsl2%ef%bc%88ubuntu18%ef%bc%89%28ip%3a172.23.234.65%29%20%e6%93%8d%e4%bd%9c%e4%b8%8e%e5%88%86%e6%9e%90%e8%bf%87%e7%a8%8b%20%e6%89%93%e5%bc%80Wireshark%e8%bf%9b%e8%a1%8c%e6%8d%95%e8%8e%b7%20%e9%80%89%e6%8b%a9%2a%2avEthernet%28WSL%29%2a%2a%e8%bf%9e%e6%8e%a5%e8%bf%9b%e8%a1%8c%e6%8d%95%e8%8e%b7%e3%80%82%20%e4%bd%bf%e7%94%a8%e8%bf%87%e6%bb%a4%e8%a1%a8%e8%be%be%e5%bc%8fip.addr%3d%3d172.23.234.65%26amp%3b%26amp%3btcp%e8%bf%9b%e8%a1%8c%e6%8d%95%e8%8e%b7%e3%80%82%20%e9%80%9a%e8%bf%87ftp%e4%b8%8a%e4%bc%a0%e6%96%87%e4%bb%b6%201%202%203%204%205%206%207%208%209%2010%2011%2012%2013%2014%20PS%20C%3a%5cUsers%5cakyna%26gt%3b%20ftp%20172.23.234.65%20%e8%bf%9e%e6%8e%a5%e5%88%b0%20172.23.234.65%e3%80%82%20220%20%28vsFTPd%203.0.3%29%20200%20Always%20in%20UTF8%20mode.%20%e7%94%a8%e6%88%b7%28172.23.234.65%3a%28none%29%29%3a%20akyna%20331%20Please%20specify%20the%20password.%20%e5%af%86%e7%a0%81%3a%20230%20Login%20successful.%20ftp%26gt%3b%20put%20a.txt%20200%20PORT%20command%20successful.%20Consider%20using%20PASV.%20150%20Ok%20to%20send%20data.%20226%20Transfer%20complete.%20ftp%3a%20%e5%8f%91%e9%80%81%2042%20%e5%ad%97%e8%8a%82%ef%bc%8c%e7%94%a8%e6%97%b6%200." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f06%2fanalyze-tcp-principle-through-wireshark%2f&name=%e9%80%9a%e8%bf%87%20Wireshark%20%e5%88%86%e6%9e%90%20TCP%20%e5%8e%9f%e7%90%86&description=%e4%bd%bf%e7%94%a8Wireshark%e4%bd%9c%e4%b8%ba%e6%8a%93%e5%8c%85%e5%b7%a5%e5%85%b7%ef%bc%8c%e9%80%9a%e8%bf%87ftp%e6%96%87%e4%bb%b6%e4%b8%8a%e4%bc%a0%e8%bf%87%e7%a8%8b%e5%88%86%e6%9e%90tcp%e5%8e%9f%e7%90%86%ef%bc%8c%e4%b8%bb%e8%a6%81%e5%88%86%e6%9e%90%e8%bf%87%e7%a8%8b%e5%8c%85%e6%8b%ac%e4%b8%89%e6%ac%a1%e6%8f%a1%e6%89%8b%e5%bb%ba%e7%ab%8b%e8%bf%9e%e6%8e%a5%e7%9a%84%e8%bf%87%e7%a8%8b%ef%bc%8c%e6%96%87%e4%bb%b6%e4%bc%a0%e8%be%93%e7%9a%84%e8%bf%87%e7%a8%8b%ef%bc%8c%e5%9b%9b%e6%ac%a1%e6%8c%a5%e6%89%8b%e6%96%ad%e5%bc%80%e8%bf%9e%e6%8e%a5%e7%9a%84%e8%bf%87%e7%a8%8b%e3%80%82%0a%e8%ae%be%e5%a4%87%e4%bf%a1%e6%81%af%20%e4%b8%bb%e6%9c%ba%ef%bc%9a%e5%ae%89%e8%a3%85%e4%ba%86ftp%e7%9a%84window11%ef%bc%88ip%3a172.23.224.1%ef%bc%89%20%e8%99%9a%e6%8b%9f%e6%9c%ba%ef%bc%9a%e5%ae%89%e8%a3%85%e4%ba%86vsftpd%e7%9a%84wsl2%ef%bc%88ubuntu18%ef%bc%89%28ip%3a172.23.234.65%29%20%e6%93%8d%e4%bd%9c%e4%b8%8e%e5%88%86%e6%9e%90%e8%bf%87%e7%a8%8b%20%e6%89%93%e5%bc%80Wireshark%e8%bf%9b%e8%a1%8c%e6%8d%95%e8%8e%b7%20%e9%80%89%e6%8b%a9%2a%2avEthernet%28WSL%29%2a%2a%e8%bf%9e%e6%8e%a5%e8%bf%9b%e8%a1%8c%e6%8d%95%e8%8e%b7%e3%80%82%20%e4%bd%bf%e7%94%a8%e8%bf%87%e6%bb%a4%e8%a1%a8%e8%be%be%e5%bc%8fip.addr%3d%3d172.23.234.65%26amp%3b%26amp%3btcp%e8%bf%9b%e8%a1%8c%e6%8d%95%e8%8e%b7%e3%80%82%20%e9%80%9a%e8%bf%87ftp%e4%b8%8a%e4%bc%a0%e6%96%87%e4%bb%b6%201%202%203%204%205%206%207%208%209%2010%2011%2012%2013%2014%20PS%20C%3a%5cUsers%5cakyna%26gt%3b%20ftp%20172.23.234.65%20%e8%bf%9e%e6%8e%a5%e5%88%b0%20172.23.234.65%e3%80%82%20220%20%28vsFTPd%203.0.3%29%20200%20Always%20in%20UTF8%20mode.%20%e7%94%a8%e6%88%b7%28172.23.234.65%3a%28none%29%29%3a%20akyna%20331%20Please%20specify%20the%20password.%20%e5%af%86%e7%a0%81%3a%20230%20Login%20successful.%20ftp%26gt%3b%20put%20a.txt%20200%20PORT%20command%20successful.%20Consider%20using%20PASV.%20150%20Ok%20to%20send%20data.%20226%20Transfer%20complete.%20ftp%3a%20%e5%8f%91%e9%80%81%2042%20%e5%ad%97%e8%8a%82%ef%bc%8c%e7%94%a8%e6%97%b6%200." aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fposts%2f2022%2f06%2fanalyze-tcp-principle-through-wireshark%2f&t=%e9%80%9a%e8%bf%87Wireshark%e5%88%86%e6%9e%90TCP%e5%8e%9f%e7%90%86" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fposts%2f2022%2f06%2fanalyze-tcp-principle-through-wireshark%2f&t=%e9%80%9a%e8%bf%87%20Wireshark%20%e5%88%86%e6%9e%90%20TCP%20%e5%8e%9f%e7%90%86" aria-label="Hacker News">
       <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
     </a>
   </li>

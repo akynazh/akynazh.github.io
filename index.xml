@@ -7,18 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Jzh</copyright>
-    <lastBuildDate>Tue, 17 Jan 2023 21:46:42 +0800</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 13 Jan 2023 21:43:06 +0800</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>IDEA配置使用记录</title>
-      <link>/posts/2023/01/idea-configuration-usage-record/</link>
-      <pubDate>Tue, 17 Jan 2023 21:46:42 +0800</pubDate>
-      
-      <guid>/posts/2023/01/idea-configuration-usage-record/</guid>
-      <description>控制台中文乱码解决 菜单栏HELP-&amp;gt;Edit Custom VM OPtions中加 -Dfile.encoding=utf-8 重启idea IDEA开启RunDashboard 1 2 3 4 5 6 7 8 9 # .idea/workspace.xml &amp;lt;component name=&amp;#34;RunDashboard&amp;#34;&amp;gt; &amp;lt;option name=&amp;#34;configurationTypes&amp;#34;&amp;gt; &amp;lt;set&amp;gt; &amp;lt;option value=&amp;#34;SpringBootApplicationConfigurationType&amp;#34; /&amp;gt; &amp;lt;/set&amp;gt; &amp;lt;/option&amp;gt; &amp;lt;/component&amp;gt; IDEA关闭拼写 1 Settings -&amp;gt; Editor -&amp;gt; Inspection -&amp;gt; Proofreading -&amp;gt; 关闭Typo IDEA配置快捷输入 1 editor -&amp;gt; live template IDEA常用快捷键 1 2 3 4 5 6 7 8 9 10 11 12 13 alt + ctrl + L : 格式化 ctrl + shift + r : 替换字符 ctrl + r : 在当前文件中替换字符 ctrl + shift + n : 搜索项目文件 ctrl + f : 在当前文件下搜索字符 ctrl + shift + t : 进行快捷抛异常 alt + 上下键 : 光标移到下或上一层 禁用 double shift 对于2021.</description>
-    </item>
-    
-    <item>
-      <title>Clash-Linux配置使用记录</title>
+      <title>Clash-Linux 配置使用记录</title>
       <link>/posts/2023/01/clash-linux-configuration-usage-record/</link>
       <pubDate>Fri, 13 Jan 2023 21:43:06 +0800</pubDate>
       
@@ -51,7 +42,7 @@ C C#/Db D D#/Eb E F F#/Gb G G#/Ab A A#/Bb B 261.6 277.2 293.7 311.1 329.6 349.2 
     </item>
     
     <item>
-      <title>pipenv简单使用记录</title>
+      <title>pipenv 简单使用记录</title>
       <link>/posts/2023/01/simple-use-record-of-pipenv/</link>
       <pubDate>Wed, 04 Jan 2023 22:55:27 +0800</pubDate>
       
@@ -103,7 +94,7 @@ Over.</description>
     </item>
     
     <item>
-      <title>对于Rest风格的理解</title>
+      <title>对于 Rest 风格的理解</title>
       <link>/posts/2022/12/understanding-of-rest-style/</link>
       <pubDate>Thu, 08 Dec 2022 16:35:54 +0800</pubDate>
       
@@ -138,7 +129,7 @@ Over.</description>
     </item>
     
     <item>
-      <title>Git版本与提交管理</title>
+      <title>Git 版本与提交管理</title>
       <link>/posts/2022/12/git-version-and-submission-management/</link>
       <pubDate>Tue, 06 Dec 2022 11:42:39 +0800</pubDate>
       
@@ -156,7 +147,7 @@ HEAD^ = HEAD^1 第一个父级提交 HEAD^2~1 第二个父级提交的上一次�
     </item>
     
     <item>
-      <title>Linux软件安装和配置记录</title>
+      <title>Linux 软件安装和配置记录</title>
       <link>/posts/2022/11/linux-software-installation-and-configuration-records/</link>
       <pubDate>Sun, 13 Nov 2022 21:15:53 +0800</pubDate>
       
@@ -165,21 +156,21 @@ HEAD^ = HEAD^1 第一个父级提交 HEAD^2~1 第二个父级提交的上一次�
     </item>
     
     <item>
-      <title>Python开发中遇到的bug记录</title>
+      <title>Python 开发中遇到的 bug 记录</title>
       <link>/posts/2022/11/record-of-bugs-encountered-in-python-development/</link>
       <pubDate>Fri, 04 Nov 2022 22:53:34 +0800</pubDate>
       
       <guid>/posts/2022/11/record-of-bugs-encountered-in-python-development/</guid>
       <description>持续更新中。
-pipenv无法正常install 1 2 3 4 PS C:\Users\akyna\Codes\test\test_py&amp;gt; pipenv install Usage: pipenv install [OPTIONS] [PACKAGES]... ERROR:: --system is intended to be used for pre-existing Pipfile installation, not installation of specific packages. Aborting. 解决方法：
+pipenv 无法正常 install 1 2 3 4 PS C:\Users\akyna\Codes\test\test_py&amp;gt; pipenv install Usage: pipenv install [OPTIONS] [PACKAGES]... ERROR:: --system is intended to be used for pre-existing Pipfile installation, not installation of specific packages. Aborting. 解决方法：
 因为pipenv检测到之前在该目录下创建过了环境，需要先删除之前的环境才可以：
-1 2 PS C:\Users\akyna\Codes\test\test_py&amp;gt; pipenv --rm Removing virtualenv (C:\Users\akyna\.virtualenvs\test_py-_qApXuy4)... requests库headers字段编码错误 1 UnicodeEncodeError: &amp;#39;latin-1&amp;#39; codec can&amp;#39;t encode characters in position 30-34: ordinal not in range(256) 解决方法：
+1 2 PS C:\Users\akyna\Codes\test\test_py&amp;gt; pipenv --rm Removing virtualenv (C:\Users\akyna\.virtualenvs\test_py-_qApXuy4)... requests 库 headers 字段编码错误 1 UnicodeEncodeError: &amp;#39;latin-1&amp;#39; codec can&amp;#39;t encode characters in position 30-34: ordinal not in range(256) 解决方法：
 加上.encode(&amp;lsquo;utf-8&amp;rsquo;)：
 1 2 3 4 5 6 7 8 return { &amp;#39;User-Agent&amp;#39;: &amp;#39;Mozilla/5.</description>
     </item>
     
     <item>
-      <title>Shell基本操作总结</title>
+      <title>Shell 基本操作总结</title>
       <link>/posts/2022/10/shell-basic-operation-summary/</link>
       <pubDate>Wed, 19 Oct 2022 22:44:10 +0800</pubDate>
       
@@ -191,7 +182,7 @@ pipenv无法正常install 1 2 3 4 PS C:\Users\akyna\Codes\test\test_py&amp;gt; p
     </item>
     
     <item>
-      <title>Linux文件部分总结</title>
+      <title>Linux 文件部分总结</title>
       <link>/posts/2022/10/linux-files-section-summary/</link>
       <pubDate>Wed, 19 Oct 2022 22:43:03 +0800</pubDate>
       
@@ -217,7 +208,7 @@ win to unix 多了\r -&amp;gt; \r\n -&amp;gt; ^M。
     </item>
     
     <item>
-      <title>Git配置记录</title>
+      <title>Git 配置记录</title>
       <link>/posts/2022/10/git-configuration-record/</link>
       <pubDate>Thu, 13 Oct 2022 21:40:46 +0800</pubDate>
       
@@ -226,7 +217,7 @@ win to unix 多了\r -&amp;gt; \r\n -&amp;gt; ^M。
     </item>
     
     <item>
-      <title>Docker软件安装记录</title>
+      <title>Docker 软件安装记录</title>
       <link>/posts/2022/10/docker-software-installation-record/</link>
       <pubDate>Thu, 13 Oct 2022 21:28:37 +0800</pubDate>
       
@@ -235,35 +226,34 @@ win to unix 多了\r -&amp;gt; \r\n -&amp;gt; ^M。
     </item>
     
     <item>
-      <title>8086汇编学习记录</title>
+      <title>8086 汇编学习记录</title>
       <link>/posts/2022/10/8086-assembly-learning-record/</link>
       <pubDate>Tue, 04 Oct 2022 23:18:24 +0800</pubDate>
       
       <guid>/posts/2022/10/8086-assembly-learning-record/</guid>
-      <description>8086PC机内存地址空间分配 00000~9FFFF: 主存储器地址空间（RAM） A0000~BFFFF: 显存地址空间 C0000~FFFFF: 各类ROM地址空间 段寄存器 8086CPU不支持将数据直接送入段寄存器的操作，ds 是一个段寄存器，所以mov ds，1000H这条指令是非法的。
+      <description>8086 PC 机内存地址空间分配 00000~9FFFF: 主存储器地址空间（RAM） A0000~BFFFF: 显存地址空间 C0000~FFFFF: 各类ROM地址空间 段寄存器 8086CPU不支持将数据直接送入段寄存器的操作，ds 是一个段寄存器，所以mov ds，1000H这条指令是非法的。
 要将1000H送入ds，只好用一个寄存器来进行中转，即先将1000H送入一个一般的寄存器，如bx，再将bx中的内容送入ds。
 为什么8086CPU不支持将数据直接送入段寄存器的操作?
 这属于8086CPU硬件设计的问题。
-关于SS，SP 8086CPU中，有两个寄存器，段寄存器 SS 和寄存器 SP，栈顶的段地址存放在SS中，偏移地址存放在SP中。
+关于 SS，SP 8086CPU中，有两个寄存器，段寄存器 SS 和寄存器 SP，栈顶的段地址存放在SS中，偏移地址存放在SP中。
 任意时刻，SS∶SP指向栈顶元素。push指令和pop指令执行时，CPU从SS和SP中得到栈顶的地址。
 伪指令 在汇编语言源程序中，包含两种指令，一种是汇编指令，一种是伪指令。
 汇编指令是有对应的机器码的指令，可以被编译为机器指令，最终为CPU所执行。
 而伪指令没有对应的机器指令，最终不被 CPU 所执行。那么谁来执行伪指令呢?
 伪指令是由编译器来执行的指令，编译器根据伪指令来进行相关的编译工作。
 汇编程序 在汇编源程序中，数据不能以字母开头，所以要在前面加0。比如，9138h在汇编源程序中可以直接写为“9138h”，而A000h在汇编源程序中要写为“0A000h”。
-对于mov al,[0]，是将常量0送入al中，等同于mov al,0； 对于mov al,ds:[0]，含义是(al)=((ds)*16+0)； 对于mov al,[bx]，含义是(al)=((ds)*16+(bx))； 对于mov al,ds:[bx]，含义等同于上者。 Debug R命令：查看、改变CPU寄存器的内容； D命令：查看内存中的内容； E命令：改写内存中的内容； U命令：将内存中的机器指令翻译成汇编指令； T命令：执行一条机器指令； A命令：以汇编指令的格式在内存中写入一条机器指令； P命令：可用于快速结束一段LOOP，遇到loop时使用； G命令：可以让指令直接执行到某个地址处，如-g 0016执行到0016处代码。 实模式和保护模式 实模式是Intel 80286和之后的x86兼容CPU的操作模式。
+对于mov al,[0]，是将常量0送入al中，等同于mov al,0； 对于mov al,ds:[0]，含义是(al)=((ds)*16+0)； 对于mov al,[bx]，含义是(al)=((ds)*16+(bx))； 对于mov al,ds:[bx]，含义等同于上者。 Debug R命令：查看、改变 CPU 寄存器的内容； D命令：查看内存中的内容； E命令：改写内存中的内容； U命令：将内存中的机器指令翻译成汇编指令； T命令：执行一条机器指令； A命令：以汇编指令的格式在内存中写入一条机器指令； P命令：可用于快速结束一段LOOP，遇到loop时使用； G命令：可以让指令直接执行到某个地址处，如-g 0016执行到0016处代码。 实模式和保护模式 实模式是Intel 80286和之后的x86兼容CPU的操作模式。
 实模式的特性是一个20位元的区段存储器地址空间（意思为只有1MB的存储器可以被寻址），软件可以直接访问BIOS例程以及周边硬件，没有任何硬件等级的存储器保护观念或多任务。
 保护模式是一种80286系列和之后的x86兼容CPU的运行模式。
 保护模式有一些新的特性，如存储器保护，标签页系统以及硬件支持的虚拟内存，能够增强多任务处理和系统稳定度。
 现今大部分的x86操作系统都在保护模式下运行，包含Linux、FreeBSD、以及微软Windows 2.0和之后版本。
 在纯 DOS 方式（实模式）下，可以不理会 DOS，直接用汇编语言去操作真实的硬件。
 因为运行在 CPU 实模式下的 DOS，没有能力对硬件系统进行全面、严格的管理。
-但在Windows 2000、Unix 这些运行于CPU保护模式下的操作系统中，不理会操作系统，用汇编语言去操作真实的硬件，是根本不可能的。硬件已被这些操作系统利用 CPU 保护模式所提供的功能全面而严格地管理了。
-问题 向内存0:200~0:23F依次传送0~63(3FH)：</description>
+但在Windows 2000、Unix 这些运行于CPU保护模式下的操作系统中，不理会操作系统，用汇编语言去操作真实的硬件，是根本不可能的。硬件已被这些操作系统利用 CPU 保护模式所提供的功能全面而严格地管理了。</description>
     </item>
     
     <item>
-      <title>关于hwbk文件问题的解决和思考</title>
+      <title>关于 hwbk 文件问题的解决和思考</title>
       <link>/posts/2022/10/solution-and-thinking-about-hwbk/</link>
       <pubDate>Mon, 03 Oct 2022 20:52:12 +0800</pubDate>
       
@@ -316,7 +306,7 @@ Windows下的定时任务 规则 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 SC
     </item>
     
     <item>
-      <title>Linux实用操作之进程管理</title>
+      <title>Linux 实用操作之进程管理</title>
       <link>/posts/2022/10/process-management-of-linux-practical-operation/</link>
       <pubDate>Sun, 02 Oct 2022 22:55:53 +0800</pubDate>
       
@@ -677,7 +667,7 @@ Over.</description>
     </item>
     
     <item>
-      <title>使用Seata处理分布式事务</title>
+      <title>使用 Seata 处理分布式事务</title>
       <link>/posts/2022/08/using-seata-to-process-distributed-transactions/</link>
       <pubDate>Tue, 09 Aug 2022 21:41:53 +0800</pubDate>
       
@@ -704,7 +694,7 @@ type修改为nacos
     </item>
     
     <item>
-      <title>Sentinel使用记录</title>
+      <title>Sentinel 使用记录</title>
       <link>/posts/2022/08/sentinel-usage-record/</link>
       <pubDate>Mon, 08 Aug 2022 17:46:49 +0800</pubDate>
       
@@ -724,7 +714,7 @@ service下的方法指定好关于生产者的服务限流，降级或熔断等�
     </item>
     
     <item>
-      <title>Docker-compose快速配置nacos集群环境</title>
+      <title>Docker-compose 快速配置 nacos 集群环境</title>
       <link>/posts/2022/08/docker-compose-quickly-configures-nacos-cluster-environment/</link>
       <pubDate>Sun, 07 Aug 2022 16:02:27 +0800</pubDate>
       
@@ -740,7 +730,7 @@ service下的方法指定好关于生产者的服务限流，降级或熔断等�
     </item>
     
     <item>
-      <title>Batch基本编写方法记录</title>
+      <title>Batch 基本编写方法记录</title>
       <link>/posts/2022/08/batch-basic-compilation-method-record/</link>
       <pubDate>Wed, 03 Aug 2022 23:34:36 +0800</pubDate>
       
@@ -751,7 +741,7 @@ service下的方法指定好关于生产者的服务限流，降级或熔断等�
     </item>
     
     <item>
-      <title>Zipkin使用记录</title>
+      <title>Zipkin 使用记录</title>
       <link>/posts/2022/07/zipkin-usage-record/</link>
       <pubDate>Fri, 29 Jul 2022 18:26:44 +0800</pubDate>
       
@@ -767,7 +757,7 @@ Over.</description>
     </item>
     
     <item>
-      <title>SpringCloud-Stream使用记录</title>
+      <title>SpringCloud-Stream 使用记录</title>
       <link>/posts/2022/07/springcloud-stream-usage-record/</link>
       <pubDate>Fri, 29 Jul 2022 17:26:05 +0800</pubDate>
       
@@ -781,7 +771,7 @@ Stream使用记录 一、依赖导入 除去一些基本依赖之外，发布端
     </item>
     
     <item>
-      <title>Config结合Bus使用记录</title>
+      <title>Config 结合 Bus 使用记录</title>
       <link>/posts/2022/07/config-combined-with-bus-usage-record/</link>
       <pubDate>Wed, 27 Jul 2022 22:00:55 +0800</pubDate>
       
@@ -799,7 +789,7 @@ Stream使用记录 一、依赖导入 除去一些基本依赖之外，发布端
     </item>
     
     <item>
-      <title>SpringCloud-Gateway使用记录</title>
+      <title>SpringCloud-Gateway 使用记录</title>
       <link>/posts/2022/07/springcloud-gateway-usage-record/</link>
       <pubDate>Tue, 26 Jul 2022 18:33:44 +0800</pubDate>
       
@@ -812,7 +802,7 @@ Stream使用记录 一、依赖导入 除去一些基本依赖之外，发布端
     </item>
     
     <item>
-      <title>Hystrix实现服务熔断与监控</title>
+      <title>Hystrix 实现服务熔断与监控</title>
       <link>/posts/2022/07/hytrix-realizes-service-fusing-and-monitoring/</link>
       <pubDate>Tue, 26 Jul 2022 11:39:11 +0800</pubDate>
       
@@ -830,7 +820,7 @@ Hystrix实现服务熔断 环境搭建 1. 关于pom.xml 1 2 3 4 5 6 7 8 &amp;lt;
     </item>
     
     <item>
-      <title>Hystrix实现服务降级</title>
+      <title>Hystrix 实现服务降级</title>
       <link>/posts/2022/07/hytrix-enables-service-degradation/</link>
       <pubDate>Tue, 26 Jul 2022 10:59:08 +0800</pubDate>
       
@@ -847,7 +837,7 @@ Hystrix实现服务熔断 环境搭建 1. 关于pom.xml 1 2 3 4 5 6 7 8 &amp;lt;
     </item>
     
     <item>
-      <title>Linux实用操作之系统服务管理</title>
+      <title>Linux 实用操作之系统服务管理</title>
       <link>/posts/2022/07/system-service-management-of-linux-practical-operation/</link>
       <pubDate>Sun, 24 Jul 2022 20:42:27 +0800</pubDate>
       
@@ -856,7 +846,7 @@ Hystrix实现服务熔断 环境搭建 1. 关于pom.xml 1 2 3 4 5 6 7 8 &amp;lt;
     </item>
     
     <item>
-      <title>Wsl主要操作记录</title>
+      <title>Wsl 主要操作记录</title>
       <link>/posts/2022/07/wsl-main-operation-records/</link>
       <pubDate>Sat, 23 Jul 2022 17:34:52 +0800</pubDate>
       
@@ -872,7 +862,7 @@ wsl一些常用命令 wsl ~ -u jzh: 以jzh用户登录并进入用户文件夹 w
     </item>
     
     <item>
-      <title>Wsl自定义安装位置</title>
+      <title>Wsl 自定义安装位置</title>
       <link>/posts/2022/07/wsl-custom-installation-location/</link>
       <pubDate>Sat, 23 Jul 2022 17:27:31 +0800</pubDate>
       
@@ -892,7 +882,7 @@ Over.</description>
     </item>
     
     <item>
-      <title>OpenFeign使用记录</title>
+      <title>OpenFeign 使用记录</title>
       <link>/posts/2022/07/openfeign-usage-record/</link>
       <pubDate>Fri, 22 Jul 2022 17:39:24 +0800</pubDate>
       
@@ -926,7 +916,7 @@ $result = 3 \times 9 \times 6561 = 3^{2^0} \times 3^{2^1} \times 3^{2^3}$
     </item>
     
     <item>
-      <title>Hugo通过Algolia添加站内搜索功能</title>
+      <title>Hugo 通过 Algolia 添加站内搜索功能</title>
       <link>/posts/2022/07/hugo-adds-onsite-search-function-through-algolia/</link>
       <pubDate>Wed, 20 Jul 2022 23:46:01 +0800</pubDate>
       
@@ -947,7 +937,7 @@ $result = 3 \times 9 \times 6561 = 3^{2^0} \times 3^{2^1} \times 3^{2^3}$
     </item>
     
     <item>
-      <title>理解Ribbon并自己实现负载均衡</title>
+      <title>理解 Ribbon 并自己实现负载均衡</title>
       <link>/posts/2022/07/understand-ribbon-and-realize-load-balancing-by-yourself/</link>
       <pubDate>Wed, 20 Jul 2022 17:07:35 +0800</pubDate>
       
@@ -965,7 +955,7 @@ Ribbon属于进程内LB，它只是一个类库，集成于消费方进程，消
     </item>
     
     <item>
-      <title>Consul配置过程及测试</title>
+      <title>Consul 配置过程及测试</title>
       <link>/posts/2022/07/consul-configuration-process-and-test/</link>
       <pubDate>Tue, 19 Jul 2022 16:34:39 +0800</pubDate>
       
@@ -982,7 +972,7 @@ Over.</description>
     </item>
     
     <item>
-      <title>Zookeeper配置过程与测试</title>
+      <title>Zookeeper 配置过程与测试</title>
       <link>/posts/2022/07/zookeeper-configuration-process-and-test/</link>
       <pubDate>Tue, 19 Jul 2022 12:00:37 +0800</pubDate>
       
@@ -1004,7 +994,7 @@ Over.</description>
     </item>
     
     <item>
-      <title>Eureka配置过程与理解</title>
+      <title>Eureka 配置过程与理解</title>
       <link>/posts/2022/07/eureka-configuration-process-and-understanding/</link>
       <pubDate>Sun, 17 Jul 2022 11:39:35 +0800</pubDate>
       
@@ -1019,7 +1009,7 @@ Eureka微服务架构图 服务接口采用集群模式，8001和8002端口都�
     </item>
     
     <item>
-      <title>Linux展示性内容配置记录</title>
+      <title>Linux 展示性内容配置记录</title>
       <link>/posts/2022/07/linux-display-content-configuration-record/</link>
       <pubDate>Wed, 13 Jul 2022 21:21:50 +0800</pubDate>
       
@@ -1046,7 +1036,7 @@ Eureka微服务架构图 服务接口采用集群模式，8001和8002端口都�
     </item>
     
     <item>
-      <title>Swagger使用记录</title>
+      <title>Swagger 使用记录</title>
       <link>/posts/2022/06/swagger-usage-record/</link>
       <pubDate>Sat, 25 Jun 2022 21:20:38 +0800</pubDate>
       
@@ -1056,7 +1046,7 @@ Eureka微服务架构图 服务接口采用集群模式，8001和8002端口都�
     </item>
     
     <item>
-      <title>Window添加命令别名的方法</title>
+      <title>Window 添加命令别名的方法</title>
       <link>/posts/2022/06/how-to-add-command-alias-in-window/</link>
       <pubDate>Fri, 24 Jun 2022 22:52:59 +0800</pubDate>
       
@@ -1074,7 +1064,7 @@ PowerShell添加别名的方法 为PowerShell设置临时的别名 1 2 3 PS C:\U
     </item>
     
     <item>
-      <title>SpringBoot邮箱服务</title>
+      <title>SpringBoot 邮箱服务</title>
       <link>/posts/2022/06/springboot-mailbox-service/</link>
       <pubDate>Thu, 16 Jun 2022 21:13:15 +0800</pubDate>
       
@@ -1085,7 +1075,7 @@ PowerShell添加别名的方法 为PowerShell设置临时的别名 1 2 3 PS C:\U
     </item>
     
     <item>
-      <title>Quartz实现定时任务</title>
+      <title>Quartz 实现定时任务</title>
       <link>/posts/2022/06/quartz-implements-timed-tasks/</link>
       <pubDate>Wed, 15 Jun 2022 21:11:27 +0800</pubDate>
       
@@ -1097,7 +1087,7 @@ PowerShell添加别名的方法 为PowerShell设置临时的别名 1 2 3 PS C:\U
     </item>
     
     <item>
-      <title>使用x86_64汇编写一个自旋锁</title>
+      <title>使用 x86_64 汇编写一个自旋锁</title>
       <link>/posts/2022/06/use-x86-64-assemble-and-write-a-spin-lock/</link>
       <pubDate>Thu, 09 Jun 2022 23:37:51 +0800</pubDate>
       
@@ -1110,7 +1100,7 @@ Intel语法 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26
     </item>
     
     <item>
-      <title>通过Wireshark分析TCP原理</title>
+      <title>通过 Wireshark 分析 TCP 原理</title>
       <link>/posts/2022/06/analyze-tcp-principle-through-wireshark/</link>
       <pubDate>Thu, 09 Jun 2022 23:18:55 +0800</pubDate>
       
@@ -1226,7 +1216,7 @@ Intel语法 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26
     </item>
     
     <item>
-      <title>Java复习记录（一）</title>
+      <title>Java 复习记录（一）</title>
       <link>/posts/2022/05/java-review-1/</link>
       <pubDate>Sun, 15 May 2022 15:15:51 +0800</pubDate>
       
@@ -1348,7 +1338,7 @@ Java 语言既具有编译型语言的特征，也具有解释型语言的特征
     </item>
     
     <item>
-      <title>Window实用命令记录之进程与网络控制</title>
+      <title>Window 实用命令记录之进程与网络控制</title>
       <link>/posts/2022/04/process-and-network-control-of-window-practical-command-recording/</link>
       <pubDate>Mon, 18 Apr 2022 23:10:39 +0800</pubDate>
       
@@ -1572,19 +1562,19 @@ addFlashAttribute是把数据临时放在session中并在刷新页面后自动�
     </item>
     
     <item>
-      <title>Java开发中遇到的bug记录</title>
+      <title>Java 开发中遇到的 bug 记录</title>
       <link>/posts/2022/01/record-of-bugs-encountered-in-java-development/</link>
       <pubDate>Thu, 06 Jan 2022 17:23:00 +0800</pubDate>
       
       <guid>/posts/2022/01/record-of-bugs-encountered-in-java-development/</guid>
       <description>持续更新中。
-BufferedWriter无法正确写出问题 这是一段客户端代码，向服务器端发送消息，然后接收服务器端的回复：
+BufferedWriter 无法正确写出问题 这是一段客户端代码，向服务器端发送消息，然后接收服务器端的回复：
 1 2 3 4 5 6 7 8 9 10 11 12 13 try ( BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream())); BufferedWriter out = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream())) ) { String message; while((message = stdIn.readLine()) != null) { out.write(message); out.flush(); System.out.println(&amp;#34;Receive from server: &amp;#34; + in.readLine()); } } catch (Exception e) { System.out.println(e.getMessage()); } 这是服务端代码的一部分，接收客户端消息，并向客户端回复：
 1 2 3 4 5 6 7 8 9 10 11 12 13 try ( BufferedReader in = new BufferedReader(new InputStreamReader(socket.</description>
     </item>
     
     <item>
-      <title>Linux实用操作之权限管理</title>
+      <title>Linux 实用操作之权限管理</title>
       <link>/posts/2021/12/permission-management-of-linux-practical-operation/</link>
       <pubDate>Mon, 20 Dec 2021 10:15:34 +0800</pubDate>
       
@@ -1595,7 +1585,7 @@ BufferedWriter无法正确写出问题 这是一段客户端代码，向服务�
     </item>
     
     <item>
-      <title>Redis学习记录二</title>
+      <title>Redis 学习记录二</title>
       <link>/posts/2021/12/redis-learning-record-ii/</link>
       <pubDate>Mon, 20 Dec 2021 10:15:05 +0800</pubDate>
       
@@ -1604,7 +1594,7 @@ BufferedWriter无法正确写出问题 这是一段客户端代码，向服务�
     </item>
     
     <item>
-      <title>Redis学习记录一</title>
+      <title>Redis 学习记录一</title>
       <link>/posts/2021/12/redis-learning-record-i/</link>
       <pubDate>Tue, 14 Dec 2021 23:40:44 +0800</pubDate>
       
@@ -1615,7 +1605,7 @@ BufferedWriter无法正确写出问题 这是一段客户端代码，向服务�
     </item>
     
     <item>
-      <title>Git快速初始化操作</title>
+      <title>Git 快速初始化操作</title>
       <link>/posts/2021/12/git-quick-initialization-operation/</link>
       <pubDate>Fri, 10 Dec 2021 18:10:07 +0800</pubDate>
       
@@ -1628,7 +1618,7 @@ BufferedWriter无法正确写出问题 这是一段客户端代码，向服务�
     </item>
     
     <item>
-      <title>关于char*, char[], string的理解</title>
+      <title>关于 char*, char[], string 的理解</title>
       <link>/posts/2021/12/understanding-of-char-char-string/</link>
       <pubDate>Sun, 05 Dec 2021 12:37:32 +0800</pubDate>
       
@@ -1640,7 +1630,7 @@ BufferedWriter无法正确写出问题 这是一段客户端代码，向服务�
     </item>
     
     <item>
-      <title>Linux实用操作之文本操作</title>
+      <title>Linux 实用操作之文本操作</title>
       <link>/posts/2021/12/text-operation-of-linux-practical-operation/</link>
       <pubDate>Sun, 05 Dec 2021 00:20:09 +0800</pubDate>
       
@@ -1663,7 +1653,7 @@ awk命令操作文本 格式化输出：以tab隔开打印前五行中每行的�
     </item>
     
     <item>
-      <title>Java重写equals方法的同时为什么要重写hashcode方法</title>
+      <title>Java 重写 equals 方法的同时为什么要重写 hashcode 方法</title>
       <link>/posts/2021/11/why-should-java-rewrite-the-hashcode-method-when-rewriting-the-equals-method/</link>
       <pubDate>Fri, 26 Nov 2021 09:23:27 +0800</pubDate>
       
@@ -1729,7 +1719,7 @@ awk命令操作文本 格式化输出：以tab隔开打印前五行中每行的�
     </item>
     
     <item>
-      <title>Window增加右键打开选项</title>
+      <title>Window 增加右键打开选项</title>
       <link>/posts/2021/11/add-right-click-open-option-in-window/</link>
       <pubDate>Sat, 20 Nov 2021 18:10:30 +0800</pubDate>
       
@@ -1756,7 +1746,7 @@ regedit
     </item>
     
     <item>
-      <title>Linux上部署JAR包项目后的文件上传问题</title>
+      <title>Linux 上部署 JAR 包项目后的文件上传问题</title>
       <link>/posts/2021/11/file-upload-problem-after-deploying-jar-package-project-on-linux/</link>
       <pubDate>Wed, 03 Nov 2021 00:38:12 +0800</pubDate>
       
@@ -1783,7 +1773,7 @@ e.g. ${project}/target/classes/static/avatar/test.jpg
     </item>
     
     <item>
-      <title>Linux主机部署springboot项目全过程</title>
+      <title>Linux 主机部署 springboot 项目全过程</title>
       <link>/posts/2021/11/the-whole-process-of-linux-host-deployment-springboot-project/</link>
       <pubDate>Wed, 03 Nov 2021 00:30:25 +0800</pubDate>
       
@@ -1868,7 +1858,7 @@ e.g. ${project}/target/classes/static/avatar/test.jpg
     </item>
     
     <item>
-      <title>Docker简单使用记录</title>
+      <title>Docker 简单使用记录</title>
       <link>/posts/2021/05/docker-simple-use-process-record/</link>
       <pubDate>Wed, 19 May 2021 22:52:52 +0800</pubDate>
       
@@ -1877,7 +1867,7 @@ e.g. ${project}/target/classes/static/avatar/test.jpg
     </item>
     
     <item>
-      <title>Synchronized到底锁了谁</title>
+      <title>Synchronized 到底锁了谁</title>
       <link>/posts/2021/05/who-the-hell-is-synchronized-locking/</link>
       <pubDate>Wed, 19 May 2021 22:43:45 +0800</pubDate>
       
@@ -1996,7 +1986,7 @@ synchronized(obj){...} synchronized同步代码块对对象内部的实例加锁
     </item>
     
     <item>
-      <title>Java与C&#43;&#43;中的值传递和引用传递解析</title>
+      <title>Java 与 C&#43;&#43; 中的值传递和引用传递解析</title>
       <link>/posts/2021/05/value-passing-and-reference-passing-parsing-in-java-and-c/</link>
       <pubDate>Sat, 01 May 2021 20:16:39 +0800</pubDate>
       
@@ -2008,7 +1998,7 @@ Java的参数传递 先定义3个方法如下：
     </item>
     
     <item>
-      <title>Window实用命令记录之文件操作</title>
+      <title>Window 实用命令记录之文件操作</title>
       <link>/posts/2021/04/file-operation-recorded-by-window-utility-command/</link>
       <pubDate>Mon, 19 Apr 2021 13:48:19 +0800</pubDate>
       
@@ -2056,7 +2046,16 @@ Java的参数传递 先定义3个方法如下：
     </item>
     
     <item>
-      <title>实现SSH免IP免密登录</title>
+      <title>IDEA 配置使用记录</title>
+      <link>/posts/2021/01/idea-configuration-usage-record/</link>
+      <pubDate>Sun, 17 Jan 2021 21:46:42 +0800</pubDate>
+      
+      <guid>/posts/2021/01/idea-configuration-usage-record/</guid>
+      <description>控制台中文乱码解决 菜单栏HELP-&amp;gt;Edit Custom VM OPtions中加 -Dfile.encoding=utf-8 重启idea IDEA开启RunDashboard 1 2 3 4 5 6 7 8 9 # .idea/workspace.xml &amp;lt;component name=&amp;#34;RunDashboard&amp;#34;&amp;gt; &amp;lt;option name=&amp;#34;configurationTypes&amp;#34;&amp;gt; &amp;lt;set&amp;gt; &amp;lt;option value=&amp;#34;SpringBootApplicationConfigurationType&amp;#34; /&amp;gt; &amp;lt;/set&amp;gt; &amp;lt;/option&amp;gt; &amp;lt;/component&amp;gt; IDEA关闭拼写 1 Settings -&amp;gt; Editor -&amp;gt; Inspection -&amp;gt; Proofreading -&amp;gt; 关闭Typo IDEA配置快捷输入 1 editor -&amp;gt; live template IDEA常用快捷键 1 2 3 4 5 6 7 8 9 10 11 12 13 alt + ctrl + L : 格式化 ctrl + shift + r : 替换字符 ctrl + r : 在当前文件中替换字符 ctrl + shift + n : 搜索项目文件 ctrl + f : 在当前文件下搜索字符 ctrl + shift + t : 进行快捷抛异常 alt + 上下键 : 光标移到下或上一层 禁用 double shift 对于2021.</description>
+    </item>
+    
+    <item>
+      <title>实现 SSH 免 IP 免密登录</title>
       <link>/posts/2021/01/realize-ssh-ipfree-and-secret-free-login/</link>
       <pubDate>Wed, 13 Jan 2021 21:53:43 +0800</pubDate>
       
@@ -2070,7 +2069,7 @@ no matching key exchange method found. Their offer: diffie-hellman-group1-sha1
     </item>
     
     <item>
-      <title>Linux实用操作之网络管理</title>
+      <title>Linux 实用操作之网络管理</title>
       <link>/posts/2021/01/network-management-of-linux-practical-operation/</link>
       <pubDate>Sun, 03 Jan 2021 00:27:58 +0800</pubDate>
       
@@ -2123,7 +2122,7 @@ URL : http://www.cip.cc/${my_ip}
     </item>
     
     <item>
-      <title>equals方法和==运算符的作用区别</title>
+      <title>equals 方法和 == 运算符的作用区别</title>
       <link>/posts/2020/11/the-difference-between-the-equals-method-and-the---operator/</link>
       <pubDate>Wed, 25 Nov 2020 00:21:05 +0800</pubDate>
       
@@ -2138,7 +2137,7 @@ equals 比较时进行值的比较
     </item>
     
     <item>
-      <title>Cmd重要且实用的一些命令</title>
+      <title>Cmd 重要且实用的一些命令</title>
       <link>/posts/2020/11/cmd-some-important-and-practical-commands/</link>
       <pubDate>Fri, 20 Nov 2020 18:17:33 +0800</pubDate>
       
@@ -2220,7 +2219,7 @@ equals 比较时进行值的比较
     </item>
     
     <item>
-      <title>Python自动爬取花瓣网任意面板中所有图片</title>
+      <title>Python 自动爬取花瓣网任意面板中所有图片</title>
       <link>/posts/2020/02/python-automatically-crawls-all-pictures-in-any-panel-of-petal-net/</link>
       <pubDate>Thu, 13 Feb 2020 00:14:23 +0800</pubDate>
       
@@ -2239,7 +2238,7 @@ equals 比较时进行值的比较
     </item>
     
     <item>
-      <title>Matlab基本用法整理</title>
+      <title>Matlab 基本用法整理</title>
       <link>/posts/2020/02/basic-usage-sorting-of-matlab/</link>
       <pubDate>Thu, 06 Feb 2020 20:41:12 +0800</pubDate>
       

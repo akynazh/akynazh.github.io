@@ -7,18 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Jzh</copyright>
-    <lastBuildDate>Tue, 17 Jan 2023 21:46:42 +0800</lastBuildDate><atom:link href="/categories/tool/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 13 Jan 2023 21:43:06 +0800</lastBuildDate><atom:link href="/categories/tool/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>IDEA配置使用记录</title>
-      <link>/posts/2023/01/idea-configuration-usage-record/</link>
-      <pubDate>Tue, 17 Jan 2023 21:46:42 +0800</pubDate>
-      
-      <guid>/posts/2023/01/idea-configuration-usage-record/</guid>
-      <description>控制台中文乱码解决 菜单栏HELP-&amp;gt;Edit Custom VM OPtions中加 -Dfile.encoding=utf-8 重启idea IDEA开启RunDashboard 1 2 3 4 5 6 7 8 9 # .idea/workspace.xml &amp;lt;component name=&amp;#34;RunDashboard&amp;#34;&amp;gt; &amp;lt;option name=&amp;#34;configurationTypes&amp;#34;&amp;gt; &amp;lt;set&amp;gt; &amp;lt;option value=&amp;#34;SpringBootApplicationConfigurationType&amp;#34; /&amp;gt; &amp;lt;/set&amp;gt; &amp;lt;/option&amp;gt; &amp;lt;/component&amp;gt; IDEA关闭拼写 1 Settings -&amp;gt; Editor -&amp;gt; Inspection -&amp;gt; Proofreading -&amp;gt; 关闭Typo IDEA配置快捷输入 1 editor -&amp;gt; live template IDEA常用快捷键 1 2 3 4 5 6 7 8 9 10 11 12 13 alt + ctrl + L : 格式化 ctrl + shift + r : 替换字符 ctrl + r : 在当前文件中替换字符 ctrl + shift + n : 搜索项目文件 ctrl + f : 在当前文件下搜索字符 ctrl + shift + t : 进行快捷抛异常 alt + 上下键 : 光标移到下或上一层 禁用 double shift 对于2021.</description>
-    </item>
-    
-    <item>
-      <title>Clash-Linux配置使用记录</title>
+      <title>Clash-Linux 配置使用记录</title>
       <link>/posts/2023/01/clash-linux-configuration-usage-record/</link>
       <pubDate>Fri, 13 Jan 2023 21:43:06 +0800</pubDate>
       
@@ -28,7 +19,7 @@
     </item>
     
     <item>
-      <title>Git版本与提交管理</title>
+      <title>Git 版本与提交管理</title>
       <link>/posts/2022/12/git-version-and-submission-management/</link>
       <pubDate>Tue, 06 Dec 2022 11:42:39 +0800</pubDate>
       
@@ -46,7 +37,7 @@ HEAD^ = HEAD^1 第一个父级提交 HEAD^2~1 第二个父级提交的上一次�
     </item>
     
     <item>
-      <title>Linux软件安装和配置记录</title>
+      <title>Linux 软件安装和配置记录</title>
       <link>/posts/2022/11/linux-software-installation-and-configuration-records/</link>
       <pubDate>Sun, 13 Nov 2022 21:15:53 +0800</pubDate>
       
@@ -55,7 +46,7 @@ HEAD^ = HEAD^1 第一个父级提交 HEAD^2~1 第二个父级提交的上一次�
     </item>
     
     <item>
-      <title>Git配置记录</title>
+      <title>Git 配置记录</title>
       <link>/posts/2022/10/git-configuration-record/</link>
       <pubDate>Thu, 13 Oct 2022 21:40:46 +0800</pubDate>
       
@@ -64,7 +55,7 @@ HEAD^ = HEAD^1 第一个父级提交 HEAD^2~1 第二个父级提交的上一次�
     </item>
     
     <item>
-      <title>Docker软件安装记录</title>
+      <title>Docker 软件安装记录</title>
       <link>/posts/2022/10/docker-software-installation-record/</link>
       <pubDate>Thu, 13 Oct 2022 21:28:37 +0800</pubDate>
       
@@ -73,7 +64,7 @@ HEAD^ = HEAD^1 第一个父级提交 HEAD^2~1 第二个父级提交的上一次�
     </item>
     
     <item>
-      <title>关于hwbk文件问题的解决和思考</title>
+      <title>关于 hwbk 文件问题的解决和思考</title>
       <link>/posts/2022/10/solution-and-thinking-about-hwbk/</link>
       <pubDate>Mon, 03 Oct 2022 20:52:12 +0800</pubDate>
       
@@ -104,7 +95,7 @@ kill_hwbk.js
     </item>
     
     <item>
-      <title>Wsl自定义安装位置</title>
+      <title>Wsl 自定义安装位置</title>
       <link>/posts/2022/07/wsl-custom-installation-location/</link>
       <pubDate>Sat, 23 Jul 2022 17:27:31 +0800</pubDate>
       
@@ -124,7 +115,7 @@ Over.</description>
     </item>
     
     <item>
-      <title>Hugo通过Algolia添加站内搜索功能</title>
+      <title>Hugo 通过 Algolia 添加站内搜索功能</title>
       <link>/posts/2022/07/hugo-adds-onsite-search-function-through-algolia/</link>
       <pubDate>Wed, 20 Jul 2022 23:46:01 +0800</pubDate>
       
@@ -145,7 +136,7 @@ Over.</description>
     </item>
     
     <item>
-      <title>Linux展示性内容配置记录</title>
+      <title>Linux 展示性内容配置记录</title>
       <link>/posts/2022/07/linux-display-content-configuration-record/</link>
       <pubDate>Wed, 13 Jul 2022 21:21:50 +0800</pubDate>
       
@@ -156,7 +147,7 @@ Over.</description>
     </item>
     
     <item>
-      <title>通过Wireshark分析TCP原理</title>
+      <title>通过 Wireshark 分析 TCP 原理</title>
       <link>/posts/2022/06/analyze-tcp-principle-through-wireshark/</link>
       <pubDate>Thu, 09 Jun 2022 23:18:55 +0800</pubDate>
       
@@ -182,7 +173,7 @@ CentOS配置静态IP 找到当前网络下网卡名，然后编辑/etc/sysconfig
     </item>
     
     <item>
-      <title>Git快速初始化操作</title>
+      <title>Git 快速初始化操作</title>
       <link>/posts/2021/12/git-quick-initialization-operation/</link>
       <pubDate>Fri, 10 Dec 2021 18:10:07 +0800</pubDate>
       
@@ -195,7 +186,7 @@ CentOS配置静态IP 找到当前网络下网卡名，然后编辑/etc/sysconfig
     </item>
     
     <item>
-      <title>Window增加右键打开选项</title>
+      <title>Window 增加右键打开选项</title>
       <link>/posts/2021/11/add-right-click-open-option-in-window/</link>
       <pubDate>Sat, 20 Nov 2021 18:10:30 +0800</pubDate>
       
@@ -222,7 +213,7 @@ regedit
     </item>
     
     <item>
-      <title>Docker简单使用记录</title>
+      <title>Docker 简单使用记录</title>
       <link>/posts/2021/05/docker-simple-use-process-record/</link>
       <pubDate>Wed, 19 May 2021 22:52:52 +0800</pubDate>
       
@@ -231,7 +222,16 @@ regedit
     </item>
     
     <item>
-      <title>实现SSH免IP免密登录</title>
+      <title>IDEA 配置使用记录</title>
+      <link>/posts/2021/01/idea-configuration-usage-record/</link>
+      <pubDate>Sun, 17 Jan 2021 21:46:42 +0800</pubDate>
+      
+      <guid>/posts/2021/01/idea-configuration-usage-record/</guid>
+      <description>控制台中文乱码解决 菜单栏HELP-&amp;gt;Edit Custom VM OPtions中加 -Dfile.encoding=utf-8 重启idea IDEA开启RunDashboard 1 2 3 4 5 6 7 8 9 # .idea/workspace.xml &amp;lt;component name=&amp;#34;RunDashboard&amp;#34;&amp;gt; &amp;lt;option name=&amp;#34;configurationTypes&amp;#34;&amp;gt; &amp;lt;set&amp;gt; &amp;lt;option value=&amp;#34;SpringBootApplicationConfigurationType&amp;#34; /&amp;gt; &amp;lt;/set&amp;gt; &amp;lt;/option&amp;gt; &amp;lt;/component&amp;gt; IDEA关闭拼写 1 Settings -&amp;gt; Editor -&amp;gt; Inspection -&amp;gt; Proofreading -&amp;gt; 关闭Typo IDEA配置快捷输入 1 editor -&amp;gt; live template IDEA常用快捷键 1 2 3 4 5 6 7 8 9 10 11 12 13 alt + ctrl + L : 格式化 ctrl + shift + r : 替换字符 ctrl + r : 在当前文件中替换字符 ctrl + shift + n : 搜索项目文件 ctrl + f : 在当前文件下搜索字符 ctrl + shift + t : 进行快捷抛异常 alt + 上下键 : 光标移到下或上一层 禁用 double shift 对于2021.</description>
+    </item>
+    
+    <item>
+      <title>实现 SSH 免 IP 免密登录</title>
       <link>/posts/2021/01/realize-ssh-ipfree-and-secret-free-login/</link>
       <pubDate>Wed, 13 Jan 2021 21:53:43 +0800</pubDate>
       

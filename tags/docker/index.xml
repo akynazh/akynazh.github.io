@@ -9,7 +9,7 @@
     <copyright>Jzh</copyright>
     <lastBuildDate>Thu, 13 Oct 2022 21:28:37 +0800</lastBuildDate><atom:link href="/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Docker软件安装记录</title>
+      <title>Docker 软件安装记录</title>
       <link>/posts/2022/10/docker-software-installation-record/</link>
       <pubDate>Thu, 13 Oct 2022 21:28:37 +0800</pubDate>
       
@@ -18,7 +18,7 @@
     </item>
     
     <item>
-      <title>Docker-compose快速配置nacos集群环境</title>
+      <title>Docker-compose 快速配置 nacos 集群环境</title>
       <link>/posts/2022/08/docker-compose-quickly-configures-nacos-cluster-environment/</link>
       <pubDate>Sun, 07 Aug 2022 16:02:27 +0800</pubDate>
       
@@ -34,7 +34,7 @@
     </item>
     
     <item>
-      <title>Docker简单使用记录</title>
+      <title>Docker 简单使用记录</title>
       <link>/posts/2021/05/docker-simple-use-process-record/</link>
       <pubDate>Wed, 19 May 2021 22:52:52 +0800</pubDate>
       

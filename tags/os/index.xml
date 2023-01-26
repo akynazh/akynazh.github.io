@@ -9,7 +9,7 @@
     <copyright>Jzh</copyright>
     <lastBuildDate>Thu, 09 Jun 2022 23:37:51 +0800</lastBuildDate><atom:link href="/tags/os/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>使用x86_64汇编写一个自旋锁</title>
+      <title>使用 x86_64 汇编写一个自旋锁</title>
       <link>/posts/2022/06/use-x86-64-assemble-and-write-a-spin-lock/</link>
       <pubDate>Thu, 09 Jun 2022 23:37:51 +0800</pubDate>
       

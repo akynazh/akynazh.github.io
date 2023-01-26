@@ -9,7 +9,7 @@
     <copyright>Jzh</copyright>
     <lastBuildDate>Sun, 13 Nov 2022 21:15:53 +0800</lastBuildDate><atom:link href="/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Linux软件安装和配置记录</title>
+      <title>Linux 软件安装和配置记录</title>
       <link>/posts/2022/11/linux-software-installation-and-configuration-records/</link>
       <pubDate>Sun, 13 Nov 2022 21:15:53 +0800</pubDate>
       
@@ -18,7 +18,7 @@
     </item>
     
     <item>
-      <title>Shell基本操作总结</title>
+      <title>Shell 基本操作总结</title>
       <link>/posts/2022/10/shell-basic-operation-summary/</link>
       <pubDate>Wed, 19 Oct 2022 22:44:10 +0800</pubDate>
       
@@ -30,7 +30,7 @@
     </item>
     
     <item>
-      <title>Linux文件部分总结</title>
+      <title>Linux 文件部分总结</title>
       <link>/posts/2022/10/linux-files-section-summary/</link>
       <pubDate>Wed, 19 Oct 2022 22:43:03 +0800</pubDate>
       
@@ -56,7 +56,7 @@ win to unix 多了\r -&amp;gt; \r\n -&amp;gt; ^M。
     </item>
     
     <item>
-      <title>Linux实用操作之进程管理</title>
+      <title>Linux 实用操作之进程管理</title>
       <link>/posts/2022/10/process-management-of-linux-practical-operation/</link>
       <pubDate>Sun, 02 Oct 2022 22:55:53 +0800</pubDate>
       
@@ -66,7 +66,7 @@ PPID 父进程ID C 占用CPU百分比 STIME 就是&amp;quot;start time&amp;quot;
     </item>
     
     <item>
-      <title>Linux实用操作之系统服务管理</title>
+      <title>Linux 实用操作之系统服务管理</title>
       <link>/posts/2022/07/system-service-management-of-linux-practical-operation/</link>
       <pubDate>Sun, 24 Jul 2022 20:42:27 +0800</pubDate>
       
@@ -75,7 +75,7 @@ PPID 父进程ID C 占用CPU百分比 STIME 就是&amp;quot;start time&amp;quot;
     </item>
     
     <item>
-      <title>Wsl主要操作记录</title>
+      <title>Wsl 主要操作记录</title>
       <link>/posts/2022/07/wsl-main-operation-records/</link>
       <pubDate>Sat, 23 Jul 2022 17:34:52 +0800</pubDate>
       
@@ -91,7 +91,7 @@ wsl一些常用命令 wsl ~ -u jzh: 以jzh用户登录并进入用户文件夹 w
     </item>
     
     <item>
-      <title>Linux展示性内容配置记录</title>
+      <title>Linux 展示性内容配置记录</title>
       <link>/posts/2022/07/linux-display-content-configuration-record/</link>
       <pubDate>Wed, 13 Jul 2022 21:21:50 +0800</pubDate>
       
@@ -118,7 +118,7 @@ CentOS配置静态IP 找到当前网络下网卡名，然后编辑/etc/sysconfig
     </item>
     
     <item>
-      <title>Linux实用操作之权限管理</title>
+      <title>Linux 实用操作之权限管理</title>
       <link>/posts/2021/12/permission-management-of-linux-practical-operation/</link>
       <pubDate>Mon, 20 Dec 2021 10:15:34 +0800</pubDate>
       
@@ -129,7 +129,7 @@ CentOS配置静态IP 找到当前网络下网卡名，然后编辑/etc/sysconfig
     </item>
     
     <item>
-      <title>Linux实用操作之文本操作</title>
+      <title>Linux 实用操作之文本操作</title>
       <link>/posts/2021/12/text-operation-of-linux-practical-operation/</link>
       <pubDate>Sun, 05 Dec 2021 00:20:09 +0800</pubDate>
       
@@ -152,7 +152,7 @@ awk命令操作文本 格式化输出：以tab隔开打印前五行中每行的�
     </item>
     
     <item>
-      <title>Linux上部署JAR包项目后的文件上传问题</title>
+      <title>Linux 上部署 JAR 包项目后的文件上传问题</title>
       <link>/posts/2021/11/file-upload-problem-after-deploying-jar-package-project-on-linux/</link>
       <pubDate>Wed, 03 Nov 2021 00:38:12 +0800</pubDate>
       
@@ -179,7 +179,7 @@ e.g. ${project}/target/classes/static/avatar/test.jpg
     </item>
     
     <item>
-      <title>Linux主机部署springboot项目全过程</title>
+      <title>Linux 主机部署 springboot 项目全过程</title>
       <link>/posts/2021/11/the-whole-process-of-linux-host-deployment-springboot-project/</link>
       <pubDate>Wed, 03 Nov 2021 00:30:25 +0800</pubDate>
       
@@ -195,7 +195,7 @@ e.g. ${project}/target/classes/static/avatar/test.jpg
     </item>
     
     <item>
-      <title>Docker简单使用记录</title>
+      <title>Docker 简单使用记录</title>
       <link>/posts/2021/05/docker-simple-use-process-record/</link>
       <pubDate>Wed, 19 May 2021 22:52:52 +0800</pubDate>
       
@@ -204,7 +204,7 @@ e.g. ${project}/target/classes/static/avatar/test.jpg
     </item>
     
     <item>
-      <title>Linux实用操作之网络管理</title>
+      <title>Linux 实用操作之网络管理</title>
       <link>/posts/2021/01/network-management-of-linux-practical-operation/</link>
       <pubDate>Sun, 03 Jan 2021 00:27:58 +0800</pubDate>
       
