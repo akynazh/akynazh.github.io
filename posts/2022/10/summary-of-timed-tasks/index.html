@@ -9,20 +9,17 @@
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
   <meta property="og:title" content="关于定时任务的总结" />
-<meta property="og:description" content="Linux下的定时任务 规则 */1 * * * * cmd
+<meta property="og:description" content="Linux 下的定时任务 规则 */1 * * * * cmd
 5个单元：
-分钟（0-59） 小时（0-23 日期（1-31） 月份（1-12） 星期几（0-6，其中0代表星期日）
+分钟（0-59） 小时（0-23 日期（1-31） 月份（1-12） 星期几（0-6，其中 0 代表星期日）
 例子 每分钟执行一次：* * * * * cmd
 或者：*/1 * * * * cmd
-每天早上6点10分执行一次：10 6 * * * cmd
+每天早上 6 点 10 分执行一次：10 6 * * * cmd
 每两个小时执行一次：0 */2 * * * cmd
-在1月1日早上4点执行一次：0 4 1 1 * cmd
-注意事项 一、crontab不会使用在.bashrc之类的文件中定义的变量。
+在 1 月 1 日早上 4 点执行一次：0 4 1 1 * cmd
+注意事项 一、crontab 不会使用在 .bashrc 之类的文件中定义的变量。
 解决方法：
-若为python脚本，可以通过`os.environ.get(&rsquo;{env}&rsquo;)在脚本中访问变量； 若为shell脚本，可以在脚本中执行source {your_env_file}; 类似于2，可以在crontab语句中执行source {your_env_file}。 二、crontab用户配置位于：/var/spool/cron/{用户名}
-可见，每个用户对应一个crontab配置，所以在crontab语句中使用~是可以的。
-三、crontab日志位于：/var/log/cron
-Windows下的定时任务 规则 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 SCHTASKS /parameter [arguments] Parameter List: /Create Creates a new scheduled task." />
+若为 python 脚本，可以通过 os.environ.get(&#39;{env}&#39;) 在脚本中访问变量； 若为 shell 脚本，可以在脚本中执行 source {your_env_file}; 类似于2，可以在crontab语句中执行 source {your_env_file}。 二、crontab 用户配置位于：/var/spool/cron/{用户名}" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/2022/10/summary-of-timed-tasks/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-10-03T17:22:29+08:00" />
@@ -30,20 +27,17 @@ Windows下的定时任务 规则 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 SC
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="关于定时任务的总结"/>
-<meta name="twitter:description" content="Linux下的定时任务 规则 */1 * * * * cmd
+<meta name="twitter:description" content="Linux 下的定时任务 规则 */1 * * * * cmd
 5个单元：
-分钟（0-59） 小时（0-23 日期（1-31） 月份（1-12） 星期几（0-6，其中0代表星期日）
+分钟（0-59） 小时（0-23 日期（1-31） 月份（1-12） 星期几（0-6，其中 0 代表星期日）
 例子 每分钟执行一次：* * * * * cmd
 或者：*/1 * * * * cmd
-每天早上6点10分执行一次：10 6 * * * cmd
+每天早上 6 点 10 分执行一次：10 6 * * * cmd
 每两个小时执行一次：0 */2 * * * cmd
-在1月1日早上4点执行一次：0 4 1 1 * cmd
-注意事项 一、crontab不会使用在.bashrc之类的文件中定义的变量。
+在 1 月 1 日早上 4 点执行一次：0 4 1 1 * cmd
+注意事项 一、crontab 不会使用在 .bashrc 之类的文件中定义的变量。
 解决方法：
-若为python脚本，可以通过`os.environ.get(&rsquo;{env}&rsquo;)在脚本中访问变量； 若为shell脚本，可以在脚本中执行source {your_env_file}; 类似于2，可以在crontab语句中执行source {your_env_file}。 二、crontab用户配置位于：/var/spool/cron/{用户名}
-可见，每个用户对应一个crontab配置，所以在crontab语句中使用~是可以的。
-三、crontab日志位于：/var/log/cron
-Windows下的定时任务 规则 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 SCHTASKS /parameter [arguments] Parameter List: /Create Creates a new scheduled task."/>
+若为 python 脚本，可以通过 os.environ.get(&#39;{env}&#39;) 在脚本中访问变量； 若为 shell 脚本，可以在脚本中执行 source {your_env_file}; 类似于2，可以在crontab语句中执行 source {your_env_file}。 二、crontab 用户配置位于：/var/spool/cron/{用户名}"/>
 
   
   
@@ -167,7 +161,7 @@ Windows下的定时任务 规则 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 SC
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f10%2fsummary-of-timed-tasks%2f&name=%e5%85%b3%e4%ba%8e%e5%ae%9a%e6%97%b6%e4%bb%bb%e5%8a%a1%e7%9a%84%e6%80%bb%e7%bb%93&description=Linux%e4%b8%8b%e7%9a%84%e5%ae%9a%e6%97%b6%e4%bb%bb%e5%8a%a1%20%e8%a7%84%e5%88%99%20%2a%2f1%20%2a%20%2a%20%2a%20%2a%20cmd%0a5%e4%b8%aa%e5%8d%95%e5%85%83%ef%bc%9a%0a%e5%88%86%e9%92%9f%ef%bc%880-59%ef%bc%89%20%e5%b0%8f%e6%97%b6%ef%bc%880-23%20%e6%97%a5%e6%9c%9f%ef%bc%881-31%ef%bc%89%20%e6%9c%88%e4%bb%bd%ef%bc%881-12%ef%bc%89%20%e6%98%9f%e6%9c%9f%e5%87%a0%ef%bc%880-6%ef%bc%8c%e5%85%b6%e4%b8%ad0%e4%bb%a3%e8%a1%a8%e6%98%9f%e6%9c%9f%e6%97%a5%ef%bc%89%0a%e4%be%8b%e5%ad%90%20%e6%af%8f%e5%88%86%e9%92%9f%e6%89%a7%e8%a1%8c%e4%b8%80%e6%ac%a1%ef%bc%9a%2a%20%2a%20%2a%20%2a%20%2a%20cmd%0a%e6%88%96%e8%80%85%ef%bc%9a%2a%2f1%20%2a%20%2a%20%2a%20%2a%20cmd%0a%e6%af%8f%e5%a4%a9%e6%97%a9%e4%b8%8a6%e7%82%b910%e5%88%86%e6%89%a7%e8%a1%8c%e4%b8%80%e6%ac%a1%ef%bc%9a10%206%20%2a%20%2a%20%2a%20cmd%0a%e6%af%8f%e4%b8%a4%e4%b8%aa%e5%b0%8f%e6%97%b6%e6%89%a7%e8%a1%8c%e4%b8%80%e6%ac%a1%ef%bc%9a0%20%2a%2f2%20%2a%20%2a%20%2a%20cmd%0a%e5%9c%a81%e6%9c%881%e6%97%a5%e6%97%a9%e4%b8%8a4%e7%82%b9%e6%89%a7%e8%a1%8c%e4%b8%80%e6%ac%a1%ef%bc%9a0%204%201%201%20%2a%20cmd%0a%e6%b3%a8%e6%84%8f%e4%ba%8b%e9%a1%b9%20%e4%b8%80%e3%80%81crontab%e4%b8%8d%e4%bc%9a%e4%bd%bf%e7%94%a8%e5%9c%a8.bashrc%e4%b9%8b%e7%b1%bb%e7%9a%84%e6%96%87%e4%bb%b6%e4%b8%ad%e5%ae%9a%e4%b9%89%e7%9a%84%e5%8f%98%e9%87%8f%e3%80%82%0a%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95%ef%bc%9a%0a%e8%8b%a5%e4%b8%bapython%e8%84%9a%e6%9c%ac%ef%bc%8c%e5%8f%af%e4%bb%a5%e9%80%9a%e8%bf%87%60os.environ.get%28%26rsquo%3b%7benv%7d%26rsquo%3b%29%e5%9c%a8%e8%84%9a%e6%9c%ac%e4%b8%ad%e8%ae%bf%e9%97%ae%e5%8f%98%e9%87%8f%ef%bc%9b%20%e8%8b%a5%e4%b8%bashell%e8%84%9a%e6%9c%ac%ef%bc%8c%e5%8f%af%e4%bb%a5%e5%9c%a8%e8%84%9a%e6%9c%ac%e4%b8%ad%e6%89%a7%e8%a1%8csource%20%7byour_env_file%7d%3b%20%e7%b1%bb%e4%bc%bc%e4%ba%8e2%ef%bc%8c%e5%8f%af%e4%bb%a5%e5%9c%a8crontab%e8%af%ad%e5%8f%a5%e4%b8%ad%e6%89%a7%e8%a1%8csource%20%7byour_env_file%7d%e3%80%82%20%e4%ba%8c%e3%80%81crontab%e7%94%a8%e6%88%b7%e9%85%8d%e7%bd%ae%e4%bd%8d%e4%ba%8e%ef%bc%9a%2fvar%2fspool%2fcron%2f%7b%e7%94%a8%e6%88%b7%e5%90%8d%7d%0a%e5%8f%af%e8%a7%81%ef%bc%8c%e6%af%8f%e4%b8%aa%e7%94%a8%e6%88%b7%e5%af%b9%e5%ba%94%e4%b8%80%e4%b8%aacrontab%e9%85%8d%e7%bd%ae%ef%bc%8c%e6%89%80%e4%bb%a5%e5%9c%a8crontab%e8%af%ad%e5%8f%a5%e4%b8%ad%e4%bd%bf%e7%94%a8~%e6%98%af%e5%8f%af%e4%bb%a5%e7%9a%84%e3%80%82%0a%e4%b8%89%e3%80%81crontab%e6%97%a5%e5%bf%97%e4%bd%8d%e4%ba%8e%ef%bc%9a%2fvar%2flog%2fcron%0aWindows%e4%b8%8b%e7%9a%84%e5%ae%9a%e6%97%b6%e4%bb%bb%e5%8a%a1%20%e8%a7%84%e5%88%99%201%202%203%204%205%206%207%208%209%2010%2011%2012%2013%2014%2015%2016%2017%2018%20SCHTASKS%20%2fparameter%20%5barguments%5d%20Parameter%20List%3a%20%2fCreate%20Creates%20a%20new%20scheduled%20task." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f10%2fsummary-of-timed-tasks%2f&name=%e5%85%b3%e4%ba%8e%e5%ae%9a%e6%97%b6%e4%bb%bb%e5%8a%a1%e7%9a%84%e6%80%bb%e7%bb%93&description=Linux%20%e4%b8%8b%e7%9a%84%e5%ae%9a%e6%97%b6%e4%bb%bb%e5%8a%a1%20%e8%a7%84%e5%88%99%20%2a%2f1%20%2a%20%2a%20%2a%20%2a%20cmd%0a5%e4%b8%aa%e5%8d%95%e5%85%83%ef%bc%9a%0a%e5%88%86%e9%92%9f%ef%bc%880-59%ef%bc%89%20%e5%b0%8f%e6%97%b6%ef%bc%880-23%20%e6%97%a5%e6%9c%9f%ef%bc%881-31%ef%bc%89%20%e6%9c%88%e4%bb%bd%ef%bc%881-12%ef%bc%89%20%e6%98%9f%e6%9c%9f%e5%87%a0%ef%bc%880-6%ef%bc%8c%e5%85%b6%e4%b8%ad%200%20%e4%bb%a3%e8%a1%a8%e6%98%9f%e6%9c%9f%e6%97%a5%ef%bc%89%0a%e4%be%8b%e5%ad%90%20%e6%af%8f%e5%88%86%e9%92%9f%e6%89%a7%e8%a1%8c%e4%b8%80%e6%ac%a1%ef%bc%9a%2a%20%2a%20%2a%20%2a%20%2a%20cmd%0a%e6%88%96%e8%80%85%ef%bc%9a%2a%2f1%20%2a%20%2a%20%2a%20%2a%20cmd%0a%e6%af%8f%e5%a4%a9%e6%97%a9%e4%b8%8a%206%20%e7%82%b9%2010%20%e5%88%86%e6%89%a7%e8%a1%8c%e4%b8%80%e6%ac%a1%ef%bc%9a10%206%20%2a%20%2a%20%2a%20cmd%0a%e6%af%8f%e4%b8%a4%e4%b8%aa%e5%b0%8f%e6%97%b6%e6%89%a7%e8%a1%8c%e4%b8%80%e6%ac%a1%ef%bc%9a0%20%2a%2f2%20%2a%20%2a%20%2a%20cmd%0a%e5%9c%a8%201%20%e6%9c%88%201%20%e6%97%a5%e6%97%a9%e4%b8%8a%204%20%e7%82%b9%e6%89%a7%e8%a1%8c%e4%b8%80%e6%ac%a1%ef%bc%9a0%204%201%201%20%2a%20cmd%0a%e6%b3%a8%e6%84%8f%e4%ba%8b%e9%a1%b9%20%e4%b8%80%e3%80%81crontab%20%e4%b8%8d%e4%bc%9a%e4%bd%bf%e7%94%a8%e5%9c%a8%20.bashrc%20%e4%b9%8b%e7%b1%bb%e7%9a%84%e6%96%87%e4%bb%b6%e4%b8%ad%e5%ae%9a%e4%b9%89%e7%9a%84%e5%8f%98%e9%87%8f%e3%80%82%0a%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95%ef%bc%9a%0a%e8%8b%a5%e4%b8%ba%20python%20%e8%84%9a%e6%9c%ac%ef%bc%8c%e5%8f%af%e4%bb%a5%e9%80%9a%e8%bf%87%20os.environ.get%28%27%7benv%7d%27%29%20%e5%9c%a8%e8%84%9a%e6%9c%ac%e4%b8%ad%e8%ae%bf%e9%97%ae%e5%8f%98%e9%87%8f%ef%bc%9b%20%e8%8b%a5%e4%b8%ba%20shell%20%e8%84%9a%e6%9c%ac%ef%bc%8c%e5%8f%af%e4%bb%a5%e5%9c%a8%e8%84%9a%e6%9c%ac%e4%b8%ad%e6%89%a7%e8%a1%8c%20source%20%7byour_env_file%7d%3b%20%e7%b1%bb%e4%bc%bc%e4%ba%8e2%ef%bc%8c%e5%8f%af%e4%bb%a5%e5%9c%a8crontab%e8%af%ad%e5%8f%a5%e4%b8%ad%e6%89%a7%e8%a1%8c%20source%20%7byour_env_file%7d%e3%80%82%20%e4%ba%8c%e3%80%81crontab%20%e7%94%a8%e6%88%b7%e9%85%8d%e7%bd%ae%e4%bd%8d%e4%ba%8e%ef%bc%9a%2fvar%2fspool%2fcron%2f%7b%e7%94%a8%e6%88%b7%e5%90%8d%7d" aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -183,14 +177,14 @@ Windows下的定时任务 规则 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 SC
     <div id="toc">
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#linux下的定时任务">Linux下的定时任务</a>
+    <li><a href="#linux-下的定时任务">Linux 下的定时任务</a>
       <ul>
         <li><a href="#规则">规则</a></li>
         <li><a href="#例子">例子</a></li>
         <li><a href="#注意事项">注意事项</a></li>
       </ul>
     </li>
-    <li><a href="#windows下的定时任务">Windows下的定时任务</a>
+    <li><a href="#windows-下的定时任务">Windows 下的定时任务</a>
       <ul>
         <li><a href="#规则-1">规则</a></li>
         <li><a href="#例子-1">例子</a></li>
@@ -219,7 +213,7 @@ Windows下的定时任务 规则 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 SC
         <div class="article-read-time">
           <i class="far fa-clock"></i>
           
-          5 minute read
+          4 minute read
         </div>
         
         
@@ -247,29 +241,41 @@ Windows下的定时任务 规则 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 SC
     </header>
     
     <div class="content" itemprop="articleBody">
-      <h2 id="linux下的定时任务">Linux下的定时任务</h2>
+      <h2 id="linux-下的定时任务">Linux 下的定时任务</h2>
 <h3 id="规则">规则</h3>
 <p><code>*/1 * * * * cmd</code></p>
 <p>5个单元：</p>
-<p>分钟（0-59） 小时（0-23  日期（1-31） 月份（1-12） 星期几（0-6，其中0代表星期日）</p>
+<p>分钟（0-59） 小时（0-23  日期（1-31） 月份（1-12） 星期几（0-6，其中 0 代表星期日）</p>
 <h3 id="例子">例子</h3>
 <p>每分钟执行一次：<code>* * * * * cmd</code></p>
 <p>或者：<code>*/1 * * * * cmd</code></p>
-<p>每天早上6点10分执行一次：<code>10 6 * * * cmd</code></p>
+<p>每天早上 6 点 10 分执行一次：<code>10 6 * * * cmd</code></p>
 <p>每两个小时执行一次：<code>0 */2 * * * cmd</code></p>
-<p>在1月1日早上4点执行一次：<code>0 4 1 1 * cmd</code></p>
+<p>在 1 月 1 日早上 4 点执行一次：<code>0 4 1 1 * cmd</code></p>
 <h3 id="注意事项">注意事项</h3>
-<p>一、crontab不会使用在.bashrc之类的文件中定义的变量。</p>
+<p>一、crontab 不会使用在 .bashrc 之类的文件中定义的变量。</p>
 <p>解决方法：</p>
 <ol>
-<li>若为python脚本，可以通过`os.environ.get(&rsquo;{env}&rsquo;)在脚本中访问变量；</li>
-<li>若为shell脚本，可以在脚本中执行<code>source {your_env_file}</code>;</li>
-<li>类似于2，可以在crontab语句中执行<code>source {your_env_file}</code>。</li>
+<li>若为 python 脚本，可以通过 <code>os.environ.get('{env}')</code> 在脚本中访问变量；</li>
+<li>若为 shell 脚本，可以在脚本中执行 <code>source {your_env_file}</code>;</li>
+<li>类似于2，可以在crontab语句中执行 <code>source {your_env_file}</code>。</li>
 </ol>
-<p>二、crontab用户配置位于：/var/spool/cron/{用户名}</p>
-<p>可见，每个用户对应一个crontab配置，所以在crontab语句中使用~是可以的。</p>
-<p>三、crontab日志位于：/var/log/cron</p>
-<h2 id="windows下的定时任务">Windows下的定时任务</h2>
+<p>二、crontab 用户配置位于：<code>/var/spool/cron/{用户名}</code></p>
+<p>可见，每个用户对应一个 crontab 配置，所以在 crontab 语句中使用 ~ 是可以的。</p>
+<p>三、crontab日志位置：</p>
+<p>Centos: /var/log/cron</p>
+<p>Ubuntu / Debian:</p>
+<p>On a default installation the cron jobs get logged to <code>/var/log/syslog</code>.</p>
+<p>You can see just cron jobs in that logfile by running:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>grep CRON /var/log/syslog
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="windows-下的定时任务">Windows 下的定时任务</h2>
 <h3 id="规则-1">规则</h3>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -339,7 +345,7 @@ Windows下的定时任务 规则 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 SC
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="例子-1">例子</h3>
-<p><strong>一、每30分钟运行一次：</strong></p>
+<p><strong>一、每 30 分钟运行一次：</strong></p>
 <p><code>schtasks /create /sc minute /mo 30 /tn &quot;{task_name}&quot; /tr &quot;{task}&quot;</code></p>
 <p>阅读可知：</p>
 <p>/sc，指定频率的单位：</p>
@@ -355,7 +361,7 @@ Windows下的定时任务 规则 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 SC
 </span></span><span style="display:flex;"><span>                    MONTHLY, ONCE, ONSTART, ONLOGON, ONIDLE, ONEVENT.
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>/mo，在/sc的基础上，指定大小（可以的情况下使用，如MINUTE可以，而ONSTART不可以）：</p>
+</div><p>/mo，在 /sc 的基础上，指定大小（可以的情况下使用，如 MINUTE 可以，而 ONSTART 不可以）：</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -388,12 +394,12 @@ Windows下的定时任务 规则 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 SC
 </span></span><span style="display:flex;"><span>    ONEVENT:  XPath event query string.
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>/tn，即“task name”，注意是unique的，不能与其它任务重名。</p>
-<p>/tr，即“task run”，指定任务，即一个可执行的程序，如exe，bat。</p>
+</div><p>/tn，即“task name”，注意是 unique 的，不能与其它任务重名。</p>
+<p>/tr，即“task run”，指定任务，即一个可执行的程序，如 exe，bat。</p>
 <p><strong>二、开机启动程序</strong></p>
 <p>需要通过管理员模式运行以下命令：</p>
 <p><code>schtasks /create /tn &quot;{task_name}&quot; /sc onlogon /tr &quot;{task}&quot;</code></p>
-<p><strong>三、每天22:00:00执行一次</strong></p>
+<p><strong>三、每天 22:00:00 执行一次</strong></p>
 <p><code>schtasks /create /tn &quot;{task_name}&quot; /sc daily /st 22:00:00 /tr &quot;{task}&quot;</code></p>
 <p>阅读可知：</p>
 <p>/st，用于指定执行的具体时刻：</p>
@@ -413,7 +419,7 @@ Windows下的定时任务 规则 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 SC
 </div>
 </div><p><strong>四、删除定时任务</strong></p>
 <p><code>schtasks /delete /tn &quot;{task_name}&quot;</code></p>
-<p>由于任务名是唯一的，所以通过/tn指定任务名即可删除任务。</p>
+<p>由于任务名是唯一的，所以通过 /tn 指定任务名即可删除任务。</p>
 <hr>
 <p><strong>From My Blog: <a href="https://akynazh.site">akynazh</a></strong>.</p>
 <p><strong>Over.</strong></p>
@@ -453,14 +459,14 @@ Windows下的定时任务 规则 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 SC
     <div id="toc-footer" style="display: none">
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#linux下的定时任务">Linux下的定时任务</a>
+    <li><a href="#linux-下的定时任务">Linux 下的定时任务</a>
       <ul>
         <li><a href="#规则">规则</a></li>
         <li><a href="#例子">例子</a></li>
         <li><a href="#注意事项">注意事项</a></li>
       </ul>
     </li>
-    <li><a href="#windows下的定时任务">Windows下的定时任务</a>
+    <li><a href="#windows-下的定时任务">Windows 下的定时任务</a>
       <ul>
         <li><a href="#规则-1">规则</a></li>
         <li><a href="#例子-1">例子</a></li>
@@ -525,7 +531,7 @@ Windows下的定时任务 规则 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 SC
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f10%2fsummary-of-timed-tasks%2f&name=%e5%85%b3%e4%ba%8e%e5%ae%9a%e6%97%b6%e4%bb%bb%e5%8a%a1%e7%9a%84%e6%80%bb%e7%bb%93&description=Linux%e4%b8%8b%e7%9a%84%e5%ae%9a%e6%97%b6%e4%bb%bb%e5%8a%a1%20%e8%a7%84%e5%88%99%20%2a%2f1%20%2a%20%2a%20%2a%20%2a%20cmd%0a5%e4%b8%aa%e5%8d%95%e5%85%83%ef%bc%9a%0a%e5%88%86%e9%92%9f%ef%bc%880-59%ef%bc%89%20%e5%b0%8f%e6%97%b6%ef%bc%880-23%20%e6%97%a5%e6%9c%9f%ef%bc%881-31%ef%bc%89%20%e6%9c%88%e4%bb%bd%ef%bc%881-12%ef%bc%89%20%e6%98%9f%e6%9c%9f%e5%87%a0%ef%bc%880-6%ef%bc%8c%e5%85%b6%e4%b8%ad0%e4%bb%a3%e8%a1%a8%e6%98%9f%e6%9c%9f%e6%97%a5%ef%bc%89%0a%e4%be%8b%e5%ad%90%20%e6%af%8f%e5%88%86%e9%92%9f%e6%89%a7%e8%a1%8c%e4%b8%80%e6%ac%a1%ef%bc%9a%2a%20%2a%20%2a%20%2a%20%2a%20cmd%0a%e6%88%96%e8%80%85%ef%bc%9a%2a%2f1%20%2a%20%2a%20%2a%20%2a%20cmd%0a%e6%af%8f%e5%a4%a9%e6%97%a9%e4%b8%8a6%e7%82%b910%e5%88%86%e6%89%a7%e8%a1%8c%e4%b8%80%e6%ac%a1%ef%bc%9a10%206%20%2a%20%2a%20%2a%20cmd%0a%e6%af%8f%e4%b8%a4%e4%b8%aa%e5%b0%8f%e6%97%b6%e6%89%a7%e8%a1%8c%e4%b8%80%e6%ac%a1%ef%bc%9a0%20%2a%2f2%20%2a%20%2a%20%2a%20cmd%0a%e5%9c%a81%e6%9c%881%e6%97%a5%e6%97%a9%e4%b8%8a4%e7%82%b9%e6%89%a7%e8%a1%8c%e4%b8%80%e6%ac%a1%ef%bc%9a0%204%201%201%20%2a%20cmd%0a%e6%b3%a8%e6%84%8f%e4%ba%8b%e9%a1%b9%20%e4%b8%80%e3%80%81crontab%e4%b8%8d%e4%bc%9a%e4%bd%bf%e7%94%a8%e5%9c%a8.bashrc%e4%b9%8b%e7%b1%bb%e7%9a%84%e6%96%87%e4%bb%b6%e4%b8%ad%e5%ae%9a%e4%b9%89%e7%9a%84%e5%8f%98%e9%87%8f%e3%80%82%0a%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95%ef%bc%9a%0a%e8%8b%a5%e4%b8%bapython%e8%84%9a%e6%9c%ac%ef%bc%8c%e5%8f%af%e4%bb%a5%e9%80%9a%e8%bf%87%60os.environ.get%28%26rsquo%3b%7benv%7d%26rsquo%3b%29%e5%9c%a8%e8%84%9a%e6%9c%ac%e4%b8%ad%e8%ae%bf%e9%97%ae%e5%8f%98%e9%87%8f%ef%bc%9b%20%e8%8b%a5%e4%b8%bashell%e8%84%9a%e6%9c%ac%ef%bc%8c%e5%8f%af%e4%bb%a5%e5%9c%a8%e8%84%9a%e6%9c%ac%e4%b8%ad%e6%89%a7%e8%a1%8csource%20%7byour_env_file%7d%3b%20%e7%b1%bb%e4%bc%bc%e4%ba%8e2%ef%bc%8c%e5%8f%af%e4%bb%a5%e5%9c%a8crontab%e8%af%ad%e5%8f%a5%e4%b8%ad%e6%89%a7%e8%a1%8csource%20%7byour_env_file%7d%e3%80%82%20%e4%ba%8c%e3%80%81crontab%e7%94%a8%e6%88%b7%e9%85%8d%e7%bd%ae%e4%bd%8d%e4%ba%8e%ef%bc%9a%2fvar%2fspool%2fcron%2f%7b%e7%94%a8%e6%88%b7%e5%90%8d%7d%0a%e5%8f%af%e8%a7%81%ef%bc%8c%e6%af%8f%e4%b8%aa%e7%94%a8%e6%88%b7%e5%af%b9%e5%ba%94%e4%b8%80%e4%b8%aacrontab%e9%85%8d%e7%bd%ae%ef%bc%8c%e6%89%80%e4%bb%a5%e5%9c%a8crontab%e8%af%ad%e5%8f%a5%e4%b8%ad%e4%bd%bf%e7%94%a8~%e6%98%af%e5%8f%af%e4%bb%a5%e7%9a%84%e3%80%82%0a%e4%b8%89%e3%80%81crontab%e6%97%a5%e5%bf%97%e4%bd%8d%e4%ba%8e%ef%bc%9a%2fvar%2flog%2fcron%0aWindows%e4%b8%8b%e7%9a%84%e5%ae%9a%e6%97%b6%e4%bb%bb%e5%8a%a1%20%e8%a7%84%e5%88%99%201%202%203%204%205%206%207%208%209%2010%2011%2012%2013%2014%2015%2016%2017%2018%20SCHTASKS%20%2fparameter%20%5barguments%5d%20Parameter%20List%3a%20%2fCreate%20Creates%20a%20new%20scheduled%20task." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f10%2fsummary-of-timed-tasks%2f&name=%e5%85%b3%e4%ba%8e%e5%ae%9a%e6%97%b6%e4%bb%bb%e5%8a%a1%e7%9a%84%e6%80%bb%e7%bb%93&description=Linux%20%e4%b8%8b%e7%9a%84%e5%ae%9a%e6%97%b6%e4%bb%bb%e5%8a%a1%20%e8%a7%84%e5%88%99%20%2a%2f1%20%2a%20%2a%20%2a%20%2a%20cmd%0a5%e4%b8%aa%e5%8d%95%e5%85%83%ef%bc%9a%0a%e5%88%86%e9%92%9f%ef%bc%880-59%ef%bc%89%20%e5%b0%8f%e6%97%b6%ef%bc%880-23%20%e6%97%a5%e6%9c%9f%ef%bc%881-31%ef%bc%89%20%e6%9c%88%e4%bb%bd%ef%bc%881-12%ef%bc%89%20%e6%98%9f%e6%9c%9f%e5%87%a0%ef%bc%880-6%ef%bc%8c%e5%85%b6%e4%b8%ad%200%20%e4%bb%a3%e8%a1%a8%e6%98%9f%e6%9c%9f%e6%97%a5%ef%bc%89%0a%e4%be%8b%e5%ad%90%20%e6%af%8f%e5%88%86%e9%92%9f%e6%89%a7%e8%a1%8c%e4%b8%80%e6%ac%a1%ef%bc%9a%2a%20%2a%20%2a%20%2a%20%2a%20cmd%0a%e6%88%96%e8%80%85%ef%bc%9a%2a%2f1%20%2a%20%2a%20%2a%20%2a%20cmd%0a%e6%af%8f%e5%a4%a9%e6%97%a9%e4%b8%8a%206%20%e7%82%b9%2010%20%e5%88%86%e6%89%a7%e8%a1%8c%e4%b8%80%e6%ac%a1%ef%bc%9a10%206%20%2a%20%2a%20%2a%20cmd%0a%e6%af%8f%e4%b8%a4%e4%b8%aa%e5%b0%8f%e6%97%b6%e6%89%a7%e8%a1%8c%e4%b8%80%e6%ac%a1%ef%bc%9a0%20%2a%2f2%20%2a%20%2a%20%2a%20cmd%0a%e5%9c%a8%201%20%e6%9c%88%201%20%e6%97%a5%e6%97%a9%e4%b8%8a%204%20%e7%82%b9%e6%89%a7%e8%a1%8c%e4%b8%80%e6%ac%a1%ef%bc%9a0%204%201%201%20%2a%20cmd%0a%e6%b3%a8%e6%84%8f%e4%ba%8b%e9%a1%b9%20%e4%b8%80%e3%80%81crontab%20%e4%b8%8d%e4%bc%9a%e4%bd%bf%e7%94%a8%e5%9c%a8%20.bashrc%20%e4%b9%8b%e7%b1%bb%e7%9a%84%e6%96%87%e4%bb%b6%e4%b8%ad%e5%ae%9a%e4%b9%89%e7%9a%84%e5%8f%98%e9%87%8f%e3%80%82%0a%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95%ef%bc%9a%0a%e8%8b%a5%e4%b8%ba%20python%20%e8%84%9a%e6%9c%ac%ef%bc%8c%e5%8f%af%e4%bb%a5%e9%80%9a%e8%bf%87%20os.environ.get%28%27%7benv%7d%27%29%20%e5%9c%a8%e8%84%9a%e6%9c%ac%e4%b8%ad%e8%ae%bf%e9%97%ae%e5%8f%98%e9%87%8f%ef%bc%9b%20%e8%8b%a5%e4%b8%ba%20shell%20%e8%84%9a%e6%9c%ac%ef%bc%8c%e5%8f%af%e4%bb%a5%e5%9c%a8%e8%84%9a%e6%9c%ac%e4%b8%ad%e6%89%a7%e8%a1%8c%20source%20%7byour_env_file%7d%3b%20%e7%b1%bb%e4%bc%bc%e4%ba%8e2%ef%bc%8c%e5%8f%af%e4%bb%a5%e5%9c%a8crontab%e8%af%ad%e5%8f%a5%e4%b8%ad%e6%89%a7%e8%a1%8c%20source%20%7byour_env_file%7d%e3%80%82%20%e4%ba%8c%e3%80%81crontab%20%e7%94%a8%e6%88%b7%e9%85%8d%e7%bd%ae%e4%bd%8d%e4%ba%8e%ef%bc%9a%2fvar%2fspool%2fcron%2f%7b%e7%94%a8%e6%88%b7%e5%90%8d%7d" aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
