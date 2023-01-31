@@ -32,7 +32,7 @@ HEAD^ = HEAD^1 第一个父级提交 HEAD^2~1 第二个父级提交的上一次�
       <pubDate>Thu, 13 Oct 2022 21:40:46 +0800</pubDate>
       
       <guid>/posts/2022/10/git-configuration-record/</guid>
-      <description>Git 初始化 1 2 git config --global user.name=&amp;#34;akynazh&amp;#34; git config --global user.email=&amp;#34;akynazh@qq.com&amp;#34; 配置 Http 代理 1 git config --global http.https://github.com.proxy socks5://127.0.0.1:7890 配置 SSH 代理 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 # ~/.ssh/config Host github.com User git Port 22 Hostname github.com IdentityFile ~/.ssh/id_rsa ProxyCommand connect -S 127.0.0.1:7890 -a none %h %p Host ssh.github.com User git Port 443 Hostname ssh.github.com IdentityFile ~/.ssh/id_rsa ProxyCommand connect -S 127.</description>
+      <description>Git 初始化 1 2 3 git config --global user.name &amp;#34;akynazh&amp;#34; git config --global user.email &amp;#34;akynazh@qq.com&amp;#34; # git config pull.rebase false 配置 Http 代理 1 git config --global http.https://github.com.proxy socks5://127.0.0.1:7890 配置 SSH 代理 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 # ~/.ssh/config Host github.com User git Port 22 Hostname github.com IdentityFile ~/.ssh/id_rsa ProxyCommand connect -S 127.0.0.1:7890 -a none %h %p Host ssh.github.com User git Port 443 Hostname ssh.</description>
     </item>
     
     <item>

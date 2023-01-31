@@ -14,7 +14,7 @@
       <pubDate>Wed, 19 Oct 2022 22:44:10 +0800</pubDate>
       
       <guid>/posts/2022/10/shell-basic-operation-summary/</guid>
-      <description>shell参数 $# 参数个数 $@ 取出所有参数 $0 取出第一个参数 1 2 3 4 5 if [ &amp;#34;$1&amp;#34; = &amp;#34;-u&amp;#34; ] then echo update fi echo $0 ans:
+      <description>shell 参数 $# 参数个数 $@ 取出所有参数 $0 取出第一个参数 1 2 3 4 5 if [ &amp;#34;$1&amp;#34; = &amp;#34;-u&amp;#34; ] then echo update fi echo $0 ans:
 1 2 3 4 5 [root =&amp;gt; ~]$ ./test.sh ./test.sh [root =&amp;gt; ~]$ ./test.sh -u update ./test.sh 算术运算 1 2 3 4 [root@VM-0-11-centos ~]# a=1 [root@VM-0-11-centos ~]# b=$((a*12)) [root@VM-0-11-centos ~]# echo $b 12 比较运算 指令：-eq -ne -lt -gt -ge -le
 注：字符串比较直接用“=”而不是上述指令。
 1 2 3 4 5 [root@VM-0-11-centos ~]# a=10 [root@VM-0-11-centos ~]# [ $a -eq 10 ] &amp;amp;&amp;amp; echo yes yes [root@VM-0-11-centos ~]# [ $a -ge 11 ] &amp;amp;&amp;amp; echo yes || echo no no 指令：-a -o</description>
@@ -52,17 +52,13 @@ win to unix 多了\r -&amp;gt; \r\n -&amp;gt; ^M。
       <pubDate>Mon, 03 Oct 2022 17:22:29 +0800</pubDate>
       
       <guid>/posts/2022/10/summary-of-timed-tasks/</guid>
-      <description>Linux 下的定时任务 规则 */1 * * * * cmd
-5个单元：
+      <description>Linux 下的定时任务 规则 1 */1 * * * * cmd 5个单元：
 分钟（0-59） 小时（0-23 日期（1-31） 月份（1-12） 星期几（0-6，其中 0 代表星期日）
-例子 每分钟执行一次：* * * * * cmd
-或者：*/1 * * * * cmd
-每天早上 6 点 10 分执行一次：10 6 * * * cmd
-每两个小时执行一次：0 */2 * * * cmd
-在 1 月 1 日早上 4 点执行一次：0 4 1 1 * cmd
-注意事项 一、crontab 不会使用在 .bashrc 之类的文件中定义的变量。
-解决方法：
-若为 python 脚本，可以通过 os.environ.get(&#39;{env}&#39;) 在脚本中访问变量； 若为 shell 脚本，可以在脚本中执行 source {your_env_file}; 类似于2，可以在crontab语句中执行 source {your_env_file}。 二、crontab 用户配置位于：/var/spool/cron/{用户名}</description>
+例子 每分钟执行一次：
+1 * * * * * cmd # or: */1 * * * * cmd 每天早上 6 点 10 分执行一次：
+1 10 6 * * * cmd 每两个小时执行一次：
+1 0 */2 * * * cmd 在 1 月 1 日早上 4 点执行一次：
+1 0 4 1 1 * cmd crontab 环境变量问题 crontab 不会使用在 .</description>
     </item>
     
     <item>

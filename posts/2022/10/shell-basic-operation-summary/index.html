@@ -9,7 +9,7 @@
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
   <meta property="og:title" content="Shell 基本操作总结" />
-<meta property="og:description" content="shell参数 $# 参数个数 $@ 取出所有参数 $0 取出第一个参数 1 2 3 4 5 if [ &#34;$1&#34; = &#34;-u&#34; ] then echo update fi echo $0 ans:
+<meta property="og:description" content="shell 参数 $# 参数个数 $@ 取出所有参数 $0 取出第一个参数 1 2 3 4 5 if [ &#34;$1&#34; = &#34;-u&#34; ] then echo update fi echo $0 ans:
 1 2 3 4 5 [root =&gt; ~]$ ./test.sh ./test.sh [root =&gt; ~]$ ./test.sh -u update ./test.sh 算术运算 1 2 3 4 [root@VM-0-11-centos ~]# a=1 [root@VM-0-11-centos ~]# b=$((a*12)) [root@VM-0-11-centos ~]# echo $b 12 比较运算 指令：-eq -ne -lt -gt -ge -le
 注：字符串比较直接用“=”而不是上述指令。
 1 2 3 4 5 [root@VM-0-11-centos ~]# a=10 [root@VM-0-11-centos ~]# [ $a -eq 10 ] &amp;&amp; echo yes yes [root@VM-0-11-centos ~]# [ $a -ge 11 ] &amp;&amp; echo yes || echo no no 指令：-a -o" />
@@ -20,7 +20,7 @@
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Shell 基本操作总结"/>
-<meta name="twitter:description" content="shell参数 $# 参数个数 $@ 取出所有参数 $0 取出第一个参数 1 2 3 4 5 if [ &#34;$1&#34; = &#34;-u&#34; ] then echo update fi echo $0 ans:
+<meta name="twitter:description" content="shell 参数 $# 参数个数 $@ 取出所有参数 $0 取出第一个参数 1 2 3 4 5 if [ &#34;$1&#34; = &#34;-u&#34; ] then echo update fi echo $0 ans:
 1 2 3 4 5 [root =&gt; ~]$ ./test.sh ./test.sh [root =&gt; ~]$ ./test.sh -u update ./test.sh 算术运算 1 2 3 4 [root@VM-0-11-centos ~]# a=1 [root@VM-0-11-centos ~]# b=$((a*12)) [root@VM-0-11-centos ~]# echo $b 12 比较运算 指令：-eq -ne -lt -gt -ge -le
 注：字符串比较直接用“=”而不是上述指令。
 1 2 3 4 5 [root@VM-0-11-centos ~]# a=10 [root@VM-0-11-centos ~]# [ $a -eq 10 ] &amp;&amp; echo yes yes [root@VM-0-11-centos ~]# [ $a -ge 11 ] &amp;&amp; echo yes || echo no no 指令：-a -o"/>
@@ -147,7 +147,7 @@
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f10%2fshell-basic-operation-summary%2f&name=Shell%20%e5%9f%ba%e6%9c%ac%e6%93%8d%e4%bd%9c%e6%80%bb%e7%bb%93&description=shell%e5%8f%82%e6%95%b0%20%24%23%20%e5%8f%82%e6%95%b0%e4%b8%aa%e6%95%b0%20%24%40%20%e5%8f%96%e5%87%ba%e6%89%80%e6%9c%89%e5%8f%82%e6%95%b0%20%240%20%e5%8f%96%e5%87%ba%e7%ac%ac%e4%b8%80%e4%b8%aa%e5%8f%82%e6%95%b0%201%202%203%204%205%20if%20%5b%20%26%2334%3b%241%26%2334%3b%20%3d%20%26%2334%3b-u%26%2334%3b%20%5d%20then%20echo%20update%20fi%20echo%20%240%20ans%3a%0a1%202%203%204%205%20%5broot%20%3d%26gt%3b%20~%5d%24%20.%2ftest.sh%20.%2ftest.sh%20%5broot%20%3d%26gt%3b%20~%5d%24%20.%2ftest.sh%20-u%20update%20.%2ftest.sh%20%e7%ae%97%e6%9c%af%e8%bf%90%e7%ae%97%201%202%203%204%20%5broot%40VM-0-11-centos%20~%5d%23%20a%3d1%20%5broot%40VM-0-11-centos%20~%5d%23%20b%3d%24%28%28a%2a12%29%29%20%5broot%40VM-0-11-centos%20~%5d%23%20echo%20%24b%2012%20%e6%af%94%e8%be%83%e8%bf%90%e7%ae%97%20%e6%8c%87%e4%bb%a4%ef%bc%9a-eq%20-ne%20-lt%20-gt%20-ge%20-le%0a%e6%b3%a8%ef%bc%9a%e5%ad%97%e7%ac%a6%e4%b8%b2%e6%af%94%e8%be%83%e7%9b%b4%e6%8e%a5%e7%94%a8%e2%80%9c%3d%e2%80%9d%e8%80%8c%e4%b8%8d%e6%98%af%e4%b8%8a%e8%bf%b0%e6%8c%87%e4%bb%a4%e3%80%82%0a1%202%203%204%205%20%5broot%40VM-0-11-centos%20~%5d%23%20a%3d10%20%5broot%40VM-0-11-centos%20~%5d%23%20%5b%20%24a%20-eq%2010%20%5d%20%26amp%3b%26amp%3b%20echo%20yes%20yes%20%5broot%40VM-0-11-centos%20~%5d%23%20%5b%20%24a%20-ge%2011%20%5d%20%26amp%3b%26amp%3b%20echo%20yes%20%7c%7c%20echo%20no%20no%20%e6%8c%87%e4%bb%a4%ef%bc%9a-a%20-o" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f10%2fshell-basic-operation-summary%2f&name=Shell%20%e5%9f%ba%e6%9c%ac%e6%93%8d%e4%bd%9c%e6%80%bb%e7%bb%93&description=shell%20%e5%8f%82%e6%95%b0%20%24%23%20%e5%8f%82%e6%95%b0%e4%b8%aa%e6%95%b0%20%24%40%20%e5%8f%96%e5%87%ba%e6%89%80%e6%9c%89%e5%8f%82%e6%95%b0%20%240%20%e5%8f%96%e5%87%ba%e7%ac%ac%e4%b8%80%e4%b8%aa%e5%8f%82%e6%95%b0%201%202%203%204%205%20if%20%5b%20%26%2334%3b%241%26%2334%3b%20%3d%20%26%2334%3b-u%26%2334%3b%20%5d%20then%20echo%20update%20fi%20echo%20%240%20ans%3a%0a1%202%203%204%205%20%5broot%20%3d%26gt%3b%20~%5d%24%20.%2ftest.sh%20.%2ftest.sh%20%5broot%20%3d%26gt%3b%20~%5d%24%20.%2ftest.sh%20-u%20update%20.%2ftest.sh%20%e7%ae%97%e6%9c%af%e8%bf%90%e7%ae%97%201%202%203%204%20%5broot%40VM-0-11-centos%20~%5d%23%20a%3d1%20%5broot%40VM-0-11-centos%20~%5d%23%20b%3d%24%28%28a%2a12%29%29%20%5broot%40VM-0-11-centos%20~%5d%23%20echo%20%24b%2012%20%e6%af%94%e8%be%83%e8%bf%90%e7%ae%97%20%e6%8c%87%e4%bb%a4%ef%bc%9a-eq%20-ne%20-lt%20-gt%20-ge%20-le%0a%e6%b3%a8%ef%bc%9a%e5%ad%97%e7%ac%a6%e4%b8%b2%e6%af%94%e8%be%83%e7%9b%b4%e6%8e%a5%e7%94%a8%e2%80%9c%3d%e2%80%9d%e8%80%8c%e4%b8%8d%e6%98%af%e4%b8%8a%e8%bf%b0%e6%8c%87%e4%bb%a4%e3%80%82%0a1%202%203%204%205%20%5broot%40VM-0-11-centos%20~%5d%23%20a%3d10%20%5broot%40VM-0-11-centos%20~%5d%23%20%5b%20%24a%20-eq%2010%20%5d%20%26amp%3b%26amp%3b%20echo%20yes%20yes%20%5broot%40VM-0-11-centos%20~%5d%23%20%5b%20%24a%20-ge%2011%20%5d%20%26amp%3b%26amp%3b%20echo%20yes%20%7c%7c%20echo%20no%20no%20%e6%8c%87%e4%bb%a4%ef%bc%9a-a%20-o" aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -163,7 +163,7 @@
     <div id="toc">
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#shell参数">shell参数</a></li>
+    <li><a href="#shell-参数">shell 参数</a></li>
     <li><a href="#算术运算">算术运算</a></li>
     <li><a href="#比较运算">比较运算</a></li>
     <li><a href="#字符串运算">字符串运算</a></li>
@@ -234,7 +234,7 @@
     </header>
     
     <div class="content" itemprop="articleBody">
-      <h2 id="shell参数">shell参数</h2>
+      <h2 id="shell-参数">shell 参数</h2>
 <ul>
 <li>$# 参数个数</li>
 <li>$@ 取出所有参数</li>
@@ -628,7 +628,7 @@
     <div id="toc-footer" style="display: none">
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#shell参数">shell参数</a></li>
+    <li><a href="#shell-参数">shell 参数</a></li>
     <li><a href="#算术运算">算术运算</a></li>
     <li><a href="#比较运算">比较运算</a></li>
     <li><a href="#字符串运算">字符串运算</a></li>
@@ -710,7 +710,7 @@
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f10%2fshell-basic-operation-summary%2f&name=Shell%20%e5%9f%ba%e6%9c%ac%e6%93%8d%e4%bd%9c%e6%80%bb%e7%bb%93&description=shell%e5%8f%82%e6%95%b0%20%24%23%20%e5%8f%82%e6%95%b0%e4%b8%aa%e6%95%b0%20%24%40%20%e5%8f%96%e5%87%ba%e6%89%80%e6%9c%89%e5%8f%82%e6%95%b0%20%240%20%e5%8f%96%e5%87%ba%e7%ac%ac%e4%b8%80%e4%b8%aa%e5%8f%82%e6%95%b0%201%202%203%204%205%20if%20%5b%20%26%2334%3b%241%26%2334%3b%20%3d%20%26%2334%3b-u%26%2334%3b%20%5d%20then%20echo%20update%20fi%20echo%20%240%20ans%3a%0a1%202%203%204%205%20%5broot%20%3d%26gt%3b%20~%5d%24%20.%2ftest.sh%20.%2ftest.sh%20%5broot%20%3d%26gt%3b%20~%5d%24%20.%2ftest.sh%20-u%20update%20.%2ftest.sh%20%e7%ae%97%e6%9c%af%e8%bf%90%e7%ae%97%201%202%203%204%20%5broot%40VM-0-11-centos%20~%5d%23%20a%3d1%20%5broot%40VM-0-11-centos%20~%5d%23%20b%3d%24%28%28a%2a12%29%29%20%5broot%40VM-0-11-centos%20~%5d%23%20echo%20%24b%2012%20%e6%af%94%e8%be%83%e8%bf%90%e7%ae%97%20%e6%8c%87%e4%bb%a4%ef%bc%9a-eq%20-ne%20-lt%20-gt%20-ge%20-le%0a%e6%b3%a8%ef%bc%9a%e5%ad%97%e7%ac%a6%e4%b8%b2%e6%af%94%e8%be%83%e7%9b%b4%e6%8e%a5%e7%94%a8%e2%80%9c%3d%e2%80%9d%e8%80%8c%e4%b8%8d%e6%98%af%e4%b8%8a%e8%bf%b0%e6%8c%87%e4%bb%a4%e3%80%82%0a1%202%203%204%205%20%5broot%40VM-0-11-centos%20~%5d%23%20a%3d10%20%5broot%40VM-0-11-centos%20~%5d%23%20%5b%20%24a%20-eq%2010%20%5d%20%26amp%3b%26amp%3b%20echo%20yes%20yes%20%5broot%40VM-0-11-centos%20~%5d%23%20%5b%20%24a%20-ge%2011%20%5d%20%26amp%3b%26amp%3b%20echo%20yes%20%7c%7c%20echo%20no%20no%20%e6%8c%87%e4%bb%a4%ef%bc%9a-a%20-o" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f10%2fshell-basic-operation-summary%2f&name=Shell%20%e5%9f%ba%e6%9c%ac%e6%93%8d%e4%bd%9c%e6%80%bb%e7%bb%93&description=shell%20%e5%8f%82%e6%95%b0%20%24%23%20%e5%8f%82%e6%95%b0%e4%b8%aa%e6%95%b0%20%24%40%20%e5%8f%96%e5%87%ba%e6%89%80%e6%9c%89%e5%8f%82%e6%95%b0%20%240%20%e5%8f%96%e5%87%ba%e7%ac%ac%e4%b8%80%e4%b8%aa%e5%8f%82%e6%95%b0%201%202%203%204%205%20if%20%5b%20%26%2334%3b%241%26%2334%3b%20%3d%20%26%2334%3b-u%26%2334%3b%20%5d%20then%20echo%20update%20fi%20echo%20%240%20ans%3a%0a1%202%203%204%205%20%5broot%20%3d%26gt%3b%20~%5d%24%20.%2ftest.sh%20.%2ftest.sh%20%5broot%20%3d%26gt%3b%20~%5d%24%20.%2ftest.sh%20-u%20update%20.%2ftest.sh%20%e7%ae%97%e6%9c%af%e8%bf%90%e7%ae%97%201%202%203%204%20%5broot%40VM-0-11-centos%20~%5d%23%20a%3d1%20%5broot%40VM-0-11-centos%20~%5d%23%20b%3d%24%28%28a%2a12%29%29%20%5broot%40VM-0-11-centos%20~%5d%23%20echo%20%24b%2012%20%e6%af%94%e8%be%83%e8%bf%90%e7%ae%97%20%e6%8c%87%e4%bb%a4%ef%bc%9a-eq%20-ne%20-lt%20-gt%20-ge%20-le%0a%e6%b3%a8%ef%bc%9a%e5%ad%97%e7%ac%a6%e4%b8%b2%e6%af%94%e8%be%83%e7%9b%b4%e6%8e%a5%e7%94%a8%e2%80%9c%3d%e2%80%9d%e8%80%8c%e4%b8%8d%e6%98%af%e4%b8%8a%e8%bf%b0%e6%8c%87%e4%bb%a4%e3%80%82%0a1%202%203%204%205%20%5broot%40VM-0-11-centos%20~%5d%23%20a%3d10%20%5broot%40VM-0-11-centos%20~%5d%23%20%5b%20%24a%20-eq%2010%20%5d%20%26amp%3b%26amp%3b%20echo%20yes%20yes%20%5broot%40VM-0-11-centos%20~%5d%23%20%5b%20%24a%20-ge%2011%20%5d%20%26amp%3b%26amp%3b%20echo%20yes%20%7c%7c%20echo%20no%20no%20%e6%8c%87%e4%bb%a4%ef%bc%9a-a%20-o" aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>

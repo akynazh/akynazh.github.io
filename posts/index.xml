@@ -175,7 +175,7 @@ pipenv 无法正常 install 1 2 3 4 PS C:\Users\akyna\Codes\test\test_py&amp;gt;
       <pubDate>Wed, 19 Oct 2022 22:44:10 +0800</pubDate>
       
       <guid>/posts/2022/10/shell-basic-operation-summary/</guid>
-      <description>shell参数 $# 参数个数 $@ 取出所有参数 $0 取出第一个参数 1 2 3 4 5 if [ &amp;#34;$1&amp;#34; = &amp;#34;-u&amp;#34; ] then echo update fi echo $0 ans:
+      <description>shell 参数 $# 参数个数 $@ 取出所有参数 $0 取出第一个参数 1 2 3 4 5 if [ &amp;#34;$1&amp;#34; = &amp;#34;-u&amp;#34; ] then echo update fi echo $0 ans:
 1 2 3 4 5 [root =&amp;gt; ~]$ ./test.sh ./test.sh [root =&amp;gt; ~]$ ./test.sh -u update ./test.sh 算术运算 1 2 3 4 [root@VM-0-11-centos ~]# a=1 [root@VM-0-11-centos ~]# b=$((a*12)) [root@VM-0-11-centos ~]# echo $b 12 比较运算 指令：-eq -ne -lt -gt -ge -le
 注：字符串比较直接用“=”而不是上述指令。
 1 2 3 4 5 [root@VM-0-11-centos ~]# a=10 [root@VM-0-11-centos ~]# [ $a -eq 10 ] &amp;amp;&amp;amp; echo yes yes [root@VM-0-11-centos ~]# [ $a -ge 11 ] &amp;amp;&amp;amp; echo yes || echo no no 指令：-a -o</description>
@@ -213,7 +213,7 @@ win to unix 多了\r -&amp;gt; \r\n -&amp;gt; ^M。
       <pubDate>Thu, 13 Oct 2022 21:40:46 +0800</pubDate>
       
       <guid>/posts/2022/10/git-configuration-record/</guid>
-      <description>Git 初始化 1 2 git config --global user.name=&amp;#34;akynazh&amp;#34; git config --global user.email=&amp;#34;akynazh@qq.com&amp;#34; 配置 Http 代理 1 git config --global http.https://github.com.proxy socks5://127.0.0.1:7890 配置 SSH 代理 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 # ~/.ssh/config Host github.com User git Port 22 Hostname github.com IdentityFile ~/.ssh/id_rsa ProxyCommand connect -S 127.0.0.1:7890 -a none %h %p Host ssh.github.com User git Port 443 Hostname ssh.github.com IdentityFile ~/.ssh/id_rsa ProxyCommand connect -S 127.</description>
+      <description>Git 初始化 1 2 3 git config --global user.name &amp;#34;akynazh&amp;#34; git config --global user.email &amp;#34;akynazh@qq.com&amp;#34; # git config pull.rebase false 配置 Http 代理 1 git config --global http.https://github.com.proxy socks5://127.0.0.1:7890 配置 SSH 代理 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 # ~/.ssh/config Host github.com User git Port 22 Hostname github.com IdentityFile ~/.ssh/id_rsa ProxyCommand connect -S 127.0.0.1:7890 -a none %h %p Host ssh.github.com User git Port 443 Hostname ssh.</description>
     </item>
     
     <item>
@@ -289,17 +289,13 @@ kill_hwbk.js
       <pubDate>Mon, 03 Oct 2022 17:22:29 +0800</pubDate>
       
       <guid>/posts/2022/10/summary-of-timed-tasks/</guid>
-      <description>Linux 下的定时任务 规则 */1 * * * * cmd
-5个单元：
+      <description>Linux 下的定时任务 规则 1 */1 * * * * cmd 5个单元：
 分钟（0-59） 小时（0-23 日期（1-31） 月份（1-12） 星期几（0-6，其中 0 代表星期日）
-例子 每分钟执行一次：* * * * * cmd
-或者：*/1 * * * * cmd
-每天早上 6 点 10 分执行一次：10 6 * * * cmd
-每两个小时执行一次：0 */2 * * * cmd
-在 1 月 1 日早上 4 点执行一次：0 4 1 1 * cmd
-注意事项 一、crontab 不会使用在 .bashrc 之类的文件中定义的变量。
-解决方法：
-若为 python 脚本，可以通过 os.environ.get(&#39;{env}&#39;) 在脚本中访问变量； 若为 shell 脚本，可以在脚本中执行 source {your_env_file}; 类似于2，可以在crontab语句中执行 source {your_env_file}。 二、crontab 用户配置位于：/var/spool/cron/{用户名}</description>
+例子 每分钟执行一次：
+1 * * * * * cmd # or: */1 * * * * cmd 每天早上 6 点 10 分执行一次：
+1 10 6 * * * cmd 每两个小时执行一次：
+1 0 */2 * * * cmd 在 1 月 1 日早上 4 点执行一次：
+1 0 4 1 1 * cmd crontab 环境变量问题 crontab 不会使用在 .</description>
     </item>
     
     <item>
@@ -1011,7 +1007,7 @@ Eureka微服务架构图 服务接口采用集群模式，8001和8002端口都�
       <pubDate>Wed, 13 Jul 2022 21:21:50 +0800</pubDate>
       
       <guid>/posts/2022/07/linux-display-content-configuration-record/</guid>
-      <description>Vim 1 2 3 4 5 vim /etc/vimrc set tabstop=4 # 修改vim中tab长度 set shiftwidth=4 # 修改vim自动缩进长度 set noeb vb t_vb= # 禁用vim蜂鸣声 1 2 3 vim /etc/inputrc set bell-style none # 禁用bash蜂鸣声 主机名称 1 2 3 hostnamectl hostnamectl set-hostname xxx 登录欢迎信息配置 1 vim /etc/update-motd.d 自行修改基本欢迎信息。
+      <description>Vim 1 2 3 4 5 6 vim /etc/vimrc # vim /etc/vim/vimrc set tabstop=4 # 修改vim中tab长度 set shiftwidth=4 # 修改vim自动缩进长度 set noeb vb t_vb= # 禁用vim蜂鸣声 1 2 3 vim /etc/inputrc set bell-style none # 禁用bash蜂鸣声 主机名称 1 2 3 hostnamectl hostnamectl set-hostname xxx 登录欢迎信息配置 1 vim /etc/update-motd.d 自行修改基本欢迎信息。
 1 2 3 vim /etc/ssh/sshd_config PrintLastLog no 不打印上次登录信息。
 命令提示符 1 2 3 vim ~/.bashrc export PS1=&amp;#34;[\u =&amp;gt; \w]\$ &amp;#34; 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 \a	铃声字符 \d	格式为“日 月 年”的日期 \e	ASCII 转义字符 \h	本地主机名 \H	完全合格的限定域主机名 \j	shell 当前管理的作业数 \1	shell 终端设备名的基本名称 \n	ASCII 换行字符 \r	ASCII 回车 \s	shell 的名称 \t	格式为“小时:分钟:秒”的24小时制的当前时间 \T	格式为“小时:分钟:秒”的12小时制的当前时间 \A	格式为“小时:分钟”的24小时制的当前时间 @	格式为 am/pm 的12小时制的当前时间 \s	shell的名字 \u	当前用户的用户名 \v	bash shell 的版本 \V	bash shell 的发布级别 \w	当前工作目录 \W	当前工作目录的基本名称 !</description>
     </item>
