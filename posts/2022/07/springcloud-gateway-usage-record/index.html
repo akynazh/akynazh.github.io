@@ -11,9 +11,10 @@
   <meta property="og:title" content="SpringCloud-Gateway 使用记录" />
 <meta property="og:description" content="网关的作用 如图所示，网关介于外部请求和具体微服务之间，在不暴露内部微服务端口的情况下，通过一个或者多个指定的网关端口统一地处理外部各种请求。
 使用SpringCloud Gateway 依赖引入 除了基本依赖以外，引入下列依赖：
-1 2 3 4 5 6 7 8 9 &lt;!-- others --&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt; &lt;artifactId&gt;spring-cloud-starter-netflix-eureka-client&lt;/artifactId&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt; &lt;artifactId&gt;spring-cloud-starter-gateway&lt;/artifactId&gt; &lt;/dependency&gt; 注意不能引入web相关依赖，因为Gateway是基于WebFlux的。
+1&lt;!-- others --&gt; 2&lt;dependency&gt; 3 &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt; 4 &lt;artifactId&gt;spring-cloud-starter-netflix-eureka-client&lt;/artifactId&gt; 5&lt;/dependency&gt; 6&lt;dependency&gt; 7 &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt; 8 &lt;artifactId&gt;spring-cloud-starter-gateway&lt;/artifactId&gt; 9&lt;/dependency&gt; 注意不能引入web相关依赖，因为Gateway是基于WebFlux的。
 文件配置 列出部分重要配置：
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 server: port: 9669 cloud: gateway: discovery: locator: enabled: true # 开启从注册中心动态创建路由的功能，利用微服务名进行路由 routes: - id: path_route uri: lb://CLOUD-PAYMENT-SERVICE # lb：负载均衡 predicates: - Path=/payment/** - After=2022-07-26T17:33:52.449&#43;08:00[Asia/Shanghai] # ZonedDateTime.now() - Cookie=username,jzh 注意点如下：" />
+1server: 2port: 9669 3cloud: 4 gateway: 5 discovery: 6 locator: 7 enabled: true # 开启从注册中心动态创建路由的功能，利用微服务名进行路由 8 routes: 9 - id: path_route 10 uri: lb://CLOUD-PAYMENT-SERVICE # lb：负载均衡 11 predicates: 12 - Path=/payment/** 13 - After=2022-07-26T17:33:52.449&#43;08:00[Asia/Shanghai] # ZonedDateTime.now() 14 - Cookie=username,jzh 注意点如下：
+9669端口作为网关端口； uri中http改为了lb，用于负载均衡； predicates，即断言，上述断言是： 匹配路径：/payment/**； 开始允许访问时间：ZonedDateTime.now()（Java函数获取该格式时间） 携带cookie：key=username, value=jzh 过滤器配置 实现GlobalFilter, Ordered，重写方法即可：" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/2022/07/springcloud-gateway-usage-record/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-07-26T18:33:44+08:00" />
@@ -23,16 +24,17 @@
 <meta name="twitter:title" content="SpringCloud-Gateway 使用记录"/>
 <meta name="twitter:description" content="网关的作用 如图所示，网关介于外部请求和具体微服务之间，在不暴露内部微服务端口的情况下，通过一个或者多个指定的网关端口统一地处理外部各种请求。
 使用SpringCloud Gateway 依赖引入 除了基本依赖以外，引入下列依赖：
-1 2 3 4 5 6 7 8 9 &lt;!-- others --&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt; &lt;artifactId&gt;spring-cloud-starter-netflix-eureka-client&lt;/artifactId&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt; &lt;artifactId&gt;spring-cloud-starter-gateway&lt;/artifactId&gt; &lt;/dependency&gt; 注意不能引入web相关依赖，因为Gateway是基于WebFlux的。
+1&lt;!-- others --&gt; 2&lt;dependency&gt; 3 &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt; 4 &lt;artifactId&gt;spring-cloud-starter-netflix-eureka-client&lt;/artifactId&gt; 5&lt;/dependency&gt; 6&lt;dependency&gt; 7 &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt; 8 &lt;artifactId&gt;spring-cloud-starter-gateway&lt;/artifactId&gt; 9&lt;/dependency&gt; 注意不能引入web相关依赖，因为Gateway是基于WebFlux的。
 文件配置 列出部分重要配置：
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 server: port: 9669 cloud: gateway: discovery: locator: enabled: true # 开启从注册中心动态创建路由的功能，利用微服务名进行路由 routes: - id: path_route uri: lb://CLOUD-PAYMENT-SERVICE # lb：负载均衡 predicates: - Path=/payment/** - After=2022-07-26T17:33:52.449&#43;08:00[Asia/Shanghai] # ZonedDateTime.now() - Cookie=username,jzh 注意点如下："/>
+1server: 2port: 9669 3cloud: 4 gateway: 5 discovery: 6 locator: 7 enabled: true # 开启从注册中心动态创建路由的功能，利用微服务名进行路由 8 routes: 9 - id: path_route 10 uri: lb://CLOUD-PAYMENT-SERVICE # lb：负载均衡 11 predicates: 12 - Path=/payment/** 13 - After=2022-07-26T17:33:52.449&#43;08:00[Asia/Shanghai] # ZonedDateTime.now() 14 - Cookie=username,jzh 注意点如下：
+9669端口作为网关端口； uri中http改为了lb，用于负载均衡； predicates，即断言，上述断言是： 匹配路径：/payment/**； 开始允许访问时间：ZonedDateTime.now()（Java函数获取该格式时间） 携带cookie：key=username, value=jzh 过滤器配置 实现GlobalFilter, Ordered，重写方法即可："/>
 
   
   
   
   
   
-  <link rel="stylesheet" href="/css/styles.d8d1e5ac73f5bd72b0e6919356fcf7f12c9dd5a80e4788cae09111cc3678f69a4294b39d4b852dd69cc393c73ac3d8b6c05c8df3569d49d36331b7f39cfea8d1.css" integrity="sha512-2NHlrHP1vXKw5pGTVvz38Syd1agOR4jK4JERzDZ49ppClLOdS4Ut1pzDk8c6w9i2wFyN81adSdNjMbfznP6o0Q==">
+  <link rel="stylesheet" href="/css/styles.b6e7dac395bc81c65ab67a0be932cbd03925f5afb48f9c825ead224a41084a4a8289db621f5b2236149a32799ae71f4962b1d2531d209f51d8b88cdffaa1877e.css" integrity="sha512-tufaw5W8gcZatnoL6TLL0Dkl9a&#43;0j5yCXq0iSkEISkqCidtiH1siNhSaMnma5x9JYrHSUx0gn1HYuIzf&#43;qGHfg==">
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
@@ -149,7 +151,7 @@
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f07%2fspringcloud-gateway-usage-record%2f&name=SpringCloud-Gateway%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95&description=%e7%bd%91%e5%85%b3%e7%9a%84%e4%bd%9c%e7%94%a8%20%e5%a6%82%e5%9b%be%e6%89%80%e7%a4%ba%ef%bc%8c%e7%bd%91%e5%85%b3%e4%bb%8b%e4%ba%8e%e5%a4%96%e9%83%a8%e8%af%b7%e6%b1%82%e5%92%8c%e5%85%b7%e4%bd%93%e5%be%ae%e6%9c%8d%e5%8a%a1%e4%b9%8b%e9%97%b4%ef%bc%8c%e5%9c%a8%e4%b8%8d%e6%9a%b4%e9%9c%b2%e5%86%85%e9%83%a8%e5%be%ae%e6%9c%8d%e5%8a%a1%e7%ab%af%e5%8f%a3%e7%9a%84%e6%83%85%e5%86%b5%e4%b8%8b%ef%bc%8c%e9%80%9a%e8%bf%87%e4%b8%80%e4%b8%aa%e6%88%96%e8%80%85%e5%a4%9a%e4%b8%aa%e6%8c%87%e5%ae%9a%e7%9a%84%e7%bd%91%e5%85%b3%e7%ab%af%e5%8f%a3%e7%bb%9f%e4%b8%80%e5%9c%b0%e5%a4%84%e7%90%86%e5%a4%96%e9%83%a8%e5%90%84%e7%a7%8d%e8%af%b7%e6%b1%82%e3%80%82%0a%e4%bd%bf%e7%94%a8SpringCloud%20Gateway%20%e4%be%9d%e8%b5%96%e5%bc%95%e5%85%a5%20%e9%99%a4%e4%ba%86%e5%9f%ba%e6%9c%ac%e4%be%9d%e8%b5%96%e4%bb%a5%e5%a4%96%ef%bc%8c%e5%bc%95%e5%85%a5%e4%b8%8b%e5%88%97%e4%be%9d%e8%b5%96%ef%bc%9a%0a1%202%203%204%205%206%207%208%209%20%26lt%3b%21--%20others%20--%26gt%3b%20%26lt%3bdependency%26gt%3b%20%26lt%3bgroupId%26gt%3borg.springframework.cloud%26lt%3b%2fgroupId%26gt%3b%20%26lt%3bartifactId%26gt%3bspring-cloud-starter-netflix-eureka-client%26lt%3b%2fartifactId%26gt%3b%20%26lt%3b%2fdependency%26gt%3b%20%26lt%3bdependency%26gt%3b%20%26lt%3bgroupId%26gt%3borg.springframework.cloud%26lt%3b%2fgroupId%26gt%3b%20%26lt%3bartifactId%26gt%3bspring-cloud-starter-gateway%26lt%3b%2fartifactId%26gt%3b%20%26lt%3b%2fdependency%26gt%3b%20%e6%b3%a8%e6%84%8f%e4%b8%8d%e8%83%bd%e5%bc%95%e5%85%a5web%e7%9b%b8%e5%85%b3%e4%be%9d%e8%b5%96%ef%bc%8c%e5%9b%a0%e4%b8%baGateway%e6%98%af%e5%9f%ba%e4%ba%8eWebFlux%e7%9a%84%e3%80%82%0a%e6%96%87%e4%bb%b6%e9%85%8d%e7%bd%ae%20%e5%88%97%e5%87%ba%e9%83%a8%e5%88%86%e9%87%8d%e8%a6%81%e9%85%8d%e7%bd%ae%ef%bc%9a%0a1%202%203%204%205%206%207%208%209%2010%2011%2012%2013%2014%20server%3a%20port%3a%209669%20cloud%3a%20gateway%3a%20discovery%3a%20locator%3a%20enabled%3a%20true%20%23%20%e5%bc%80%e5%90%af%e4%bb%8e%e6%b3%a8%e5%86%8c%e4%b8%ad%e5%bf%83%e5%8a%a8%e6%80%81%e5%88%9b%e5%bb%ba%e8%b7%af%e7%94%b1%e7%9a%84%e5%8a%9f%e8%83%bd%ef%bc%8c%e5%88%a9%e7%94%a8%e5%be%ae%e6%9c%8d%e5%8a%a1%e5%90%8d%e8%bf%9b%e8%a1%8c%e8%b7%af%e7%94%b1%20routes%3a%20-%20id%3a%20path_route%20uri%3a%20lb%3a%2f%2fCLOUD-PAYMENT-SERVICE%20%23%20lb%ef%bc%9a%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1%20predicates%3a%20-%20Path%3d%2fpayment%2f%2a%2a%20-%20After%3d2022-07-26T17%3a33%3a52.449%2b08%3a00%5bAsia%2fShanghai%5d%20%23%20ZonedDateTime.now%28%29%20-%20Cookie%3dusername%2cjzh%20%e6%b3%a8%e6%84%8f%e7%82%b9%e5%a6%82%e4%b8%8b%ef%bc%9a" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f07%2fspringcloud-gateway-usage-record%2f&name=SpringCloud-Gateway%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95&description=%e7%bd%91%e5%85%b3%e7%9a%84%e4%bd%9c%e7%94%a8%20%e5%a6%82%e5%9b%be%e6%89%80%e7%a4%ba%ef%bc%8c%e7%bd%91%e5%85%b3%e4%bb%8b%e4%ba%8e%e5%a4%96%e9%83%a8%e8%af%b7%e6%b1%82%e5%92%8c%e5%85%b7%e4%bd%93%e5%be%ae%e6%9c%8d%e5%8a%a1%e4%b9%8b%e9%97%b4%ef%bc%8c%e5%9c%a8%e4%b8%8d%e6%9a%b4%e9%9c%b2%e5%86%85%e9%83%a8%e5%be%ae%e6%9c%8d%e5%8a%a1%e7%ab%af%e5%8f%a3%e7%9a%84%e6%83%85%e5%86%b5%e4%b8%8b%ef%bc%8c%e9%80%9a%e8%bf%87%e4%b8%80%e4%b8%aa%e6%88%96%e8%80%85%e5%a4%9a%e4%b8%aa%e6%8c%87%e5%ae%9a%e7%9a%84%e7%bd%91%e5%85%b3%e7%ab%af%e5%8f%a3%e7%bb%9f%e4%b8%80%e5%9c%b0%e5%a4%84%e7%90%86%e5%a4%96%e9%83%a8%e5%90%84%e7%a7%8d%e8%af%b7%e6%b1%82%e3%80%82%0a%e4%bd%bf%e7%94%a8SpringCloud%20Gateway%20%e4%be%9d%e8%b5%96%e5%bc%95%e5%85%a5%20%e9%99%a4%e4%ba%86%e5%9f%ba%e6%9c%ac%e4%be%9d%e8%b5%96%e4%bb%a5%e5%a4%96%ef%bc%8c%e5%bc%95%e5%85%a5%e4%b8%8b%e5%88%97%e4%be%9d%e8%b5%96%ef%bc%9a%0a1%26lt%3b%21--%20others%20--%26gt%3b%202%26lt%3bdependency%26gt%3b%203%20%26lt%3bgroupId%26gt%3borg.springframework.cloud%26lt%3b%2fgroupId%26gt%3b%204%20%26lt%3bartifactId%26gt%3bspring-cloud-starter-netflix-eureka-client%26lt%3b%2fartifactId%26gt%3b%205%26lt%3b%2fdependency%26gt%3b%206%26lt%3bdependency%26gt%3b%207%20%26lt%3bgroupId%26gt%3borg.springframework.cloud%26lt%3b%2fgroupId%26gt%3b%208%20%26lt%3bartifactId%26gt%3bspring-cloud-starter-gateway%26lt%3b%2fartifactId%26gt%3b%209%26lt%3b%2fdependency%26gt%3b%20%e6%b3%a8%e6%84%8f%e4%b8%8d%e8%83%bd%e5%bc%95%e5%85%a5web%e7%9b%b8%e5%85%b3%e4%be%9d%e8%b5%96%ef%bc%8c%e5%9b%a0%e4%b8%baGateway%e6%98%af%e5%9f%ba%e4%ba%8eWebFlux%e7%9a%84%e3%80%82%0a%e6%96%87%e4%bb%b6%e9%85%8d%e7%bd%ae%20%e5%88%97%e5%87%ba%e9%83%a8%e5%88%86%e9%87%8d%e8%a6%81%e9%85%8d%e7%bd%ae%ef%bc%9a%0a1server%3a%202port%3a%209669%203cloud%3a%204%20gateway%3a%205%20discovery%3a%206%20locator%3a%207%20enabled%3a%20true%20%23%20%e5%bc%80%e5%90%af%e4%bb%8e%e6%b3%a8%e5%86%8c%e4%b8%ad%e5%bf%83%e5%8a%a8%e6%80%81%e5%88%9b%e5%bb%ba%e8%b7%af%e7%94%b1%e7%9a%84%e5%8a%9f%e8%83%bd%ef%bc%8c%e5%88%a9%e7%94%a8%e5%be%ae%e6%9c%8d%e5%8a%a1%e5%90%8d%e8%bf%9b%e8%a1%8c%e8%b7%af%e7%94%b1%208%20routes%3a%209%20-%20id%3a%20path_route%2010%20uri%3a%20lb%3a%2f%2fCLOUD-PAYMENT-SERVICE%20%23%20lb%ef%bc%9a%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1%2011%20predicates%3a%2012%20-%20Path%3d%2fpayment%2f%2a%2a%2013%20-%20After%3d2022-07-26T17%3a33%3a52.449%2b08%3a00%5bAsia%2fShanghai%5d%20%23%20ZonedDateTime.now%28%29%2014%20-%20Cookie%3dusername%2cjzh%20%e6%b3%a8%e6%84%8f%e7%82%b9%e5%a6%82%e4%b8%8b%ef%bc%9a%0a9669%e7%ab%af%e5%8f%a3%e4%bd%9c%e4%b8%ba%e7%bd%91%e5%85%b3%e7%ab%af%e5%8f%a3%ef%bc%9b%20uri%e4%b8%adhttp%e6%94%b9%e4%b8%ba%e4%ba%86lb%ef%bc%8c%e7%94%a8%e4%ba%8e%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1%ef%bc%9b%20predicates%ef%bc%8c%e5%8d%b3%e6%96%ad%e8%a8%80%ef%bc%8c%e4%b8%8a%e8%bf%b0%e6%96%ad%e8%a8%80%e6%98%af%ef%bc%9a%20%e5%8c%b9%e9%85%8d%e8%b7%af%e5%be%84%ef%bc%9a%2fpayment%2f%2a%2a%ef%bc%9b%20%e5%bc%80%e5%a7%8b%e5%85%81%e8%ae%b8%e8%ae%bf%e9%97%ae%e6%97%b6%e9%97%b4%ef%bc%9aZonedDateTime.now%28%29%ef%bc%88Java%e5%87%bd%e6%95%b0%e8%8e%b7%e5%8f%96%e8%af%a5%e6%a0%bc%e5%bc%8f%e6%97%b6%e9%97%b4%ef%bc%89%20%e6%90%ba%e5%b8%a6cookie%ef%bc%9akey%3dusername%2c%20value%3djzh%20%e8%bf%87%e6%bb%a4%e5%99%a8%e9%85%8d%e7%bd%ae%20%e5%ae%9e%e7%8e%b0GlobalFilter%2c%20Ordered%ef%bc%8c%e9%87%8d%e5%86%99%e6%96%b9%e6%b3%95%e5%8d%b3%e5%8f%af%ef%bc%9a" aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -231,68 +233,33 @@
 <h2 id="使用springcloud-gateway">使用SpringCloud Gateway</h2>
 <h3 id="依赖引入">依赖引入</h3>
 <p>除了基本依赖以外，引入下列依赖：</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#6272a4">&lt;!-- others --&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">&lt;dependency&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&lt;groupId&gt;</span>org.springframework.cloud<span style="color:#ff79c6">&lt;/groupId&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&lt;artifactId&gt;</span>spring-cloud-starter-netflix-eureka-client<span style="color:#ff79c6">&lt;/artifactId&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">&lt;/dependency&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">&lt;dependency&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&lt;groupId&gt;</span>org.springframework.cloud<span style="color:#ff79c6">&lt;/groupId&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&lt;artifactId&gt;</span>spring-cloud-starter-gateway<span style="color:#ff79c6">&lt;/artifactId&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">&lt;/dependency&gt;</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p><strong>注意不能引入web相关依赖，因为Gateway是基于WebFlux的。</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#6272a4">&lt;!-- others --&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#ff79c6">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>    <span style="color:#ff79c6">&lt;groupId&gt;</span>org.springframework.cloud<span style="color:#ff79c6">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>    <span style="color:#ff79c6">&lt;artifactId&gt;</span>spring-cloud-starter-netflix-eureka-client<span style="color:#ff79c6">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span><span style="color:#ff79c6">&lt;/dependency&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span><span style="color:#ff79c6">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span>    <span style="color:#ff79c6">&lt;groupId&gt;</span>org.springframework.cloud<span style="color:#ff79c6">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span><span>    <span style="color:#ff79c6">&lt;artifactId&gt;</span>spring-cloud-starter-gateway<span style="color:#ff79c6">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9</span><span><span style="color:#ff79c6">&lt;/dependency&gt;</span>
+</span></span></code></pre></div><p><strong>注意不能引入web相关依赖，因为Gateway是基于WebFlux的。</strong></p>
 <h3 id="文件配置">文件配置</h3>
 <p>列出部分重要配置：</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span><span style="color:#ff79c6">server</span>:
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">port</span>: <span style="color:#bd93f9">9669</span>
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">cloud</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">gateway</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">discovery</span>:
-</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">locator</span>:
-</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">enabled</span>: <span style="color:#ff79c6">true</span> <span style="color:#6272a4"># 开启从注册中心动态创建路由的功能，利用微服务名进行路由</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">routes</span>:
-</span></span><span style="display:flex;"><span>        - <span style="color:#ff79c6">id</span>: path_route
-</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">uri</span>: lb://CLOUD-PAYMENT-SERVICE <span style="color:#6272a4"># lb：负载均衡</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">predicates</span>:
-</span></span><span style="display:flex;"><span>            - Path=/payment/**
-</span></span><span style="display:flex;"><span>            - After=2022-07-26T17:33:52.449+08:00[Asia/Shanghai] <span style="color:#6272a4"># ZonedDateTime.now()</span>
-</span></span><span style="display:flex;"><span>            - Cookie=username,jzh
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>注意点如下：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#ff79c6">server</span>:
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#ff79c6">port</span>: <span style="color:#bd93f9">9669</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span><span style="color:#ff79c6">cloud</span>:
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>    <span style="color:#ff79c6">gateway</span>:
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>    <span style="color:#ff79c6">discovery</span>:
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>        <span style="color:#ff79c6">locator</span>:
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>        <span style="color:#ff79c6">enabled</span>: <span style="color:#ff79c6">true</span> <span style="color:#6272a4"># 开启从注册中心动态创建路由的功能，利用微服务名进行路由</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>    <span style="color:#ff79c6">routes</span>:
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>        - <span style="color:#ff79c6">id</span>: path_route
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>        <span style="color:#ff79c6">uri</span>: lb://CLOUD-PAYMENT-SERVICE <span style="color:#6272a4"># lb：负载均衡</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>        <span style="color:#ff79c6">predicates</span>:
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>            - Path=/payment/**
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>            - After=2022-07-26T17:33:52.449+08:00[Asia/Shanghai] <span style="color:#6272a4"># ZonedDateTime.now()</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>            - Cookie=username,jzh
+</span></span></code></pre></div><p>注意点如下：</p>
 <ul>
 <li>9669端口作为网关端口；</li>
 <li>uri中http改为了lb，用于负载均衡；</li>
@@ -303,76 +270,37 @@
 </ul>
 <h3 id="过滤器配置">过滤器配置</h3>
 <p>实现GlobalFilter, Ordered，重写方法即可：</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>@Component
-</span></span><span style="display:flex;"><span>@Slf4j
-</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">MyGlobalFilter</span> <span style="color:#8be9fd;font-style:italic">implements</span> GlobalFilter<span style="color:#ff79c6">,</span> Ordered <span style="color:#ff79c6">{</span>
-</span></span><span style="display:flex;"><span>    @Override
-</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">public</span> Mono<span style="color:#ff79c6">&lt;</span>Void<span style="color:#ff79c6">&gt;</span> <span style="color:#50fa7b">filter</span><span style="color:#ff79c6">(</span>ServerWebExchange exchange<span style="color:#ff79c6">,</span> GatewayFilterChain chain<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
-</span></span><span style="display:flex;"><span>        String username <span style="color:#ff79c6">=</span> exchange<span style="color:#ff79c6">.</span><span style="color:#50fa7b">getRequest</span><span style="color:#ff79c6">().</span><span style="color:#50fa7b">getQueryParams</span><span style="color:#ff79c6">().</span><span style="color:#50fa7b">getFirst</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;username&#34;</span><span style="color:#ff79c6">);</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>username <span style="color:#ff79c6">==</span> <span style="color:#ff79c6">null</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
-</span></span><span style="display:flex;"><span>            log<span style="color:#ff79c6">.</span><span style="color:#50fa7b">info</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;username lost&#34;</span><span style="color:#ff79c6">);</span>
-</span></span><span style="display:flex;"><span>            exchange<span style="color:#ff79c6">.</span><span style="color:#50fa7b">getResponse</span><span style="color:#ff79c6">().</span><span style="color:#50fa7b">setStatusCode</span><span style="color:#ff79c6">(</span>HttpStatus<span style="color:#ff79c6">.</span><span style="color:#50fa7b">NOT_ACCEPTABLE</span><span style="color:#ff79c6">);</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">return</span> exchange<span style="color:#ff79c6">.</span><span style="color:#50fa7b">getResponse</span><span style="color:#ff79c6">().</span><span style="color:#50fa7b">setComplete</span><span style="color:#ff79c6">();</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">}</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">return</span> chain<span style="color:#ff79c6">.</span><span style="color:#50fa7b">filter</span><span style="color:#ff79c6">(</span>exchange<span style="color:#ff79c6">);</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    @Override
-</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">int</span> <span style="color:#50fa7b">getOrder</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">{</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">return</span> <span style="color:#bd93f9">0</span><span style="color:#ff79c6">;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>定义了url中携带必须携带一个key为username的参数。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>@Component
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>@Slf4j
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">MyGlobalFilter</span> <span style="color:#8be9fd;font-style:italic">implements</span> GlobalFilter<span style="color:#ff79c6">,</span> Ordered <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>    @Override
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>    <span style="color:#8be9fd;font-style:italic">public</span> Mono<span style="color:#ff79c6">&lt;</span>Void<span style="color:#ff79c6">&gt;</span> <span style="color:#50fa7b">filter</span><span style="color:#ff79c6">(</span>ServerWebExchange exchange<span style="color:#ff79c6">,</span> GatewayFilterChain chain<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>        String username <span style="color:#ff79c6">=</span> exchange<span style="color:#ff79c6">.</span><span style="color:#50fa7b">getRequest</span><span style="color:#ff79c6">().</span><span style="color:#50fa7b">getQueryParams</span><span style="color:#ff79c6">().</span><span style="color:#50fa7b">getFirst</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;username&#34;</span><span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>        <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>username <span style="color:#ff79c6">==</span> <span style="color:#ff79c6">null</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>            log<span style="color:#ff79c6">.</span><span style="color:#50fa7b">info</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;username lost&#34;</span><span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>            exchange<span style="color:#ff79c6">.</span><span style="color:#50fa7b">getResponse</span><span style="color:#ff79c6">().</span><span style="color:#50fa7b">setStatusCode</span><span style="color:#ff79c6">(</span>HttpStatus<span style="color:#ff79c6">.</span><span style="color:#50fa7b">NOT_ACCEPTABLE</span><span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>            <span style="color:#ff79c6">return</span> exchange<span style="color:#ff79c6">.</span><span style="color:#50fa7b">getResponse</span><span style="color:#ff79c6">().</span><span style="color:#50fa7b">setComplete</span><span style="color:#ff79c6">();</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>        <span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>        <span style="color:#ff79c6">return</span> chain<span style="color:#ff79c6">.</span><span style="color:#50fa7b">filter</span><span style="color:#ff79c6">(</span>exchange<span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>    <span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>    @Override
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">int</span> <span style="color:#50fa7b">getOrder</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>        <span style="color:#ff79c6">return</span> <span style="color:#bd93f9">0</span><span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>    <span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span><span style="color:#ff79c6">}</span>
+</span></span></code></pre></div><p>定义了url中携带必须携带一个key为username的参数。</p>
 <h2 id="测试">测试</h2>
 <p>注意先开启指定的微服务，访问<code>http://localhost:9669/payment/get/11?username=aaa</code>（同时配好cookie），成功返回结果：</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;code&#34;</span>: <span style="color:#bd93f9">200</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;data&#34;</span>: {
-</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;serial&#34;</span>: <span style="color:#f1fa8c">&#34;8asd8sa2j&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#bd93f9">11</span>
-</span></span><span style="display:flex;"><span>    },
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;message&#34;</span>: <span style="color:#f1fa8c">&#34;查询成功，访问端口：8001&#34;</span>
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>再刷新，发现端口动态变化为8002，负载均衡功能也测试成功。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>{
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>    <span style="color:#ff79c6">&#34;code&#34;</span>: <span style="color:#bd93f9">200</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>    <span style="color:#ff79c6">&#34;data&#34;</span>: {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>        <span style="color:#ff79c6">&#34;serial&#34;</span>: <span style="color:#f1fa8c">&#34;8asd8sa2j&#34;</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>        <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#bd93f9">11</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>    },
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span>    <span style="color:#ff79c6">&#34;message&#34;</span>: <span style="color:#f1fa8c">&#34;查询成功，访问端口：8001&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span><span>}
+</span></span></code></pre></div><p>再刷新，发现端口动态变化为8002，负载均衡功能也测试成功。</p>
 <hr>
 <p><strong>From My Blog: <a href="https://akynazh.site">akynazh</a></strong>.</p>
 <p><strong>Over.</strong></p>
@@ -480,7 +408,7 @@
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f07%2fspringcloud-gateway-usage-record%2f&name=SpringCloud-Gateway%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95&description=%e7%bd%91%e5%85%b3%e7%9a%84%e4%bd%9c%e7%94%a8%20%e5%a6%82%e5%9b%be%e6%89%80%e7%a4%ba%ef%bc%8c%e7%bd%91%e5%85%b3%e4%bb%8b%e4%ba%8e%e5%a4%96%e9%83%a8%e8%af%b7%e6%b1%82%e5%92%8c%e5%85%b7%e4%bd%93%e5%be%ae%e6%9c%8d%e5%8a%a1%e4%b9%8b%e9%97%b4%ef%bc%8c%e5%9c%a8%e4%b8%8d%e6%9a%b4%e9%9c%b2%e5%86%85%e9%83%a8%e5%be%ae%e6%9c%8d%e5%8a%a1%e7%ab%af%e5%8f%a3%e7%9a%84%e6%83%85%e5%86%b5%e4%b8%8b%ef%bc%8c%e9%80%9a%e8%bf%87%e4%b8%80%e4%b8%aa%e6%88%96%e8%80%85%e5%a4%9a%e4%b8%aa%e6%8c%87%e5%ae%9a%e7%9a%84%e7%bd%91%e5%85%b3%e7%ab%af%e5%8f%a3%e7%bb%9f%e4%b8%80%e5%9c%b0%e5%a4%84%e7%90%86%e5%a4%96%e9%83%a8%e5%90%84%e7%a7%8d%e8%af%b7%e6%b1%82%e3%80%82%0a%e4%bd%bf%e7%94%a8SpringCloud%20Gateway%20%e4%be%9d%e8%b5%96%e5%bc%95%e5%85%a5%20%e9%99%a4%e4%ba%86%e5%9f%ba%e6%9c%ac%e4%be%9d%e8%b5%96%e4%bb%a5%e5%a4%96%ef%bc%8c%e5%bc%95%e5%85%a5%e4%b8%8b%e5%88%97%e4%be%9d%e8%b5%96%ef%bc%9a%0a1%202%203%204%205%206%207%208%209%20%26lt%3b%21--%20others%20--%26gt%3b%20%26lt%3bdependency%26gt%3b%20%26lt%3bgroupId%26gt%3borg.springframework.cloud%26lt%3b%2fgroupId%26gt%3b%20%26lt%3bartifactId%26gt%3bspring-cloud-starter-netflix-eureka-client%26lt%3b%2fartifactId%26gt%3b%20%26lt%3b%2fdependency%26gt%3b%20%26lt%3bdependency%26gt%3b%20%26lt%3bgroupId%26gt%3borg.springframework.cloud%26lt%3b%2fgroupId%26gt%3b%20%26lt%3bartifactId%26gt%3bspring-cloud-starter-gateway%26lt%3b%2fartifactId%26gt%3b%20%26lt%3b%2fdependency%26gt%3b%20%e6%b3%a8%e6%84%8f%e4%b8%8d%e8%83%bd%e5%bc%95%e5%85%a5web%e7%9b%b8%e5%85%b3%e4%be%9d%e8%b5%96%ef%bc%8c%e5%9b%a0%e4%b8%baGateway%e6%98%af%e5%9f%ba%e4%ba%8eWebFlux%e7%9a%84%e3%80%82%0a%e6%96%87%e4%bb%b6%e9%85%8d%e7%bd%ae%20%e5%88%97%e5%87%ba%e9%83%a8%e5%88%86%e9%87%8d%e8%a6%81%e9%85%8d%e7%bd%ae%ef%bc%9a%0a1%202%203%204%205%206%207%208%209%2010%2011%2012%2013%2014%20server%3a%20port%3a%209669%20cloud%3a%20gateway%3a%20discovery%3a%20locator%3a%20enabled%3a%20true%20%23%20%e5%bc%80%e5%90%af%e4%bb%8e%e6%b3%a8%e5%86%8c%e4%b8%ad%e5%bf%83%e5%8a%a8%e6%80%81%e5%88%9b%e5%bb%ba%e8%b7%af%e7%94%b1%e7%9a%84%e5%8a%9f%e8%83%bd%ef%bc%8c%e5%88%a9%e7%94%a8%e5%be%ae%e6%9c%8d%e5%8a%a1%e5%90%8d%e8%bf%9b%e8%a1%8c%e8%b7%af%e7%94%b1%20routes%3a%20-%20id%3a%20path_route%20uri%3a%20lb%3a%2f%2fCLOUD-PAYMENT-SERVICE%20%23%20lb%ef%bc%9a%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1%20predicates%3a%20-%20Path%3d%2fpayment%2f%2a%2a%20-%20After%3d2022-07-26T17%3a33%3a52.449%2b08%3a00%5bAsia%2fShanghai%5d%20%23%20ZonedDateTime.now%28%29%20-%20Cookie%3dusername%2cjzh%20%e6%b3%a8%e6%84%8f%e7%82%b9%e5%a6%82%e4%b8%8b%ef%bc%9a" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f07%2fspringcloud-gateway-usage-record%2f&name=SpringCloud-Gateway%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95&description=%e7%bd%91%e5%85%b3%e7%9a%84%e4%bd%9c%e7%94%a8%20%e5%a6%82%e5%9b%be%e6%89%80%e7%a4%ba%ef%bc%8c%e7%bd%91%e5%85%b3%e4%bb%8b%e4%ba%8e%e5%a4%96%e9%83%a8%e8%af%b7%e6%b1%82%e5%92%8c%e5%85%b7%e4%bd%93%e5%be%ae%e6%9c%8d%e5%8a%a1%e4%b9%8b%e9%97%b4%ef%bc%8c%e5%9c%a8%e4%b8%8d%e6%9a%b4%e9%9c%b2%e5%86%85%e9%83%a8%e5%be%ae%e6%9c%8d%e5%8a%a1%e7%ab%af%e5%8f%a3%e7%9a%84%e6%83%85%e5%86%b5%e4%b8%8b%ef%bc%8c%e9%80%9a%e8%bf%87%e4%b8%80%e4%b8%aa%e6%88%96%e8%80%85%e5%a4%9a%e4%b8%aa%e6%8c%87%e5%ae%9a%e7%9a%84%e7%bd%91%e5%85%b3%e7%ab%af%e5%8f%a3%e7%bb%9f%e4%b8%80%e5%9c%b0%e5%a4%84%e7%90%86%e5%a4%96%e9%83%a8%e5%90%84%e7%a7%8d%e8%af%b7%e6%b1%82%e3%80%82%0a%e4%bd%bf%e7%94%a8SpringCloud%20Gateway%20%e4%be%9d%e8%b5%96%e5%bc%95%e5%85%a5%20%e9%99%a4%e4%ba%86%e5%9f%ba%e6%9c%ac%e4%be%9d%e8%b5%96%e4%bb%a5%e5%a4%96%ef%bc%8c%e5%bc%95%e5%85%a5%e4%b8%8b%e5%88%97%e4%be%9d%e8%b5%96%ef%bc%9a%0a1%26lt%3b%21--%20others%20--%26gt%3b%202%26lt%3bdependency%26gt%3b%203%20%26lt%3bgroupId%26gt%3borg.springframework.cloud%26lt%3b%2fgroupId%26gt%3b%204%20%26lt%3bartifactId%26gt%3bspring-cloud-starter-netflix-eureka-client%26lt%3b%2fartifactId%26gt%3b%205%26lt%3b%2fdependency%26gt%3b%206%26lt%3bdependency%26gt%3b%207%20%26lt%3bgroupId%26gt%3borg.springframework.cloud%26lt%3b%2fgroupId%26gt%3b%208%20%26lt%3bartifactId%26gt%3bspring-cloud-starter-gateway%26lt%3b%2fartifactId%26gt%3b%209%26lt%3b%2fdependency%26gt%3b%20%e6%b3%a8%e6%84%8f%e4%b8%8d%e8%83%bd%e5%bc%95%e5%85%a5web%e7%9b%b8%e5%85%b3%e4%be%9d%e8%b5%96%ef%bc%8c%e5%9b%a0%e4%b8%baGateway%e6%98%af%e5%9f%ba%e4%ba%8eWebFlux%e7%9a%84%e3%80%82%0a%e6%96%87%e4%bb%b6%e9%85%8d%e7%bd%ae%20%e5%88%97%e5%87%ba%e9%83%a8%e5%88%86%e9%87%8d%e8%a6%81%e9%85%8d%e7%bd%ae%ef%bc%9a%0a1server%3a%202port%3a%209669%203cloud%3a%204%20gateway%3a%205%20discovery%3a%206%20locator%3a%207%20enabled%3a%20true%20%23%20%e5%bc%80%e5%90%af%e4%bb%8e%e6%b3%a8%e5%86%8c%e4%b8%ad%e5%bf%83%e5%8a%a8%e6%80%81%e5%88%9b%e5%bb%ba%e8%b7%af%e7%94%b1%e7%9a%84%e5%8a%9f%e8%83%bd%ef%bc%8c%e5%88%a9%e7%94%a8%e5%be%ae%e6%9c%8d%e5%8a%a1%e5%90%8d%e8%bf%9b%e8%a1%8c%e8%b7%af%e7%94%b1%208%20routes%3a%209%20-%20id%3a%20path_route%2010%20uri%3a%20lb%3a%2f%2fCLOUD-PAYMENT-SERVICE%20%23%20lb%ef%bc%9a%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1%2011%20predicates%3a%2012%20-%20Path%3d%2fpayment%2f%2a%2a%2013%20-%20After%3d2022-07-26T17%3a33%3a52.449%2b08%3a00%5bAsia%2fShanghai%5d%20%23%20ZonedDateTime.now%28%29%2014%20-%20Cookie%3dusername%2cjzh%20%e6%b3%a8%e6%84%8f%e7%82%b9%e5%a6%82%e4%b8%8b%ef%bc%9a%0a9669%e7%ab%af%e5%8f%a3%e4%bd%9c%e4%b8%ba%e7%bd%91%e5%85%b3%e7%ab%af%e5%8f%a3%ef%bc%9b%20uri%e4%b8%adhttp%e6%94%b9%e4%b8%ba%e4%ba%86lb%ef%bc%8c%e7%94%a8%e4%ba%8e%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1%ef%bc%9b%20predicates%ef%bc%8c%e5%8d%b3%e6%96%ad%e8%a8%80%ef%bc%8c%e4%b8%8a%e8%bf%b0%e6%96%ad%e8%a8%80%e6%98%af%ef%bc%9a%20%e5%8c%b9%e9%85%8d%e8%b7%af%e5%be%84%ef%bc%9a%2fpayment%2f%2a%2a%ef%bc%9b%20%e5%bc%80%e5%a7%8b%e5%85%81%e8%ae%b8%e8%ae%bf%e9%97%ae%e6%97%b6%e9%97%b4%ef%bc%9aZonedDateTime.now%28%29%ef%bc%88Java%e5%87%bd%e6%95%b0%e8%8e%b7%e5%8f%96%e8%af%a5%e6%a0%bc%e5%bc%8f%e6%97%b6%e9%97%b4%ef%bc%89%20%e6%90%ba%e5%b8%a6cookie%ef%bc%9akey%3dusername%2c%20value%3djzh%20%e8%bf%87%e6%bb%a4%e5%99%a8%e9%85%8d%e7%bd%ae%20%e5%ae%9e%e7%8e%b0GlobalFilter%2c%20Ordered%ef%bc%8c%e9%87%8d%e5%86%99%e6%96%b9%e6%b3%95%e5%8d%b3%e5%8f%af%ef%bc%9a" aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>

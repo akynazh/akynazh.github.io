@@ -16,11 +16,11 @@
       <guid>/posts/2022/12/understanding-of-rest-style/</guid>
       <description>REST，全称 Representational State Transfer，即表现层状态转移。
 符合REST规范的写法：
-1 2 3 4 POST http://www.test.com/lemon // 创建 Get http://www.test.com/lemon // 查询 PUT http://www.test.com/lemon // 修改 DELETE http://www.test.com/lemon //删除 不符合REST规范的写法：
-1 2 3 4 POST http://www.test.com/Createlemon // 创建 POST http://www.test.com/Querylemon // 查询 POST http://www.test.com/Modifylemon // 修改 POST http://www.test.com/Deletelemon //删除 也就是用 URL 定位资源，用 HTTP 描述操作。
+1POST http://www.test.com/lemon // 创建 2Get http://www.test.com/lemon // 查询 3PUT http://www.test.com/lemon // 修改 4DELETE http://www.test.com/lemon //删除 不符合REST规范的写法：
+1POST http://www.test.com/Createlemon // 创建 2POST http://www.test.com/Querylemon // 查询 3POST http://www.test.com/Modifylemon // 修改 4POST http://www.test.com/Deletelemon //删除 也就是用 URL 定位资源，用 HTTP 描述操作。
 实际操作：
 对于前端，在 js 中可以指定请求类型，以通过 ajax 发送请求为例，可以通过 type 属性进行指定，假如我要进行一条插入操作，则 type 值应为 &amp;ldquo;PUT&amp;rdquo;:
-1 2 3 4 5 6 7 $.ajax({ type: &amp;#34;PUT&amp;#34;, url: &amp;#34;http://www.</description>
+1$.ajax({ 2 type: &amp;#34;PUT&amp;#34;, 3 url: &amp;#34;http://www.test.com/lemon&amp;#34;, 4 contentType: &amp;#39;application/json&amp;#39;, 5 data: JSON.stringify({ ID: &amp;#34;1&amp;#34; }), 6 success: function (data, status) {} 7}); 对于后端，以 java 为例，对于 PUT 操作，即可对应采用 @PutMapping 进行指定。</description>
     </item>
     
     <item>
@@ -29,8 +29,8 @@
       <pubDate>Sat, 25 Jun 2022 21:20:38 +0800</pubDate>
       
       <guid>/posts/2022/06/swagger-usage-record/</guid>
-      <description>依赖导入： 1 2 3 4 5 6 7 8 9 10 11 &amp;lt;!-- swagger所需依赖 --&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;io.springfox&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;springfox-swagger2&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;2.6.1&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;io.springfox&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;springfox-swagger-ui&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;2.6.1&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; 配置Swagger /config/SwaggerConfig.java
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 @Configuration @EnableSwagger2 public class SwaggerConfig { @Bean public Docket createRestApi() { return new Docket(DocumentationType.SWAGGER_2) .apiInfo(apiInfo()) .select() .apis(RequestHandlerSelectors.withClassAnnotation(Api.class)) .paths(PathSelectors.any()) .build(); } // 基本信息的配置，信息会在api文档上显示 private ApiInfo apiInfo() { return new ApiInfoBuilder() .</description>
+      <description>依赖导入： 1&amp;lt;!-- swagger所需依赖 --&amp;gt; 2&amp;lt;dependency&amp;gt; 3 &amp;lt;groupId&amp;gt;io.springfox&amp;lt;/groupId&amp;gt; 4 &amp;lt;artifactId&amp;gt;springfox-swagger2&amp;lt;/artifactId&amp;gt; 5 &amp;lt;version&amp;gt;2.6.1&amp;lt;/version&amp;gt; 6&amp;lt;/dependency&amp;gt; 7&amp;lt;dependency&amp;gt; 8 &amp;lt;groupId&amp;gt;io.springfox&amp;lt;/groupId&amp;gt; 9 &amp;lt;artifactId&amp;gt;springfox-swagger-ui&amp;lt;/artifactId&amp;gt; 10 &amp;lt;version&amp;gt;2.6.1&amp;lt;/version&amp;gt; 11&amp;lt;/dependency&amp;gt; 配置Swagger /config/SwaggerConfig.java
+1@Configuration 2@EnableSwagger2 3public class SwaggerConfig { 4 @Bean 5 public Docket createRestApi() { 6 return new Docket(DocumentationType.SWAGGER_2) 7 .apiInfo(apiInfo()) 8 .select() 9 .apis(RequestHandlerSelectors.withClassAnnotation(Api.class)) 10 .paths(PathSelectors.any()) 11 .build(); 12 } 13 14 // 基本信息的配置，信息会在api文档上显示 15 private ApiInfo apiInfo() { 16 return new ApiInfoBuilder() 17 .title(&amp;#34;jzh测试的接口文档&amp;#34;) 18 .description(&amp;#34;xx相关接口的文档&amp;#34;) 19 .termsOfServiceUrl(&amp;#34;http://localhost:7777&amp;#34;) 20 .</description>
     </item>
     
     <item>
@@ -43,13 +43,13 @@
 本文主要讲述在使用Thymeleaf作为模板引擎开发前端时，即在前后端不分离的情况下，前后端进行交互性数据展示的实现方法。
 使用cookie传递数据：不推荐 一、步骤 后端通过addCookie方法设置值 前端在页面加载时读取cookie值并进行展示 前端删除该cookie值 二、缺陷 这个方法我使用过，但是效果并不好，原因如下：
 用户可能禁止cookie 后端如果有重定向操作将导致cookie添加失败 前端每次都要删除cookie，有时可能会失效 使用session传递数据：值得借鉴 一、步骤 后端往session中存入数据 前端通过${session}进行获取数据并展示 前端将该数据删除或修改为指定默认值 这里注意正常情况下js是无法操作或者访问session值的，我们可以通过thymeleaf内置脚本进行操作：
-1 2 3 &amp;lt;script th:inline=&amp;#34;javascript&amp;#34;&amp;gt; // 这里可以通过session访问值 &amp;lt;/script&amp;gt; 二、缺陷 这个方法不好的地方显而易见，我们每次都要删除session值，而且只能通过内置脚本的方式操作，很不方便。
+1&amp;lt;script th:inline=&amp;#34;javascript&amp;#34;&amp;gt; 2// 这里可以通过session访问值 3&amp;lt;/script&amp;gt; 二、缺陷 这个方法不好的地方显而易见，我们每次都要删除session值，而且只能通过内置脚本的方式操作，很不方便。
 但是这种方法的思想值得借鉴，请看如下方法。
 通过RedirectAttributesModelMap传递数据 注意这里后端采用SpringMVC。
-一、步骤 通过RedirectAttributesModelMap往model中存值 返回视图对象，在视图对象中通过thymeleaf内置脚本进行数据展示 二、示例：提醒用户首先进行登录 1、后端代码： 1 2 3 4 5 @GetMapping(&amp;#34;/loginFirst&amp;#34;) public String loginFirst(RedirectAttributesModelMap model) { model.addFlashAttribute(&amp;#34;msg&amp;#34;, &amp;#34;请先进行登录&amp;#34;); return &amp;#34;redirect:/&amp;#34;; } RedirectAttributesModelMap可以确保redirect后保存在model中数据不丢失
+一、步骤 通过RedirectAttributesModelMap往model中存值 返回视图对象，在视图对象中通过thymeleaf内置脚本进行数据展示 二、示例：提醒用户首先进行登录 1、后端代码： 1@GetMapping(&amp;#34;/loginFirst&amp;#34;) 2public String loginFirst(RedirectAttributesModelMap model) { 3 model.addFlashAttribute(&amp;#34;msg&amp;#34;, &amp;#34;请先进行登录&amp;#34;); 4 return &amp;#34;redirect:/&amp;#34;; 5} RedirectAttributesModelMap可以确保redirect后保存在model中数据不丢失
 addFlashAttribute是把数据临时放在session中并在刷新页面后自动删除的方法，配合RedirectAttributesModelMap进行使用
 2、前端代码： 必须注意，这里外部js无法通过$(&amp;rsquo;#msg&amp;rsquo;).val()获取th:value设置的值的，所以必须通过thymeleaf提供的内联js代码操作交互的数据。
-1 2 3 4 5 6 &amp;lt;div class=&amp;#34;alert&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;input id=&amp;#34;msg&amp;#34; value=&amp;#34;&amp;#34; style=&amp;#34;display: none&amp;#34;/&amp;gt; &amp;lt;script th:inline=&amp;#34;javascript&amp;#34;&amp;gt; let msg = [[${msg}]]; document.</description>
+1&amp;lt;div class=&amp;#34;alert&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; 2&amp;lt;input id=&amp;#34;msg&amp;#34; value=&amp;#34;&amp;#34; style=&amp;#34;display: none&amp;#34;/&amp;gt; 3&amp;lt;script th:inline=&amp;#34;javascript&amp;#34;&amp;gt; 4 let msg = [[${msg}]]; 5 document.getElementById(&amp;#34;msg&amp;#34;).setAttribute(&amp;#34;value&amp;#34;, msg.toString()); 6&amp;lt;/script&amp;gt; 这里可以在inline部分完成所有信息展示操作，但由于thymeleaf内联js无法调用jquery代码，所以我把msg存到隐藏域中，再通过jquery代码调用</description>
     </item>
     
     <item>
@@ -68,7 +68,7 @@ addFlashAttribute是把数据临时放在session中并在刷新页面后自动�
 经过滚动，原来的代码逐渐被一些新的代码取代：
 而不难发现他们都有对应的data-id!而data-id就是图片地址中对应的pin。
 所以我们可以通过webdriver滚动加载页面，每滚动一次就进行一次data-id的读取，并利用集合进行去重即可。
-具体实现 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 # 花瓣用户任意面板图片爬取 import urllib.</description>
+具体实现 1# 花瓣用户任意面板图片爬取 2import urllib.request 3import urllib.error 4import re 5import os 6import datetime 7import easygui 8import time 9from selenium import webdriver 10from selenium.webdriver.chrome.service import Service 11from selenium.webdriver.common import service 12from webdriver_manager import driver 13from webdriver_manager.chrome import ChromeDriverManager 14import winsound 15 16# 获取网页中所有图片对应的pin 17def get_pins(url_, num_): 18 my_options = webdriver.</description>
     </item>
     
   </channel>

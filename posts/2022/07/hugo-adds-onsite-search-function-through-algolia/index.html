@@ -14,14 +14,14 @@
 数据生成以及上传Algolia 方法一：通过hugo-algolia插件的方式 一、下载hugo-algolia： npm install -g hugo-algolia
 二、编写config.yaml
 网站根目录下创建config.yaml，编写参数如下：
-1 2 3 4 5 6 --- algolia: index: &#34;{indexName}&#34; key: &#34;{key}&#34; appID: &#34;{appID}&#34; --- 三、生成algolia.json
+1--- 2algolia: 3 index: &#34;{indexName}&#34; 4 key: &#34;{key}&#34; 5 appID: &#34;{appID}&#34; 6--- 三、生成algolia.json
 网站根目录下运行： hugo-algolia -s，即可生成 {site}/public/algolia.json，同时该数据也同步到了algolia账户下，可以去官网查看。
 四、前往algolia的indices进行搜索类型的设置
 可以选择按tag，category，content等内容进行搜索，并指定优先级。
 方法二：通过GithubAction的方式 这里不通过插件而是通过hugo定制化地生成algolia.json，然后通过GithubAction在每次push时上传数据。
 个人更推荐这样做，更好定制化且方便。同时上面方法一有个bug，对中文数据好像不支持。
-一、配置algolia输出文件 1 2 3 4 5 6 7 8 9 10 outputs: home: - HTML - RSS - Algolia outputFormats: Algolia: mediaType: application/json baseName: algolia isPlainText: true 二、生成algolia.json 编辑 {site}/themes/layouts/_default/list.algolia.json 如下：
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 [ {{- range $index, $entry := ." />
+一、配置algolia输出文件 1outputs: 2home: 3 - HTML 4 - RSS 5 - Algolia 6outputFormats: 7Algolia: 8 mediaType: application/json 9 baseName: algolia 10 isPlainText: true 二、生成algolia.json 编辑 {site}/themes/layouts/_default/list.algolia.json 如下：
+1[ 2 {{- range $index, $entry := .Site.RegularPages }} 3 {{- if $index }}, {{ end }} 4 { 5 &#34;objectID&#34;: &#34;{{ ." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/2022/07/hugo-adds-onsite-search-function-through-algolia/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-07-20T23:46:01+08:00" />
@@ -34,21 +34,21 @@
 数据生成以及上传Algolia 方法一：通过hugo-algolia插件的方式 一、下载hugo-algolia： npm install -g hugo-algolia
 二、编写config.yaml
 网站根目录下创建config.yaml，编写参数如下：
-1 2 3 4 5 6 --- algolia: index: &#34;{indexName}&#34; key: &#34;{key}&#34; appID: &#34;{appID}&#34; --- 三、生成algolia.json
+1--- 2algolia: 3 index: &#34;{indexName}&#34; 4 key: &#34;{key}&#34; 5 appID: &#34;{appID}&#34; 6--- 三、生成algolia.json
 网站根目录下运行： hugo-algolia -s，即可生成 {site}/public/algolia.json，同时该数据也同步到了algolia账户下，可以去官网查看。
 四、前往algolia的indices进行搜索类型的设置
 可以选择按tag，category，content等内容进行搜索，并指定优先级。
 方法二：通过GithubAction的方式 这里不通过插件而是通过hugo定制化地生成algolia.json，然后通过GithubAction在每次push时上传数据。
 个人更推荐这样做，更好定制化且方便。同时上面方法一有个bug，对中文数据好像不支持。
-一、配置algolia输出文件 1 2 3 4 5 6 7 8 9 10 outputs: home: - HTML - RSS - Algolia outputFormats: Algolia: mediaType: application/json baseName: algolia isPlainText: true 二、生成algolia.json 编辑 {site}/themes/layouts/_default/list.algolia.json 如下：
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 [ {{- range $index, $entry := ."/>
+一、配置algolia输出文件 1outputs: 2home: 3 - HTML 4 - RSS 5 - Algolia 6outputFormats: 7Algolia: 8 mediaType: application/json 9 baseName: algolia 10 isPlainText: true 二、生成algolia.json 编辑 {site}/themes/layouts/_default/list.algolia.json 如下：
+1[ 2 {{- range $index, $entry := .Site.RegularPages }} 3 {{- if $index }}, {{ end }} 4 { 5 &#34;objectID&#34;: &#34;{{ ."/>
 
   
   
   
   
   
-  <link rel="stylesheet" href="/css/styles.d8d1e5ac73f5bd72b0e6919356fcf7f12c9dd5a80e4788cae09111cc3678f69a4294b39d4b852dd69cc393c73ac3d8b6c05c8df3569d49d36331b7f39cfea8d1.css" integrity="sha512-2NHlrHP1vXKw5pGTVvz38Syd1agOR4jK4JERzDZ49ppClLOdS4Ut1pzDk8c6w9i2wFyN81adSdNjMbfznP6o0Q==">
+  <link rel="stylesheet" href="/css/styles.b6e7dac395bc81c65ab67a0be932cbd03925f5afb48f9c825ead224a41084a4a8289db621f5b2236149a32799ae71f4962b1d2531d209f51d8b88cdffaa1877e.css" integrity="sha512-tufaw5W8gcZatnoL6TLL0Dkl9a&#43;0j5yCXq0iSkEISkqCidtiH1siNhSaMnma5x9JYrHSUx0gn1HYuIzf&#43;qGHfg==">
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
@@ -165,7 +165,7 @@
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f07%2fhugo-adds-onsite-search-function-through-algolia%2f&name=Hugo%20%e9%80%9a%e8%bf%87%20Algolia%20%e6%b7%bb%e5%8a%a0%e7%ab%99%e5%86%85%e6%90%9c%e7%b4%a2%e5%8a%9f%e8%83%bd&description=%e6%b3%a8%e5%86%8c%e8%b4%a6%e5%8f%b7%e5%b9%b6%e5%88%9b%e5%bb%baIndex%20%e5%ae%98%e7%bd%91%e9%93%be%e6%8e%a5%ef%bc%9aAlgolia%ef%bc%8c%e6%b3%a8%e5%86%8c%e5%ae%8c%e6%88%90%e5%90%8e%e4%bf%9d%e5%ad%98%e5%a5%bdApiID%e5%92%8cApiKey%e3%80%82%0a%e6%8e%a5%e7%9d%80%ef%bc%8c%e5%88%9b%e5%bb%ba%e4%b8%80%e4%b8%aaIndex%ef%bc%8c%e4%bf%9d%e5%ad%98%e5%a5%bdIndex%e7%9a%84%e5%90%8d%e7%a7%b0%e3%80%82%0a%e6%95%b0%e6%8d%ae%e7%94%9f%e6%88%90%e4%bb%a5%e5%8f%8a%e4%b8%8a%e4%bc%a0Algolia%20%e6%96%b9%e6%b3%95%e4%b8%80%ef%bc%9a%e9%80%9a%e8%bf%87hugo-algolia%e6%8f%92%e4%bb%b6%e7%9a%84%e6%96%b9%e5%bc%8f%20%e4%b8%80%e3%80%81%e4%b8%8b%e8%bd%bdhugo-algolia%ef%bc%9a%20npm%20install%20-g%20hugo-algolia%0a%e4%ba%8c%e3%80%81%e7%bc%96%e5%86%99config.yaml%0a%e7%bd%91%e7%ab%99%e6%a0%b9%e7%9b%ae%e5%bd%95%e4%b8%8b%e5%88%9b%e5%bb%baconfig.yaml%ef%bc%8c%e7%bc%96%e5%86%99%e5%8f%82%e6%95%b0%e5%a6%82%e4%b8%8b%ef%bc%9a%0a1%202%203%204%205%206%20---%20algolia%3a%20index%3a%20%26%2334%3b%7bindexName%7d%26%2334%3b%20key%3a%20%26%2334%3b%7bkey%7d%26%2334%3b%20appID%3a%20%26%2334%3b%7bappID%7d%26%2334%3b%20---%20%e4%b8%89%e3%80%81%e7%94%9f%e6%88%90algolia.json%0a%e7%bd%91%e7%ab%99%e6%a0%b9%e7%9b%ae%e5%bd%95%e4%b8%8b%e8%bf%90%e8%a1%8c%ef%bc%9a%20hugo-algolia%20-s%ef%bc%8c%e5%8d%b3%e5%8f%af%e7%94%9f%e6%88%90%20%7bsite%7d%2fpublic%2falgolia.json%ef%bc%8c%e5%90%8c%e6%97%b6%e8%af%a5%e6%95%b0%e6%8d%ae%e4%b9%9f%e5%90%8c%e6%ad%a5%e5%88%b0%e4%ba%86algolia%e8%b4%a6%e6%88%b7%e4%b8%8b%ef%bc%8c%e5%8f%af%e4%bb%a5%e5%8e%bb%e5%ae%98%e7%bd%91%e6%9f%a5%e7%9c%8b%e3%80%82%0a%e5%9b%9b%e3%80%81%e5%89%8d%e5%be%80algolia%e7%9a%84indices%e8%bf%9b%e8%a1%8c%e6%90%9c%e7%b4%a2%e7%b1%bb%e5%9e%8b%e7%9a%84%e8%ae%be%e7%bd%ae%0a%e5%8f%af%e4%bb%a5%e9%80%89%e6%8b%a9%e6%8c%89tag%ef%bc%8ccategory%ef%bc%8ccontent%e7%ad%89%e5%86%85%e5%ae%b9%e8%bf%9b%e8%a1%8c%e6%90%9c%e7%b4%a2%ef%bc%8c%e5%b9%b6%e6%8c%87%e5%ae%9a%e4%bc%98%e5%85%88%e7%ba%a7%e3%80%82%0a%e6%96%b9%e6%b3%95%e4%ba%8c%ef%bc%9a%e9%80%9a%e8%bf%87GithubAction%e7%9a%84%e6%96%b9%e5%bc%8f%20%e8%bf%99%e9%87%8c%e4%b8%8d%e9%80%9a%e8%bf%87%e6%8f%92%e4%bb%b6%e8%80%8c%e6%98%af%e9%80%9a%e8%bf%87hugo%e5%ae%9a%e5%88%b6%e5%8c%96%e5%9c%b0%e7%94%9f%e6%88%90algolia.json%ef%bc%8c%e7%84%b6%e5%90%8e%e9%80%9a%e8%bf%87GithubAction%e5%9c%a8%e6%af%8f%e6%ac%a1push%e6%97%b6%e4%b8%8a%e4%bc%a0%e6%95%b0%e6%8d%ae%e3%80%82%0a%e4%b8%aa%e4%ba%ba%e6%9b%b4%e6%8e%a8%e8%8d%90%e8%bf%99%e6%a0%b7%e5%81%9a%ef%bc%8c%e6%9b%b4%e5%a5%bd%e5%ae%9a%e5%88%b6%e5%8c%96%e4%b8%94%e6%96%b9%e4%be%bf%e3%80%82%e5%90%8c%e6%97%b6%e4%b8%8a%e9%9d%a2%e6%96%b9%e6%b3%95%e4%b8%80%e6%9c%89%e4%b8%aabug%ef%bc%8c%e5%af%b9%e4%b8%ad%e6%96%87%e6%95%b0%e6%8d%ae%e5%a5%bd%e5%83%8f%e4%b8%8d%e6%94%af%e6%8c%81%e3%80%82%0a%e4%b8%80%e3%80%81%e9%85%8d%e7%bd%aealgolia%e8%be%93%e5%87%ba%e6%96%87%e4%bb%b6%201%202%203%204%205%206%207%208%209%2010%20outputs%3a%20home%3a%20-%20HTML%20-%20RSS%20-%20Algolia%20outputFormats%3a%20Algolia%3a%20mediaType%3a%20application%2fjson%20baseName%3a%20algolia%20isPlainText%3a%20true%20%e4%ba%8c%e3%80%81%e7%94%9f%e6%88%90algolia.json%20%e7%bc%96%e8%be%91%20%7bsite%7d%2fthemes%2flayouts%2f_default%2flist.algolia.json%20%e5%a6%82%e4%b8%8b%ef%bc%9a%0a1%202%203%204%205%206%207%208%209%2010%2011%2012%2013%2014%2015%20%5b%20%7b%7b-%20range%20%24index%2c%20%24entry%20%3a%3d%20." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f07%2fhugo-adds-onsite-search-function-through-algolia%2f&name=Hugo%20%e9%80%9a%e8%bf%87%20Algolia%20%e6%b7%bb%e5%8a%a0%e7%ab%99%e5%86%85%e6%90%9c%e7%b4%a2%e5%8a%9f%e8%83%bd&description=%e6%b3%a8%e5%86%8c%e8%b4%a6%e5%8f%b7%e5%b9%b6%e5%88%9b%e5%bb%baIndex%20%e5%ae%98%e7%bd%91%e9%93%be%e6%8e%a5%ef%bc%9aAlgolia%ef%bc%8c%e6%b3%a8%e5%86%8c%e5%ae%8c%e6%88%90%e5%90%8e%e4%bf%9d%e5%ad%98%e5%a5%bdApiID%e5%92%8cApiKey%e3%80%82%0a%e6%8e%a5%e7%9d%80%ef%bc%8c%e5%88%9b%e5%bb%ba%e4%b8%80%e4%b8%aaIndex%ef%bc%8c%e4%bf%9d%e5%ad%98%e5%a5%bdIndex%e7%9a%84%e5%90%8d%e7%a7%b0%e3%80%82%0a%e6%95%b0%e6%8d%ae%e7%94%9f%e6%88%90%e4%bb%a5%e5%8f%8a%e4%b8%8a%e4%bc%a0Algolia%20%e6%96%b9%e6%b3%95%e4%b8%80%ef%bc%9a%e9%80%9a%e8%bf%87hugo-algolia%e6%8f%92%e4%bb%b6%e7%9a%84%e6%96%b9%e5%bc%8f%20%e4%b8%80%e3%80%81%e4%b8%8b%e8%bd%bdhugo-algolia%ef%bc%9a%20npm%20install%20-g%20hugo-algolia%0a%e4%ba%8c%e3%80%81%e7%bc%96%e5%86%99config.yaml%0a%e7%bd%91%e7%ab%99%e6%a0%b9%e7%9b%ae%e5%bd%95%e4%b8%8b%e5%88%9b%e5%bb%baconfig.yaml%ef%bc%8c%e7%bc%96%e5%86%99%e5%8f%82%e6%95%b0%e5%a6%82%e4%b8%8b%ef%bc%9a%0a1---%202algolia%3a%203%20index%3a%20%26%2334%3b%7bindexName%7d%26%2334%3b%204%20key%3a%20%26%2334%3b%7bkey%7d%26%2334%3b%205%20appID%3a%20%26%2334%3b%7bappID%7d%26%2334%3b%206---%20%e4%b8%89%e3%80%81%e7%94%9f%e6%88%90algolia.json%0a%e7%bd%91%e7%ab%99%e6%a0%b9%e7%9b%ae%e5%bd%95%e4%b8%8b%e8%bf%90%e8%a1%8c%ef%bc%9a%20hugo-algolia%20-s%ef%bc%8c%e5%8d%b3%e5%8f%af%e7%94%9f%e6%88%90%20%7bsite%7d%2fpublic%2falgolia.json%ef%bc%8c%e5%90%8c%e6%97%b6%e8%af%a5%e6%95%b0%e6%8d%ae%e4%b9%9f%e5%90%8c%e6%ad%a5%e5%88%b0%e4%ba%86algolia%e8%b4%a6%e6%88%b7%e4%b8%8b%ef%bc%8c%e5%8f%af%e4%bb%a5%e5%8e%bb%e5%ae%98%e7%bd%91%e6%9f%a5%e7%9c%8b%e3%80%82%0a%e5%9b%9b%e3%80%81%e5%89%8d%e5%be%80algolia%e7%9a%84indices%e8%bf%9b%e8%a1%8c%e6%90%9c%e7%b4%a2%e7%b1%bb%e5%9e%8b%e7%9a%84%e8%ae%be%e7%bd%ae%0a%e5%8f%af%e4%bb%a5%e9%80%89%e6%8b%a9%e6%8c%89tag%ef%bc%8ccategory%ef%bc%8ccontent%e7%ad%89%e5%86%85%e5%ae%b9%e8%bf%9b%e8%a1%8c%e6%90%9c%e7%b4%a2%ef%bc%8c%e5%b9%b6%e6%8c%87%e5%ae%9a%e4%bc%98%e5%85%88%e7%ba%a7%e3%80%82%0a%e6%96%b9%e6%b3%95%e4%ba%8c%ef%bc%9a%e9%80%9a%e8%bf%87GithubAction%e7%9a%84%e6%96%b9%e5%bc%8f%20%e8%bf%99%e9%87%8c%e4%b8%8d%e9%80%9a%e8%bf%87%e6%8f%92%e4%bb%b6%e8%80%8c%e6%98%af%e9%80%9a%e8%bf%87hugo%e5%ae%9a%e5%88%b6%e5%8c%96%e5%9c%b0%e7%94%9f%e6%88%90algolia.json%ef%bc%8c%e7%84%b6%e5%90%8e%e9%80%9a%e8%bf%87GithubAction%e5%9c%a8%e6%af%8f%e6%ac%a1push%e6%97%b6%e4%b8%8a%e4%bc%a0%e6%95%b0%e6%8d%ae%e3%80%82%0a%e4%b8%aa%e4%ba%ba%e6%9b%b4%e6%8e%a8%e8%8d%90%e8%bf%99%e6%a0%b7%e5%81%9a%ef%bc%8c%e6%9b%b4%e5%a5%bd%e5%ae%9a%e5%88%b6%e5%8c%96%e4%b8%94%e6%96%b9%e4%be%bf%e3%80%82%e5%90%8c%e6%97%b6%e4%b8%8a%e9%9d%a2%e6%96%b9%e6%b3%95%e4%b8%80%e6%9c%89%e4%b8%aabug%ef%bc%8c%e5%af%b9%e4%b8%ad%e6%96%87%e6%95%b0%e6%8d%ae%e5%a5%bd%e5%83%8f%e4%b8%8d%e6%94%af%e6%8c%81%e3%80%82%0a%e4%b8%80%e3%80%81%e9%85%8d%e7%bd%aealgolia%e8%be%93%e5%87%ba%e6%96%87%e4%bb%b6%201outputs%3a%202home%3a%203%20-%20HTML%204%20-%20RSS%205%20-%20Algolia%206outputFormats%3a%207Algolia%3a%208%20mediaType%3a%20application%2fjson%209%20baseName%3a%20algolia%2010%20isPlainText%3a%20true%20%e4%ba%8c%e3%80%81%e7%94%9f%e6%88%90algolia.json%20%e7%bc%96%e8%be%91%20%7bsite%7d%2fthemes%2flayouts%2f_default%2flist.algolia.json%20%e5%a6%82%e4%b8%8b%ef%bc%9a%0a1%5b%202%20%7b%7b-%20range%20%24index%2c%20%24entry%20%3a%3d%20.Site.RegularPages%20%7d%7d%203%20%7b%7b-%20if%20%24index%20%7d%7d%2c%20%7b%7b%20end%20%7d%7d%204%20%7b%205%20%26%2334%3bobjectID%26%2334%3b%3a%20%26%2334%3b%7b%7b%20." aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -224,7 +224,7 @@
         <div class="article-read-time">
           <i class="far fa-clock"></i>
           
-          6 minute read
+          5 minute read
         </div>
         
         
@@ -260,25 +260,13 @@
 <p>一、下载hugo-algolia： <code>npm install -g hugo-algolia</code></p>
 <p>二、编写config.yaml</p>
 <p>网站根目录下创建config.yaml，编写参数如下：</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>---
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">algolia</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">index</span>: <span style="color:#f1fa8c">&#34;{indexName}&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">key</span>: <span style="color:#f1fa8c">&#34;{key}&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">appID</span>: <span style="color:#f1fa8c">&#34;{appID}&#34;</span>
-</span></span><span style="display:flex;"><span>---
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>三、生成algolia.json</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>---
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#ff79c6">algolia</span>:
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>    <span style="color:#ff79c6">index</span>: <span style="color:#f1fa8c">&#34;{indexName}&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>    <span style="color:#ff79c6">key</span>: <span style="color:#f1fa8c">&#34;{key}&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>    <span style="color:#ff79c6">appID</span>: <span style="color:#f1fa8c">&#34;{appID}&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>---
+</span></span></code></pre></div><p>三、生成algolia.json</p>
 <p>网站根目录下运行： <code>hugo-algolia -s</code>，即可生成 <code>{site}/public/algolia.json</code>，同时该数据也同步到了algolia账户下，可以去官网查看。</p>
 <p>四、前往algolia的indices进行搜索类型的设置</p>
 <p>可以选择按tag，category，content等内容进行搜索，并指定优先级。</p>
@@ -286,218 +274,102 @@
 <p>这里不通过插件而是通过hugo定制化地生成algolia.json，然后通过GithubAction在每次push时上传数据。</p>
 <p>个人更推荐这样做，更好定制化且方便。同时上面方法一有个bug，对中文数据好像不支持。</p>
 <h4 id="一配置algolia输出文件">一、配置algolia输出文件</h4>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#ff79c6">outputs</span>:
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">home</span>:
-</span></span><span style="display:flex;"><span>    - HTML
-</span></span><span style="display:flex;"><span>    - RSS
-</span></span><span style="display:flex;"><span>    - Algolia
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">outputFormats</span>:
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">Algolia</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">mediaType</span>: application/json
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">baseName</span>: algolia
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">isPlainText</span>: <span style="color:#ff79c6">true</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h4 id="二生成algoliajson">二、生成algolia.json</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#ff79c6">outputs</span>:
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#ff79c6">home</span>:
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>    - HTML
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>    - RSS
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>    - Algolia
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span><span style="color:#ff79c6">outputFormats</span>:
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span><span style="color:#ff79c6">Algolia</span>:
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>    <span style="color:#ff79c6">mediaType</span>: application/json
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>    <span style="color:#ff79c6">baseName</span>: algolia
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>    <span style="color:#ff79c6">isPlainText</span>: <span style="color:#ff79c6">true</span>
+</span></span></code></pre></div><h4 id="二生成algoliajson">二、生成algolia.json</h4>
 <p>编辑 <code>{site}/themes/layouts/_default/list.algolia.json</code> 如下：</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>[
-</span></span><span style="display:flex;"><span>    {{- range $index, $entry := .Site.RegularPages }}
-</span></span><span style="display:flex;"><span>    {{- if $index }}, {{ end }}
-</span></span><span style="display:flex;"><span>        {
-</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;objectID&#34;</span>: <span style="color:#f1fa8c">&#34;{{ .File.TranslationBaseName }}&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;url&#34;</span>: {{ .Permalink | jsonify }},
-</span></span><span style="display:flex;"><span>        <span style="color:#f1fa8c">&#34;title&#34;</span>: {{ .Title | jsonify }},
-</span></span><span style="display:flex;"><span>        <span style="color:#f1fa8c">&#34;date&#34;</span>: {{ .PublishDate | jsonify }},
-</span></span><span style="display:flex;"><span>        <span style="color:#f1fa8c">&#34;tags&#34;</span>: {{ .Params.tags | jsonify }},
-</span></span><span style="display:flex;"><span>        <span style="color:#f1fa8c">&#34;categories&#34;</span>: {{.Params.categories | jsonify}},
-</span></span><span style="display:flex;"><span>        <span style="color:#f1fa8c">&#34;summary&#34;</span>: {{ .Summary | jsonify }},
-</span></span><span style="display:flex;"><span>        <span style="color:#f1fa8c">&#34;content&#34;</span>: {{ .Plain | jsonify }}
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>    {{- end }}
-</span></span><span style="display:flex;"><span>]
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>这里可以自行查阅文档定制化查询数据。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>[
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>    {{- range $index, $entry := .Site.RegularPages }}
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>    {{- if $index }}, {{ end }}
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>        {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>        <span style="color:#ff79c6">&#34;objectID&#34;</span>: <span style="color:#f1fa8c">&#34;{{ .File.TranslationBaseName }}&#34;</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>        <span style="color:#ff79c6">&#34;url&#34;</span>: {{ .Permalink | jsonify }},
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>        <span style="color:#f1fa8c">&#34;title&#34;</span>: {{ .Title | jsonify }},
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>        <span style="color:#f1fa8c">&#34;date&#34;</span>: {{ .PublishDate | jsonify }},
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>        <span style="color:#f1fa8c">&#34;tags&#34;</span>: {{ .Params.tags | jsonify }},
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>        <span style="color:#f1fa8c">&#34;categories&#34;</span>: {{.Params.categories | jsonify}},
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>        <span style="color:#f1fa8c">&#34;summary&#34;</span>: {{ .Summary | jsonify }},
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>        <span style="color:#f1fa8c">&#34;content&#34;</span>: {{ .Plain | jsonify }}
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>    {{- end }}
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>]
+</span></span></code></pre></div><p>这里可以自行查阅文档定制化查询数据。</p>
 <p>接着，在{site}下通过hugo命令即可在public下生成algolia.json文件。</p>
 <h4 id="三在githubaction新建工作流">三、在GithubAction新建工作流：</h4>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#ff79c6">name</span>: Algolia Upload Records
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">on</span>:
-</span></span><span style="display:flex;"><span>[push] <span style="color:#6272a4"># 推送时执行</span>
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">jobs</span>:
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">algolia</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">runs-on</span>: ubuntu-latest
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">steps</span>:
-</span></span><span style="display:flex;"><span>    - <span style="color:#ff79c6">name</span>: Checkout
-</span></span><span style="display:flex;"><span>        <span style="color:#6272a4"># 获取代码 Checkout</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">uses</span>: actions/checkout@v2
-</span></span><span style="display:flex;"><span>    - <span style="color:#ff79c6">name</span>: Upload Records
-</span></span><span style="display:flex;"><span>        <span style="color:#6272a4"># 使用 Action</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">uses</span>: iChochy/Algolia-Upload-Records@main
-</span></span><span style="display:flex;"><span>        <span style="color:#6272a4"># 设置环境变量</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">env</span>:
-</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">APPLICATION_ID</span>: ${{secrets.ALGOLIA_APPID}} <span style="color:#6272a4"># appID</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">ADMIN_API_KEY</span>: ${{secrets.ALGOLIA_KEY}} <span style="color:#6272a4"># key</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">INDEX_NAME</span>: ${{secrets.ALGOLIA_INDEX}} <span style="color:#6272a4"># index</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">FILE_PATH</span>: algolia.json
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>注意添加好对应环境变量。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#ff79c6">name</span>: Algolia Upload Records
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#ff79c6">on</span>:
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>[push] <span style="color:#6272a4"># 推送时执行</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span><span style="color:#ff79c6">jobs</span>:
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span><span style="color:#ff79c6">algolia</span>:
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>    <span style="color:#ff79c6">runs-on</span>: ubuntu-latest
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>    <span style="color:#ff79c6">steps</span>:
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>    - <span style="color:#ff79c6">name</span>: Checkout
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>        <span style="color:#6272a4"># 获取代码 Checkout</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>        <span style="color:#ff79c6">uses</span>: actions/checkout@v2
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>    - <span style="color:#ff79c6">name</span>: Upload Records
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>        <span style="color:#6272a4"># 使用 Action</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>        <span style="color:#ff79c6">uses</span>: iChochy/Algolia-Upload-Records@main
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>        <span style="color:#6272a4"># 设置环境变量</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>        <span style="color:#ff79c6">env</span>:
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>        <span style="color:#ff79c6">APPLICATION_ID</span>: ${{secrets.ALGOLIA_APPID}} <span style="color:#6272a4"># appID</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>        <span style="color:#ff79c6">ADMIN_API_KEY</span>: ${{secrets.ALGOLIA_KEY}} <span style="color:#6272a4"># key</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>        <span style="color:#ff79c6">INDEX_NAME</span>: ${{secrets.ALGOLIA_INDEX}} <span style="color:#6272a4"># index</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>        <span style="color:#ff79c6">FILE_PATH</span>: algolia.json
+</span></span></code></pre></div><p>注意添加好对应环境变量。</p>
 <p>之后，每次push都会自动将algolia.json推送到algolia数据库啦。</p>
 <h4 id="四关于搜索类型的设置">四、关于搜索类型的设置</h4>
 <p>前往algolia的indices进行搜索类型的设置，可以选择按tag，category，content等内容进行搜索，并指定优先级。</p>
 <h2 id="定制搜索框">定制搜索框</h2>
 <h3 id="定制searchhtml">定制search.html</h3>
 <p>在<code>{site}/themes/{theme}/layouts/partials</code>下创建search.html：</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;modalSearch&#34;</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;modal fade&#34;</span> <span style="color:#50fa7b">role</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;dialog&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>    &lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;modal-dialog&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>        &lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;modal-content&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>            &lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;modal-body&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>                &lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;aa-input-container&#34;</span> <span style="color:#50fa7b">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;aa-input-container&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>                    &lt;<span style="color:#ff79c6">input</span> <span style="color:#50fa7b">type</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;search&#34;</span> <span style="color:#50fa7b">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;aa-search-input&#34;</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;aa-input-search&#34;</span> <span style="color:#50fa7b">placeholder</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;write here...&#34;</span> <span style="color:#50fa7b">name</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;search&#34;</span> <span style="color:#50fa7b">autocomplete</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;off&#34;</span> /&gt;
-</span></span><span style="display:flex;"><span>                &lt;/<span style="color:#ff79c6">div</span>&gt;
-</span></span><span style="display:flex;"><span>            &lt;/<span style="color:#ff79c6">div</span>&gt;
-</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#ff79c6">div</span>&gt;
-</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#ff79c6">div</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#ff79c6">div</span>&gt;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#ff79c6">script</span> <span style="color:#50fa7b">src</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;{{ &#34;</span><span style="color:#50fa7b">https:</span>//<span style="color:#50fa7b">res</span>.<span style="color:#50fa7b">cloudinary</span>.<span style="color:#50fa7b">com</span>/<span style="color:#50fa7b">jimmysong</span>/<span style="color:#50fa7b">raw</span>/<span style="color:#50fa7b">upload</span>/<span style="color:#50fa7b">rootsongjc-hugo</span>/<span style="color:#50fa7b">algoliasearch</span>.<span style="color:#50fa7b">min</span>.<span style="color:#50fa7b">js</span>&#34; | <span style="color:#50fa7b">absURL</span> }}&#34;&gt;&lt;/<span style="color:#ff79c6">script</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#ff79c6">script</span> <span style="color:#50fa7b">src</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;{{ &#34;</span><span style="color:#50fa7b">https:</span>//<span style="color:#50fa7b">res</span>.<span style="color:#50fa7b">cloudinary</span>.<span style="color:#50fa7b">com</span>/<span style="color:#50fa7b">jimmysong</span>/<span style="color:#50fa7b">raw</span>/<span style="color:#50fa7b">upload</span>/<span style="color:#50fa7b">rootsongjc-hugo</span>/<span style="color:#50fa7b">autocomplete</span>.<span style="color:#50fa7b">min</span>.<span style="color:#50fa7b">js</span>&#34; | <span style="color:#50fa7b">absURL</span> }}&#34;&gt;&lt;/<span style="color:#ff79c6">script</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#ff79c6">script</span>&gt;
-</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">var</span> client <span style="color:#ff79c6">=</span> algoliasearch(<span style="color:#f1fa8c">&#34;{appID}&#34;</span>, <span style="color:#f1fa8c">&#34;{key}&#34;</span>);
-</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">var</span> index <span style="color:#ff79c6">=</span> client.initIndex(<span style="color:#f1fa8c">&#39;{indexName}&#39;</span>);
-</span></span><span style="display:flex;"><span>autocomplete(<span style="color:#f1fa8c">&#39;#aa-search-input&#39;</span>,
-</span></span><span style="display:flex;"><span>{ hint<span style="color:#ff79c6">:</span> <span style="color:#ff79c6">false</span>}, {
-</span></span><span style="display:flex;"><span>    source<span style="color:#ff79c6">:</span> autocomplete.sources.hits(index, {hitsPerPage<span style="color:#ff79c6">:</span> <span style="color:#bd93f9">8</span>}),
-</span></span><span style="display:flex;"><span>    displayKey<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;name&#39;</span>,
-</span></span><span style="display:flex;"><span>    templates<span style="color:#ff79c6">:</span> {
-</span></span><span style="display:flex;"><span>        suggestion<span style="color:#ff79c6">:</span> <span style="color:#8be9fd;font-style:italic">function</span>(suggestion) {
-</span></span><span style="display:flex;"><span>            <span style="color:#8be9fd;font-style:italic">var</span> des_url <span style="color:#ff79c6">=</span> suggestion.uri;
-</span></span><span style="display:flex;"><span>            <span style="color:#8be9fd;font-style:italic">var</span> reg <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">/[《》（）]/g</span>; <span style="color:#6272a4">// 转化一些中文字符，可以自己指定需要的
-</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>            des_url <span style="color:#ff79c6">=</span> des_url.toLowerCase().replace(reg, <span style="color:#f1fa8c">&#34;&#34;</span>); <span style="color:#6272a4">// 转为小写
-</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>            <span style="color:#ff79c6">return</span> <span style="color:#f1fa8c">&#39;&lt;span&gt;&#39;</span> <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#39;&lt;a href=&#34;&#39;</span> <span style="color:#ff79c6">+</span> des_url <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#39;&#34;&#34;&gt;&#39;</span> <span style="color:#ff79c6">+</span>
-</span></span><span style="display:flex;"><span>            suggestion._highlightResult.title.value <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#39;&lt;/a&gt;&lt;/span&gt;&#39;</span>;
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>});
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#ff79c6">script</span>&gt;
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>其中注意代码片段：</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">var</span> client <span style="color:#ff79c6">=</span> algoliasearch(<span style="color:#f1fa8c">&#34;{appID}&#34;</span>, <span style="color:#f1fa8c">&#34;{key}&#34;</span>);
-</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">var</span> index <span style="color:#ff79c6">=</span> client.initIndex(<span style="color:#f1fa8c">&#39;{indexName}&#39;</span>);
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>自己填入自己的appID，key，index名称即可。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>&lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;modalSearch&#34;</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;modal fade&#34;</span> <span style="color:#50fa7b">role</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;dialog&#34;</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>    &lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;modal-dialog&#34;</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>        &lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;modal-content&#34;</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>            &lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;modal-body&#34;</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>                &lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;aa-input-container&#34;</span> <span style="color:#50fa7b">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;aa-input-container&#34;</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>                    &lt;<span style="color:#ff79c6">input</span> <span style="color:#50fa7b">type</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;search&#34;</span> <span style="color:#50fa7b">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;aa-search-input&#34;</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;aa-input-search&#34;</span> <span style="color:#50fa7b">placeholder</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;write here...&#34;</span> <span style="color:#50fa7b">name</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;search&#34;</span> <span style="color:#50fa7b">autocomplete</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;off&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>                &lt;/<span style="color:#ff79c6">div</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>            &lt;/<span style="color:#ff79c6">div</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>        &lt;/<span style="color:#ff79c6">div</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>    &lt;/<span style="color:#ff79c6">div</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>&lt;/<span style="color:#ff79c6">div</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>&lt;<span style="color:#ff79c6">script</span> <span style="color:#50fa7b">src</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;{{ &#34;</span><span style="color:#50fa7b">https:</span>//<span style="color:#50fa7b">res</span>.<span style="color:#50fa7b">cloudinary</span>.<span style="color:#50fa7b">com</span>/<span style="color:#50fa7b">jimmysong</span>/<span style="color:#50fa7b">raw</span>/<span style="color:#50fa7b">upload</span>/<span style="color:#50fa7b">rootsongjc-hugo</span>/<span style="color:#50fa7b">algoliasearch</span>.<span style="color:#50fa7b">min</span>.<span style="color:#50fa7b">js</span>&#34; | <span style="color:#50fa7b">absURL</span> }}&#34;&gt;&lt;/<span style="color:#ff79c6">script</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>&lt;<span style="color:#ff79c6">script</span> <span style="color:#50fa7b">src</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;{{ &#34;</span><span style="color:#50fa7b">https:</span>//<span style="color:#50fa7b">res</span>.<span style="color:#50fa7b">cloudinary</span>.<span style="color:#50fa7b">com</span>/<span style="color:#50fa7b">jimmysong</span>/<span style="color:#50fa7b">raw</span>/<span style="color:#50fa7b">upload</span>/<span style="color:#50fa7b">rootsongjc-hugo</span>/<span style="color:#50fa7b">autocomplete</span>.<span style="color:#50fa7b">min</span>.<span style="color:#50fa7b">js</span>&#34; | <span style="color:#50fa7b">absURL</span> }}&#34;&gt;&lt;/<span style="color:#ff79c6">script</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>&lt;<span style="color:#ff79c6">script</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span><span style="color:#8be9fd;font-style:italic">var</span> client <span style="color:#ff79c6">=</span> algoliasearch(<span style="color:#f1fa8c">&#34;{appID}&#34;</span>, <span style="color:#f1fa8c">&#34;{key}&#34;</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span><span style="color:#8be9fd;font-style:italic">var</span> index <span style="color:#ff79c6">=</span> client.initIndex(<span style="color:#f1fa8c">&#39;{indexName}&#39;</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>autocomplete(<span style="color:#f1fa8c">&#39;#aa-search-input&#39;</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>{ hint<span style="color:#ff79c6">:</span> <span style="color:#ff79c6">false</span>}, {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>    source<span style="color:#ff79c6">:</span> autocomplete.sources.hits(index, {hitsPerPage<span style="color:#ff79c6">:</span> <span style="color:#bd93f9">8</span>}),
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>    displayKey<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;name&#39;</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>    templates<span style="color:#ff79c6">:</span> {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span>        suggestion<span style="color:#ff79c6">:</span> <span style="color:#8be9fd;font-style:italic">function</span>(suggestion) {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span>            <span style="color:#8be9fd;font-style:italic">var</span> des_url <span style="color:#ff79c6">=</span> suggestion.uri;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span>            <span style="color:#8be9fd;font-style:italic">var</span> reg <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">/[《》（）]/g</span>; <span style="color:#6272a4">// 转化一些中文字符，可以自己指定需要的
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span><span style="color:#6272a4"></span>            des_url <span style="color:#ff79c6">=</span> des_url.toLowerCase().replace(reg, <span style="color:#f1fa8c">&#34;&#34;</span>); <span style="color:#6272a4">// 转为小写
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span><span style="color:#6272a4"></span>            <span style="color:#ff79c6">return</span> <span style="color:#f1fa8c">&#39;&lt;span&gt;&#39;</span> <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#39;&lt;a href=&#34;&#39;</span> <span style="color:#ff79c6">+</span> des_url <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#39;&#34;&#34;&gt;&#39;</span> <span style="color:#ff79c6">+</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span>            suggestion._highlightResult.title.value <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#39;&lt;/a&gt;&lt;/span&gt;&#39;</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span><span>        }
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span><span>});
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span><span>&lt;/<span style="color:#ff79c6">script</span>&gt;
+</span></span></code></pre></div><p>其中注意代码片段：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#8be9fd;font-style:italic">var</span> client <span style="color:#ff79c6">=</span> algoliasearch(<span style="color:#f1fa8c">&#34;{appID}&#34;</span>, <span style="color:#f1fa8c">&#34;{key}&#34;</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#8be9fd;font-style:italic">var</span> index <span style="color:#ff79c6">=</span> client.initIndex(<span style="color:#f1fa8c">&#39;{indexName}&#39;</span>);
+</span></span></code></pre></div><p>自己填入自己的appID，key，index名称即可。</p>
 <h3 id="在自己需要的地方放置搜索框">在自己需要的地方放置搜索框</h3>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>&lt;!--搜索文章--&gt;
-</span></span><span style="display:flex;"><span>{{ partial &#34;search.html&#34; . }}
-</span></span></code></pre></td></tr></table>
-</div>
-</div><hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>&lt;!--搜索文章--&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>{{ partial &#34;search.html&#34; . }}
+</span></span></code></pre></div><hr>
 <p><strong>From My Blog: <a href="https://akynazh.site">akynazh</a></strong>.</p>
 <p><strong>Over.</strong></p>
 
@@ -615,7 +487,7 @@
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f07%2fhugo-adds-onsite-search-function-through-algolia%2f&name=Hugo%20%e9%80%9a%e8%bf%87%20Algolia%20%e6%b7%bb%e5%8a%a0%e7%ab%99%e5%86%85%e6%90%9c%e7%b4%a2%e5%8a%9f%e8%83%bd&description=%e6%b3%a8%e5%86%8c%e8%b4%a6%e5%8f%b7%e5%b9%b6%e5%88%9b%e5%bb%baIndex%20%e5%ae%98%e7%bd%91%e9%93%be%e6%8e%a5%ef%bc%9aAlgolia%ef%bc%8c%e6%b3%a8%e5%86%8c%e5%ae%8c%e6%88%90%e5%90%8e%e4%bf%9d%e5%ad%98%e5%a5%bdApiID%e5%92%8cApiKey%e3%80%82%0a%e6%8e%a5%e7%9d%80%ef%bc%8c%e5%88%9b%e5%bb%ba%e4%b8%80%e4%b8%aaIndex%ef%bc%8c%e4%bf%9d%e5%ad%98%e5%a5%bdIndex%e7%9a%84%e5%90%8d%e7%a7%b0%e3%80%82%0a%e6%95%b0%e6%8d%ae%e7%94%9f%e6%88%90%e4%bb%a5%e5%8f%8a%e4%b8%8a%e4%bc%a0Algolia%20%e6%96%b9%e6%b3%95%e4%b8%80%ef%bc%9a%e9%80%9a%e8%bf%87hugo-algolia%e6%8f%92%e4%bb%b6%e7%9a%84%e6%96%b9%e5%bc%8f%20%e4%b8%80%e3%80%81%e4%b8%8b%e8%bd%bdhugo-algolia%ef%bc%9a%20npm%20install%20-g%20hugo-algolia%0a%e4%ba%8c%e3%80%81%e7%bc%96%e5%86%99config.yaml%0a%e7%bd%91%e7%ab%99%e6%a0%b9%e7%9b%ae%e5%bd%95%e4%b8%8b%e5%88%9b%e5%bb%baconfig.yaml%ef%bc%8c%e7%bc%96%e5%86%99%e5%8f%82%e6%95%b0%e5%a6%82%e4%b8%8b%ef%bc%9a%0a1%202%203%204%205%206%20---%20algolia%3a%20index%3a%20%26%2334%3b%7bindexName%7d%26%2334%3b%20key%3a%20%26%2334%3b%7bkey%7d%26%2334%3b%20appID%3a%20%26%2334%3b%7bappID%7d%26%2334%3b%20---%20%e4%b8%89%e3%80%81%e7%94%9f%e6%88%90algolia.json%0a%e7%bd%91%e7%ab%99%e6%a0%b9%e7%9b%ae%e5%bd%95%e4%b8%8b%e8%bf%90%e8%a1%8c%ef%bc%9a%20hugo-algolia%20-s%ef%bc%8c%e5%8d%b3%e5%8f%af%e7%94%9f%e6%88%90%20%7bsite%7d%2fpublic%2falgolia.json%ef%bc%8c%e5%90%8c%e6%97%b6%e8%af%a5%e6%95%b0%e6%8d%ae%e4%b9%9f%e5%90%8c%e6%ad%a5%e5%88%b0%e4%ba%86algolia%e8%b4%a6%e6%88%b7%e4%b8%8b%ef%bc%8c%e5%8f%af%e4%bb%a5%e5%8e%bb%e5%ae%98%e7%bd%91%e6%9f%a5%e7%9c%8b%e3%80%82%0a%e5%9b%9b%e3%80%81%e5%89%8d%e5%be%80algolia%e7%9a%84indices%e8%bf%9b%e8%a1%8c%e6%90%9c%e7%b4%a2%e7%b1%bb%e5%9e%8b%e7%9a%84%e8%ae%be%e7%bd%ae%0a%e5%8f%af%e4%bb%a5%e9%80%89%e6%8b%a9%e6%8c%89tag%ef%bc%8ccategory%ef%bc%8ccontent%e7%ad%89%e5%86%85%e5%ae%b9%e8%bf%9b%e8%a1%8c%e6%90%9c%e7%b4%a2%ef%bc%8c%e5%b9%b6%e6%8c%87%e5%ae%9a%e4%bc%98%e5%85%88%e7%ba%a7%e3%80%82%0a%e6%96%b9%e6%b3%95%e4%ba%8c%ef%bc%9a%e9%80%9a%e8%bf%87GithubAction%e7%9a%84%e6%96%b9%e5%bc%8f%20%e8%bf%99%e9%87%8c%e4%b8%8d%e9%80%9a%e8%bf%87%e6%8f%92%e4%bb%b6%e8%80%8c%e6%98%af%e9%80%9a%e8%bf%87hugo%e5%ae%9a%e5%88%b6%e5%8c%96%e5%9c%b0%e7%94%9f%e6%88%90algolia.json%ef%bc%8c%e7%84%b6%e5%90%8e%e9%80%9a%e8%bf%87GithubAction%e5%9c%a8%e6%af%8f%e6%ac%a1push%e6%97%b6%e4%b8%8a%e4%bc%a0%e6%95%b0%e6%8d%ae%e3%80%82%0a%e4%b8%aa%e4%ba%ba%e6%9b%b4%e6%8e%a8%e8%8d%90%e8%bf%99%e6%a0%b7%e5%81%9a%ef%bc%8c%e6%9b%b4%e5%a5%bd%e5%ae%9a%e5%88%b6%e5%8c%96%e4%b8%94%e6%96%b9%e4%be%bf%e3%80%82%e5%90%8c%e6%97%b6%e4%b8%8a%e9%9d%a2%e6%96%b9%e6%b3%95%e4%b8%80%e6%9c%89%e4%b8%aabug%ef%bc%8c%e5%af%b9%e4%b8%ad%e6%96%87%e6%95%b0%e6%8d%ae%e5%a5%bd%e5%83%8f%e4%b8%8d%e6%94%af%e6%8c%81%e3%80%82%0a%e4%b8%80%e3%80%81%e9%85%8d%e7%bd%aealgolia%e8%be%93%e5%87%ba%e6%96%87%e4%bb%b6%201%202%203%204%205%206%207%208%209%2010%20outputs%3a%20home%3a%20-%20HTML%20-%20RSS%20-%20Algolia%20outputFormats%3a%20Algolia%3a%20mediaType%3a%20application%2fjson%20baseName%3a%20algolia%20isPlainText%3a%20true%20%e4%ba%8c%e3%80%81%e7%94%9f%e6%88%90algolia.json%20%e7%bc%96%e8%be%91%20%7bsite%7d%2fthemes%2flayouts%2f_default%2flist.algolia.json%20%e5%a6%82%e4%b8%8b%ef%bc%9a%0a1%202%203%204%205%206%207%208%209%2010%2011%2012%2013%2014%2015%20%5b%20%7b%7b-%20range%20%24index%2c%20%24entry%20%3a%3d%20." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f07%2fhugo-adds-onsite-search-function-through-algolia%2f&name=Hugo%20%e9%80%9a%e8%bf%87%20Algolia%20%e6%b7%bb%e5%8a%a0%e7%ab%99%e5%86%85%e6%90%9c%e7%b4%a2%e5%8a%9f%e8%83%bd&description=%e6%b3%a8%e5%86%8c%e8%b4%a6%e5%8f%b7%e5%b9%b6%e5%88%9b%e5%bb%baIndex%20%e5%ae%98%e7%bd%91%e9%93%be%e6%8e%a5%ef%bc%9aAlgolia%ef%bc%8c%e6%b3%a8%e5%86%8c%e5%ae%8c%e6%88%90%e5%90%8e%e4%bf%9d%e5%ad%98%e5%a5%bdApiID%e5%92%8cApiKey%e3%80%82%0a%e6%8e%a5%e7%9d%80%ef%bc%8c%e5%88%9b%e5%bb%ba%e4%b8%80%e4%b8%aaIndex%ef%bc%8c%e4%bf%9d%e5%ad%98%e5%a5%bdIndex%e7%9a%84%e5%90%8d%e7%a7%b0%e3%80%82%0a%e6%95%b0%e6%8d%ae%e7%94%9f%e6%88%90%e4%bb%a5%e5%8f%8a%e4%b8%8a%e4%bc%a0Algolia%20%e6%96%b9%e6%b3%95%e4%b8%80%ef%bc%9a%e9%80%9a%e8%bf%87hugo-algolia%e6%8f%92%e4%bb%b6%e7%9a%84%e6%96%b9%e5%bc%8f%20%e4%b8%80%e3%80%81%e4%b8%8b%e8%bd%bdhugo-algolia%ef%bc%9a%20npm%20install%20-g%20hugo-algolia%0a%e4%ba%8c%e3%80%81%e7%bc%96%e5%86%99config.yaml%0a%e7%bd%91%e7%ab%99%e6%a0%b9%e7%9b%ae%e5%bd%95%e4%b8%8b%e5%88%9b%e5%bb%baconfig.yaml%ef%bc%8c%e7%bc%96%e5%86%99%e5%8f%82%e6%95%b0%e5%a6%82%e4%b8%8b%ef%bc%9a%0a1---%202algolia%3a%203%20index%3a%20%26%2334%3b%7bindexName%7d%26%2334%3b%204%20key%3a%20%26%2334%3b%7bkey%7d%26%2334%3b%205%20appID%3a%20%26%2334%3b%7bappID%7d%26%2334%3b%206---%20%e4%b8%89%e3%80%81%e7%94%9f%e6%88%90algolia.json%0a%e7%bd%91%e7%ab%99%e6%a0%b9%e7%9b%ae%e5%bd%95%e4%b8%8b%e8%bf%90%e8%a1%8c%ef%bc%9a%20hugo-algolia%20-s%ef%bc%8c%e5%8d%b3%e5%8f%af%e7%94%9f%e6%88%90%20%7bsite%7d%2fpublic%2falgolia.json%ef%bc%8c%e5%90%8c%e6%97%b6%e8%af%a5%e6%95%b0%e6%8d%ae%e4%b9%9f%e5%90%8c%e6%ad%a5%e5%88%b0%e4%ba%86algolia%e8%b4%a6%e6%88%b7%e4%b8%8b%ef%bc%8c%e5%8f%af%e4%bb%a5%e5%8e%bb%e5%ae%98%e7%bd%91%e6%9f%a5%e7%9c%8b%e3%80%82%0a%e5%9b%9b%e3%80%81%e5%89%8d%e5%be%80algolia%e7%9a%84indices%e8%bf%9b%e8%a1%8c%e6%90%9c%e7%b4%a2%e7%b1%bb%e5%9e%8b%e7%9a%84%e8%ae%be%e7%bd%ae%0a%e5%8f%af%e4%bb%a5%e9%80%89%e6%8b%a9%e6%8c%89tag%ef%bc%8ccategory%ef%bc%8ccontent%e7%ad%89%e5%86%85%e5%ae%b9%e8%bf%9b%e8%a1%8c%e6%90%9c%e7%b4%a2%ef%bc%8c%e5%b9%b6%e6%8c%87%e5%ae%9a%e4%bc%98%e5%85%88%e7%ba%a7%e3%80%82%0a%e6%96%b9%e6%b3%95%e4%ba%8c%ef%bc%9a%e9%80%9a%e8%bf%87GithubAction%e7%9a%84%e6%96%b9%e5%bc%8f%20%e8%bf%99%e9%87%8c%e4%b8%8d%e9%80%9a%e8%bf%87%e6%8f%92%e4%bb%b6%e8%80%8c%e6%98%af%e9%80%9a%e8%bf%87hugo%e5%ae%9a%e5%88%b6%e5%8c%96%e5%9c%b0%e7%94%9f%e6%88%90algolia.json%ef%bc%8c%e7%84%b6%e5%90%8e%e9%80%9a%e8%bf%87GithubAction%e5%9c%a8%e6%af%8f%e6%ac%a1push%e6%97%b6%e4%b8%8a%e4%bc%a0%e6%95%b0%e6%8d%ae%e3%80%82%0a%e4%b8%aa%e4%ba%ba%e6%9b%b4%e6%8e%a8%e8%8d%90%e8%bf%99%e6%a0%b7%e5%81%9a%ef%bc%8c%e6%9b%b4%e5%a5%bd%e5%ae%9a%e5%88%b6%e5%8c%96%e4%b8%94%e6%96%b9%e4%be%bf%e3%80%82%e5%90%8c%e6%97%b6%e4%b8%8a%e9%9d%a2%e6%96%b9%e6%b3%95%e4%b8%80%e6%9c%89%e4%b8%aabug%ef%bc%8c%e5%af%b9%e4%b8%ad%e6%96%87%e6%95%b0%e6%8d%ae%e5%a5%bd%e5%83%8f%e4%b8%8d%e6%94%af%e6%8c%81%e3%80%82%0a%e4%b8%80%e3%80%81%e9%85%8d%e7%bd%aealgolia%e8%be%93%e5%87%ba%e6%96%87%e4%bb%b6%201outputs%3a%202home%3a%203%20-%20HTML%204%20-%20RSS%205%20-%20Algolia%206outputFormats%3a%207Algolia%3a%208%20mediaType%3a%20application%2fjson%209%20baseName%3a%20algolia%2010%20isPlainText%3a%20true%20%e4%ba%8c%e3%80%81%e7%94%9f%e6%88%90algolia.json%20%e7%bc%96%e8%be%91%20%7bsite%7d%2fthemes%2flayouts%2f_default%2flist.algolia.json%20%e5%a6%82%e4%b8%8b%ef%bc%9a%0a1%5b%202%20%7b%7b-%20range%20%24index%2c%20%24entry%20%3a%3d%20.Site.RegularPages%20%7d%7d%203%20%7b%7b-%20if%20%24index%20%7d%7d%2c%20%7b%7b%20end%20%7d%7d%204%20%7b%205%20%26%2334%3bobjectID%26%2334%3b%3a%20%26%2334%3b%7b%7b%20." aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>

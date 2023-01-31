@@ -14,7 +14,7 @@
       <pubDate>Sun, 13 Nov 2022 21:15:53 +0800</pubDate>
       
       <guid>/posts/2022/11/linux-software-installation-and-configuration-records/</guid>
-      <description>BASE 1 2 3 4 5 6 7 8 9 apt update -y apt install curl wget vim net-tools git nginx -y # apt install openssh* -------------------------------------------- yum update -y yum install curl wget vim net-tools git nginx -y yum install openssh* yum镜像 1 2 3 4 5 mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.bak wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo # centos7 yum makecache yum -y update apt镜像 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 cp /etc/apt/sources.</description>
+      <description>BASE 1apt update -y 2apt install curl wget vim net-tools git nginx -y 3# apt install openssh* 4 5-------------------------------------------- 6 7yum update -y 8yum install curl wget vim net-tools git nginx -y 9yum install openssh* yum镜像 1mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.bak 2wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo # centos7 3 4yum makecache 5yum -y update apt镜像 1cp /etc/apt/sources.list /etc/apt/sources.list.bak 2vim /etc/apt/sources.list 3 4lsb_release -c 查看版本代码 5 6如要用于其他版本，把 focal 换成其他版本代号即可: 22.04：jammy；20.04：focal；18.04：bionic；16.04：xenial；14.04：trusty。 7 8# 默认注释了源码仓库，如有需要可自行取消注释 9deb https://mirrors.</description>
     </item>
     
     <item>
@@ -23,10 +23,10 @@
       <pubDate>Wed, 19 Oct 2022 22:44:10 +0800</pubDate>
       
       <guid>/posts/2022/10/shell-basic-operation-summary/</guid>
-      <description>shell 参数 $# 参数个数 $@ 取出所有参数 $0 取出第一个参数 1 2 3 4 5 if [ &amp;#34;$1&amp;#34; = &amp;#34;-u&amp;#34; ] then echo update fi echo $0 ans:
-1 2 3 4 5 [root =&amp;gt; ~]$ ./test.sh ./test.sh [root =&amp;gt; ~]$ ./test.sh -u update ./test.sh 算术运算 1 2 3 4 [root@VM-0-11-centos ~]# a=1 [root@VM-0-11-centos ~]# b=$((a*12)) [root@VM-0-11-centos ~]# echo $b 12 比较运算 指令：-eq -ne -lt -gt -ge -le
+      <description>shell 参数 $# 参数个数 $@ 取出所有参数 $0 取出第一个参数 1if [ &amp;#34;$1&amp;#34; = &amp;#34;-u&amp;#34; ] 2then 3 echo update 4fi 5echo $0 ans:
+1[root =&amp;gt; ~]$ ./test.sh 2./test.sh 3[root =&amp;gt; ~]$ ./test.sh -u 4update 5./test.sh 算术运算 1[root@VM-0-11-centos ~]# a=1 2[root@VM-0-11-centos ~]# b=$((a*12)) 3[root@VM-0-11-centos ~]# echo $b 412 比较运算 指令：-eq -ne -lt -gt -ge -le
 注：字符串比较直接用“=”而不是上述指令。
-1 2 3 4 5 [root@VM-0-11-centos ~]# a=10 [root@VM-0-11-centos ~]# [ $a -eq 10 ] &amp;amp;&amp;amp; echo yes yes [root@VM-0-11-centos ~]# [ $a -ge 11 ] &amp;amp;&amp;amp; echo yes || echo no no 指令：-a -o</description>
+1[root@VM-0-11-centos ~]# a=10 2[root@VM-0-11-centos ~]# [ $a -eq 10 ] &amp;amp;&amp;amp; echo yes 3yes 4[root@VM-0-11-centos ~]# [ $a -ge 11 ] &amp;amp;&amp;amp; echo yes || echo no 5no 指令：-a -o</description>
     </item>
     
     <item>
@@ -61,8 +61,8 @@ win to unix 多了\r -&amp;gt; \r\n -&amp;gt; ^M。
       <pubDate>Sun, 02 Oct 2022 22:55:53 +0800</pubDate>
       
       <guid>/posts/2022/10/process-management-of-linux-practical-operation/</guid>
-      <description>查看所有进程 ps -ef -e : all processes (-A) -f : full-format, including command lines 1 2 [root@VM-0-11-centos ~]# ps -ef | head -n 1 UID PID PPID C STIME TTY TIME CMD 解释如下：
-PPID 父进程ID C 占用CPU百分比 STIME 就是&amp;quot;start time&amp;quot; TTY 进程在哪个终端显示 CMD 命令的名称和参数 ps aux a: all with tty, including other users (和-a是不同的) u: user-oriented format x: processes without controlling ttys 1 2 [root@VM-0-11-centos ~]# ps -aux | head -n 1 USER PID %CPU %MEM VSZ RSS TTY STAT START TIME COMMAND 解释如下：</description>
+      <description>查看所有进程 ps -ef -e : all processes (-A) -f : full-format, including command lines 1[root@VM-0-11-centos ~]# ps -ef | head -n 1 2UID PID PPID C STIME TTY TIME CMD 解释如下：
+PPID 父进程ID C 占用CPU百分比 STIME 就是&amp;quot;start time&amp;quot; TTY 进程在哪个终端显示 CMD 命令的名称和参数 ps aux a: all with tty, including other users (和-a是不同的) u: user-oriented format x: processes without controlling ttys 1[root@VM-0-11-centos ~]# ps -aux | head -n 1 2USER PID %CPU %MEM VSZ RSS TTY STAT START TIME COMMAND 解释如下：</description>
     </item>
     
     <item>
@@ -71,7 +71,7 @@ PPID 父进程ID C 占用CPU百分比 STIME 就是&amp;quot;start time&amp;quot;
       <pubDate>Sun, 24 Jul 2022 20:42:27 +0800</pubDate>
       
       <guid>/posts/2022/07/system-service-management-of-linux-practical-operation/</guid>
-      <description>systemctl指令 立即启动一个服务：systemctl start my.service 立即停止一个服务：systemctl stop my.service 重启一个服务：systemctl restart my.service 重新加载一个服务的配置文件：systemctl reload my.service 重载所有修改过的配置文件：systemctl daemon-reload 开启自启动服务：systemctl enable my.service 取消开启自启动：systemctl disable my.service 查看是否已经自启动：systemctl is-enabled my.service 查看服务运行状态：systemctl status my.service 查看所有服务：systemctl --type service service和chkconfig指令 启动服务：service my.service start 终止服务：service my.service stop 重启服务：service my.service restart 查看服务运行状态：service my.service status 开启或取消开机自启动：chkconfig my.service on/off 查看开机自启动列表：chkconfig --list Unit配置文件解释 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 - Unit - Description，服务的描述 - Requires，定义此unit需在哪个daemon启动后才能够启动 - Service - Type，定义启动时的进程行为。它有以下几种值。 - Type=simple，默认值，执行ExecStart指定的命令，启动主进程 - Type=forking，以 fork 方式从父进程创建子进程，创建后父进程会立即退出 - Type=oneshot，一次性进程，Systemd 会等当前服务退出，再继续往下执行 - Type=dbus，当前服务通过D-Bus启动 - Type=notify，当前服务启动完毕，会通知Systemd，再继续往下执行 - Type=idle，若有其他任务执行完毕，当前服务才会运行 - ExecStart，启动当前服务的命令 - ExecStartPre，启动当前服务之前执行的命令 - ExecStartPost，启动当前服务之后执行的命令 - ExecReload，重启当前服务时执行的命令 - ExecStop，停止当前服务时执行的命令 - ExecStopPost，停止当其服务之后执行的命令 - RestartSec，自动重启当前服务间隔的秒数 - Restart，定义何种情况 Systemd 会自动重启当前服务，可能的值包括always（总是重启）、on-success、on-failure、on-abnormal、on-abort、on-watchdog - TimeoutSec，定义 Systemd 停止当前服务之前等待的秒数 - Environment，指定环境变量 - Install - WantedBy，值是一个或多个Target，当前Unit激活(enable)时，符号链接会放入/etc/systemd/system目录下面以Target名+.</description>
+      <description>systemctl指令 立即启动一个服务：systemctl start my.service 立即停止一个服务：systemctl stop my.service 重启一个服务：systemctl restart my.service 重新加载一个服务的配置文件：systemctl reload my.service 重载所有修改过的配置文件：systemctl daemon-reload 开启自启动服务：systemctl enable my.service 取消开启自启动：systemctl disable my.service 查看是否已经自启动：systemctl is-enabled my.service 查看服务运行状态：systemctl status my.service 查看所有服务：systemctl --type service service和chkconfig指令 启动服务：service my.service start 终止服务：service my.service stop 重启服务：service my.service restart 查看服务运行状态：service my.service status 开启或取消开机自启动：chkconfig my.service on/off 查看开机自启动列表：chkconfig --list Unit配置文件解释 1- Unit 2 - Description，服务的描述 3 - Requires，定义此unit需在哪个daemon启动后才能够启动 4- Service 5 - Type，定义启动时的进程行为。它有以下几种值。 6 - Type=simple，默认值，执行ExecStart指定的命令，启动主进程 7 - Type=forking，以 fork 方式从父进程创建子进程，创建后父进程会立即退出 8 - Type=oneshot，一次性进程，Systemd 会等当前服务退出，再继续往下执行 9 - Type=dbus，当前服务通过D-Bus启动 10 - Type=notify，当前服务启动完毕，会通知Systemd，再继续往下执行 11 - Type=idle，若有其他任务执行完毕，当前服务才会运行 12 - ExecStart，启动当前服务的命令 13 - ExecStartPre，启动当前服务之前执行的命令 14 - ExecStartPost，启动当前服务之后执行的命令 15 - ExecReload，重启当前服务时执行的命令 16 - ExecStop，停止当前服务时执行的命令 17 - ExecStopPost，停止当其服务之后执行的命令 18 - RestartSec，自动重启当前服务间隔的秒数 19 - Restart，定义何种情况 Systemd 会自动重启当前服务，可能的值包括always（总是重启）、on-success、on-failure、on-abnormal、on-abort、on-watchdog 20 - TimeoutSec，定义 Systemd 停止当前服务之前等待的秒数 21 - Environment，指定环境变量 22- Install 23 - WantedBy，值是一个或多个Target，当前Unit激活(enable)时，符号链接会放入/etc/systemd/system目录下面以Target名+.</description>
     </item>
     
     <item>
@@ -81,13 +81,14 @@ PPID 父进程ID C 占用CPU百分比 STIME 就是&amp;quot;start time&amp;quot;
       
       <guid>/posts/2022/07/wsl-main-operation-records/</guid>
       <description>wsl在window开机后自启ssh服务 wsl下创建脚本，执行：vim /etc/init.wsl，并根据需要写入服务：
-1 /etc/init.d/${需要的服务} # 或者使用service/systemctl命令 再赋予init.wsl执行权限，执行：chmod +x /etc/init.wsl
+1/etc/init.d/${需要的服务} # 或者使用service/systemctl命令 再赋予init.wsl执行权限，执行：chmod +x /etc/init.wsl
 window下在启动目录下创建脚本：wsl.bat，写入开机命令如下：
-1 wsl -d &amp;lt;DistributionName&amp;gt; -u root /etc/init.wsl 其中，版本通过wsl -l查看。
+1wsl -d &amp;lt;DistributionName&amp;gt; -u root /etc/init.wsl 其中，版本通过wsl -l查看。
 wsl一些常用命令 wsl ~ -u jzh: 以jzh用户登录并进入用户文件夹 wsl --shutdown: 关闭wsl wsl -l -v: 查看已安装的wsl版本 wsl --status: 检查wsl状态 wsl -l --online: 查看可通过在线商店获得的 Linux 发行版列表 wsl修改默认登录用户 &amp;lt;DistributionName&amp;gt; config --default-user root: 将登录默认用户设为root
 手动安装wsl的话可能无法生效，可通过修改/etc/wsl.conf完成：
-1 2 3 # Set the user when launching a distribution with WSL. [user] default = root 然后重启wsl即可完成。
-切换wsl1和wsl2 1 wsl --set-version &amp;lt;distribution name&amp;gt; &amp;lt;versionNumber&amp;gt; &amp;lt;versionNumber&amp;gt;值为1或2，对应wsl1和wsl2。</description>
+1# Set the user when launching a distribution with WSL. 2[user] 3default = root 然后重启wsl即可完成。
+切换wsl1和wsl2 1wsl --set-version &amp;lt;distribution name&amp;gt; &amp;lt;versionNumber&amp;gt; &amp;lt;versionNumber&amp;gt;值为1或2，对应wsl1和wsl2。
+升级ubuntu发行版本 1apt update 2apt upgrade 3do-release-upgrade -d 升级wsl的linux内核版本 1wsl --update 可以使用wsl --update rollback 命令回滚到内核的上一版本。</description>
     </item>
     
     <item>
@@ -96,9 +97,9 @@ wsl一些常用命令 wsl ~ -u jzh: 以jzh用户登录并进入用户文件夹 w
       <pubDate>Wed, 13 Jul 2022 21:21:50 +0800</pubDate>
       
       <guid>/posts/2022/07/linux-display-content-configuration-record/</guid>
-      <description>Vim 1 2 3 4 5 6 vim /etc/vimrc # vim /etc/vim/vimrc set tabstop=4 # 修改vim中tab长度 set shiftwidth=4 # 修改vim自动缩进长度 set noeb vb t_vb= # 禁用vim蜂鸣声 1 2 3 vim /etc/inputrc set bell-style none # 禁用bash蜂鸣声 主机名称 1 2 3 hostnamectl hostnamectl set-hostname xxx 登录欢迎信息配置 1 vim /etc/update-motd.d 自行修改基本欢迎信息。
-1 2 3 vim /etc/ssh/sshd_config PrintLastLog no 不打印上次登录信息。
-命令提示符 1 2 3 vim ~/.bashrc export PS1=&amp;#34;[\u =&amp;gt; \w]\$ &amp;#34; 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 \a	铃声字符 \d	格式为“日 月 年”的日期 \e	ASCII 转义字符 \h	本地主机名 \H	完全合格的限定域主机名 \j	shell 当前管理的作业数 \1	shell 终端设备名的基本名称 \n	ASCII 换行字符 \r	ASCII 回车 \s	shell 的名称 \t	格式为“小时:分钟:秒”的24小时制的当前时间 \T	格式为“小时:分钟:秒”的12小时制的当前时间 \A	格式为“小时:分钟”的24小时制的当前时间 @	格式为 am/pm 的12小时制的当前时间 \s	shell的名字 \u	当前用户的用户名 \v	bash shell 的版本 \V	bash shell 的发布级别 \w	当前工作目录 \W	当前工作目录的基本名称 !</description>
+      <description>Vim 1vim /etc/vimrc 2# vim /etc/vim/vimrc 3 4set tabstop=4 # 修改vim中tab长度 5set shiftwidth=4 # 修改vim自动缩进长度 6set noeb vb t_vb= # 禁用vim蜂鸣声 1vim /etc/inputrc 2 3set bell-style none # 禁用bash蜂鸣声 主机名称 1hostnamectl 2 3hostnamectl set-hostname xxx 登录欢迎信息配置 1vim /etc/update-motd.d 自行修改基本欢迎信息。
+1vim /etc/ssh/sshd_config 2 3PrintLastLog no 不打印上次登录信息。
+命令提示符 1vim ~/.bashrc 2 3export PS1=&amp;#34;[\u =&amp;gt; \w]\$ &amp;#34; 1\a	铃声字符 2\d	格式为“日 月 年”的日期 3\e	ASCII 转义字符 4\h	本地主机名 5\H	完全合格的限定域主机名 6\j	shell 当前管理的作业数 7\1	shell 终端设备名的基本名称 8\n	ASCII 换行字符 9\r	ASCII 回车 10\s	shell 的名称 11\t	格式为“小时:分钟:秒”的24小时制的当前时间 12\T	格式为“小时:分钟:秒”的12小时制的当前时间 13\A	格式为“小时:分钟”的24小时制的当前时间 14@	格式为 am/pm 的12小时制的当前时间 15\s	shell的名字 16\u	当前用户的用户名 17\v	bash shell 的版本 18\V	bash shell 的发布级别 19\w	当前工作目录 20\W	当前工作目录的基本名称 21!</description>
     </item>
     
     <item>
@@ -112,9 +113,10 @@ wsl一些常用命令 wsl ~ -u jzh: 以jzh用户登录并进入用户文件夹 w
 选择桥接模式 默认好像是NAT模式，改为桥接模式，指定网卡为当前主机网络的网卡，我的是“Realtek PCIe.GBE Family Controller”。
 我的主机网络网关是 192.168.1.1，子网掩码为 255.255.255.0，IP为 192.168.1.126，我想配置虚拟机网络IP为 192.168.1.127 或者 192.168.1.128。
 Ubuntu配置静态IP 通过netplan的方法进行，编辑 /etc/netplan/00-installer-config.yaml如下：
-1 2 3 4 5 6 7 8 9 10 network: ethernets: enp0s3: dhcp4: no optional: no nameservers: addresses: [114.114.114.114, 8.8.8.8] gateway4: 192.168.1.1 addresses: [192.168.1.128/24] version: 2 然后执行 sudo netplan apply即可。
+1network: 2 ethernets: 3 enp0s3: 4 dhcp4: no 5 optional: no 6 nameservers: 7 addresses: [114.114.114.114, 8.8.8.8] 8 gateway4: 192.168.1.1 9 addresses: [192.168.1.128/24] 10 version: 2 然后执行 sudo netplan apply即可。
 CentOS配置静态IP 找到当前网络下网卡名，然后编辑/etc/sysconfig/network-scripts下的ifcfg-{网卡名}文件如下：
-1 2 3 4 5 6 7 BOOTPROTO=&amp;#34;static&amp;#34; # 静态IP IPADDR=192.168.1.127 # IP NETMASK=255.255.255.0 # 子网掩码 GATEWAY=192.168.1.1 # 网关 DNS1=114.</description>
+1BOOTPROTO=&amp;#34;static&amp;#34; # 静态IP 2IPADDR=192.168.1.127 # IP 3NETMASK=255.255.255.0 # 子网掩码 4GATEWAY=192.168.1.1 # 网关 5DNS1=114.114.114.114 6DNS2=8.8.8.8 7ONBOOT=yes 之后再重启网络服务即可：
+1systemctl restart network From my blog: akynazh.</description>
     </item>
     
     <item>
@@ -123,9 +125,10 @@ CentOS配置静态IP 找到当前网络下网卡名，然后编辑/etc/sysconfig
       <pubDate>Mon, 20 Dec 2021 10:15:34 +0800</pubDate>
       
       <guid>/posts/2021/12/permission-management-of-linux-practical-operation/</guid>
-      <description>添加用户 1 2 3 4 5 6 7 8 9 [root@VM-0-11-centos ~]# useradd jzh [root@VM-0-11-centos /]# id jzh uid=1000(jzh) gid=1000(jzh) groups=1000(jzh) [root@VM-0-11-centos /]# grep jzh /etc/passwd /etc/shadow /etc/group /etc/passwd:jzh:x:1000:1000::/home/jzh:/bin/bash /etc/shadow:jzh:!!:18980:0:99999:7::: /etc/group:jzh:x:1000: x指代密码，对应到shadow中，未设定即为“!!”
+      <description>添加用户 1[root@VM-0-11-centos ~]# useradd jzh 2 3[root@VM-0-11-centos /]# id jzh 4uid=1000(jzh) gid=1000(jzh) groups=1000(jzh) 5 6[root@VM-0-11-centos /]# grep jzh /etc/passwd /etc/shadow /etc/group 7/etc/passwd:jzh:x:1000:1000::/home/jzh:/bin/bash 8/etc/shadow:jzh:!!:18980:0:99999:7::: 9/etc/group:jzh:x:1000: x指代密码，对应到shadow中，未设定即为“!!”
 设置密码 在进行useradd后密码还未设定。
-1 2 3 4 5 6 [root@VM-0-11-centos /]# passwd jzh Changing password for user jzh. New password: BAD PASSWORD: The password is shorter than 8 characters Retype new password: passwd: all authentication tokens updated successfully. 若要让用户第一次能通过默认密码登录得上，并提示用户必须修改密码：</description>
+1[root@VM-0-11-centos /]# passwd jzh 2Changing password for user jzh. 3New password: 4BAD PASSWORD: The password is shorter than 8 characters 5Retype new password: 6passwd: all authentication tokens updated successfully. 若要让用户第一次能通过默认密码登录得上，并提示用户必须修改密码：
+1[root@VM-0-11-centos /]# useradd vbird 2[root@VM-0-11-centos /]# echo &amp;#34;658766&amp;#34; | passwd --stdin vbird 3Changing password for user vbird.</description>
     </item>
     
     <item>
@@ -135,7 +138,7 @@ CentOS配置静态IP 找到当前网络下网卡名，然后编辑/etc/sysconfig
       
       <guid>/posts/2021/12/text-operation-of-linux-practical-operation/</guid>
       <description>使用grep抓取期望的结果 在过去登录主机的人中截取登录信息含root的行信息
-1 last | grep &amp;#39;root&amp;#39; 比较重要，记忆：
+1last | grep &amp;#39;root&amp;#39; 比较重要，记忆：
 grep [-acinv] [&amp;ndash;color=auto] &amp;lsquo;搜寻字串&amp;rsquo; filename
 选项与参数：
 -a ：将 binary 文件以 text 文件的方式搜寻数据
@@ -145,10 +148,12 @@ grep [-acinv] [&amp;ndash;color=auto] &amp;lsquo;搜寻字串&amp;rsquo; filenam
 -v ：反向选择，亦即显示出没有 &amp;lsquo;搜寻字串&amp;rsquo; 内容的那一行
 &amp;ndash;color=auto ：可以将找到的关键字部分加上颜色的显示喔
 awk命令操作文本 格式化输出：以tab隔开打印前五行中每行的第一和第三个字符 awk &amp;lsquo;{[pattern] action}&amp;rsquo; {filenames}
-1 last -n 5 | awk &amp;#39;{print $1 &amp;#34;\t&amp;#34; $3}&amp;#39; 注意必须是内双引号外单引号的形式。
+1last -n 5 | awk &amp;#39;{print $1 &amp;#34;\t&amp;#34; $3}&amp;#39; 注意必须是内双引号外单引号的形式。
 分隔字符 awk -F #-F指定所操作文件中的目标分割字符
 使用&amp;quot;,&amp;ldquo;分隔
-1 awk -F, &amp;#39;{print $1 &amp;#34; - &amp;#34; $2}&amp;#39; log.txt 设置变量 awk -v # 设置变量</description>
+1awk -F, &amp;#39;{print $1 &amp;#34; - &amp;#34; $2}&amp;#39; log.txt 设置变量 awk -v # 设置变量
+设置变量k等于1
+1awk -vk=1 &amp;#39;{print $1, $1+k}&amp;#39; log.</description>
     </item>
     
     <item>
@@ -158,15 +163,15 @@ awk命令操作文本 格式化输出：以tab隔开打印前五行中每行的�
       
       <guid>/posts/2021/11/file-upload-problem-after-deploying-jar-package-project-on-linux/</guid>
       <description>在进行上传文件时，一般会先获取项目类路径：
-1 2 File relativePathFile = new File(URLDecoder.decode(ResourceUtils.getURL(&amp;#34;classpath:&amp;#34;).getPath(), &amp;#34;utf-8&amp;#34;)); String absolutePath = relativePathFile.getAbsoluteFile().getPath(); 首先取得相对路径，再进一步取得绝对路径，结果如下：
+1File relativePathFile = new File(URLDecoder.decode(ResourceUtils.getURL(&amp;#34;classpath:&amp;#34;).getPath(), &amp;#34;utf-8&amp;#34;)); 2String absolutePath = relativePathFile.getAbsoluteFile().getPath(); 首先取得相对路径，再进一步取得绝对路径，结果如下：
 如果单纯运行一个java项目： 获得路径为：
 ${project}/target/classes
 如果是运行jar包，且是在Linux系统上，则获得路径大致为： .../${jar包名}!/BOOT-INF/classes! [centos7.9下]
 所以如果是jar包启动并上传文件，则无法正确放到类路径下。
 所以需指定新的上传路径。
 在如下路径中：
-1 2 [root@VM-0-11-centos app]# ls application.yaml LonersHub-0.0.1-SNAPSHOT.jar static 假设我要把文件上传到和jar包同一路径下的static内, 可以在jar包同一路径下新建并编辑application.yaml文件如下：
-1 2 3 4 5 spring: resources: static-locations: - classpath:static/ - file:/app/static/ 然后在文件上传是指定上传路径即可。
+1[root@VM-0-11-centos app]# ls 2application.yaml LonersHub-0.0.1-SNAPSHOT.jar static 假设我要把文件上传到和jar包同一路径下的static内, 可以在jar包同一路径下新建并编辑application.yaml文件如下：
+1spring: 2 resources: 3 static-locations: 4 - classpath:static/ 5 - file:/app/static/ 然后在文件上传是指定上传路径即可。
 这里编写一个工具类如下：
 关注getUploadPath方法，它用于获取上传路径。
 首先，为了方便后期维护和部署使用，我们先判断项目运行所在的操作系统，如果是生产环境linux则上传到上面指定的目录，而如果是本地测试项目，则将其上传到类路径下的默认位置即可。
@@ -175,7 +180,7 @@ linux下： 返回/app/static/${uploadType}/${fileName}
 e.g. /app/static/avatar/test.jpg
 window下： 返回 ${project}/target/classes/static/${uploadType}/${fileName}
 e.g. ${project}/target/classes/static/avatar/test.jpg
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 public class FileUtils { /** * @description: 获取上传路径 * @author Jiang Zhihang * @date 2022/1/2 23:32 * @param type 上传类型，如avatar，video * @param fileName 上传文件的名称 */ public static String getUploadPath(String type, String fileName) throws FileNotFoundException, UnsupportedEncodingException { String osName = System.</description>
+1public class FileUtils { 2 3 /** 4 * @description: 获取上传路径 5 * @author Jiang Zhihang 6 * @date 2022/1/2 23:32 7 * @param type 上传类型，如avatar，video 8 * @param fileName 上传文件的名称 9 */ 10 public static String getUploadPath(String type, String fileName) throws FileNotFoundException, UnsupportedEncodingException { 11 String osName = System.</description>
     </item>
     
     <item>
@@ -186,12 +191,12 @@ e.g. ${project}/target/classes/static/avatar/test.jpg
       <guid>/posts/2021/11/the-whole-process-of-linux-host-deployment-springboot-project/</guid>
       <description>注：部署环境为centos7.9版本
 配置环境 配好mysql，redis，java开发环境。
-上传JAR包项目 1 2 mvn clean mvn package 即可把项目打包为JAR包，再通过WINSP上传到服务器。
+上传JAR包项目 1mvn clean 2mvn package 即可把项目打包为JAR包，再通过WINSP上传到服务器。
 先新建一个app文件夹，放置项目所有内容：
-1 2 mkdir /app chmod 777 /app 新建并编辑application配置文件 由于主机上的mysql密码与本地mysql密码不同，所以在JAR包同一个文件目录下新建application配置文件并指定新的密码，允许JAR项目时该application配置文件优先级是更高的。这里我还指定了用于linux下文件读取上传的目录路径。
-1 2 3 4 5 6 7 spring: datasource: password: ...... resources: static-locations: - classpath:static/ - file:/app/static/ 1 2 3 [root@VM-0-11-centos app]# chmod -R 777 * [root@VM-0-11-centos app]# ls application.yaml LonersHub-0.0.1-SNAPSHOT.jar static 运行项目 首先确保防火墙配置正确，放通需要的端口。
-1 2 [root@VM-0-11-centos app]# nohup java -jar LonersHub-0.0.1-SNAPSHOT.jar &amp;amp; [1] 27108 更新项目 首先终止原本进程，删除原来的jar包并上传新的jar包，然后运行新的jar包：
-1 2 3 4 5 6 7 [root@VM-0-11-centos app]# ps -ef | grep java root 13415 1 1 00:02 ?</description>
+1mkdir /app 2chmod 777 /app 新建并编辑application配置文件 由于主机上的mysql密码与本地mysql密码不同，所以在JAR包同一个文件目录下新建application配置文件并指定新的密码，允许JAR项目时该application配置文件优先级是更高的。这里我还指定了用于linux下文件读取上传的目录路径。
+1spring: 2 datasource: 3 password: ...... 4 resources: 5 static-locations: 6 - classpath:static/ 7 - file:/app/static/ 1[root@VM-0-11-centos app]# chmod -R 777 * 2[root@VM-0-11-centos app]# ls 3application.yaml LonersHub-0.0.1-SNAPSHOT.jar static 运行项目 首先确保防火墙配置正确，放通需要的端口。
+1[root@VM-0-11-centos app]# nohup java -jar LonersHub-0.0.1-SNAPSHOT.jar &amp;amp; 2[1] 27108 更新项目 首先终止原本进程，删除原来的jar包并上传新的jar包，然后运行新的jar包：
+1[root@VM-0-11-centos app]# ps -ef | grep java 2root 13415 1 1 00:02 ?</description>
     </item>
     
     <item>
@@ -200,7 +205,7 @@ e.g. ${project}/target/classes/static/avatar/test.jpg
       <pubDate>Wed, 19 May 2021 22:52:52 +0800</pubDate>
       
       <guid>/posts/2021/05/docker-simple-use-process-record/</guid>
-      <description>下载并运行ubuntu镜像 1 2 [root@VM-0-11-centos ~]# docker run ubuntu:15.10 /bin/echo &amp;#34;crazy thursday&amp;#34; crazy thursday 运行ubuntu并开启bash交互 1 2 3 4 5 6 7 8 9 10 [root@VM-0-11-centos ~]# docker run -i -t ubuntu:15.10 /bin/bash root@fda3220ed59f:/# echo hello hello root@fda3220ed59f:/# cat /proc/version Linux version 3.10.0-1160.45.1.el7.x86_64 (mockbuild@kbuilder.bsys.centos.org) (gcc version 4.8.5 20150623 (Red Hat 4.8.5-44) (GCC) ) #1 SMP Wed Oct 13 17:20:51 UTC 2021 root@fda3220ed59f:/# ls bin dev home lib64 mnt proc run srv tmp var boot etc lib media opt root sbin sys usr root@fda3220ed59f:/# exit exit 运行进程并观察 1 2 3 4 5 [root@VM-0-11-centos ~]# docker run -d ubuntu:15.</description>
+      <description>下载并运行ubuntu镜像 1[root@VM-0-11-centos ~]# docker run ubuntu:15.10 /bin/echo &amp;#34;crazy thursday&amp;#34; 2crazy thursday 运行ubuntu并开启bash交互 1[root@VM-0-11-centos ~]# docker run -i -t ubuntu:15.10 /bin/bash 2root@fda3220ed59f:/# echo hello 3hello 4root@fda3220ed59f:/# cat /proc/version 5Linux version 3.10.0-1160.45.1.el7.x86_64 (mockbuild@kbuilder.bsys.centos.org) (gcc version 4.8.5 20150623 (Red Hat 4.8.5-44) (GCC) ) #1 SMP Wed Oct 13 17:20:51 UTC 2021 6root@fda3220ed59f:/# ls 7bin dev home lib64 mnt proc run srv tmp var 8boot etc lib media opt root sbin sys usr 9root@fda3220ed59f:/# exit 10exit 运行进程并观察 1[root@VM-0-11-centos ~]# docker run -d ubuntu:15.</description>
     </item>
     
     <item>
@@ -210,13 +215,13 @@ e.g. ${project}/target/classes/static/avatar/test.jpg
       
       <guid>/posts/2021/01/network-management-of-linux-practical-operation/</guid>
       <description>查看内网IP grep抓取inet行，sed删除inet字串和netmask.*字串
-1 alias myip=&amp;#34; ifconfig eth0 | grep &amp;#39;inet &amp;#39; | sed &amp;#39;s/inet//g&amp;#39; | sed &amp;#39;s/netmask.*$//g&amp;#39;&amp;#34; test:
-1 2 [root@VM-0-11-centos ~]# myip 172.17.0.11 查看外网IP 1 curl cip.cc show:
+1alias myip=&amp;#34; ifconfig eth0 | grep &amp;#39;inet &amp;#39; | sed &amp;#39;s/inet//g&amp;#39; | sed &amp;#39;s/netmask.*$//g&amp;#39;&amp;#34; test:
+1[root@VM-0-11-centos ~]# myip 2 172.17.0.11 查看外网IP 1curl cip.cc show:
 IP : ${my_ip} 地址 : 中国 中国
 数据二 : 上海市 | 腾讯云
 数据三 : 中国北京北京 | 腾讯
 URL : http://www.cip.cc/${my_ip}
-查看IP端口状况 1 2 3 4 5 6 [root@VM-0-11-centos ~]# netstat -ntlp Active Internet connections (only servers) Proto Recv-Q Send-Q Local Address Foreign Address State PID/Program name tcp 0 0 0.</description>
+查看IP端口状况 1[root@VM-0-11-centos ~]# netstat -ntlp 2Active Internet connections (only servers) 3Proto Recv-Q Send-Q Local Address Foreign Address State PID/Program name 4tcp 0 0 0.0.0.0:22 0.</description>
     </item>
     
   </channel>

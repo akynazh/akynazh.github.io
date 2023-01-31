@@ -11,11 +11,11 @@
   <meta property="og:title" content="对于 Rest 风格的理解" />
 <meta property="og:description" content="REST，全称 Representational State Transfer，即表现层状态转移。
 符合REST规范的写法：
-1 2 3 4 POST http://www.test.com/lemon // 创建 Get http://www.test.com/lemon // 查询 PUT http://www.test.com/lemon // 修改 DELETE http://www.test.com/lemon //删除 不符合REST规范的写法：
-1 2 3 4 POST http://www.test.com/Createlemon // 创建 POST http://www.test.com/Querylemon // 查询 POST http://www.test.com/Modifylemon // 修改 POST http://www.test.com/Deletelemon //删除 也就是用 URL 定位资源，用 HTTP 描述操作。
+1POST http://www.test.com/lemon // 创建 2Get http://www.test.com/lemon // 查询 3PUT http://www.test.com/lemon // 修改 4DELETE http://www.test.com/lemon //删除 不符合REST规范的写法：
+1POST http://www.test.com/Createlemon // 创建 2POST http://www.test.com/Querylemon // 查询 3POST http://www.test.com/Modifylemon // 修改 4POST http://www.test.com/Deletelemon //删除 也就是用 URL 定位资源，用 HTTP 描述操作。
 实际操作：
 对于前端，在 js 中可以指定请求类型，以通过 ajax 发送请求为例，可以通过 type 属性进行指定，假如我要进行一条插入操作，则 type 值应为 &ldquo;PUT&rdquo;:
-1 2 3 4 5 6 7 $.ajax({ type: &#34;PUT&#34;, url: &#34;http://www." />
+1$.ajax({ 2 type: &#34;PUT&#34;, 3 url: &#34;http://www.test.com/lemon&#34;, 4 contentType: &#39;application/json&#39;, 5 data: JSON.stringify({ ID: &#34;1&#34; }), 6 success: function (data, status) {} 7}); 对于后端，以 java 为例，对于 PUT 操作，即可对应采用 @PutMapping 进行指定。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/2022/12/understanding-of-rest-style/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-12-08T16:35:54+08:00" />
@@ -25,18 +25,18 @@
 <meta name="twitter:title" content="对于 Rest 风格的理解"/>
 <meta name="twitter:description" content="REST，全称 Representational State Transfer，即表现层状态转移。
 符合REST规范的写法：
-1 2 3 4 POST http://www.test.com/lemon // 创建 Get http://www.test.com/lemon // 查询 PUT http://www.test.com/lemon // 修改 DELETE http://www.test.com/lemon //删除 不符合REST规范的写法：
-1 2 3 4 POST http://www.test.com/Createlemon // 创建 POST http://www.test.com/Querylemon // 查询 POST http://www.test.com/Modifylemon // 修改 POST http://www.test.com/Deletelemon //删除 也就是用 URL 定位资源，用 HTTP 描述操作。
+1POST http://www.test.com/lemon // 创建 2Get http://www.test.com/lemon // 查询 3PUT http://www.test.com/lemon // 修改 4DELETE http://www.test.com/lemon //删除 不符合REST规范的写法：
+1POST http://www.test.com/Createlemon // 创建 2POST http://www.test.com/Querylemon // 查询 3POST http://www.test.com/Modifylemon // 修改 4POST http://www.test.com/Deletelemon //删除 也就是用 URL 定位资源，用 HTTP 描述操作。
 实际操作：
 对于前端，在 js 中可以指定请求类型，以通过 ajax 发送请求为例，可以通过 type 属性进行指定，假如我要进行一条插入操作，则 type 值应为 &ldquo;PUT&rdquo;:
-1 2 3 4 5 6 7 $.ajax({ type: &#34;PUT&#34;, url: &#34;http://www."/>
+1$.ajax({ 2 type: &#34;PUT&#34;, 3 url: &#34;http://www.test.com/lemon&#34;, 4 contentType: &#39;application/json&#39;, 5 data: JSON.stringify({ ID: &#34;1&#34; }), 6 success: function (data, status) {} 7}); 对于后端，以 java 为例，对于 PUT 操作，即可对应采用 @PutMapping 进行指定。"/>
 
   
   
   
   
   
-  <link rel="stylesheet" href="/css/styles.d8d1e5ac73f5bd72b0e6919356fcf7f12c9dd5a80e4788cae09111cc3678f69a4294b39d4b852dd69cc393c73ac3d8b6c05c8df3569d49d36331b7f39cfea8d1.css" integrity="sha512-2NHlrHP1vXKw5pGTVvz38Syd1agOR4jK4JERzDZ49ppClLOdS4Ut1pzDk8c6w9i2wFyN81adSdNjMbfznP6o0Q==">
+  <link rel="stylesheet" href="/css/styles.b6e7dac395bc81c65ab67a0be932cbd03925f5afb48f9c825ead224a41084a4a8289db621f5b2236149a32799ae71f4962b1d2531d209f51d8b88cdffaa1877e.css" integrity="sha512-tufaw5W8gcZatnoL6TLL0Dkl9a&#43;0j5yCXq0iSkEISkqCidtiH1siNhSaMnma5x9JYrHSUx0gn1HYuIzf&#43;qGHfg==">
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
@@ -153,7 +153,7 @@
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f12%2funderstanding-of-rest-style%2f&name=%e5%af%b9%e4%ba%8e%20Rest%20%e9%a3%8e%e6%a0%bc%e7%9a%84%e7%90%86%e8%a7%a3&description=REST%ef%bc%8c%e5%85%a8%e7%a7%b0%20Representational%20State%20Transfer%ef%bc%8c%e5%8d%b3%e8%a1%a8%e7%8e%b0%e5%b1%82%e7%8a%b6%e6%80%81%e8%bd%ac%e7%a7%bb%e3%80%82%0a%e7%ac%a6%e5%90%88REST%e8%a7%84%e8%8c%83%e7%9a%84%e5%86%99%e6%b3%95%ef%bc%9a%0a1%202%203%204%20POST%20http%3a%2f%2fwww.test.com%2flemon%20%2f%2f%20%e5%88%9b%e5%bb%ba%20Get%20http%3a%2f%2fwww.test.com%2flemon%20%2f%2f%20%e6%9f%a5%e8%af%a2%20PUT%20http%3a%2f%2fwww.test.com%2flemon%20%2f%2f%20%e4%bf%ae%e6%94%b9%20DELETE%20http%3a%2f%2fwww.test.com%2flemon%20%2f%2f%e5%88%a0%e9%99%a4%20%e4%b8%8d%e7%ac%a6%e5%90%88REST%e8%a7%84%e8%8c%83%e7%9a%84%e5%86%99%e6%b3%95%ef%bc%9a%0a1%202%203%204%20POST%20http%3a%2f%2fwww.test.com%2fCreatelemon%20%2f%2f%20%e5%88%9b%e5%bb%ba%20POST%20http%3a%2f%2fwww.test.com%2fQuerylemon%20%2f%2f%20%e6%9f%a5%e8%af%a2%20POST%20http%3a%2f%2fwww.test.com%2fModifylemon%20%2f%2f%20%e4%bf%ae%e6%94%b9%20POST%20http%3a%2f%2fwww.test.com%2fDeletelemon%20%2f%2f%e5%88%a0%e9%99%a4%20%e4%b9%9f%e5%b0%b1%e6%98%af%e7%94%a8%20URL%20%e5%ae%9a%e4%bd%8d%e8%b5%84%e6%ba%90%ef%bc%8c%e7%94%a8%20HTTP%20%e6%8f%8f%e8%bf%b0%e6%93%8d%e4%bd%9c%e3%80%82%0a%e5%ae%9e%e9%99%85%e6%93%8d%e4%bd%9c%ef%bc%9a%0a%e5%af%b9%e4%ba%8e%e5%89%8d%e7%ab%af%ef%bc%8c%e5%9c%a8%20js%20%e4%b8%ad%e5%8f%af%e4%bb%a5%e6%8c%87%e5%ae%9a%e8%af%b7%e6%b1%82%e7%b1%bb%e5%9e%8b%ef%bc%8c%e4%bb%a5%e9%80%9a%e8%bf%87%20ajax%20%e5%8f%91%e9%80%81%e8%af%b7%e6%b1%82%e4%b8%ba%e4%be%8b%ef%bc%8c%e5%8f%af%e4%bb%a5%e9%80%9a%e8%bf%87%20type%20%e5%b1%9e%e6%80%a7%e8%bf%9b%e8%a1%8c%e6%8c%87%e5%ae%9a%ef%bc%8c%e5%81%87%e5%a6%82%e6%88%91%e8%a6%81%e8%bf%9b%e8%a1%8c%e4%b8%80%e6%9d%a1%e6%8f%92%e5%85%a5%e6%93%8d%e4%bd%9c%ef%bc%8c%e5%88%99%20type%20%e5%80%bc%e5%ba%94%e4%b8%ba%20%26ldquo%3bPUT%26rdquo%3b%3a%0a1%202%203%204%205%206%207%20%24.ajax%28%7b%20type%3a%20%26%2334%3bPUT%26%2334%3b%2c%20url%3a%20%26%2334%3bhttp%3a%2f%2fwww." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f12%2funderstanding-of-rest-style%2f&name=%e5%af%b9%e4%ba%8e%20Rest%20%e9%a3%8e%e6%a0%bc%e7%9a%84%e7%90%86%e8%a7%a3&description=REST%ef%bc%8c%e5%85%a8%e7%a7%b0%20Representational%20State%20Transfer%ef%bc%8c%e5%8d%b3%e8%a1%a8%e7%8e%b0%e5%b1%82%e7%8a%b6%e6%80%81%e8%bd%ac%e7%a7%bb%e3%80%82%0a%e7%ac%a6%e5%90%88REST%e8%a7%84%e8%8c%83%e7%9a%84%e5%86%99%e6%b3%95%ef%bc%9a%0a1POST%20http%3a%2f%2fwww.test.com%2flemon%20%2f%2f%20%e5%88%9b%e5%bb%ba%202Get%20http%3a%2f%2fwww.test.com%2flemon%20%2f%2f%20%e6%9f%a5%e8%af%a2%203PUT%20http%3a%2f%2fwww.test.com%2flemon%20%2f%2f%20%e4%bf%ae%e6%94%b9%204DELETE%20http%3a%2f%2fwww.test.com%2flemon%20%2f%2f%e5%88%a0%e9%99%a4%20%e4%b8%8d%e7%ac%a6%e5%90%88REST%e8%a7%84%e8%8c%83%e7%9a%84%e5%86%99%e6%b3%95%ef%bc%9a%0a1POST%20http%3a%2f%2fwww.test.com%2fCreatelemon%20%2f%2f%20%e5%88%9b%e5%bb%ba%202POST%20http%3a%2f%2fwww.test.com%2fQuerylemon%20%2f%2f%20%e6%9f%a5%e8%af%a2%203POST%20http%3a%2f%2fwww.test.com%2fModifylemon%20%2f%2f%20%e4%bf%ae%e6%94%b9%204POST%20http%3a%2f%2fwww.test.com%2fDeletelemon%20%2f%2f%e5%88%a0%e9%99%a4%20%e4%b9%9f%e5%b0%b1%e6%98%af%e7%94%a8%20URL%20%e5%ae%9a%e4%bd%8d%e8%b5%84%e6%ba%90%ef%bc%8c%e7%94%a8%20HTTP%20%e6%8f%8f%e8%bf%b0%e6%93%8d%e4%bd%9c%e3%80%82%0a%e5%ae%9e%e9%99%85%e6%93%8d%e4%bd%9c%ef%bc%9a%0a%e5%af%b9%e4%ba%8e%e5%89%8d%e7%ab%af%ef%bc%8c%e5%9c%a8%20js%20%e4%b8%ad%e5%8f%af%e4%bb%a5%e6%8c%87%e5%ae%9a%e8%af%b7%e6%b1%82%e7%b1%bb%e5%9e%8b%ef%bc%8c%e4%bb%a5%e9%80%9a%e8%bf%87%20ajax%20%e5%8f%91%e9%80%81%e8%af%b7%e6%b1%82%e4%b8%ba%e4%be%8b%ef%bc%8c%e5%8f%af%e4%bb%a5%e9%80%9a%e8%bf%87%20type%20%e5%b1%9e%e6%80%a7%e8%bf%9b%e8%a1%8c%e6%8c%87%e5%ae%9a%ef%bc%8c%e5%81%87%e5%a6%82%e6%88%91%e8%a6%81%e8%bf%9b%e8%a1%8c%e4%b8%80%e6%9d%a1%e6%8f%92%e5%85%a5%e6%93%8d%e4%bd%9c%ef%bc%8c%e5%88%99%20type%20%e5%80%bc%e5%ba%94%e4%b8%ba%20%26ldquo%3bPUT%26rdquo%3b%3a%0a1%24.ajax%28%7b%202%20type%3a%20%26%2334%3bPUT%26%2334%3b%2c%203%20url%3a%20%26%2334%3bhttp%3a%2f%2fwww.test.com%2flemon%26%2334%3b%2c%204%20contentType%3a%20%26%2339%3bapplication%2fjson%26%2339%3b%2c%205%20data%3a%20JSON.stringify%28%7b%20ID%3a%20%26%2334%3b1%26%2334%3b%20%7d%29%2c%206%20success%3a%20function%20%28data%2c%20status%29%20%7b%7d%207%7d%29%3b%20%e5%af%b9%e4%ba%8e%e5%90%8e%e7%ab%af%ef%bc%8c%e4%bb%a5%20java%20%e4%b8%ba%e4%be%8b%ef%bc%8c%e5%af%b9%e4%ba%8e%20PUT%20%e6%93%8d%e4%bd%9c%ef%bc%8c%e5%8d%b3%e5%8f%af%e5%af%b9%e5%ba%94%e9%87%87%e7%94%a8%20%40PutMapping%20%e8%bf%9b%e8%a1%8c%e6%8c%87%e5%ae%9a%e3%80%82" aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -216,59 +216,26 @@
     <div class="content" itemprop="articleBody">
       <p><strong>REST</strong>，全称 Representational State Transfer，即表现层状态转移。</p>
 <p>符合REST规范的写法：</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>POST http://www.test.com/lemon   // 创建
-</span></span><span style="display:flex;"><span>Get http://www.test.com/lemon    // 查询
-</span></span><span style="display:flex;"><span>PUT http://www.test.com/lemon    // 修改
-</span></span><span style="display:flex;"><span>DELETE http://www.test.com/lemon //删除
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>不符合REST规范的写法：</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>POST http://www.test.com/Createlemon  // 创建
-</span></span><span style="display:flex;"><span>POST http://www.test.com/Querylemon   // 查询
-</span></span><span style="display:flex;"><span>POST http://www.test.com/Modifylemon  // 修改
-</span></span><span style="display:flex;"><span>POST http://www.test.com/Deletelemon  //删除
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>也就是用 URL 定位资源，用 HTTP 描述操作。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>POST http://www.test.com/lemon   // 创建
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>Get http://www.test.com/lemon    // 查询
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>PUT http://www.test.com/lemon    // 修改
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>DELETE http://www.test.com/lemon //删除
+</span></span></code></pre></div><p>不符合REST规范的写法：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>POST http://www.test.com/Createlemon  // 创建
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>POST http://www.test.com/Querylemon   // 查询
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>POST http://www.test.com/Modifylemon  // 修改
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>POST http://www.test.com/Deletelemon  //删除
+</span></span></code></pre></div><p>也就是用 URL 定位资源，用 HTTP 描述操作。</p>
 <p>实际操作：</p>
 <p>对于前端，在 js 中可以指定请求类型，以通过 ajax 发送请求为例，可以通过 type 属性进行指定，假如我要进行一条插入操作，则 type 值应为 &ldquo;PUT&rdquo;:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>$.ajax({
-</span></span><span style="display:flex;"><span>    type<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#34;PUT&#34;</span>,
-</span></span><span style="display:flex;"><span>    url<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#34;http://www.test.com/lemon&#34;</span>,
-</span></span><span style="display:flex;"><span>    contentType<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;application/json&#39;</span>,
-</span></span><span style="display:flex;"><span>    data<span style="color:#ff79c6">:</span> JSON.stringify({ ID<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#34;1&#34;</span> }),
-</span></span><span style="display:flex;"><span>    success<span style="color:#ff79c6">:</span> <span style="color:#8be9fd;font-style:italic">function</span> (data, status) {}
-</span></span><span style="display:flex;"><span>});
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>对于后端，以 java 为例，对于 PUT 操作，即可对应采用 <code>@PutMapping</code> 进行指定。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>$.ajax({
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>    type<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#34;PUT&#34;</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>    url<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#34;http://www.test.com/lemon&#34;</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>    contentType<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;application/json&#39;</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>    data<span style="color:#ff79c6">:</span> JSON.stringify({ ID<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#34;1&#34;</span> }),
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>    success<span style="color:#ff79c6">:</span> <span style="color:#8be9fd;font-style:italic">function</span> (data, status) {}
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span>});
+</span></span></code></pre></div><p>对于后端，以 java 为例，对于 PUT 操作，即可对应采用 <code>@PutMapping</code> 进行指定。</p>
 <p>此外，对于前后端数据的交互，数据需要是 json 格式的，后端中可采用 <code>@RestController</code> 进行自动的转换，对象将会自动转换为 json 格式数据返回给前端。</p>
 <hr>
 <p><strong>From my blog: <a href="https://akynazh.site">akynazh</a></strong>.</p>
@@ -365,7 +332,7 @@
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f12%2funderstanding-of-rest-style%2f&name=%e5%af%b9%e4%ba%8e%20Rest%20%e9%a3%8e%e6%a0%bc%e7%9a%84%e7%90%86%e8%a7%a3&description=REST%ef%bc%8c%e5%85%a8%e7%a7%b0%20Representational%20State%20Transfer%ef%bc%8c%e5%8d%b3%e8%a1%a8%e7%8e%b0%e5%b1%82%e7%8a%b6%e6%80%81%e8%bd%ac%e7%a7%bb%e3%80%82%0a%e7%ac%a6%e5%90%88REST%e8%a7%84%e8%8c%83%e7%9a%84%e5%86%99%e6%b3%95%ef%bc%9a%0a1%202%203%204%20POST%20http%3a%2f%2fwww.test.com%2flemon%20%2f%2f%20%e5%88%9b%e5%bb%ba%20Get%20http%3a%2f%2fwww.test.com%2flemon%20%2f%2f%20%e6%9f%a5%e8%af%a2%20PUT%20http%3a%2f%2fwww.test.com%2flemon%20%2f%2f%20%e4%bf%ae%e6%94%b9%20DELETE%20http%3a%2f%2fwww.test.com%2flemon%20%2f%2f%e5%88%a0%e9%99%a4%20%e4%b8%8d%e7%ac%a6%e5%90%88REST%e8%a7%84%e8%8c%83%e7%9a%84%e5%86%99%e6%b3%95%ef%bc%9a%0a1%202%203%204%20POST%20http%3a%2f%2fwww.test.com%2fCreatelemon%20%2f%2f%20%e5%88%9b%e5%bb%ba%20POST%20http%3a%2f%2fwww.test.com%2fQuerylemon%20%2f%2f%20%e6%9f%a5%e8%af%a2%20POST%20http%3a%2f%2fwww.test.com%2fModifylemon%20%2f%2f%20%e4%bf%ae%e6%94%b9%20POST%20http%3a%2f%2fwww.test.com%2fDeletelemon%20%2f%2f%e5%88%a0%e9%99%a4%20%e4%b9%9f%e5%b0%b1%e6%98%af%e7%94%a8%20URL%20%e5%ae%9a%e4%bd%8d%e8%b5%84%e6%ba%90%ef%bc%8c%e7%94%a8%20HTTP%20%e6%8f%8f%e8%bf%b0%e6%93%8d%e4%bd%9c%e3%80%82%0a%e5%ae%9e%e9%99%85%e6%93%8d%e4%bd%9c%ef%bc%9a%0a%e5%af%b9%e4%ba%8e%e5%89%8d%e7%ab%af%ef%bc%8c%e5%9c%a8%20js%20%e4%b8%ad%e5%8f%af%e4%bb%a5%e6%8c%87%e5%ae%9a%e8%af%b7%e6%b1%82%e7%b1%bb%e5%9e%8b%ef%bc%8c%e4%bb%a5%e9%80%9a%e8%bf%87%20ajax%20%e5%8f%91%e9%80%81%e8%af%b7%e6%b1%82%e4%b8%ba%e4%be%8b%ef%bc%8c%e5%8f%af%e4%bb%a5%e9%80%9a%e8%bf%87%20type%20%e5%b1%9e%e6%80%a7%e8%bf%9b%e8%a1%8c%e6%8c%87%e5%ae%9a%ef%bc%8c%e5%81%87%e5%a6%82%e6%88%91%e8%a6%81%e8%bf%9b%e8%a1%8c%e4%b8%80%e6%9d%a1%e6%8f%92%e5%85%a5%e6%93%8d%e4%bd%9c%ef%bc%8c%e5%88%99%20type%20%e5%80%bc%e5%ba%94%e4%b8%ba%20%26ldquo%3bPUT%26rdquo%3b%3a%0a1%202%203%204%205%206%207%20%24.ajax%28%7b%20type%3a%20%26%2334%3bPUT%26%2334%3b%2c%20url%3a%20%26%2334%3bhttp%3a%2f%2fwww." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f12%2funderstanding-of-rest-style%2f&name=%e5%af%b9%e4%ba%8e%20Rest%20%e9%a3%8e%e6%a0%bc%e7%9a%84%e7%90%86%e8%a7%a3&description=REST%ef%bc%8c%e5%85%a8%e7%a7%b0%20Representational%20State%20Transfer%ef%bc%8c%e5%8d%b3%e8%a1%a8%e7%8e%b0%e5%b1%82%e7%8a%b6%e6%80%81%e8%bd%ac%e7%a7%bb%e3%80%82%0a%e7%ac%a6%e5%90%88REST%e8%a7%84%e8%8c%83%e7%9a%84%e5%86%99%e6%b3%95%ef%bc%9a%0a1POST%20http%3a%2f%2fwww.test.com%2flemon%20%2f%2f%20%e5%88%9b%e5%bb%ba%202Get%20http%3a%2f%2fwww.test.com%2flemon%20%2f%2f%20%e6%9f%a5%e8%af%a2%203PUT%20http%3a%2f%2fwww.test.com%2flemon%20%2f%2f%20%e4%bf%ae%e6%94%b9%204DELETE%20http%3a%2f%2fwww.test.com%2flemon%20%2f%2f%e5%88%a0%e9%99%a4%20%e4%b8%8d%e7%ac%a6%e5%90%88REST%e8%a7%84%e8%8c%83%e7%9a%84%e5%86%99%e6%b3%95%ef%bc%9a%0a1POST%20http%3a%2f%2fwww.test.com%2fCreatelemon%20%2f%2f%20%e5%88%9b%e5%bb%ba%202POST%20http%3a%2f%2fwww.test.com%2fQuerylemon%20%2f%2f%20%e6%9f%a5%e8%af%a2%203POST%20http%3a%2f%2fwww.test.com%2fModifylemon%20%2f%2f%20%e4%bf%ae%e6%94%b9%204POST%20http%3a%2f%2fwww.test.com%2fDeletelemon%20%2f%2f%e5%88%a0%e9%99%a4%20%e4%b9%9f%e5%b0%b1%e6%98%af%e7%94%a8%20URL%20%e5%ae%9a%e4%bd%8d%e8%b5%84%e6%ba%90%ef%bc%8c%e7%94%a8%20HTTP%20%e6%8f%8f%e8%bf%b0%e6%93%8d%e4%bd%9c%e3%80%82%0a%e5%ae%9e%e9%99%85%e6%93%8d%e4%bd%9c%ef%bc%9a%0a%e5%af%b9%e4%ba%8e%e5%89%8d%e7%ab%af%ef%bc%8c%e5%9c%a8%20js%20%e4%b8%ad%e5%8f%af%e4%bb%a5%e6%8c%87%e5%ae%9a%e8%af%b7%e6%b1%82%e7%b1%bb%e5%9e%8b%ef%bc%8c%e4%bb%a5%e9%80%9a%e8%bf%87%20ajax%20%e5%8f%91%e9%80%81%e8%af%b7%e6%b1%82%e4%b8%ba%e4%be%8b%ef%bc%8c%e5%8f%af%e4%bb%a5%e9%80%9a%e8%bf%87%20type%20%e5%b1%9e%e6%80%a7%e8%bf%9b%e8%a1%8c%e6%8c%87%e5%ae%9a%ef%bc%8c%e5%81%87%e5%a6%82%e6%88%91%e8%a6%81%e8%bf%9b%e8%a1%8c%e4%b8%80%e6%9d%a1%e6%8f%92%e5%85%a5%e6%93%8d%e4%bd%9c%ef%bc%8c%e5%88%99%20type%20%e5%80%bc%e5%ba%94%e4%b8%ba%20%26ldquo%3bPUT%26rdquo%3b%3a%0a1%24.ajax%28%7b%202%20type%3a%20%26%2334%3bPUT%26%2334%3b%2c%203%20url%3a%20%26%2334%3bhttp%3a%2f%2fwww.test.com%2flemon%26%2334%3b%2c%204%20contentType%3a%20%26%2339%3bapplication%2fjson%26%2339%3b%2c%205%20data%3a%20JSON.stringify%28%7b%20ID%3a%20%26%2334%3b1%26%2334%3b%20%7d%29%2c%206%20success%3a%20function%20%28data%2c%20status%29%20%7b%7d%207%7d%29%3b%20%e5%af%b9%e4%ba%8e%e5%90%8e%e7%ab%af%ef%bc%8c%e4%bb%a5%20java%20%e4%b8%ba%e4%be%8b%ef%bc%8c%e5%af%b9%e4%ba%8e%20PUT%20%e6%93%8d%e4%bd%9c%ef%bc%8c%e5%8d%b3%e5%8f%af%e5%af%b9%e5%ba%94%e9%87%87%e7%94%a8%20%40PutMapping%20%e8%bf%9b%e8%a1%8c%e6%8c%87%e5%ae%9a%e3%80%82" aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>

@@ -11,7 +11,7 @@
   <meta property="og:title" content="适配器模式" />
 <meta property="og:description" content="适配器模式 定义 适配器模式将一个类的接口，转换成客户期望的另一个接口，适配器让原本接口不兼容的类可以合作无间。
 代码展示 鸭子和火鸡叫声不一样，通过编写适配器让火鸡适配鸭的方法。
-从接口开始 1 2 3 4 public interface Duck { public void quack(); public void fly(); } 1 2 3 4 public interface Turkey { public void gobble(); public void fly(); } 编写适配器 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 public class TurkeyAdapter implements Duck { Turkey turkey; public TurkeyAdapter(Turkey turkey) { this.turkey = turkey; } public void quack() { turkey." />
+从接口开始 1public interface Duck { 2	public void quack(); 3	public void fly(); 4} 1public interface Turkey { 2	public void gobble(); 3	public void fly(); 4} 编写适配器 1public class TurkeyAdapter implements Duck { 2	Turkey turkey; 3 4	public TurkeyAdapter(Turkey turkey) { 5	this.turkey = turkey; 6	} 7 8	public void quack() { 9	turkey.gobble(); 10	} 11 12	public void fly() { 13	for(int i=0; i &lt; 5; i&#43;&#43;) { 14	turkey." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/2022/08/adapter-mode/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-08-23T16:00:04+08:00" />
@@ -21,14 +21,14 @@
 <meta name="twitter:title" content="适配器模式"/>
 <meta name="twitter:description" content="适配器模式 定义 适配器模式将一个类的接口，转换成客户期望的另一个接口，适配器让原本接口不兼容的类可以合作无间。
 代码展示 鸭子和火鸡叫声不一样，通过编写适配器让火鸡适配鸭的方法。
-从接口开始 1 2 3 4 public interface Duck { public void quack(); public void fly(); } 1 2 3 4 public interface Turkey { public void gobble(); public void fly(); } 编写适配器 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 public class TurkeyAdapter implements Duck { Turkey turkey; public TurkeyAdapter(Turkey turkey) { this.turkey = turkey; } public void quack() { turkey."/>
+从接口开始 1public interface Duck { 2	public void quack(); 3	public void fly(); 4} 1public interface Turkey { 2	public void gobble(); 3	public void fly(); 4} 编写适配器 1public class TurkeyAdapter implements Duck { 2	Turkey turkey; 3 4	public TurkeyAdapter(Turkey turkey) { 5	this.turkey = turkey; 6	} 7 8	public void quack() { 9	turkey.gobble(); 10	} 11 12	public void fly() { 13	for(int i=0; i &lt; 5; i&#43;&#43;) { 14	turkey."/>
 
   
   
   
   
   
-  <link rel="stylesheet" href="/css/styles.d8d1e5ac73f5bd72b0e6919356fcf7f12c9dd5a80e4788cae09111cc3678f69a4294b39d4b852dd69cc393c73ac3d8b6c05c8df3569d49d36331b7f39cfea8d1.css" integrity="sha512-2NHlrHP1vXKw5pGTVvz38Syd1agOR4jK4JERzDZ49ppClLOdS4Ut1pzDk8c6w9i2wFyN81adSdNjMbfznP6o0Q==">
+  <link rel="stylesheet" href="/css/styles.b6e7dac395bc81c65ab67a0be932cbd03925f5afb48f9c825ead224a41084a4a8289db621f5b2236149a32799ae71f4962b1d2531d209f51d8b88cdffaa1877e.css" integrity="sha512-tufaw5W8gcZatnoL6TLL0Dkl9a&#43;0j5yCXq0iSkEISkqCidtiH1siNhSaMnma5x9JYrHSUx0gn1HYuIzf&#43;qGHfg==">
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
@@ -145,7 +145,7 @@
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f08%2fadapter-mode%2f&name=%e9%80%82%e9%85%8d%e5%99%a8%e6%a8%a1%e5%bc%8f&description=%e9%80%82%e9%85%8d%e5%99%a8%e6%a8%a1%e5%bc%8f%20%e5%ae%9a%e4%b9%89%20%e9%80%82%e9%85%8d%e5%99%a8%e6%a8%a1%e5%bc%8f%e5%b0%86%e4%b8%80%e4%b8%aa%e7%b1%bb%e7%9a%84%e6%8e%a5%e5%8f%a3%ef%bc%8c%e8%bd%ac%e6%8d%a2%e6%88%90%e5%ae%a2%e6%88%b7%e6%9c%9f%e6%9c%9b%e7%9a%84%e5%8f%a6%e4%b8%80%e4%b8%aa%e6%8e%a5%e5%8f%a3%ef%bc%8c%e9%80%82%e9%85%8d%e5%99%a8%e8%ae%a9%e5%8e%9f%e6%9c%ac%e6%8e%a5%e5%8f%a3%e4%b8%8d%e5%85%bc%e5%ae%b9%e7%9a%84%e7%b1%bb%e5%8f%af%e4%bb%a5%e5%90%88%e4%bd%9c%e6%97%a0%e9%97%b4%e3%80%82%0a%e4%bb%a3%e7%a0%81%e5%b1%95%e7%a4%ba%20%e9%b8%ad%e5%ad%90%e5%92%8c%e7%81%ab%e9%b8%a1%e5%8f%ab%e5%a3%b0%e4%b8%8d%e4%b8%80%e6%a0%b7%ef%bc%8c%e9%80%9a%e8%bf%87%e7%bc%96%e5%86%99%e9%80%82%e9%85%8d%e5%99%a8%e8%ae%a9%e7%81%ab%e9%b8%a1%e9%80%82%e9%85%8d%e9%b8%ad%e7%9a%84%e6%96%b9%e6%b3%95%e3%80%82%0a%e4%bb%8e%e6%8e%a5%e5%8f%a3%e5%bc%80%e5%a7%8b%201%202%203%204%20public%20interface%20Duck%20%7b%20public%20void%20quack%28%29%3b%20public%20void%20fly%28%29%3b%20%7d%201%202%203%204%20public%20interface%20Turkey%20%7b%20public%20void%20gobble%28%29%3b%20public%20void%20fly%28%29%3b%20%7d%20%e7%bc%96%e5%86%99%e9%80%82%e9%85%8d%e5%99%a8%201%202%203%204%205%206%207%208%209%2010%2011%2012%2013%2014%2015%2016%2017%20public%20class%20TurkeyAdapter%20implements%20Duck%20%7b%20Turkey%20turkey%3b%20public%20TurkeyAdapter%28Turkey%20turkey%29%20%7b%20this.turkey%20%3d%20turkey%3b%20%7d%20public%20void%20quack%28%29%20%7b%20turkey." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f08%2fadapter-mode%2f&name=%e9%80%82%e9%85%8d%e5%99%a8%e6%a8%a1%e5%bc%8f&description=%e9%80%82%e9%85%8d%e5%99%a8%e6%a8%a1%e5%bc%8f%20%e5%ae%9a%e4%b9%89%20%e9%80%82%e9%85%8d%e5%99%a8%e6%a8%a1%e5%bc%8f%e5%b0%86%e4%b8%80%e4%b8%aa%e7%b1%bb%e7%9a%84%e6%8e%a5%e5%8f%a3%ef%bc%8c%e8%bd%ac%e6%8d%a2%e6%88%90%e5%ae%a2%e6%88%b7%e6%9c%9f%e6%9c%9b%e7%9a%84%e5%8f%a6%e4%b8%80%e4%b8%aa%e6%8e%a5%e5%8f%a3%ef%bc%8c%e9%80%82%e9%85%8d%e5%99%a8%e8%ae%a9%e5%8e%9f%e6%9c%ac%e6%8e%a5%e5%8f%a3%e4%b8%8d%e5%85%bc%e5%ae%b9%e7%9a%84%e7%b1%bb%e5%8f%af%e4%bb%a5%e5%90%88%e4%bd%9c%e6%97%a0%e9%97%b4%e3%80%82%0a%e4%bb%a3%e7%a0%81%e5%b1%95%e7%a4%ba%20%e9%b8%ad%e5%ad%90%e5%92%8c%e7%81%ab%e9%b8%a1%e5%8f%ab%e5%a3%b0%e4%b8%8d%e4%b8%80%e6%a0%b7%ef%bc%8c%e9%80%9a%e8%bf%87%e7%bc%96%e5%86%99%e9%80%82%e9%85%8d%e5%99%a8%e8%ae%a9%e7%81%ab%e9%b8%a1%e9%80%82%e9%85%8d%e9%b8%ad%e7%9a%84%e6%96%b9%e6%b3%95%e3%80%82%0a%e4%bb%8e%e6%8e%a5%e5%8f%a3%e5%bc%80%e5%a7%8b%201public%20interface%20Duck%20%7b%202%09public%20void%20quack%28%29%3b%203%09public%20void%20fly%28%29%3b%204%7d%201public%20interface%20Turkey%20%7b%202%09public%20void%20gobble%28%29%3b%203%09public%20void%20fly%28%29%3b%204%7d%20%e7%bc%96%e5%86%99%e9%80%82%e9%85%8d%e5%99%a8%201public%20class%20TurkeyAdapter%20implements%20Duck%20%7b%202%09Turkey%20turkey%3b%203%204%09public%20TurkeyAdapter%28Turkey%20turkey%29%20%7b%205%09this.turkey%20%3d%20turkey%3b%206%09%7d%207%208%09public%20void%20quack%28%29%20%7b%209%09turkey.gobble%28%29%3b%2010%09%7d%2011%2012%09public%20void%20fly%28%29%20%7b%2013%09for%28int%20i%3d0%3b%20i%20%26lt%3b%205%3b%20i%2b%2b%29%20%7b%2014%09turkey." aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -197,7 +197,7 @@
         <div class="article-read-time">
           <i class="far fa-clock"></i>
           
-          2 minute read
+          1 minute read
         </div>
         
         
@@ -231,168 +231,72 @@
 <h3 id="代码展示">代码展示</h3>
 <p>鸭子和火鸡叫声不一样，通过编写适配器让火鸡适配鸭的方法。</p>
 <h4 id="从接口开始">从接口开始</h4>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">interface</span> <span style="color:#50fa7b">Duck</span> <span style="color:#ff79c6">{</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">quack</span><span style="color:#ff79c6">();</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">fly</span><span style="color:#ff79c6">();</span>
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">interface</span> <span style="color:#50fa7b">Turkey</span> <span style="color:#ff79c6">{</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">gobble</span><span style="color:#ff79c6">();</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">fly</span><span style="color:#ff79c6">();</span>
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h4 id="编写适配器">编写适配器</h4>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">TurkeyAdapter</span> <span style="color:#8be9fd;font-style:italic">implements</span> Duck <span style="color:#ff79c6">{</span>
-</span></span><span style="display:flex;"><span>	Turkey turkey<span style="color:#ff79c6">;</span>
-</span></span><span style="display:flex;"><span> 
-</span></span><span style="display:flex;"><span>	<span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#50fa7b">TurkeyAdapter</span><span style="color:#ff79c6">(</span>Turkey turkey<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">turkey</span> <span style="color:#ff79c6">=</span> turkey<span style="color:#ff79c6">;</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#ff79c6">}</span>
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>	<span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">quack</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">{</span>
-</span></span><span style="display:flex;"><span>		turkey<span style="color:#ff79c6">.</span><span style="color:#50fa7b">gobble</span><span style="color:#ff79c6">();</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#ff79c6">}</span>
-</span></span><span style="display:flex;"><span>  
-</span></span><span style="display:flex;"><span>	<span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">fly</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">{</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#ff79c6">for</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span><span style="color:#ff79c6">;</span> i <span style="color:#ff79c6">&lt;</span> <span style="color:#bd93f9">5</span><span style="color:#ff79c6">;</span> i<span style="color:#ff79c6">++)</span> <span style="color:#ff79c6">{</span>
-</span></span><span style="display:flex;"><span>			turkey<span style="color:#ff79c6">.</span><span style="color:#50fa7b">fly</span><span style="color:#ff79c6">();</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#ff79c6">}</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#ff79c6">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h4 id="编写具体类">编写具体类</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">interface</span> <span style="color:#50fa7b">Duck</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>	<span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">quack</span><span style="color:#ff79c6">();</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>	<span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">fly</span><span style="color:#ff79c6">();</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span><span style="color:#ff79c6">}</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">interface</span> <span style="color:#50fa7b">Turkey</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>	<span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">gobble</span><span style="color:#ff79c6">();</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>	<span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">fly</span><span style="color:#ff79c6">();</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span><span style="color:#ff79c6">}</span>
+</span></span></code></pre></div><h4 id="编写适配器">编写适配器</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">TurkeyAdapter</span> <span style="color:#8be9fd;font-style:italic">implements</span> Duck <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>	Turkey turkey<span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span> 
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>	<span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#50fa7b">TurkeyAdapter</span><span style="color:#ff79c6">(</span>Turkey turkey<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>		<span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">turkey</span> <span style="color:#ff79c6">=</span> turkey<span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>	<span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>    
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>	<span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">quack</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>		turkey<span style="color:#ff79c6">.</span><span style="color:#50fa7b">gobble</span><span style="color:#ff79c6">();</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>	<span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>  
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>	<span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">fly</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>		<span style="color:#ff79c6">for</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span><span style="color:#ff79c6">;</span> i <span style="color:#ff79c6">&lt;</span> <span style="color:#bd93f9">5</span><span style="color:#ff79c6">;</span> i<span style="color:#ff79c6">++)</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>			turkey<span style="color:#ff79c6">.</span><span style="color:#50fa7b">fly</span><span style="color:#ff79c6">();</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>		<span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>	<span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span><span style="color:#ff79c6">}</span>
+</span></span></code></pre></div><h4 id="编写具体类">编写具体类</h4>
 <p>绿头鸭：</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">MallardDuck</span> <span style="color:#8be9fd;font-style:italic">implements</span> Duck <span style="color:#ff79c6">{</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">quack</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">{</span>
-</span></span><span style="display:flex;"><span>		System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;Quack&#34;</span><span style="color:#ff79c6">);</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#ff79c6">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">fly</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">{</span>
-</span></span><span style="display:flex;"><span>		System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;I&#39;m flying&#34;</span><span style="color:#ff79c6">);</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#ff79c6">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>野火鸡：</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">WildTurkey</span> <span style="color:#8be9fd;font-style:italic">implements</span> Turkey <span style="color:#ff79c6">{</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">gobble</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">{</span>
-</span></span><span style="display:flex;"><span>		System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;Gobble gobble&#34;</span><span style="color:#ff79c6">);</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#ff79c6">}</span>
-</span></span><span style="display:flex;"><span> 
-</span></span><span style="display:flex;"><span>	<span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">fly</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">{</span>
-</span></span><span style="display:flex;"><span>		System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;I&#39;m flying a short distance&#34;</span><span style="color:#ff79c6">);</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#ff79c6">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h4 id="代码测试">代码测试</h4>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">DuckTestDrive</span> <span style="color:#ff79c6">{</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">testDuck</span><span style="color:#ff79c6">(</span>Duck duck<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
-</span></span><span style="display:flex;"><span>		duck<span style="color:#ff79c6">.</span><span style="color:#50fa7b">quack</span><span style="color:#ff79c6">();</span>
-</span></span><span style="display:flex;"><span>		duck<span style="color:#ff79c6">.</span><span style="color:#50fa7b">fly</span><span style="color:#ff79c6">();</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#ff79c6">}</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">main</span><span style="color:#ff79c6">(</span>String<span style="color:#ff79c6">[]</span> args<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
-</span></span><span style="display:flex;"><span>		Duck duck <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> MallardDuck<span style="color:#ff79c6">();</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>		Turkey turkey <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> WildTurkey<span style="color:#ff79c6">();</span>
-</span></span><span style="display:flex;"><span>		Duck turkeyAdapter <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> TurkeyAdapter<span style="color:#ff79c6">(</span>turkey<span style="color:#ff79c6">);</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>		turkey<span style="color:#ff79c6">.</span><span style="color:#50fa7b">gobble</span><span style="color:#ff79c6">();</span>
-</span></span><span style="display:flex;"><span>		turkey<span style="color:#ff79c6">.</span><span style="color:#50fa7b">fly</span><span style="color:#ff79c6">();</span>
-</span></span><span style="display:flex;"><span>		testDuck<span style="color:#ff79c6">(</span>duck<span style="color:#ff79c6">);</span>
-</span></span><span style="display:flex;"><span>		testDuck<span style="color:#ff79c6">(</span>turkeyAdapter<span style="color:#ff79c6">);</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#ff79c6">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">MallardDuck</span> <span style="color:#8be9fd;font-style:italic">implements</span> Duck <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>	<span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">quack</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>		System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;Quack&#34;</span><span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>	<span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>	<span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">fly</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span>		System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;I&#39;m flying&#34;</span><span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span><span>	<span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9</span><span><span style="color:#ff79c6">}</span>
+</span></span></code></pre></div><p>野火鸡：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">WildTurkey</span> <span style="color:#8be9fd;font-style:italic">implements</span> Turkey <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>	<span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">gobble</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>		System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;Gobble gobble&#34;</span><span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>	<span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span> 
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>	<span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">fly</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span>		System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;I&#39;m flying a short distance&#34;</span><span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span><span>	<span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9</span><span><span style="color:#ff79c6">}</span>
+</span></span></code></pre></div><h4 id="代码测试">代码测试</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">DuckTestDrive</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>    <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">testDuck</span><span style="color:#ff79c6">(</span>Duck duck<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>		duck<span style="color:#ff79c6">.</span><span style="color:#50fa7b">quack</span><span style="color:#ff79c6">();</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>		duck<span style="color:#ff79c6">.</span><span style="color:#50fa7b">fly</span><span style="color:#ff79c6">();</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>	<span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>	<span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">main</span><span style="color:#ff79c6">(</span>String<span style="color:#ff79c6">[]</span> args<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>		Duck duck <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> MallardDuck<span style="color:#ff79c6">();</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>		Turkey turkey <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> WildTurkey<span style="color:#ff79c6">();</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>		Duck turkeyAdapter <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> TurkeyAdapter<span style="color:#ff79c6">(</span>turkey<span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>		turkey<span style="color:#ff79c6">.</span><span style="color:#50fa7b">gobble</span><span style="color:#ff79c6">();</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>		turkey<span style="color:#ff79c6">.</span><span style="color:#50fa7b">fly</span><span style="color:#ff79c6">();</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>		testDuck<span style="color:#ff79c6">(</span>duck<span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>		testDuck<span style="color:#ff79c6">(</span>turkeyAdapter<span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>	<span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span><span style="color:#ff79c6">}</span>
+</span></span></code></pre></div><hr>
 <p><strong>参考：《HeadFist设计模式》</strong></p>
 <p><strong>From My Blog: <a href="https://akynazh.site">akynazh</a></strong>.</p>
 <p><strong>Over.</strong></p>
@@ -504,7 +408,7 @@
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f08%2fadapter-mode%2f&name=%e9%80%82%e9%85%8d%e5%99%a8%e6%a8%a1%e5%bc%8f&description=%e9%80%82%e9%85%8d%e5%99%a8%e6%a8%a1%e5%bc%8f%20%e5%ae%9a%e4%b9%89%20%e9%80%82%e9%85%8d%e5%99%a8%e6%a8%a1%e5%bc%8f%e5%b0%86%e4%b8%80%e4%b8%aa%e7%b1%bb%e7%9a%84%e6%8e%a5%e5%8f%a3%ef%bc%8c%e8%bd%ac%e6%8d%a2%e6%88%90%e5%ae%a2%e6%88%b7%e6%9c%9f%e6%9c%9b%e7%9a%84%e5%8f%a6%e4%b8%80%e4%b8%aa%e6%8e%a5%e5%8f%a3%ef%bc%8c%e9%80%82%e9%85%8d%e5%99%a8%e8%ae%a9%e5%8e%9f%e6%9c%ac%e6%8e%a5%e5%8f%a3%e4%b8%8d%e5%85%bc%e5%ae%b9%e7%9a%84%e7%b1%bb%e5%8f%af%e4%bb%a5%e5%90%88%e4%bd%9c%e6%97%a0%e9%97%b4%e3%80%82%0a%e4%bb%a3%e7%a0%81%e5%b1%95%e7%a4%ba%20%e9%b8%ad%e5%ad%90%e5%92%8c%e7%81%ab%e9%b8%a1%e5%8f%ab%e5%a3%b0%e4%b8%8d%e4%b8%80%e6%a0%b7%ef%bc%8c%e9%80%9a%e8%bf%87%e7%bc%96%e5%86%99%e9%80%82%e9%85%8d%e5%99%a8%e8%ae%a9%e7%81%ab%e9%b8%a1%e9%80%82%e9%85%8d%e9%b8%ad%e7%9a%84%e6%96%b9%e6%b3%95%e3%80%82%0a%e4%bb%8e%e6%8e%a5%e5%8f%a3%e5%bc%80%e5%a7%8b%201%202%203%204%20public%20interface%20Duck%20%7b%20public%20void%20quack%28%29%3b%20public%20void%20fly%28%29%3b%20%7d%201%202%203%204%20public%20interface%20Turkey%20%7b%20public%20void%20gobble%28%29%3b%20public%20void%20fly%28%29%3b%20%7d%20%e7%bc%96%e5%86%99%e9%80%82%e9%85%8d%e5%99%a8%201%202%203%204%205%206%207%208%209%2010%2011%2012%2013%2014%2015%2016%2017%20public%20class%20TurkeyAdapter%20implements%20Duck%20%7b%20Turkey%20turkey%3b%20public%20TurkeyAdapter%28Turkey%20turkey%29%20%7b%20this.turkey%20%3d%20turkey%3b%20%7d%20public%20void%20quack%28%29%20%7b%20turkey." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f08%2fadapter-mode%2f&name=%e9%80%82%e9%85%8d%e5%99%a8%e6%a8%a1%e5%bc%8f&description=%e9%80%82%e9%85%8d%e5%99%a8%e6%a8%a1%e5%bc%8f%20%e5%ae%9a%e4%b9%89%20%e9%80%82%e9%85%8d%e5%99%a8%e6%a8%a1%e5%bc%8f%e5%b0%86%e4%b8%80%e4%b8%aa%e7%b1%bb%e7%9a%84%e6%8e%a5%e5%8f%a3%ef%bc%8c%e8%bd%ac%e6%8d%a2%e6%88%90%e5%ae%a2%e6%88%b7%e6%9c%9f%e6%9c%9b%e7%9a%84%e5%8f%a6%e4%b8%80%e4%b8%aa%e6%8e%a5%e5%8f%a3%ef%bc%8c%e9%80%82%e9%85%8d%e5%99%a8%e8%ae%a9%e5%8e%9f%e6%9c%ac%e6%8e%a5%e5%8f%a3%e4%b8%8d%e5%85%bc%e5%ae%b9%e7%9a%84%e7%b1%bb%e5%8f%af%e4%bb%a5%e5%90%88%e4%bd%9c%e6%97%a0%e9%97%b4%e3%80%82%0a%e4%bb%a3%e7%a0%81%e5%b1%95%e7%a4%ba%20%e9%b8%ad%e5%ad%90%e5%92%8c%e7%81%ab%e9%b8%a1%e5%8f%ab%e5%a3%b0%e4%b8%8d%e4%b8%80%e6%a0%b7%ef%bc%8c%e9%80%9a%e8%bf%87%e7%bc%96%e5%86%99%e9%80%82%e9%85%8d%e5%99%a8%e8%ae%a9%e7%81%ab%e9%b8%a1%e9%80%82%e9%85%8d%e9%b8%ad%e7%9a%84%e6%96%b9%e6%b3%95%e3%80%82%0a%e4%bb%8e%e6%8e%a5%e5%8f%a3%e5%bc%80%e5%a7%8b%201public%20interface%20Duck%20%7b%202%09public%20void%20quack%28%29%3b%203%09public%20void%20fly%28%29%3b%204%7d%201public%20interface%20Turkey%20%7b%202%09public%20void%20gobble%28%29%3b%203%09public%20void%20fly%28%29%3b%204%7d%20%e7%bc%96%e5%86%99%e9%80%82%e9%85%8d%e5%99%a8%201public%20class%20TurkeyAdapter%20implements%20Duck%20%7b%202%09Turkey%20turkey%3b%203%204%09public%20TurkeyAdapter%28Turkey%20turkey%29%20%7b%205%09this.turkey%20%3d%20turkey%3b%206%09%7d%207%208%09public%20void%20quack%28%29%20%7b%209%09turkey.gobble%28%29%3b%2010%09%7d%2011%2012%09public%20void%20fly%28%29%20%7b%2013%09for%28int%20i%3d0%3b%20i%20%26lt%3b%205%3b%20i%2b%2b%29%20%7b%2014%09turkey." aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>

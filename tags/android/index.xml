@@ -36,7 +36,7 @@
 通过脚本可以方便地进行操作，这里我通过js完成工作。
 使用javascript进行删除操作 做法：每天固定一个时间（建议是在自己睡觉时）完成自动的清除。对所有目标文件夹进行扫描（递归性地），如果找到了.hwbk文件，将其后缀重命名为.hwbk.fuck_hwbk，再执行删除操作即可。
 kill_hwbk.js
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 function kill_hwbk_r(parent_dir) { let child_dirs = files.</description>
+1function kill_hwbk_r(parent_dir) { 2 let child_dirs = files.listDir(parent_dir, function(name) { 3 return files.isDir(files.join(parent_dir, name)); 4 }); 5 let hwbk_files = files.listDir(parent_dir, function(name) { 6 return name.</description>
     </item>
     
   </channel>

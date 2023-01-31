@@ -15,17 +15,18 @@
       
       <guid>/posts/2023/01/simple-use-record-of-pipenv/</guid>
       <description>关于pipenv pipenv集成了pip，virtualenv两者的功能，且完善了两者的一些缺陷。
-安装pipenv 1 pip install pipenv -U 创建虚拟环境 初次创建环境可以使用以下类似命令：
-1 pipenv install --python C:/Users/akyna/AppData/Local/Programs/Python/Python37/python.exe --pypi-mirror https://pypi.tuna.tsinghua.edu.cn/simple --python 是可选的，可以指定python版本，参数为python解释器的绝对路径，如果不指定，默认使用当前系统的python。
+安装pipenv 1pip install pipenv -U 创建虚拟环境 初次创建环境可以使用以下类似命令：
+1pipenv install --python C:/Users/akyna/AppData/Local/Programs/Python/Python37/python.exe --pypi-mirror https://pypi.tuna.tsinghua.edu.cn/simple --python 是可选的，可以指定python版本，参数为python解释器的绝对路径，如果不指定，默认使用当前系统的python。
 --pypi-mirror 是可选的，可以指定镜像，加速下载。
 创建好后，在当前目录下将会生成 Pipfile 文件，在 ~\.virtualenvs 下生成虚拟环境目录（存放python解释器和依赖）。
 如果目录中已经存在 Pipfile 或者 requirements.txt，pipenv会自动检测这两个文件并将对应依赖进行安装。
 查看虚拟环境目录位置：
-1 pipenv --venv 激活虚拟环境 1 2 3 pipenv shell # 激活虚拟环境 python -V 如果激活了虚拟环境，在当前shell下，使用的python或者pip都是虚拟环境中的python和pip。
+1pipenv --venv 激活虚拟环境 1pipenv shell # 激活虚拟环境 2 3python -V 如果激活了虚拟环境，在当前shell下，使用的python或者pip都是虚拟环境中的python和pip。
 配置Pip并安装依赖 配置镜像源为清华源：
-1 2 3 4 vim Pipfile [[source]] url = &amp;#34;https://pypi.tuna.tsinghua.edu.cn/simple&amp;#34; 以后所有依赖的安装都不需要指定 --pypi-mirror 了。
+1vim Pipfile 2 3[[source]] 4url = &amp;#34;https://pypi.tuna.tsinghua.edu.cn/simple&amp;#34; 以后所有依赖的安装都不需要指定 --pypi-mirror 了。
 安装依赖：（建议关闭代理，如果有的话）
-1 2 pipenv install {pkg} # 如果激活了虚拟环境，可以使用pip # pipenv install -r requirements.</description>
+1pipenv install {pkg} # 如果激活了虚拟环境，可以使用pip 2# pipenv install -r requirements.txt 安装完依赖后，将会生成 Pipfile.lock 文件，以后初始化虚拟环境都只需要运行 pipenv install 即可完成所有依赖的安装。
+当然，也可以通过生成 requirements.</description>
     </item>
     
     <item>
@@ -36,16 +37,19 @@
       <guid>/posts/2022/12/naming-standard-problems-encountered-in-development/</guid>
       <description>后端中与数据库交互时 数据库一般采用下划线命名，而对于 java 而言，实体类的命名应当是驼峰式的命名，所以在与数据库交互时需要注意进行转换。
 对于采用了 Mybatis-plus 框架的应用，无需考虑此问题，因为它已经帮我们做好转换了，对应的配置如下：
-1 2 3 mybatis-plus: configuration: map-underscore-to-camel-case: true 如果你数据库命名已经采用了驼峰式命名，需要将该配置置为 false。（默认为 true）
+1mybatis-plus: 2 configuration: 3 map-underscore-to-camel-case: true 如果你数据库命名已经采用了驼峰式命名，需要将该配置置为 false。（默认为 true）
 对于没采用该框架的应用，需要注意在编写的 sql 语句中进行转换。
 关于后端返回的 json 数据 首先注意，json 采用驼峰命名法。
 一般对于前后端分离的项目，后端都是返回 json 格式数据，比如使用 @RestController 进行自动的转换。
 对于一个采用驼峰命名法命名的变量，比如 userId，转换后返回前端的 json 属性名是 userId，没有问题。
 但是当变量名为 uId时，转换后则变为 uid，这就产生了问题。我还测试了其它一些变量，如下：
-1 2 3 4 5 6 7 8 # userId {&amp;#34;code&amp;#34;:200,&amp;#34;msg&amp;#34;:&amp;#34;ok&amp;#34;,&amp;#34;obj&amp;#34;:{&amp;#34;userId&amp;#34;:&amp;#34;hello&amp;#34;}} # uId {&amp;#34;code&amp;#34;:200,&amp;#34;msg&amp;#34;:&amp;#34;ok&amp;#34;,&amp;#34;obj&amp;#34;:{&amp;#34;uid&amp;#34;:&amp;#34;hello&amp;#34;}} # Id {&amp;#34;code&amp;#34;:200,&amp;#34;msg&amp;#34;:&amp;#34;ok&amp;#34;,&amp;#34;obj&amp;#34;:{&amp;#34;id&amp;#34;:&amp;#34;hello&amp;#34;}} # uuId {&amp;#34;code&amp;#34;:200,&amp;#34;msg&amp;#34;:&amp;#34;ok&amp;#34;,&amp;#34;obj&amp;#34;:{&amp;#34;uuId&amp;#34;:&amp;#34;hello&amp;#34;}} 可见当为 uId 和 Id 时，都会出现问题。
+1# userId 2{&amp;#34;code&amp;#34;:200,&amp;#34;msg&amp;#34;:&amp;#34;ok&amp;#34;,&amp;#34;obj&amp;#34;:{&amp;#34;userId&amp;#34;:&amp;#34;hello&amp;#34;}} 3# uId 4{&amp;#34;code&amp;#34;:200,&amp;#34;msg&amp;#34;:&amp;#34;ok&amp;#34;,&amp;#34;obj&amp;#34;:{&amp;#34;uid&amp;#34;:&amp;#34;hello&amp;#34;}} 5# Id 6{&amp;#34;code&amp;#34;:200,&amp;#34;msg&amp;#34;:&amp;#34;ok&amp;#34;,&amp;#34;obj&amp;#34;:{&amp;#34;id&amp;#34;:&amp;#34;hello&amp;#34;}} 7# uuId 8{&amp;#34;code&amp;#34;:200,&amp;#34;msg&amp;#34;:&amp;#34;ok&amp;#34;,&amp;#34;obj&amp;#34;:{&amp;#34;uuId&amp;#34;:&amp;#34;hello&amp;#34;}} 可见当为 uId 和 Id 时，都会出现问题。
 一般可以考虑在后端变量命名时，不让第二个字符大写，或者采用 @JsonProperty(&amp;quot;uId&amp;quot;) 进行解决。
 关于前端的命名问题 css 采用串式命名法（kebab-case）。
-在串式命名法中，各个单词之间通过下划线“-”连接，比如：</description>
+在串式命名法中，各个单词之间通过下划线“-”连接，比如：
+1hello-world 2first-project js 采用驼峰命名法。
+关于 url 变量的命名问题 注意域名是不区分大小写的：
+hTTps://aKYnazh.site 和 https://akynazh.</description>
     </item>
     
     <item>
@@ -107,9 +111,9 @@ Over.</description>
 这样相比于直接继承抽象鸭子后重写叫声行为方法，好处是减少了重复代码，而坏处是增加了类的数量。
 代码展示 下面就以鸭子为例进行说明。
 从接口开始 定义一个叫声接口：（其它接口省略）
-1 2 3 public interface QuackBehavior { public void quack(); } 实现叫声接口 1 2 3 4 5 public class MuteQuack implements QuackBehavior { public void quack() { System.out.println(&amp;#34;&amp;lt;&amp;lt; Silence &amp;gt;&amp;gt;&amp;#34;); } } 其它接口省略。
+1public interface QuackBehavior { 2	public void quack(); 3} 实现叫声接口 1public class MuteQuack implements QuackBehavior { 2	public void quack() { 3	System.out.println(&amp;#34;&amp;lt;&amp;lt; Silence &amp;gt;&amp;gt;&amp;#34;); 4	} 5} 其它接口省略。
 创建抽象鸭子 每只鸭子都有Fly和Quack这两种行为。
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 public abstract class Duck { FlyBehavior flyBehavior; QuackBehavior quackBehavior; public Duck() { } public void setFlyBehavior(FlyBehavior fb) { flyBehavior = fb; } public void setQuackBehavior(QuackBehavior qb) { quackBehavior = qb; } abstract void display(); public void performFly() { flyBehavior.</description>
+1public abstract class Duck { 2	FlyBehavior flyBehavior; 3	QuackBehavior quackBehavior; 4 5	public Duck() { 6	} 7 8	public void setFlyBehavior(FlyBehavior fb) { 9	flyBehavior = fb; 10	} 11 12	public void setQuackBehavior(QuackBehavior qb) { 13	quackBehavior = qb; 14	} 15 16	abstract void display(); 17 18	public void performFly() { 19	flyBehavior.</description>
     </item>
     
     <item>
@@ -129,7 +133,7 @@ Over.</description>
 这个过程可以通过代理的方式方便地完成：虚拟代理对象扮演图像的替身，它通过创建一个线程加载网络图像，加载期间将图像动态地变为用户友好字样，完成加载后改为网络图像。
 可以发现我们不是直接使用图像本身，而使用了代理对象作为图像，也就是说，代理扮演了图像这个角色。
 下面是一个图像代理对象：
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 class ImageProxy implements Icon { volatile ImageIcon imageIcon; final URL imageURL; Thread retrievalThread; boolean retrieving = false; public ImageProxy(URL url) { imageURL = url; } public int getIconWidth() { .</description>
+1class ImageProxy implements Icon { 2	volatile ImageIcon imageIcon; 3	final URL imageURL; 4	Thread retrievalThread; 5	boolean retrieving = false; 6 7	public ImageProxy(URL url) { imageURL = url; } 8 9	public int getIconWidth() { 10 ... 11	} 12 13	public int getIconHeight() { 14 ... 15	} 16	17	synchronized void setImageIcon(ImageIcon imageIcon) { 18	this.</description>
     </item>
     
     <item>
@@ -142,7 +146,7 @@ Over.</description>
 比如某个机器有各种复杂的状态，每个状态都着共同的参数，而这些参数值有区别。用户通过某些操作会改变机器的状态，机器转变状态后，以当前状态的方法给用户反馈。
 代码展示 以机器的例子说明。
 从接口开始 编写状态接口：
-1 2 3 4 5 6 7 8 9 public interface State { public void insertQuarter(); public void ejectQuarter(); public void turnCrank(); public void dispense(); public void refill(); } 创建机器类 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 package headfirst.</description>
+1public interface State { 2 3	public void insertQuarter(); 4	public void ejectQuarter(); 5	public void turnCrank(); 6	public void dispense(); 7	8	public void refill(); 9} 创建机器类 1package headfirst.designpatterns.state.gumballstate; 2 3public class GumballMachine { 4 // 各种机器状态 5	State soldOutState; 6	State noQuarterState; 7	State hasQuarterState; 8	State soldState; 9 // 当前状态 10	State state; 11	int count = 0; 12 13	public GumballMachine(int numberGumballs) { 14	soldOutState = new SoldOutState(this); 15	noQuarterState = new NoQuarterState(this); 16	hasQuarterState = new HasQuarterState(this); 17	soldState = new SoldState(this); 18 19	this.</description>
     </item>
     
     <item>
@@ -155,7 +159,7 @@ Over.</description>
 对于菜单内容而言，假如只有简单的菜品项，那么通过迭代器可以轻松地遍历，但是如果菜单内容中含有子菜单，那么就需要组合模式了。
 代码展示 下面就以菜单为例子展示组合模式。
 从抽象开始 创建菜单组件：
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 public abstract class MenuComponent { public void add(MenuComponent menuComponent) { throw new UnsupportedOperationException(); } public void remove(MenuComponent menuComponent) { throw new UnsupportedOperationException(); } public MenuComponent getChild(int i) { throw new UnsupportedOperationException(); } public String getName() { throw new UnsupportedOperationException(); } public String getDescription() { throw new UnsupportedOperationException(); } public double getPrice() { throw new UnsupportedOperationException(); } public boolean isVegetarian() { throw new UnsupportedOperationException(); } public void print() { throw new UnsupportedOperationException(); } } 创建菜单 菜单本身是一个菜单组件，菜单继承于菜单组件，实现父类方法。</description>
+1public abstract class MenuComponent { 2 3	public void add(MenuComponent menuComponent) { 4	throw new UnsupportedOperationException(); 5	} 6	public void remove(MenuComponent menuComponent) { 7	throw new UnsupportedOperationException(); 8	} 9	public MenuComponent getChild(int i) { 10	throw new UnsupportedOperationException(); 11	} 12 13	public String getName() { 14	throw new UnsupportedOperationException(); 15	} 16	public String getDescription() { 17	throw new UnsupportedOperationException(); 18	} 19	public double getPrice() { 20	throw new UnsupportedOperationException(); 21	} 22	public boolean isVegetarian() { 23	throw new UnsupportedOperationException(); 24	} 25 26	public void print() { 27	throw new UnsupportedOperationException(); 28	} 29} 创建菜单 菜单本身是一个菜单组件，菜单继承于菜单组件，实现父类方法。</description>
     </item>
     
     <item>
@@ -169,9 +173,9 @@ Over.</description>
 代码展示 下面通过菜单的例子进行说明。
 分别用简单数组String[]和ArrayList&amp;lt;String&amp;gt;类创建菜单内容。
 从接口开始 创建菜单接口：
-1 2 3 public interface Menu { public Iterator&amp;lt;String&amp;gt; createIterator(); } 每个菜单都可以返回一个迭代器。
+1public interface Menu { 2	public Iterator&amp;lt;String&amp;gt; createIterator(); 3} 每个菜单都可以返回一个迭代器。
 创建Diner菜单 该菜单用String[]创建内容，需要编写自己的迭代器。
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 public class DinerMenu implements Menu { static final int MAX_ITEMS = 6; int numberOfItems = 0; String[] menuItems; public DinerMenu() { menuItems = new String[MAX_ITEMS]; addItem(&amp;#34;Vegetarian BLT&amp;#34;); addItem(&amp;#34;BLT&amp;#34;); addItem(&amp;#34;Soup of the day&amp;#34;); addItem(&amp;#34;Hotdog&amp;#34;); addItem(&amp;#34;Steamed Veggies and Brown Rice&amp;#34;); addItem(&amp;#34;Pasta&amp;#34;); } public void addItem(String name) { if (numberOfItems &amp;gt;= MAX_ITEMS) { System.</description>
+1public class DinerMenu implements Menu { 2	static final int MAX_ITEMS = 6; 3	int numberOfItems = 0; 4	String[] menuItems; 5 6	public DinerMenu() { 7	menuItems = new String[MAX_ITEMS]; 8 9	addItem(&amp;#34;Vegetarian BLT&amp;#34;); 10	addItem(&amp;#34;BLT&amp;#34;); 11	addItem(&amp;#34;Soup of the day&amp;#34;); 12	addItem(&amp;#34;Hotdog&amp;#34;); 13	addItem(&amp;#34;Steamed Veggies and Brown Rice&amp;#34;); 14	addItem(&amp;#34;Pasta&amp;#34;); 15	} 16 17	public void addItem(String name) 18	{ 19	if (numberOfItems &amp;gt;= MAX_ITEMS) { 20	System.</description>
     </item>
     
     <item>
@@ -185,8 +189,8 @@ Over.</description>
 其实就是防止“依赖腐败”，也就是要避免高层组件和低层组件相互依赖。一般由高层组件依赖低层组件。
 代码展示 泡茶和泡咖啡有着几乎相同的步骤，但在某些子步骤中有差别。通过模板方法可以很好地解决问题。
 定义模板方法 子步骤brew()和addCondiments()为抽象方法，由子类具体实现。
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 public abstract class CaffeineBeverage { final void prepareRecipe() { boilWater(); brew(); pourInCup(); addCondiments(); } abstract void brew(); abstract void addCondiments(); void boilWater() { System.out.println(&amp;#34;Boiling water&amp;#34;); } void pourInCup() { System.out.println(&amp;#34;Pouring into cup&amp;#34;); } } 定义具体方法 继承CaffeineBeverage并实现抽象方法。
-1 2 3 4 5 6 7 8 public class Coffee extends CaffeineBeverage { public void brew() { System.</description>
+1public abstract class CaffeineBeverage { 2 3	final void prepareRecipe() { 4	boilWater(); 5	brew(); 6	pourInCup(); 7	addCondiments(); 8	} 9 10	abstract void brew(); 11 12	abstract void addCondiments(); 13 14	void boilWater() { 15	System.out.println(&amp;#34;Boiling water&amp;#34;); 16	} 17 18	void pourInCup() { 19	System.out.println(&amp;#34;Pouring into cup&amp;#34;); 20	} 21} 定义具体方法 继承CaffeineBeverage并实现抽象方法。
+1public class Coffee extends CaffeineBeverage { 2	public void brew() { 3	System.</description>
     </item>
     
     <item>
@@ -199,7 +203,7 @@ Over.</description>
 “最少知识”原则 减少对象之间的交互，只和“密友”谈话，也就是减少一个类所交互的类的数量。
 代码展示 执行一些复杂操作需要一步步执行许多小操作，那么可以将复杂操作封装为一个高层类中的方法，将所有复杂操作需要用到的类作为高层类的成员，在复杂操作的方法中可以方便的调用各个类执行各自的功能。
 下面是一个家庭影院的例子：
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 public class HomeTheaterFacade { Amplifier amp; Tuner tuner; StreamingPlayer player; CdPlayer cd; Projector projector; TheaterLights lights; Screen screen; PopcornPopper popper; public HomeTheaterFacade(Amplifier amp, Tuner tuner, StreamingPlayer player, Projector projector, Screen screen, TheaterLights lights, PopcornPopper popper) { this.</description>
+1public class HomeTheaterFacade { 2	Amplifier amp; 3	Tuner tuner; 4	StreamingPlayer player; 5	CdPlayer cd; 6	Projector projector; 7	TheaterLights lights; 8	Screen screen; 9	PopcornPopper popper; 10 11	public HomeTheaterFacade(Amplifier amp, 12	Tuner tuner, 13	StreamingPlayer player, 14	Projector projector, 15	Screen screen, 16	TheaterLights lights, 17	PopcornPopper popper) { 18 19	this.amp = amp; 20	this.tuner = tuner; 21	this.</description>
     </item>
     
     <item>
@@ -210,7 +214,7 @@ Over.</description>
       <guid>/posts/2022/08/adapter-mode/</guid>
       <description>适配器模式 定义 适配器模式将一个类的接口，转换成客户期望的另一个接口，适配器让原本接口不兼容的类可以合作无间。
 代码展示 鸭子和火鸡叫声不一样，通过编写适配器让火鸡适配鸭的方法。
-从接口开始 1 2 3 4 public interface Duck { public void quack(); public void fly(); } 1 2 3 4 public interface Turkey { public void gobble(); public void fly(); } 编写适配器 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 public class TurkeyAdapter implements Duck { Turkey turkey; public TurkeyAdapter(Turkey turkey) { this.turkey = turkey; } public void quack() { turkey.</description>
+从接口开始 1public interface Duck { 2	public void quack(); 3	public void fly(); 4} 1public interface Turkey { 2	public void gobble(); 3	public void fly(); 4} 编写适配器 1public class TurkeyAdapter implements Duck { 2	Turkey turkey; 3 4	public TurkeyAdapter(Turkey turkey) { 5	this.turkey = turkey; 6	} 7 8	public void quack() { 9	turkey.gobble(); 10	} 11 12	public void fly() { 13	for(int i=0; i &amp;lt; 5; i++) { 14	turkey.</description>
     </item>
     
     <item>
@@ -223,8 +227,8 @@ Over.</description>
 比如对于遥控器而已，我们会将操作封装为一个按钮（命令）对象，通过按下按钮执行操作。
 代码展示 下面以遥控器作为例子：
 从接口开始 命令接口：
-1 2 3 public interface Command { public void execute(); } 定义操控对象 一个风扇对象：（其它对象省略了）
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 public class Light { String location = &amp;#34;&amp;#34;; public Light(String location) { this.location = location; } public void on() { System.out.println(location + &amp;#34; light is on&amp;#34;); } public void off() { System.out.println(location + &amp;#34; light is off&amp;#34;); } } 定义操控对象的命令 操作风扇的命令：</description>
+1public interface Command { 2	public void execute(); 3} 定义操控对象 一个风扇对象：（其它对象省略了）
+1public class Light { 2	String location = &amp;#34;&amp;#34;; 3 4	public Light(String location) { 5	this.location = location; 6	} 7 8	public void on() { 9	System.out.println(location + &amp;#34; light is on&amp;#34;); 10	} 11 12	public void off() { 13	System.out.println(location + &amp;#34; light is off&amp;#34;); 14	} 15} 定义操控对象的命令 操作风扇的命令：</description>
     </item>
     
     <item>
@@ -236,8 +240,8 @@ Over.</description>
       <description>我的思考 单件模式，容易知道需要某个对象是独一无二的，那么它首先应该是静态的，不能在程序动态运行期间被再次创建。
 当在多个线程中用到它时，在创建时需要考虑线程安全问题，可通过加锁等方式解决。
 代码实现 传统的单件 定义一个私有实例化的对象，把单件对象作为一个私有的静态成员变量，通过静态方法Singleton.getInstance()获取，若获取为null则创建对象。
-1 2 3 4 5 6 7 8 9 10 11 12 public class Singleton { private static Singleton uniqueInstance; private Singleton() {} public static Singleton getInstance() { if (uniqueInstance == null) { uniqueInstance = new Singleton(); } return uniqueInstance; } } 线程安全的单件 传统的单件线程不安全，解决如下：
-1 2 3 4 5 6 7 8 9 10 11 12 public class Singleton { private static Singleton uniqueInstance; private Singleton() {} public static synchronized Singleton getInstance() { if (uniqueInstance == null) { uniqueInstance = new Singleton(); } return uniqueInstance; } } 改善多线程性能 如上线程安全的代码，getInstance()在多次调用的情况下性能太低，改善方法如下：</description>
+1public class Singleton { 2	private static Singleton uniqueInstance; 3 4	private Singleton() {} 5 6	public static Singleton getInstance() { 7	if (uniqueInstance == null) { 8	uniqueInstance = new Singleton(); 9	} 10	return uniqueInstance; 11	} 12} 线程安全的单件 传统的单件线程不安全，解决如下：
+1public class Singleton { 2	private static Singleton uniqueInstance; 3 4	private Singleton() {} 5 6	public static synchronized Singleton getInstance() { 7	if (uniqueInstance == null) { 8	uniqueInstance = new Singleton(); 9	} 10	return uniqueInstance; 11	} 12} 改善多线程性能 如上线程安全的代码，getInstance()在多次调用的情况下性能太低，改善方法如下：</description>
     </item>
     
     <item>
@@ -253,8 +257,8 @@ Over.</description>
 假设有多家生产比萨配料的工厂，他们都有自己的独特的配料（实现所有配料接口），那么可以定义一个抽象工厂（一个接口），提供所有配料创建方法，具体工厂各自实现所有创建方法即可。
 总之，他们的具体区别如下：
 工厂方法模式使用继承，把对象的创建委托给子类，子类实现工厂方法来创建对象。 抽象工厂模式使用对象组合，对象的创建被实现在工厂接口所暴露出来的方法中。 工厂方法模式代码 从抽象开始 比萨店抽象类：
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 public abstract class PizzaStore { abstract Pizza createPizza(String item); public Pizza orderPizza(String type) { Pizza pizza = createPizza(type); System.out.println(&amp;#34;--- Making a &amp;#34; + pizza.getName() + &amp;#34; ---&amp;#34;); pizza.prepare(); pizza.bake(); pizza.cut(); pizza.box(); return pizza; } } 具体的比萨店 芝加哥的比萨店：
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 public class ChicagoPizzaStore extends PizzaStore { Pizza createPizza(String item) { if (item.</description>
+1public abstract class PizzaStore { 2 3	abstract Pizza createPizza(String item); 4 5	public Pizza orderPizza(String type) { 6	Pizza pizza = createPizza(type); 7	System.out.println(&amp;#34;--- Making a &amp;#34; + pizza.getName() + &amp;#34; ---&amp;#34;); 8	pizza.prepare(); 9	pizza.bake(); 10	pizza.cut(); 11	pizza.box(); 12	return pizza; 13	} 14} 具体的比萨店 芝加哥的比萨店：
+1public class ChicagoPizzaStore extends PizzaStore { 2 3	Pizza createPizza(String item) { 4 if (item.</description>
     </item>
     
     <item>
@@ -270,10 +274,10 @@ Over.</description>
 这么一层层封装上去就是装饰模式。
 我们要在每一个配料中定义一个可包装的对象，在包装后返回这个对象。具体代码如下文。
 代码实现 定义抽象类 饮料抽象类：
-1 2 3 4 5 6 7 8 9 public abstract class Beverage { String description = &amp;#34;Unknown Beverage&amp;#34;; public String getDescription() { return description; } public abstract double cost(); } 配料抽象类：
+1public abstract class Beverage { 2	String description = &amp;#34;Unknown Beverage&amp;#34;; 3 4	public String getDescription() { 5	return description; 6	} 7 8	public abstract double cost(); 9} 配料抽象类：
 注意这里配料也继承了饮料类，这样Beverage在通过包装之后还是返回一个Beverage，具体见测试代码。
-1 2 3 4 public abstract class CondimentDecorator extends Beverage { Beverage beverage; public abstract String getDescription(); } 定义具体类 牛奶配料：（其他配料省略）
-1 2 3 4 5 6 7 8 9 10 11 12 13 public class Milk extends CondimentDecorator { public Milk(Beverage beverage) { this.</description>
+1public abstract class CondimentDecorator extends Beverage { 2	Beverage beverage; 3	public abstract String getDescription(); 4} 定义具体类 牛奶配料：（其他配料省略）
+1public class Milk extends CondimentDecorator { 2	public Milk(Beverage beverage) { 3	this.</description>
     </item>
     
     <item>
@@ -286,9 +290,9 @@ Over.</description>
 观察者可以通过订阅，监听等方式实现“观察”，被观察者需要通过通知，发消息之类的方式通知观察者接收信息。
 假设有一个气象观测站，天气数据对象作为被观察者，各个气象观测站作为观察者订阅天气数据，而天气数据记录各个订阅了自己的观测站，以便于通知。具体代码实现如下文。
 代码实现 定义接口 被观察者：
-1 2 3 4 5 public interface Subject { public void registerObserver(Observer o); public void removeObserver(Observer o); public void notifyObservers(); } 观察者：
-1 2 3 public interface Observer { public void update(float temp, float humidity, float pressure); } 定义对象实现接口 天气数据对象：
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 public class WeatherData implements Subject { private List&amp;lt;Observer&amp;gt; observers; private float temperature; private float humidity; private float pressure; public WeatherData() { observers = new ArrayList&amp;lt;Observer&amp;gt;(); } public void registerObserver(Observer o) { observers.</description>
+1public interface Subject { 2	public void registerObserver(Observer o); 3	public void removeObserver(Observer o); 4	public void notifyObservers(); 5} 观察者：
+1public interface Observer { 2	public void update(float temp, float humidity, float pressure); 3} 定义对象实现接口 天气数据对象：
+1public class WeatherData implements Subject { 2	private List&amp;lt;Observer&amp;gt; observers; 3	private float temperature; 4	private float humidity; 5	private float pressure; 6	7	public WeatherData() { 8	observers = new ArrayList&amp;lt;Observer&amp;gt;(); 9	} 10	11	public void registerObserver(Observer o) { 12	observers.</description>
     </item>
     
     <item>
@@ -297,9 +301,9 @@ Over.</description>
       <pubDate>Wed, 03 Aug 2022 23:34:36 +0800</pubDate>
       
       <guid>/posts/2022/08/batch-basic-compilation-method-record/</guid>
-      <description>读取输入 1 2 set /p ch=&amp;#34;y/n:&amp;#34; echo %ch% 变量运算 通过%{var}%访问变量，通过/a进行表达式计算设置值。
-1 2 3 4 5 6 7 8 @echo off set money=100 echo 初始金额： %money% set /a money=%money%*2 set /a money=%money%+100 echo 现在的金额：%money% 选择并跳转 :{point} 用于指定一个跳转点。
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 @echo off set /p ch=&amp;#34;y/n:&amp;#34; if &amp;#34;%ch%&amp;#34;==&amp;#34;&amp;#34; ( goto end ) else if &amp;#34;%ch%&amp;#34;==&amp;#34;n&amp;#34; ( goto no ) else if &amp;#34;%ch%&amp;#34;==&amp;#34;y&amp;#34; ( goto yes ) else ( goto end ) :no echo NO goto end :yes echo YES goto end :end 循环语句 通过%%x设置和访问循环值； 通过(start, steps, end)设置循环； /l 将通过比较start和end来执行迭代。 1 2 3 4 5 @echo off for /l %%x in (1, 5, 100) do ( echo hello, jzh-%%x ) 变量动态变化 setlocal enabledelayedexpansion开启变量延迟，使得变量可以动态变化; 需通过!</description>
+      <description>读取输入 1set /p ch=&amp;#34;y/n:&amp;#34; 2echo %ch% 变量运算 通过%{var}%访问变量，通过/a进行表达式计算设置值。
+1@echo off 2 3set money=100 4echo 初始金额： %money% 5 6set /a money=%money%*2 7set /a money=%money%+100 8echo 现在的金额：%money% 选择并跳转 :{point} 用于指定一个跳转点。
+1@echo off 2 3set /p ch=&amp;#34;y/n:&amp;#34; 4if &amp;#34;%ch%&amp;#34;==&amp;#34;&amp;#34; ( 5 goto end 6) else if &amp;#34;%ch%&amp;#34;==&amp;#34;n&amp;#34; ( 7 goto no 8) else if &amp;#34;%ch%&amp;#34;==&amp;#34;y&amp;#34; ( 9 goto yes 10) else ( 11 goto end 12) 13 14:no 15echo NO 16goto end 17 18:yes 19echo YES 20goto end 21 22:end 循环语句 通过%%x设置和访问循环值； 通过(start, steps, end)设置循环； /l 将通过比较start和end来执行迭代。 1@echo off 2 3for /l %%x in (1, 5, 100) do ( 4 echo hello, jzh-%%x 5) 变量动态变化 setlocal enabledelayedexpansion开启变量延迟，使得变量可以动态变化; 需通过!</description>
     </item>
     
     <item>
@@ -310,14 +314,14 @@ Over.</description>
       <guid>/posts/2022/06/how-to-add-command-alias-in-window/</guid>
       <description>前言 下面将介绍3种方法：
 CMD添加别名的方法 PowerShell添加别名的方法 通过添加环境变量的方式设置别名 CMD添加别名的方法 设置临时的别名 可以通过doskey命令实现。
-1 doskey ls=echo ====== ^&amp;amp;^&amp;amp; dir /b $* ^&amp;amp;^&amp;amp; echo ====== $*表示还可能有其他命令参数，^&amp;amp;^&amp;amp;用于分开多条命令。
+1doskey ls=echo ====== ^&amp;amp;^&amp;amp; dir /b $* ^&amp;amp;^&amp;amp; echo ====== $*表示还可能有其他命令参数，^&amp;amp;^&amp;amp;用于分开多条命令。
 单纯在一个cmd窗口中使用doskey设置别名，别名只能在该窗口中使用。
 设置永久的别名 可以通过将doskey命令写入bat脚本，再把脚本路径添加到注册表Autorun实现永久且所有cmd都可用的别名，具体步骤如下：
-编写脚本： 1 2 3 @echo off doskey ls=dir /b $* doskey lss=echo ====== ^&amp;amp;^&amp;amp; dir /b $* ^&amp;amp;^&amp;amp; echo ====== 添加路径到注册表 在HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Command Processor下的Autorun中，将数值设为doskey命令脚本所在的路径即可。这样所有用户都可以使用设置好的别名。
+编写脚本： 1@echo off 2doskey ls=dir /b $* 3doskey lss=echo ====== ^&amp;amp;^&amp;amp; dir /b $* ^&amp;amp;^&amp;amp; echo ====== 添加路径到注册表 在HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Command Processor下的Autorun中，将数值设为doskey命令脚本所在的路径即可。这样所有用户都可以使用设置好的别名。
 也可在HKEY_CURRENT_USER下的对应位置设置，只针对当前用户设置别名。
 优缺点 通过doskey的方式，挺方便的，但是在命令非常多的情况下不是很方便，同时，设置的命令还不可以在powershell下运行。
-PowerShell添加别名的方法 为PowerShell设置临时的别名 1 2 3 PS C:\Users\akyna&amp;gt; set-alias escc esc PS C:\Users\akyna&amp;gt; escc ...... 如果带参数，则可以通过function进行：
-1 2 3 PS C:\Users\akyna&amp;gt; function func{nircmd emptybin} PS C:\Users\akyna&amp;gt; set-alias ctrash func PS C:\Users\akyna&amp;gt; ctrash 这样的别名只是在当前会话下有效，开启另一个shell就失效了。</description>
+PowerShell添加别名的方法 为PowerShell设置临时的别名 1PS C:\Users\akyna&amp;gt; set-alias escc esc 2PS C:\Users\akyna&amp;gt; escc 3...... 如果带参数，则可以通过function进行：
+1PS C:\Users\akyna&amp;gt; function func{nircmd emptybin} 2PS C:\Users\akyna&amp;gt; set-alias ctrash func 3PS C:\Users\akyna&amp;gt; ctrash 这样的别名只是在当前会话下有效，开启另一个shell就失效了。</description>
     </item>
     
     <item>
@@ -327,9 +331,9 @@ PowerShell添加别名的方法 为PowerShell设置临时的别名 1 2 3 PS C:\U
       
       <guid>/posts/2022/06/quartz-implements-timed-tasks/</guid>
       <description>一、添加注解 主启动类添加@EnableScheduling注解；
-二、添加依赖： 1 2 3 4 5 &amp;lt;!--定时任务 --&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-boot-starter-quartz&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt; 三、创建任务 /TestTask1.java
-1 2 3 4 5 6 7 public class TestTask1 extends QuartzJobBean { @Override protected void executeInternal(JobExecutionContext context) { SimpleDateFormat sdf = new SimpleDateFormat(&amp;#34;yyyy-MM-dd HH:mm:ss&amp;#34;); System.out.println(&amp;#34;Test1---&amp;#34; + sdf.format(new Date())); } } /TestTask2.java
-1 2 3 4 5 6 7 public class TestTask2 extends QuartzJobBean { @Override protected void executeInternal(JobExecutionContext context) { SimpleDateFormat sdf = new SimpleDateFormat(&amp;#34;yyyy-MM-dd HH:mm:ss&amp;#34;); System.</description>
+二、添加依赖： 1&amp;lt;!--定时任务 --&amp;gt; 2&amp;lt;dependency&amp;gt; 3 &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt; 4 &amp;lt;artifactId&amp;gt;spring-boot-starter-quartz&amp;lt;/artifactId&amp;gt; 5&amp;lt;/dependency&amp;gt; 三、创建任务 /TestTask1.java
+1public class TestTask1 extends QuartzJobBean { 2 @Override 3 protected void executeInternal(JobExecutionContext context) { 4 SimpleDateFormat sdf = new SimpleDateFormat(&amp;#34;yyyy-MM-dd HH:mm:ss&amp;#34;); 5 System.out.println(&amp;#34;Test1---&amp;#34; + sdf.format(new Date())); 6 } 7} /TestTask2.java
+1public class TestTask2 extends QuartzJobBean { 2 @Override 3 protected void executeInternal(JobExecutionContext context) { 4 SimpleDateFormat sdf = new SimpleDateFormat(&amp;#34;yyyy-MM-dd HH:mm:ss&amp;#34;); 5 System.out.println(&amp;#34;Test2---&amp;#34; + sdf.format(new Date())); 6 } 7} 四、配置任务 /QuartzConfig.</description>
     </item>
     
     <item>
@@ -357,7 +361,7 @@ Java 语言既具有编译型语言的特征，也具有解释型语言的特征
 在 jdk 7 或更早版本中，接口里面只能有常量变量和抽象方法。这些接口方法必须由选择实现接口的类实现。 jdk 8 的时候接口可以有默认方法和静态方法功能。 jdk 9 在接口中引⼊了私有方法和私有静态方法 try和finally中的return 若try中有return，而finally中无return，会先将值暂存，无论finally语句中对该值做什么处理，最终返回的都是try语句中的暂存值。另外，finally语句中执行的语句先于try的return之前执行。
 当try与finally语句中均有return语句，会忽略try中return，执行finally的return。注意如果try的return语句是return ++x，则++x是会执行的。
 验证如下：
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 public class TryReturnTest { public int test1(int x) { try { x += 1; return ++x; } catch (Exception e) { e.</description>
+1public class TryReturnTest { 2 public int test1(int x) { 3 try { 4 x += 1; 5 return ++x; 6 } catch (Exception e) { 7 e.</description>
     </item>
     
     <item>
@@ -366,11 +370,11 @@ Java 语言既具有编译型语言的特征，也具有解释型语言的特征
       <pubDate>Mon, 18 Apr 2022 23:10:39 +0800</pubDate>
       
       <guid>/posts/2022/04/process-and-network-control-of-window-practical-command-recording/</guid>
-      <description>进程相关 tasklist tasklist用于查看运行的进程 findstr相当于linux的grep 1 2 3 4 PS C:\Users\akyna&amp;gt; Tasklist | findstr Code Code.exe 19184 Console 1 94,012 K Code.exe 19300 Console 1 26,324 K ...... taskkill 使用该工具按照进程 ID (PID) 或映像名称终止任务。
+      <description>进程相关 tasklist tasklist用于查看运行的进程 findstr相当于linux的grep 1PS C:\Users\akyna&amp;gt; Tasklist | findstr Code 2Code.exe 19184 Console 1 94,012 K 3Code.exe 19300 Console 1 26,324 K 4...... taskkill 使用该工具按照进程 ID (PID) 或映像名称终止任务。
 参数列表:
 /PID processid 指定要终止的进程的 PID。 /IM imagename 指定要终止的进程的映像名称。 /T 终止指定的进程和由它启用的子进程。 /F 指定强制终止进程。 /? 显示帮助消息。 e.g.
-1 2 3 TASKKILL /IM notepad.exe TASKKILL /PID 1230 /PID 1241 /PID 1253 /T TASKKILL /F /IM cmd.exe /T 网络相关 ipconfig 执行网卡相关操作
-1 2 3 4 5 $ ipconfig # 查看网卡信息，如ip地址 $ ipconfig /all # 查看mac地址 $ ipconfig /displaydns # 查看dns缓存内容 $ ipconfig /flushdns # 清除dns缓存 ping 测试本机与指定机器是否联通</description>
+1TASKKILL /IM notepad.exe 2TASKKILL /PID 1230 /PID 1241 /PID 1253 /T 3TASKKILL /F /IM cmd.exe /T 网络相关 ipconfig 执行网卡相关操作
+1$ ipconfig # 查看网卡信息，如ip地址 2$ ipconfig /all # 查看mac地址 3 4$ ipconfig /displaydns # 查看dns缓存内容 5$ ipconfig /flushdns # 清除dns缓存 ping 测试本机与指定机器是否联通</description>
     </item>
     
     <item>
@@ -381,8 +385,8 @@ Java 语言既具有编译型语言的特征，也具有解释型语言的特征
       <guid>/posts/2022/01/record-of-bugs-encountered-in-java-development/</guid>
       <description>持续更新中。
 BufferedWriter 无法正确写出问题 这是一段客户端代码，向服务器端发送消息，然后接收服务器端的回复：
-1 2 3 4 5 6 7 8 9 10 11 12 13 try ( BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream())); BufferedWriter out = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream())) ) { String message; while((message = stdIn.readLine()) != null) { out.write(message); out.flush(); System.out.println(&amp;#34;Receive from server: &amp;#34; + in.readLine()); } } catch (Exception e) { System.out.println(e.getMessage()); } 这是服务端代码的一部分，接收客户端消息，并向客户端回复：
-1 2 3 4 5 6 7 8 9 10 11 12 13 try ( BufferedReader in = new BufferedReader(new InputStreamReader(socket.</description>
+1try ( 2 BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream())); 3 BufferedWriter out = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream())) 4) { 5 String message; 6 while((message = stdIn.readLine()) != null) { 7 out.write(message); 8 out.flush(); 9 System.out.println(&amp;#34;Receive from server: &amp;#34; + in.readLine()); 10 } 11} catch (Exception e) { 12 System.out.println(e.getMessage()); 13} 这是服务端代码的一部分，接收客户端消息，并向客户端回复：
+1try ( 2 BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream())); 3 BufferedWriter out = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream())) 4) { 5 String message; 6 while((message = in.</description>
     </item>
     
     <item>
@@ -391,10 +395,10 @@ BufferedWriter 无法正确写出问题 这是一段客户端代码，向服务�
       <pubDate>Sun, 05 Dec 2021 12:37:32 +0800</pubDate>
       
       <guid>/posts/2021/12/understanding-of-char-char-string/</guid>
-      <description>关于char[]与char*的区别 1 2 3 4 char s1[] = &amp;#34;abc&amp;#34;; cout &amp;lt;&amp;lt; s1 &amp;lt;&amp;lt; endl; // abc s1[1] = &amp;#39;d&amp;#39;; // 改变值 cout &amp;lt;&amp;lt; s1 &amp;lt;&amp;lt; endl; // adc &amp;ldquo;abc&amp;quot;为字符串常量，s1为指针常量，即指针是一个常量，所以指向地址不能改变，指向地址的值可变
-1 2 3 4 const char* s2 = &amp;#34;abc&amp;#34;; // const是默认存在的 cout &amp;lt;&amp;lt; s2 &amp;lt;&amp;lt; endl; // abc s2 = &amp;#34;dfs&amp;#34;; // 改变地址 cout &amp;lt;&amp;lt; s2 &amp;lt;&amp;lt; endl; // dfs &amp;ldquo;abc&amp;quot;为字符串常量，s2为常量指针，指向地址可变，但指向的地址的值不能变
+      <description>关于char[]与char*的区别 1char s1[] = &amp;#34;abc&amp;#34;; 2cout &amp;lt;&amp;lt; s1 &amp;lt;&amp;lt; endl; // abc 3s1[1] = &amp;#39;d&amp;#39;; // 改变值 4cout &amp;lt;&amp;lt; s1 &amp;lt;&amp;lt; endl; // adc &amp;ldquo;abc&amp;quot;为字符串常量，s1为指针常量，即指针是一个常量，所以指向地址不能改变，指向地址的值可变
+1const char* s2 = &amp;#34;abc&amp;#34;; // const是默认存在的 2cout &amp;lt;&amp;lt; s2 &amp;lt;&amp;lt; endl; // abc 3s2 = &amp;#34;dfs&amp;#34;; // 改变地址 4cout &amp;lt;&amp;lt; s2 &amp;lt;&amp;lt; endl; // dfs &amp;ldquo;abc&amp;quot;为字符串常量，s2为常量指针，指向地址可变，但指向的地址的值不能变
 以上两者皆可用于函数传值
-1 2 3 4 5 6 void print_str(const char * str) { printf(&amp;#34;%s\n&amp;#34;, str); } print_str(s1); // adc print_str(s2); // dfs 关于string和char[],char*的关系 string是类，string是对一个字符串的引用值 1 2 3 4 5 6 7 const char* s1 = &amp;#34;abc&amp;#34;; string s = s1; cout &amp;lt;&amp;lt; s &amp;lt;&amp;lt; endl; // abc s += &amp;#34;a&amp;#34;; cout &amp;lt;&amp;lt; s &amp;lt;&amp;lt; endl; // abca cout &amp;lt;&amp;lt; s1 &amp;lt;&amp;lt; endl; // abc 证明string只是引用了s1 string引用字符串示例 1 2 3 4 5 6 7 const char *s1 = &amp;#34;123&amp;#34;; string str1 = s1; // 若要这样赋值s1必须加const cout &amp;lt;&amp;lt; str1 &amp;lt;&amp;lt; endl; // 123 char s2[] = &amp;#34;234&amp;#34;; string str2 = s2; cout &amp;lt;&amp;lt; str2 &amp;lt;&amp;lt; endl; // 234 string转char* 1 2 3 const char* s1_1 = str1.</description>
+1void print_str(const char * str) { 2 printf(&amp;#34;%s\n&amp;#34;, str); 3} 4 5print_str(s1); // adc 6print_str(s2); // dfs 关于string和char[],char*的关系 string是类，string是对一个字符串的引用值 1const char* s1 = &amp;#34;abc&amp;#34;; 2string s = s1; 3cout &amp;lt;&amp;lt; s &amp;lt;&amp;lt; endl; // abc 4s += &amp;#34;a&amp;#34;; 5cout &amp;lt;&amp;lt; s &amp;lt;&amp;lt; endl; // abca 6cout &amp;lt;&amp;lt; s1 &amp;lt;&amp;lt; endl; 7// abc 证明string只是引用了s1 string引用字符串示例 1const char *s1 = &amp;#34;123&amp;#34;; 2string str1 = s1; // 若要这样赋值s1必须加const 3cout &amp;lt;&amp;lt; str1 &amp;lt;&amp;lt; endl; // 123 4 5char s2[] = &amp;#34;234&amp;#34;; 6string str2 = s2; 7cout &amp;lt;&amp;lt; str2 &amp;lt;&amp;lt; endl; // 234 string转char* 1const char* s1_1 = str1.</description>
     </item>
     
     <item>
@@ -405,7 +409,7 @@ BufferedWriter 无法正确写出问题 这是一段客户端代码，向服务�
       <guid>/posts/2021/11/why-should-java-rewrite-the-hashcode-method-when-rewriting-the-equals-method/</guid>
       <description>提出问题 先看一个例子：
 当两个人年龄相同时，我们认为这两个对象相同：
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 class Person { private int age; private String name; public Person(int age, String name) { this.age = age; this.name = name; } @Override public String toString() { return &amp;#34;Person{&amp;#34; + &amp;#34;age=&amp;#34; + age + &amp;#34;, name=&amp;#39;&amp;#34; + name + &amp;#39;\&amp;#39;&amp;#39; + &amp;#39;}&amp;#39;; } @Override public boolean equals(Object o) { if (this == o) return true; if (o == null || getClass() !</description>
+1class Person { 2 private int age; 3 private String name; 4 5 public Person(int age, String name) { 6 this.age = age; 7 this.name = name; 8 } 9 10 @Override 11 public String toString() { 12 return &amp;#34;Person{&amp;#34; + 13 &amp;#34;age=&amp;#34; + age + 14 &amp;#34;, name=&amp;#39;&amp;#34; + name + &amp;#39;\&amp;#39;&amp;#39; + 15 &amp;#39;}&amp;#39;; 16 } 17 18 @Override 19 public boolean equals(Object o) { 20 if (this == o) return true; 21 if (o == null || getClass() !</description>
     </item>
     
     <item>
@@ -423,7 +427,7 @@ synchronized(Demo.class){...} 锁的是该类。
 synchronized(obj){...} synchronized同步代码块对对象内部的实例加锁。
 假设demo1与demo2方法不相关，此时两个线程对同一个对象实例分别调用demo1与demo2，均能获取各自的锁。
 代码如下：
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 public class Demo { private Object lock1 = new Object(); private Object lock2 = new Object(); public void demo1() { synchronized (lock1) { while (true) { //死循环目的是为了让线程一直持有该锁 System.out.println(Thread.currentThread()); } } } public void demo2() { synchronized (lock2) { while (true) { System.</description>
+1public class Demo { 2 private Object lock1 = new Object(); 3 private Object lock2 = new Object(); 4 5 public void demo1() { 6 synchronized (lock1) { 7 while (true) { //死循环目的是为了让线程一直持有该锁 8 System.out.println(Thread.currentThread()); 9 } 10 } 11 } 12 13 public void demo2() { 14 synchronized (lock2) { 15 while (true) { 16 System.</description>
     </item>
     
     <item>
@@ -434,8 +438,8 @@ synchronized(obj){...} synchronized同步代码块对对象内部的实例加锁
       <guid>/posts/2021/05/value-passing-and-reference-passing-parsing-in-java-and-c/</guid>
       <description>先说结论：Java只有值传递，而C++既有值传递又有引用传递。
 Java的参数传递 先定义3个方法如下：
-1 2 3 4 5 6 7 8 9 10 11 public static void change1(String str, int num) { str = &amp;#34;world&amp;#34;; // 这里就相当与新new了一个对象! num = 100; } public static void change2(User user) { user.age = 1; user.name = &amp;#34;mary&amp;#34;; } public static void change3(User user) { user = new User(1, &amp;#34;mary&amp;#34;); } 进行测试：
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 public static void main(String[] args) { String str = &amp;#34;hello&amp;#34;; int num = 1; System.</description>
+1public static void change1(String str, int num) { 2 str = &amp;#34;world&amp;#34;; // 这里就相当与新new了一个对象! 3 num = 100; 4} 5public static void change2(User user) { 6 user.age = 1; 7 user.name = &amp;#34;mary&amp;#34;; 8} 9public static void change3(User user) { 10 user = new User(1, &amp;#34;mary&amp;#34;); 11} 进行测试：
+1public static void main(String[] args) { 2 String str = &amp;#34;hello&amp;#34;; 3 int num = 1; 4 System.out.println(str + &amp;#34; &amp;#34; + num); // hello 1 5 change1(str, num); 6 System.</description>
     </item>
     
     <item>
@@ -444,10 +448,10 @@ Java的参数传递 先定义3个方法如下：
       <pubDate>Mon, 19 Apr 2021 13:48:19 +0800</pubDate>
       
       <guid>/posts/2021/04/file-operation-recorded-by-window-utility-command/</guid>
-      <description>创建文件或文件夹 cmd下创建文件 1 type nul &amp;gt; test.jpg powershell下创建文件 1 new-item test.jpg 创建文件夹 1 mkdir test 重命名文件 注意不能指定到新的路径。
-1 PS D:\a\tmp\test&amp;gt; ren test.txt my.txt 移动文件 该命令也可用于重命名。
-1 PS D:\a\tmp\test&amp;gt; move test.jpg mydir 复制文件和文件夹 copy无法递归复制，而xcopy可以。
-1 PS D:\a\tmp\test\mydir&amp;gt; copy test.jpg test1.jpg 1 2 3 4 5 6 7 8 9 10 11 12 # mydir not empty PS D:\a\tmp\test&amp;gt; copy mydir mydir1 PS D:\a\tmp\test&amp;gt; ls mydir1 # empty PS D:\a\tmp\test&amp;gt; xcopy mydir mydir2 目标 mydir2 是文件名 还是目录名 (F = 文件，D = 目录)?</description>
+      <description>创建文件或文件夹 cmd下创建文件 1type nul &amp;gt; test.jpg powershell下创建文件 1new-item test.jpg 创建文件夹 1mkdir test 重命名文件 注意不能指定到新的路径。
+1PS D:\a\tmp\test&amp;gt; ren test.txt my.txt 移动文件 该命令也可用于重命名。
+1PS D:\a\tmp\test&amp;gt; move test.jpg mydir 复制文件和文件夹 copy无法递归复制，而xcopy可以。
+1PS D:\a\tmp\test\mydir&amp;gt; copy test.jpg test1.jpg 1# mydir not empty 2PS D:\a\tmp\test&amp;gt; copy mydir mydir1 3PS D:\a\tmp\test&amp;gt; ls mydir1 4# empty 5 6PS D:\a\tmp\test&amp;gt; xcopy mydir mydir2 7目标 mydir2 是文件名 8还是目录名 9(F = 文件，D = 目录)? D 10mydir\test.jpg 11mydir\test1.jpg 12复制了 2 个文件 删除文件或文件夹 del 删除文件。powershell可以使用rm。</description>
     </item>
     
     <item>
@@ -459,10 +463,10 @@ Java的参数传递 先定义3个方法如下：
       <description>equals方法与&amp;quot;==&amp;ldquo;的比较与分析 首先提出一个重要的点:
 == 比较时进行地址的比较
 equals 比较时进行值的比较
-1 2 3 4 5 6 7 8 9 String a = &amp;#34;123&amp;#34;; String b = &amp;#34;123&amp;#34;; System.out.println(a.equals(b)); // true System.out.println(a == b); // true String a1 = new String(&amp;#34;123&amp;#34;); String b1 = new String(&amp;#34;123&amp;#34;); System.out.println(a1.equals(b1)); // true System.out.println(a1 == b1); // false 好像没问题。
+1String a = &amp;#34;123&amp;#34;; 2String b = &amp;#34;123&amp;#34;; 3System.out.println(a.equals(b)); // true 4System.out.println(a == b); // true 5 6String a1 = new String(&amp;#34;123&amp;#34;); 7String b1 = new String(&amp;#34;123&amp;#34;); 8System.out.println(a1.equals(b1)); // true 9System.out.println(a1 == b1); // false 好像没问题。
 然而阅读源码Object类，可以发现对象中默认equals方法进行的是地址的比较
-1 2 3 public boolean equals(Object obj) { return (this == obj); } 再阅读源码String类，可以发现String类中重写了equals方法，覆盖掉了Object的equals方法，所以String的equals是值比较！
-1 2 3 4 5 6 7 8 9 10 11 12 13 public boolean equals(Object anObject) { if (this == anObject) { return true; } if (anObject instanceof String) { String aString = (String)anObject; if (coder() == aString.</description>
+1public boolean equals(Object obj) { 2 return (this == obj); 3} 再阅读源码String类，可以发现String类中重写了equals方法，覆盖掉了Object的equals方法，所以String的equals是值比较！
+1public boolean equals(Object anObject) { 2 if (this == anObject) { 3 return true; 4 } 5 if (anObject instanceof String) { 6 String aString = (String)anObject; 7 if (coder() == aString.</description>
     </item>
     
     <item>
@@ -471,17 +475,17 @@ equals 比较时进行值的比较
       <pubDate>Fri, 20 Nov 2020 18:17:33 +0800</pubDate>
       
       <guid>/posts/2020/11/cmd-some-important-and-practical-commands/</guid>
-      <description>写入文件 写入hello字符串（同时新建了a.txt） 1 echo hello &amp;gt; a.txt 追加写入hello字符串 1 echo hello &amp;gt;&amp;gt; a.txt 将a.txt内容追加写入b.txt 1 type a.txt &amp;gt;&amp;gt; b.txt 新建文件 新建空文件a.txt 1 type null &amp;gt; a.txt 换行（分号换行输出） 1 echo hello; echo peter 关于程序编译 test.cpp: 一个含cin输入的程序
+      <description>写入文件 写入hello字符串（同时新建了a.txt） 1echo hello &amp;gt; a.txt 追加写入hello字符串 1echo hello &amp;gt;&amp;gt; a.txt 将a.txt内容追加写入b.txt 1type a.txt &amp;gt;&amp;gt; b.txt 新建文件 新建空文件a.txt 1type null &amp;gt; a.txt 换行（分号换行输出） 1echo hello; echo peter 关于程序编译 test.cpp: 一个含cin输入的程序
 编译cpp
-1 g++ test.cpp -o test 以1.in作为标准输入，2.out作为标准输出执行test
-1 test &amp;lt; 1.in &amp;gt; 2.out test_err.cpp: 一个会导致编译错误的程序
+1g++ test.cpp -o test 以1.in作为标准输入，2.out作为标准输出执行test
+1test &amp;lt; 1.in &amp;gt; 2.out test_err.cpp: 一个会导致编译错误的程序
 把编译后出现的错误输入log.txt，命令行不会报错
-1 g++ test_err.cpp -o terr 2&amp;gt; log.txt 打开并编辑文件 cmd下没有bash下好用的vim=_=
+1g++ test_err.cpp -o terr 2&amp;gt; log.txt 打开并编辑文件 cmd下没有bash下好用的vim=_=
 使用记事本打开编辑 1.py
-1 notepad 1.py 记事本不好用呀，还是vscode香，如下~
+1notepad 1.py 记事本不好用呀，还是vscode香，如下~
 使用vscode打开编辑1.py，首先需配置环境变量
 (${vscodepath}\bin)
-1 code 1.</description>
+1code 1.py over</description>
     </item>
     
     <item>
@@ -490,9 +494,9 @@ equals 比较时进行值的比较
       <pubDate>Thu, 06 Feb 2020 20:41:12 +0800</pubDate>
       
       <guid>/posts/2020/02/basic-usage-sorting-of-matlab/</guid>
-      <description>基本语法方面 提取矩阵某行或某列 1 A(:, [2 3]) 返回第2和第3列 获取随机数 1 randi(100); % 1 到 100 之间的随机整数 初始化数组 1 zeros(1, 30); % 1行30列的全0数组 控制语句 1 2 3 4 5 6 7 8 9 10 for i = 0 : 100 for j = 1 : 10 if (...) ... else ... end end ... end 格式化输出 1 fprintf(&amp;#34;若选手选择改变，则成功次数为：%d, 成功率为：%f\n&amp;#34;, count, count / SUM); 初等数学方面 求解方程组 注：solve已经改版，不可传入字符串
+      <description>基本语法方面 提取矩阵某行或某列 1A(:, [2 3]) 返回第2和第3列 获取随机数 1randi(100); % 1 到 100 之间的随机整数 初始化数组 1zeros(1, 30); % 1行30列的全0数组 控制语句 1for i = 0 : 100 2 for j = 1 : 10 3 if (...) 4 ... 5 else 6 ... 7 end 8 end 9 ... 10end 格式化输出 1fprintf(&amp;#34;若选手选择改变，则成功次数为：%d, 成功率为：%f\n&amp;#34;, count, count / SUM); 初等数学方面 求解方程组 注：solve已经改版，不可传入字符串
 实例：求解二元一次方程
-1 2 3 4 syms x y; s = x - 6 * y == 2; t = 5 * x + 4 * y == 3; result = solve(s, t); 求平均值，中值与标准差 1 2 3 4 5 A = [12 13 7 18 16 21 9 10 2 18]; A = sort(A); ave = mean(A); md = median(A); sigma = std(A); 解一阶导数方程 1 2 3 4 5 syms x y; y = -0.</description>
+1syms x y; 2s = x - 6 * y == 2; 3t = 5 * x + 4 * y == 3; 4result = solve(s, t); 求平均值，中值与标准差 1A = [12 13 7 18 16 21 9 10 2 18]; 2A = sort(A); 3ave = mean(A); 4md = median(A); 5sigma = std(A); 解一阶导数方程 1syms x y; 2y = -0.</description>
     </item>
     
   </channel>

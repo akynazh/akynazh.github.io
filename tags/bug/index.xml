@@ -15,11 +15,11 @@
       
       <guid>/posts/2022/11/record-of-bugs-encountered-in-python-development/</guid>
       <description>持续更新中。
-pipenv 无法正常 install 1 2 3 4 PS C:\Users\akyna\Codes\test\test_py&amp;gt; pipenv install Usage: pipenv install [OPTIONS] [PACKAGES]... ERROR:: --system is intended to be used for pre-existing Pipfile installation, not installation of specific packages. Aborting. 解决方法：
+pipenv 无法正常 install 1PS C:\Users\akyna\Codes\test\test_py&amp;gt; pipenv install 2Usage: pipenv install [OPTIONS] [PACKAGES]... 3 4ERROR:: --system is intended to be used for pre-existing Pipfile installation, not installation of specific packages. Aborting. 解决方法：
 因为pipenv检测到之前在该目录下创建过了环境，需要先删除之前的环境才可以：
-1 2 PS C:\Users\akyna\Codes\test\test_py&amp;gt; pipenv --rm Removing virtualenv (C:\Users\akyna\.virtualenvs\test_py-_qApXuy4)... requests 库 headers 字段编码错误 1 UnicodeEncodeError: &amp;#39;latin-1&amp;#39; codec can&amp;#39;t encode characters in position 30-34: ordinal not in range(256) 解决方法：
+1PS C:\Users\akyna\Codes\test\test_py&amp;gt; pipenv --rm 2Removing virtualenv (C:\Users\akyna\.virtualenvs\test_py-_qApXuy4)... requests 库 headers 字段编码错误 1UnicodeEncodeError: &amp;#39;latin-1&amp;#39; codec can&amp;#39;t encode characters in position 30-34: ordinal not in range(256) 解决方法：
 加上.encode(&amp;lsquo;utf-8&amp;rsquo;)：
-1 2 3 4 5 6 7 8 return { &amp;#39;User-Agent&amp;#39;: &amp;#39;Mozilla/5.</description>
+1return { 2 &amp;#39;User-Agent&amp;#39;: 3 &amp;#39;Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.</description>
     </item>
     
     <item>
@@ -30,8 +30,8 @@ pipenv 无法正常 install 1 2 3 4 PS C:\Users\akyna\Codes\test\test_py&amp;gt;
       <guid>/posts/2022/01/record-of-bugs-encountered-in-java-development/</guid>
       <description>持续更新中。
 BufferedWriter 无法正确写出问题 这是一段客户端代码，向服务器端发送消息，然后接收服务器端的回复：
-1 2 3 4 5 6 7 8 9 10 11 12 13 try ( BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream())); BufferedWriter out = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream())) ) { String message; while((message = stdIn.readLine()) != null) { out.write(message); out.flush(); System.out.println(&amp;#34;Receive from server: &amp;#34; + in.readLine()); } } catch (Exception e) { System.out.println(e.getMessage()); } 这是服务端代码的一部分，接收客户端消息，并向客户端回复：
-1 2 3 4 5 6 7 8 9 10 11 12 13 try ( BufferedReader in = new BufferedReader(new InputStreamReader(socket.</description>
+1try ( 2 BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream())); 3 BufferedWriter out = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream())) 4) { 5 String message; 6 while((message = stdIn.readLine()) != null) { 7 out.write(message); 8 out.flush(); 9 System.out.println(&amp;#34;Receive from server: &amp;#34; + in.readLine()); 10 } 11} catch (Exception e) { 12 System.out.println(e.getMessage()); 13} 这是服务端代码的一部分，接收客户端消息，并向客户端回复：
+1try ( 2 BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream())); 3 BufferedWriter out = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream())) 4) { 5 String message; 6 while((message = in.</description>
     </item>
     
   </channel>

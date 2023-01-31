@@ -9,11 +9,11 @@
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
   <meta property="og:title" content="Window 实用命令记录之进程与网络控制" />
-<meta property="og:description" content="进程相关 tasklist tasklist用于查看运行的进程 findstr相当于linux的grep 1 2 3 4 PS C:\Users\akyna&gt; Tasklist | findstr Code Code.exe 19184 Console 1 94,012 K Code.exe 19300 Console 1 26,324 K ...... taskkill 使用该工具按照进程 ID (PID) 或映像名称终止任务。
+<meta property="og:description" content="进程相关 tasklist tasklist用于查看运行的进程 findstr相当于linux的grep 1PS C:\Users\akyna&gt; Tasklist | findstr Code 2Code.exe 19184 Console 1 94,012 K 3Code.exe 19300 Console 1 26,324 K 4...... taskkill 使用该工具按照进程 ID (PID) 或映像名称终止任务。
 参数列表:
 /PID processid 指定要终止的进程的 PID。 /IM imagename 指定要终止的进程的映像名称。 /T 终止指定的进程和由它启用的子进程。 /F 指定强制终止进程。 /? 显示帮助消息。 e.g.
-1 2 3 TASKKILL /IM notepad.exe TASKKILL /PID 1230 /PID 1241 /PID 1253 /T TASKKILL /F /IM cmd.exe /T 网络相关 ipconfig 执行网卡相关操作
-1 2 3 4 5 $ ipconfig # 查看网卡信息，如ip地址 $ ipconfig /all # 查看mac地址 $ ipconfig /displaydns # 查看dns缓存内容 $ ipconfig /flushdns # 清除dns缓存 ping 测试本机与指定机器是否联通" />
+1TASKKILL /IM notepad.exe 2TASKKILL /PID 1230 /PID 1241 /PID 1253 /T 3TASKKILL /F /IM cmd.exe /T 网络相关 ipconfig 执行网卡相关操作
+1$ ipconfig # 查看网卡信息，如ip地址 2$ ipconfig /all # 查看mac地址 3 4$ ipconfig /displaydns # 查看dns缓存内容 5$ ipconfig /flushdns # 清除dns缓存 ping 测试本机与指定机器是否联通" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/2022/04/process-and-network-control-of-window-practical-command-recording/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-04-18T23:10:39+08:00" />
@@ -21,18 +21,18 @@
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Window 实用命令记录之进程与网络控制"/>
-<meta name="twitter:description" content="进程相关 tasklist tasklist用于查看运行的进程 findstr相当于linux的grep 1 2 3 4 PS C:\Users\akyna&gt; Tasklist | findstr Code Code.exe 19184 Console 1 94,012 K Code.exe 19300 Console 1 26,324 K ...... taskkill 使用该工具按照进程 ID (PID) 或映像名称终止任务。
+<meta name="twitter:description" content="进程相关 tasklist tasklist用于查看运行的进程 findstr相当于linux的grep 1PS C:\Users\akyna&gt; Tasklist | findstr Code 2Code.exe 19184 Console 1 94,012 K 3Code.exe 19300 Console 1 26,324 K 4...... taskkill 使用该工具按照进程 ID (PID) 或映像名称终止任务。
 参数列表:
 /PID processid 指定要终止的进程的 PID。 /IM imagename 指定要终止的进程的映像名称。 /T 终止指定的进程和由它启用的子进程。 /F 指定强制终止进程。 /? 显示帮助消息。 e.g.
-1 2 3 TASKKILL /IM notepad.exe TASKKILL /PID 1230 /PID 1241 /PID 1253 /T TASKKILL /F /IM cmd.exe /T 网络相关 ipconfig 执行网卡相关操作
-1 2 3 4 5 $ ipconfig # 查看网卡信息，如ip地址 $ ipconfig /all # 查看mac地址 $ ipconfig /displaydns # 查看dns缓存内容 $ ipconfig /flushdns # 清除dns缓存 ping 测试本机与指定机器是否联通"/>
+1TASKKILL /IM notepad.exe 2TASKKILL /PID 1230 /PID 1241 /PID 1253 /T 3TASKKILL /F /IM cmd.exe /T 网络相关 ipconfig 执行网卡相关操作
+1$ ipconfig # 查看网卡信息，如ip地址 2$ ipconfig /all # 查看mac地址 3 4$ ipconfig /displaydns # 查看dns缓存内容 5$ ipconfig /flushdns # 清除dns缓存 ping 测试本机与指定机器是否联通"/>
 
   
   
   
   
   
-  <link rel="stylesheet" href="/css/styles.d8d1e5ac73f5bd72b0e6919356fcf7f12c9dd5a80e4788cae09111cc3678f69a4294b39d4b852dd69cc393c73ac3d8b6c05c8df3569d49d36331b7f39cfea8d1.css" integrity="sha512-2NHlrHP1vXKw5pGTVvz38Syd1agOR4jK4JERzDZ49ppClLOdS4Ut1pzDk8c6w9i2wFyN81adSdNjMbfznP6o0Q==">
+  <link rel="stylesheet" href="/css/styles.b6e7dac395bc81c65ab67a0be932cbd03925f5afb48f9c825ead224a41084a4a8289db621f5b2236149a32799ae71f4962b1d2531d209f51d8b88cdffaa1877e.css" integrity="sha512-tufaw5W8gcZatnoL6TLL0Dkl9a&#43;0j5yCXq0iSkEISkqCidtiH1siNhSaMnma5x9JYrHSUx0gn1HYuIzf&#43;qGHfg==">
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
@@ -149,7 +149,7 @@
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f04%2fprocess-and-network-control-of-window-practical-command-recording%2f&name=Window%20%e5%ae%9e%e7%94%a8%e5%91%bd%e4%bb%a4%e8%ae%b0%e5%bd%95%e4%b9%8b%e8%bf%9b%e7%a8%8b%e4%b8%8e%e7%bd%91%e7%bb%9c%e6%8e%a7%e5%88%b6&description=%e8%bf%9b%e7%a8%8b%e7%9b%b8%e5%85%b3%20tasklist%20tasklist%e7%94%a8%e4%ba%8e%e6%9f%a5%e7%9c%8b%e8%bf%90%e8%a1%8c%e7%9a%84%e8%bf%9b%e7%a8%8b%20findstr%e7%9b%b8%e5%bd%93%e4%ba%8elinux%e7%9a%84grep%201%202%203%204%20PS%20C%3a%5cUsers%5cakyna%26gt%3b%20Tasklist%20%7c%20findstr%20Code%20Code.exe%2019184%20Console%201%2094%2c012%20K%20Code.exe%2019300%20Console%201%2026%2c324%20K%20......%20taskkill%20%e4%bd%bf%e7%94%a8%e8%af%a5%e5%b7%a5%e5%85%b7%e6%8c%89%e7%85%a7%e8%bf%9b%e7%a8%8b%20ID%20%28PID%29%20%e6%88%96%e6%98%a0%e5%83%8f%e5%90%8d%e7%a7%b0%e7%bb%88%e6%ad%a2%e4%bb%bb%e5%8a%a1%e3%80%82%0a%e5%8f%82%e6%95%b0%e5%88%97%e8%a1%a8%3a%0a%2fPID%20processid%20%e6%8c%87%e5%ae%9a%e8%a6%81%e7%bb%88%e6%ad%a2%e7%9a%84%e8%bf%9b%e7%a8%8b%e7%9a%84%20PID%e3%80%82%20%2fIM%20imagename%20%e6%8c%87%e5%ae%9a%e8%a6%81%e7%bb%88%e6%ad%a2%e7%9a%84%e8%bf%9b%e7%a8%8b%e7%9a%84%e6%98%a0%e5%83%8f%e5%90%8d%e7%a7%b0%e3%80%82%20%2fT%20%e7%bb%88%e6%ad%a2%e6%8c%87%e5%ae%9a%e7%9a%84%e8%bf%9b%e7%a8%8b%e5%92%8c%e7%94%b1%e5%ae%83%e5%90%af%e7%94%a8%e7%9a%84%e5%ad%90%e8%bf%9b%e7%a8%8b%e3%80%82%20%2fF%20%e6%8c%87%e5%ae%9a%e5%bc%ba%e5%88%b6%e7%bb%88%e6%ad%a2%e8%bf%9b%e7%a8%8b%e3%80%82%20%2f%3f%20%e6%98%be%e7%a4%ba%e5%b8%ae%e5%8a%a9%e6%b6%88%e6%81%af%e3%80%82%20e.g.%0a1%202%203%20TASKKILL%20%2fIM%20notepad.exe%20TASKKILL%20%2fPID%201230%20%2fPID%201241%20%2fPID%201253%20%2fT%20TASKKILL%20%2fF%20%2fIM%20cmd.exe%20%2fT%20%e7%bd%91%e7%bb%9c%e7%9b%b8%e5%85%b3%20ipconfig%20%e6%89%a7%e8%a1%8c%e7%bd%91%e5%8d%a1%e7%9b%b8%e5%85%b3%e6%93%8d%e4%bd%9c%0a1%202%203%204%205%20%24%20ipconfig%20%23%20%e6%9f%a5%e7%9c%8b%e7%bd%91%e5%8d%a1%e4%bf%a1%e6%81%af%ef%bc%8c%e5%a6%82ip%e5%9c%b0%e5%9d%80%20%24%20ipconfig%20%2fall%20%23%20%e6%9f%a5%e7%9c%8bmac%e5%9c%b0%e5%9d%80%20%24%20ipconfig%20%2fdisplaydns%20%23%20%e6%9f%a5%e7%9c%8bdns%e7%bc%93%e5%ad%98%e5%86%85%e5%ae%b9%20%24%20ipconfig%20%2fflushdns%20%23%20%e6%b8%85%e9%99%a4dns%e7%bc%93%e5%ad%98%20ping%20%e6%b5%8b%e8%af%95%e6%9c%ac%e6%9c%ba%e4%b8%8e%e6%8c%87%e5%ae%9a%e6%9c%ba%e5%99%a8%e6%98%af%e5%90%a6%e8%81%94%e9%80%9a" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f04%2fprocess-and-network-control-of-window-practical-command-recording%2f&name=Window%20%e5%ae%9e%e7%94%a8%e5%91%bd%e4%bb%a4%e8%ae%b0%e5%bd%95%e4%b9%8b%e8%bf%9b%e7%a8%8b%e4%b8%8e%e7%bd%91%e7%bb%9c%e6%8e%a7%e5%88%b6&description=%e8%bf%9b%e7%a8%8b%e7%9b%b8%e5%85%b3%20tasklist%20tasklist%e7%94%a8%e4%ba%8e%e6%9f%a5%e7%9c%8b%e8%bf%90%e8%a1%8c%e7%9a%84%e8%bf%9b%e7%a8%8b%20findstr%e7%9b%b8%e5%bd%93%e4%ba%8elinux%e7%9a%84grep%201PS%20C%3a%5cUsers%5cakyna%26gt%3b%20Tasklist%20%7c%20findstr%20Code%202Code.exe%2019184%20Console%201%2094%2c012%20K%203Code.exe%2019300%20Console%201%2026%2c324%20K%204......%20taskkill%20%e4%bd%bf%e7%94%a8%e8%af%a5%e5%b7%a5%e5%85%b7%e6%8c%89%e7%85%a7%e8%bf%9b%e7%a8%8b%20ID%20%28PID%29%20%e6%88%96%e6%98%a0%e5%83%8f%e5%90%8d%e7%a7%b0%e7%bb%88%e6%ad%a2%e4%bb%bb%e5%8a%a1%e3%80%82%0a%e5%8f%82%e6%95%b0%e5%88%97%e8%a1%a8%3a%0a%2fPID%20processid%20%e6%8c%87%e5%ae%9a%e8%a6%81%e7%bb%88%e6%ad%a2%e7%9a%84%e8%bf%9b%e7%a8%8b%e7%9a%84%20PID%e3%80%82%20%2fIM%20imagename%20%e6%8c%87%e5%ae%9a%e8%a6%81%e7%bb%88%e6%ad%a2%e7%9a%84%e8%bf%9b%e7%a8%8b%e7%9a%84%e6%98%a0%e5%83%8f%e5%90%8d%e7%a7%b0%e3%80%82%20%2fT%20%e7%bb%88%e6%ad%a2%e6%8c%87%e5%ae%9a%e7%9a%84%e8%bf%9b%e7%a8%8b%e5%92%8c%e7%94%b1%e5%ae%83%e5%90%af%e7%94%a8%e7%9a%84%e5%ad%90%e8%bf%9b%e7%a8%8b%e3%80%82%20%2fF%20%e6%8c%87%e5%ae%9a%e5%bc%ba%e5%88%b6%e7%bb%88%e6%ad%a2%e8%bf%9b%e7%a8%8b%e3%80%82%20%2f%3f%20%e6%98%be%e7%a4%ba%e5%b8%ae%e5%8a%a9%e6%b6%88%e6%81%af%e3%80%82%20e.g.%0a1TASKKILL%20%2fIM%20notepad.exe%202TASKKILL%20%2fPID%201230%20%2fPID%201241%20%2fPID%201253%20%2fT%203TASKKILL%20%2fF%20%2fIM%20cmd.exe%20%2fT%20%e7%bd%91%e7%bb%9c%e7%9b%b8%e5%85%b3%20ipconfig%20%e6%89%a7%e8%a1%8c%e7%bd%91%e5%8d%a1%e7%9b%b8%e5%85%b3%e6%93%8d%e4%bd%9c%0a1%24%20ipconfig%20%23%20%e6%9f%a5%e7%9c%8b%e7%bd%91%e5%8d%a1%e4%bf%a1%e6%81%af%ef%bc%8c%e5%a6%82ip%e5%9c%b0%e5%9d%80%202%24%20ipconfig%20%2fall%20%23%20%e6%9f%a5%e7%9c%8bmac%e5%9c%b0%e5%9d%80%203%204%24%20ipconfig%20%2fdisplaydns%20%23%20%e6%9f%a5%e7%9c%8bdns%e7%bc%93%e5%ad%98%e5%86%85%e5%ae%b9%205%24%20ipconfig%20%2fflushdns%20%23%20%e6%b8%85%e9%99%a4dns%e7%bc%93%e5%ad%98%20ping%20%e6%b5%8b%e8%af%95%e6%9c%ac%e6%9c%ba%e4%b8%8e%e6%8c%87%e5%ae%9a%e6%9c%ba%e5%99%a8%e6%98%af%e5%90%a6%e8%81%94%e9%80%9a" aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -238,21 +238,11 @@
 <li>tasklist用于查看运行的进程</li>
 <li>findstr相当于linux的grep</li>
 </ul>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>PS C:\Users\akyna&gt; Tasklist | findstr Code
-</span></span><span style="display:flex;"><span>Code.exe                     19184 Console                    1     94,012 K
-</span></span><span style="display:flex;"><span>Code.exe                     19300 Console                    1     26,324 K
-</span></span><span style="display:flex;"><span>......
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="taskkill">taskkill</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>PS C:\Users\akyna&gt; Tasklist | findstr Code
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>Code.exe                     19184 Console                    1     94,012 K
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>Code.exe                     19300 Console                    1     26,324 K
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>......
+</span></span></code></pre></div><h3 id="taskkill">taskkill</h3>
 <p>使用该工具按照进程 ID (PID) 或映像名称终止任务。</p>
 <p>参数列表:</p>
 <ul>
@@ -263,89 +253,35 @@
 <li>/?                     显示帮助消息。</li>
 </ul>
 <p>e.g.</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>TASKKILL /IM notepad.exe
-</span></span><span style="display:flex;"><span>TASKKILL /PID 1230 /PID 1241 /PID 1253 /T
-</span></span><span style="display:flex;"><span>TASKKILL /F /IM cmd.exe /T
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="网络相关">网络相关</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>TASKKILL /IM notepad.exe
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>TASKKILL /PID 1230 /PID 1241 /PID 1253 /T
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>TASKKILL /F /IM cmd.exe /T
+</span></span></code></pre></div><h2 id="网络相关">网络相关</h2>
 <h3 id="ipconfig">ipconfig</h3>
 <p>执行网卡相关操作</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>$ ipconfig # 查看网卡信息，如ip地址
-</span></span><span style="display:flex;"><span>$ ipconfig /all # 查看mac地址
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>$ ipconfig /displaydns # 查看dns缓存内容
-</span></span><span style="display:flex;"><span>$ ipconfig /flushdns # 清除dns缓存
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="ping">ping</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>$ ipconfig # 查看网卡信息，如ip地址
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>$ ipconfig /all # 查看mac地址
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>$ ipconfig /displaydns # 查看dns缓存内容
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>$ ipconfig /flushdns # 清除dns缓存
+</span></span></code></pre></div><h3 id="ping">ping</h3>
 <p>测试本机与指定机器是否联通</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>$ ping jingyan.baidu.com 
-</span></span><span style="display:flex;"><span>$ ping -t jingyan.baidu.com # ping 1000万次
-</span></span><span style="display:flex;"><span>$ ping -n 10 jingyan.baidu.com # ping 指定次数
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="netstat">netstat</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>$ ping jingyan.baidu.com 
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>$ ping -t jingyan.baidu.com # ping 1000万次
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>$ ping -n 10 jingyan.baidu.com # ping 指定次数
+</span></span></code></pre></div><h3 id="netstat">netstat</h3>
 <p>该命令用于显示协议统计信息和当前 TCP/IP 网络连接。</p>
 <p>一般使用方式：</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>netstat -ano
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>命令解释：</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>-a            显示所有连接和侦听端口。
-</span></span><span style="display:flex;"><span>-n            以数字形式显示地址和端口号。
-</span></span><span style="display:flex;"><span>-o            显示拥有的与每个连接关联的进程 ID。
-</span></span><span style="display:flex;"><span>-r            显示路由表。
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>注意-t和-u并不是只列出tcp和udp的意思。</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span> -t            显示当前连接卸载状态。
-</span></span><span style="display:flex;"><span> 没有-u命令。
-</span></span></code></pre></td></tr></table>
-</div>
-</div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>netstat -ano
+</span></span></code></pre></div><p>命令解释：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>-a            显示所有连接和侦听端口。
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>-n            以数字形式显示地址和端口号。
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>-o            显示拥有的与每个连接关联的进程 ID。
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>-r            显示路由表。
+</span></span></code></pre></div><p>注意-t和-u并不是只列出tcp和udp的意思。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span> -t            显示当前连接卸载状态。
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span> 没有-u命令。
+</span></span></code></pre></div>
     </div>
   </article>
   
@@ -453,7 +389,7 @@
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f04%2fprocess-and-network-control-of-window-practical-command-recording%2f&name=Window%20%e5%ae%9e%e7%94%a8%e5%91%bd%e4%bb%a4%e8%ae%b0%e5%bd%95%e4%b9%8b%e8%bf%9b%e7%a8%8b%e4%b8%8e%e7%bd%91%e7%bb%9c%e6%8e%a7%e5%88%b6&description=%e8%bf%9b%e7%a8%8b%e7%9b%b8%e5%85%b3%20tasklist%20tasklist%e7%94%a8%e4%ba%8e%e6%9f%a5%e7%9c%8b%e8%bf%90%e8%a1%8c%e7%9a%84%e8%bf%9b%e7%a8%8b%20findstr%e7%9b%b8%e5%bd%93%e4%ba%8elinux%e7%9a%84grep%201%202%203%204%20PS%20C%3a%5cUsers%5cakyna%26gt%3b%20Tasklist%20%7c%20findstr%20Code%20Code.exe%2019184%20Console%201%2094%2c012%20K%20Code.exe%2019300%20Console%201%2026%2c324%20K%20......%20taskkill%20%e4%bd%bf%e7%94%a8%e8%af%a5%e5%b7%a5%e5%85%b7%e6%8c%89%e7%85%a7%e8%bf%9b%e7%a8%8b%20ID%20%28PID%29%20%e6%88%96%e6%98%a0%e5%83%8f%e5%90%8d%e7%a7%b0%e7%bb%88%e6%ad%a2%e4%bb%bb%e5%8a%a1%e3%80%82%0a%e5%8f%82%e6%95%b0%e5%88%97%e8%a1%a8%3a%0a%2fPID%20processid%20%e6%8c%87%e5%ae%9a%e8%a6%81%e7%bb%88%e6%ad%a2%e7%9a%84%e8%bf%9b%e7%a8%8b%e7%9a%84%20PID%e3%80%82%20%2fIM%20imagename%20%e6%8c%87%e5%ae%9a%e8%a6%81%e7%bb%88%e6%ad%a2%e7%9a%84%e8%bf%9b%e7%a8%8b%e7%9a%84%e6%98%a0%e5%83%8f%e5%90%8d%e7%a7%b0%e3%80%82%20%2fT%20%e7%bb%88%e6%ad%a2%e6%8c%87%e5%ae%9a%e7%9a%84%e8%bf%9b%e7%a8%8b%e5%92%8c%e7%94%b1%e5%ae%83%e5%90%af%e7%94%a8%e7%9a%84%e5%ad%90%e8%bf%9b%e7%a8%8b%e3%80%82%20%2fF%20%e6%8c%87%e5%ae%9a%e5%bc%ba%e5%88%b6%e7%bb%88%e6%ad%a2%e8%bf%9b%e7%a8%8b%e3%80%82%20%2f%3f%20%e6%98%be%e7%a4%ba%e5%b8%ae%e5%8a%a9%e6%b6%88%e6%81%af%e3%80%82%20e.g.%0a1%202%203%20TASKKILL%20%2fIM%20notepad.exe%20TASKKILL%20%2fPID%201230%20%2fPID%201241%20%2fPID%201253%20%2fT%20TASKKILL%20%2fF%20%2fIM%20cmd.exe%20%2fT%20%e7%bd%91%e7%bb%9c%e7%9b%b8%e5%85%b3%20ipconfig%20%e6%89%a7%e8%a1%8c%e7%bd%91%e5%8d%a1%e7%9b%b8%e5%85%b3%e6%93%8d%e4%bd%9c%0a1%202%203%204%205%20%24%20ipconfig%20%23%20%e6%9f%a5%e7%9c%8b%e7%bd%91%e5%8d%a1%e4%bf%a1%e6%81%af%ef%bc%8c%e5%a6%82ip%e5%9c%b0%e5%9d%80%20%24%20ipconfig%20%2fall%20%23%20%e6%9f%a5%e7%9c%8bmac%e5%9c%b0%e5%9d%80%20%24%20ipconfig%20%2fdisplaydns%20%23%20%e6%9f%a5%e7%9c%8bdns%e7%bc%93%e5%ad%98%e5%86%85%e5%ae%b9%20%24%20ipconfig%20%2fflushdns%20%23%20%e6%b8%85%e9%99%a4dns%e7%bc%93%e5%ad%98%20ping%20%e6%b5%8b%e8%af%95%e6%9c%ac%e6%9c%ba%e4%b8%8e%e6%8c%87%e5%ae%9a%e6%9c%ba%e5%99%a8%e6%98%af%e5%90%a6%e8%81%94%e9%80%9a" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f04%2fprocess-and-network-control-of-window-practical-command-recording%2f&name=Window%20%e5%ae%9e%e7%94%a8%e5%91%bd%e4%bb%a4%e8%ae%b0%e5%bd%95%e4%b9%8b%e8%bf%9b%e7%a8%8b%e4%b8%8e%e7%bd%91%e7%bb%9c%e6%8e%a7%e5%88%b6&description=%e8%bf%9b%e7%a8%8b%e7%9b%b8%e5%85%b3%20tasklist%20tasklist%e7%94%a8%e4%ba%8e%e6%9f%a5%e7%9c%8b%e8%bf%90%e8%a1%8c%e7%9a%84%e8%bf%9b%e7%a8%8b%20findstr%e7%9b%b8%e5%bd%93%e4%ba%8elinux%e7%9a%84grep%201PS%20C%3a%5cUsers%5cakyna%26gt%3b%20Tasklist%20%7c%20findstr%20Code%202Code.exe%2019184%20Console%201%2094%2c012%20K%203Code.exe%2019300%20Console%201%2026%2c324%20K%204......%20taskkill%20%e4%bd%bf%e7%94%a8%e8%af%a5%e5%b7%a5%e5%85%b7%e6%8c%89%e7%85%a7%e8%bf%9b%e7%a8%8b%20ID%20%28PID%29%20%e6%88%96%e6%98%a0%e5%83%8f%e5%90%8d%e7%a7%b0%e7%bb%88%e6%ad%a2%e4%bb%bb%e5%8a%a1%e3%80%82%0a%e5%8f%82%e6%95%b0%e5%88%97%e8%a1%a8%3a%0a%2fPID%20processid%20%e6%8c%87%e5%ae%9a%e8%a6%81%e7%bb%88%e6%ad%a2%e7%9a%84%e8%bf%9b%e7%a8%8b%e7%9a%84%20PID%e3%80%82%20%2fIM%20imagename%20%e6%8c%87%e5%ae%9a%e8%a6%81%e7%bb%88%e6%ad%a2%e7%9a%84%e8%bf%9b%e7%a8%8b%e7%9a%84%e6%98%a0%e5%83%8f%e5%90%8d%e7%a7%b0%e3%80%82%20%2fT%20%e7%bb%88%e6%ad%a2%e6%8c%87%e5%ae%9a%e7%9a%84%e8%bf%9b%e7%a8%8b%e5%92%8c%e7%94%b1%e5%ae%83%e5%90%af%e7%94%a8%e7%9a%84%e5%ad%90%e8%bf%9b%e7%a8%8b%e3%80%82%20%2fF%20%e6%8c%87%e5%ae%9a%e5%bc%ba%e5%88%b6%e7%bb%88%e6%ad%a2%e8%bf%9b%e7%a8%8b%e3%80%82%20%2f%3f%20%e6%98%be%e7%a4%ba%e5%b8%ae%e5%8a%a9%e6%b6%88%e6%81%af%e3%80%82%20e.g.%0a1TASKKILL%20%2fIM%20notepad.exe%202TASKKILL%20%2fPID%201230%20%2fPID%201241%20%2fPID%201253%20%2fT%203TASKKILL%20%2fF%20%2fIM%20cmd.exe%20%2fT%20%e7%bd%91%e7%bb%9c%e7%9b%b8%e5%85%b3%20ipconfig%20%e6%89%a7%e8%a1%8c%e7%bd%91%e5%8d%a1%e7%9b%b8%e5%85%b3%e6%93%8d%e4%bd%9c%0a1%24%20ipconfig%20%23%20%e6%9f%a5%e7%9c%8b%e7%bd%91%e5%8d%a1%e4%bf%a1%e6%81%af%ef%bc%8c%e5%a6%82ip%e5%9c%b0%e5%9d%80%202%24%20ipconfig%20%2fall%20%23%20%e6%9f%a5%e7%9c%8bmac%e5%9c%b0%e5%9d%80%203%204%24%20ipconfig%20%2fdisplaydns%20%23%20%e6%9f%a5%e7%9c%8bdns%e7%bc%93%e5%ad%98%e5%86%85%e5%ae%b9%205%24%20ipconfig%20%2fflushdns%20%23%20%e6%b8%85%e9%99%a4dns%e7%bc%93%e5%ad%98%20ping%20%e6%b5%8b%e8%af%95%e6%9c%ac%e6%9c%ba%e4%b8%8e%e6%8c%87%e5%ae%9a%e6%9c%ba%e5%99%a8%e6%98%af%e5%90%a6%e8%81%94%e9%80%9a" aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>

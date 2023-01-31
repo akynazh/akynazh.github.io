@@ -17,10 +17,10 @@ controller下的方法指定好处理服务限流，降级或熔断等的方法b
 service下的方法指定好关于生产者的服务限流，降级或熔断等的处理方法。
 代码编写记录 生产者端 一、配置
 关于nacos的配置省略，只记录sentinel的配置：
-1 2 3 4 5 6 7 8 spring: application: name: nacos-payment-provider cloud: sentinel: transport: dashboard: localhost:8080 port: 8179 二、controller编写
-1 2 3 4 5 6 7 8 9 10 11 @RestController @Slf4j public class PaymentController { @Value(&#34;${server.port}&#34;) private String port; @GetMapping(&#34;/payment/nacos/info&#34;) public String paymentInfo() { return &#34;port: &#34; &#43; port; } } 返回对应端口，方便测试负载均衡。
+1spring: 2 application: 3 name: nacos-payment-provider 4 cloud: 5 sentinel: 6 transport: 7 dashboard: localhost:8080 8 port: 8179 二、controller编写
+1@RestController 2@Slf4j 3public class PaymentController { 4 @Value(&#34;${server.port}&#34;) 5 private String port; 6 7 @GetMapping(&#34;/payment/nacos/info&#34;) 8 public String paymentInfo() { 9 return &#34;port: &#34; &#43; port; 10 } 11} 返回对应端口，方便测试负载均衡。
 消费者端 一、配置
-1 2 3 4 5 6 7 8 9 10 spring: application: name: nacos-order-consumer sentinel: transport: dashboard: localhost:8080 port: 8179 feign: sentinel: enabled: true 注意要开启feign的sentinel支持。" />
+1spring: 2 application: 3 name: nacos-order-consumer 4 sentinel: 5 transport: 6 dashboard: localhost:8080 7 port: 8179 8feign: 9 sentinel: 10 enabled: true 注意要开启feign的sentinel支持。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/2022/08/sentinel-usage-record/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-08-08T17:46:49+08:00" />
@@ -36,17 +36,17 @@ controller下的方法指定好处理服务限流，降级或熔断等的方法b
 service下的方法指定好关于生产者的服务限流，降级或熔断等的处理方法。
 代码编写记录 生产者端 一、配置
 关于nacos的配置省略，只记录sentinel的配置：
-1 2 3 4 5 6 7 8 spring: application: name: nacos-payment-provider cloud: sentinel: transport: dashboard: localhost:8080 port: 8179 二、controller编写
-1 2 3 4 5 6 7 8 9 10 11 @RestController @Slf4j public class PaymentController { @Value(&#34;${server.port}&#34;) private String port; @GetMapping(&#34;/payment/nacos/info&#34;) public String paymentInfo() { return &#34;port: &#34; &#43; port; } } 返回对应端口，方便测试负载均衡。
+1spring: 2 application: 3 name: nacos-payment-provider 4 cloud: 5 sentinel: 6 transport: 7 dashboard: localhost:8080 8 port: 8179 二、controller编写
+1@RestController 2@Slf4j 3public class PaymentController { 4 @Value(&#34;${server.port}&#34;) 5 private String port; 6 7 @GetMapping(&#34;/payment/nacos/info&#34;) 8 public String paymentInfo() { 9 return &#34;port: &#34; &#43; port; 10 } 11} 返回对应端口，方便测试负载均衡。
 消费者端 一、配置
-1 2 3 4 5 6 7 8 9 10 spring: application: name: nacos-order-consumer sentinel: transport: dashboard: localhost:8080 port: 8179 feign: sentinel: enabled: true 注意要开启feign的sentinel支持。"/>
+1spring: 2 application: 3 name: nacos-order-consumer 4 sentinel: 5 transport: 6 dashboard: localhost:8080 7 port: 8179 8feign: 9 sentinel: 10 enabled: true 注意要开启feign的sentinel支持。"/>
 
   
   
   
   
   
-  <link rel="stylesheet" href="/css/styles.d8d1e5ac73f5bd72b0e6919356fcf7f12c9dd5a80e4788cae09111cc3678f69a4294b39d4b852dd69cc393c73ac3d8b6c05c8df3569d49d36331b7f39cfea8d1.css" integrity="sha512-2NHlrHP1vXKw5pGTVvz38Syd1agOR4jK4JERzDZ49ppClLOdS4Ut1pzDk8c6w9i2wFyN81adSdNjMbfznP6o0Q==">
+  <link rel="stylesheet" href="/css/styles.b6e7dac395bc81c65ab67a0be932cbd03925f5afb48f9c825ead224a41084a4a8289db621f5b2236149a32799ae71f4962b1d2531d209f51d8b88cdffaa1877e.css" integrity="sha512-tufaw5W8gcZatnoL6TLL0Dkl9a&#43;0j5yCXq0iSkEISkqCidtiH1siNhSaMnma5x9JYrHSUx0gn1HYuIzf&#43;qGHfg==">
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
@@ -163,7 +163,7 @@ service下的方法指定好关于生产者的服务限流，降级或熔断等�
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f08%2fsentinel-usage-record%2f&name=Sentinel%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95&description=Sentinel%e6%98%af%e4%bb%80%e4%b9%88%20Sentinel%20%e6%98%af%e9%9d%a2%e5%90%91%e5%88%86%e5%b8%83%e5%bc%8f%e3%80%81%e5%a4%9a%e8%af%ad%e8%a8%80%e5%bc%82%e6%9e%84%e5%8c%96%e6%9c%8d%e5%8a%a1%e6%9e%b6%e6%9e%84%e7%9a%84%e6%b5%81%e9%87%8f%e6%b2%bb%e7%90%86%e7%bb%84%e4%bb%b6%ef%bc%8c%e4%b8%bb%e8%a6%81%e4%bb%a5%e6%b5%81%e9%87%8f%e4%b8%ba%e5%88%87%e5%85%a5%e7%82%b9%ef%bc%8c%e4%bb%8e%e6%b5%81%e9%87%8f%e8%b7%af%e7%94%b1%e3%80%81%e6%b5%81%e9%87%8f%e6%8e%a7%e5%88%b6%e3%80%81%e6%b5%81%e9%87%8f%e6%95%b4%e5%bd%a2%e3%80%81%e7%86%94%e6%96%ad%e9%99%8d%e7%ba%a7%e3%80%81%e7%b3%bb%e7%bb%9f%e8%87%aa%e9%80%82%e5%ba%94%e8%bf%87%e8%bd%bd%e4%bf%9d%e6%8a%a4%e3%80%81%e7%83%ad%e7%82%b9%e6%b5%81%e9%87%8f%e9%98%b2%e6%8a%a4%e7%ad%89%e5%a4%9a%e4%b8%aa%e7%bb%b4%e5%ba%a6%e6%9d%a5%e5%b8%ae%e5%8a%a9%e5%bc%80%e5%8f%91%e8%80%85%e4%bf%9d%e9%9a%9c%e5%be%ae%e6%9c%8d%e5%8a%a1%e7%9a%84%e7%a8%b3%e5%ae%9a%e6%80%a7%e3%80%82%ef%bc%88%e6%9d%a5%e6%ba%90%e4%ba%8e%e5%ae%98%e6%96%b9%e6%96%87%e6%a1%a3%ef%bc%89%0a%e4%b8%aa%e4%ba%ba%e4%bd%bf%e7%94%a8%e6%84%9f%e8%a7%89%ef%bc%9a%e7%b1%bb%e4%bc%bc%e4%ba%8eHystrix%ef%bc%8c%e4%bd%bf%e7%94%a8%e4%b8%8a%e6%84%9f%e8%a7%89%e6%af%94Hystrix%e6%9b%b4%e5%ae%b9%e6%98%93%ef%bc%8c%e5%8a%9f%e8%83%bd%e4%b9%9f%e6%9b%b4%e5%bc%ba%e5%a4%a7%e3%80%82%0a%e6%9e%b6%e6%9e%84%e8%af%b4%e6%98%8e%20%e4%b8%a4%e4%b8%aa%e7%94%9f%e4%ba%a7%e8%80%85%e6%9c%8d%e5%8a%a1%e8%bf%90%e8%a1%8c%e5%9c%a89001%e5%92%8c9002%e7%ab%af%e5%8f%a3%ef%bc%8c%e4%b8%80%e4%b8%aa%e6%b6%88%e8%b4%b9%e8%80%85%e6%9c%8d%e5%8a%a1%e8%bf%90%e8%a1%8c%e5%9c%a880%e7%ab%af%e5%8f%a3%ef%bc%8c%e5%9d%87%e6%b3%a8%e5%86%8c%e5%88%b0nacos%ef%bc%8c%e6%b6%88%e8%b4%b9%e8%80%85%e8%b0%83%e7%94%a8%e4%b8%a4%e4%b8%aa%e7%94%9f%e4%ba%a7%e8%80%85%e7%9a%84%e6%9c%8d%e5%8a%a1%e3%80%82%0a%e5%b0%86%e6%b6%88%e8%b4%b9%e8%80%85%e6%9c%8d%e5%8a%a1%e6%b3%a8%e5%86%8c%e5%88%b0sentinel%e4%b8%ad%ef%bc%8c%e9%80%9a%e8%bf%87%e4%bf%ae%e6%94%b9%e4%b8%80%e4%ba%9b%e8%a7%84%e5%88%99%e8%bf%9b%e8%a1%8c%e6%b5%8b%e8%af%95%e3%80%82%0acontroller%e4%b8%8b%e7%9a%84%e6%96%b9%e6%b3%95%e6%8c%87%e5%ae%9a%e5%a5%bd%e5%a4%84%e7%90%86%e6%9c%8d%e5%8a%a1%e9%99%90%e6%b5%81%ef%bc%8c%e9%99%8d%e7%ba%a7%e6%88%96%e7%86%94%e6%96%ad%e7%ad%89%e7%9a%84%e6%96%b9%e6%b3%95blockHandler%ef%bc%8c%e4%bb%a5%e5%8f%8a%e5%a4%84%e7%90%86%e6%9c%aa%e7%9f%a5%e5%bc%82%e5%b8%b8%e7%9a%84fallback%e6%96%b9%e6%b3%95%ef%bc%8c%e9%80%9a%e8%bf%87%e6%8c%87%e5%ae%9aclass%e7%9a%84%e6%96%b9%e6%b3%95%e9%81%bf%e5%85%8d%e4%bb%a3%e7%a0%81%e8%86%a8%e8%83%80%e3%80%82%0aservice%e4%b8%8b%e7%9a%84%e6%96%b9%e6%b3%95%e6%8c%87%e5%ae%9a%e5%a5%bd%e5%85%b3%e4%ba%8e%e7%94%9f%e4%ba%a7%e8%80%85%e7%9a%84%e6%9c%8d%e5%8a%a1%e9%99%90%e6%b5%81%ef%bc%8c%e9%99%8d%e7%ba%a7%e6%88%96%e7%86%94%e6%96%ad%e7%ad%89%e7%9a%84%e5%a4%84%e7%90%86%e6%96%b9%e6%b3%95%e3%80%82%0a%e4%bb%a3%e7%a0%81%e7%bc%96%e5%86%99%e8%ae%b0%e5%bd%95%20%e7%94%9f%e4%ba%a7%e8%80%85%e7%ab%af%20%e4%b8%80%e3%80%81%e9%85%8d%e7%bd%ae%0a%e5%85%b3%e4%ba%8enacos%e7%9a%84%e9%85%8d%e7%bd%ae%e7%9c%81%e7%95%a5%ef%bc%8c%e5%8f%aa%e8%ae%b0%e5%bd%95sentinel%e7%9a%84%e9%85%8d%e7%bd%ae%ef%bc%9a%0a1%202%203%204%205%206%207%208%20spring%3a%20application%3a%20name%3a%20nacos-payment-provider%20cloud%3a%20sentinel%3a%20transport%3a%20dashboard%3a%20localhost%3a8080%20port%3a%208179%20%e4%ba%8c%e3%80%81controller%e7%bc%96%e5%86%99%0a1%202%203%204%205%206%207%208%209%2010%2011%20%40RestController%20%40Slf4j%20public%20class%20PaymentController%20%7b%20%40Value%28%26%2334%3b%24%7bserver.port%7d%26%2334%3b%29%20private%20String%20port%3b%20%40GetMapping%28%26%2334%3b%2fpayment%2fnacos%2finfo%26%2334%3b%29%20public%20String%20paymentInfo%28%29%20%7b%20return%20%26%2334%3bport%3a%20%26%2334%3b%20%2b%20port%3b%20%7d%20%7d%20%e8%bf%94%e5%9b%9e%e5%af%b9%e5%ba%94%e7%ab%af%e5%8f%a3%ef%bc%8c%e6%96%b9%e4%be%bf%e6%b5%8b%e8%af%95%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1%e3%80%82%0a%e6%b6%88%e8%b4%b9%e8%80%85%e7%ab%af%20%e4%b8%80%e3%80%81%e9%85%8d%e7%bd%ae%0a1%202%203%204%205%206%207%208%209%2010%20spring%3a%20application%3a%20name%3a%20nacos-order-consumer%20sentinel%3a%20transport%3a%20dashboard%3a%20localhost%3a8080%20port%3a%208179%20feign%3a%20sentinel%3a%20enabled%3a%20true%20%e6%b3%a8%e6%84%8f%e8%a6%81%e5%bc%80%e5%90%affeign%e7%9a%84sentinel%e6%94%af%e6%8c%81%e3%80%82" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f08%2fsentinel-usage-record%2f&name=Sentinel%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95&description=Sentinel%e6%98%af%e4%bb%80%e4%b9%88%20Sentinel%20%e6%98%af%e9%9d%a2%e5%90%91%e5%88%86%e5%b8%83%e5%bc%8f%e3%80%81%e5%a4%9a%e8%af%ad%e8%a8%80%e5%bc%82%e6%9e%84%e5%8c%96%e6%9c%8d%e5%8a%a1%e6%9e%b6%e6%9e%84%e7%9a%84%e6%b5%81%e9%87%8f%e6%b2%bb%e7%90%86%e7%bb%84%e4%bb%b6%ef%bc%8c%e4%b8%bb%e8%a6%81%e4%bb%a5%e6%b5%81%e9%87%8f%e4%b8%ba%e5%88%87%e5%85%a5%e7%82%b9%ef%bc%8c%e4%bb%8e%e6%b5%81%e9%87%8f%e8%b7%af%e7%94%b1%e3%80%81%e6%b5%81%e9%87%8f%e6%8e%a7%e5%88%b6%e3%80%81%e6%b5%81%e9%87%8f%e6%95%b4%e5%bd%a2%e3%80%81%e7%86%94%e6%96%ad%e9%99%8d%e7%ba%a7%e3%80%81%e7%b3%bb%e7%bb%9f%e8%87%aa%e9%80%82%e5%ba%94%e8%bf%87%e8%bd%bd%e4%bf%9d%e6%8a%a4%e3%80%81%e7%83%ad%e7%82%b9%e6%b5%81%e9%87%8f%e9%98%b2%e6%8a%a4%e7%ad%89%e5%a4%9a%e4%b8%aa%e7%bb%b4%e5%ba%a6%e6%9d%a5%e5%b8%ae%e5%8a%a9%e5%bc%80%e5%8f%91%e8%80%85%e4%bf%9d%e9%9a%9c%e5%be%ae%e6%9c%8d%e5%8a%a1%e7%9a%84%e7%a8%b3%e5%ae%9a%e6%80%a7%e3%80%82%ef%bc%88%e6%9d%a5%e6%ba%90%e4%ba%8e%e5%ae%98%e6%96%b9%e6%96%87%e6%a1%a3%ef%bc%89%0a%e4%b8%aa%e4%ba%ba%e4%bd%bf%e7%94%a8%e6%84%9f%e8%a7%89%ef%bc%9a%e7%b1%bb%e4%bc%bc%e4%ba%8eHystrix%ef%bc%8c%e4%bd%bf%e7%94%a8%e4%b8%8a%e6%84%9f%e8%a7%89%e6%af%94Hystrix%e6%9b%b4%e5%ae%b9%e6%98%93%ef%bc%8c%e5%8a%9f%e8%83%bd%e4%b9%9f%e6%9b%b4%e5%bc%ba%e5%a4%a7%e3%80%82%0a%e6%9e%b6%e6%9e%84%e8%af%b4%e6%98%8e%20%e4%b8%a4%e4%b8%aa%e7%94%9f%e4%ba%a7%e8%80%85%e6%9c%8d%e5%8a%a1%e8%bf%90%e8%a1%8c%e5%9c%a89001%e5%92%8c9002%e7%ab%af%e5%8f%a3%ef%bc%8c%e4%b8%80%e4%b8%aa%e6%b6%88%e8%b4%b9%e8%80%85%e6%9c%8d%e5%8a%a1%e8%bf%90%e8%a1%8c%e5%9c%a880%e7%ab%af%e5%8f%a3%ef%bc%8c%e5%9d%87%e6%b3%a8%e5%86%8c%e5%88%b0nacos%ef%bc%8c%e6%b6%88%e8%b4%b9%e8%80%85%e8%b0%83%e7%94%a8%e4%b8%a4%e4%b8%aa%e7%94%9f%e4%ba%a7%e8%80%85%e7%9a%84%e6%9c%8d%e5%8a%a1%e3%80%82%0a%e5%b0%86%e6%b6%88%e8%b4%b9%e8%80%85%e6%9c%8d%e5%8a%a1%e6%b3%a8%e5%86%8c%e5%88%b0sentinel%e4%b8%ad%ef%bc%8c%e9%80%9a%e8%bf%87%e4%bf%ae%e6%94%b9%e4%b8%80%e4%ba%9b%e8%a7%84%e5%88%99%e8%bf%9b%e8%a1%8c%e6%b5%8b%e8%af%95%e3%80%82%0acontroller%e4%b8%8b%e7%9a%84%e6%96%b9%e6%b3%95%e6%8c%87%e5%ae%9a%e5%a5%bd%e5%a4%84%e7%90%86%e6%9c%8d%e5%8a%a1%e9%99%90%e6%b5%81%ef%bc%8c%e9%99%8d%e7%ba%a7%e6%88%96%e7%86%94%e6%96%ad%e7%ad%89%e7%9a%84%e6%96%b9%e6%b3%95blockHandler%ef%bc%8c%e4%bb%a5%e5%8f%8a%e5%a4%84%e7%90%86%e6%9c%aa%e7%9f%a5%e5%bc%82%e5%b8%b8%e7%9a%84fallback%e6%96%b9%e6%b3%95%ef%bc%8c%e9%80%9a%e8%bf%87%e6%8c%87%e5%ae%9aclass%e7%9a%84%e6%96%b9%e6%b3%95%e9%81%bf%e5%85%8d%e4%bb%a3%e7%a0%81%e8%86%a8%e8%83%80%e3%80%82%0aservice%e4%b8%8b%e7%9a%84%e6%96%b9%e6%b3%95%e6%8c%87%e5%ae%9a%e5%a5%bd%e5%85%b3%e4%ba%8e%e7%94%9f%e4%ba%a7%e8%80%85%e7%9a%84%e6%9c%8d%e5%8a%a1%e9%99%90%e6%b5%81%ef%bc%8c%e9%99%8d%e7%ba%a7%e6%88%96%e7%86%94%e6%96%ad%e7%ad%89%e7%9a%84%e5%a4%84%e7%90%86%e6%96%b9%e6%b3%95%e3%80%82%0a%e4%bb%a3%e7%a0%81%e7%bc%96%e5%86%99%e8%ae%b0%e5%bd%95%20%e7%94%9f%e4%ba%a7%e8%80%85%e7%ab%af%20%e4%b8%80%e3%80%81%e9%85%8d%e7%bd%ae%0a%e5%85%b3%e4%ba%8enacos%e7%9a%84%e9%85%8d%e7%bd%ae%e7%9c%81%e7%95%a5%ef%bc%8c%e5%8f%aa%e8%ae%b0%e5%bd%95sentinel%e7%9a%84%e9%85%8d%e7%bd%ae%ef%bc%9a%0a1spring%3a%202%20application%3a%203%20name%3a%20nacos-payment-provider%204%20cloud%3a%205%20sentinel%3a%206%20transport%3a%207%20dashboard%3a%20localhost%3a8080%208%20port%3a%208179%20%e4%ba%8c%e3%80%81controller%e7%bc%96%e5%86%99%0a1%40RestController%202%40Slf4j%203public%20class%20PaymentController%20%7b%204%20%40Value%28%26%2334%3b%24%7bserver.port%7d%26%2334%3b%29%205%20private%20String%20port%3b%206%207%20%40GetMapping%28%26%2334%3b%2fpayment%2fnacos%2finfo%26%2334%3b%29%208%20public%20String%20paymentInfo%28%29%20%7b%209%20return%20%26%2334%3bport%3a%20%26%2334%3b%20%2b%20port%3b%2010%20%7d%2011%7d%20%e8%bf%94%e5%9b%9e%e5%af%b9%e5%ba%94%e7%ab%af%e5%8f%a3%ef%bc%8c%e6%96%b9%e4%be%bf%e6%b5%8b%e8%af%95%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1%e3%80%82%0a%e6%b6%88%e8%b4%b9%e8%80%85%e7%ab%af%20%e4%b8%80%e3%80%81%e9%85%8d%e7%bd%ae%0a1spring%3a%202%20application%3a%203%20name%3a%20nacos-order-consumer%204%20sentinel%3a%205%20transport%3a%206%20dashboard%3a%20localhost%3a8080%207%20port%3a%208179%208feign%3a%209%20sentinel%3a%2010%20enabled%3a%20true%20%e6%b3%a8%e6%84%8f%e8%a6%81%e5%bc%80%e5%90%affeign%e7%9a%84sentinel%e6%94%af%e6%8c%81%e3%80%82" aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -251,227 +251,99 @@ service下的方法指定好关于生产者的服务限流，降级或熔断等�
 <h3 id="生产者端">生产者端</h3>
 <p>一、配置</p>
 <p>关于nacos的配置省略，只记录sentinel的配置：</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#ff79c6">spring</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">application</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">name</span>: nacos-payment-provider
-</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">cloud</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">sentinel</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">transport</span>:
-</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">dashboard</span>: localhost:8080
-</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">port</span>: <span style="color:#bd93f9">8179</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>二、controller编写</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>@RestController
-</span></span><span style="display:flex;"><span>@Slf4j
-</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">PaymentController</span> <span style="color:#ff79c6">{</span>
-</span></span><span style="display:flex;"><span>    @Value<span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;${server.port}&#34;</span><span style="color:#ff79c6">)</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">private</span> String port<span style="color:#ff79c6">;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    @GetMapping<span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;/payment/nacos/info&#34;</span><span style="color:#ff79c6">)</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">public</span> String <span style="color:#50fa7b">paymentInfo</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">{</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">return</span> <span style="color:#f1fa8c">&#34;port: &#34;</span> <span style="color:#ff79c6">+</span> port<span style="color:#ff79c6">;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>返回对应端口，方便测试负载均衡。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#ff79c6">spring</span>:
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>  <span style="color:#ff79c6">application</span>:
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>    <span style="color:#ff79c6">name</span>: nacos-payment-provider
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>  <span style="color:#ff79c6">cloud</span>:
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>    <span style="color:#ff79c6">sentinel</span>:
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>      <span style="color:#ff79c6">transport</span>:
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span>        <span style="color:#ff79c6">dashboard</span>: localhost:8080
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span><span>        <span style="color:#ff79c6">port</span>: <span style="color:#bd93f9">8179</span>
+</span></span></code></pre></div><p>二、controller编写</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>@RestController
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>@Slf4j
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">PaymentController</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>    @Value<span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;${server.port}&#34;</span><span style="color:#ff79c6">)</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>    <span style="color:#8be9fd;font-style:italic">private</span> String port<span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>    @GetMapping<span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;/payment/nacos/info&#34;</span><span style="color:#ff79c6">)</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>    <span style="color:#8be9fd;font-style:italic">public</span> String <span style="color:#50fa7b">paymentInfo</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>        <span style="color:#ff79c6">return</span> <span style="color:#f1fa8c">&#34;port: &#34;</span> <span style="color:#ff79c6">+</span> port<span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>    <span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span><span style="color:#ff79c6">}</span>
+</span></span></code></pre></div><p>返回对应端口，方便测试负载均衡。</p>
 <h3 id="消费者端">消费者端</h3>
 <p>一、配置</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#ff79c6">spring</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">application</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">name</span>: nacos-order-consumer
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">sentinel</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">transport</span>:
-</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">dashboard</span>: localhost:8080
-</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">port</span>: <span style="color:#bd93f9">8179</span>
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">feign</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">sentinel</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">enabled</span>: <span style="color:#ff79c6">true</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>注意要开启feign的sentinel支持。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#ff79c6">spring</span>:
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>  <span style="color:#ff79c6">application</span>:
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>    <span style="color:#ff79c6">name</span>: nacos-order-consumer
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>    <span style="color:#ff79c6">sentinel</span>:
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>      <span style="color:#ff79c6">transport</span>:
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>        <span style="color:#ff79c6">dashboard</span>: localhost:8080
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>        <span style="color:#ff79c6">port</span>: <span style="color:#bd93f9">8179</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span><span style="color:#ff79c6">feign</span>:
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>  <span style="color:#ff79c6">sentinel</span>:
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>    <span style="color:#ff79c6">enabled</span>: <span style="color:#ff79c6">true</span>
+</span></span></code></pre></div><p>注意要开启feign的sentinel支持。</p>
 <p>二、依赖</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#ff79c6">&lt;dependency&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&lt;groupId&gt;</span>com.alibaba.cloud<span style="color:#ff79c6">&lt;/groupId&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&lt;artifactId&gt;</span>spring-cloud-starter-alibaba-sentinel<span style="color:#ff79c6">&lt;/artifactId&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">&lt;/dependency&gt;</span>
-</span></span><span style="display:flex;"><span>...
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>三、service编写</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>@FeignClient<span style="color:#ff79c6">(</span>value <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;nacos-payment-provider&#34;</span><span style="color:#ff79c6">,</span> fallback <span style="color:#ff79c6">=</span> PaymentFallbackService<span style="color:#ff79c6">.</span><span style="color:#50fa7b">class</span><span style="color:#ff79c6">)</span>
-</span></span><span style="display:flex;"><span>@Service
-</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">interface</span> <span style="color:#50fa7b">PaymentService</span> <span style="color:#ff79c6">{</span>
-</span></span><span style="display:flex;"><span>    @GetMapping<span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;/payment/nacos/info&#34;</span><span style="color:#ff79c6">)</span>
-</span></span><span style="display:flex;"><span>    String <span style="color:#50fa7b">paymentInfo</span><span style="color:#ff79c6">();</span>
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>对应实现类：</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>@Service
-</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">PaymentFallbackService</span> <span style="color:#8be9fd;font-style:italic">implements</span> PaymentService<span style="color:#ff79c6">{</span>
-</span></span><span style="display:flex;"><span>    @Override
-</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">public</span> String <span style="color:#50fa7b">paymentInfo</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">{</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">return</span> <span style="color:#f1fa8c">&#34;feign::fallback&#34;</span><span style="color:#ff79c6">;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>这里处理关于生产者的服务限流，降级或熔断问题。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#ff79c6">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>    <span style="color:#ff79c6">&lt;groupId&gt;</span>com.alibaba.cloud<span style="color:#ff79c6">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>    <span style="color:#ff79c6">&lt;artifactId&gt;</span>spring-cloud-starter-alibaba-sentinel<span style="color:#ff79c6">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span><span style="color:#ff79c6">&lt;/dependency&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>...
+</span></span></code></pre></div><p>三、service编写</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>@FeignClient<span style="color:#ff79c6">(</span>value <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;nacos-payment-provider&#34;</span><span style="color:#ff79c6">,</span> fallback <span style="color:#ff79c6">=</span> PaymentFallbackService<span style="color:#ff79c6">.</span><span style="color:#50fa7b">class</span><span style="color:#ff79c6">)</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>@Service
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">interface</span> <span style="color:#50fa7b">PaymentService</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>    @GetMapping<span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;/payment/nacos/info&#34;</span><span style="color:#ff79c6">)</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>    String <span style="color:#50fa7b">paymentInfo</span><span style="color:#ff79c6">();</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span><span style="color:#ff79c6">}</span>
+</span></span></code></pre></div><p>对应实现类：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>@Service
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">PaymentFallbackService</span> <span style="color:#8be9fd;font-style:italic">implements</span> PaymentService<span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>    @Override
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>    <span style="color:#8be9fd;font-style:italic">public</span> String <span style="color:#50fa7b">paymentInfo</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>        <span style="color:#ff79c6">return</span> <span style="color:#f1fa8c">&#34;feign::fallback&#34;</span><span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>    <span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span><span style="color:#ff79c6">}</span>
+</span></span></code></pre></div><p>这里处理关于生产者的服务限流，降级或熔断问题。</p>
 <p>四、两个服务问题Hanlder的编写</p>
 <p>根据官方文档，这里的方法都需指明为static，否者无法识别。</p>
 <p>1、GlobalBlockHandler</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>@Component
-</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">GlobalBlockHandler</span> <span style="color:#ff79c6">{</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">static</span> String <span style="color:#50fa7b">block1</span><span style="color:#ff79c6">(</span>BlockException e<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span><span style="color:#ff79c6">return</span> <span style="color:#f1fa8c">&#34;block1&#34;</span><span style="color:#ff79c6">;}</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">public</span> String <span style="color:#50fa7b">block2</span><span style="color:#ff79c6">(</span>BlockException e<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span><span style="color:#ff79c6">return</span> <span style="color:#f1fa8c">&#34;block2&#34;</span><span style="color:#ff79c6">;}</span>
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>这个用于消费者端处理服务限流，降级或熔断等问题。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>@Component
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">GlobalBlockHandler</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">static</span> String <span style="color:#50fa7b">block1</span><span style="color:#ff79c6">(</span>BlockException e<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span><span style="color:#ff79c6">return</span> <span style="color:#f1fa8c">&#34;block1&#34;</span><span style="color:#ff79c6">;}</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>    <span style="color:#8be9fd;font-style:italic">public</span> String <span style="color:#50fa7b">block2</span><span style="color:#ff79c6">(</span>BlockException e<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span><span style="color:#ff79c6">return</span> <span style="color:#f1fa8c">&#34;block2&#34;</span><span style="color:#ff79c6">;}</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span><span style="color:#ff79c6">}</span>
+</span></span></code></pre></div><p>这个用于消费者端处理服务限流，降级或熔断等问题。</p>
 <ol start="2">
 <li>GlobalFallbackHandler</li>
 </ol>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>@Component
-</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">GlobalFallbackHandler</span> <span style="color:#ff79c6">{</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">static</span> String <span style="color:#50fa7b">fallback1</span><span style="color:#ff79c6">()</span>  <span style="color:#ff79c6">{</span><span style="color:#ff79c6">return</span> <span style="color:#f1fa8c">&#34;fallback1&#34;</span><span style="color:#ff79c6">;}</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">static</span> String <span style="color:#50fa7b">fallback2</span><span style="color:#ff79c6">()</span>  <span style="color:#ff79c6">{</span><span style="color:#ff79c6">return</span> <span style="color:#f1fa8c">&#34;fallback2&#34;</span><span style="color:#ff79c6">;}</span>
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>这个用于消费者端处理未知异常。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>@Component
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">GlobalFallbackHandler</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">static</span> String <span style="color:#50fa7b">fallback1</span><span style="color:#ff79c6">()</span>  <span style="color:#ff79c6">{</span><span style="color:#ff79c6">return</span> <span style="color:#f1fa8c">&#34;fallback1&#34;</span><span style="color:#ff79c6">;}</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">static</span> String <span style="color:#50fa7b">fallback2</span><span style="color:#ff79c6">()</span>  <span style="color:#ff79c6">{</span><span style="color:#ff79c6">return</span> <span style="color:#f1fa8c">&#34;fallback2&#34;</span><span style="color:#ff79c6">;}</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span><span style="color:#ff79c6">}</span>
+</span></span></code></pre></div><p>这个用于消费者端处理未知异常。</p>
 <p>五、controller编写</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>@RestController
-</span></span><span style="display:flex;"><span>@Slf4j
-</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">OrderController</span> <span style="color:#ff79c6">{</span>
-</span></span><span style="display:flex;"><span>    @Resource
-</span></span><span style="display:flex;"><span>    PaymentService paymentService<span style="color:#ff79c6">;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    @GetMapping<span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;/consumer/payment/nacos/info&#34;</span><span style="color:#ff79c6">)</span>
-</span></span><span style="display:flex;"><span>    @SentinelResource<span style="color:#ff79c6">(</span>
-</span></span><span style="display:flex;"><span>            value <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;paymentInfo&#34;</span><span style="color:#ff79c6">,</span>
-</span></span><span style="display:flex;"><span>            fallbackClass <span style="color:#ff79c6">=</span> GlobalFallbackHandler<span style="color:#ff79c6">.</span><span style="color:#50fa7b">class</span><span style="color:#ff79c6">,</span> fallback <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;fallback1&#34;</span><span style="color:#ff79c6">,</span>
-</span></span><span style="display:flex;"><span>            blockHandlerClass <span style="color:#ff79c6">=</span> GlobalBlockHandler<span style="color:#ff79c6">.</span><span style="color:#50fa7b">class</span><span style="color:#ff79c6">,</span> blockHandler <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;block1&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">)</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">public</span> String <span style="color:#50fa7b">paymentInfo</span><span style="color:#ff79c6">()</span>  <span style="color:#ff79c6">{</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#8be9fd">int</span> a <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">1</span> <span style="color:#ff79c6">/</span> <span style="color:#bd93f9">0</span><span style="color:#ff79c6">;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">return</span> paymentService<span style="color:#ff79c6">.</span><span style="color:#50fa7b">paymentInfo</span><span style="color:#ff79c6">();</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>指定好class的同时，需用fallback和blockHandler分别指定好具体的方法名。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>@RestController
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>@Slf4j
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">OrderController</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>    @Resource
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>    PaymentService paymentService<span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>    @GetMapping<span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;/consumer/payment/nacos/info&#34;</span><span style="color:#ff79c6">)</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>    @SentinelResource<span style="color:#ff79c6">(</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>            value <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;paymentInfo&#34;</span><span style="color:#ff79c6">,</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>            fallbackClass <span style="color:#ff79c6">=</span> GlobalFallbackHandler<span style="color:#ff79c6">.</span><span style="color:#50fa7b">class</span><span style="color:#ff79c6">,</span> fallback <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;fallback1&#34;</span><span style="color:#ff79c6">,</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>            blockHandlerClass <span style="color:#ff79c6">=</span> GlobalBlockHandler<span style="color:#ff79c6">.</span><span style="color:#50fa7b">class</span><span style="color:#ff79c6">,</span> blockHandler <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;block1&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>    <span style="color:#ff79c6">)</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>    <span style="color:#8be9fd;font-style:italic">public</span> String <span style="color:#50fa7b">paymentInfo</span><span style="color:#ff79c6">()</span>  <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>        <span style="color:#8be9fd">int</span> a <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">1</span> <span style="color:#ff79c6">/</span> <span style="color:#bd93f9">0</span><span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>        <span style="color:#ff79c6">return</span> paymentService<span style="color:#ff79c6">.</span><span style="color:#50fa7b">paymentInfo</span><span style="color:#ff79c6">();</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>    <span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span><span style="color:#ff79c6">}</span>
+</span></span></code></pre></div><p>指定好class的同时，需用fallback和blockHandler分别指定好具体的方法名。</p>
 <h2 id="测试">测试</h2>
 <p>一、测试除0错误是否正确进入fallback1：直接访问接口，返回“fallback1”，正确；</p>
 <p>二、测试消费者端服务限流：sentinel指定流控规则，QPS设置阈值为1，连续访问接口，返回“block1”，正确；</p>
@@ -587,7 +459,7 @@ service下的方法指定好关于生产者的服务限流，降级或熔断等�
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f08%2fsentinel-usage-record%2f&name=Sentinel%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95&description=Sentinel%e6%98%af%e4%bb%80%e4%b9%88%20Sentinel%20%e6%98%af%e9%9d%a2%e5%90%91%e5%88%86%e5%b8%83%e5%bc%8f%e3%80%81%e5%a4%9a%e8%af%ad%e8%a8%80%e5%bc%82%e6%9e%84%e5%8c%96%e6%9c%8d%e5%8a%a1%e6%9e%b6%e6%9e%84%e7%9a%84%e6%b5%81%e9%87%8f%e6%b2%bb%e7%90%86%e7%bb%84%e4%bb%b6%ef%bc%8c%e4%b8%bb%e8%a6%81%e4%bb%a5%e6%b5%81%e9%87%8f%e4%b8%ba%e5%88%87%e5%85%a5%e7%82%b9%ef%bc%8c%e4%bb%8e%e6%b5%81%e9%87%8f%e8%b7%af%e7%94%b1%e3%80%81%e6%b5%81%e9%87%8f%e6%8e%a7%e5%88%b6%e3%80%81%e6%b5%81%e9%87%8f%e6%95%b4%e5%bd%a2%e3%80%81%e7%86%94%e6%96%ad%e9%99%8d%e7%ba%a7%e3%80%81%e7%b3%bb%e7%bb%9f%e8%87%aa%e9%80%82%e5%ba%94%e8%bf%87%e8%bd%bd%e4%bf%9d%e6%8a%a4%e3%80%81%e7%83%ad%e7%82%b9%e6%b5%81%e9%87%8f%e9%98%b2%e6%8a%a4%e7%ad%89%e5%a4%9a%e4%b8%aa%e7%bb%b4%e5%ba%a6%e6%9d%a5%e5%b8%ae%e5%8a%a9%e5%bc%80%e5%8f%91%e8%80%85%e4%bf%9d%e9%9a%9c%e5%be%ae%e6%9c%8d%e5%8a%a1%e7%9a%84%e7%a8%b3%e5%ae%9a%e6%80%a7%e3%80%82%ef%bc%88%e6%9d%a5%e6%ba%90%e4%ba%8e%e5%ae%98%e6%96%b9%e6%96%87%e6%a1%a3%ef%bc%89%0a%e4%b8%aa%e4%ba%ba%e4%bd%bf%e7%94%a8%e6%84%9f%e8%a7%89%ef%bc%9a%e7%b1%bb%e4%bc%bc%e4%ba%8eHystrix%ef%bc%8c%e4%bd%bf%e7%94%a8%e4%b8%8a%e6%84%9f%e8%a7%89%e6%af%94Hystrix%e6%9b%b4%e5%ae%b9%e6%98%93%ef%bc%8c%e5%8a%9f%e8%83%bd%e4%b9%9f%e6%9b%b4%e5%bc%ba%e5%a4%a7%e3%80%82%0a%e6%9e%b6%e6%9e%84%e8%af%b4%e6%98%8e%20%e4%b8%a4%e4%b8%aa%e7%94%9f%e4%ba%a7%e8%80%85%e6%9c%8d%e5%8a%a1%e8%bf%90%e8%a1%8c%e5%9c%a89001%e5%92%8c9002%e7%ab%af%e5%8f%a3%ef%bc%8c%e4%b8%80%e4%b8%aa%e6%b6%88%e8%b4%b9%e8%80%85%e6%9c%8d%e5%8a%a1%e8%bf%90%e8%a1%8c%e5%9c%a880%e7%ab%af%e5%8f%a3%ef%bc%8c%e5%9d%87%e6%b3%a8%e5%86%8c%e5%88%b0nacos%ef%bc%8c%e6%b6%88%e8%b4%b9%e8%80%85%e8%b0%83%e7%94%a8%e4%b8%a4%e4%b8%aa%e7%94%9f%e4%ba%a7%e8%80%85%e7%9a%84%e6%9c%8d%e5%8a%a1%e3%80%82%0a%e5%b0%86%e6%b6%88%e8%b4%b9%e8%80%85%e6%9c%8d%e5%8a%a1%e6%b3%a8%e5%86%8c%e5%88%b0sentinel%e4%b8%ad%ef%bc%8c%e9%80%9a%e8%bf%87%e4%bf%ae%e6%94%b9%e4%b8%80%e4%ba%9b%e8%a7%84%e5%88%99%e8%bf%9b%e8%a1%8c%e6%b5%8b%e8%af%95%e3%80%82%0acontroller%e4%b8%8b%e7%9a%84%e6%96%b9%e6%b3%95%e6%8c%87%e5%ae%9a%e5%a5%bd%e5%a4%84%e7%90%86%e6%9c%8d%e5%8a%a1%e9%99%90%e6%b5%81%ef%bc%8c%e9%99%8d%e7%ba%a7%e6%88%96%e7%86%94%e6%96%ad%e7%ad%89%e7%9a%84%e6%96%b9%e6%b3%95blockHandler%ef%bc%8c%e4%bb%a5%e5%8f%8a%e5%a4%84%e7%90%86%e6%9c%aa%e7%9f%a5%e5%bc%82%e5%b8%b8%e7%9a%84fallback%e6%96%b9%e6%b3%95%ef%bc%8c%e9%80%9a%e8%bf%87%e6%8c%87%e5%ae%9aclass%e7%9a%84%e6%96%b9%e6%b3%95%e9%81%bf%e5%85%8d%e4%bb%a3%e7%a0%81%e8%86%a8%e8%83%80%e3%80%82%0aservice%e4%b8%8b%e7%9a%84%e6%96%b9%e6%b3%95%e6%8c%87%e5%ae%9a%e5%a5%bd%e5%85%b3%e4%ba%8e%e7%94%9f%e4%ba%a7%e8%80%85%e7%9a%84%e6%9c%8d%e5%8a%a1%e9%99%90%e6%b5%81%ef%bc%8c%e9%99%8d%e7%ba%a7%e6%88%96%e7%86%94%e6%96%ad%e7%ad%89%e7%9a%84%e5%a4%84%e7%90%86%e6%96%b9%e6%b3%95%e3%80%82%0a%e4%bb%a3%e7%a0%81%e7%bc%96%e5%86%99%e8%ae%b0%e5%bd%95%20%e7%94%9f%e4%ba%a7%e8%80%85%e7%ab%af%20%e4%b8%80%e3%80%81%e9%85%8d%e7%bd%ae%0a%e5%85%b3%e4%ba%8enacos%e7%9a%84%e9%85%8d%e7%bd%ae%e7%9c%81%e7%95%a5%ef%bc%8c%e5%8f%aa%e8%ae%b0%e5%bd%95sentinel%e7%9a%84%e9%85%8d%e7%bd%ae%ef%bc%9a%0a1%202%203%204%205%206%207%208%20spring%3a%20application%3a%20name%3a%20nacos-payment-provider%20cloud%3a%20sentinel%3a%20transport%3a%20dashboard%3a%20localhost%3a8080%20port%3a%208179%20%e4%ba%8c%e3%80%81controller%e7%bc%96%e5%86%99%0a1%202%203%204%205%206%207%208%209%2010%2011%20%40RestController%20%40Slf4j%20public%20class%20PaymentController%20%7b%20%40Value%28%26%2334%3b%24%7bserver.port%7d%26%2334%3b%29%20private%20String%20port%3b%20%40GetMapping%28%26%2334%3b%2fpayment%2fnacos%2finfo%26%2334%3b%29%20public%20String%20paymentInfo%28%29%20%7b%20return%20%26%2334%3bport%3a%20%26%2334%3b%20%2b%20port%3b%20%7d%20%7d%20%e8%bf%94%e5%9b%9e%e5%af%b9%e5%ba%94%e7%ab%af%e5%8f%a3%ef%bc%8c%e6%96%b9%e4%be%bf%e6%b5%8b%e8%af%95%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1%e3%80%82%0a%e6%b6%88%e8%b4%b9%e8%80%85%e7%ab%af%20%e4%b8%80%e3%80%81%e9%85%8d%e7%bd%ae%0a1%202%203%204%205%206%207%208%209%2010%20spring%3a%20application%3a%20name%3a%20nacos-order-consumer%20sentinel%3a%20transport%3a%20dashboard%3a%20localhost%3a8080%20port%3a%208179%20feign%3a%20sentinel%3a%20enabled%3a%20true%20%e6%b3%a8%e6%84%8f%e8%a6%81%e5%bc%80%e5%90%affeign%e7%9a%84sentinel%e6%94%af%e6%8c%81%e3%80%82" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f08%2fsentinel-usage-record%2f&name=Sentinel%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95&description=Sentinel%e6%98%af%e4%bb%80%e4%b9%88%20Sentinel%20%e6%98%af%e9%9d%a2%e5%90%91%e5%88%86%e5%b8%83%e5%bc%8f%e3%80%81%e5%a4%9a%e8%af%ad%e8%a8%80%e5%bc%82%e6%9e%84%e5%8c%96%e6%9c%8d%e5%8a%a1%e6%9e%b6%e6%9e%84%e7%9a%84%e6%b5%81%e9%87%8f%e6%b2%bb%e7%90%86%e7%bb%84%e4%bb%b6%ef%bc%8c%e4%b8%bb%e8%a6%81%e4%bb%a5%e6%b5%81%e9%87%8f%e4%b8%ba%e5%88%87%e5%85%a5%e7%82%b9%ef%bc%8c%e4%bb%8e%e6%b5%81%e9%87%8f%e8%b7%af%e7%94%b1%e3%80%81%e6%b5%81%e9%87%8f%e6%8e%a7%e5%88%b6%e3%80%81%e6%b5%81%e9%87%8f%e6%95%b4%e5%bd%a2%e3%80%81%e7%86%94%e6%96%ad%e9%99%8d%e7%ba%a7%e3%80%81%e7%b3%bb%e7%bb%9f%e8%87%aa%e9%80%82%e5%ba%94%e8%bf%87%e8%bd%bd%e4%bf%9d%e6%8a%a4%e3%80%81%e7%83%ad%e7%82%b9%e6%b5%81%e9%87%8f%e9%98%b2%e6%8a%a4%e7%ad%89%e5%a4%9a%e4%b8%aa%e7%bb%b4%e5%ba%a6%e6%9d%a5%e5%b8%ae%e5%8a%a9%e5%bc%80%e5%8f%91%e8%80%85%e4%bf%9d%e9%9a%9c%e5%be%ae%e6%9c%8d%e5%8a%a1%e7%9a%84%e7%a8%b3%e5%ae%9a%e6%80%a7%e3%80%82%ef%bc%88%e6%9d%a5%e6%ba%90%e4%ba%8e%e5%ae%98%e6%96%b9%e6%96%87%e6%a1%a3%ef%bc%89%0a%e4%b8%aa%e4%ba%ba%e4%bd%bf%e7%94%a8%e6%84%9f%e8%a7%89%ef%bc%9a%e7%b1%bb%e4%bc%bc%e4%ba%8eHystrix%ef%bc%8c%e4%bd%bf%e7%94%a8%e4%b8%8a%e6%84%9f%e8%a7%89%e6%af%94Hystrix%e6%9b%b4%e5%ae%b9%e6%98%93%ef%bc%8c%e5%8a%9f%e8%83%bd%e4%b9%9f%e6%9b%b4%e5%bc%ba%e5%a4%a7%e3%80%82%0a%e6%9e%b6%e6%9e%84%e8%af%b4%e6%98%8e%20%e4%b8%a4%e4%b8%aa%e7%94%9f%e4%ba%a7%e8%80%85%e6%9c%8d%e5%8a%a1%e8%bf%90%e8%a1%8c%e5%9c%a89001%e5%92%8c9002%e7%ab%af%e5%8f%a3%ef%bc%8c%e4%b8%80%e4%b8%aa%e6%b6%88%e8%b4%b9%e8%80%85%e6%9c%8d%e5%8a%a1%e8%bf%90%e8%a1%8c%e5%9c%a880%e7%ab%af%e5%8f%a3%ef%bc%8c%e5%9d%87%e6%b3%a8%e5%86%8c%e5%88%b0nacos%ef%bc%8c%e6%b6%88%e8%b4%b9%e8%80%85%e8%b0%83%e7%94%a8%e4%b8%a4%e4%b8%aa%e7%94%9f%e4%ba%a7%e8%80%85%e7%9a%84%e6%9c%8d%e5%8a%a1%e3%80%82%0a%e5%b0%86%e6%b6%88%e8%b4%b9%e8%80%85%e6%9c%8d%e5%8a%a1%e6%b3%a8%e5%86%8c%e5%88%b0sentinel%e4%b8%ad%ef%bc%8c%e9%80%9a%e8%bf%87%e4%bf%ae%e6%94%b9%e4%b8%80%e4%ba%9b%e8%a7%84%e5%88%99%e8%bf%9b%e8%a1%8c%e6%b5%8b%e8%af%95%e3%80%82%0acontroller%e4%b8%8b%e7%9a%84%e6%96%b9%e6%b3%95%e6%8c%87%e5%ae%9a%e5%a5%bd%e5%a4%84%e7%90%86%e6%9c%8d%e5%8a%a1%e9%99%90%e6%b5%81%ef%bc%8c%e9%99%8d%e7%ba%a7%e6%88%96%e7%86%94%e6%96%ad%e7%ad%89%e7%9a%84%e6%96%b9%e6%b3%95blockHandler%ef%bc%8c%e4%bb%a5%e5%8f%8a%e5%a4%84%e7%90%86%e6%9c%aa%e7%9f%a5%e5%bc%82%e5%b8%b8%e7%9a%84fallback%e6%96%b9%e6%b3%95%ef%bc%8c%e9%80%9a%e8%bf%87%e6%8c%87%e5%ae%9aclass%e7%9a%84%e6%96%b9%e6%b3%95%e9%81%bf%e5%85%8d%e4%bb%a3%e7%a0%81%e8%86%a8%e8%83%80%e3%80%82%0aservice%e4%b8%8b%e7%9a%84%e6%96%b9%e6%b3%95%e6%8c%87%e5%ae%9a%e5%a5%bd%e5%85%b3%e4%ba%8e%e7%94%9f%e4%ba%a7%e8%80%85%e7%9a%84%e6%9c%8d%e5%8a%a1%e9%99%90%e6%b5%81%ef%bc%8c%e9%99%8d%e7%ba%a7%e6%88%96%e7%86%94%e6%96%ad%e7%ad%89%e7%9a%84%e5%a4%84%e7%90%86%e6%96%b9%e6%b3%95%e3%80%82%0a%e4%bb%a3%e7%a0%81%e7%bc%96%e5%86%99%e8%ae%b0%e5%bd%95%20%e7%94%9f%e4%ba%a7%e8%80%85%e7%ab%af%20%e4%b8%80%e3%80%81%e9%85%8d%e7%bd%ae%0a%e5%85%b3%e4%ba%8enacos%e7%9a%84%e9%85%8d%e7%bd%ae%e7%9c%81%e7%95%a5%ef%bc%8c%e5%8f%aa%e8%ae%b0%e5%bd%95sentinel%e7%9a%84%e9%85%8d%e7%bd%ae%ef%bc%9a%0a1spring%3a%202%20application%3a%203%20name%3a%20nacos-payment-provider%204%20cloud%3a%205%20sentinel%3a%206%20transport%3a%207%20dashboard%3a%20localhost%3a8080%208%20port%3a%208179%20%e4%ba%8c%e3%80%81controller%e7%bc%96%e5%86%99%0a1%40RestController%202%40Slf4j%203public%20class%20PaymentController%20%7b%204%20%40Value%28%26%2334%3b%24%7bserver.port%7d%26%2334%3b%29%205%20private%20String%20port%3b%206%207%20%40GetMapping%28%26%2334%3b%2fpayment%2fnacos%2finfo%26%2334%3b%29%208%20public%20String%20paymentInfo%28%29%20%7b%209%20return%20%26%2334%3bport%3a%20%26%2334%3b%20%2b%20port%3b%2010%20%7d%2011%7d%20%e8%bf%94%e5%9b%9e%e5%af%b9%e5%ba%94%e7%ab%af%e5%8f%a3%ef%bc%8c%e6%96%b9%e4%be%bf%e6%b5%8b%e8%af%95%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1%e3%80%82%0a%e6%b6%88%e8%b4%b9%e8%80%85%e7%ab%af%20%e4%b8%80%e3%80%81%e9%85%8d%e7%bd%ae%0a1spring%3a%202%20application%3a%203%20name%3a%20nacos-order-consumer%204%20sentinel%3a%205%20transport%3a%206%20dashboard%3a%20localhost%3a8080%207%20port%3a%208179%208feign%3a%209%20sentinel%3a%2010%20enabled%3a%20true%20%e6%b3%a8%e6%84%8f%e8%a6%81%e5%bc%80%e5%90%affeign%e7%9a%84sentinel%e6%94%af%e6%8c%81%e3%80%82" aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>

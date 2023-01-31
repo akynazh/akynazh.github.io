@@ -20,10 +20,12 @@
 通过Hystrix实现服务熔断，Hystrix会监控微服务间调用的状况，当失败的调用到一定阈值，就会启动熔断机制，断路器打开。而在一段时间之后，断路器会变为半开状态，此时允许部分微服务调用，如果都成功了，即不超过设定好的阈值，那么断路器将恢复为关闭状态。
 如下图所示：（来自Martin Fowler大神的博客）
 应用场景 微服务架构中，多个微服务相互调用出使用
-Hystrix实现服务熔断 环境搭建 1. 关于pom.xml 1 2 3 4 5 6 7 8 &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-cloud-starter-netflix-hystrix&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-cloud-starter-netflix-eureka-client&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt; 2. 启动类添加@EnableHystrix注解，表示使用熔断器。 实现服务熔断 1. PaymentService.java 1 2 3 4 public interface PaymentService { ... String circuitBreaker(Integer id); } 2. PaymentServiceImpl.java 设置服务熔断的核心配置：
+Hystrix实现服务熔断 环境搭建 1. 关于pom.xml 1&amp;lt;dependency&amp;gt; 2 &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; 3 &amp;lt;artifactId&amp;gt;spring-cloud-starter-netflix-hystrix&amp;lt;/artifactId&amp;gt; 4&amp;lt;/dependency&amp;gt; 5&amp;lt;dependency&amp;gt; 6 &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; 7 &amp;lt;artifactId&amp;gt;spring-cloud-starter-netflix-eureka-client&amp;lt;/artifactId&amp;gt; 8&amp;lt;/dependency&amp;gt; 2. 启动类添加@EnableHystrix注解，表示使用熔断器。 实现服务熔断 1. PaymentService.java 1public interface PaymentService { 2 ... 3 String circuitBreaker(Integer id); 4} 2. PaymentServiceImpl.java 设置服务熔断的核心配置：
 （1）启用断路器:
-1 @HystrixProperty(name = &amp;#34;circuitBreaker.enabled&amp;#34;, value = &amp;#34;true&amp;#34;) （2）设置请求次数:
-1 @HystrixProperty(name = &amp;#34;circuitBreaker.requestVolumeThreshold&amp;#34;, value = &amp;#34;10&amp;#34;) （3）设置时间窗口期:</description>
+1@HystrixProperty(name = &amp;#34;circuitBreaker.enabled&amp;#34;, value = &amp;#34;true&amp;#34;) （2）设置请求次数:
+1@HystrixProperty(name = &amp;#34;circuitBreaker.requestVolumeThreshold&amp;#34;, value = &amp;#34;10&amp;#34;) （3）设置时间窗口期:
+1@HystrixProperty(name = &amp;#34;circuitBreaker.sleepWindowInMilliseconds&amp;#34;, value = &amp;#34;10000&amp;#34;) （4）设置失败率:
+1@HystrixProperty(name = &amp;#34;circuitBreaker.</description>
     </item>
     
     <item>
@@ -38,9 +40,12 @@ Hystrix实现服务熔断 环境搭建 1. 关于pom.xml 1 2 3 4 5 6 7 8 &amp;lt;
 使用Hystrix实现服务降级 本实验配合了Feign实现，利用Feign通过接口的方式解耦服务这一特点，通过在实现服务接口的类来编写方法对应的fallback方法。
 环境搭建 一、关于pom
 在消费方实现服务降级，除了基本包导入外，导入以下：
-1 2 3 4 5 6 7 8 9 10 11 12 &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-cloud-starter-netflix-hystrix&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-cloud-starter-openfeign&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-cloud-starter-netflix-eureka-server&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt; 二、关于application.yml
+1&amp;lt;dependency&amp;gt; 2 &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; 3 &amp;lt;artifactId&amp;gt;spring-cloud-starter-netflix-hystrix&amp;lt;/artifactId&amp;gt; 4&amp;lt;/dependency&amp;gt; 5&amp;lt;dependency&amp;gt; 6 &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; 7 &amp;lt;artifactId&amp;gt;spring-cloud-starter-openfeign&amp;lt;/artifactId&amp;gt; 8&amp;lt;/dependency&amp;gt; 9&amp;lt;dependency&amp;gt; 10 &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; 11 &amp;lt;artifactId&amp;gt;spring-cloud-starter-netflix-eureka-server&amp;lt;/artifactId&amp;gt; 12&amp;lt;/dependency&amp;gt; 二、关于application.yml
 除了基本配置外，以下两个超时时间的配置需要格外注意：
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 # 设置feign超时时间（默认为1秒） feign: hystrix: enabled: true client: config: default: ConnectTimeOut: 5000 ReadTimeOut: 5000 # 设置hystrix超时时间（默认为1秒） hystrix: command: default: execution: isolation: thread: timeoutInMilliseconds: 2000 其他关于Feign的环境配置省略了。</description>
+1# 设置feign超时时间（默认为1秒） 2feign: 3hystrix: 4 enabled: true 5client: 6 config: 7 default: 8 ConnectTimeOut: 5000 9 ReadTimeOut: 5000 10# 设置hystrix超时时间（默认为1秒） 11hystrix: 12command: 13 default: 14 execution: 15 isolation: 16 thread: 17 timeoutInMilliseconds: 2000 其他关于Feign的环境配置省略了。
+实现服务降级 一、PaymentService.java
+在使用了Feign的基础上使用Hystrix功能，指定fallback对应的实现类。
+1@Service 2@FeignClient(value = &amp;#34;CLOUD-HYSTRIX-PAYMENT-SERVICE&amp;#34;, fallback = PaymentHystrixService.</description>
     </item>
     
   </channel>

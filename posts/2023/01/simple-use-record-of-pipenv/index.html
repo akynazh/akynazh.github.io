@@ -10,17 +10,18 @@
   <meta name="googlebot" content="index,follow,snippet,archive">
   <meta property="og:title" content="pipenv 简单使用记录" />
 <meta property="og:description" content="关于pipenv pipenv集成了pip，virtualenv两者的功能，且完善了两者的一些缺陷。
-安装pipenv 1 pip install pipenv -U 创建虚拟环境 初次创建环境可以使用以下类似命令：
-1 pipenv install --python C:/Users/akyna/AppData/Local/Programs/Python/Python37/python.exe --pypi-mirror https://pypi.tuna.tsinghua.edu.cn/simple --python 是可选的，可以指定python版本，参数为python解释器的绝对路径，如果不指定，默认使用当前系统的python。
+安装pipenv 1pip install pipenv -U 创建虚拟环境 初次创建环境可以使用以下类似命令：
+1pipenv install --python C:/Users/akyna/AppData/Local/Programs/Python/Python37/python.exe --pypi-mirror https://pypi.tuna.tsinghua.edu.cn/simple --python 是可选的，可以指定python版本，参数为python解释器的绝对路径，如果不指定，默认使用当前系统的python。
 --pypi-mirror 是可选的，可以指定镜像，加速下载。
 创建好后，在当前目录下将会生成 Pipfile 文件，在 ~\.virtualenvs 下生成虚拟环境目录（存放python解释器和依赖）。
 如果目录中已经存在 Pipfile 或者 requirements.txt，pipenv会自动检测这两个文件并将对应依赖进行安装。
 查看虚拟环境目录位置：
-1 pipenv --venv 激活虚拟环境 1 2 3 pipenv shell # 激活虚拟环境 python -V 如果激活了虚拟环境，在当前shell下，使用的python或者pip都是虚拟环境中的python和pip。
+1pipenv --venv 激活虚拟环境 1pipenv shell # 激活虚拟环境 2 3python -V 如果激活了虚拟环境，在当前shell下，使用的python或者pip都是虚拟环境中的python和pip。
 配置Pip并安装依赖 配置镜像源为清华源：
-1 2 3 4 vim Pipfile [[source]] url = &#34;https://pypi.tuna.tsinghua.edu.cn/simple&#34; 以后所有依赖的安装都不需要指定 --pypi-mirror 了。
+1vim Pipfile 2 3[[source]] 4url = &#34;https://pypi.tuna.tsinghua.edu.cn/simple&#34; 以后所有依赖的安装都不需要指定 --pypi-mirror 了。
 安装依赖：（建议关闭代理，如果有的话）
-1 2 pipenv install {pkg} # 如果激活了虚拟环境，可以使用pip # pipenv install -r requirements." />
+1pipenv install {pkg} # 如果激活了虚拟环境，可以使用pip 2# pipenv install -r requirements.txt 安装完依赖后，将会生成 Pipfile.lock 文件，以后初始化虚拟环境都只需要运行 pipenv install 即可完成所有依赖的安装。
+当然，也可以通过生成 requirements." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/2023/01/simple-use-record-of-pipenv/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-01-04T22:55:27+08:00" />
@@ -29,24 +30,25 @@
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="pipenv 简单使用记录"/>
 <meta name="twitter:description" content="关于pipenv pipenv集成了pip，virtualenv两者的功能，且完善了两者的一些缺陷。
-安装pipenv 1 pip install pipenv -U 创建虚拟环境 初次创建环境可以使用以下类似命令：
-1 pipenv install --python C:/Users/akyna/AppData/Local/Programs/Python/Python37/python.exe --pypi-mirror https://pypi.tuna.tsinghua.edu.cn/simple --python 是可选的，可以指定python版本，参数为python解释器的绝对路径，如果不指定，默认使用当前系统的python。
+安装pipenv 1pip install pipenv -U 创建虚拟环境 初次创建环境可以使用以下类似命令：
+1pipenv install --python C:/Users/akyna/AppData/Local/Programs/Python/Python37/python.exe --pypi-mirror https://pypi.tuna.tsinghua.edu.cn/simple --python 是可选的，可以指定python版本，参数为python解释器的绝对路径，如果不指定，默认使用当前系统的python。
 --pypi-mirror 是可选的，可以指定镜像，加速下载。
 创建好后，在当前目录下将会生成 Pipfile 文件，在 ~\.virtualenvs 下生成虚拟环境目录（存放python解释器和依赖）。
 如果目录中已经存在 Pipfile 或者 requirements.txt，pipenv会自动检测这两个文件并将对应依赖进行安装。
 查看虚拟环境目录位置：
-1 pipenv --venv 激活虚拟环境 1 2 3 pipenv shell # 激活虚拟环境 python -V 如果激活了虚拟环境，在当前shell下，使用的python或者pip都是虚拟环境中的python和pip。
+1pipenv --venv 激活虚拟环境 1pipenv shell # 激活虚拟环境 2 3python -V 如果激活了虚拟环境，在当前shell下，使用的python或者pip都是虚拟环境中的python和pip。
 配置Pip并安装依赖 配置镜像源为清华源：
-1 2 3 4 vim Pipfile [[source]] url = &#34;https://pypi.tuna.tsinghua.edu.cn/simple&#34; 以后所有依赖的安装都不需要指定 --pypi-mirror 了。
+1vim Pipfile 2 3[[source]] 4url = &#34;https://pypi.tuna.tsinghua.edu.cn/simple&#34; 以后所有依赖的安装都不需要指定 --pypi-mirror 了。
 安装依赖：（建议关闭代理，如果有的话）
-1 2 pipenv install {pkg} # 如果激活了虚拟环境，可以使用pip # pipenv install -r requirements."/>
+1pipenv install {pkg} # 如果激活了虚拟环境，可以使用pip 2# pipenv install -r requirements.txt 安装完依赖后，将会生成 Pipfile.lock 文件，以后初始化虚拟环境都只需要运行 pipenv install 即可完成所有依赖的安装。
+当然，也可以通过生成 requirements."/>
 
   
   
   
   
   
-  <link rel="stylesheet" href="/css/styles.d8d1e5ac73f5bd72b0e6919356fcf7f12c9dd5a80e4788cae09111cc3678f69a4294b39d4b852dd69cc393c73ac3d8b6c05c8df3569d49d36331b7f39cfea8d1.css" integrity="sha512-2NHlrHP1vXKw5pGTVvz38Syd1agOR4jK4JERzDZ49ppClLOdS4Ut1pzDk8c6w9i2wFyN81adSdNjMbfznP6o0Q==">
+  <link rel="stylesheet" href="/css/styles.b6e7dac395bc81c65ab67a0be932cbd03925f5afb48f9c825ead224a41084a4a8289db621f5b2236149a32799ae71f4962b1d2531d209f51d8b88cdffaa1877e.css" integrity="sha512-tufaw5W8gcZatnoL6TLL0Dkl9a&#43;0j5yCXq0iSkEISkqCidtiH1siNhSaMnma5x9JYrHSUx0gn1HYuIzf&#43;qGHfg==">
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
@@ -163,7 +165,7 @@
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2023%2f01%2fsimple-use-record-of-pipenv%2f&name=pipenv%20%e7%ae%80%e5%8d%95%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95&description=%e5%85%b3%e4%ba%8epipenv%20pipenv%e9%9b%86%e6%88%90%e4%ba%86pip%ef%bc%8cvirtualenv%e4%b8%a4%e8%80%85%e7%9a%84%e5%8a%9f%e8%83%bd%ef%bc%8c%e4%b8%94%e5%ae%8c%e5%96%84%e4%ba%86%e4%b8%a4%e8%80%85%e7%9a%84%e4%b8%80%e4%ba%9b%e7%bc%ba%e9%99%b7%e3%80%82%0a%e5%ae%89%e8%a3%85pipenv%201%20pip%20install%20pipenv%20-U%20%e5%88%9b%e5%bb%ba%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83%20%e5%88%9d%e6%ac%a1%e5%88%9b%e5%bb%ba%e7%8e%af%e5%a2%83%e5%8f%af%e4%bb%a5%e4%bd%bf%e7%94%a8%e4%bb%a5%e4%b8%8b%e7%b1%bb%e4%bc%bc%e5%91%bd%e4%bb%a4%ef%bc%9a%0a1%20pipenv%20install%20--python%20C%3a%2fUsers%2fakyna%2fAppData%2fLocal%2fPrograms%2fPython%2fPython37%2fpython.exe%20--pypi-mirror%20https%3a%2f%2fpypi.tuna.tsinghua.edu.cn%2fsimple%20--python%20%e6%98%af%e5%8f%af%e9%80%89%e7%9a%84%ef%bc%8c%e5%8f%af%e4%bb%a5%e6%8c%87%e5%ae%9apython%e7%89%88%e6%9c%ac%ef%bc%8c%e5%8f%82%e6%95%b0%e4%b8%bapython%e8%a7%a3%e9%87%8a%e5%99%a8%e7%9a%84%e7%bb%9d%e5%af%b9%e8%b7%af%e5%be%84%ef%bc%8c%e5%a6%82%e6%9e%9c%e4%b8%8d%e6%8c%87%e5%ae%9a%ef%bc%8c%e9%bb%98%e8%ae%a4%e4%bd%bf%e7%94%a8%e5%bd%93%e5%89%8d%e7%b3%bb%e7%bb%9f%e7%9a%84python%e3%80%82%0a--pypi-mirror%20%e6%98%af%e5%8f%af%e9%80%89%e7%9a%84%ef%bc%8c%e5%8f%af%e4%bb%a5%e6%8c%87%e5%ae%9a%e9%95%9c%e5%83%8f%ef%bc%8c%e5%8a%a0%e9%80%9f%e4%b8%8b%e8%bd%bd%e3%80%82%0a%e5%88%9b%e5%bb%ba%e5%a5%bd%e5%90%8e%ef%bc%8c%e5%9c%a8%e5%bd%93%e5%89%8d%e7%9b%ae%e5%bd%95%e4%b8%8b%e5%b0%86%e4%bc%9a%e7%94%9f%e6%88%90%20Pipfile%20%e6%96%87%e4%bb%b6%ef%bc%8c%e5%9c%a8%20~%5c.virtualenvs%20%e4%b8%8b%e7%94%9f%e6%88%90%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83%e7%9b%ae%e5%bd%95%ef%bc%88%e5%ad%98%e6%94%bepython%e8%a7%a3%e9%87%8a%e5%99%a8%e5%92%8c%e4%be%9d%e8%b5%96%ef%bc%89%e3%80%82%0a%e5%a6%82%e6%9e%9c%e7%9b%ae%e5%bd%95%e4%b8%ad%e5%b7%b2%e7%bb%8f%e5%ad%98%e5%9c%a8%20Pipfile%20%e6%88%96%e8%80%85%20requirements.txt%ef%bc%8cpipenv%e4%bc%9a%e8%87%aa%e5%8a%a8%e6%a3%80%e6%b5%8b%e8%bf%99%e4%b8%a4%e4%b8%aa%e6%96%87%e4%bb%b6%e5%b9%b6%e5%b0%86%e5%af%b9%e5%ba%94%e4%be%9d%e8%b5%96%e8%bf%9b%e8%a1%8c%e5%ae%89%e8%a3%85%e3%80%82%0a%e6%9f%a5%e7%9c%8b%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83%e7%9b%ae%e5%bd%95%e4%bd%8d%e7%bd%ae%ef%bc%9a%0a1%20pipenv%20--venv%20%e6%bf%80%e6%b4%bb%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83%201%202%203%20pipenv%20shell%20%23%20%e6%bf%80%e6%b4%bb%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83%20python%20-V%20%e5%a6%82%e6%9e%9c%e6%bf%80%e6%b4%bb%e4%ba%86%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83%ef%bc%8c%e5%9c%a8%e5%bd%93%e5%89%8dshell%e4%b8%8b%ef%bc%8c%e4%bd%bf%e7%94%a8%e7%9a%84python%e6%88%96%e8%80%85pip%e9%83%bd%e6%98%af%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83%e4%b8%ad%e7%9a%84python%e5%92%8cpip%e3%80%82%0a%e9%85%8d%e7%bd%aePip%e5%b9%b6%e5%ae%89%e8%a3%85%e4%be%9d%e8%b5%96%20%e9%85%8d%e7%bd%ae%e9%95%9c%e5%83%8f%e6%ba%90%e4%b8%ba%e6%b8%85%e5%8d%8e%e6%ba%90%ef%bc%9a%0a1%202%203%204%20vim%20Pipfile%20%5b%5bsource%5d%5d%20url%20%3d%20%26%2334%3bhttps%3a%2f%2fpypi.tuna.tsinghua.edu.cn%2fsimple%26%2334%3b%20%e4%bb%a5%e5%90%8e%e6%89%80%e6%9c%89%e4%be%9d%e8%b5%96%e7%9a%84%e5%ae%89%e8%a3%85%e9%83%bd%e4%b8%8d%e9%9c%80%e8%a6%81%e6%8c%87%e5%ae%9a%20--pypi-mirror%20%e4%ba%86%e3%80%82%0a%e5%ae%89%e8%a3%85%e4%be%9d%e8%b5%96%ef%bc%9a%ef%bc%88%e5%bb%ba%e8%ae%ae%e5%85%b3%e9%97%ad%e4%bb%a3%e7%90%86%ef%bc%8c%e5%a6%82%e6%9e%9c%e6%9c%89%e7%9a%84%e8%af%9d%ef%bc%89%0a1%202%20pipenv%20install%20%7bpkg%7d%20%23%20%e5%a6%82%e6%9e%9c%e6%bf%80%e6%b4%bb%e4%ba%86%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83%ef%bc%8c%e5%8f%af%e4%bb%a5%e4%bd%bf%e7%94%a8pip%20%23%20pipenv%20install%20-r%20requirements." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2023%2f01%2fsimple-use-record-of-pipenv%2f&name=pipenv%20%e7%ae%80%e5%8d%95%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95&description=%e5%85%b3%e4%ba%8epipenv%20pipenv%e9%9b%86%e6%88%90%e4%ba%86pip%ef%bc%8cvirtualenv%e4%b8%a4%e8%80%85%e7%9a%84%e5%8a%9f%e8%83%bd%ef%bc%8c%e4%b8%94%e5%ae%8c%e5%96%84%e4%ba%86%e4%b8%a4%e8%80%85%e7%9a%84%e4%b8%80%e4%ba%9b%e7%bc%ba%e9%99%b7%e3%80%82%0a%e5%ae%89%e8%a3%85pipenv%201pip%20install%20pipenv%20-U%20%e5%88%9b%e5%bb%ba%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83%20%e5%88%9d%e6%ac%a1%e5%88%9b%e5%bb%ba%e7%8e%af%e5%a2%83%e5%8f%af%e4%bb%a5%e4%bd%bf%e7%94%a8%e4%bb%a5%e4%b8%8b%e7%b1%bb%e4%bc%bc%e5%91%bd%e4%bb%a4%ef%bc%9a%0a1pipenv%20install%20--python%20C%3a%2fUsers%2fakyna%2fAppData%2fLocal%2fPrograms%2fPython%2fPython37%2fpython.exe%20--pypi-mirror%20https%3a%2f%2fpypi.tuna.tsinghua.edu.cn%2fsimple%20--python%20%e6%98%af%e5%8f%af%e9%80%89%e7%9a%84%ef%bc%8c%e5%8f%af%e4%bb%a5%e6%8c%87%e5%ae%9apython%e7%89%88%e6%9c%ac%ef%bc%8c%e5%8f%82%e6%95%b0%e4%b8%bapython%e8%a7%a3%e9%87%8a%e5%99%a8%e7%9a%84%e7%bb%9d%e5%af%b9%e8%b7%af%e5%be%84%ef%bc%8c%e5%a6%82%e6%9e%9c%e4%b8%8d%e6%8c%87%e5%ae%9a%ef%bc%8c%e9%bb%98%e8%ae%a4%e4%bd%bf%e7%94%a8%e5%bd%93%e5%89%8d%e7%b3%bb%e7%bb%9f%e7%9a%84python%e3%80%82%0a--pypi-mirror%20%e6%98%af%e5%8f%af%e9%80%89%e7%9a%84%ef%bc%8c%e5%8f%af%e4%bb%a5%e6%8c%87%e5%ae%9a%e9%95%9c%e5%83%8f%ef%bc%8c%e5%8a%a0%e9%80%9f%e4%b8%8b%e8%bd%bd%e3%80%82%0a%e5%88%9b%e5%bb%ba%e5%a5%bd%e5%90%8e%ef%bc%8c%e5%9c%a8%e5%bd%93%e5%89%8d%e7%9b%ae%e5%bd%95%e4%b8%8b%e5%b0%86%e4%bc%9a%e7%94%9f%e6%88%90%20Pipfile%20%e6%96%87%e4%bb%b6%ef%bc%8c%e5%9c%a8%20~%5c.virtualenvs%20%e4%b8%8b%e7%94%9f%e6%88%90%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83%e7%9b%ae%e5%bd%95%ef%bc%88%e5%ad%98%e6%94%bepython%e8%a7%a3%e9%87%8a%e5%99%a8%e5%92%8c%e4%be%9d%e8%b5%96%ef%bc%89%e3%80%82%0a%e5%a6%82%e6%9e%9c%e7%9b%ae%e5%bd%95%e4%b8%ad%e5%b7%b2%e7%bb%8f%e5%ad%98%e5%9c%a8%20Pipfile%20%e6%88%96%e8%80%85%20requirements.txt%ef%bc%8cpipenv%e4%bc%9a%e8%87%aa%e5%8a%a8%e6%a3%80%e6%b5%8b%e8%bf%99%e4%b8%a4%e4%b8%aa%e6%96%87%e4%bb%b6%e5%b9%b6%e5%b0%86%e5%af%b9%e5%ba%94%e4%be%9d%e8%b5%96%e8%bf%9b%e8%a1%8c%e5%ae%89%e8%a3%85%e3%80%82%0a%e6%9f%a5%e7%9c%8b%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83%e7%9b%ae%e5%bd%95%e4%bd%8d%e7%bd%ae%ef%bc%9a%0a1pipenv%20--venv%20%e6%bf%80%e6%b4%bb%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83%201pipenv%20shell%20%23%20%e6%bf%80%e6%b4%bb%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83%202%203python%20-V%20%e5%a6%82%e6%9e%9c%e6%bf%80%e6%b4%bb%e4%ba%86%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83%ef%bc%8c%e5%9c%a8%e5%bd%93%e5%89%8dshell%e4%b8%8b%ef%bc%8c%e4%bd%bf%e7%94%a8%e7%9a%84python%e6%88%96%e8%80%85pip%e9%83%bd%e6%98%af%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83%e4%b8%ad%e7%9a%84python%e5%92%8cpip%e3%80%82%0a%e9%85%8d%e7%bd%aePip%e5%b9%b6%e5%ae%89%e8%a3%85%e4%be%9d%e8%b5%96%20%e9%85%8d%e7%bd%ae%e9%95%9c%e5%83%8f%e6%ba%90%e4%b8%ba%e6%b8%85%e5%8d%8e%e6%ba%90%ef%bc%9a%0a1vim%20Pipfile%202%203%5b%5bsource%5d%5d%204url%20%3d%20%26%2334%3bhttps%3a%2f%2fpypi.tuna.tsinghua.edu.cn%2fsimple%26%2334%3b%20%e4%bb%a5%e5%90%8e%e6%89%80%e6%9c%89%e4%be%9d%e8%b5%96%e7%9a%84%e5%ae%89%e8%a3%85%e9%83%bd%e4%b8%8d%e9%9c%80%e8%a6%81%e6%8c%87%e5%ae%9a%20--pypi-mirror%20%e4%ba%86%e3%80%82%0a%e5%ae%89%e8%a3%85%e4%be%9d%e8%b5%96%ef%bc%9a%ef%bc%88%e5%bb%ba%e8%ae%ae%e5%85%b3%e9%97%ad%e4%bb%a3%e7%90%86%ef%bc%8c%e5%a6%82%e6%9e%9c%e6%9c%89%e7%9a%84%e8%af%9d%ef%bc%89%0a1pipenv%20install%20%7bpkg%7d%20%23%20%e5%a6%82%e6%9e%9c%e6%bf%80%e6%b4%bb%e4%ba%86%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83%ef%bc%8c%e5%8f%af%e4%bb%a5%e4%bd%bf%e7%94%a8pip%202%23%20pipenv%20install%20-r%20requirements.txt%20%e5%ae%89%e8%a3%85%e5%ae%8c%e4%be%9d%e8%b5%96%e5%90%8e%ef%bc%8c%e5%b0%86%e4%bc%9a%e7%94%9f%e6%88%90%20Pipfile.lock%20%e6%96%87%e4%bb%b6%ef%bc%8c%e4%bb%a5%e5%90%8e%e5%88%9d%e5%a7%8b%e5%8c%96%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83%e9%83%bd%e5%8f%aa%e9%9c%80%e8%a6%81%e8%bf%90%e8%a1%8c%20pipenv%20install%20%e5%8d%b3%e5%8f%af%e5%ae%8c%e6%88%90%e6%89%80%e6%9c%89%e4%be%9d%e8%b5%96%e7%9a%84%e5%ae%89%e8%a3%85%e3%80%82%0a%e5%bd%93%e7%84%b6%ef%bc%8c%e4%b9%9f%e5%8f%af%e4%bb%a5%e9%80%9a%e8%bf%87%e7%94%9f%e6%88%90%20requirements." aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -241,90 +243,35 @@
       <h2 id="关于pipenv">关于pipenv</h2>
 <p>pipenv集成了pip，virtualenv两者的功能，且完善了两者的一些缺陷。</p>
 <h2 id="安装pipenv">安装pipenv</h2>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>pip install pipenv -U
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="创建虚拟环境">创建虚拟环境</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>pip install pipenv -U
+</span></span></code></pre></div><h2 id="创建虚拟环境">创建虚拟环境</h2>
 <p>初次创建环境可以使用以下类似命令：</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>pipenv install --python C:/Users/akyna/AppData/Local/Programs/Python/Python37/python.exe --pypi-mirror https://pypi.tuna.tsinghua.edu.cn/simple
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p><code>--python</code> 是可选的，可以指定python版本，参数为python解释器的绝对路径，如果不指定，默认使用当前系统的python。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>pipenv install --python C:/Users/akyna/AppData/Local/Programs/Python/Python37/python.exe --pypi-mirror https://pypi.tuna.tsinghua.edu.cn/simple
+</span></span></code></pre></div><p><code>--python</code> 是可选的，可以指定python版本，参数为python解释器的绝对路径，如果不指定，默认使用当前系统的python。</p>
 <p><code>--pypi-mirror</code> 是可选的，可以指定镜像，加速下载。</p>
 <p>创建好后，在当前目录下将会生成 <code>Pipfile</code> 文件，在 <code>~\.virtualenvs</code> 下生成虚拟环境目录（存放python解释器和依赖）。</p>
 <p>如果目录中已经存在 <code>Pipfile</code> 或者 <code>requirements.txt</code>，pipenv会自动检测这两个文件并将对应依赖进行安装。</p>
 <p>查看虚拟环境目录位置：</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>pipenv --venv
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="激活虚拟环境">激活虚拟环境</h2>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>pipenv shell # 激活虚拟环境
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>python -V
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>如果激活了虚拟环境，在当前shell下，使用的python或者pip都是虚拟环境中的python和pip。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>pipenv --venv
+</span></span></code></pre></div><h2 id="激活虚拟环境">激活虚拟环境</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>pipenv shell # 激活虚拟环境
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>python -V
+</span></span></code></pre></div><p>如果激活了虚拟环境，在当前shell下，使用的python或者pip都是虚拟环境中的python和pip。</p>
 <h2 id="配置pip并安装依赖">配置Pip并安装依赖</h2>
 <p>配置镜像源为清华源：</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>vim Pipfile
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>[[source]]
-</span></span><span style="display:flex;"><span>url = &#34;https://pypi.tuna.tsinghua.edu.cn/simple&#34;
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>以后所有依赖的安装都不需要指定 <code>--pypi-mirror</code> 了。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>vim Pipfile
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>[[source]]
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>url = &#34;https://pypi.tuna.tsinghua.edu.cn/simple&#34;
+</span></span></code></pre></div><p>以后所有依赖的安装都不需要指定 <code>--pypi-mirror</code> 了。</p>
 <p>安装依赖：（建议关闭代理，如果有的话）</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>pipenv install {pkg} # 如果激活了虚拟环境，可以使用pip
-</span></span><span style="display:flex;"><span># pipenv install -r requirements.txt
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>安装完依赖后，将会生成 <code>Pipfile.lock</code> 文件，以后初始化虚拟环境都只需要运行 <code>pipenv install</code> 即可完成所有依赖的安装。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>pipenv install {pkg} # 如果激活了虚拟环境，可以使用pip
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span># pipenv install -r requirements.txt
+</span></span></code></pre></div><p>安装完依赖后，将会生成 <code>Pipfile.lock</code> 文件，以后初始化虚拟环境都只需要运行 <code>pipenv install</code> 即可完成所有依赖的安装。</p>
 <p>当然，也可以通过生成 <code>requirements.txt</code> 的方式进行，下次初始化虚拟环境时，pipenv也会自动识别目录下的 <code>requirements.txt</code>：</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>pipenv requirements &gt; requirements.txt
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>通过 <code>pipenv graph</code> 可以查看目前安装的库及其依赖。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>pipenv requirements &gt; requirements.txt
+</span></span></code></pre></div><p>通过 <code>pipenv graph</code> 可以查看目前安装的库及其依赖。</p>
 <p>以后新安装任何依赖，如果处在虚拟环境下，都可以直接运行 <code>pip install {pkg}</code> 完成包的安装，但是如果这样安装，新的依赖信息并不会被添加到 <code>pipfile</code> 中，也就不利于之后重新初始化环境和生成正确的 <code>requirements.txt</code> 。因此，建议每次安装新的依赖包时都使用 <code>pipenv install {pkg}</code> ，这样新的依赖信息会被写入 <code>pipfile</code> 和 <code>pipfile.lock</code> 中。</p>
 <h2 id="关于pipfile和pipfilelock">关于Pipfile和Pipfile.lock</h2>
 <p>这两个文件是相互补充的关系。</p>
@@ -350,80 +297,29 @@
 <li>lock: Generates Pipfile.lock.</li>
 <li>sync: Installs all packages specified in Pipfile.lock.</li>
 </ul>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>pipenv update --outdated  # 查看所有需要更新的依赖项
-</span></span><span style="display:flex;"><span>pipenv update  # 更新所有包的依赖项
-</span></span><span style="display:flex;"><span>pipenv update &lt;包名&gt;  # 更新指定的包的依赖项
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="卸载包">卸载包</h2>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>pipenv uninstall XXX  # 卸载XXX模块并从Pipfile中移除
-</span></span><span style="display:flex;"><span>pipenv uninstall --all  # 卸载全部包并从Pipfile中移除
-</span></span><span style="display:flex;"><span>pipenv uninstall --all-dev  # 卸载全部开发包并从Pipfile中移除
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="退出虚拟环境">退出虚拟环境</h2>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>exit  # 退出当前虚拟环境
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>python -V # 将变为系统的python版本
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="删除虚拟环境">删除虚拟环境</h2>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>pipenv --rm  # 删除虚拟环境 
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>在~/.virtualenvs中的虚拟环境将被删除。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>pipenv update --outdated  # 查看所有需要更新的依赖项
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>pipenv update  # 更新所有包的依赖项
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>pipenv update &lt;包名&gt;  # 更新指定的包的依赖项
+</span></span></code></pre></div><h2 id="卸载包">卸载包</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>pipenv uninstall XXX  # 卸载XXX模块并从Pipfile中移除
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>pipenv uninstall --all  # 卸载全部包并从Pipfile中移除
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>pipenv uninstall --all-dev  # 卸载全部开发包并从Pipfile中移除
+</span></span></code></pre></div><h2 id="退出虚拟环境">退出虚拟环境</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>exit  # 退出当前虚拟环境
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>python -V # 将变为系统的python版本
+</span></span></code></pre></div><h2 id="删除虚拟环境">删除虚拟环境</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>pipenv --rm  # 删除虚拟环境 
+</span></span></code></pre></div><p>在~/.virtualenvs中的虚拟环境将被删除。</p>
 <h2 id="运行文件">运行文件</h2>
 <p>方式一：</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>pipenv run python xxx.py
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>方式二：在激活环境中运行</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span># 进入激活环境
-</span></span><span style="display:flex;"><span>pipenv shell
-</span></span><span style="display:flex;"><span># 运行文件
-</span></span><span style="display:flex;"><span>python xxx.py
-</span></span></code></pre></td></tr></table>
-</div>
-</div><hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>pipenv run python xxx.py
+</span></span></code></pre></div><p>方式二：在激活环境中运行</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span># 进入激活环境
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>pipenv shell
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span># 运行文件
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>python xxx.py
+</span></span></code></pre></div><hr>
 <p><strong>From my blog: <a href="https://akynazh.site">akynazh</a></strong>.</p>
 <p><strong>Over.</strong></p>
 
@@ -532,7 +428,7 @@
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2023%2f01%2fsimple-use-record-of-pipenv%2f&name=pipenv%20%e7%ae%80%e5%8d%95%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95&description=%e5%85%b3%e4%ba%8epipenv%20pipenv%e9%9b%86%e6%88%90%e4%ba%86pip%ef%bc%8cvirtualenv%e4%b8%a4%e8%80%85%e7%9a%84%e5%8a%9f%e8%83%bd%ef%bc%8c%e4%b8%94%e5%ae%8c%e5%96%84%e4%ba%86%e4%b8%a4%e8%80%85%e7%9a%84%e4%b8%80%e4%ba%9b%e7%bc%ba%e9%99%b7%e3%80%82%0a%e5%ae%89%e8%a3%85pipenv%201%20pip%20install%20pipenv%20-U%20%e5%88%9b%e5%bb%ba%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83%20%e5%88%9d%e6%ac%a1%e5%88%9b%e5%bb%ba%e7%8e%af%e5%a2%83%e5%8f%af%e4%bb%a5%e4%bd%bf%e7%94%a8%e4%bb%a5%e4%b8%8b%e7%b1%bb%e4%bc%bc%e5%91%bd%e4%bb%a4%ef%bc%9a%0a1%20pipenv%20install%20--python%20C%3a%2fUsers%2fakyna%2fAppData%2fLocal%2fPrograms%2fPython%2fPython37%2fpython.exe%20--pypi-mirror%20https%3a%2f%2fpypi.tuna.tsinghua.edu.cn%2fsimple%20--python%20%e6%98%af%e5%8f%af%e9%80%89%e7%9a%84%ef%bc%8c%e5%8f%af%e4%bb%a5%e6%8c%87%e5%ae%9apython%e7%89%88%e6%9c%ac%ef%bc%8c%e5%8f%82%e6%95%b0%e4%b8%bapython%e8%a7%a3%e9%87%8a%e5%99%a8%e7%9a%84%e7%bb%9d%e5%af%b9%e8%b7%af%e5%be%84%ef%bc%8c%e5%a6%82%e6%9e%9c%e4%b8%8d%e6%8c%87%e5%ae%9a%ef%bc%8c%e9%bb%98%e8%ae%a4%e4%bd%bf%e7%94%a8%e5%bd%93%e5%89%8d%e7%b3%bb%e7%bb%9f%e7%9a%84python%e3%80%82%0a--pypi-mirror%20%e6%98%af%e5%8f%af%e9%80%89%e7%9a%84%ef%bc%8c%e5%8f%af%e4%bb%a5%e6%8c%87%e5%ae%9a%e9%95%9c%e5%83%8f%ef%bc%8c%e5%8a%a0%e9%80%9f%e4%b8%8b%e8%bd%bd%e3%80%82%0a%e5%88%9b%e5%bb%ba%e5%a5%bd%e5%90%8e%ef%bc%8c%e5%9c%a8%e5%bd%93%e5%89%8d%e7%9b%ae%e5%bd%95%e4%b8%8b%e5%b0%86%e4%bc%9a%e7%94%9f%e6%88%90%20Pipfile%20%e6%96%87%e4%bb%b6%ef%bc%8c%e5%9c%a8%20~%5c.virtualenvs%20%e4%b8%8b%e7%94%9f%e6%88%90%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83%e7%9b%ae%e5%bd%95%ef%bc%88%e5%ad%98%e6%94%bepython%e8%a7%a3%e9%87%8a%e5%99%a8%e5%92%8c%e4%be%9d%e8%b5%96%ef%bc%89%e3%80%82%0a%e5%a6%82%e6%9e%9c%e7%9b%ae%e5%bd%95%e4%b8%ad%e5%b7%b2%e7%bb%8f%e5%ad%98%e5%9c%a8%20Pipfile%20%e6%88%96%e8%80%85%20requirements.txt%ef%bc%8cpipenv%e4%bc%9a%e8%87%aa%e5%8a%a8%e6%a3%80%e6%b5%8b%e8%bf%99%e4%b8%a4%e4%b8%aa%e6%96%87%e4%bb%b6%e5%b9%b6%e5%b0%86%e5%af%b9%e5%ba%94%e4%be%9d%e8%b5%96%e8%bf%9b%e8%a1%8c%e5%ae%89%e8%a3%85%e3%80%82%0a%e6%9f%a5%e7%9c%8b%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83%e7%9b%ae%e5%bd%95%e4%bd%8d%e7%bd%ae%ef%bc%9a%0a1%20pipenv%20--venv%20%e6%bf%80%e6%b4%bb%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83%201%202%203%20pipenv%20shell%20%23%20%e6%bf%80%e6%b4%bb%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83%20python%20-V%20%e5%a6%82%e6%9e%9c%e6%bf%80%e6%b4%bb%e4%ba%86%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83%ef%bc%8c%e5%9c%a8%e5%bd%93%e5%89%8dshell%e4%b8%8b%ef%bc%8c%e4%bd%bf%e7%94%a8%e7%9a%84python%e6%88%96%e8%80%85pip%e9%83%bd%e6%98%af%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83%e4%b8%ad%e7%9a%84python%e5%92%8cpip%e3%80%82%0a%e9%85%8d%e7%bd%aePip%e5%b9%b6%e5%ae%89%e8%a3%85%e4%be%9d%e8%b5%96%20%e9%85%8d%e7%bd%ae%e9%95%9c%e5%83%8f%e6%ba%90%e4%b8%ba%e6%b8%85%e5%8d%8e%e6%ba%90%ef%bc%9a%0a1%202%203%204%20vim%20Pipfile%20%5b%5bsource%5d%5d%20url%20%3d%20%26%2334%3bhttps%3a%2f%2fpypi.tuna.tsinghua.edu.cn%2fsimple%26%2334%3b%20%e4%bb%a5%e5%90%8e%e6%89%80%e6%9c%89%e4%be%9d%e8%b5%96%e7%9a%84%e5%ae%89%e8%a3%85%e9%83%bd%e4%b8%8d%e9%9c%80%e8%a6%81%e6%8c%87%e5%ae%9a%20--pypi-mirror%20%e4%ba%86%e3%80%82%0a%e5%ae%89%e8%a3%85%e4%be%9d%e8%b5%96%ef%bc%9a%ef%bc%88%e5%bb%ba%e8%ae%ae%e5%85%b3%e9%97%ad%e4%bb%a3%e7%90%86%ef%bc%8c%e5%a6%82%e6%9e%9c%e6%9c%89%e7%9a%84%e8%af%9d%ef%bc%89%0a1%202%20pipenv%20install%20%7bpkg%7d%20%23%20%e5%a6%82%e6%9e%9c%e6%bf%80%e6%b4%bb%e4%ba%86%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83%ef%bc%8c%e5%8f%af%e4%bb%a5%e4%bd%bf%e7%94%a8pip%20%23%20pipenv%20install%20-r%20requirements." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2023%2f01%2fsimple-use-record-of-pipenv%2f&name=pipenv%20%e7%ae%80%e5%8d%95%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95&description=%e5%85%b3%e4%ba%8epipenv%20pipenv%e9%9b%86%e6%88%90%e4%ba%86pip%ef%bc%8cvirtualenv%e4%b8%a4%e8%80%85%e7%9a%84%e5%8a%9f%e8%83%bd%ef%bc%8c%e4%b8%94%e5%ae%8c%e5%96%84%e4%ba%86%e4%b8%a4%e8%80%85%e7%9a%84%e4%b8%80%e4%ba%9b%e7%bc%ba%e9%99%b7%e3%80%82%0a%e5%ae%89%e8%a3%85pipenv%201pip%20install%20pipenv%20-U%20%e5%88%9b%e5%bb%ba%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83%20%e5%88%9d%e6%ac%a1%e5%88%9b%e5%bb%ba%e7%8e%af%e5%a2%83%e5%8f%af%e4%bb%a5%e4%bd%bf%e7%94%a8%e4%bb%a5%e4%b8%8b%e7%b1%bb%e4%bc%bc%e5%91%bd%e4%bb%a4%ef%bc%9a%0a1pipenv%20install%20--python%20C%3a%2fUsers%2fakyna%2fAppData%2fLocal%2fPrograms%2fPython%2fPython37%2fpython.exe%20--pypi-mirror%20https%3a%2f%2fpypi.tuna.tsinghua.edu.cn%2fsimple%20--python%20%e6%98%af%e5%8f%af%e9%80%89%e7%9a%84%ef%bc%8c%e5%8f%af%e4%bb%a5%e6%8c%87%e5%ae%9apython%e7%89%88%e6%9c%ac%ef%bc%8c%e5%8f%82%e6%95%b0%e4%b8%bapython%e8%a7%a3%e9%87%8a%e5%99%a8%e7%9a%84%e7%bb%9d%e5%af%b9%e8%b7%af%e5%be%84%ef%bc%8c%e5%a6%82%e6%9e%9c%e4%b8%8d%e6%8c%87%e5%ae%9a%ef%bc%8c%e9%bb%98%e8%ae%a4%e4%bd%bf%e7%94%a8%e5%bd%93%e5%89%8d%e7%b3%bb%e7%bb%9f%e7%9a%84python%e3%80%82%0a--pypi-mirror%20%e6%98%af%e5%8f%af%e9%80%89%e7%9a%84%ef%bc%8c%e5%8f%af%e4%bb%a5%e6%8c%87%e5%ae%9a%e9%95%9c%e5%83%8f%ef%bc%8c%e5%8a%a0%e9%80%9f%e4%b8%8b%e8%bd%bd%e3%80%82%0a%e5%88%9b%e5%bb%ba%e5%a5%bd%e5%90%8e%ef%bc%8c%e5%9c%a8%e5%bd%93%e5%89%8d%e7%9b%ae%e5%bd%95%e4%b8%8b%e5%b0%86%e4%bc%9a%e7%94%9f%e6%88%90%20Pipfile%20%e6%96%87%e4%bb%b6%ef%bc%8c%e5%9c%a8%20~%5c.virtualenvs%20%e4%b8%8b%e7%94%9f%e6%88%90%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83%e7%9b%ae%e5%bd%95%ef%bc%88%e5%ad%98%e6%94%bepython%e8%a7%a3%e9%87%8a%e5%99%a8%e5%92%8c%e4%be%9d%e8%b5%96%ef%bc%89%e3%80%82%0a%e5%a6%82%e6%9e%9c%e7%9b%ae%e5%bd%95%e4%b8%ad%e5%b7%b2%e7%bb%8f%e5%ad%98%e5%9c%a8%20Pipfile%20%e6%88%96%e8%80%85%20requirements.txt%ef%bc%8cpipenv%e4%bc%9a%e8%87%aa%e5%8a%a8%e6%a3%80%e6%b5%8b%e8%bf%99%e4%b8%a4%e4%b8%aa%e6%96%87%e4%bb%b6%e5%b9%b6%e5%b0%86%e5%af%b9%e5%ba%94%e4%be%9d%e8%b5%96%e8%bf%9b%e8%a1%8c%e5%ae%89%e8%a3%85%e3%80%82%0a%e6%9f%a5%e7%9c%8b%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83%e7%9b%ae%e5%bd%95%e4%bd%8d%e7%bd%ae%ef%bc%9a%0a1pipenv%20--venv%20%e6%bf%80%e6%b4%bb%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83%201pipenv%20shell%20%23%20%e6%bf%80%e6%b4%bb%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83%202%203python%20-V%20%e5%a6%82%e6%9e%9c%e6%bf%80%e6%b4%bb%e4%ba%86%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83%ef%bc%8c%e5%9c%a8%e5%bd%93%e5%89%8dshell%e4%b8%8b%ef%bc%8c%e4%bd%bf%e7%94%a8%e7%9a%84python%e6%88%96%e8%80%85pip%e9%83%bd%e6%98%af%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83%e4%b8%ad%e7%9a%84python%e5%92%8cpip%e3%80%82%0a%e9%85%8d%e7%bd%aePip%e5%b9%b6%e5%ae%89%e8%a3%85%e4%be%9d%e8%b5%96%20%e9%85%8d%e7%bd%ae%e9%95%9c%e5%83%8f%e6%ba%90%e4%b8%ba%e6%b8%85%e5%8d%8e%e6%ba%90%ef%bc%9a%0a1vim%20Pipfile%202%203%5b%5bsource%5d%5d%204url%20%3d%20%26%2334%3bhttps%3a%2f%2fpypi.tuna.tsinghua.edu.cn%2fsimple%26%2334%3b%20%e4%bb%a5%e5%90%8e%e6%89%80%e6%9c%89%e4%be%9d%e8%b5%96%e7%9a%84%e5%ae%89%e8%a3%85%e9%83%bd%e4%b8%8d%e9%9c%80%e8%a6%81%e6%8c%87%e5%ae%9a%20--pypi-mirror%20%e4%ba%86%e3%80%82%0a%e5%ae%89%e8%a3%85%e4%be%9d%e8%b5%96%ef%bc%9a%ef%bc%88%e5%bb%ba%e8%ae%ae%e5%85%b3%e9%97%ad%e4%bb%a3%e7%90%86%ef%bc%8c%e5%a6%82%e6%9e%9c%e6%9c%89%e7%9a%84%e8%af%9d%ef%bc%89%0a1pipenv%20install%20%7bpkg%7d%20%23%20%e5%a6%82%e6%9e%9c%e6%bf%80%e6%b4%bb%e4%ba%86%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83%ef%bc%8c%e5%8f%af%e4%bb%a5%e4%bd%bf%e7%94%a8pip%202%23%20pipenv%20install%20-r%20requirements.txt%20%e5%ae%89%e8%a3%85%e5%ae%8c%e4%be%9d%e8%b5%96%e5%90%8e%ef%bc%8c%e5%b0%86%e4%bc%9a%e7%94%9f%e6%88%90%20Pipfile.lock%20%e6%96%87%e4%bb%b6%ef%bc%8c%e4%bb%a5%e5%90%8e%e5%88%9d%e5%a7%8b%e5%8c%96%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83%e9%83%bd%e5%8f%aa%e9%9c%80%e8%a6%81%e8%bf%90%e8%a1%8c%20pipenv%20install%20%e5%8d%b3%e5%8f%af%e5%ae%8c%e6%88%90%e6%89%80%e6%9c%89%e4%be%9d%e8%b5%96%e7%9a%84%e5%ae%89%e8%a3%85%e3%80%82%0a%e5%bd%93%e7%84%b6%ef%bc%8c%e4%b9%9f%e5%8f%af%e4%bb%a5%e9%80%9a%e8%bf%87%e7%94%9f%e6%88%90%20requirements." aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>

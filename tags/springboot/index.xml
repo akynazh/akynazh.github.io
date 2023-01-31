@@ -14,8 +14,8 @@
       <pubDate>Sat, 25 Jun 2022 21:20:38 +0800</pubDate>
       
       <guid>/posts/2022/06/swagger-usage-record/</guid>
-      <description>依赖导入： 1 2 3 4 5 6 7 8 9 10 11 &amp;lt;!-- swagger所需依赖 --&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;io.springfox&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;springfox-swagger2&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;2.6.1&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;io.springfox&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;springfox-swagger-ui&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;2.6.1&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; 配置Swagger /config/SwaggerConfig.java
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 @Configuration @EnableSwagger2 public class SwaggerConfig { @Bean public Docket createRestApi() { return new Docket(DocumentationType.SWAGGER_2) .apiInfo(apiInfo()) .select() .apis(RequestHandlerSelectors.withClassAnnotation(Api.class)) .paths(PathSelectors.any()) .build(); } // 基本信息的配置，信息会在api文档上显示 private ApiInfo apiInfo() { return new ApiInfoBuilder() .</description>
+      <description>依赖导入： 1&amp;lt;!-- swagger所需依赖 --&amp;gt; 2&amp;lt;dependency&amp;gt; 3 &amp;lt;groupId&amp;gt;io.springfox&amp;lt;/groupId&amp;gt; 4 &amp;lt;artifactId&amp;gt;springfox-swagger2&amp;lt;/artifactId&amp;gt; 5 &amp;lt;version&amp;gt;2.6.1&amp;lt;/version&amp;gt; 6&amp;lt;/dependency&amp;gt; 7&amp;lt;dependency&amp;gt; 8 &amp;lt;groupId&amp;gt;io.springfox&amp;lt;/groupId&amp;gt; 9 &amp;lt;artifactId&amp;gt;springfox-swagger-ui&amp;lt;/artifactId&amp;gt; 10 &amp;lt;version&amp;gt;2.6.1&amp;lt;/version&amp;gt; 11&amp;lt;/dependency&amp;gt; 配置Swagger /config/SwaggerConfig.java
+1@Configuration 2@EnableSwagger2 3public class SwaggerConfig { 4 @Bean 5 public Docket createRestApi() { 6 return new Docket(DocumentationType.SWAGGER_2) 7 .apiInfo(apiInfo()) 8 .select() 9 .apis(RequestHandlerSelectors.withClassAnnotation(Api.class)) 10 .paths(PathSelectors.any()) 11 .build(); 12 } 13 14 // 基本信息的配置，信息会在api文档上显示 15 private ApiInfo apiInfo() { 16 return new ApiInfoBuilder() 17 .title(&amp;#34;jzh测试的接口文档&amp;#34;) 18 .description(&amp;#34;xx相关接口的文档&amp;#34;) 19 .termsOfServiceUrl(&amp;#34;http://localhost:7777&amp;#34;) 20 .</description>
     </item>
     
     <item>
@@ -24,9 +24,9 @@
       <pubDate>Thu, 16 Jun 2022 21:13:15 +0800</pubDate>
       
       <guid>/posts/2022/06/springboot-mailbox-service/</guid>
-      <description>一、导入依赖： 1 2 3 4 5 &amp;lt;!--发送邮件--&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-boot-starter-mail&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt; 二、配置文件： QQ邮箱需要先开通好邮箱SMTP服务。
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 spring: # 邮件服务 mail: password: xxxxxx username: xxx@qq.com host: smtp.QQ.com properties: mail: smtp: auth: true starttls: enable: true required: true default-encoding: UTF-8 三、编写邮件服务 sendSimpleMailMessage()实现只含普通文本信息的邮件发送 sendMimeMessage()可以发送带附件的邮件 MailService.java
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 @Service public class MailService { private final JavaMailSender mailSender; @Value(&amp;#34;${spring.</description>
+      <description>一、导入依赖： 1&amp;lt;!--发送邮件--&amp;gt; 2&amp;lt;dependency&amp;gt; 3 &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt; 4 &amp;lt;artifactId&amp;gt;spring-boot-starter-mail&amp;lt;/artifactId&amp;gt; 5&amp;lt;/dependency&amp;gt; 二、配置文件： QQ邮箱需要先开通好邮箱SMTP服务。
+1spring: 2 # 邮件服务 3 mail: 4 password: xxxxxx 5 username: xxx@qq.com 6 host: smtp.QQ.com 7 properties: 8 mail: 9 smtp: 10 auth: true 11 starttls: 12 enable: true 13 required: true 14 default-encoding: UTF-8 三、编写邮件服务 sendSimpleMailMessage()实现只含普通文本信息的邮件发送 sendMimeMessage()可以发送带附件的邮件 MailService.java
+1@Service 2public class MailService { 3 private final JavaMailSender mailSender; 4 @Value(&amp;#34;${spring.mail.username}&amp;#34;) 5 private String SENDER; 6 7 public MailService(JavaMailSender mailSender) { 8 this.</description>
     </item>
     
     <item>
@@ -39,13 +39,13 @@
 本文主要讲述在使用Thymeleaf作为模板引擎开发前端时，即在前后端不分离的情况下，前后端进行交互性数据展示的实现方法。
 使用cookie传递数据：不推荐 一、步骤 后端通过addCookie方法设置值 前端在页面加载时读取cookie值并进行展示 前端删除该cookie值 二、缺陷 这个方法我使用过，但是效果并不好，原因如下：
 用户可能禁止cookie 后端如果有重定向操作将导致cookie添加失败 前端每次都要删除cookie，有时可能会失效 使用session传递数据：值得借鉴 一、步骤 后端往session中存入数据 前端通过${session}进行获取数据并展示 前端将该数据删除或修改为指定默认值 这里注意正常情况下js是无法操作或者访问session值的，我们可以通过thymeleaf内置脚本进行操作：
-1 2 3 &amp;lt;script th:inline=&amp;#34;javascript&amp;#34;&amp;gt; // 这里可以通过session访问值 &amp;lt;/script&amp;gt; 二、缺陷 这个方法不好的地方显而易见，我们每次都要删除session值，而且只能通过内置脚本的方式操作，很不方便。
+1&amp;lt;script th:inline=&amp;#34;javascript&amp;#34;&amp;gt; 2// 这里可以通过session访问值 3&amp;lt;/script&amp;gt; 二、缺陷 这个方法不好的地方显而易见，我们每次都要删除session值，而且只能通过内置脚本的方式操作，很不方便。
 但是这种方法的思想值得借鉴，请看如下方法。
 通过RedirectAttributesModelMap传递数据 注意这里后端采用SpringMVC。
-一、步骤 通过RedirectAttributesModelMap往model中存值 返回视图对象，在视图对象中通过thymeleaf内置脚本进行数据展示 二、示例：提醒用户首先进行登录 1、后端代码： 1 2 3 4 5 @GetMapping(&amp;#34;/loginFirst&amp;#34;) public String loginFirst(RedirectAttributesModelMap model) { model.addFlashAttribute(&amp;#34;msg&amp;#34;, &amp;#34;请先进行登录&amp;#34;); return &amp;#34;redirect:/&amp;#34;; } RedirectAttributesModelMap可以确保redirect后保存在model中数据不丢失
+一、步骤 通过RedirectAttributesModelMap往model中存值 返回视图对象，在视图对象中通过thymeleaf内置脚本进行数据展示 二、示例：提醒用户首先进行登录 1、后端代码： 1@GetMapping(&amp;#34;/loginFirst&amp;#34;) 2public String loginFirst(RedirectAttributesModelMap model) { 3 model.addFlashAttribute(&amp;#34;msg&amp;#34;, &amp;#34;请先进行登录&amp;#34;); 4 return &amp;#34;redirect:/&amp;#34;; 5} RedirectAttributesModelMap可以确保redirect后保存在model中数据不丢失
 addFlashAttribute是把数据临时放在session中并在刷新页面后自动删除的方法，配合RedirectAttributesModelMap进行使用
 2、前端代码： 必须注意，这里外部js无法通过$(&amp;rsquo;#msg&amp;rsquo;).val()获取th:value设置的值的，所以必须通过thymeleaf提供的内联js代码操作交互的数据。
-1 2 3 4 5 6 &amp;lt;div class=&amp;#34;alert&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;input id=&amp;#34;msg&amp;#34; value=&amp;#34;&amp;#34; style=&amp;#34;display: none&amp;#34;/&amp;gt; &amp;lt;script th:inline=&amp;#34;javascript&amp;#34;&amp;gt; let msg = [[${msg}]]; document.</description>
+1&amp;lt;div class=&amp;#34;alert&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; 2&amp;lt;input id=&amp;#34;msg&amp;#34; value=&amp;#34;&amp;#34; style=&amp;#34;display: none&amp;#34;/&amp;gt; 3&amp;lt;script th:inline=&amp;#34;javascript&amp;#34;&amp;gt; 4 let msg = [[${msg}]]; 5 document.getElementById(&amp;#34;msg&amp;#34;).setAttribute(&amp;#34;value&amp;#34;, msg.toString()); 6&amp;lt;/script&amp;gt; 这里可以在inline部分完成所有信息展示操作，但由于thymeleaf内联js无法调用jquery代码，所以我把msg存到隐藏域中，再通过jquery代码调用</description>
     </item>
     
     <item>
@@ -56,12 +56,12 @@ addFlashAttribute是把数据临时放在session中并在刷新页面后自动�
       <guid>/posts/2021/11/the-whole-process-of-linux-host-deployment-springboot-project/</guid>
       <description>注：部署环境为centos7.9版本
 配置环境 配好mysql，redis，java开发环境。
-上传JAR包项目 1 2 mvn clean mvn package 即可把项目打包为JAR包，再通过WINSP上传到服务器。
+上传JAR包项目 1mvn clean 2mvn package 即可把项目打包为JAR包，再通过WINSP上传到服务器。
 先新建一个app文件夹，放置项目所有内容：
-1 2 mkdir /app chmod 777 /app 新建并编辑application配置文件 由于主机上的mysql密码与本地mysql密码不同，所以在JAR包同一个文件目录下新建application配置文件并指定新的密码，允许JAR项目时该application配置文件优先级是更高的。这里我还指定了用于linux下文件读取上传的目录路径。
-1 2 3 4 5 6 7 spring: datasource: password: ...... resources: static-locations: - classpath:static/ - file:/app/static/ 1 2 3 [root@VM-0-11-centos app]# chmod -R 777 * [root@VM-0-11-centos app]# ls application.yaml LonersHub-0.0.1-SNAPSHOT.jar static 运行项目 首先确保防火墙配置正确，放通需要的端口。
-1 2 [root@VM-0-11-centos app]# nohup java -jar LonersHub-0.0.1-SNAPSHOT.jar &amp;amp; [1] 27108 更新项目 首先终止原本进程，删除原来的jar包并上传新的jar包，然后运行新的jar包：
-1 2 3 4 5 6 7 [root@VM-0-11-centos app]# ps -ef | grep java root 13415 1 1 00:02 ?</description>
+1mkdir /app 2chmod 777 /app 新建并编辑application配置文件 由于主机上的mysql密码与本地mysql密码不同，所以在JAR包同一个文件目录下新建application配置文件并指定新的密码，允许JAR项目时该application配置文件优先级是更高的。这里我还指定了用于linux下文件读取上传的目录路径。
+1spring: 2 datasource: 3 password: ...... 4 resources: 5 static-locations: 6 - classpath:static/ 7 - file:/app/static/ 1[root@VM-0-11-centos app]# chmod -R 777 * 2[root@VM-0-11-centos app]# ls 3application.yaml LonersHub-0.0.1-SNAPSHOT.jar static 运行项目 首先确保防火墙配置正确，放通需要的端口。
+1[root@VM-0-11-centos app]# nohup java -jar LonersHub-0.0.1-SNAPSHOT.jar &amp;amp; 2[1] 27108 更新项目 首先终止原本进程，删除原来的jar包并上传新的jar包，然后运行新的jar包：
+1[root@VM-0-11-centos app]# ps -ef | grep java 2root 13415 1 1 00:02 ?</description>
     </item>
     
   </channel>

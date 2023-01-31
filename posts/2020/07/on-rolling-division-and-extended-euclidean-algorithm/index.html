@@ -10,7 +10,7 @@
   <meta name="googlebot" content="index,follow,snippet,archive">
   <meta property="og:title" content="关于辗转相除法和扩展欧几里得算法" />
 <meta property="og:description" content="gcd辗转相除法求最大公约数 思路：反复交换取余，直到小的数为0。
-1 2 3 4 int gcd(int a, int b){ if(b == 0) return a; return gcd(b, a % b); } exgcd扩展欧几里得算法 先介绍贝祖定理：
+1int gcd(int a, int b){ 2	if(b == 0) return a; 3	return gcd(b, a % b); 4} exgcd扩展欧几里得算法 先介绍贝祖定理：
 若a,b为整数，则一定存在整数x,y，使得$ax &#43; by = gcd(a,b)$。
 即若$ax &#43; by = m$有解，则m一定为gcd(a,b)的若干倍。
 下面是一道题：
@@ -19,7 +19,8 @@
 关于求出x和y推导过程：
 由$ax &#43; by = gcd(a,b)$ (1)
 通过辗转相除法的思想得：$bx_1 &#43; (a \mod b) y_1 = gcd(a,b)$
-由$a \mod b = a - (a \div b) \times b$带入得:" />
+由$a \mod b = a - (a \div b) \times b$带入得:
+$ay_1 &#43; b \times (x_1 -(a \div b) \times y_1) == gcd(a,b) $(2)" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/2020/07/on-rolling-division-and-extended-euclidean-algorithm/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-07-21T20:48:53+08:00" />
@@ -28,7 +29,7 @@
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="关于辗转相除法和扩展欧几里得算法"/>
 <meta name="twitter:description" content="gcd辗转相除法求最大公约数 思路：反复交换取余，直到小的数为0。
-1 2 3 4 int gcd(int a, int b){ if(b == 0) return a; return gcd(b, a % b); } exgcd扩展欧几里得算法 先介绍贝祖定理：
+1int gcd(int a, int b){ 2	if(b == 0) return a; 3	return gcd(b, a % b); 4} exgcd扩展欧几里得算法 先介绍贝祖定理：
 若a,b为整数，则一定存在整数x,y，使得$ax &#43; by = gcd(a,b)$。
 即若$ax &#43; by = m$有解，则m一定为gcd(a,b)的若干倍。
 下面是一道题：
@@ -37,14 +38,15 @@
 关于求出x和y推导过程：
 由$ax &#43; by = gcd(a,b)$ (1)
 通过辗转相除法的思想得：$bx_1 &#43; (a \mod b) y_1 = gcd(a,b)$
-由$a \mod b = a - (a \div b) \times b$带入得:"/>
+由$a \mod b = a - (a \div b) \times b$带入得:
+$ay_1 &#43; b \times (x_1 -(a \div b) \times y_1) == gcd(a,b) $(2)"/>
 
   
   
   
   
   
-  <link rel="stylesheet" href="/css/styles.d8d1e5ac73f5bd72b0e6919356fcf7f12c9dd5a80e4788cae09111cc3678f69a4294b39d4b852dd69cc393c73ac3d8b6c05c8df3569d49d36331b7f39cfea8d1.css" integrity="sha512-2NHlrHP1vXKw5pGTVvz38Syd1agOR4jK4JERzDZ49ppClLOdS4Ut1pzDk8c6w9i2wFyN81adSdNjMbfznP6o0Q==">
+  <link rel="stylesheet" href="/css/styles.b6e7dac395bc81c65ab67a0be932cbd03925f5afb48f9c825ead224a41084a4a8289db621f5b2236149a32799ae71f4962b1d2531d209f51d8b88cdffaa1877e.css" integrity="sha512-tufaw5W8gcZatnoL6TLL0Dkl9a&#43;0j5yCXq0iSkEISkqCidtiH1siNhSaMnma5x9JYrHSUx0gn1HYuIzf&#43;qGHfg==">
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
@@ -161,7 +163,7 @@
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2020%2f07%2fon-rolling-division-and-extended-euclidean-algorithm%2f&name=%e5%85%b3%e4%ba%8e%e8%be%97%e8%bd%ac%e7%9b%b8%e9%99%a4%e6%b3%95%e5%92%8c%e6%89%a9%e5%b1%95%e6%ac%a7%e5%87%a0%e9%87%8c%e5%be%97%e7%ae%97%e6%b3%95&description=gcd%e8%be%97%e8%bd%ac%e7%9b%b8%e9%99%a4%e6%b3%95%e6%b1%82%e6%9c%80%e5%a4%a7%e5%85%ac%e7%ba%a6%e6%95%b0%20%e6%80%9d%e8%b7%af%ef%bc%9a%e5%8f%8d%e5%a4%8d%e4%ba%a4%e6%8d%a2%e5%8f%96%e4%bd%99%ef%bc%8c%e7%9b%b4%e5%88%b0%e5%b0%8f%e7%9a%84%e6%95%b0%e4%b8%ba0%e3%80%82%0a1%202%203%204%20int%20gcd%28int%20a%2c%20int%20b%29%7b%20if%28b%20%3d%3d%200%29%20return%20a%3b%20return%20gcd%28b%2c%20a%20%25%20b%29%3b%20%7d%20exgcd%e6%89%a9%e5%b1%95%e6%ac%a7%e5%87%a0%e9%87%8c%e5%be%97%e7%ae%97%e6%b3%95%20%e5%85%88%e4%bb%8b%e7%bb%8d%e8%b4%9d%e7%a5%96%e5%ae%9a%e7%90%86%ef%bc%9a%0a%e8%8b%a5a%2cb%e4%b8%ba%e6%95%b4%e6%95%b0%ef%bc%8c%e5%88%99%e4%b8%80%e5%ae%9a%e5%ad%98%e5%9c%a8%e6%95%b4%e6%95%b0x%2cy%ef%bc%8c%e4%bd%bf%e5%be%97%24ax%20%2b%20by%20%3d%20gcd%28a%2cb%29%24%e3%80%82%0a%e5%8d%b3%e8%8b%a5%24ax%20%2b%20by%20%3d%20m%24%e6%9c%89%e8%a7%a3%ef%bc%8c%e5%88%99m%e4%b8%80%e5%ae%9a%e4%b8%bagcd%28a%2cb%29%e7%9a%84%e8%8b%a5%e5%b9%b2%e5%80%8d%e3%80%82%0a%e4%b8%8b%e9%9d%a2%e6%98%af%e4%b8%80%e9%81%93%e9%a2%98%ef%bc%9a%0a%e6%9c%89a%2c%20-a%2c%20b%2c%20-b%e5%9b%9b%e4%b8%aa%e6%95%b4%e6%95%b0%ef%bc%8c%e5%90%84%e7%94%a8%e5%87%a0%e6%ac%a1%e5%8f%af%e4%bb%a5%e4%bd%bf%e5%be%97%24ax%20%2b%20by%20%3d%201%24%3f%0a%e7%94%b1%e4%b8%8a%e8%bf%b0%e6%80%9d%e6%83%b3%e5%88%99%e5%8f%af%e7%9f%a5gcd%28a%2cb%29%e7%ad%89%e4%ba%8e1%ef%bc%8c%e5%8f%af%e7%bc%96%e5%86%99%e4%b8%80%e4%b8%aa%e8%bf%94%e5%9b%9e%e5%80%bc%e4%b8%bagcd%28a%2cb%29%e5%90%8c%e6%97%b6%e9%80%92%e5%bd%92%e8%ae%a1%e7%ae%97x%e5%92%8cy%e7%9a%84%e5%87%bd%e6%95%b0%e3%80%82%0a%e5%85%b3%e4%ba%8e%e6%b1%82%e5%87%bax%e5%92%8cy%e6%8e%a8%e5%af%bc%e8%bf%87%e7%a8%8b%ef%bc%9a%0a%e7%94%b1%24ax%20%2b%20by%20%3d%20gcd%28a%2cb%29%24%20%281%29%0a%e9%80%9a%e8%bf%87%e8%be%97%e8%bd%ac%e7%9b%b8%e9%99%a4%e6%b3%95%e7%9a%84%e6%80%9d%e6%83%b3%e5%be%97%ef%bc%9a%24bx_1%20%2b%20%28a%20%5cmod%20b%29%20y_1%20%3d%20gcd%28a%2cb%29%24%0a%e7%94%b1%24a%20%5cmod%20b%20%3d%20a%20-%20%28a%20%5cdiv%20b%29%20%5ctimes%20b%24%e5%b8%a6%e5%85%a5%e5%be%97%3a" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2020%2f07%2fon-rolling-division-and-extended-euclidean-algorithm%2f&name=%e5%85%b3%e4%ba%8e%e8%be%97%e8%bd%ac%e7%9b%b8%e9%99%a4%e6%b3%95%e5%92%8c%e6%89%a9%e5%b1%95%e6%ac%a7%e5%87%a0%e9%87%8c%e5%be%97%e7%ae%97%e6%b3%95&description=gcd%e8%be%97%e8%bd%ac%e7%9b%b8%e9%99%a4%e6%b3%95%e6%b1%82%e6%9c%80%e5%a4%a7%e5%85%ac%e7%ba%a6%e6%95%b0%20%e6%80%9d%e8%b7%af%ef%bc%9a%e5%8f%8d%e5%a4%8d%e4%ba%a4%e6%8d%a2%e5%8f%96%e4%bd%99%ef%bc%8c%e7%9b%b4%e5%88%b0%e5%b0%8f%e7%9a%84%e6%95%b0%e4%b8%ba0%e3%80%82%0a1int%20gcd%28int%20a%2c%20int%20b%29%7b%202%09if%28b%20%3d%3d%200%29%20return%20a%3b%203%09return%20gcd%28b%2c%20a%20%25%20b%29%3b%204%7d%20exgcd%e6%89%a9%e5%b1%95%e6%ac%a7%e5%87%a0%e9%87%8c%e5%be%97%e7%ae%97%e6%b3%95%20%e5%85%88%e4%bb%8b%e7%bb%8d%e8%b4%9d%e7%a5%96%e5%ae%9a%e7%90%86%ef%bc%9a%0a%e8%8b%a5a%2cb%e4%b8%ba%e6%95%b4%e6%95%b0%ef%bc%8c%e5%88%99%e4%b8%80%e5%ae%9a%e5%ad%98%e5%9c%a8%e6%95%b4%e6%95%b0x%2cy%ef%bc%8c%e4%bd%bf%e5%be%97%24ax%20%2b%20by%20%3d%20gcd%28a%2cb%29%24%e3%80%82%0a%e5%8d%b3%e8%8b%a5%24ax%20%2b%20by%20%3d%20m%24%e6%9c%89%e8%a7%a3%ef%bc%8c%e5%88%99m%e4%b8%80%e5%ae%9a%e4%b8%bagcd%28a%2cb%29%e7%9a%84%e8%8b%a5%e5%b9%b2%e5%80%8d%e3%80%82%0a%e4%b8%8b%e9%9d%a2%e6%98%af%e4%b8%80%e9%81%93%e9%a2%98%ef%bc%9a%0a%e6%9c%89a%2c%20-a%2c%20b%2c%20-b%e5%9b%9b%e4%b8%aa%e6%95%b4%e6%95%b0%ef%bc%8c%e5%90%84%e7%94%a8%e5%87%a0%e6%ac%a1%e5%8f%af%e4%bb%a5%e4%bd%bf%e5%be%97%24ax%20%2b%20by%20%3d%201%24%3f%0a%e7%94%b1%e4%b8%8a%e8%bf%b0%e6%80%9d%e6%83%b3%e5%88%99%e5%8f%af%e7%9f%a5gcd%28a%2cb%29%e7%ad%89%e4%ba%8e1%ef%bc%8c%e5%8f%af%e7%bc%96%e5%86%99%e4%b8%80%e4%b8%aa%e8%bf%94%e5%9b%9e%e5%80%bc%e4%b8%bagcd%28a%2cb%29%e5%90%8c%e6%97%b6%e9%80%92%e5%bd%92%e8%ae%a1%e7%ae%97x%e5%92%8cy%e7%9a%84%e5%87%bd%e6%95%b0%e3%80%82%0a%e5%85%b3%e4%ba%8e%e6%b1%82%e5%87%bax%e5%92%8cy%e6%8e%a8%e5%af%bc%e8%bf%87%e7%a8%8b%ef%bc%9a%0a%e7%94%b1%24ax%20%2b%20by%20%3d%20gcd%28a%2cb%29%24%20%281%29%0a%e9%80%9a%e8%bf%87%e8%be%97%e8%bd%ac%e7%9b%b8%e9%99%a4%e6%b3%95%e7%9a%84%e6%80%9d%e6%83%b3%e5%be%97%ef%bc%9a%24bx_1%20%2b%20%28a%20%5cmod%20b%29%20y_1%20%3d%20gcd%28a%2cb%29%24%0a%e7%94%b1%24a%20%5cmod%20b%20%3d%20a%20-%20%28a%20%5cdiv%20b%29%20%5ctimes%20b%24%e5%b8%a6%e5%85%a5%e5%be%97%3a%0a%24ay_1%20%2b%20b%20%5ctimes%20%28x_1%20-%28a%20%5cdiv%20b%29%20%5ctimes%20y_1%29%20%3d%3d%20gcd%28a%2cb%29%20%24%282%29" aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -232,21 +234,11 @@
     <div class="content" itemprop="articleBody">
       <h2 id="gcd辗转相除法求最大公约数">gcd辗转相除法求最大公约数</h2>
 <p>思路：反复交换取余，直到小的数为0。</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#8be9fd">int</span> <span style="color:#50fa7b">gcd</span>(<span style="color:#8be9fd">int</span> a, <span style="color:#8be9fd">int</span> b){
-</span></span><span style="display:flex;"><span>	<span style="color:#ff79c6">if</span>(b <span style="color:#ff79c6">==</span> <span style="color:#bd93f9">0</span>) <span style="color:#ff79c6">return</span> a;
-</span></span><span style="display:flex;"><span>	<span style="color:#ff79c6">return</span> gcd(b, a <span style="color:#ff79c6">%</span> b);
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="exgcd扩展欧几里得算法">exgcd扩展欧几里得算法</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#8be9fd">int</span> <span style="color:#50fa7b">gcd</span>(<span style="color:#8be9fd">int</span> a, <span style="color:#8be9fd">int</span> b){
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>	<span style="color:#ff79c6">if</span>(b <span style="color:#ff79c6">==</span> <span style="color:#bd93f9">0</span>) <span style="color:#ff79c6">return</span> a;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>	<span style="color:#ff79c6">return</span> gcd(b, a <span style="color:#ff79c6">%</span> b);
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>}
+</span></span></code></pre></div><h2 id="exgcd扩展欧几里得算法">exgcd扩展欧几里得算法</h2>
 <p>先介绍<strong>贝祖定理</strong>：</p>
 <p>若a,b为整数，则一定存在整数x,y，使得$ax + by = gcd(a,b)$。</p>
 <p>即若$ax + by = m$有解，则m一定为<strong>gcd(a,b)的若干倍</strong>。</p>
@@ -264,37 +256,19 @@
 <p>由等式可知上层的x,y可以由下层的x1,y1来求,则可以通过递归来实现。</p>
 <p>又由（1），当$b = 0, a \times 1 + b \times 0 = a = gcd(a,b)$</p>
 <p>则此时$x = 1, y = 0$, 一定会出现在递归末尾。</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#8be9fd">int</span> <span style="color:#50fa7b">exgcd</span>(<span style="color:#8be9fd">int</span> a, <span style="color:#8be9fd">int</span> b, <span style="color:#8be9fd">int</span> <span style="color:#ff79c6">&amp;</span>x, <span style="color:#8be9fd">int</span> <span style="color:#ff79c6">&amp;</span>y) {
-</span></span><span style="display:flex;"><span>	<span style="color:#8be9fd">int</span> d <span style="color:#ff79c6">=</span> a;
-</span></span><span style="display:flex;"><span>	<span style="color:#ff79c6">if</span> (b <span style="color:#ff79c6">!=</span> <span style="color:#bd93f9">0</span>) {
-</span></span><span style="display:flex;"><span>		d <span style="color:#ff79c6">=</span> exgcd(b, a<span style="color:#ff79c6">%</span>b, x, y);
-</span></span><span style="display:flex;"><span>		<span style="color:#8be9fd">int</span> temp <span style="color:#ff79c6">=</span> y;
-</span></span><span style="display:flex;"><span>		y <span style="color:#ff79c6">=</span> x <span style="color:#ff79c6">-</span> (a <span style="color:#ff79c6">/</span> b) <span style="color:#ff79c6">*</span> y; <span style="color:#6272a4">//上一层的y
-</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>		x <span style="color:#ff79c6">=</span> temp; <span style="color:#6272a4">//上一层的x
-</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>	} <span style="color:#ff79c6">else</span> {
-</span></span><span style="display:flex;"><span>		x <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">1</span>; y <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>;
-</span></span><span style="display:flex;"><span>	}
-</span></span><span style="display:flex;"><span>	<span style="color:#ff79c6">return</span> d;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p><strong>From My Blog: <a href="https://akynazh.site">akynazh</a></strong>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#8be9fd">int</span> <span style="color:#50fa7b">exgcd</span>(<span style="color:#8be9fd">int</span> a, <span style="color:#8be9fd">int</span> b, <span style="color:#8be9fd">int</span> <span style="color:#ff79c6">&amp;</span>x, <span style="color:#8be9fd">int</span> <span style="color:#ff79c6">&amp;</span>y) {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>	<span style="color:#8be9fd">int</span> d <span style="color:#ff79c6">=</span> a;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>	<span style="color:#ff79c6">if</span> (b <span style="color:#ff79c6">!=</span> <span style="color:#bd93f9">0</span>) {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>		d <span style="color:#ff79c6">=</span> exgcd(b, a<span style="color:#ff79c6">%</span>b, x, y);
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>		<span style="color:#8be9fd">int</span> temp <span style="color:#ff79c6">=</span> y;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>		y <span style="color:#ff79c6">=</span> x <span style="color:#ff79c6">-</span> (a <span style="color:#ff79c6">/</span> b) <span style="color:#ff79c6">*</span> y; <span style="color:#6272a4">//上一层的y
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span><span style="color:#6272a4"></span>		x <span style="color:#ff79c6">=</span> temp; <span style="color:#6272a4">//上一层的x
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span><span style="color:#6272a4"></span>	} <span style="color:#ff79c6">else</span> {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>		x <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">1</span>; y <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>	}
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>	<span style="color:#ff79c6">return</span> d;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>}
+</span></span></code></pre></div><p><strong>From My Blog: <a href="https://akynazh.site">akynazh</a></strong>.</p>
 <p><strong>Over.</strong></p>
 
     </div>
@@ -393,7 +367,7 @@
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2020%2f07%2fon-rolling-division-and-extended-euclidean-algorithm%2f&name=%e5%85%b3%e4%ba%8e%e8%be%97%e8%bd%ac%e7%9b%b8%e9%99%a4%e6%b3%95%e5%92%8c%e6%89%a9%e5%b1%95%e6%ac%a7%e5%87%a0%e9%87%8c%e5%be%97%e7%ae%97%e6%b3%95&description=gcd%e8%be%97%e8%bd%ac%e7%9b%b8%e9%99%a4%e6%b3%95%e6%b1%82%e6%9c%80%e5%a4%a7%e5%85%ac%e7%ba%a6%e6%95%b0%20%e6%80%9d%e8%b7%af%ef%bc%9a%e5%8f%8d%e5%a4%8d%e4%ba%a4%e6%8d%a2%e5%8f%96%e4%bd%99%ef%bc%8c%e7%9b%b4%e5%88%b0%e5%b0%8f%e7%9a%84%e6%95%b0%e4%b8%ba0%e3%80%82%0a1%202%203%204%20int%20gcd%28int%20a%2c%20int%20b%29%7b%20if%28b%20%3d%3d%200%29%20return%20a%3b%20return%20gcd%28b%2c%20a%20%25%20b%29%3b%20%7d%20exgcd%e6%89%a9%e5%b1%95%e6%ac%a7%e5%87%a0%e9%87%8c%e5%be%97%e7%ae%97%e6%b3%95%20%e5%85%88%e4%bb%8b%e7%bb%8d%e8%b4%9d%e7%a5%96%e5%ae%9a%e7%90%86%ef%bc%9a%0a%e8%8b%a5a%2cb%e4%b8%ba%e6%95%b4%e6%95%b0%ef%bc%8c%e5%88%99%e4%b8%80%e5%ae%9a%e5%ad%98%e5%9c%a8%e6%95%b4%e6%95%b0x%2cy%ef%bc%8c%e4%bd%bf%e5%be%97%24ax%20%2b%20by%20%3d%20gcd%28a%2cb%29%24%e3%80%82%0a%e5%8d%b3%e8%8b%a5%24ax%20%2b%20by%20%3d%20m%24%e6%9c%89%e8%a7%a3%ef%bc%8c%e5%88%99m%e4%b8%80%e5%ae%9a%e4%b8%bagcd%28a%2cb%29%e7%9a%84%e8%8b%a5%e5%b9%b2%e5%80%8d%e3%80%82%0a%e4%b8%8b%e9%9d%a2%e6%98%af%e4%b8%80%e9%81%93%e9%a2%98%ef%bc%9a%0a%e6%9c%89a%2c%20-a%2c%20b%2c%20-b%e5%9b%9b%e4%b8%aa%e6%95%b4%e6%95%b0%ef%bc%8c%e5%90%84%e7%94%a8%e5%87%a0%e6%ac%a1%e5%8f%af%e4%bb%a5%e4%bd%bf%e5%be%97%24ax%20%2b%20by%20%3d%201%24%3f%0a%e7%94%b1%e4%b8%8a%e8%bf%b0%e6%80%9d%e6%83%b3%e5%88%99%e5%8f%af%e7%9f%a5gcd%28a%2cb%29%e7%ad%89%e4%ba%8e1%ef%bc%8c%e5%8f%af%e7%bc%96%e5%86%99%e4%b8%80%e4%b8%aa%e8%bf%94%e5%9b%9e%e5%80%bc%e4%b8%bagcd%28a%2cb%29%e5%90%8c%e6%97%b6%e9%80%92%e5%bd%92%e8%ae%a1%e7%ae%97x%e5%92%8cy%e7%9a%84%e5%87%bd%e6%95%b0%e3%80%82%0a%e5%85%b3%e4%ba%8e%e6%b1%82%e5%87%bax%e5%92%8cy%e6%8e%a8%e5%af%bc%e8%bf%87%e7%a8%8b%ef%bc%9a%0a%e7%94%b1%24ax%20%2b%20by%20%3d%20gcd%28a%2cb%29%24%20%281%29%0a%e9%80%9a%e8%bf%87%e8%be%97%e8%bd%ac%e7%9b%b8%e9%99%a4%e6%b3%95%e7%9a%84%e6%80%9d%e6%83%b3%e5%be%97%ef%bc%9a%24bx_1%20%2b%20%28a%20%5cmod%20b%29%20y_1%20%3d%20gcd%28a%2cb%29%24%0a%e7%94%b1%24a%20%5cmod%20b%20%3d%20a%20-%20%28a%20%5cdiv%20b%29%20%5ctimes%20b%24%e5%b8%a6%e5%85%a5%e5%be%97%3a" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2020%2f07%2fon-rolling-division-and-extended-euclidean-algorithm%2f&name=%e5%85%b3%e4%ba%8e%e8%be%97%e8%bd%ac%e7%9b%b8%e9%99%a4%e6%b3%95%e5%92%8c%e6%89%a9%e5%b1%95%e6%ac%a7%e5%87%a0%e9%87%8c%e5%be%97%e7%ae%97%e6%b3%95&description=gcd%e8%be%97%e8%bd%ac%e7%9b%b8%e9%99%a4%e6%b3%95%e6%b1%82%e6%9c%80%e5%a4%a7%e5%85%ac%e7%ba%a6%e6%95%b0%20%e6%80%9d%e8%b7%af%ef%bc%9a%e5%8f%8d%e5%a4%8d%e4%ba%a4%e6%8d%a2%e5%8f%96%e4%bd%99%ef%bc%8c%e7%9b%b4%e5%88%b0%e5%b0%8f%e7%9a%84%e6%95%b0%e4%b8%ba0%e3%80%82%0a1int%20gcd%28int%20a%2c%20int%20b%29%7b%202%09if%28b%20%3d%3d%200%29%20return%20a%3b%203%09return%20gcd%28b%2c%20a%20%25%20b%29%3b%204%7d%20exgcd%e6%89%a9%e5%b1%95%e6%ac%a7%e5%87%a0%e9%87%8c%e5%be%97%e7%ae%97%e6%b3%95%20%e5%85%88%e4%bb%8b%e7%bb%8d%e8%b4%9d%e7%a5%96%e5%ae%9a%e7%90%86%ef%bc%9a%0a%e8%8b%a5a%2cb%e4%b8%ba%e6%95%b4%e6%95%b0%ef%bc%8c%e5%88%99%e4%b8%80%e5%ae%9a%e5%ad%98%e5%9c%a8%e6%95%b4%e6%95%b0x%2cy%ef%bc%8c%e4%bd%bf%e5%be%97%24ax%20%2b%20by%20%3d%20gcd%28a%2cb%29%24%e3%80%82%0a%e5%8d%b3%e8%8b%a5%24ax%20%2b%20by%20%3d%20m%24%e6%9c%89%e8%a7%a3%ef%bc%8c%e5%88%99m%e4%b8%80%e5%ae%9a%e4%b8%bagcd%28a%2cb%29%e7%9a%84%e8%8b%a5%e5%b9%b2%e5%80%8d%e3%80%82%0a%e4%b8%8b%e9%9d%a2%e6%98%af%e4%b8%80%e9%81%93%e9%a2%98%ef%bc%9a%0a%e6%9c%89a%2c%20-a%2c%20b%2c%20-b%e5%9b%9b%e4%b8%aa%e6%95%b4%e6%95%b0%ef%bc%8c%e5%90%84%e7%94%a8%e5%87%a0%e6%ac%a1%e5%8f%af%e4%bb%a5%e4%bd%bf%e5%be%97%24ax%20%2b%20by%20%3d%201%24%3f%0a%e7%94%b1%e4%b8%8a%e8%bf%b0%e6%80%9d%e6%83%b3%e5%88%99%e5%8f%af%e7%9f%a5gcd%28a%2cb%29%e7%ad%89%e4%ba%8e1%ef%bc%8c%e5%8f%af%e7%bc%96%e5%86%99%e4%b8%80%e4%b8%aa%e8%bf%94%e5%9b%9e%e5%80%bc%e4%b8%bagcd%28a%2cb%29%e5%90%8c%e6%97%b6%e9%80%92%e5%bd%92%e8%ae%a1%e7%ae%97x%e5%92%8cy%e7%9a%84%e5%87%bd%e6%95%b0%e3%80%82%0a%e5%85%b3%e4%ba%8e%e6%b1%82%e5%87%bax%e5%92%8cy%e6%8e%a8%e5%af%bc%e8%bf%87%e7%a8%8b%ef%bc%9a%0a%e7%94%b1%24ax%20%2b%20by%20%3d%20gcd%28a%2cb%29%24%20%281%29%0a%e9%80%9a%e8%bf%87%e8%be%97%e8%bd%ac%e7%9b%b8%e9%99%a4%e6%b3%95%e7%9a%84%e6%80%9d%e6%83%b3%e5%be%97%ef%bc%9a%24bx_1%20%2b%20%28a%20%5cmod%20b%29%20y_1%20%3d%20gcd%28a%2cb%29%24%0a%e7%94%b1%24a%20%5cmod%20b%20%3d%20a%20-%20%28a%20%5cdiv%20b%29%20%5ctimes%20b%24%e5%b8%a6%e5%85%a5%e5%be%97%3a%0a%24ay_1%20%2b%20b%20%5ctimes%20%28x_1%20-%28a%20%5cdiv%20b%29%20%5ctimes%20y_1%29%20%3d%3d%20gcd%28a%2cb%29%20%24%282%29" aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>

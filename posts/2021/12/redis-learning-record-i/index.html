@@ -9,9 +9,10 @@
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
   <meta property="og:title" content="Redis 学习记录一" />
-<meta property="og:description" content="Open, Connect And Config open redis: 1 redis-server connect to redis: 1 redis-cli disconnect: 1 redis-cli shutdown show chinese: 1 redis-cli --raw connect to remote redis: 1 redis-cli -h host -p port -a password get redis config: 1 config get {config_name} Data Type list:
-1 2 3 lpush clist redis lpush clist mysql lrange clist 0 100 key:
-1 2 3 4 5 6 7 8 127.0.0.1:6379&gt; set mkey sos OK 127." />
+<meta property="og:description" content="Open, Connect And Config open redis: 1redis-server connect to redis: 1redis-cli disconnect: 1redis-cli shutdown show chinese: 1redis-cli --raw connect to remote redis: 1redis-cli -h host -p port -a password get redis config: 1config get {config_name} Data Type list:
+1lpush clist redis 2lpush clist mysql 3lrange clist 0 100 key:
+1127.0.0.1:6379&gt; set mkey sos 2OK 3127.0.0.1:6379&gt; get mkey 4&#34;sos&#34; 5127.0.0.1:6379&gt; del mkey 6(integer) 1 7127.0.0.1:6379&gt; get mkey 8(nil) keys: 接偶数个参数，一一对应。
+1127.0.0.1:6379&gt; hmset mkeys A a B b C c 2OK 3127." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/2021/12/redis-learning-record-i/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-12-14T23:40:44+08:00" />
@@ -19,16 +20,17 @@
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Redis 学习记录一"/>
-<meta name="twitter:description" content="Open, Connect And Config open redis: 1 redis-server connect to redis: 1 redis-cli disconnect: 1 redis-cli shutdown show chinese: 1 redis-cli --raw connect to remote redis: 1 redis-cli -h host -p port -a password get redis config: 1 config get {config_name} Data Type list:
-1 2 3 lpush clist redis lpush clist mysql lrange clist 0 100 key:
-1 2 3 4 5 6 7 8 127.0.0.1:6379&gt; set mkey sos OK 127."/>
+<meta name="twitter:description" content="Open, Connect And Config open redis: 1redis-server connect to redis: 1redis-cli disconnect: 1redis-cli shutdown show chinese: 1redis-cli --raw connect to remote redis: 1redis-cli -h host -p port -a password get redis config: 1config get {config_name} Data Type list:
+1lpush clist redis 2lpush clist mysql 3lrange clist 0 100 key:
+1127.0.0.1:6379&gt; set mkey sos 2OK 3127.0.0.1:6379&gt; get mkey 4&#34;sos&#34; 5127.0.0.1:6379&gt; del mkey 6(integer) 1 7127.0.0.1:6379&gt; get mkey 8(nil) keys: 接偶数个参数，一一对应。
+1127.0.0.1:6379&gt; hmset mkeys A a B b C c 2OK 3127."/>
 
   
   
   
   
   
-  <link rel="stylesheet" href="/css/styles.d8d1e5ac73f5bd72b0e6919356fcf7f12c9dd5a80e4788cae09111cc3678f69a4294b39d4b852dd69cc393c73ac3d8b6c05c8df3569d49d36331b7f39cfea8d1.css" integrity="sha512-2NHlrHP1vXKw5pGTVvz38Syd1agOR4jK4JERzDZ49ppClLOdS4Ut1pzDk8c6w9i2wFyN81adSdNjMbfznP6o0Q==">
+  <link rel="stylesheet" href="/css/styles.b6e7dac395bc81c65ab67a0be932cbd03925f5afb48f9c825ead224a41084a4a8289db621f5b2236149a32799ae71f4962b1d2531d209f51d8b88cdffaa1877e.css" integrity="sha512-tufaw5W8gcZatnoL6TLL0Dkl9a&#43;0j5yCXq0iSkEISkqCidtiH1siNhSaMnma5x9JYrHSUx0gn1HYuIzf&#43;qGHfg==">
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
@@ -145,7 +147,7 @@
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2021%2f12%2fredis-learning-record-i%2f&name=Redis%20%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95%e4%b8%80&description=Open%2c%20Connect%20And%20Config%20open%20redis%3a%201%20redis-server%20connect%20to%20redis%3a%201%20redis-cli%20disconnect%3a%201%20redis-cli%20shutdown%20show%20chinese%3a%201%20redis-cli%20--raw%20connect%20to%20remote%20redis%3a%201%20redis-cli%20-h%20host%20-p%20port%20-a%20password%20get%20redis%20config%3a%201%20config%20get%20%7bconfig_name%7d%20Data%20Type%20list%3a%0a1%202%203%20lpush%20clist%20redis%20lpush%20clist%20mysql%20lrange%20clist%200%20100%20key%3a%0a1%202%203%204%205%206%207%208%20127.0.0.1%3a6379%26gt%3b%20set%20mkey%20sos%20OK%20127." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2021%2f12%2fredis-learning-record-i%2f&name=Redis%20%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95%e4%b8%80&description=Open%2c%20Connect%20And%20Config%20open%20redis%3a%201redis-server%20connect%20to%20redis%3a%201redis-cli%20disconnect%3a%201redis-cli%20shutdown%20show%20chinese%3a%201redis-cli%20--raw%20connect%20to%20remote%20redis%3a%201redis-cli%20-h%20host%20-p%20port%20-a%20password%20get%20redis%20config%3a%201config%20get%20%7bconfig_name%7d%20Data%20Type%20list%3a%0a1lpush%20clist%20redis%202lpush%20clist%20mysql%203lrange%20clist%200%20100%20key%3a%0a1127.0.0.1%3a6379%26gt%3b%20set%20mkey%20sos%202OK%203127.0.0.1%3a6379%26gt%3b%20get%20mkey%204%26%2334%3bsos%26%2334%3b%205127.0.0.1%3a6379%26gt%3b%20del%20mkey%206%28integer%29%201%207127.0.0.1%3a6379%26gt%3b%20get%20mkey%208%28nil%29%20keys%3a%20%e6%8e%a5%e5%81%b6%e6%95%b0%e4%b8%aa%e5%8f%82%e6%95%b0%ef%bc%8c%e4%b8%80%e4%b8%80%e5%af%b9%e5%ba%94%e3%80%82%0a1127.0.0.1%3a6379%26gt%3b%20hmset%20mkeys%20A%20a%20B%20b%20C%20c%202OK%203127." aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -219,255 +221,102 @@
 <ol>
 <li>open redis:</li>
 </ol>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>redis-server
-</span></span></code></pre></td></tr></table>
-</div>
-</div><ol start="2">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>redis-server
+</span></span></code></pre></div><ol start="2">
 <li>connect to redis:</li>
 </ol>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>redis-cli
-</span></span></code></pre></td></tr></table>
-</div>
-</div><ol start="3">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>redis-cli
+</span></span></code></pre></div><ol start="3">
 <li>disconnect:</li>
 </ol>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>redis-cli shutdown
-</span></span></code></pre></td></tr></table>
-</div>
-</div><ol start="4">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>redis-cli shutdown
+</span></span></code></pre></div><ol start="4">
 <li>show chinese:</li>
 </ol>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>redis-cli --raw
-</span></span></code></pre></td></tr></table>
-</div>
-</div><ol start="5">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>redis-cli --raw
+</span></span></code></pre></div><ol start="5">
 <li>connect to remote redis:</li>
 </ol>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>redis-cli -h host -p port -a password
-</span></span></code></pre></td></tr></table>
-</div>
-</div><ol start="6">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>redis-cli -h host -p port -a password
+</span></span></code></pre></div><ol start="6">
 <li>get redis config:</li>
 </ol>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>config get {config_name}
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="data-type">Data Type</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>config get {config_name}
+</span></span></code></pre></div><h2 id="data-type">Data Type</h2>
 <p>list:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>lpush clist redis
-</span></span><span style="display:flex;"><span>lpush clist mysql
-</span></span><span style="display:flex;"><span>lrange clist 0 100
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>key:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>127.0.0.1:6379&gt; set mkey sos
-</span></span><span style="display:flex;"><span>OK
-</span></span><span style="display:flex;"><span>127.0.0.1:6379&gt; get mkey
-</span></span><span style="display:flex;"><span>&#34;sos&#34;
-</span></span><span style="display:flex;"><span>127.0.0.1:6379&gt; del mkey
-</span></span><span style="display:flex;"><span>(integer) 1
-</span></span><span style="display:flex;"><span>127.0.0.1:6379&gt; get mkey
-</span></span><span style="display:flex;"><span>(nil)
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>keys: 接偶数个参数，一一对应。</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>127.0.0.1:6379&gt; hmset mkeys A a B b C c
-</span></span><span style="display:flex;"><span>OK
-</span></span><span style="display:flex;"><span>127.0.0.1:6379&gt; hget mkeys B
-</span></span><span style="display:flex;"><span>&#34;b&#34;
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>set:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>127.0.0.1:6379&gt; sadd mkey 123
-</span></span><span style="display:flex;"><span>(integer) 1
-</span></span><span style="display:flex;"><span>127.0.0.1:6379&gt; sadd mkey 123
-</span></span><span style="display:flex;"><span>(integer) 0
-</span></span><span style="display:flex;"><span>127.0.0.1:6379&gt; smembers mkey
-</span></span><span style="display:flex;"><span>1) &#34;123&#34;
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>sorted_set: 根据分数和字典序进行排序，同分数下比较字典序，不同分数时，分数越低越靠前。</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>127.0.0.1:6379&gt; zadd zs 1 ak
-</span></span><span style="display:flex;"><span>(integer) 1
-</span></span><span style="display:flex;"><span>127.0.0.1:6379&gt; zadd zs 1 to
-</span></span><span style="display:flex;"><span>(integer) 1
-</span></span><span style="display:flex;"><span>127.0.0.1:6379&gt; zrangebyscore zs 0 100
-</span></span><span style="display:flex;"><span>1) &#34;ak&#34;
-</span></span><span style="display:flex;"><span>2) &#34;to&#34;
-</span></span><span style="display:flex;"><span>127.0.0.1:6379&gt; zadd zs 1 redis
-</span></span><span style="display:flex;"><span>(integer) 1
-</span></span><span style="display:flex;"><span>127.0.0.1:6379&gt; zrangebyscore zs 0 100
-</span></span><span style="display:flex;"><span>1) &#34;ak&#34;
-</span></span><span style="display:flex;"><span>2) &#34;redis&#34;
-</span></span><span style="display:flex;"><span>3) &#34;to&#34;
-</span></span><span style="display:flex;"><span>127.0.0.1:6379&gt; zadd zs 0 pp
-</span></span><span style="display:flex;"><span>(integer) 1
-</span></span><span style="display:flex;"><span>127.0.0.1:6379&gt; zrangebyscore zs 0 100
-</span></span><span style="display:flex;"><span>1) &#34;pp&#34;
-</span></span><span style="display:flex;"><span>2) &#34;ak&#34;
-</span></span><span style="display:flex;"><span>3) &#34;redis&#34;
-</span></span><span style="display:flex;"><span>4) &#34;to&#34;
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="password的设置">Password的设置</h2>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>PS C:\Users\akyna&gt; redis-cli
-</span></span><span style="display:flex;"><span>127.0.0.1:6379&gt; config get requirepass
-</span></span><span style="display:flex;"><span>1) &#34;requirepass&#34;
-</span></span><span style="display:flex;"><span>2) &#34;&#34;
-</span></span><span style="display:flex;"><span>127.0.0.1:6379&gt; config set requirepass 12345
-</span></span><span style="display:flex;"><span>OK
-</span></span><span style="display:flex;"><span>127.0.0.1:6379&gt; config get requirepass
-</span></span><span style="display:flex;"><span>(error) NOAUTH Authentication required.
-</span></span><span style="display:flex;"><span>127.0.0.1:6379&gt; auth 12345 # 进行密码验证
-</span></span><span style="display:flex;"><span>OK
-</span></span><span style="display:flex;"><span>127.0.0.1:6379&gt; config get requirepass
-</span></span><span style="display:flex;"><span>1) &#34;requirepass&#34;
-</span></span><span style="display:flex;"><span>2) &#34;12345&#34; # 发现已经有密码咯
-</span></span><span style="display:flex;"><span>127.0.0.1:6379&gt; exit
-</span></span><span style="display:flex;"><span>PS C:\Users\akyna&gt; redis-cli
-</span></span><span style="display:flex;"><span>127.0.0.1:6379&gt; auth 12345
-</span></span><span style="display:flex;"><span>OK
-</span></span><span style="display:flex;"><span>127.0.0.1:6379&gt; config get requirepass
-</span></span><span style="display:flex;"><span>1) &#34;requirepass&#34;
-</span></span><span style="display:flex;"><span>2) &#34;12345&#34;
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>如果重启server密码会失效。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>lpush clist redis
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>lpush clist mysql
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>lrange clist 0 100
+</span></span></code></pre></div><p>key:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>127.0.0.1:6379&gt; set mkey sos
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>OK
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>127.0.0.1:6379&gt; get mkey
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>&#34;sos&#34;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>127.0.0.1:6379&gt; del mkey
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>(integer) 1
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span>127.0.0.1:6379&gt; get mkey
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span><span>(nil)
+</span></span></code></pre></div><p>keys: 接偶数个参数，一一对应。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>127.0.0.1:6379&gt; hmset mkeys A a B b C c
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>OK
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>127.0.0.1:6379&gt; hget mkeys B
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>&#34;b&#34;
+</span></span></code></pre></div><p>set:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>127.0.0.1:6379&gt; sadd mkey 123
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>(integer) 1
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>127.0.0.1:6379&gt; sadd mkey 123
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>(integer) 0
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>127.0.0.1:6379&gt; smembers mkey
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>1) &#34;123&#34;
+</span></span></code></pre></div><p>sorted_set: 根据分数和字典序进行排序，同分数下比较字典序，不同分数时，分数越低越靠前。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>127.0.0.1:6379&gt; zadd zs 1 ak
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>(integer) 1
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>127.0.0.1:6379&gt; zadd zs 1 to
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>(integer) 1
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>127.0.0.1:6379&gt; zrangebyscore zs 0 100
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>1) &#34;ak&#34;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>2) &#34;to&#34;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>127.0.0.1:6379&gt; zadd zs 1 redis
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>(integer) 1
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>127.0.0.1:6379&gt; zrangebyscore zs 0 100
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>1) &#34;ak&#34;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>2) &#34;redis&#34;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>3) &#34;to&#34;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>127.0.0.1:6379&gt; zadd zs 0 pp
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>(integer) 1
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>127.0.0.1:6379&gt; zrangebyscore zs 0 100
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>1) &#34;pp&#34;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>2) &#34;ak&#34;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>3) &#34;redis&#34;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>4) &#34;to&#34;
+</span></span></code></pre></div><h2 id="password的设置">Password的设置</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>PS C:\Users\akyna&gt; redis-cli
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>127.0.0.1:6379&gt; config get requirepass
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>1) &#34;requirepass&#34;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>2) &#34;&#34;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>127.0.0.1:6379&gt; config set requirepass 12345
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>OK
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>127.0.0.1:6379&gt; config get requirepass
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>(error) NOAUTH Authentication required.
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>127.0.0.1:6379&gt; auth 12345 # 进行密码验证
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>OK
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>127.0.0.1:6379&gt; config get requirepass
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>1) &#34;requirepass&#34;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>2) &#34;12345&#34; # 发现已经有密码咯
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>127.0.0.1:6379&gt; exit
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>PS C:\Users\akyna&gt; redis-cli
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>127.0.0.1:6379&gt; auth 12345
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>OK
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>127.0.0.1:6379&gt; config get requirepass
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>1) &#34;requirepass&#34;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>2) &#34;12345&#34;
+</span></span></code></pre></div><p>如果重启server密码会失效。</p>
 <p>一般在Linux下主机重启后需要重新配置一下密码。</p>
 <p>可以修改redis.conf文件，设置密码:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>requirepass ${password}
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>以后通过下面命令：</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>redis-server redis.conf
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>进行服务重新启动时的配置，这样可以在服务开启时同时指定密码。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>requirepass ${password}
+</span></span></code></pre></div><p>以后通过下面命令：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>redis-server redis.conf
+</span></span></code></pre></div><p>进行服务重新启动时的配置，这样可以在服务开启时同时指定密码。</p>
 
     </div>
   </article>
@@ -566,7 +415,7 @@
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2021%2f12%2fredis-learning-record-i%2f&name=Redis%20%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95%e4%b8%80&description=Open%2c%20Connect%20And%20Config%20open%20redis%3a%201%20redis-server%20connect%20to%20redis%3a%201%20redis-cli%20disconnect%3a%201%20redis-cli%20shutdown%20show%20chinese%3a%201%20redis-cli%20--raw%20connect%20to%20remote%20redis%3a%201%20redis-cli%20-h%20host%20-p%20port%20-a%20password%20get%20redis%20config%3a%201%20config%20get%20%7bconfig_name%7d%20Data%20Type%20list%3a%0a1%202%203%20lpush%20clist%20redis%20lpush%20clist%20mysql%20lrange%20clist%200%20100%20key%3a%0a1%202%203%204%205%206%207%208%20127.0.0.1%3a6379%26gt%3b%20set%20mkey%20sos%20OK%20127." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2021%2f12%2fredis-learning-record-i%2f&name=Redis%20%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95%e4%b8%80&description=Open%2c%20Connect%20And%20Config%20open%20redis%3a%201redis-server%20connect%20to%20redis%3a%201redis-cli%20disconnect%3a%201redis-cli%20shutdown%20show%20chinese%3a%201redis-cli%20--raw%20connect%20to%20remote%20redis%3a%201redis-cli%20-h%20host%20-p%20port%20-a%20password%20get%20redis%20config%3a%201config%20get%20%7bconfig_name%7d%20Data%20Type%20list%3a%0a1lpush%20clist%20redis%202lpush%20clist%20mysql%203lrange%20clist%200%20100%20key%3a%0a1127.0.0.1%3a6379%26gt%3b%20set%20mkey%20sos%202OK%203127.0.0.1%3a6379%26gt%3b%20get%20mkey%204%26%2334%3bsos%26%2334%3b%205127.0.0.1%3a6379%26gt%3b%20del%20mkey%206%28integer%29%201%207127.0.0.1%3a6379%26gt%3b%20get%20mkey%208%28nil%29%20keys%3a%20%e6%8e%a5%e5%81%b6%e6%95%b0%e4%b8%aa%e5%8f%82%e6%95%b0%ef%bc%8c%e4%b8%80%e4%b8%80%e5%af%b9%e5%ba%94%e3%80%82%0a1127.0.0.1%3a6379%26gt%3b%20hmset%20mkeys%20A%20a%20B%20b%20C%20c%202OK%203127." aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>

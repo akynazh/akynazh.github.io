@@ -32,7 +32,7 @@ RM (Resource Manager) - 资源管理器：
 三、修改配置
 (1) registry.conf:
 type修改为nacos
-1 2 3 4 5 6 7 8 9 10 11 registry { # file 、nacos 、eureka、redis、zk、consul、etcd3、sofa type = &amp;#34;nacos&amp;#34; nacos { serverAddr = &amp;#34;localhost:8848&amp;#34; namespace = &amp;#34;&amp;#34; cluster = &amp;#34;default&amp;#34; } .</description>
+1registry { 2 # file 、nacos 、eureka、redis、zk、consul、etcd3、sofa 3 type = &amp;#34;nacos&amp;#34; 4 5 nacos { 6 serverAddr = &amp;#34;localhost:8848&amp;#34; 7 namespace = &amp;#34;&amp;#34; 8 cluster = &amp;#34;default&amp;#34; 9 } 10.</description>
     </item>
     
     <item>
@@ -49,10 +49,10 @@ controller下的方法指定好处理服务限流，降级或熔断等的方法b
 service下的方法指定好关于生产者的服务限流，降级或熔断等的处理方法。
 代码编写记录 生产者端 一、配置
 关于nacos的配置省略，只记录sentinel的配置：
-1 2 3 4 5 6 7 8 spring: application: name: nacos-payment-provider cloud: sentinel: transport: dashboard: localhost:8080 port: 8179 二、controller编写
-1 2 3 4 5 6 7 8 9 10 11 @RestController @Slf4j public class PaymentController { @Value(&amp;#34;${server.port}&amp;#34;) private String port; @GetMapping(&amp;#34;/payment/nacos/info&amp;#34;) public String paymentInfo() { return &amp;#34;port: &amp;#34; + port; } } 返回对应端口，方便测试负载均衡。
+1spring: 2 application: 3 name: nacos-payment-provider 4 cloud: 5 sentinel: 6 transport: 7 dashboard: localhost:8080 8 port: 8179 二、controller编写
+1@RestController 2@Slf4j 3public class PaymentController { 4 @Value(&amp;#34;${server.port}&amp;#34;) 5 private String port; 6 7 @GetMapping(&amp;#34;/payment/nacos/info&amp;#34;) 8 public String paymentInfo() { 9 return &amp;#34;port: &amp;#34; + port; 10 } 11} 返回对应端口，方便测试负载均衡。
 消费者端 一、配置
-1 2 3 4 5 6 7 8 9 10 spring: application: name: nacos-order-consumer sentinel: transport: dashboard: localhost:8080 port: 8179 feign: sentinel: enabled: true 注意要开启feign的sentinel支持。</description>
+1spring: 2 application: 3 name: nacos-order-consumer 4 sentinel: 5 transport: 6 dashboard: localhost:8080 7 port: 8179 8feign: 9 sentinel: 10 enabled: true 注意要开启feign的sentinel支持。</description>
     </item>
     
     <item>
@@ -68,7 +68,7 @@ service下的方法指定好关于生产者的服务限流，降级或熔断等�
 服务说明 创建一个简单的服务，注册到上述nacos环境中，通过在bootstrap.yaml中读取nacos配置来验证环境是否配置成功。
 搭建nacos环境 编辑docker-compose的yaml文件 在nacos官网下载nacos-docker到主机上，编辑example/cluster-hostname.yaml文件。
 根据官网说明，在nacos2中需要额外暴露两个端口，分别偏移8848这个端口1000和1001。
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 version: &amp;#34;3&amp;#34; services: nacos1: hostname: nacos-server-1 container_name: nacos1 image: nacos/nacos-server:${NACOS_VERSION} volumes: - .</description>
+1version: &amp;#34;3&amp;#34; 2services: 3 nacos1: 4 hostname: nacos-server-1 5 container_name: nacos1 6 image: nacos/nacos-server:${NACOS_VERSION} 7 volumes: 8 - ./cluster-logs/nacos1:/home/nacos/logs 9 - ./init.d/custom.properties:/home/nacos/init.d/custom.properties 10 ports: 11 - &amp;#34;8848:8848&amp;#34; 12 - &amp;#34;9848:9848&amp;#34; # 偏移1000 13 - &amp;#34;9849:9849&amp;#34; # 偏移1001 14 - &amp;#34;9555:9555&amp;#34; 15 env_file: 16 - ../env/nacos-hostname.env 17 restart: always 18 depends_on: 19 - mysql 20 21 nacos2: 22 hostname: nacos-server-2 23 image: nacos/nacos-server:${NACOS_VERSION} 24 container_name: nacos2 25 volumes: 26 - .</description>
     </item>
     
     <item>
@@ -78,11 +78,11 @@ service下的方法指定好关于生产者的服务限流，降级或熔断等�
       
       <guid>/posts/2022/07/zipkin-usage-record/</guid>
       <description>Zipkin的作用 查看微服务调用过程； 分析微服务依赖关系； 方便地找到调用过程错误发生位置。 Zipkin使用记录 一、下载Zipkin并运行：
-1 java -jar zipkin.jar 这样成功运行后，默认在端口9411可以查看图形管理界面。
+1java -jar zipkin.jar 这样成功运行后，默认在端口9411可以查看图形管理界面。
 二、依赖引入
 在所有调用到的微服务中引入：
-1 2 3 4 &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-cloud-starter-zipkin&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt; 三、配置文件
-1 2 3 4 5 6 spring: zipkin: base-url: http://localhost:9411 sleuth: sampler: probability: 1 # 采样率介于0和1之间，1表示全部采集 测试 通过service-name标签搜索自己的微服务名称，即可检索到与该微服务有依赖的所有微服务，可查看调用过程，依赖关系等。
+1&amp;lt;dependency&amp;gt; 2 &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; 3 &amp;lt;artifactId&amp;gt;spring-cloud-starter-zipkin&amp;lt;/artifactId&amp;gt; 4&amp;lt;/dependency&amp;gt; 三、配置文件
+1spring: 2 zipkin: 3 base-url: http://localhost:9411 4 sleuth: 5 sampler: 6 probability: 1 # 采样率介于0和1之间，1表示全部采集 测试 通过service-name标签搜索自己的微服务名称，即可检索到与该微服务有依赖的所有微服务，可查看调用过程，依赖关系等。
 From My Blog: akynazh.
 Over.</description>
     </item>
@@ -96,9 +96,9 @@ Over.</description>
       <description>为何使用Stream？ 实现消息的收发可以用许多种方式来实现，如Kafka，RabbitMQ等，而通过Stream可以方便地通过一个Binder对象与这些不同的实现工具对接，应用程序通过Inputs和Outputs来与Binder交互即可实现消息的收发，这样我们就只需要知道如何与Stream交互即可方便地使用消息驱动。
 下图即Stream工作原理：
 Stream使用记录 一、依赖导入 除去一些基本依赖之外，发布端和订阅端均导入：
-1 2 3 4 &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-cloud-starter-stream-rabbit&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt; 二、基本配置 发布端：
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 spring: cloud: stream: binders: defaultRabbit: type: rabbit environment: spring: rabbitmq: host: localhost port: 5672 username: guest password: guest bindings: output: destination: myExchange content-type: application/json binder: defaultRabbit 订阅端：
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 spring: cloud: stream: binders: defaultRabbit: type: rabbit environment: spring: rabbitmq: host: localhost port: 5672 username: guest password: guest bindings: input: destination: myExchange content-type: application/json binder: defaultRabbit group: jzh1 注意，两个订阅端如果实现同一微服务，group应该一样，这样，在同一个组内会发生竞争关系，只有其中一个可以消费（默认采用轮询的机制处理），避免了出现重复消费的问题。</description>
+1&amp;lt;dependency&amp;gt; 2 &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; 3 &amp;lt;artifactId&amp;gt;spring-cloud-starter-stream-rabbit&amp;lt;/artifactId&amp;gt; 4&amp;lt;/dependency&amp;gt; 二、基本配置 发布端：
+1spring: 2 cloud: 3 stream: 4 binders: 5 defaultRabbit: 6 type: rabbit 7 environment: 8 spring: 9 rabbitmq: 10 host: localhost 11 port: 5672 12 username: guest 13 password: guest 14 bindings: 15 output: 16 destination: myExchange 17 content-type: application/json 18 binder: defaultRabbit 订阅端：
+1spring: 2 cloud: 3 stream: 4 binders: 5 defaultRabbit: 6 type: rabbit 7 environment: 8 spring: 9 rabbitmq: 10 host: localhost 11 port: 5672 12 username: guest 13 password: guest 14 bindings: 15 input: 16 destination: myExchange 17 content-type: application/json 18 binder: defaultRabbit 19 group: jzh1 注意，两个订阅端如果实现同一微服务，group应该一样，这样，在同一个组内会发生竞争关系，只有其中一个可以消费（默认采用轮询的机制处理），避免了出现重复消费的问题。</description>
     </item>
     
     <item>
@@ -112,11 +112,11 @@ Stream使用记录 一、依赖导入 除去一些基本依赖之外，发布端
 测试方法 一、在6996端口通过git拉取全局配置，相当于一个ConfigServer，6886和6776端口作为ConfigClient；
 二、Bus结合RabbitMQ实现，修改配置时，只通知ConfigServer，达到消息广播的效果。
 依赖引入 一、ConfigServer端：
-1 2 3 4 5 6 7 8 &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-cloud-starter-bus-amqp&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-cloud-config-server&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt; 二、ConfigClient端：
-1 2 3 4 5 6 7 8 &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-cloud-starter-bus-amqp&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-cloud-starter-config&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt; 其他一些基本包就省略了。
+1&amp;lt;dependency&amp;gt; 2 &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; 3 &amp;lt;artifactId&amp;gt;spring-cloud-starter-bus-amqp&amp;lt;/artifactId&amp;gt; 4&amp;lt;/dependency&amp;gt; 5&amp;lt;dependency&amp;gt; 6 &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; 7 &amp;lt;artifactId&amp;gt;spring-cloud-config-server&amp;lt;/artifactId&amp;gt; 8&amp;lt;/dependency&amp;gt; 二、ConfigClient端：
+1&amp;lt;dependency&amp;gt; 2 &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; 3 &amp;lt;artifactId&amp;gt;spring-cloud-starter-bus-amqp&amp;lt;/artifactId&amp;gt; 4&amp;lt;/dependency&amp;gt; 5&amp;lt;dependency&amp;gt; 6 &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; 7 &amp;lt;artifactId&amp;gt;spring-cloud-starter-config&amp;lt;/artifactId&amp;gt; 8&amp;lt;/dependency&amp;gt; 其他一些基本包就省略了。
 文件配置 一、ConfigServer端：
 以下为application.yml:
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 spring: cloud: config: server: git: # github项目地址 uri: https://github.</description>
+1spring: 2 cloud: 3 config: 4 server: 5 git: 6 # github项目地址 7 uri: https://github.com/akynazh/SpringCloud-Demo.git 8 # 指定搜索项目下config文件夹中的内容 9 search-paths: 10 - config 11 # 指定分支 12 default-label: master 13 rabbitmq: 14 host: localhost 15 port: 5672 16 username: guest 17 password: guest 18management: 19 endpoints: 20 web: 21 exposure: 22 # 通过/actuator/bus-refresh可进行事件通知 23 include: &amp;#34;bus-refresh&amp;#34; 以后，运维人员修改config时，即可通过如下地址：</description>
     </item>
     
     <item>
@@ -127,9 +127,10 @@ Stream使用记录 一、依赖导入 除去一些基本依赖之外，发布端
       <guid>/posts/2022/07/springcloud-gateway-usage-record/</guid>
       <description>网关的作用 如图所示，网关介于外部请求和具体微服务之间，在不暴露内部微服务端口的情况下，通过一个或者多个指定的网关端口统一地处理外部各种请求。
 使用SpringCloud Gateway 依赖引入 除了基本依赖以外，引入下列依赖：
-1 2 3 4 5 6 7 8 9 &amp;lt;!-- others --&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-cloud-starter-netflix-eureka-client&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-cloud-starter-gateway&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt; 注意不能引入web相关依赖，因为Gateway是基于WebFlux的。
+1&amp;lt;!-- others --&amp;gt; 2&amp;lt;dependency&amp;gt; 3 &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; 4 &amp;lt;artifactId&amp;gt;spring-cloud-starter-netflix-eureka-client&amp;lt;/artifactId&amp;gt; 5&amp;lt;/dependency&amp;gt; 6&amp;lt;dependency&amp;gt; 7 &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; 8 &amp;lt;artifactId&amp;gt;spring-cloud-starter-gateway&amp;lt;/artifactId&amp;gt; 9&amp;lt;/dependency&amp;gt; 注意不能引入web相关依赖，因为Gateway是基于WebFlux的。
 文件配置 列出部分重要配置：
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 server: port: 9669 cloud: gateway: discovery: locator: enabled: true # 开启从注册中心动态创建路由的功能，利用微服务名进行路由 routes: - id: path_route uri: lb://CLOUD-PAYMENT-SERVICE # lb：负载均衡 predicates: - Path=/payment/** - After=2022-07-26T17:33:52.449+08:00[Asia/Shanghai] # ZonedDateTime.now() - Cookie=username,jzh 注意点如下：</description>
+1server: 2port: 9669 3cloud: 4 gateway: 5 discovery: 6 locator: 7 enabled: true # 开启从注册中心动态创建路由的功能，利用微服务名进行路由 8 routes: 9 - id: path_route 10 uri: lb://CLOUD-PAYMENT-SERVICE # lb：负载均衡 11 predicates: 12 - Path=/payment/** 13 - After=2022-07-26T17:33:52.449+08:00[Asia/Shanghai] # ZonedDateTime.now() 14 - Cookie=username,jzh 注意点如下：
+9669端口作为网关端口； uri中http改为了lb，用于负载均衡； predicates，即断言，上述断言是： 匹配路径：/payment/**； 开始允许访问时间：ZonedDateTime.now()（Java函数获取该格式时间） 携带cookie：key=username, value=jzh 过滤器配置 实现GlobalFilter, Ordered，重写方法即可：</description>
     </item>
     
     <item>
@@ -144,10 +145,12 @@ Stream使用记录 一、依赖导入 除去一些基本依赖之外，发布端
 通过Hystrix实现服务熔断，Hystrix会监控微服务间调用的状况，当失败的调用到一定阈值，就会启动熔断机制，断路器打开。而在一段时间之后，断路器会变为半开状态，此时允许部分微服务调用，如果都成功了，即不超过设定好的阈值，那么断路器将恢复为关闭状态。
 如下图所示：（来自Martin Fowler大神的博客）
 应用场景 微服务架构中，多个微服务相互调用出使用
-Hystrix实现服务熔断 环境搭建 1. 关于pom.xml 1 2 3 4 5 6 7 8 &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-cloud-starter-netflix-hystrix&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-cloud-starter-netflix-eureka-client&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt; 2. 启动类添加@EnableHystrix注解，表示使用熔断器。 实现服务熔断 1. PaymentService.java 1 2 3 4 public interface PaymentService { ... String circuitBreaker(Integer id); } 2. PaymentServiceImpl.java 设置服务熔断的核心配置：
+Hystrix实现服务熔断 环境搭建 1. 关于pom.xml 1&amp;lt;dependency&amp;gt; 2 &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; 3 &amp;lt;artifactId&amp;gt;spring-cloud-starter-netflix-hystrix&amp;lt;/artifactId&amp;gt; 4&amp;lt;/dependency&amp;gt; 5&amp;lt;dependency&amp;gt; 6 &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; 7 &amp;lt;artifactId&amp;gt;spring-cloud-starter-netflix-eureka-client&amp;lt;/artifactId&amp;gt; 8&amp;lt;/dependency&amp;gt; 2. 启动类添加@EnableHystrix注解，表示使用熔断器。 实现服务熔断 1. PaymentService.java 1public interface PaymentService { 2 ... 3 String circuitBreaker(Integer id); 4} 2. PaymentServiceImpl.java 设置服务熔断的核心配置：
 （1）启用断路器:
-1 @HystrixProperty(name = &amp;#34;circuitBreaker.enabled&amp;#34;, value = &amp;#34;true&amp;#34;) （2）设置请求次数:
-1 @HystrixProperty(name = &amp;#34;circuitBreaker.requestVolumeThreshold&amp;#34;, value = &amp;#34;10&amp;#34;) （3）设置时间窗口期:</description>
+1@HystrixProperty(name = &amp;#34;circuitBreaker.enabled&amp;#34;, value = &amp;#34;true&amp;#34;) （2）设置请求次数:
+1@HystrixProperty(name = &amp;#34;circuitBreaker.requestVolumeThreshold&amp;#34;, value = &amp;#34;10&amp;#34;) （3）设置时间窗口期:
+1@HystrixProperty(name = &amp;#34;circuitBreaker.sleepWindowInMilliseconds&amp;#34;, value = &amp;#34;10000&amp;#34;) （4）设置失败率:
+1@HystrixProperty(name = &amp;#34;circuitBreaker.</description>
     </item>
     
     <item>
@@ -162,9 +165,12 @@ Hystrix实现服务熔断 环境搭建 1. 关于pom.xml 1 2 3 4 5 6 7 8 &amp;lt;
 使用Hystrix实现服务降级 本实验配合了Feign实现，利用Feign通过接口的方式解耦服务这一特点，通过在实现服务接口的类来编写方法对应的fallback方法。
 环境搭建 一、关于pom
 在消费方实现服务降级，除了基本包导入外，导入以下：
-1 2 3 4 5 6 7 8 9 10 11 12 &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-cloud-starter-netflix-hystrix&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-cloud-starter-openfeign&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-cloud-starter-netflix-eureka-server&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt; 二、关于application.yml
+1&amp;lt;dependency&amp;gt; 2 &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; 3 &amp;lt;artifactId&amp;gt;spring-cloud-starter-netflix-hystrix&amp;lt;/artifactId&amp;gt; 4&amp;lt;/dependency&amp;gt; 5&amp;lt;dependency&amp;gt; 6 &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; 7 &amp;lt;artifactId&amp;gt;spring-cloud-starter-openfeign&amp;lt;/artifactId&amp;gt; 8&amp;lt;/dependency&amp;gt; 9&amp;lt;dependency&amp;gt; 10 &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; 11 &amp;lt;artifactId&amp;gt;spring-cloud-starter-netflix-eureka-server&amp;lt;/artifactId&amp;gt; 12&amp;lt;/dependency&amp;gt; 二、关于application.yml
 除了基本配置外，以下两个超时时间的配置需要格外注意：
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 # 设置feign超时时间（默认为1秒） feign: hystrix: enabled: true client: config: default: ConnectTimeOut: 5000 ReadTimeOut: 5000 # 设置hystrix超时时间（默认为1秒） hystrix: command: default: execution: isolation: thread: timeoutInMilliseconds: 2000 其他关于Feign的环境配置省略了。</description>
+1# 设置feign超时时间（默认为1秒） 2feign: 3hystrix: 4 enabled: true 5client: 6 config: 7 default: 8 ConnectTimeOut: 5000 9 ReadTimeOut: 5000 10# 设置hystrix超时时间（默认为1秒） 11hystrix: 12command: 13 default: 14 execution: 15 isolation: 16 thread: 17 timeoutInMilliseconds: 2000 其他关于Feign的环境配置省略了。
+实现服务降级 一、PaymentService.java
+在使用了Feign的基础上使用Hystrix功能，指定fallback对应的实现类。
+1@Service 2@FeignClient(value = &amp;#34;CLOUD-HYSTRIX-PAYMENT-SERVICE&amp;#34;, fallback = PaymentHystrixService.</description>
     </item>
     
     <item>
@@ -174,11 +180,11 @@ Hystrix实现服务熔断 环境搭建 1. 关于pom.xml 1 2 3 4 5 6 7 8 &amp;lt;
       
       <guid>/posts/2022/07/openfeign-usage-record/</guid>
       <description>为什么要使用OpenFeign 之前在消费端使用RestTemplate时，每次请求都要进行诸如
-1 restTemplate.postForObject(PAYMENT_URL + &amp;#34;/payment/create&amp;#34;, payment, CommonResult.class); 这样的调用，需要指定较多参数，当一个接口调用中需要非常多这样的请求时，会比较繁琐，而且这种方式不够抽象。
+1restTemplate.postForObject(PAYMENT_URL + &amp;#34;/payment/create&amp;#34;, payment, CommonResult.class); 这样的调用，需要指定较多参数，当一个接口调用中需要非常多这样的请求时，会比较繁琐，而且这种方式不够抽象。
 OpenFegin利用面向接口编程的思想，抽象化，简化了上述操作。
-使用OpenFeign 关于pom.xml 1 2 3 4 &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-cloud-starter-openfeign&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt; 关于application.yml 除了基本配置内容外，注意以下配置：
-1 2 3 4 5 6 7 8 9 10 11 feign: # 设置feign客户端超时时间（默认为1秒） client: config: default: ConnectTimeOut: 10000 ReadTimeOut: 10000 # 针对每个接口设置日志监控级别 logging: level: com.jzh.springcloud.service.PaymentService: debug # feign日志以什么级别监控端口 编写服务接口 首先在启动类开启@EnableFeignClients注解，接着编写服务接口：
-添加@FeignClient注解，值为对应微服务名； 方法对应微服务Controller下的方法即可。 1 2 3 4 5 6 7 8 9 @Component @FeignClient(value = &amp;#34;CLOUD-PAYMENT-SERVICE&amp;#34;) public interface PaymentService { @GetMapping(&amp;#34;/payment/get/{id}&amp;#34;) CommonResult&amp;lt;Payment&amp;gt; getPaymentById(@PathVariable(&amp;#34;id&amp;#34;) Long id); @PostMapping(&amp;#34;/payment/create&amp;#34;) CommonResult&amp;lt;Integer&amp;gt; createPayment(@RequestBody Payment payment); } 调用接口 注入PaymentController接口，然后即可调用它的方法。</description>
+使用OpenFeign 关于pom.xml 1&amp;lt;dependency&amp;gt; 2 &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; 3 &amp;lt;artifactId&amp;gt;spring-cloud-starter-openfeign&amp;lt;/artifactId&amp;gt; 4&amp;lt;/dependency&amp;gt; 关于application.yml 除了基本配置内容外，注意以下配置：
+1feign: 2# 设置feign客户端超时时间（默认为1秒） 3client: 4 config: 5 default: 6 ConnectTimeOut: 10000 7 ReadTimeOut: 10000 8# 针对每个接口设置日志监控级别 9logging: 10level: 11 com.jzh.springcloud.service.PaymentService: debug # feign日志以什么级别监控端口 编写服务接口 首先在启动类开启@EnableFeignClients注解，接着编写服务接口：
+添加@FeignClient注解，值为对应微服务名； 方法对应微服务Controller下的方法即可。 1@Component 2@FeignClient(value = &amp;#34;CLOUD-PAYMENT-SERVICE&amp;#34;) 3public interface PaymentService { 4 @GetMapping(&amp;#34;/payment/get/{id}&amp;#34;) 5 CommonResult&amp;lt;Payment&amp;gt; getPaymentById(@PathVariable(&amp;#34;id&amp;#34;) Long id); 6 7 @PostMapping(&amp;#34;/payment/create&amp;#34;) 8 CommonResult&amp;lt;Integer&amp;gt; createPayment(@RequestBody Payment payment); 9} 调用接口 注入PaymentController接口，然后即可调用它的方法。</description>
     </item>
     
     <item>
@@ -191,12 +197,12 @@ OpenFegin利用面向接口编程的思想，抽象化，简化了上述操作�
 关于集中式LB和进程内LB 集中式LB 在服务的消费方和提供方之间使用独立的LB设施，（软硬件均可，软件如Nginx，硬件如F5），由该设施负责把访问请求通过某种策略（可自行指定）转发至服务的提供方。
 进程内LB 将LB逻辑集成到消费方，消费方从服务注册中心获知有哪些地址可用，然后自己再从这些地址中选择出一个合适的服务点进行服务。
 Ribbon属于进程内LB，它只是一个类库，集成于消费方进程，消费方通过它获取服务提供方的地址。
-使用Ribbon实现负载均衡 关于导包 1 2 3 4 &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-cloud-starter-netflix-eureka-client&amp;lt;/artifactId&amp;gt; &amp;lt;!-- 已经包含了ribbon --&amp;gt; &amp;lt;/dependency&amp;gt; 注意eureka内置了ribbon。
-开启注解 1 2 3 4 5 6 7 8 @Configuration public class ApplicationContextConfig { @Bean @LoadBalanced // 赋予负载均衡能力 public RestTemplate getRestTemplate() { return new RestTemplate(); } } 访问相同服务名地址即可。
+使用Ribbon实现负载均衡 关于导包 1&amp;lt;dependency&amp;gt; 2 &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; 3 &amp;lt;artifactId&amp;gt;spring-cloud-starter-netflix-eureka-client&amp;lt;/artifactId&amp;gt; &amp;lt;!-- 已经包含了ribbon --&amp;gt; 4&amp;lt;/dependency&amp;gt; 注意eureka内置了ribbon。
+开启注解 1@Configuration 2public class ApplicationContextConfig { 3 @Bean 4 @LoadBalanced // 赋予负载均衡能力 5 public RestTemplate getRestTemplate() { 6 return new RestTemplate(); 7 } 8} 访问相同服务名地址即可。
 修改Ribbon负载均衡规则 所有规则均实现了IRule接口，通过查看接口实现类即可知道规则的种类。
 默认是RoundRobinRule（轮询）这一规则。
 下面修改为RandomRule（随机）这一规则：
-在启动类扫描不到的包下创建规则： 1 2 3 4 5 6 7 @Configuration public class MyRibbonRule { @Bean public IRule myRule() { return new RandomRule(); } } 在启动类指定规则： 1 2 3 4 5 6 7 8 @SpringBootApplication @EnableEurekaClient @RibbonClient(name=&amp;#34;CLOUD-PAYMENT-SERVICE&amp;#34;, configuration = MyRibbonRule.</description>
+在启动类扫描不到的包下创建规则： 1@Configuration 2public class MyRibbonRule { 3 @Bean 4 public IRule myRule() { 5 return new RandomRule(); 6 } 7} 在启动类指定规则： 1@SpringBootApplication 2@EnableEurekaClient 3@RibbonClient(name=&amp;#34;CLOUD-PAYMENT-SERVICE&amp;#34;, configuration = MyRibbonRule.</description>
     </item>
     
     <item>
@@ -209,8 +215,8 @@ Ribbon属于进程内LB，它只是一个类库，集成于消费方进程，消
 不同于zookeeper和eureka这两种主要由Java编写的语言，它主要由Go语言编写。
 配置Consul环境 下载consul，配置环境变量。 运行consul agent -dev开启服务。 默认端口为8500，访问localhost:8500进入管理界面。 编写springcloud服务代码 一、关于pom.xml
 除了一些基本包的导入之外，关于consul包的导入：
-1 2 3 4 &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-cloud-starter-consul-discovery&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt; 二、关于application.yml
-1 2 3 4 5 6 7 8 9 10 spring: application: name: cloud-consumer-order cloud: consul: host: localhost port: 8500 discovery: service-name: ${spring.application.name} 三、启动类添加@EnableDiscoveryClient注解。
+1&amp;lt;dependency&amp;gt; 2 &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; 3 &amp;lt;artifactId&amp;gt;spring-cloud-starter-consul-discovery&amp;lt;/artifactId&amp;gt; 4&amp;lt;/dependency&amp;gt; 二、关于application.yml
+1spring: 2 application: 3 name: cloud-consumer-order 4 5 cloud: 6 consul: 7 host: localhost 8 port: 8500 9 discovery: 10 service-name: ${spring.application.name} 三、启动类添加@EnableDiscoveryClient注解。
 consul测试 较为简单，访问localhost:8500查看即可。
 From My Blog: akynazh.
 Over.</description>
@@ -228,14 +234,16 @@ Over.</description>
 配置参数 一、编辑/conf/zoo.cfg
 编辑zookeeper包内配置文件/conf/zoo.cfg（先创建，再将zoo_sample.cfg内容复制到其中）
 修改或添加以下内容：
-1 2 dataDir=/usr/local/zookeeper3.7.1/dataDir dataLogDir=/usr/local/zookeeper3.7.1/dataLogDir 注意同时创建对应文件夹。其中端口号默认为2181，也可以进行修改。
+1dataDir=/usr/local/zookeeper3.7.1/dataDir 2dataLogDir=/usr/local/zookeeper3.7.1/dataLogDir 注意同时创建对应文件夹。其中端口号默认为2181，也可以进行修改。
 二、 配置环境变量
-1 2 3 # zookeeper export ZOOKEEPER_HOME=/usr/local/zookeeper3.7.1 export PATH=$PATH:$ZOOKEEPER_HOME/bin 接着通过source命令生效。
+1# zookeeper 2export ZOOKEEPER_HOME=/usr/local/zookeeper3.7.1 3export PATH=$PATH:$ZOOKEEPER_HOME/bin 接着通过source命令生效。
 开启zookeeper连接 （前置条件是已配好java环境）
 执行 zkServer.sh start即可。
-查看连接情况： 1 2 3 4 5 6 zkServer.sh status ZooKeeper JMX enabled by default Using config: /usr/local/zookeeper3.7.1/bin/../conf/zoo.cfg Client port found: 2181. Client address: localhost. Client SSL: false. Mode: standalone 可见已经开启成功了。
+查看连接情况： 1zkServer.sh status 2 3ZooKeeper JMX enabled by default 4Using config: /usr/local/zookeeper3.7.1/bin/../conf/zoo.cfg 5Client port found: 2181. Client address: localhost. Client SSL: false. 6Mode: standalone 可见已经开启成功了。
 客户端进行连接： 执行 zkCli.sh，连接成功后可查看：
-1 2 3 [zk: localhost:2181(CONNECTED) 1] ls / [zookeeper] [zk: localhost:2181(CONNECTED) 2] get /zookeeper 编写springcloud服务代码 一、关于pom.</description>
+1[zk: localhost:2181(CONNECTED) 1] ls / 2[zookeeper] 3[zk: localhost:2181(CONNECTED) 2] get /zookeeper 编写springcloud服务代码 一、关于pom.xml
+除了一些基本包的导入之外，关于zookeeper包的导入：
+1&amp;lt;dependency&amp;gt; 2 &amp;lt;groupId&amp;gt;org.</description>
     </item>
     
     <item>
@@ -246,11 +254,11 @@ Over.</description>
       <guid>/posts/2022/07/eureka-configuration-process-and-understanding/</guid>
       <description>前言 起到微服务注册中心的作用，满足分布式系统中的AP原则，是弱一致性的。
 Eureka微服务架构图 服务接口采用集群模式，8001和8002端口都实现支付接口服务。 用户接口在运行在80端口，调用8001和8002的服务。 注册中心内部也采用集群模式，7001和7002端口都实现注册服务。 引入Eureka依赖说明 client端：
-1 2 3 4 &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-cloud-starter-netflix-eureka-client&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt; server端：
-1 2 3 4 &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-cloud-starter-netflix-eureka-server&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt; 7001和7002端口关键配置内容 一、启动类开启注解
-1 2 3 4 5 6 7 @SpringBootApplication @EnableEurekaServer public class EurekaMain7001 { public static void main(String[] args) { SpringApplication.run(EurekaMain7001.class, args); } } 二、application.yml文件配置
+1&amp;lt;dependency&amp;gt; 2 &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; 3 &amp;lt;artifactId&amp;gt;spring-cloud-starter-netflix-eureka-client&amp;lt;/artifactId&amp;gt; 4&amp;lt;/dependency&amp;gt; server端：
+1&amp;lt;dependency&amp;gt; 2 &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; 3 &amp;lt;artifactId&amp;gt;spring-cloud-starter-netflix-eureka-server&amp;lt;/artifactId&amp;gt; 4&amp;lt;/dependency&amp;gt; 7001和7002端口关键配置内容 一、启动类开启注解
+1@SpringBootApplication 2@EnableEurekaServer 3public class EurekaMain7001 { 4 public static void main(String[] args) { 5 SpringApplication.run(EurekaMain7001.class, args); 6 } 7} 二、application.yml文件配置
 对于7001端口服务：（7002端口类似）
-1 2 3 4 5 6 7 8 9 10 11 eureka: instance: hostname: eureka7001.com client: # false 表示不向注册中心注册自己 register-with-eureka: false # false 表示自己端就是注册中心，我的职责就是维护服务实例，并不需要去检索服务 fetch-registry: false service-url: # 设置与Eureka Server交互的地址查询服务和注册服务都需要依赖这个地址 defaultZone: http://eureka7002.</description>
+1eureka: 2 instance: 3 hostname: eureka7001.com 4 client: 5 # false 表示不向注册中心注册自己 6 register-with-eureka: false 7 # false 表示自己端就是注册中心，我的职责就是维护服务实例，并不需要去检索服务 8 fetch-registry: false 9 service-url: 10 # 设置与Eureka Server交互的地址查询服务和注册服务都需要依赖这个地址 11 defaultZone: http://eureka7002.</description>
     </item>
     
   </channel>

@@ -15,17 +15,18 @@
       
       <guid>/posts/2023/01/simple-use-record-of-pipenv/</guid>
       <description>关于pipenv pipenv集成了pip，virtualenv两者的功能，且完善了两者的一些缺陷。
-安装pipenv 1 pip install pipenv -U 创建虚拟环境 初次创建环境可以使用以下类似命令：
-1 pipenv install --python C:/Users/akyna/AppData/Local/Programs/Python/Python37/python.exe --pypi-mirror https://pypi.tuna.tsinghua.edu.cn/simple --python 是可选的，可以指定python版本，参数为python解释器的绝对路径，如果不指定，默认使用当前系统的python。
+安装pipenv 1pip install pipenv -U 创建虚拟环境 初次创建环境可以使用以下类似命令：
+1pipenv install --python C:/Users/akyna/AppData/Local/Programs/Python/Python37/python.exe --pypi-mirror https://pypi.tuna.tsinghua.edu.cn/simple --python 是可选的，可以指定python版本，参数为python解释器的绝对路径，如果不指定，默认使用当前系统的python。
 --pypi-mirror 是可选的，可以指定镜像，加速下载。
 创建好后，在当前目录下将会生成 Pipfile 文件，在 ~\.virtualenvs 下生成虚拟环境目录（存放python解释器和依赖）。
 如果目录中已经存在 Pipfile 或者 requirements.txt，pipenv会自动检测这两个文件并将对应依赖进行安装。
 查看虚拟环境目录位置：
-1 pipenv --venv 激活虚拟环境 1 2 3 pipenv shell # 激活虚拟环境 python -V 如果激活了虚拟环境，在当前shell下，使用的python或者pip都是虚拟环境中的python和pip。
+1pipenv --venv 激活虚拟环境 1pipenv shell # 激活虚拟环境 2 3python -V 如果激活了虚拟环境，在当前shell下，使用的python或者pip都是虚拟环境中的python和pip。
 配置Pip并安装依赖 配置镜像源为清华源：
-1 2 3 4 vim Pipfile [[source]] url = &amp;#34;https://pypi.tuna.tsinghua.edu.cn/simple&amp;#34; 以后所有依赖的安装都不需要指定 --pypi-mirror 了。
+1vim Pipfile 2 3[[source]] 4url = &amp;#34;https://pypi.tuna.tsinghua.edu.cn/simple&amp;#34; 以后所有依赖的安装都不需要指定 --pypi-mirror 了。
 安装依赖：（建议关闭代理，如果有的话）
-1 2 pipenv install {pkg} # 如果激活了虚拟环境，可以使用pip # pipenv install -r requirements.</description>
+1pipenv install {pkg} # 如果激活了虚拟环境，可以使用pip 2# pipenv install -r requirements.txt 安装完依赖后，将会生成 Pipfile.lock 文件，以后初始化虚拟环境都只需要运行 pipenv install 即可完成所有依赖的安装。
+当然，也可以通过生成 requirements.</description>
     </item>
     
     <item>
@@ -35,11 +36,11 @@
       
       <guid>/posts/2022/11/record-of-bugs-encountered-in-python-development/</guid>
       <description>持续更新中。
-pipenv 无法正常 install 1 2 3 4 PS C:\Users\akyna\Codes\test\test_py&amp;gt; pipenv install Usage: pipenv install [OPTIONS] [PACKAGES]... ERROR:: --system is intended to be used for pre-existing Pipfile installation, not installation of specific packages. Aborting. 解决方法：
+pipenv 无法正常 install 1PS C:\Users\akyna\Codes\test\test_py&amp;gt; pipenv install 2Usage: pipenv install [OPTIONS] [PACKAGES]... 3 4ERROR:: --system is intended to be used for pre-existing Pipfile installation, not installation of specific packages. Aborting. 解决方法：
 因为pipenv检测到之前在该目录下创建过了环境，需要先删除之前的环境才可以：
-1 2 PS C:\Users\akyna\Codes\test\test_py&amp;gt; pipenv --rm Removing virtualenv (C:\Users\akyna\.virtualenvs\test_py-_qApXuy4)... requests 库 headers 字段编码错误 1 UnicodeEncodeError: &amp;#39;latin-1&amp;#39; codec can&amp;#39;t encode characters in position 30-34: ordinal not in range(256) 解决方法：
+1PS C:\Users\akyna\Codes\test\test_py&amp;gt; pipenv --rm 2Removing virtualenv (C:\Users\akyna\.virtualenvs\test_py-_qApXuy4)... requests 库 headers 字段编码错误 1UnicodeEncodeError: &amp;#39;latin-1&amp;#39; codec can&amp;#39;t encode characters in position 30-34: ordinal not in range(256) 解决方法：
 加上.encode(&amp;lsquo;utf-8&amp;rsquo;)：
-1 2 3 4 5 6 7 8 return { &amp;#39;User-Agent&amp;#39;: &amp;#39;Mozilla/5.</description>
+1return { 2 &amp;#39;User-Agent&amp;#39;: 3 &amp;#39;Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.</description>
     </item>
     
     <item>
@@ -58,7 +59,7 @@ pipenv 无法正常 install 1 2 3 4 PS C:\Users\akyna\Codes\test\test_py&amp;gt;
 经过滚动，原来的代码逐渐被一些新的代码取代：
 而不难发现他们都有对应的data-id!而data-id就是图片地址中对应的pin。
 所以我们可以通过webdriver滚动加载页面，每滚动一次就进行一次data-id的读取，并利用集合进行去重即可。
-具体实现 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 # 花瓣用户任意面板图片爬取 import urllib.</description>
+具体实现 1# 花瓣用户任意面板图片爬取 2import urllib.request 3import urllib.error 4import re 5import os 6import datetime 7import easygui 8import time 9from selenium import webdriver 10from selenium.webdriver.chrome.service import Service 11from selenium.webdriver.common import service 12from webdriver_manager import driver 13from webdriver_manager.chrome import ChromeDriverManager 14import winsound 15 16# 获取网页中所有图片对应的pin 17def get_pins(url_, num_): 18 my_options = webdriver.</description>
     </item>
     
   </channel>

@@ -18,7 +18,7 @@ HEAD = HEAD~0 （即当前最新的一次commit） HEAD~ = HEAD~1 HEAD~~ = HEAD~
 当我们始终在一个分支比如 dev 开发/提交代码时，每个 commit 都只会有一个父级提交，就是上一次提交。此时 HEAD~1 等价于 HEAD^。
 当并行多个分支开发，feat1, feat2, feat3，完成后 merge feat1 feat2 feat3 回 dev 分支后，此次的 merge commit 就会有多个父级提交。
 HEAD^ = HEAD^1 第一个父级提交 HEAD^2~1 第二个父级提交的上一次提交 强行覆盖本地分支（不关心本地修改） 若在其它分支上进行了修改，而本地也有了一定的修改，但本地的修改是可以忽略的（或者你不小心放入了一些无关文件），那么，这时你很需要用强行覆盖这个操作。
-1 2 3 git fetch git reset --hard HEAD git merge origin/$CURRENT_BRANCH # 若已做映射：git merge 修改提交过的版本 修改上次提交 这里对提交的信息和作者进行修改，注意邮箱两侧由&lt;&gt;包括住" />
+1git fetch 2git reset --hard HEAD 3git merge origin/$CURRENT_BRANCH # 若已做映射：git merge 修改提交过的版本 修改上次提交 这里对提交的信息和作者进行修改，注意邮箱两侧由&lt;&gt;包括住" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/2022/12/git-version-and-submission-management/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-12-06T11:42:39+08:00" />
@@ -35,14 +35,14 @@ HEAD = HEAD~0 （即当前最新的一次commit） HEAD~ = HEAD~1 HEAD~~ = HEAD~
 当我们始终在一个分支比如 dev 开发/提交代码时，每个 commit 都只会有一个父级提交，就是上一次提交。此时 HEAD~1 等价于 HEAD^。
 当并行多个分支开发，feat1, feat2, feat3，完成后 merge feat1 feat2 feat3 回 dev 分支后，此次的 merge commit 就会有多个父级提交。
 HEAD^ = HEAD^1 第一个父级提交 HEAD^2~1 第二个父级提交的上一次提交 强行覆盖本地分支（不关心本地修改） 若在其它分支上进行了修改，而本地也有了一定的修改，但本地的修改是可以忽略的（或者你不小心放入了一些无关文件），那么，这时你很需要用强行覆盖这个操作。
-1 2 3 git fetch git reset --hard HEAD git merge origin/$CURRENT_BRANCH # 若已做映射：git merge 修改提交过的版本 修改上次提交 这里对提交的信息和作者进行修改，注意邮箱两侧由&lt;&gt;包括住"/>
+1git fetch 2git reset --hard HEAD 3git merge origin/$CURRENT_BRANCH # 若已做映射：git merge 修改提交过的版本 修改上次提交 这里对提交的信息和作者进行修改，注意邮箱两侧由&lt;&gt;包括住"/>
 
   
   
   
   
   
-  <link rel="stylesheet" href="/css/styles.d8d1e5ac73f5bd72b0e6919356fcf7f12c9dd5a80e4788cae09111cc3678f69a4294b39d4b852dd69cc393c73ac3d8b6c05c8df3569d49d36331b7f39cfea8d1.css" integrity="sha512-2NHlrHP1vXKw5pGTVvz38Syd1agOR4jK4JERzDZ49ppClLOdS4Ut1pzDk8c6w9i2wFyN81adSdNjMbfznP6o0Q==">
+  <link rel="stylesheet" href="/css/styles.b6e7dac395bc81c65ab67a0be932cbd03925f5afb48f9c825ead224a41084a4a8289db621f5b2236149a32799ae71f4962b1d2531d209f51d8b88cdffaa1877e.css" integrity="sha512-tufaw5W8gcZatnoL6TLL0Dkl9a&#43;0j5yCXq0iSkEISkqCidtiH1siNhSaMnma5x9JYrHSUx0gn1HYuIzf&#43;qGHfg==">
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
@@ -159,7 +159,7 @@ HEAD^ = HEAD^1 第一个父级提交 HEAD^2~1 第二个父级提交的上一次�
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f12%2fgit-version-and-submission-management%2f&name=Git%20%e7%89%88%e6%9c%ac%e4%b8%8e%e6%8f%90%e4%ba%a4%e7%ae%a1%e7%90%86&description=%e5%85%b3%e4%ba%8eHEAD%20HEAD%20%e4%bb%a3%e8%a1%a8%e5%bd%93%e5%89%8d%e5%88%86%e6%94%af%e7%9a%84%e6%9c%80%e6%96%b0%e6%8f%90%e4%ba%a4%e5%90%8d%e7%a7%b0%ef%bc%8c%e5%ae%83%e5%8f%af%e4%bb%a5%e7%94%b1%e4%b8%80%e4%ba%9b%e4%bf%ae%e9%a5%b0%e7%ac%a6%e8%bf%9b%e8%a1%8c%e4%bf%ae%e9%a5%b0%e8%bf%9b%e8%80%8c%e4%ba%a7%e7%94%9f%e4%b8%8d%e5%90%8c%e7%9a%84%e5%90%ab%e4%b9%89%e3%80%82%0a%e5%85%b3%e4%ba%8e%20HEAD~%7bn%7d%0a~%20%e6%98%af%e7%94%a8%e6%9d%a5%e5%9c%a8%e5%bd%93%e5%89%8d%e6%8f%90%e4%ba%a4%e8%b7%af%e5%be%84%e4%b8%8a%e5%9b%9e%e6%ba%af%e7%9a%84%e4%bf%ae%e9%a5%b0%e7%ac%a6%e3%80%82%0aHEAD~%7bn%7d%20%e8%a1%a8%e7%a4%ba%e5%bd%93%e5%89%8d%e6%89%80%e5%9c%a8%e7%9a%84%e6%8f%90%e4%ba%a4%e8%b7%af%e5%be%84%e4%b8%8a%e7%9a%84%e5%89%8d%20n%20%e4%b8%aa%e6%8f%90%e4%ba%a4%ef%bc%88n%20%26gt%3b%3d%200%ef%bc%89%ef%bc%9a%0aHEAD%20%3d%20HEAD~0%20%ef%bc%88%e5%8d%b3%e5%bd%93%e5%89%8d%e6%9c%80%e6%96%b0%e7%9a%84%e4%b8%80%e6%ac%a1commit%ef%bc%89%20HEAD~%20%3d%20HEAD~1%20HEAD~~%20%3d%20HEAD~2%20%e5%85%b3%e4%ba%8e%20HEAD%5e%7bn%7d%0a%5e%20%e6%98%af%e7%94%a8%e6%9d%a5%e5%88%87%e6%8d%a2%e7%88%b6%e7%ba%a7%e6%8f%90%e4%ba%a4%e8%b7%af%e5%be%84%e7%9a%84%e4%bf%ae%e9%a5%b0%e7%ac%a6%e3%80%82%0a%e5%bd%93%e6%88%91%e4%bb%ac%e5%a7%8b%e7%bb%88%e5%9c%a8%e4%b8%80%e4%b8%aa%e5%88%86%e6%94%af%e6%af%94%e5%a6%82%20dev%20%e5%bc%80%e5%8f%91%2f%e6%8f%90%e4%ba%a4%e4%bb%a3%e7%a0%81%e6%97%b6%ef%bc%8c%e6%af%8f%e4%b8%aa%20commit%20%e9%83%bd%e5%8f%aa%e4%bc%9a%e6%9c%89%e4%b8%80%e4%b8%aa%e7%88%b6%e7%ba%a7%e6%8f%90%e4%ba%a4%ef%bc%8c%e5%b0%b1%e6%98%af%e4%b8%8a%e4%b8%80%e6%ac%a1%e6%8f%90%e4%ba%a4%e3%80%82%e6%ad%a4%e6%97%b6%20HEAD~1%20%e7%ad%89%e4%bb%b7%e4%ba%8e%20HEAD%5e%e3%80%82%0a%e5%bd%93%e5%b9%b6%e8%a1%8c%e5%a4%9a%e4%b8%aa%e5%88%86%e6%94%af%e5%bc%80%e5%8f%91%ef%bc%8cfeat1%2c%20feat2%2c%20feat3%ef%bc%8c%e5%ae%8c%e6%88%90%e5%90%8e%20merge%20feat1%20feat2%20feat3%20%e5%9b%9e%20dev%20%e5%88%86%e6%94%af%e5%90%8e%ef%bc%8c%e6%ad%a4%e6%ac%a1%e7%9a%84%20merge%20commit%20%e5%b0%b1%e4%bc%9a%e6%9c%89%e5%a4%9a%e4%b8%aa%e7%88%b6%e7%ba%a7%e6%8f%90%e4%ba%a4%e3%80%82%0aHEAD%5e%20%3d%20HEAD%5e1%20%e7%ac%ac%e4%b8%80%e4%b8%aa%e7%88%b6%e7%ba%a7%e6%8f%90%e4%ba%a4%20HEAD%5e2~1%20%e7%ac%ac%e4%ba%8c%e4%b8%aa%e7%88%b6%e7%ba%a7%e6%8f%90%e4%ba%a4%e7%9a%84%e4%b8%8a%e4%b8%80%e6%ac%a1%e6%8f%90%e4%ba%a4%20%e5%bc%ba%e8%a1%8c%e8%a6%86%e7%9b%96%e6%9c%ac%e5%9c%b0%e5%88%86%e6%94%af%ef%bc%88%e4%b8%8d%e5%85%b3%e5%bf%83%e6%9c%ac%e5%9c%b0%e4%bf%ae%e6%94%b9%ef%bc%89%20%e8%8b%a5%e5%9c%a8%e5%85%b6%e5%ae%83%e5%88%86%e6%94%af%e4%b8%8a%e8%bf%9b%e8%a1%8c%e4%ba%86%e4%bf%ae%e6%94%b9%ef%bc%8c%e8%80%8c%e6%9c%ac%e5%9c%b0%e4%b9%9f%e6%9c%89%e4%ba%86%e4%b8%80%e5%ae%9a%e7%9a%84%e4%bf%ae%e6%94%b9%ef%bc%8c%e4%bd%86%e6%9c%ac%e5%9c%b0%e7%9a%84%e4%bf%ae%e6%94%b9%e6%98%af%e5%8f%af%e4%bb%a5%e5%bf%bd%e7%95%a5%e7%9a%84%ef%bc%88%e6%88%96%e8%80%85%e4%bd%a0%e4%b8%8d%e5%b0%8f%e5%bf%83%e6%94%be%e5%85%a5%e4%ba%86%e4%b8%80%e4%ba%9b%e6%97%a0%e5%85%b3%e6%96%87%e4%bb%b6%ef%bc%89%ef%bc%8c%e9%82%a3%e4%b9%88%ef%bc%8c%e8%bf%99%e6%97%b6%e4%bd%a0%e5%be%88%e9%9c%80%e8%a6%81%e7%94%a8%e5%bc%ba%e8%a1%8c%e8%a6%86%e7%9b%96%e8%bf%99%e4%b8%aa%e6%93%8d%e4%bd%9c%e3%80%82%0a1%202%203%20git%20fetch%20git%20reset%20--hard%20HEAD%20git%20merge%20origin%2f%24CURRENT_BRANCH%20%23%20%e8%8b%a5%e5%b7%b2%e5%81%9a%e6%98%a0%e5%b0%84%ef%bc%9agit%20merge%20%e4%bf%ae%e6%94%b9%e6%8f%90%e4%ba%a4%e8%bf%87%e7%9a%84%e7%89%88%e6%9c%ac%20%e4%bf%ae%e6%94%b9%e4%b8%8a%e6%ac%a1%e6%8f%90%e4%ba%a4%20%e8%bf%99%e9%87%8c%e5%af%b9%e6%8f%90%e4%ba%a4%e7%9a%84%e4%bf%a1%e6%81%af%e5%92%8c%e4%bd%9c%e8%80%85%e8%bf%9b%e8%a1%8c%e4%bf%ae%e6%94%b9%ef%bc%8c%e6%b3%a8%e6%84%8f%e9%82%ae%e7%ae%b1%e4%b8%a4%e4%be%a7%e7%94%b1%26lt%3b%26gt%3b%e5%8c%85%e6%8b%ac%e4%bd%8f" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f12%2fgit-version-and-submission-management%2f&name=Git%20%e7%89%88%e6%9c%ac%e4%b8%8e%e6%8f%90%e4%ba%a4%e7%ae%a1%e7%90%86&description=%e5%85%b3%e4%ba%8eHEAD%20HEAD%20%e4%bb%a3%e8%a1%a8%e5%bd%93%e5%89%8d%e5%88%86%e6%94%af%e7%9a%84%e6%9c%80%e6%96%b0%e6%8f%90%e4%ba%a4%e5%90%8d%e7%a7%b0%ef%bc%8c%e5%ae%83%e5%8f%af%e4%bb%a5%e7%94%b1%e4%b8%80%e4%ba%9b%e4%bf%ae%e9%a5%b0%e7%ac%a6%e8%bf%9b%e8%a1%8c%e4%bf%ae%e9%a5%b0%e8%bf%9b%e8%80%8c%e4%ba%a7%e7%94%9f%e4%b8%8d%e5%90%8c%e7%9a%84%e5%90%ab%e4%b9%89%e3%80%82%0a%e5%85%b3%e4%ba%8e%20HEAD~%7bn%7d%0a~%20%e6%98%af%e7%94%a8%e6%9d%a5%e5%9c%a8%e5%bd%93%e5%89%8d%e6%8f%90%e4%ba%a4%e8%b7%af%e5%be%84%e4%b8%8a%e5%9b%9e%e6%ba%af%e7%9a%84%e4%bf%ae%e9%a5%b0%e7%ac%a6%e3%80%82%0aHEAD~%7bn%7d%20%e8%a1%a8%e7%a4%ba%e5%bd%93%e5%89%8d%e6%89%80%e5%9c%a8%e7%9a%84%e6%8f%90%e4%ba%a4%e8%b7%af%e5%be%84%e4%b8%8a%e7%9a%84%e5%89%8d%20n%20%e4%b8%aa%e6%8f%90%e4%ba%a4%ef%bc%88n%20%26gt%3b%3d%200%ef%bc%89%ef%bc%9a%0aHEAD%20%3d%20HEAD~0%20%ef%bc%88%e5%8d%b3%e5%bd%93%e5%89%8d%e6%9c%80%e6%96%b0%e7%9a%84%e4%b8%80%e6%ac%a1commit%ef%bc%89%20HEAD~%20%3d%20HEAD~1%20HEAD~~%20%3d%20HEAD~2%20%e5%85%b3%e4%ba%8e%20HEAD%5e%7bn%7d%0a%5e%20%e6%98%af%e7%94%a8%e6%9d%a5%e5%88%87%e6%8d%a2%e7%88%b6%e7%ba%a7%e6%8f%90%e4%ba%a4%e8%b7%af%e5%be%84%e7%9a%84%e4%bf%ae%e9%a5%b0%e7%ac%a6%e3%80%82%0a%e5%bd%93%e6%88%91%e4%bb%ac%e5%a7%8b%e7%bb%88%e5%9c%a8%e4%b8%80%e4%b8%aa%e5%88%86%e6%94%af%e6%af%94%e5%a6%82%20dev%20%e5%bc%80%e5%8f%91%2f%e6%8f%90%e4%ba%a4%e4%bb%a3%e7%a0%81%e6%97%b6%ef%bc%8c%e6%af%8f%e4%b8%aa%20commit%20%e9%83%bd%e5%8f%aa%e4%bc%9a%e6%9c%89%e4%b8%80%e4%b8%aa%e7%88%b6%e7%ba%a7%e6%8f%90%e4%ba%a4%ef%bc%8c%e5%b0%b1%e6%98%af%e4%b8%8a%e4%b8%80%e6%ac%a1%e6%8f%90%e4%ba%a4%e3%80%82%e6%ad%a4%e6%97%b6%20HEAD~1%20%e7%ad%89%e4%bb%b7%e4%ba%8e%20HEAD%5e%e3%80%82%0a%e5%bd%93%e5%b9%b6%e8%a1%8c%e5%a4%9a%e4%b8%aa%e5%88%86%e6%94%af%e5%bc%80%e5%8f%91%ef%bc%8cfeat1%2c%20feat2%2c%20feat3%ef%bc%8c%e5%ae%8c%e6%88%90%e5%90%8e%20merge%20feat1%20feat2%20feat3%20%e5%9b%9e%20dev%20%e5%88%86%e6%94%af%e5%90%8e%ef%bc%8c%e6%ad%a4%e6%ac%a1%e7%9a%84%20merge%20commit%20%e5%b0%b1%e4%bc%9a%e6%9c%89%e5%a4%9a%e4%b8%aa%e7%88%b6%e7%ba%a7%e6%8f%90%e4%ba%a4%e3%80%82%0aHEAD%5e%20%3d%20HEAD%5e1%20%e7%ac%ac%e4%b8%80%e4%b8%aa%e7%88%b6%e7%ba%a7%e6%8f%90%e4%ba%a4%20HEAD%5e2~1%20%e7%ac%ac%e4%ba%8c%e4%b8%aa%e7%88%b6%e7%ba%a7%e6%8f%90%e4%ba%a4%e7%9a%84%e4%b8%8a%e4%b8%80%e6%ac%a1%e6%8f%90%e4%ba%a4%20%e5%bc%ba%e8%a1%8c%e8%a6%86%e7%9b%96%e6%9c%ac%e5%9c%b0%e5%88%86%e6%94%af%ef%bc%88%e4%b8%8d%e5%85%b3%e5%bf%83%e6%9c%ac%e5%9c%b0%e4%bf%ae%e6%94%b9%ef%bc%89%20%e8%8b%a5%e5%9c%a8%e5%85%b6%e5%ae%83%e5%88%86%e6%94%af%e4%b8%8a%e8%bf%9b%e8%a1%8c%e4%ba%86%e4%bf%ae%e6%94%b9%ef%bc%8c%e8%80%8c%e6%9c%ac%e5%9c%b0%e4%b9%9f%e6%9c%89%e4%ba%86%e4%b8%80%e5%ae%9a%e7%9a%84%e4%bf%ae%e6%94%b9%ef%bc%8c%e4%bd%86%e6%9c%ac%e5%9c%b0%e7%9a%84%e4%bf%ae%e6%94%b9%e6%98%af%e5%8f%af%e4%bb%a5%e5%bf%bd%e7%95%a5%e7%9a%84%ef%bc%88%e6%88%96%e8%80%85%e4%bd%a0%e4%b8%8d%e5%b0%8f%e5%bf%83%e6%94%be%e5%85%a5%e4%ba%86%e4%b8%80%e4%ba%9b%e6%97%a0%e5%85%b3%e6%96%87%e4%bb%b6%ef%bc%89%ef%bc%8c%e9%82%a3%e4%b9%88%ef%bc%8c%e8%bf%99%e6%97%b6%e4%bd%a0%e5%be%88%e9%9c%80%e8%a6%81%e7%94%a8%e5%bc%ba%e8%a1%8c%e8%a6%86%e7%9b%96%e8%bf%99%e4%b8%aa%e6%93%8d%e4%bd%9c%e3%80%82%0a1git%20fetch%202git%20reset%20--hard%20HEAD%203git%20merge%20origin%2f%24CURRENT_BRANCH%20%23%20%e8%8b%a5%e5%b7%b2%e5%81%9a%e6%98%a0%e5%b0%84%ef%bc%9agit%20merge%20%e4%bf%ae%e6%94%b9%e6%8f%90%e4%ba%a4%e8%bf%87%e7%9a%84%e7%89%88%e6%9c%ac%20%e4%bf%ae%e6%94%b9%e4%b8%8a%e6%ac%a1%e6%8f%90%e4%ba%a4%20%e8%bf%99%e9%87%8c%e5%af%b9%e6%8f%90%e4%ba%a4%e7%9a%84%e4%bf%a1%e6%81%af%e5%92%8c%e4%bd%9c%e8%80%85%e8%bf%9b%e8%a1%8c%e4%bf%ae%e6%94%b9%ef%bc%8c%e6%b3%a8%e6%84%8f%e9%82%ae%e7%ae%b1%e4%b8%a4%e4%be%a7%e7%94%b1%26lt%3b%26gt%3b%e5%8c%85%e6%8b%ac%e4%bd%8f" aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -257,163 +257,59 @@ HEAD^ = HEAD^1 第一个父级提交 HEAD^2~1 第二个父级提交的上一次�
 </ul>
 <h2 id="强行覆盖本地分支不关心本地修改">强行覆盖本地分支（不关心本地修改）</h2>
 <p>若在其它分支上进行了修改，而本地也有了一定的修改，但本地的修改是可以忽略的（或者你不小心放入了一些无关文件），那么，这时你很需要用强行覆盖这个操作。</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>git fetch
-</span></span><span style="display:flex;"><span>git reset --hard HEAD
-</span></span><span style="display:flex;"><span>git merge origin/$CURRENT_BRANCH # 若已做映射：git merge
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="修改提交过的版本">修改提交过的版本</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>git fetch
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>git reset --hard HEAD
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>git merge origin/$CURRENT_BRANCH # 若已做映射：git merge
+</span></span></code></pre></div><h2 id="修改提交过的版本">修改提交过的版本</h2>
 <h3 id="修改上次提交">修改上次提交</h3>
 <p>这里对提交的信息和作者进行修改，注意邮箱两侧由&lt;&gt;包括住</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>git commit --amend --message=&#34;modify&#34; --author=&#34;your_name &lt;your_email&gt;&#34;
-</span></span><span style="display:flex;"><span>git push -f
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="修改多次提交">修改多次提交</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>git commit --amend --message=&#34;modify&#34; --author=&#34;your_name &lt;your_email&gt;&#34;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>git push -f
+</span></span></code></pre></div><h3 id="修改多次提交">修改多次提交</h3>
 <p>进行 <code>git rebase</code> 之前，先将本地修改提交完毕。</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span># 列出最近3次提交
-</span></span><span style="display:flex;"><span>git rebase -i HEAD~3
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>得到大致如下内容：</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>pick 8ae7972 update
-</span></span><span style="display:flex;"><span>pick 1a22dfd update
-</span></span><span style="display:flex;"><span>pick 00433e4 update
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span># Rebase 368e5c8..00433e4 onto 368e5c8 (3 commands)
-</span></span><span style="display:flex;"><span>#
-</span></span><span style="display:flex;"><span># Commands:
-</span></span><span style="display:flex;"><span># p, pick &lt;commit&gt; = use commit
-</span></span><span style="display:flex;"><span># r, reword &lt;commit&gt; = use commit, but edit the commit message
-</span></span><span style="display:flex;"><span># e, edit &lt;commit&gt; = use commit, but stop for amending
-</span></span><span style="display:flex;"><span># s, squash &lt;commit&gt; = use commit, but meld into previous commit
-</span></span><span style="display:flex;"><span># f, fixup [-C | -c] &lt;commit&gt; = like &#34;squash&#34; but keep only the previous
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>......
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>可见确实列出了前面3次的修改记录。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span># 列出最近3次提交
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>git rebase -i HEAD~3
+</span></span></code></pre></div><p>得到大致如下内容：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>pick 8ae7972 update
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>pick 1a22dfd update
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>pick 00433e4 update
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span># Rebase 368e5c8..00433e4 onto 368e5c8 (3 commands)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>#
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span># Commands:
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span># p, pick &lt;commit&gt; = use commit
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span># r, reword &lt;commit&gt; = use commit, but edit the commit message
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span># e, edit &lt;commit&gt; = use commit, but stop for amending
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span># s, squash &lt;commit&gt; = use commit, but meld into previous commit
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span># f, fixup [-C | -c] &lt;commit&gt; = like &#34;squash&#34; but keep only the previous
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>......
+</span></span></code></pre></div><p>可见确实列出了前面3次的修改记录。</p>
 <p>将需要修改的 commit-id 前面对应 “pick” 改为 “edit”，即可在后续操作中对该分支进行修改。</p>
 <p>之后，x次修改就进行x次下面两条命令：</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>git commit --amend --message=&#34;modify&#34; --author=&#34;your_name &lt;your_email&gt;&#34;
-</span></span><span style="display:flex;"><span>git rebase --continue
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>经过x次以上命令，不出什么问题的话，将会有大致如下的提示出现：</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>Successfully rebased and updated refs/heads/master.
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>现在，强制推送即可：</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>git push --force
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="取消或删除提交">取消或删除提交</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>git commit --amend --message=&#34;modify&#34; --author=&#34;your_name &lt;your_email&gt;&#34;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>git rebase --continue
+</span></span></code></pre></div><p>经过x次以上命令，不出什么问题的话，将会有大致如下的提示出现：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>Successfully rebased and updated refs/heads/master.
+</span></span></code></pre></div><p>现在，强制推送即可：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>git push --force
+</span></span></code></pre></div><h2 id="取消或删除提交">取消或删除提交</h2>
 <p>当你在某一次提交中不小心忘记了把一些敏感信息进行ignore，那么你很可能需要删除那一次提交。</p>
 <p>可以使用 <code>git reset</code> 删除提交，记录将被真正删除，是将 HEAD 指向某个 commit-id， 该操作需要谨慎使用。</p>
 <p>如果使用 <code>git revert</code> 则只是取消上一次修改，上一次的提交记录还在，并且多生成了一次提交记录。也就是说对于敏感信息的处理是无效的。同时，该操作如果想重做多次修改，需要按如下规则进行操作：</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>git revert [倒数第一个提交] [倒数第二个提交]
-</span></span><span style="display:flex;"><span># 如 git revert HEAD HEAD~1
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="取消上一次提交">取消上一次提交</h3>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>git revert HEAD
-</span></span><span style="display:flex;"><span>git push origin master
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="删除上一次提交">删除上一次提交</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>git revert [倒数第一个提交] [倒数第二个提交]
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span># 如 git revert HEAD HEAD~1
+</span></span></code></pre></div><h3 id="取消上一次提交">取消上一次提交</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>git revert HEAD
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>git push origin master
+</span></span></code></pre></div><h3 id="删除上一次提交">删除上一次提交</h3>
 <p>删除上一次提交，也就是把 <code>HEAD</code> 指向 <code>HEAD^</code>， <code>--hard</code> 使得工作区里面的文件也回到以前的状态。</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>git reset --hard HEAD^
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>取消某次提交：</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>git reset --hard commit_id
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>接着进行提交即可：</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>git push origin master -f # origin为之前指定的远程分支
-</span></span></code></pre></td></tr></table>
-</div>
-</div><hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>git reset --hard HEAD^
+</span></span></code></pre></div><p>取消某次提交：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>git reset --hard commit_id
+</span></span></code></pre></div><p>接着进行提交即可：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>git push origin master -f # origin为之前指定的远程分支
+</span></span></code></pre></div><hr>
 <p><strong>From my blog: <a href="https://akynazh.site">akynazh</a></strong>.</p>
 <p><strong>Over.</strong></p>
 
@@ -525,7 +421,7 @@ HEAD^ = HEAD^1 第一个父级提交 HEAD^2~1 第二个父级提交的上一次�
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f12%2fgit-version-and-submission-management%2f&name=Git%20%e7%89%88%e6%9c%ac%e4%b8%8e%e6%8f%90%e4%ba%a4%e7%ae%a1%e7%90%86&description=%e5%85%b3%e4%ba%8eHEAD%20HEAD%20%e4%bb%a3%e8%a1%a8%e5%bd%93%e5%89%8d%e5%88%86%e6%94%af%e7%9a%84%e6%9c%80%e6%96%b0%e6%8f%90%e4%ba%a4%e5%90%8d%e7%a7%b0%ef%bc%8c%e5%ae%83%e5%8f%af%e4%bb%a5%e7%94%b1%e4%b8%80%e4%ba%9b%e4%bf%ae%e9%a5%b0%e7%ac%a6%e8%bf%9b%e8%a1%8c%e4%bf%ae%e9%a5%b0%e8%bf%9b%e8%80%8c%e4%ba%a7%e7%94%9f%e4%b8%8d%e5%90%8c%e7%9a%84%e5%90%ab%e4%b9%89%e3%80%82%0a%e5%85%b3%e4%ba%8e%20HEAD~%7bn%7d%0a~%20%e6%98%af%e7%94%a8%e6%9d%a5%e5%9c%a8%e5%bd%93%e5%89%8d%e6%8f%90%e4%ba%a4%e8%b7%af%e5%be%84%e4%b8%8a%e5%9b%9e%e6%ba%af%e7%9a%84%e4%bf%ae%e9%a5%b0%e7%ac%a6%e3%80%82%0aHEAD~%7bn%7d%20%e8%a1%a8%e7%a4%ba%e5%bd%93%e5%89%8d%e6%89%80%e5%9c%a8%e7%9a%84%e6%8f%90%e4%ba%a4%e8%b7%af%e5%be%84%e4%b8%8a%e7%9a%84%e5%89%8d%20n%20%e4%b8%aa%e6%8f%90%e4%ba%a4%ef%bc%88n%20%26gt%3b%3d%200%ef%bc%89%ef%bc%9a%0aHEAD%20%3d%20HEAD~0%20%ef%bc%88%e5%8d%b3%e5%bd%93%e5%89%8d%e6%9c%80%e6%96%b0%e7%9a%84%e4%b8%80%e6%ac%a1commit%ef%bc%89%20HEAD~%20%3d%20HEAD~1%20HEAD~~%20%3d%20HEAD~2%20%e5%85%b3%e4%ba%8e%20HEAD%5e%7bn%7d%0a%5e%20%e6%98%af%e7%94%a8%e6%9d%a5%e5%88%87%e6%8d%a2%e7%88%b6%e7%ba%a7%e6%8f%90%e4%ba%a4%e8%b7%af%e5%be%84%e7%9a%84%e4%bf%ae%e9%a5%b0%e7%ac%a6%e3%80%82%0a%e5%bd%93%e6%88%91%e4%bb%ac%e5%a7%8b%e7%bb%88%e5%9c%a8%e4%b8%80%e4%b8%aa%e5%88%86%e6%94%af%e6%af%94%e5%a6%82%20dev%20%e5%bc%80%e5%8f%91%2f%e6%8f%90%e4%ba%a4%e4%bb%a3%e7%a0%81%e6%97%b6%ef%bc%8c%e6%af%8f%e4%b8%aa%20commit%20%e9%83%bd%e5%8f%aa%e4%bc%9a%e6%9c%89%e4%b8%80%e4%b8%aa%e7%88%b6%e7%ba%a7%e6%8f%90%e4%ba%a4%ef%bc%8c%e5%b0%b1%e6%98%af%e4%b8%8a%e4%b8%80%e6%ac%a1%e6%8f%90%e4%ba%a4%e3%80%82%e6%ad%a4%e6%97%b6%20HEAD~1%20%e7%ad%89%e4%bb%b7%e4%ba%8e%20HEAD%5e%e3%80%82%0a%e5%bd%93%e5%b9%b6%e8%a1%8c%e5%a4%9a%e4%b8%aa%e5%88%86%e6%94%af%e5%bc%80%e5%8f%91%ef%bc%8cfeat1%2c%20feat2%2c%20feat3%ef%bc%8c%e5%ae%8c%e6%88%90%e5%90%8e%20merge%20feat1%20feat2%20feat3%20%e5%9b%9e%20dev%20%e5%88%86%e6%94%af%e5%90%8e%ef%bc%8c%e6%ad%a4%e6%ac%a1%e7%9a%84%20merge%20commit%20%e5%b0%b1%e4%bc%9a%e6%9c%89%e5%a4%9a%e4%b8%aa%e7%88%b6%e7%ba%a7%e6%8f%90%e4%ba%a4%e3%80%82%0aHEAD%5e%20%3d%20HEAD%5e1%20%e7%ac%ac%e4%b8%80%e4%b8%aa%e7%88%b6%e7%ba%a7%e6%8f%90%e4%ba%a4%20HEAD%5e2~1%20%e7%ac%ac%e4%ba%8c%e4%b8%aa%e7%88%b6%e7%ba%a7%e6%8f%90%e4%ba%a4%e7%9a%84%e4%b8%8a%e4%b8%80%e6%ac%a1%e6%8f%90%e4%ba%a4%20%e5%bc%ba%e8%a1%8c%e8%a6%86%e7%9b%96%e6%9c%ac%e5%9c%b0%e5%88%86%e6%94%af%ef%bc%88%e4%b8%8d%e5%85%b3%e5%bf%83%e6%9c%ac%e5%9c%b0%e4%bf%ae%e6%94%b9%ef%bc%89%20%e8%8b%a5%e5%9c%a8%e5%85%b6%e5%ae%83%e5%88%86%e6%94%af%e4%b8%8a%e8%bf%9b%e8%a1%8c%e4%ba%86%e4%bf%ae%e6%94%b9%ef%bc%8c%e8%80%8c%e6%9c%ac%e5%9c%b0%e4%b9%9f%e6%9c%89%e4%ba%86%e4%b8%80%e5%ae%9a%e7%9a%84%e4%bf%ae%e6%94%b9%ef%bc%8c%e4%bd%86%e6%9c%ac%e5%9c%b0%e7%9a%84%e4%bf%ae%e6%94%b9%e6%98%af%e5%8f%af%e4%bb%a5%e5%bf%bd%e7%95%a5%e7%9a%84%ef%bc%88%e6%88%96%e8%80%85%e4%bd%a0%e4%b8%8d%e5%b0%8f%e5%bf%83%e6%94%be%e5%85%a5%e4%ba%86%e4%b8%80%e4%ba%9b%e6%97%a0%e5%85%b3%e6%96%87%e4%bb%b6%ef%bc%89%ef%bc%8c%e9%82%a3%e4%b9%88%ef%bc%8c%e8%bf%99%e6%97%b6%e4%bd%a0%e5%be%88%e9%9c%80%e8%a6%81%e7%94%a8%e5%bc%ba%e8%a1%8c%e8%a6%86%e7%9b%96%e8%bf%99%e4%b8%aa%e6%93%8d%e4%bd%9c%e3%80%82%0a1%202%203%20git%20fetch%20git%20reset%20--hard%20HEAD%20git%20merge%20origin%2f%24CURRENT_BRANCH%20%23%20%e8%8b%a5%e5%b7%b2%e5%81%9a%e6%98%a0%e5%b0%84%ef%bc%9agit%20merge%20%e4%bf%ae%e6%94%b9%e6%8f%90%e4%ba%a4%e8%bf%87%e7%9a%84%e7%89%88%e6%9c%ac%20%e4%bf%ae%e6%94%b9%e4%b8%8a%e6%ac%a1%e6%8f%90%e4%ba%a4%20%e8%bf%99%e9%87%8c%e5%af%b9%e6%8f%90%e4%ba%a4%e7%9a%84%e4%bf%a1%e6%81%af%e5%92%8c%e4%bd%9c%e8%80%85%e8%bf%9b%e8%a1%8c%e4%bf%ae%e6%94%b9%ef%bc%8c%e6%b3%a8%e6%84%8f%e9%82%ae%e7%ae%b1%e4%b8%a4%e4%be%a7%e7%94%b1%26lt%3b%26gt%3b%e5%8c%85%e6%8b%ac%e4%bd%8f" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f12%2fgit-version-and-submission-management%2f&name=Git%20%e7%89%88%e6%9c%ac%e4%b8%8e%e6%8f%90%e4%ba%a4%e7%ae%a1%e7%90%86&description=%e5%85%b3%e4%ba%8eHEAD%20HEAD%20%e4%bb%a3%e8%a1%a8%e5%bd%93%e5%89%8d%e5%88%86%e6%94%af%e7%9a%84%e6%9c%80%e6%96%b0%e6%8f%90%e4%ba%a4%e5%90%8d%e7%a7%b0%ef%bc%8c%e5%ae%83%e5%8f%af%e4%bb%a5%e7%94%b1%e4%b8%80%e4%ba%9b%e4%bf%ae%e9%a5%b0%e7%ac%a6%e8%bf%9b%e8%a1%8c%e4%bf%ae%e9%a5%b0%e8%bf%9b%e8%80%8c%e4%ba%a7%e7%94%9f%e4%b8%8d%e5%90%8c%e7%9a%84%e5%90%ab%e4%b9%89%e3%80%82%0a%e5%85%b3%e4%ba%8e%20HEAD~%7bn%7d%0a~%20%e6%98%af%e7%94%a8%e6%9d%a5%e5%9c%a8%e5%bd%93%e5%89%8d%e6%8f%90%e4%ba%a4%e8%b7%af%e5%be%84%e4%b8%8a%e5%9b%9e%e6%ba%af%e7%9a%84%e4%bf%ae%e9%a5%b0%e7%ac%a6%e3%80%82%0aHEAD~%7bn%7d%20%e8%a1%a8%e7%a4%ba%e5%bd%93%e5%89%8d%e6%89%80%e5%9c%a8%e7%9a%84%e6%8f%90%e4%ba%a4%e8%b7%af%e5%be%84%e4%b8%8a%e7%9a%84%e5%89%8d%20n%20%e4%b8%aa%e6%8f%90%e4%ba%a4%ef%bc%88n%20%26gt%3b%3d%200%ef%bc%89%ef%bc%9a%0aHEAD%20%3d%20HEAD~0%20%ef%bc%88%e5%8d%b3%e5%bd%93%e5%89%8d%e6%9c%80%e6%96%b0%e7%9a%84%e4%b8%80%e6%ac%a1commit%ef%bc%89%20HEAD~%20%3d%20HEAD~1%20HEAD~~%20%3d%20HEAD~2%20%e5%85%b3%e4%ba%8e%20HEAD%5e%7bn%7d%0a%5e%20%e6%98%af%e7%94%a8%e6%9d%a5%e5%88%87%e6%8d%a2%e7%88%b6%e7%ba%a7%e6%8f%90%e4%ba%a4%e8%b7%af%e5%be%84%e7%9a%84%e4%bf%ae%e9%a5%b0%e7%ac%a6%e3%80%82%0a%e5%bd%93%e6%88%91%e4%bb%ac%e5%a7%8b%e7%bb%88%e5%9c%a8%e4%b8%80%e4%b8%aa%e5%88%86%e6%94%af%e6%af%94%e5%a6%82%20dev%20%e5%bc%80%e5%8f%91%2f%e6%8f%90%e4%ba%a4%e4%bb%a3%e7%a0%81%e6%97%b6%ef%bc%8c%e6%af%8f%e4%b8%aa%20commit%20%e9%83%bd%e5%8f%aa%e4%bc%9a%e6%9c%89%e4%b8%80%e4%b8%aa%e7%88%b6%e7%ba%a7%e6%8f%90%e4%ba%a4%ef%bc%8c%e5%b0%b1%e6%98%af%e4%b8%8a%e4%b8%80%e6%ac%a1%e6%8f%90%e4%ba%a4%e3%80%82%e6%ad%a4%e6%97%b6%20HEAD~1%20%e7%ad%89%e4%bb%b7%e4%ba%8e%20HEAD%5e%e3%80%82%0a%e5%bd%93%e5%b9%b6%e8%a1%8c%e5%a4%9a%e4%b8%aa%e5%88%86%e6%94%af%e5%bc%80%e5%8f%91%ef%bc%8cfeat1%2c%20feat2%2c%20feat3%ef%bc%8c%e5%ae%8c%e6%88%90%e5%90%8e%20merge%20feat1%20feat2%20feat3%20%e5%9b%9e%20dev%20%e5%88%86%e6%94%af%e5%90%8e%ef%bc%8c%e6%ad%a4%e6%ac%a1%e7%9a%84%20merge%20commit%20%e5%b0%b1%e4%bc%9a%e6%9c%89%e5%a4%9a%e4%b8%aa%e7%88%b6%e7%ba%a7%e6%8f%90%e4%ba%a4%e3%80%82%0aHEAD%5e%20%3d%20HEAD%5e1%20%e7%ac%ac%e4%b8%80%e4%b8%aa%e7%88%b6%e7%ba%a7%e6%8f%90%e4%ba%a4%20HEAD%5e2~1%20%e7%ac%ac%e4%ba%8c%e4%b8%aa%e7%88%b6%e7%ba%a7%e6%8f%90%e4%ba%a4%e7%9a%84%e4%b8%8a%e4%b8%80%e6%ac%a1%e6%8f%90%e4%ba%a4%20%e5%bc%ba%e8%a1%8c%e8%a6%86%e7%9b%96%e6%9c%ac%e5%9c%b0%e5%88%86%e6%94%af%ef%bc%88%e4%b8%8d%e5%85%b3%e5%bf%83%e6%9c%ac%e5%9c%b0%e4%bf%ae%e6%94%b9%ef%bc%89%20%e8%8b%a5%e5%9c%a8%e5%85%b6%e5%ae%83%e5%88%86%e6%94%af%e4%b8%8a%e8%bf%9b%e8%a1%8c%e4%ba%86%e4%bf%ae%e6%94%b9%ef%bc%8c%e8%80%8c%e6%9c%ac%e5%9c%b0%e4%b9%9f%e6%9c%89%e4%ba%86%e4%b8%80%e5%ae%9a%e7%9a%84%e4%bf%ae%e6%94%b9%ef%bc%8c%e4%bd%86%e6%9c%ac%e5%9c%b0%e7%9a%84%e4%bf%ae%e6%94%b9%e6%98%af%e5%8f%af%e4%bb%a5%e5%bf%bd%e7%95%a5%e7%9a%84%ef%bc%88%e6%88%96%e8%80%85%e4%bd%a0%e4%b8%8d%e5%b0%8f%e5%bf%83%e6%94%be%e5%85%a5%e4%ba%86%e4%b8%80%e4%ba%9b%e6%97%a0%e5%85%b3%e6%96%87%e4%bb%b6%ef%bc%89%ef%bc%8c%e9%82%a3%e4%b9%88%ef%bc%8c%e8%bf%99%e6%97%b6%e4%bd%a0%e5%be%88%e9%9c%80%e8%a6%81%e7%94%a8%e5%bc%ba%e8%a1%8c%e8%a6%86%e7%9b%96%e8%bf%99%e4%b8%aa%e6%93%8d%e4%bd%9c%e3%80%82%0a1git%20fetch%202git%20reset%20--hard%20HEAD%203git%20merge%20origin%2f%24CURRENT_BRANCH%20%23%20%e8%8b%a5%e5%b7%b2%e5%81%9a%e6%98%a0%e5%b0%84%ef%bc%9agit%20merge%20%e4%bf%ae%e6%94%b9%e6%8f%90%e4%ba%a4%e8%bf%87%e7%9a%84%e7%89%88%e6%9c%ac%20%e4%bf%ae%e6%94%b9%e4%b8%8a%e6%ac%a1%e6%8f%90%e4%ba%a4%20%e8%bf%99%e9%87%8c%e5%af%b9%e6%8f%90%e4%ba%a4%e7%9a%84%e4%bf%a1%e6%81%af%e5%92%8c%e4%bd%9c%e8%80%85%e8%bf%9b%e8%a1%8c%e4%bf%ae%e6%94%b9%ef%bc%8c%e6%b3%a8%e6%84%8f%e9%82%ae%e7%ae%b1%e4%b8%a4%e4%be%a7%e7%94%b1%26lt%3b%26gt%3b%e5%8c%85%e6%8b%ac%e4%bd%8f" aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>

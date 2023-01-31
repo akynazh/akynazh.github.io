@@ -14,7 +14,7 @@
       <pubDate>Mon, 20 Dec 2021 10:15:05 +0800</pubDate>
       
       <guid>/posts/2021/12/redis-learning-record-ii/</guid>
-      <description>事务 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 127.0.0.1:6379&amp;gt; multi # 开启事务 OK 127.0.0.1:6379&amp;gt; set book java QUEUED 127.0.0.1:6379&amp;gt; get book QUEUED 127.0.0.1:6379&amp;gt; exec # 执行事务 1) OK 2) &amp;#34;java&amp;#34; 127.0.0.1:6379&amp;gt; get book &amp;#34;java&amp;#34; 127.0.0.1:6379&amp;gt; multi OK 127.0.0.1:6379&amp;gt; set name peter QUEUED 127.0.0.1:6379&amp;gt; discard # 取消事务 OK 127.0.0.1:6379&amp;gt; exec (error) ERR EXEC without MULTI 127.0.0.1:6379&amp;gt; get name (nil) 获取key 获取指定key 1 keys * # 获取所有key 1 keys pattern # 根据pattern获取key 1 2 3 4 - * 代表匹配任意字符 - ?</description>
+      <description>事务 1127.0.0.1:6379&amp;gt; multi # 开启事务 2OK 3127.0.0.1:6379&amp;gt; set book java 4QUEUED 5127.0.0.1:6379&amp;gt; get book 6QUEUED 7127.0.0.1:6379&amp;gt; exec # 执行事务 81) OK 92) &amp;#34;java&amp;#34; 10127.0.0.1:6379&amp;gt; get book 11&amp;#34;java&amp;#34; 12127.0.0.1:6379&amp;gt; multi 13OK 14127.0.0.1:6379&amp;gt; set name peter 15QUEUED 16127.0.0.1:6379&amp;gt; discard # 取消事务 17OK 18127.0.0.1:6379&amp;gt; exec 19(error) ERR EXEC without MULTI 20127.0.0.1:6379&amp;gt; get name 21(nil) 获取key 获取指定key 1keys * # 获取所有key 1keys pattern # 根据pattern获取key 1- * 代表匹配任意字符 2- ? 代表匹配一个字符 3- [] 代表匹配部分字符，例如[1,3]代表匹配1和3，而[1-10]代表匹配1到10的任意数字。 4- x 转移字符，例如要匹配星号，问号需要转义的字符 e.</description>
     </item>
     
     <item>
@@ -23,9 +23,10 @@
       <pubDate>Tue, 14 Dec 2021 23:40:44 +0800</pubDate>
       
       <guid>/posts/2021/12/redis-learning-record-i/</guid>
-      <description>Open, Connect And Config open redis: 1 redis-server connect to redis: 1 redis-cli disconnect: 1 redis-cli shutdown show chinese: 1 redis-cli --raw connect to remote redis: 1 redis-cli -h host -p port -a password get redis config: 1 config get {config_name} Data Type list:
-1 2 3 lpush clist redis lpush clist mysql lrange clist 0 100 key:
-1 2 3 4 5 6 7 8 127.0.0.1:6379&amp;gt; set mkey sos OK 127.</description>
+      <description>Open, Connect And Config open redis: 1redis-server connect to redis: 1redis-cli disconnect: 1redis-cli shutdown show chinese: 1redis-cli --raw connect to remote redis: 1redis-cli -h host -p port -a password get redis config: 1config get {config_name} Data Type list:
+1lpush clist redis 2lpush clist mysql 3lrange clist 0 100 key:
+1127.0.0.1:6379&amp;gt; set mkey sos 2OK 3127.0.0.1:6379&amp;gt; get mkey 4&amp;#34;sos&amp;#34; 5127.0.0.1:6379&amp;gt; del mkey 6(integer) 1 7127.0.0.1:6379&amp;gt; get mkey 8(nil) keys: 接偶数个参数，一一对应。
+1127.0.0.1:6379&amp;gt; hmset mkeys A a B b C c 2OK 3127.</description>
     </item>
     
   </channel>

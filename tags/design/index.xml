@@ -19,9 +19,9 @@
 这样相比于直接继承抽象鸭子后重写叫声行为方法，好处是减少了重复代码，而坏处是增加了类的数量。
 代码展示 下面就以鸭子为例进行说明。
 从接口开始 定义一个叫声接口：（其它接口省略）
-1 2 3 public interface QuackBehavior { public void quack(); } 实现叫声接口 1 2 3 4 5 public class MuteQuack implements QuackBehavior { public void quack() { System.out.println(&amp;#34;&amp;lt;&amp;lt; Silence &amp;gt;&amp;gt;&amp;#34;); } } 其它接口省略。
+1public interface QuackBehavior { 2	public void quack(); 3} 实现叫声接口 1public class MuteQuack implements QuackBehavior { 2	public void quack() { 3	System.out.println(&amp;#34;&amp;lt;&amp;lt; Silence &amp;gt;&amp;gt;&amp;#34;); 4	} 5} 其它接口省略。
 创建抽象鸭子 每只鸭子都有Fly和Quack这两种行为。
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 public abstract class Duck { FlyBehavior flyBehavior; QuackBehavior quackBehavior; public Duck() { } public void setFlyBehavior(FlyBehavior fb) { flyBehavior = fb; } public void setQuackBehavior(QuackBehavior qb) { quackBehavior = qb; } abstract void display(); public void performFly() { flyBehavior.</description>
+1public abstract class Duck { 2	FlyBehavior flyBehavior; 3	QuackBehavior quackBehavior; 4 5	public Duck() { 6	} 7 8	public void setFlyBehavior(FlyBehavior fb) { 9	flyBehavior = fb; 10	} 11 12	public void setQuackBehavior(QuackBehavior qb) { 13	quackBehavior = qb; 14	} 15 16	abstract void display(); 17 18	public void performFly() { 19	flyBehavior.</description>
     </item>
     
     <item>
@@ -41,7 +41,7 @@
 这个过程可以通过代理的方式方便地完成：虚拟代理对象扮演图像的替身，它通过创建一个线程加载网络图像，加载期间将图像动态地变为用户友好字样，完成加载后改为网络图像。
 可以发现我们不是直接使用图像本身，而使用了代理对象作为图像，也就是说，代理扮演了图像这个角色。
 下面是一个图像代理对象：
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 class ImageProxy implements Icon { volatile ImageIcon imageIcon; final URL imageURL; Thread retrievalThread; boolean retrieving = false; public ImageProxy(URL url) { imageURL = url; } public int getIconWidth() { .</description>
+1class ImageProxy implements Icon { 2	volatile ImageIcon imageIcon; 3	final URL imageURL; 4	Thread retrievalThread; 5	boolean retrieving = false; 6 7	public ImageProxy(URL url) { imageURL = url; } 8 9	public int getIconWidth() { 10 ... 11	} 12 13	public int getIconHeight() { 14 ... 15	} 16	17	synchronized void setImageIcon(ImageIcon imageIcon) { 18	this.</description>
     </item>
     
     <item>
@@ -54,7 +54,7 @@
 比如某个机器有各种复杂的状态，每个状态都着共同的参数，而这些参数值有区别。用户通过某些操作会改变机器的状态，机器转变状态后，以当前状态的方法给用户反馈。
 代码展示 以机器的例子说明。
 从接口开始 编写状态接口：
-1 2 3 4 5 6 7 8 9 public interface State { public void insertQuarter(); public void ejectQuarter(); public void turnCrank(); public void dispense(); public void refill(); } 创建机器类 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 package headfirst.</description>
+1public interface State { 2 3	public void insertQuarter(); 4	public void ejectQuarter(); 5	public void turnCrank(); 6	public void dispense(); 7	8	public void refill(); 9} 创建机器类 1package headfirst.designpatterns.state.gumballstate; 2 3public class GumballMachine { 4 // 各种机器状态 5	State soldOutState; 6	State noQuarterState; 7	State hasQuarterState; 8	State soldState; 9 // 当前状态 10	State state; 11	int count = 0; 12 13	public GumballMachine(int numberGumballs) { 14	soldOutState = new SoldOutState(this); 15	noQuarterState = new NoQuarterState(this); 16	hasQuarterState = new HasQuarterState(this); 17	soldState = new SoldState(this); 18 19	this.</description>
     </item>
     
     <item>
@@ -67,7 +67,7 @@
 对于菜单内容而言，假如只有简单的菜品项，那么通过迭代器可以轻松地遍历，但是如果菜单内容中含有子菜单，那么就需要组合模式了。
 代码展示 下面就以菜单为例子展示组合模式。
 从抽象开始 创建菜单组件：
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 public abstract class MenuComponent { public void add(MenuComponent menuComponent) { throw new UnsupportedOperationException(); } public void remove(MenuComponent menuComponent) { throw new UnsupportedOperationException(); } public MenuComponent getChild(int i) { throw new UnsupportedOperationException(); } public String getName() { throw new UnsupportedOperationException(); } public String getDescription() { throw new UnsupportedOperationException(); } public double getPrice() { throw new UnsupportedOperationException(); } public boolean isVegetarian() { throw new UnsupportedOperationException(); } public void print() { throw new UnsupportedOperationException(); } } 创建菜单 菜单本身是一个菜单组件，菜单继承于菜单组件，实现父类方法。</description>
+1public abstract class MenuComponent { 2 3	public void add(MenuComponent menuComponent) { 4	throw new UnsupportedOperationException(); 5	} 6	public void remove(MenuComponent menuComponent) { 7	throw new UnsupportedOperationException(); 8	} 9	public MenuComponent getChild(int i) { 10	throw new UnsupportedOperationException(); 11	} 12 13	public String getName() { 14	throw new UnsupportedOperationException(); 15	} 16	public String getDescription() { 17	throw new UnsupportedOperationException(); 18	} 19	public double getPrice() { 20	throw new UnsupportedOperationException(); 21	} 22	public boolean isVegetarian() { 23	throw new UnsupportedOperationException(); 24	} 25 26	public void print() { 27	throw new UnsupportedOperationException(); 28	} 29} 创建菜单 菜单本身是一个菜单组件，菜单继承于菜单组件，实现父类方法。</description>
     </item>
     
     <item>
@@ -81,9 +81,9 @@
 代码展示 下面通过菜单的例子进行说明。
 分别用简单数组String[]和ArrayList&amp;lt;String&amp;gt;类创建菜单内容。
 从接口开始 创建菜单接口：
-1 2 3 public interface Menu { public Iterator&amp;lt;String&amp;gt; createIterator(); } 每个菜单都可以返回一个迭代器。
+1public interface Menu { 2	public Iterator&amp;lt;String&amp;gt; createIterator(); 3} 每个菜单都可以返回一个迭代器。
 创建Diner菜单 该菜单用String[]创建内容，需要编写自己的迭代器。
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 public class DinerMenu implements Menu { static final int MAX_ITEMS = 6; int numberOfItems = 0; String[] menuItems; public DinerMenu() { menuItems = new String[MAX_ITEMS]; addItem(&amp;#34;Vegetarian BLT&amp;#34;); addItem(&amp;#34;BLT&amp;#34;); addItem(&amp;#34;Soup of the day&amp;#34;); addItem(&amp;#34;Hotdog&amp;#34;); addItem(&amp;#34;Steamed Veggies and Brown Rice&amp;#34;); addItem(&amp;#34;Pasta&amp;#34;); } public void addItem(String name) { if (numberOfItems &amp;gt;= MAX_ITEMS) { System.</description>
+1public class DinerMenu implements Menu { 2	static final int MAX_ITEMS = 6; 3	int numberOfItems = 0; 4	String[] menuItems; 5 6	public DinerMenu() { 7	menuItems = new String[MAX_ITEMS]; 8 9	addItem(&amp;#34;Vegetarian BLT&amp;#34;); 10	addItem(&amp;#34;BLT&amp;#34;); 11	addItem(&amp;#34;Soup of the day&amp;#34;); 12	addItem(&amp;#34;Hotdog&amp;#34;); 13	addItem(&amp;#34;Steamed Veggies and Brown Rice&amp;#34;); 14	addItem(&amp;#34;Pasta&amp;#34;); 15	} 16 17	public void addItem(String name) 18	{ 19	if (numberOfItems &amp;gt;= MAX_ITEMS) { 20	System.</description>
     </item>
     
     <item>
@@ -97,8 +97,8 @@
 其实就是防止“依赖腐败”，也就是要避免高层组件和低层组件相互依赖。一般由高层组件依赖低层组件。
 代码展示 泡茶和泡咖啡有着几乎相同的步骤，但在某些子步骤中有差别。通过模板方法可以很好地解决问题。
 定义模板方法 子步骤brew()和addCondiments()为抽象方法，由子类具体实现。
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 public abstract class CaffeineBeverage { final void prepareRecipe() { boilWater(); brew(); pourInCup(); addCondiments(); } abstract void brew(); abstract void addCondiments(); void boilWater() { System.out.println(&amp;#34;Boiling water&amp;#34;); } void pourInCup() { System.out.println(&amp;#34;Pouring into cup&amp;#34;); } } 定义具体方法 继承CaffeineBeverage并实现抽象方法。
-1 2 3 4 5 6 7 8 public class Coffee extends CaffeineBeverage { public void brew() { System.</description>
+1public abstract class CaffeineBeverage { 2 3	final void prepareRecipe() { 4	boilWater(); 5	brew(); 6	pourInCup(); 7	addCondiments(); 8	} 9 10	abstract void brew(); 11 12	abstract void addCondiments(); 13 14	void boilWater() { 15	System.out.println(&amp;#34;Boiling water&amp;#34;); 16	} 17 18	void pourInCup() { 19	System.out.println(&amp;#34;Pouring into cup&amp;#34;); 20	} 21} 定义具体方法 继承CaffeineBeverage并实现抽象方法。
+1public class Coffee extends CaffeineBeverage { 2	public void brew() { 3	System.</description>
     </item>
     
     <item>
@@ -111,7 +111,7 @@
 “最少知识”原则 减少对象之间的交互，只和“密友”谈话，也就是减少一个类所交互的类的数量。
 代码展示 执行一些复杂操作需要一步步执行许多小操作，那么可以将复杂操作封装为一个高层类中的方法，将所有复杂操作需要用到的类作为高层类的成员，在复杂操作的方法中可以方便的调用各个类执行各自的功能。
 下面是一个家庭影院的例子：
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 public class HomeTheaterFacade { Amplifier amp; Tuner tuner; StreamingPlayer player; CdPlayer cd; Projector projector; TheaterLights lights; Screen screen; PopcornPopper popper; public HomeTheaterFacade(Amplifier amp, Tuner tuner, StreamingPlayer player, Projector projector, Screen screen, TheaterLights lights, PopcornPopper popper) { this.</description>
+1public class HomeTheaterFacade { 2	Amplifier amp; 3	Tuner tuner; 4	StreamingPlayer player; 5	CdPlayer cd; 6	Projector projector; 7	TheaterLights lights; 8	Screen screen; 9	PopcornPopper popper; 10 11	public HomeTheaterFacade(Amplifier amp, 12	Tuner tuner, 13	StreamingPlayer player, 14	Projector projector, 15	Screen screen, 16	TheaterLights lights, 17	PopcornPopper popper) { 18 19	this.amp = amp; 20	this.tuner = tuner; 21	this.</description>
     </item>
     
     <item>
@@ -122,7 +122,7 @@
       <guid>/posts/2022/08/adapter-mode/</guid>
       <description>适配器模式 定义 适配器模式将一个类的接口，转换成客户期望的另一个接口，适配器让原本接口不兼容的类可以合作无间。
 代码展示 鸭子和火鸡叫声不一样，通过编写适配器让火鸡适配鸭的方法。
-从接口开始 1 2 3 4 public interface Duck { public void quack(); public void fly(); } 1 2 3 4 public interface Turkey { public void gobble(); public void fly(); } 编写适配器 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 public class TurkeyAdapter implements Duck { Turkey turkey; public TurkeyAdapter(Turkey turkey) { this.turkey = turkey; } public void quack() { turkey.</description>
+从接口开始 1public interface Duck { 2	public void quack(); 3	public void fly(); 4} 1public interface Turkey { 2	public void gobble(); 3	public void fly(); 4} 编写适配器 1public class TurkeyAdapter implements Duck { 2	Turkey turkey; 3 4	public TurkeyAdapter(Turkey turkey) { 5	this.turkey = turkey; 6	} 7 8	public void quack() { 9	turkey.gobble(); 10	} 11 12	public void fly() { 13	for(int i=0; i &amp;lt; 5; i++) { 14	turkey.</description>
     </item>
     
     <item>
@@ -135,8 +135,8 @@
 比如对于遥控器而已，我们会将操作封装为一个按钮（命令）对象，通过按下按钮执行操作。
 代码展示 下面以遥控器作为例子：
 从接口开始 命令接口：
-1 2 3 public interface Command { public void execute(); } 定义操控对象 一个风扇对象：（其它对象省略了）
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 public class Light { String location = &amp;#34;&amp;#34;; public Light(String location) { this.location = location; } public void on() { System.out.println(location + &amp;#34; light is on&amp;#34;); } public void off() { System.out.println(location + &amp;#34; light is off&amp;#34;); } } 定义操控对象的命令 操作风扇的命令：</description>
+1public interface Command { 2	public void execute(); 3} 定义操控对象 一个风扇对象：（其它对象省略了）
+1public class Light { 2	String location = &amp;#34;&amp;#34;; 3 4	public Light(String location) { 5	this.location = location; 6	} 7 8	public void on() { 9	System.out.println(location + &amp;#34; light is on&amp;#34;); 10	} 11 12	public void off() { 13	System.out.println(location + &amp;#34; light is off&amp;#34;); 14	} 15} 定义操控对象的命令 操作风扇的命令：</description>
     </item>
     
     <item>
@@ -148,8 +148,8 @@
       <description>我的思考 单件模式，容易知道需要某个对象是独一无二的，那么它首先应该是静态的，不能在程序动态运行期间被再次创建。
 当在多个线程中用到它时，在创建时需要考虑线程安全问题，可通过加锁等方式解决。
 代码实现 传统的单件 定义一个私有实例化的对象，把单件对象作为一个私有的静态成员变量，通过静态方法Singleton.getInstance()获取，若获取为null则创建对象。
-1 2 3 4 5 6 7 8 9 10 11 12 public class Singleton { private static Singleton uniqueInstance; private Singleton() {} public static Singleton getInstance() { if (uniqueInstance == null) { uniqueInstance = new Singleton(); } return uniqueInstance; } } 线程安全的单件 传统的单件线程不安全，解决如下：
-1 2 3 4 5 6 7 8 9 10 11 12 public class Singleton { private static Singleton uniqueInstance; private Singleton() {} public static synchronized Singleton getInstance() { if (uniqueInstance == null) { uniqueInstance = new Singleton(); } return uniqueInstance; } } 改善多线程性能 如上线程安全的代码，getInstance()在多次调用的情况下性能太低，改善方法如下：</description>
+1public class Singleton { 2	private static Singleton uniqueInstance; 3 4	private Singleton() {} 5 6	public static Singleton getInstance() { 7	if (uniqueInstance == null) { 8	uniqueInstance = new Singleton(); 9	} 10	return uniqueInstance; 11	} 12} 线程安全的单件 传统的单件线程不安全，解决如下：
+1public class Singleton { 2	private static Singleton uniqueInstance; 3 4	private Singleton() {} 5 6	public static synchronized Singleton getInstance() { 7	if (uniqueInstance == null) { 8	uniqueInstance = new Singleton(); 9	} 10	return uniqueInstance; 11	} 12} 改善多线程性能 如上线程安全的代码，getInstance()在多次调用的情况下性能太低，改善方法如下：</description>
     </item>
     
     <item>
@@ -165,8 +165,8 @@
 假设有多家生产比萨配料的工厂，他们都有自己的独特的配料（实现所有配料接口），那么可以定义一个抽象工厂（一个接口），提供所有配料创建方法，具体工厂各自实现所有创建方法即可。
 总之，他们的具体区别如下：
 工厂方法模式使用继承，把对象的创建委托给子类，子类实现工厂方法来创建对象。 抽象工厂模式使用对象组合，对象的创建被实现在工厂接口所暴露出来的方法中。 工厂方法模式代码 从抽象开始 比萨店抽象类：
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 public abstract class PizzaStore { abstract Pizza createPizza(String item); public Pizza orderPizza(String type) { Pizza pizza = createPizza(type); System.out.println(&amp;#34;--- Making a &amp;#34; + pizza.getName() + &amp;#34; ---&amp;#34;); pizza.prepare(); pizza.bake(); pizza.cut(); pizza.box(); return pizza; } } 具体的比萨店 芝加哥的比萨店：
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 public class ChicagoPizzaStore extends PizzaStore { Pizza createPizza(String item) { if (item.</description>
+1public abstract class PizzaStore { 2 3	abstract Pizza createPizza(String item); 4 5	public Pizza orderPizza(String type) { 6	Pizza pizza = createPizza(type); 7	System.out.println(&amp;#34;--- Making a &amp;#34; + pizza.getName() + &amp;#34; ---&amp;#34;); 8	pizza.prepare(); 9	pizza.bake(); 10	pizza.cut(); 11	pizza.box(); 12	return pizza; 13	} 14} 具体的比萨店 芝加哥的比萨店：
+1public class ChicagoPizzaStore extends PizzaStore { 2 3	Pizza createPizza(String item) { 4 if (item.</description>
     </item>
     
     <item>
@@ -182,10 +182,10 @@
 这么一层层封装上去就是装饰模式。
 我们要在每一个配料中定义一个可包装的对象，在包装后返回这个对象。具体代码如下文。
 代码实现 定义抽象类 饮料抽象类：
-1 2 3 4 5 6 7 8 9 public abstract class Beverage { String description = &amp;#34;Unknown Beverage&amp;#34;; public String getDescription() { return description; } public abstract double cost(); } 配料抽象类：
+1public abstract class Beverage { 2	String description = &amp;#34;Unknown Beverage&amp;#34;; 3 4	public String getDescription() { 5	return description; 6	} 7 8	public abstract double cost(); 9} 配料抽象类：
 注意这里配料也继承了饮料类，这样Beverage在通过包装之后还是返回一个Beverage，具体见测试代码。
-1 2 3 4 public abstract class CondimentDecorator extends Beverage { Beverage beverage; public abstract String getDescription(); } 定义具体类 牛奶配料：（其他配料省略）
-1 2 3 4 5 6 7 8 9 10 11 12 13 public class Milk extends CondimentDecorator { public Milk(Beverage beverage) { this.</description>
+1public abstract class CondimentDecorator extends Beverage { 2	Beverage beverage; 3	public abstract String getDescription(); 4} 定义具体类 牛奶配料：（其他配料省略）
+1public class Milk extends CondimentDecorator { 2	public Milk(Beverage beverage) { 3	this.</description>
     </item>
     
     <item>
@@ -198,9 +198,9 @@
 观察者可以通过订阅，监听等方式实现“观察”，被观察者需要通过通知，发消息之类的方式通知观察者接收信息。
 假设有一个气象观测站，天气数据对象作为被观察者，各个气象观测站作为观察者订阅天气数据，而天气数据记录各个订阅了自己的观测站，以便于通知。具体代码实现如下文。
 代码实现 定义接口 被观察者：
-1 2 3 4 5 public interface Subject { public void registerObserver(Observer o); public void removeObserver(Observer o); public void notifyObservers(); } 观察者：
-1 2 3 public interface Observer { public void update(float temp, float humidity, float pressure); } 定义对象实现接口 天气数据对象：
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 public class WeatherData implements Subject { private List&amp;lt;Observer&amp;gt; observers; private float temperature; private float humidity; private float pressure; public WeatherData() { observers = new ArrayList&amp;lt;Observer&amp;gt;(); } public void registerObserver(Observer o) { observers.</description>
+1public interface Subject { 2	public void registerObserver(Observer o); 3	public void removeObserver(Observer o); 4	public void notifyObservers(); 5} 观察者：
+1public interface Observer { 2	public void update(float temp, float humidity, float pressure); 3} 定义对象实现接口 天气数据对象：
+1public class WeatherData implements Subject { 2	private List&amp;lt;Observer&amp;gt; observers; 3	private float temperature; 4	private float humidity; 5	private float pressure; 6	7	public WeatherData() { 8	observers = new ArrayList&amp;lt;Observer&amp;gt;(); 9	} 10	11	public void registerObserver(Observer o) { 12	observers.</description>
     </item>
     
   </channel>

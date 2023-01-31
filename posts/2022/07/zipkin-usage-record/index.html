@@ -10,11 +10,11 @@
   <meta name="googlebot" content="index,follow,snippet,archive">
   <meta property="og:title" content="Zipkin 使用记录" />
 <meta property="og:description" content="Zipkin的作用 查看微服务调用过程； 分析微服务依赖关系； 方便地找到调用过程错误发生位置。 Zipkin使用记录 一、下载Zipkin并运行：
-1 java -jar zipkin.jar 这样成功运行后，默认在端口9411可以查看图形管理界面。
+1java -jar zipkin.jar 这样成功运行后，默认在端口9411可以查看图形管理界面。
 二、依赖引入
 在所有调用到的微服务中引入：
-1 2 3 4 &lt;dependency&gt; &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt; &lt;artifactId&gt;spring-cloud-starter-zipkin&lt;/artifactId&gt; &lt;/dependency&gt; 三、配置文件
-1 2 3 4 5 6 spring: zipkin: base-url: http://localhost:9411 sleuth: sampler: probability: 1 # 采样率介于0和1之间，1表示全部采集 测试 通过service-name标签搜索自己的微服务名称，即可检索到与该微服务有依赖的所有微服务，可查看调用过程，依赖关系等。
+1&lt;dependency&gt; 2 &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt; 3 &lt;artifactId&gt;spring-cloud-starter-zipkin&lt;/artifactId&gt; 4&lt;/dependency&gt; 三、配置文件
+1spring: 2 zipkin: 3 base-url: http://localhost:9411 4 sleuth: 5 sampler: 6 probability: 1 # 采样率介于0和1之间，1表示全部采集 测试 通过service-name标签搜索自己的微服务名称，即可检索到与该微服务有依赖的所有微服务，可查看调用过程，依赖关系等。
 From My Blog: akynazh.
 Over." />
 <meta property="og:type" content="article" />
@@ -25,11 +25,11 @@ Over." />
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Zipkin 使用记录"/>
 <meta name="twitter:description" content="Zipkin的作用 查看微服务调用过程； 分析微服务依赖关系； 方便地找到调用过程错误发生位置。 Zipkin使用记录 一、下载Zipkin并运行：
-1 java -jar zipkin.jar 这样成功运行后，默认在端口9411可以查看图形管理界面。
+1java -jar zipkin.jar 这样成功运行后，默认在端口9411可以查看图形管理界面。
 二、依赖引入
 在所有调用到的微服务中引入：
-1 2 3 4 &lt;dependency&gt; &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt; &lt;artifactId&gt;spring-cloud-starter-zipkin&lt;/artifactId&gt; &lt;/dependency&gt; 三、配置文件
-1 2 3 4 5 6 spring: zipkin: base-url: http://localhost:9411 sleuth: sampler: probability: 1 # 采样率介于0和1之间，1表示全部采集 测试 通过service-name标签搜索自己的微服务名称，即可检索到与该微服务有依赖的所有微服务，可查看调用过程，依赖关系等。
+1&lt;dependency&gt; 2 &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt; 3 &lt;artifactId&gt;spring-cloud-starter-zipkin&lt;/artifactId&gt; 4&lt;/dependency&gt; 三、配置文件
+1spring: 2 zipkin: 3 base-url: http://localhost:9411 4 sleuth: 5 sampler: 6 probability: 1 # 采样率介于0和1之间，1表示全部采集 测试 通过service-name标签搜索自己的微服务名称，即可检索到与该微服务有依赖的所有微服务，可查看调用过程，依赖关系等。
 From My Blog: akynazh.
 Over."/>
 
@@ -38,7 +38,7 @@ Over."/>
   
   
   
-  <link rel="stylesheet" href="/css/styles.d8d1e5ac73f5bd72b0e6919356fcf7f12c9dd5a80e4788cae09111cc3678f69a4294b39d4b852dd69cc393c73ac3d8b6c05c8df3569d49d36331b7f39cfea8d1.css" integrity="sha512-2NHlrHP1vXKw5pGTVvz38Syd1agOR4jK4JERzDZ49ppClLOdS4Ut1pzDk8c6w9i2wFyN81adSdNjMbfznP6o0Q==">
+  <link rel="stylesheet" href="/css/styles.b6e7dac395bc81c65ab67a0be932cbd03925f5afb48f9c825ead224a41084a4a8289db621f5b2236149a32799ae71f4962b1d2531d209f51d8b88cdffaa1877e.css" integrity="sha512-tufaw5W8gcZatnoL6TLL0Dkl9a&#43;0j5yCXq0iSkEISkqCidtiH1siNhSaMnma5x9JYrHSUx0gn1HYuIzf&#43;qGHfg==">
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
@@ -155,7 +155,7 @@ Over."/>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f07%2fzipkin-usage-record%2f&name=Zipkin%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95&description=Zipkin%e7%9a%84%e4%bd%9c%e7%94%a8%20%e6%9f%a5%e7%9c%8b%e5%be%ae%e6%9c%8d%e5%8a%a1%e8%b0%83%e7%94%a8%e8%bf%87%e7%a8%8b%ef%bc%9b%20%e5%88%86%e6%9e%90%e5%be%ae%e6%9c%8d%e5%8a%a1%e4%be%9d%e8%b5%96%e5%85%b3%e7%b3%bb%ef%bc%9b%20%e6%96%b9%e4%be%bf%e5%9c%b0%e6%89%be%e5%88%b0%e8%b0%83%e7%94%a8%e8%bf%87%e7%a8%8b%e9%94%99%e8%af%af%e5%8f%91%e7%94%9f%e4%bd%8d%e7%bd%ae%e3%80%82%20Zipkin%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95%20%e4%b8%80%e3%80%81%e4%b8%8b%e8%bd%bdZipkin%e5%b9%b6%e8%bf%90%e8%a1%8c%ef%bc%9a%0a1%20java%20-jar%20zipkin.jar%20%e8%bf%99%e6%a0%b7%e6%88%90%e5%8a%9f%e8%bf%90%e8%a1%8c%e5%90%8e%ef%bc%8c%e9%bb%98%e8%ae%a4%e5%9c%a8%e7%ab%af%e5%8f%a39411%e5%8f%af%e4%bb%a5%e6%9f%a5%e7%9c%8b%e5%9b%be%e5%bd%a2%e7%ae%a1%e7%90%86%e7%95%8c%e9%9d%a2%e3%80%82%0a%e4%ba%8c%e3%80%81%e4%be%9d%e8%b5%96%e5%bc%95%e5%85%a5%0a%e5%9c%a8%e6%89%80%e6%9c%89%e8%b0%83%e7%94%a8%e5%88%b0%e7%9a%84%e5%be%ae%e6%9c%8d%e5%8a%a1%e4%b8%ad%e5%bc%95%e5%85%a5%ef%bc%9a%0a1%202%203%204%20%26lt%3bdependency%26gt%3b%20%26lt%3bgroupId%26gt%3borg.springframework.cloud%26lt%3b%2fgroupId%26gt%3b%20%26lt%3bartifactId%26gt%3bspring-cloud-starter-zipkin%26lt%3b%2fartifactId%26gt%3b%20%26lt%3b%2fdependency%26gt%3b%20%e4%b8%89%e3%80%81%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6%0a1%202%203%204%205%206%20spring%3a%20zipkin%3a%20base-url%3a%20http%3a%2f%2flocalhost%3a9411%20sleuth%3a%20sampler%3a%20probability%3a%201%20%23%20%e9%87%87%e6%a0%b7%e7%8e%87%e4%bb%8b%e4%ba%8e0%e5%92%8c1%e4%b9%8b%e9%97%b4%ef%bc%8c1%e8%a1%a8%e7%a4%ba%e5%85%a8%e9%83%a8%e9%87%87%e9%9b%86%20%e6%b5%8b%e8%af%95%20%e9%80%9a%e8%bf%87service-name%e6%a0%87%e7%ad%be%e6%90%9c%e7%b4%a2%e8%87%aa%e5%b7%b1%e7%9a%84%e5%be%ae%e6%9c%8d%e5%8a%a1%e5%90%8d%e7%a7%b0%ef%bc%8c%e5%8d%b3%e5%8f%af%e6%a3%80%e7%b4%a2%e5%88%b0%e4%b8%8e%e8%af%a5%e5%be%ae%e6%9c%8d%e5%8a%a1%e6%9c%89%e4%be%9d%e8%b5%96%e7%9a%84%e6%89%80%e6%9c%89%e5%be%ae%e6%9c%8d%e5%8a%a1%ef%bc%8c%e5%8f%af%e6%9f%a5%e7%9c%8b%e8%b0%83%e7%94%a8%e8%bf%87%e7%a8%8b%ef%bc%8c%e4%be%9d%e8%b5%96%e5%85%b3%e7%b3%bb%e7%ad%89%e3%80%82%0aFrom%20My%20Blog%3a%20akynazh.%0aOver." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f07%2fzipkin-usage-record%2f&name=Zipkin%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95&description=Zipkin%e7%9a%84%e4%bd%9c%e7%94%a8%20%e6%9f%a5%e7%9c%8b%e5%be%ae%e6%9c%8d%e5%8a%a1%e8%b0%83%e7%94%a8%e8%bf%87%e7%a8%8b%ef%bc%9b%20%e5%88%86%e6%9e%90%e5%be%ae%e6%9c%8d%e5%8a%a1%e4%be%9d%e8%b5%96%e5%85%b3%e7%b3%bb%ef%bc%9b%20%e6%96%b9%e4%be%bf%e5%9c%b0%e6%89%be%e5%88%b0%e8%b0%83%e7%94%a8%e8%bf%87%e7%a8%8b%e9%94%99%e8%af%af%e5%8f%91%e7%94%9f%e4%bd%8d%e7%bd%ae%e3%80%82%20Zipkin%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95%20%e4%b8%80%e3%80%81%e4%b8%8b%e8%bd%bdZipkin%e5%b9%b6%e8%bf%90%e8%a1%8c%ef%bc%9a%0a1java%20-jar%20zipkin.jar%20%e8%bf%99%e6%a0%b7%e6%88%90%e5%8a%9f%e8%bf%90%e8%a1%8c%e5%90%8e%ef%bc%8c%e9%bb%98%e8%ae%a4%e5%9c%a8%e7%ab%af%e5%8f%a39411%e5%8f%af%e4%bb%a5%e6%9f%a5%e7%9c%8b%e5%9b%be%e5%bd%a2%e7%ae%a1%e7%90%86%e7%95%8c%e9%9d%a2%e3%80%82%0a%e4%ba%8c%e3%80%81%e4%be%9d%e8%b5%96%e5%bc%95%e5%85%a5%0a%e5%9c%a8%e6%89%80%e6%9c%89%e8%b0%83%e7%94%a8%e5%88%b0%e7%9a%84%e5%be%ae%e6%9c%8d%e5%8a%a1%e4%b8%ad%e5%bc%95%e5%85%a5%ef%bc%9a%0a1%26lt%3bdependency%26gt%3b%202%20%26lt%3bgroupId%26gt%3borg.springframework.cloud%26lt%3b%2fgroupId%26gt%3b%203%20%26lt%3bartifactId%26gt%3bspring-cloud-starter-zipkin%26lt%3b%2fartifactId%26gt%3b%204%26lt%3b%2fdependency%26gt%3b%20%e4%b8%89%e3%80%81%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6%0a1spring%3a%202%20zipkin%3a%203%20base-url%3a%20http%3a%2f%2flocalhost%3a9411%204%20sleuth%3a%205%20sampler%3a%206%20probability%3a%201%20%23%20%e9%87%87%e6%a0%b7%e7%8e%87%e4%bb%8b%e4%ba%8e0%e5%92%8c1%e4%b9%8b%e9%97%b4%ef%bc%8c1%e8%a1%a8%e7%a4%ba%e5%85%a8%e9%83%a8%e9%87%87%e9%9b%86%20%e6%b5%8b%e8%af%95%20%e9%80%9a%e8%bf%87service-name%e6%a0%87%e7%ad%be%e6%90%9c%e7%b4%a2%e8%87%aa%e5%b7%b1%e7%9a%84%e5%be%ae%e6%9c%8d%e5%8a%a1%e5%90%8d%e7%a7%b0%ef%bc%8c%e5%8d%b3%e5%8f%af%e6%a3%80%e7%b4%a2%e5%88%b0%e4%b8%8e%e8%af%a5%e5%be%ae%e6%9c%8d%e5%8a%a1%e6%9c%89%e4%be%9d%e8%b5%96%e7%9a%84%e6%89%80%e6%9c%89%e5%be%ae%e6%9c%8d%e5%8a%a1%ef%bc%8c%e5%8f%af%e6%9f%a5%e7%9c%8b%e8%b0%83%e7%94%a8%e8%bf%87%e7%a8%8b%ef%bc%8c%e4%be%9d%e8%b5%96%e5%85%b3%e7%b3%bb%e7%ad%89%e3%80%82%0aFrom%20My%20Blog%3a%20akynazh.%0aOver." aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -233,51 +233,22 @@ Over."/>
 </ul>
 <h2 id="zipkin使用记录">Zipkin使用记录</h2>
 <p>一、下载Zipkin并运行：</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>java -jar zipkin.jar
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>这样成功运行后，默认在端口9411可以查看图形管理界面。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>java -jar zipkin.jar
+</span></span></code></pre></div><p>这样成功运行后，默认在端口9411可以查看图形管理界面。</p>
 <p>二、依赖引入</p>
 <p>在所有调用到的微服务中引入：</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#ff79c6">&lt;dependency&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&lt;groupId&gt;</span>org.springframework.cloud<span style="color:#ff79c6">&lt;/groupId&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&lt;artifactId&gt;</span>spring-cloud-starter-zipkin<span style="color:#ff79c6">&lt;/artifactId&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">&lt;/dependency&gt;</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>三、配置文件</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span><span style="color:#ff79c6">spring</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">zipkin</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">base-url</span>: http://localhost:9411
-</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">sleuth</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">sampler</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">probability</span>: <span style="color:#bd93f9">1</span> <span style="color:#6272a4"># 采样率介于0和1之间，1表示全部采集</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="测试">测试</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#ff79c6">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>    <span style="color:#ff79c6">&lt;groupId&gt;</span>org.springframework.cloud<span style="color:#ff79c6">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>    <span style="color:#ff79c6">&lt;artifactId&gt;</span>spring-cloud-starter-zipkin<span style="color:#ff79c6">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span><span style="color:#ff79c6">&lt;/dependency&gt;</span>
+</span></span></code></pre></div><p>三、配置文件</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#ff79c6">spring</span>:
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>  <span style="color:#ff79c6">zipkin</span>:
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>    <span style="color:#ff79c6">base-url</span>: http://localhost:9411
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>  <span style="color:#ff79c6">sleuth</span>:
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>    <span style="color:#ff79c6">sampler</span>:
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>      <span style="color:#ff79c6">probability</span>: <span style="color:#bd93f9">1</span> <span style="color:#6272a4"># 采样率介于0和1之间，1表示全部采集</span>
+</span></span></code></pre></div><h2 id="测试">测试</h2>
 <p>通过service-name标签搜索自己的微服务名称，即可检索到与该微服务有依赖的所有微服务，可查看调用过程，依赖关系等。</p>
 <hr>
 <p><strong>From My Blog: <a href="https://akynazh.site">akynazh</a></strong>.</p>
@@ -380,7 +351,7 @@ Over."/>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f07%2fzipkin-usage-record%2f&name=Zipkin%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95&description=Zipkin%e7%9a%84%e4%bd%9c%e7%94%a8%20%e6%9f%a5%e7%9c%8b%e5%be%ae%e6%9c%8d%e5%8a%a1%e8%b0%83%e7%94%a8%e8%bf%87%e7%a8%8b%ef%bc%9b%20%e5%88%86%e6%9e%90%e5%be%ae%e6%9c%8d%e5%8a%a1%e4%be%9d%e8%b5%96%e5%85%b3%e7%b3%bb%ef%bc%9b%20%e6%96%b9%e4%be%bf%e5%9c%b0%e6%89%be%e5%88%b0%e8%b0%83%e7%94%a8%e8%bf%87%e7%a8%8b%e9%94%99%e8%af%af%e5%8f%91%e7%94%9f%e4%bd%8d%e7%bd%ae%e3%80%82%20Zipkin%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95%20%e4%b8%80%e3%80%81%e4%b8%8b%e8%bd%bdZipkin%e5%b9%b6%e8%bf%90%e8%a1%8c%ef%bc%9a%0a1%20java%20-jar%20zipkin.jar%20%e8%bf%99%e6%a0%b7%e6%88%90%e5%8a%9f%e8%bf%90%e8%a1%8c%e5%90%8e%ef%bc%8c%e9%bb%98%e8%ae%a4%e5%9c%a8%e7%ab%af%e5%8f%a39411%e5%8f%af%e4%bb%a5%e6%9f%a5%e7%9c%8b%e5%9b%be%e5%bd%a2%e7%ae%a1%e7%90%86%e7%95%8c%e9%9d%a2%e3%80%82%0a%e4%ba%8c%e3%80%81%e4%be%9d%e8%b5%96%e5%bc%95%e5%85%a5%0a%e5%9c%a8%e6%89%80%e6%9c%89%e8%b0%83%e7%94%a8%e5%88%b0%e7%9a%84%e5%be%ae%e6%9c%8d%e5%8a%a1%e4%b8%ad%e5%bc%95%e5%85%a5%ef%bc%9a%0a1%202%203%204%20%26lt%3bdependency%26gt%3b%20%26lt%3bgroupId%26gt%3borg.springframework.cloud%26lt%3b%2fgroupId%26gt%3b%20%26lt%3bartifactId%26gt%3bspring-cloud-starter-zipkin%26lt%3b%2fartifactId%26gt%3b%20%26lt%3b%2fdependency%26gt%3b%20%e4%b8%89%e3%80%81%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6%0a1%202%203%204%205%206%20spring%3a%20zipkin%3a%20base-url%3a%20http%3a%2f%2flocalhost%3a9411%20sleuth%3a%20sampler%3a%20probability%3a%201%20%23%20%e9%87%87%e6%a0%b7%e7%8e%87%e4%bb%8b%e4%ba%8e0%e5%92%8c1%e4%b9%8b%e9%97%b4%ef%bc%8c1%e8%a1%a8%e7%a4%ba%e5%85%a8%e9%83%a8%e9%87%87%e9%9b%86%20%e6%b5%8b%e8%af%95%20%e9%80%9a%e8%bf%87service-name%e6%a0%87%e7%ad%be%e6%90%9c%e7%b4%a2%e8%87%aa%e5%b7%b1%e7%9a%84%e5%be%ae%e6%9c%8d%e5%8a%a1%e5%90%8d%e7%a7%b0%ef%bc%8c%e5%8d%b3%e5%8f%af%e6%a3%80%e7%b4%a2%e5%88%b0%e4%b8%8e%e8%af%a5%e5%be%ae%e6%9c%8d%e5%8a%a1%e6%9c%89%e4%be%9d%e8%b5%96%e7%9a%84%e6%89%80%e6%9c%89%e5%be%ae%e6%9c%8d%e5%8a%a1%ef%bc%8c%e5%8f%af%e6%9f%a5%e7%9c%8b%e8%b0%83%e7%94%a8%e8%bf%87%e7%a8%8b%ef%bc%8c%e4%be%9d%e8%b5%96%e5%85%b3%e7%b3%bb%e7%ad%89%e3%80%82%0aFrom%20My%20Blog%3a%20akynazh.%0aOver." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f07%2fzipkin-usage-record%2f&name=Zipkin%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95&description=Zipkin%e7%9a%84%e4%bd%9c%e7%94%a8%20%e6%9f%a5%e7%9c%8b%e5%be%ae%e6%9c%8d%e5%8a%a1%e8%b0%83%e7%94%a8%e8%bf%87%e7%a8%8b%ef%bc%9b%20%e5%88%86%e6%9e%90%e5%be%ae%e6%9c%8d%e5%8a%a1%e4%be%9d%e8%b5%96%e5%85%b3%e7%b3%bb%ef%bc%9b%20%e6%96%b9%e4%be%bf%e5%9c%b0%e6%89%be%e5%88%b0%e8%b0%83%e7%94%a8%e8%bf%87%e7%a8%8b%e9%94%99%e8%af%af%e5%8f%91%e7%94%9f%e4%bd%8d%e7%bd%ae%e3%80%82%20Zipkin%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95%20%e4%b8%80%e3%80%81%e4%b8%8b%e8%bd%bdZipkin%e5%b9%b6%e8%bf%90%e8%a1%8c%ef%bc%9a%0a1java%20-jar%20zipkin.jar%20%e8%bf%99%e6%a0%b7%e6%88%90%e5%8a%9f%e8%bf%90%e8%a1%8c%e5%90%8e%ef%bc%8c%e9%bb%98%e8%ae%a4%e5%9c%a8%e7%ab%af%e5%8f%a39411%e5%8f%af%e4%bb%a5%e6%9f%a5%e7%9c%8b%e5%9b%be%e5%bd%a2%e7%ae%a1%e7%90%86%e7%95%8c%e9%9d%a2%e3%80%82%0a%e4%ba%8c%e3%80%81%e4%be%9d%e8%b5%96%e5%bc%95%e5%85%a5%0a%e5%9c%a8%e6%89%80%e6%9c%89%e8%b0%83%e7%94%a8%e5%88%b0%e7%9a%84%e5%be%ae%e6%9c%8d%e5%8a%a1%e4%b8%ad%e5%bc%95%e5%85%a5%ef%bc%9a%0a1%26lt%3bdependency%26gt%3b%202%20%26lt%3bgroupId%26gt%3borg.springframework.cloud%26lt%3b%2fgroupId%26gt%3b%203%20%26lt%3bartifactId%26gt%3bspring-cloud-starter-zipkin%26lt%3b%2fartifactId%26gt%3b%204%26lt%3b%2fdependency%26gt%3b%20%e4%b8%89%e3%80%81%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6%0a1spring%3a%202%20zipkin%3a%203%20base-url%3a%20http%3a%2f%2flocalhost%3a9411%204%20sleuth%3a%205%20sampler%3a%206%20probability%3a%201%20%23%20%e9%87%87%e6%a0%b7%e7%8e%87%e4%bb%8b%e4%ba%8e0%e5%92%8c1%e4%b9%8b%e9%97%b4%ef%bc%8c1%e8%a1%a8%e7%a4%ba%e5%85%a8%e9%83%a8%e9%87%87%e9%9b%86%20%e6%b5%8b%e8%af%95%20%e9%80%9a%e8%bf%87service-name%e6%a0%87%e7%ad%be%e6%90%9c%e7%b4%a2%e8%87%aa%e5%b7%b1%e7%9a%84%e5%be%ae%e6%9c%8d%e5%8a%a1%e5%90%8d%e7%a7%b0%ef%bc%8c%e5%8d%b3%e5%8f%af%e6%a3%80%e7%b4%a2%e5%88%b0%e4%b8%8e%e8%af%a5%e5%be%ae%e6%9c%8d%e5%8a%a1%e6%9c%89%e4%be%9d%e8%b5%96%e7%9a%84%e6%89%80%e6%9c%89%e5%be%ae%e6%9c%8d%e5%8a%a1%ef%bc%8c%e5%8f%af%e6%9f%a5%e7%9c%8b%e8%b0%83%e7%94%a8%e8%bf%87%e7%a8%8b%ef%bc%8c%e4%be%9d%e8%b5%96%e5%85%b3%e7%b3%bb%e7%ad%89%e3%80%82%0aFrom%20My%20Blog%3a%20akynazh.%0aOver." aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>

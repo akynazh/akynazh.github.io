@@ -11,14 +11,14 @@
   <meta property="og:title" content="Window 添加命令别名的方法" />
 <meta property="og:description" content="前言 下面将介绍3种方法：
 CMD添加别名的方法 PowerShell添加别名的方法 通过添加环境变量的方式设置别名 CMD添加别名的方法 设置临时的别名 可以通过doskey命令实现。
-1 doskey ls=echo ====== ^&amp;^&amp; dir /b $* ^&amp;^&amp; echo ====== $*表示还可能有其他命令参数，^&amp;^&amp;用于分开多条命令。
+1doskey ls=echo ====== ^&amp;^&amp; dir /b $* ^&amp;^&amp; echo ====== $*表示还可能有其他命令参数，^&amp;^&amp;用于分开多条命令。
 单纯在一个cmd窗口中使用doskey设置别名，别名只能在该窗口中使用。
 设置永久的别名 可以通过将doskey命令写入bat脚本，再把脚本路径添加到注册表Autorun实现永久且所有cmd都可用的别名，具体步骤如下：
-编写脚本： 1 2 3 @echo off doskey ls=dir /b $* doskey lss=echo ====== ^&amp;^&amp; dir /b $* ^&amp;^&amp; echo ====== 添加路径到注册表 在HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Command Processor下的Autorun中，将数值设为doskey命令脚本所在的路径即可。这样所有用户都可以使用设置好的别名。
+编写脚本： 1@echo off 2doskey ls=dir /b $* 3doskey lss=echo ====== ^&amp;^&amp; dir /b $* ^&amp;^&amp; echo ====== 添加路径到注册表 在HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Command Processor下的Autorun中，将数值设为doskey命令脚本所在的路径即可。这样所有用户都可以使用设置好的别名。
 也可在HKEY_CURRENT_USER下的对应位置设置，只针对当前用户设置别名。
 优缺点 通过doskey的方式，挺方便的，但是在命令非常多的情况下不是很方便，同时，设置的命令还不可以在powershell下运行。
-PowerShell添加别名的方法 为PowerShell设置临时的别名 1 2 3 PS C:\Users\akyna&gt; set-alias escc esc PS C:\Users\akyna&gt; escc ...... 如果带参数，则可以通过function进行：
-1 2 3 PS C:\Users\akyna&gt; function func{nircmd emptybin} PS C:\Users\akyna&gt; set-alias ctrash func PS C:\Users\akyna&gt; ctrash 这样的别名只是在当前会话下有效，开启另一个shell就失效了。" />
+PowerShell添加别名的方法 为PowerShell设置临时的别名 1PS C:\Users\akyna&gt; set-alias escc esc 2PS C:\Users\akyna&gt; escc 3...... 如果带参数，则可以通过function进行：
+1PS C:\Users\akyna&gt; function func{nircmd emptybin} 2PS C:\Users\akyna&gt; set-alias ctrash func 3PS C:\Users\akyna&gt; ctrash 这样的别名只是在当前会话下有效，开启另一个shell就失效了。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/2022/06/how-to-add-command-alias-in-window/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-06-24T22:52:59+08:00" />
@@ -28,21 +28,21 @@ PowerShell添加别名的方法 为PowerShell设置临时的别名 1 2 3 PS C:\U
 <meta name="twitter:title" content="Window 添加命令别名的方法"/>
 <meta name="twitter:description" content="前言 下面将介绍3种方法：
 CMD添加别名的方法 PowerShell添加别名的方法 通过添加环境变量的方式设置别名 CMD添加别名的方法 设置临时的别名 可以通过doskey命令实现。
-1 doskey ls=echo ====== ^&amp;^&amp; dir /b $* ^&amp;^&amp; echo ====== $*表示还可能有其他命令参数，^&amp;^&amp;用于分开多条命令。
+1doskey ls=echo ====== ^&amp;^&amp; dir /b $* ^&amp;^&amp; echo ====== $*表示还可能有其他命令参数，^&amp;^&amp;用于分开多条命令。
 单纯在一个cmd窗口中使用doskey设置别名，别名只能在该窗口中使用。
 设置永久的别名 可以通过将doskey命令写入bat脚本，再把脚本路径添加到注册表Autorun实现永久且所有cmd都可用的别名，具体步骤如下：
-编写脚本： 1 2 3 @echo off doskey ls=dir /b $* doskey lss=echo ====== ^&amp;^&amp; dir /b $* ^&amp;^&amp; echo ====== 添加路径到注册表 在HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Command Processor下的Autorun中，将数值设为doskey命令脚本所在的路径即可。这样所有用户都可以使用设置好的别名。
+编写脚本： 1@echo off 2doskey ls=dir /b $* 3doskey lss=echo ====== ^&amp;^&amp; dir /b $* ^&amp;^&amp; echo ====== 添加路径到注册表 在HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Command Processor下的Autorun中，将数值设为doskey命令脚本所在的路径即可。这样所有用户都可以使用设置好的别名。
 也可在HKEY_CURRENT_USER下的对应位置设置，只针对当前用户设置别名。
 优缺点 通过doskey的方式，挺方便的，但是在命令非常多的情况下不是很方便，同时，设置的命令还不可以在powershell下运行。
-PowerShell添加别名的方法 为PowerShell设置临时的别名 1 2 3 PS C:\Users\akyna&gt; set-alias escc esc PS C:\Users\akyna&gt; escc ...... 如果带参数，则可以通过function进行：
-1 2 3 PS C:\Users\akyna&gt; function func{nircmd emptybin} PS C:\Users\akyna&gt; set-alias ctrash func PS C:\Users\akyna&gt; ctrash 这样的别名只是在当前会话下有效，开启另一个shell就失效了。"/>
+PowerShell添加别名的方法 为PowerShell设置临时的别名 1PS C:\Users\akyna&gt; set-alias escc esc 2PS C:\Users\akyna&gt; escc 3...... 如果带参数，则可以通过function进行：
+1PS C:\Users\akyna&gt; function func{nircmd emptybin} 2PS C:\Users\akyna&gt; set-alias ctrash func 3PS C:\Users\akyna&gt; ctrash 这样的别名只是在当前会话下有效，开启另一个shell就失效了。"/>
 
   
   
   
   
   
-  <link rel="stylesheet" href="/css/styles.d8d1e5ac73f5bd72b0e6919356fcf7f12c9dd5a80e4788cae09111cc3678f69a4294b39d4b852dd69cc393c73ac3d8b6c05c8df3569d49d36331b7f39cfea8d1.css" integrity="sha512-2NHlrHP1vXKw5pGTVvz38Syd1agOR4jK4JERzDZ49ppClLOdS4Ut1pzDk8c6w9i2wFyN81adSdNjMbfznP6o0Q==">
+  <link rel="stylesheet" href="/css/styles.b6e7dac395bc81c65ab67a0be932cbd03925f5afb48f9c825ead224a41084a4a8289db621f5b2236149a32799ae71f4962b1d2531d209f51d8b88cdffaa1877e.css" integrity="sha512-tufaw5W8gcZatnoL6TLL0Dkl9a&#43;0j5yCXq0iSkEISkqCidtiH1siNhSaMnma5x9JYrHSUx0gn1HYuIzf&#43;qGHfg==">
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
@@ -159,7 +159,7 @@ PowerShell添加别名的方法 为PowerShell设置临时的别名 1 2 3 PS C:\U
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f06%2fhow-to-add-command-alias-in-window%2f&name=Window%20%e6%b7%bb%e5%8a%a0%e5%91%bd%e4%bb%a4%e5%88%ab%e5%90%8d%e7%9a%84%e6%96%b9%e6%b3%95&description=%e5%89%8d%e8%a8%80%20%e4%b8%8b%e9%9d%a2%e5%b0%86%e4%bb%8b%e7%bb%8d3%e7%a7%8d%e6%96%b9%e6%b3%95%ef%bc%9a%0aCMD%e6%b7%bb%e5%8a%a0%e5%88%ab%e5%90%8d%e7%9a%84%e6%96%b9%e6%b3%95%20PowerShell%e6%b7%bb%e5%8a%a0%e5%88%ab%e5%90%8d%e7%9a%84%e6%96%b9%e6%b3%95%20%e9%80%9a%e8%bf%87%e6%b7%bb%e5%8a%a0%e7%8e%af%e5%a2%83%e5%8f%98%e9%87%8f%e7%9a%84%e6%96%b9%e5%bc%8f%e8%ae%be%e7%bd%ae%e5%88%ab%e5%90%8d%20CMD%e6%b7%bb%e5%8a%a0%e5%88%ab%e5%90%8d%e7%9a%84%e6%96%b9%e6%b3%95%20%e8%ae%be%e7%bd%ae%e4%b8%b4%e6%97%b6%e7%9a%84%e5%88%ab%e5%90%8d%20%e5%8f%af%e4%bb%a5%e9%80%9a%e8%bf%87doskey%e5%91%bd%e4%bb%a4%e5%ae%9e%e7%8e%b0%e3%80%82%0a1%20doskey%20ls%3decho%20%3d%3d%3d%3d%3d%3d%20%5e%26amp%3b%5e%26amp%3b%20dir%20%2fb%20%24%2a%20%5e%26amp%3b%5e%26amp%3b%20echo%20%3d%3d%3d%3d%3d%3d%20%24%2a%e8%a1%a8%e7%a4%ba%e8%bf%98%e5%8f%af%e8%83%bd%e6%9c%89%e5%85%b6%e4%bb%96%e5%91%bd%e4%bb%a4%e5%8f%82%e6%95%b0%ef%bc%8c%5e%26amp%3b%5e%26amp%3b%e7%94%a8%e4%ba%8e%e5%88%86%e5%bc%80%e5%a4%9a%e6%9d%a1%e5%91%bd%e4%bb%a4%e3%80%82%0a%e5%8d%95%e7%ba%af%e5%9c%a8%e4%b8%80%e4%b8%aacmd%e7%aa%97%e5%8f%a3%e4%b8%ad%e4%bd%bf%e7%94%a8doskey%e8%ae%be%e7%bd%ae%e5%88%ab%e5%90%8d%ef%bc%8c%e5%88%ab%e5%90%8d%e5%8f%aa%e8%83%bd%e5%9c%a8%e8%af%a5%e7%aa%97%e5%8f%a3%e4%b8%ad%e4%bd%bf%e7%94%a8%e3%80%82%0a%e8%ae%be%e7%bd%ae%e6%b0%b8%e4%b9%85%e7%9a%84%e5%88%ab%e5%90%8d%20%e5%8f%af%e4%bb%a5%e9%80%9a%e8%bf%87%e5%b0%86doskey%e5%91%bd%e4%bb%a4%e5%86%99%e5%85%a5bat%e8%84%9a%e6%9c%ac%ef%bc%8c%e5%86%8d%e6%8a%8a%e8%84%9a%e6%9c%ac%e8%b7%af%e5%be%84%e6%b7%bb%e5%8a%a0%e5%88%b0%e6%b3%a8%e5%86%8c%e8%a1%a8Autorun%e5%ae%9e%e7%8e%b0%e6%b0%b8%e4%b9%85%e4%b8%94%e6%89%80%e6%9c%89cmd%e9%83%bd%e5%8f%af%e7%94%a8%e7%9a%84%e5%88%ab%e5%90%8d%ef%bc%8c%e5%85%b7%e4%bd%93%e6%ad%a5%e9%aa%a4%e5%a6%82%e4%b8%8b%ef%bc%9a%0a%e7%bc%96%e5%86%99%e8%84%9a%e6%9c%ac%ef%bc%9a%201%202%203%20%40echo%20off%20doskey%20ls%3ddir%20%2fb%20%24%2a%20doskey%20lss%3decho%20%3d%3d%3d%3d%3d%3d%20%5e%26amp%3b%5e%26amp%3b%20dir%20%2fb%20%24%2a%20%5e%26amp%3b%5e%26amp%3b%20echo%20%3d%3d%3d%3d%3d%3d%20%e6%b7%bb%e5%8a%a0%e8%b7%af%e5%be%84%e5%88%b0%e6%b3%a8%e5%86%8c%e8%a1%a8%20%e5%9c%a8HKEY_LOCAL_MACHINE%5cSOFTWARE%5cMicrosoft%5cCommand%20Processor%e4%b8%8b%e7%9a%84Autorun%e4%b8%ad%ef%bc%8c%e5%b0%86%e6%95%b0%e5%80%bc%e8%ae%be%e4%b8%badoskey%e5%91%bd%e4%bb%a4%e8%84%9a%e6%9c%ac%e6%89%80%e5%9c%a8%e7%9a%84%e8%b7%af%e5%be%84%e5%8d%b3%e5%8f%af%e3%80%82%e8%bf%99%e6%a0%b7%e6%89%80%e6%9c%89%e7%94%a8%e6%88%b7%e9%83%bd%e5%8f%af%e4%bb%a5%e4%bd%bf%e7%94%a8%e8%ae%be%e7%bd%ae%e5%a5%bd%e7%9a%84%e5%88%ab%e5%90%8d%e3%80%82%0a%e4%b9%9f%e5%8f%af%e5%9c%a8HKEY_CURRENT_USER%e4%b8%8b%e7%9a%84%e5%af%b9%e5%ba%94%e4%bd%8d%e7%bd%ae%e8%ae%be%e7%bd%ae%ef%bc%8c%e5%8f%aa%e9%92%88%e5%af%b9%e5%bd%93%e5%89%8d%e7%94%a8%e6%88%b7%e8%ae%be%e7%bd%ae%e5%88%ab%e5%90%8d%e3%80%82%0a%e4%bc%98%e7%bc%ba%e7%82%b9%20%e9%80%9a%e8%bf%87doskey%e7%9a%84%e6%96%b9%e5%bc%8f%ef%bc%8c%e6%8c%ba%e6%96%b9%e4%be%bf%e7%9a%84%ef%bc%8c%e4%bd%86%e6%98%af%e5%9c%a8%e5%91%bd%e4%bb%a4%e9%9d%9e%e5%b8%b8%e5%a4%9a%e7%9a%84%e6%83%85%e5%86%b5%e4%b8%8b%e4%b8%8d%e6%98%af%e5%be%88%e6%96%b9%e4%be%bf%ef%bc%8c%e5%90%8c%e6%97%b6%ef%bc%8c%e8%ae%be%e7%bd%ae%e7%9a%84%e5%91%bd%e4%bb%a4%e8%bf%98%e4%b8%8d%e5%8f%af%e4%bb%a5%e5%9c%a8powershell%e4%b8%8b%e8%bf%90%e8%a1%8c%e3%80%82%0aPowerShell%e6%b7%bb%e5%8a%a0%e5%88%ab%e5%90%8d%e7%9a%84%e6%96%b9%e6%b3%95%20%e4%b8%baPowerShell%e8%ae%be%e7%bd%ae%e4%b8%b4%e6%97%b6%e7%9a%84%e5%88%ab%e5%90%8d%201%202%203%20PS%20C%3a%5cUsers%5cakyna%26gt%3b%20set-alias%20escc%20esc%20PS%20C%3a%5cUsers%5cakyna%26gt%3b%20escc%20......%20%e5%a6%82%e6%9e%9c%e5%b8%a6%e5%8f%82%e6%95%b0%ef%bc%8c%e5%88%99%e5%8f%af%e4%bb%a5%e9%80%9a%e8%bf%87function%e8%bf%9b%e8%a1%8c%ef%bc%9a%0a1%202%203%20PS%20C%3a%5cUsers%5cakyna%26gt%3b%20function%20func%7bnircmd%20emptybin%7d%20PS%20C%3a%5cUsers%5cakyna%26gt%3b%20set-alias%20ctrash%20func%20PS%20C%3a%5cUsers%5cakyna%26gt%3b%20ctrash%20%e8%bf%99%e6%a0%b7%e7%9a%84%e5%88%ab%e5%90%8d%e5%8f%aa%e6%98%af%e5%9c%a8%e5%bd%93%e5%89%8d%e4%bc%9a%e8%af%9d%e4%b8%8b%e6%9c%89%e6%95%88%ef%bc%8c%e5%bc%80%e5%90%af%e5%8f%a6%e4%b8%80%e4%b8%aashell%e5%b0%b1%e5%a4%b1%e6%95%88%e4%ba%86%e3%80%82" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f06%2fhow-to-add-command-alias-in-window%2f&name=Window%20%e6%b7%bb%e5%8a%a0%e5%91%bd%e4%bb%a4%e5%88%ab%e5%90%8d%e7%9a%84%e6%96%b9%e6%b3%95&description=%e5%89%8d%e8%a8%80%20%e4%b8%8b%e9%9d%a2%e5%b0%86%e4%bb%8b%e7%bb%8d3%e7%a7%8d%e6%96%b9%e6%b3%95%ef%bc%9a%0aCMD%e6%b7%bb%e5%8a%a0%e5%88%ab%e5%90%8d%e7%9a%84%e6%96%b9%e6%b3%95%20PowerShell%e6%b7%bb%e5%8a%a0%e5%88%ab%e5%90%8d%e7%9a%84%e6%96%b9%e6%b3%95%20%e9%80%9a%e8%bf%87%e6%b7%bb%e5%8a%a0%e7%8e%af%e5%a2%83%e5%8f%98%e9%87%8f%e7%9a%84%e6%96%b9%e5%bc%8f%e8%ae%be%e7%bd%ae%e5%88%ab%e5%90%8d%20CMD%e6%b7%bb%e5%8a%a0%e5%88%ab%e5%90%8d%e7%9a%84%e6%96%b9%e6%b3%95%20%e8%ae%be%e7%bd%ae%e4%b8%b4%e6%97%b6%e7%9a%84%e5%88%ab%e5%90%8d%20%e5%8f%af%e4%bb%a5%e9%80%9a%e8%bf%87doskey%e5%91%bd%e4%bb%a4%e5%ae%9e%e7%8e%b0%e3%80%82%0a1doskey%20ls%3decho%20%3d%3d%3d%3d%3d%3d%20%5e%26amp%3b%5e%26amp%3b%20dir%20%2fb%20%24%2a%20%5e%26amp%3b%5e%26amp%3b%20echo%20%3d%3d%3d%3d%3d%3d%20%24%2a%e8%a1%a8%e7%a4%ba%e8%bf%98%e5%8f%af%e8%83%bd%e6%9c%89%e5%85%b6%e4%bb%96%e5%91%bd%e4%bb%a4%e5%8f%82%e6%95%b0%ef%bc%8c%5e%26amp%3b%5e%26amp%3b%e7%94%a8%e4%ba%8e%e5%88%86%e5%bc%80%e5%a4%9a%e6%9d%a1%e5%91%bd%e4%bb%a4%e3%80%82%0a%e5%8d%95%e7%ba%af%e5%9c%a8%e4%b8%80%e4%b8%aacmd%e7%aa%97%e5%8f%a3%e4%b8%ad%e4%bd%bf%e7%94%a8doskey%e8%ae%be%e7%bd%ae%e5%88%ab%e5%90%8d%ef%bc%8c%e5%88%ab%e5%90%8d%e5%8f%aa%e8%83%bd%e5%9c%a8%e8%af%a5%e7%aa%97%e5%8f%a3%e4%b8%ad%e4%bd%bf%e7%94%a8%e3%80%82%0a%e8%ae%be%e7%bd%ae%e6%b0%b8%e4%b9%85%e7%9a%84%e5%88%ab%e5%90%8d%20%e5%8f%af%e4%bb%a5%e9%80%9a%e8%bf%87%e5%b0%86doskey%e5%91%bd%e4%bb%a4%e5%86%99%e5%85%a5bat%e8%84%9a%e6%9c%ac%ef%bc%8c%e5%86%8d%e6%8a%8a%e8%84%9a%e6%9c%ac%e8%b7%af%e5%be%84%e6%b7%bb%e5%8a%a0%e5%88%b0%e6%b3%a8%e5%86%8c%e8%a1%a8Autorun%e5%ae%9e%e7%8e%b0%e6%b0%b8%e4%b9%85%e4%b8%94%e6%89%80%e6%9c%89cmd%e9%83%bd%e5%8f%af%e7%94%a8%e7%9a%84%e5%88%ab%e5%90%8d%ef%bc%8c%e5%85%b7%e4%bd%93%e6%ad%a5%e9%aa%a4%e5%a6%82%e4%b8%8b%ef%bc%9a%0a%e7%bc%96%e5%86%99%e8%84%9a%e6%9c%ac%ef%bc%9a%201%40echo%20off%202doskey%20ls%3ddir%20%2fb%20%24%2a%203doskey%20lss%3decho%20%3d%3d%3d%3d%3d%3d%20%5e%26amp%3b%5e%26amp%3b%20dir%20%2fb%20%24%2a%20%5e%26amp%3b%5e%26amp%3b%20echo%20%3d%3d%3d%3d%3d%3d%20%e6%b7%bb%e5%8a%a0%e8%b7%af%e5%be%84%e5%88%b0%e6%b3%a8%e5%86%8c%e8%a1%a8%20%e5%9c%a8HKEY_LOCAL_MACHINE%5cSOFTWARE%5cMicrosoft%5cCommand%20Processor%e4%b8%8b%e7%9a%84Autorun%e4%b8%ad%ef%bc%8c%e5%b0%86%e6%95%b0%e5%80%bc%e8%ae%be%e4%b8%badoskey%e5%91%bd%e4%bb%a4%e8%84%9a%e6%9c%ac%e6%89%80%e5%9c%a8%e7%9a%84%e8%b7%af%e5%be%84%e5%8d%b3%e5%8f%af%e3%80%82%e8%bf%99%e6%a0%b7%e6%89%80%e6%9c%89%e7%94%a8%e6%88%b7%e9%83%bd%e5%8f%af%e4%bb%a5%e4%bd%bf%e7%94%a8%e8%ae%be%e7%bd%ae%e5%a5%bd%e7%9a%84%e5%88%ab%e5%90%8d%e3%80%82%0a%e4%b9%9f%e5%8f%af%e5%9c%a8HKEY_CURRENT_USER%e4%b8%8b%e7%9a%84%e5%af%b9%e5%ba%94%e4%bd%8d%e7%bd%ae%e8%ae%be%e7%bd%ae%ef%bc%8c%e5%8f%aa%e9%92%88%e5%af%b9%e5%bd%93%e5%89%8d%e7%94%a8%e6%88%b7%e8%ae%be%e7%bd%ae%e5%88%ab%e5%90%8d%e3%80%82%0a%e4%bc%98%e7%bc%ba%e7%82%b9%20%e9%80%9a%e8%bf%87doskey%e7%9a%84%e6%96%b9%e5%bc%8f%ef%bc%8c%e6%8c%ba%e6%96%b9%e4%be%bf%e7%9a%84%ef%bc%8c%e4%bd%86%e6%98%af%e5%9c%a8%e5%91%bd%e4%bb%a4%e9%9d%9e%e5%b8%b8%e5%a4%9a%e7%9a%84%e6%83%85%e5%86%b5%e4%b8%8b%e4%b8%8d%e6%98%af%e5%be%88%e6%96%b9%e4%be%bf%ef%bc%8c%e5%90%8c%e6%97%b6%ef%bc%8c%e8%ae%be%e7%bd%ae%e7%9a%84%e5%91%bd%e4%bb%a4%e8%bf%98%e4%b8%8d%e5%8f%af%e4%bb%a5%e5%9c%a8powershell%e4%b8%8b%e8%bf%90%e8%a1%8c%e3%80%82%0aPowerShell%e6%b7%bb%e5%8a%a0%e5%88%ab%e5%90%8d%e7%9a%84%e6%96%b9%e6%b3%95%20%e4%b8%baPowerShell%e8%ae%be%e7%bd%ae%e4%b8%b4%e6%97%b6%e7%9a%84%e5%88%ab%e5%90%8d%201PS%20C%3a%5cUsers%5cakyna%26gt%3b%20set-alias%20escc%20esc%202PS%20C%3a%5cUsers%5cakyna%26gt%3b%20escc%203......%20%e5%a6%82%e6%9e%9c%e5%b8%a6%e5%8f%82%e6%95%b0%ef%bc%8c%e5%88%99%e5%8f%af%e4%bb%a5%e9%80%9a%e8%bf%87function%e8%bf%9b%e8%a1%8c%ef%bc%9a%0a1PS%20C%3a%5cUsers%5cakyna%26gt%3b%20function%20func%7bnircmd%20emptybin%7d%202PS%20C%3a%5cUsers%5cakyna%26gt%3b%20set-alias%20ctrash%20func%203PS%20C%3a%5cUsers%5cakyna%26gt%3b%20ctrash%20%e8%bf%99%e6%a0%b7%e7%9a%84%e5%88%ab%e5%90%8d%e5%8f%aa%e6%98%af%e5%9c%a8%e5%bd%93%e5%89%8d%e4%bc%9a%e8%af%9d%e4%b8%8b%e6%9c%89%e6%95%88%ef%bc%8c%e5%bc%80%e5%90%af%e5%8f%a6%e4%b8%80%e4%b8%aashell%e5%b0%b1%e5%a4%b1%e6%95%88%e4%ba%86%e3%80%82" aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -259,34 +259,18 @@ PowerShell添加别名的方法 为PowerShell设置临时的别名 1 2 3 PS C:\U
 <h2 id="cmd添加别名的方法">CMD添加别名的方法</h2>
 <h3 id="设置临时的别名">设置临时的别名</h3>
 <p>可以通过doskey命令实现。</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bat" data-lang="bat"><span style="display:flex;"><span>doskey ls=echo ====== <span style="color:#f1fa8c">^&amp;^&amp;</span> dir /b $* <span style="color:#f1fa8c">^&amp;^&amp;</span> echo ======
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p><code>$*</code>表示还可能有其他命令参数，<code>^&amp;^&amp;</code>用于分开多条命令。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bat" data-lang="bat"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>doskey ls=echo ====== <span style="color:#f1fa8c">^&amp;^&amp;</span> dir /b $* <span style="color:#f1fa8c">^&amp;^&amp;</span> echo ======
+</span></span></code></pre></div><p><code>$*</code>表示还可能有其他命令参数，<code>^&amp;^&amp;</code>用于分开多条命令。</p>
 <p>单纯在一个cmd窗口中使用doskey设置别名，别名只能在该窗口中使用。</p>
 <h3 id="设置永久的别名">设置永久的别名</h3>
 <p>可以通过将doskey命令写入bat脚本，再把脚本路径添加到注册表Autorun实现永久且所有cmd都可用的别名，具体步骤如下：</p>
 <ol>
 <li>编写脚本：</li>
 </ol>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bat" data-lang="bat"><span style="display:flex;"><span>@<span style="color:#ff79c6">echo</span> off
-</span></span><span style="display:flex;"><span>doskey ls=dir /b $*
-</span></span><span style="display:flex;"><span>doskey lss=echo ====== <span style="color:#f1fa8c">^&amp;^&amp;</span> dir /b $* <span style="color:#f1fa8c">^&amp;^&amp;</span> echo ======
-</span></span></code></pre></td></tr></table>
-</div>
-</div><ol start="2">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bat" data-lang="bat"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>@<span style="color:#ff79c6">echo</span> off
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>doskey ls=dir /b $*
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>doskey lss=echo ====== <span style="color:#f1fa8c">^&amp;^&amp;</span> dir /b $* <span style="color:#f1fa8c">^&amp;^&amp;</span> echo ======
+</span></span></code></pre></div><ol start="2">
 <li>添加路径到注册表</li>
 </ol>
 <p>在<code>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Command Processor</code>下的Autorun中，将数值设为doskey命令脚本所在的路径即可。这样所有用户都可以使用设置好的别名。</p>
@@ -295,92 +279,40 @@ PowerShell添加别名的方法 为PowerShell设置临时的别名 1 2 3 PS C:\U
 <p>通过doskey的方式，挺方便的，但是在命令非常多的情况下不是很方便，同时，设置的命令还不可以在powershell下运行。</p>
 <h2 id="powershell添加别名的方法">PowerShell添加别名的方法</h2>
 <h3 id="为powershell设置临时的别名">为PowerShell设置临时的别名</h3>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ps1" data-lang="ps1"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">PS </span>C:\Users\akyna&gt; <span style="color:#8be9fd;font-style:italic">set-alias</span> escc esc
-</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">PS </span>C:\Users\akyna&gt; escc
-</span></span><span style="display:flex;"><span>......
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>如果带参数，则可以通过function进行：</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ps1" data-lang="ps1"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">PS </span>C:\Users\akyna&gt; <span style="color:#8be9fd;font-style:italic">function</span> <span style="color:#8be9fd;font-style:italic">func{nircmd</span> emptybin}
-</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">PS </span>C:\Users\akyna&gt; <span style="color:#8be9fd;font-style:italic">set-alias</span> ctrash func
-</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">PS </span>C:\Users\akyna&gt; ctrash
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>这样的别名只是在当前会话下有效，开启另一个shell就失效了。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ps1" data-lang="ps1"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#8be9fd;font-style:italic">PS </span>C:\Users\akyna&gt; <span style="color:#8be9fd;font-style:italic">set-alias</span> escc esc
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#8be9fd;font-style:italic">PS </span>C:\Users\akyna&gt; escc
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>......
+</span></span></code></pre></div><p>如果带参数，则可以通过function进行：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ps1" data-lang="ps1"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#8be9fd;font-style:italic">PS </span>C:\Users\akyna&gt; <span style="color:#8be9fd;font-style:italic">function</span> <span style="color:#8be9fd;font-style:italic">func{nircmd</span> emptybin}
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#8be9fd;font-style:italic">PS </span>C:\Users\akyna&gt; <span style="color:#8be9fd;font-style:italic">set-alias</span> ctrash func
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#8be9fd;font-style:italic">PS </span>C:\Users\akyna&gt; ctrash
+</span></span></code></pre></div><p>这样的别名只是在当前会话下有效，开启另一个shell就失效了。</p>
 <p>可以通过<code>export-alias my-alias.txt</code>导出当前会话下的alias，在其他shell中，通过<code>import-alias my-alias.txt</code>即可使用。</p>
 <h3 id="删除pwershell临时别名">删除PwerShell临时别名</h3>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ps1" data-lang="ps1"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">PS </span>C:\Users\akyna&gt; <span style="color:#8be9fd;font-style:italic">remove-item</span> <span style="color:#8be9fd;font-style:italic">alias</span>:escc
-</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">PS </span>C:\Users\akyna&gt; escc
-</span></span><span style="display:flex;"><span>escc: The term <span style="color:#f1fa8c">&#39;escc&#39;</span> is not recognized as a name of a cmdlet, function, script file, or executable program.
-</span></span><span style="display:flex;"><span>...
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="为powershell设置永久的命令别名">为PowerShell设置永久的命令别名</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ps1" data-lang="ps1"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#8be9fd;font-style:italic">PS </span>C:\Users\akyna&gt; <span style="color:#8be9fd;font-style:italic">remove-item</span> <span style="color:#8be9fd;font-style:italic">alias</span>:escc
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#8be9fd;font-style:italic">PS </span>C:\Users\akyna&gt; escc
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>escc: The term <span style="color:#f1fa8c">&#39;escc&#39;</span> is not recognized as a name of a cmdlet, function, script file, or executable program.
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>...
+</span></span></code></pre></div><h3 id="为powershell设置永久的命令别名">为PowerShell设置永久的命令别名</h3>
 <ol>
 <li>打开 PowerShell ，运行 echo $profile，会输出一个powershell配置文件的路径。</li>
 <li>打开文件，按以下格式可以设置多条别名：</li>
 </ol>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ps1" data-lang="ps1"><span style="display:flex;"><span>function 别名 { 需要替代的命令，可以包含空格 }
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p><strong>e.g.</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ps1" data-lang="ps1"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>function 别名 { 需要替代的命令，可以包含空格 }
+</span></span></code></pre></div><p><strong>e.g.</strong></p>
 <p>一个升级vscode的命令：</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ps1" data-lang="ps1"><span style="display:flex;"><span><span style="color:#6272a4"># 升级vscode</span>
-</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">function</span> <span style="color:#8be9fd;font-style:italic">updatevs</span> {
-</span></span><span style="display:flex;"><span>    taskkill /f /t /im code.exe
-</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">move </span>D:\a\VSCode* D:\a\vs.zip
-</span></span><span style="display:flex;"><span>    Bandizip.exe x -o:<span style="color:#f1fa8c">&#34;D:\tools3\vscode\Microsoft VS Code&#34;</span> -aoa <span style="color:#f1fa8c">&#34;D:\a\vs.zip&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">del </span>D:\a\vs.zip
-</span></span><span style="display:flex;"><span>    code
-</span></span><span style="display:flex;"><span>    pause
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span><span style="color:#6272a4">#其他别名</span>
-</span></span><span style="display:flex;"><span>...
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>以后，新的别名都可以继续添加在该文件中，非常方便。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ps1" data-lang="ps1"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#6272a4"># 升级vscode</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#8be9fd;font-style:italic">function</span> <span style="color:#8be9fd;font-style:italic">updatevs</span> {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>    taskkill /f /t /im code.exe
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>    <span style="color:#8be9fd;font-style:italic">move </span>D:\a\VSCode* D:\a\vs.zip
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>    Bandizip.exe x -o:<span style="color:#f1fa8c">&#34;D:\tools3\vscode\Microsoft VS Code&#34;</span> -aoa <span style="color:#f1fa8c">&#34;D:\a\vs.zip&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>    <span style="color:#8be9fd;font-style:italic">del </span>D:\a\vs.zip
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>    code
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>    pause
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>}
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span><span style="color:#6272a4">#其他别名</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>...
+</span></span></code></pre></div><p>以后，新的别名都可以继续添加在该文件中，非常方便。</p>
 <ol start="3">
 <li>
 <p>将ExecutionPolicy设为RemoteSigned。</p>
@@ -531,7 +463,7 @@ PowerShell添加别名的方法 为PowerShell设置临时的别名 1 2 3 PS C:\U
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f06%2fhow-to-add-command-alias-in-window%2f&name=Window%20%e6%b7%bb%e5%8a%a0%e5%91%bd%e4%bb%a4%e5%88%ab%e5%90%8d%e7%9a%84%e6%96%b9%e6%b3%95&description=%e5%89%8d%e8%a8%80%20%e4%b8%8b%e9%9d%a2%e5%b0%86%e4%bb%8b%e7%bb%8d3%e7%a7%8d%e6%96%b9%e6%b3%95%ef%bc%9a%0aCMD%e6%b7%bb%e5%8a%a0%e5%88%ab%e5%90%8d%e7%9a%84%e6%96%b9%e6%b3%95%20PowerShell%e6%b7%bb%e5%8a%a0%e5%88%ab%e5%90%8d%e7%9a%84%e6%96%b9%e6%b3%95%20%e9%80%9a%e8%bf%87%e6%b7%bb%e5%8a%a0%e7%8e%af%e5%a2%83%e5%8f%98%e9%87%8f%e7%9a%84%e6%96%b9%e5%bc%8f%e8%ae%be%e7%bd%ae%e5%88%ab%e5%90%8d%20CMD%e6%b7%bb%e5%8a%a0%e5%88%ab%e5%90%8d%e7%9a%84%e6%96%b9%e6%b3%95%20%e8%ae%be%e7%bd%ae%e4%b8%b4%e6%97%b6%e7%9a%84%e5%88%ab%e5%90%8d%20%e5%8f%af%e4%bb%a5%e9%80%9a%e8%bf%87doskey%e5%91%bd%e4%bb%a4%e5%ae%9e%e7%8e%b0%e3%80%82%0a1%20doskey%20ls%3decho%20%3d%3d%3d%3d%3d%3d%20%5e%26amp%3b%5e%26amp%3b%20dir%20%2fb%20%24%2a%20%5e%26amp%3b%5e%26amp%3b%20echo%20%3d%3d%3d%3d%3d%3d%20%24%2a%e8%a1%a8%e7%a4%ba%e8%bf%98%e5%8f%af%e8%83%bd%e6%9c%89%e5%85%b6%e4%bb%96%e5%91%bd%e4%bb%a4%e5%8f%82%e6%95%b0%ef%bc%8c%5e%26amp%3b%5e%26amp%3b%e7%94%a8%e4%ba%8e%e5%88%86%e5%bc%80%e5%a4%9a%e6%9d%a1%e5%91%bd%e4%bb%a4%e3%80%82%0a%e5%8d%95%e7%ba%af%e5%9c%a8%e4%b8%80%e4%b8%aacmd%e7%aa%97%e5%8f%a3%e4%b8%ad%e4%bd%bf%e7%94%a8doskey%e8%ae%be%e7%bd%ae%e5%88%ab%e5%90%8d%ef%bc%8c%e5%88%ab%e5%90%8d%e5%8f%aa%e8%83%bd%e5%9c%a8%e8%af%a5%e7%aa%97%e5%8f%a3%e4%b8%ad%e4%bd%bf%e7%94%a8%e3%80%82%0a%e8%ae%be%e7%bd%ae%e6%b0%b8%e4%b9%85%e7%9a%84%e5%88%ab%e5%90%8d%20%e5%8f%af%e4%bb%a5%e9%80%9a%e8%bf%87%e5%b0%86doskey%e5%91%bd%e4%bb%a4%e5%86%99%e5%85%a5bat%e8%84%9a%e6%9c%ac%ef%bc%8c%e5%86%8d%e6%8a%8a%e8%84%9a%e6%9c%ac%e8%b7%af%e5%be%84%e6%b7%bb%e5%8a%a0%e5%88%b0%e6%b3%a8%e5%86%8c%e8%a1%a8Autorun%e5%ae%9e%e7%8e%b0%e6%b0%b8%e4%b9%85%e4%b8%94%e6%89%80%e6%9c%89cmd%e9%83%bd%e5%8f%af%e7%94%a8%e7%9a%84%e5%88%ab%e5%90%8d%ef%bc%8c%e5%85%b7%e4%bd%93%e6%ad%a5%e9%aa%a4%e5%a6%82%e4%b8%8b%ef%bc%9a%0a%e7%bc%96%e5%86%99%e8%84%9a%e6%9c%ac%ef%bc%9a%201%202%203%20%40echo%20off%20doskey%20ls%3ddir%20%2fb%20%24%2a%20doskey%20lss%3decho%20%3d%3d%3d%3d%3d%3d%20%5e%26amp%3b%5e%26amp%3b%20dir%20%2fb%20%24%2a%20%5e%26amp%3b%5e%26amp%3b%20echo%20%3d%3d%3d%3d%3d%3d%20%e6%b7%bb%e5%8a%a0%e8%b7%af%e5%be%84%e5%88%b0%e6%b3%a8%e5%86%8c%e8%a1%a8%20%e5%9c%a8HKEY_LOCAL_MACHINE%5cSOFTWARE%5cMicrosoft%5cCommand%20Processor%e4%b8%8b%e7%9a%84Autorun%e4%b8%ad%ef%bc%8c%e5%b0%86%e6%95%b0%e5%80%bc%e8%ae%be%e4%b8%badoskey%e5%91%bd%e4%bb%a4%e8%84%9a%e6%9c%ac%e6%89%80%e5%9c%a8%e7%9a%84%e8%b7%af%e5%be%84%e5%8d%b3%e5%8f%af%e3%80%82%e8%bf%99%e6%a0%b7%e6%89%80%e6%9c%89%e7%94%a8%e6%88%b7%e9%83%bd%e5%8f%af%e4%bb%a5%e4%bd%bf%e7%94%a8%e8%ae%be%e7%bd%ae%e5%a5%bd%e7%9a%84%e5%88%ab%e5%90%8d%e3%80%82%0a%e4%b9%9f%e5%8f%af%e5%9c%a8HKEY_CURRENT_USER%e4%b8%8b%e7%9a%84%e5%af%b9%e5%ba%94%e4%bd%8d%e7%bd%ae%e8%ae%be%e7%bd%ae%ef%bc%8c%e5%8f%aa%e9%92%88%e5%af%b9%e5%bd%93%e5%89%8d%e7%94%a8%e6%88%b7%e8%ae%be%e7%bd%ae%e5%88%ab%e5%90%8d%e3%80%82%0a%e4%bc%98%e7%bc%ba%e7%82%b9%20%e9%80%9a%e8%bf%87doskey%e7%9a%84%e6%96%b9%e5%bc%8f%ef%bc%8c%e6%8c%ba%e6%96%b9%e4%be%bf%e7%9a%84%ef%bc%8c%e4%bd%86%e6%98%af%e5%9c%a8%e5%91%bd%e4%bb%a4%e9%9d%9e%e5%b8%b8%e5%a4%9a%e7%9a%84%e6%83%85%e5%86%b5%e4%b8%8b%e4%b8%8d%e6%98%af%e5%be%88%e6%96%b9%e4%be%bf%ef%bc%8c%e5%90%8c%e6%97%b6%ef%bc%8c%e8%ae%be%e7%bd%ae%e7%9a%84%e5%91%bd%e4%bb%a4%e8%bf%98%e4%b8%8d%e5%8f%af%e4%bb%a5%e5%9c%a8powershell%e4%b8%8b%e8%bf%90%e8%a1%8c%e3%80%82%0aPowerShell%e6%b7%bb%e5%8a%a0%e5%88%ab%e5%90%8d%e7%9a%84%e6%96%b9%e6%b3%95%20%e4%b8%baPowerShell%e8%ae%be%e7%bd%ae%e4%b8%b4%e6%97%b6%e7%9a%84%e5%88%ab%e5%90%8d%201%202%203%20PS%20C%3a%5cUsers%5cakyna%26gt%3b%20set-alias%20escc%20esc%20PS%20C%3a%5cUsers%5cakyna%26gt%3b%20escc%20......%20%e5%a6%82%e6%9e%9c%e5%b8%a6%e5%8f%82%e6%95%b0%ef%bc%8c%e5%88%99%e5%8f%af%e4%bb%a5%e9%80%9a%e8%bf%87function%e8%bf%9b%e8%a1%8c%ef%bc%9a%0a1%202%203%20PS%20C%3a%5cUsers%5cakyna%26gt%3b%20function%20func%7bnircmd%20emptybin%7d%20PS%20C%3a%5cUsers%5cakyna%26gt%3b%20set-alias%20ctrash%20func%20PS%20C%3a%5cUsers%5cakyna%26gt%3b%20ctrash%20%e8%bf%99%e6%a0%b7%e7%9a%84%e5%88%ab%e5%90%8d%e5%8f%aa%e6%98%af%e5%9c%a8%e5%bd%93%e5%89%8d%e4%bc%9a%e8%af%9d%e4%b8%8b%e6%9c%89%e6%95%88%ef%bc%8c%e5%bc%80%e5%90%af%e5%8f%a6%e4%b8%80%e4%b8%aashell%e5%b0%b1%e5%a4%b1%e6%95%88%e4%ba%86%e3%80%82" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f06%2fhow-to-add-command-alias-in-window%2f&name=Window%20%e6%b7%bb%e5%8a%a0%e5%91%bd%e4%bb%a4%e5%88%ab%e5%90%8d%e7%9a%84%e6%96%b9%e6%b3%95&description=%e5%89%8d%e8%a8%80%20%e4%b8%8b%e9%9d%a2%e5%b0%86%e4%bb%8b%e7%bb%8d3%e7%a7%8d%e6%96%b9%e6%b3%95%ef%bc%9a%0aCMD%e6%b7%bb%e5%8a%a0%e5%88%ab%e5%90%8d%e7%9a%84%e6%96%b9%e6%b3%95%20PowerShell%e6%b7%bb%e5%8a%a0%e5%88%ab%e5%90%8d%e7%9a%84%e6%96%b9%e6%b3%95%20%e9%80%9a%e8%bf%87%e6%b7%bb%e5%8a%a0%e7%8e%af%e5%a2%83%e5%8f%98%e9%87%8f%e7%9a%84%e6%96%b9%e5%bc%8f%e8%ae%be%e7%bd%ae%e5%88%ab%e5%90%8d%20CMD%e6%b7%bb%e5%8a%a0%e5%88%ab%e5%90%8d%e7%9a%84%e6%96%b9%e6%b3%95%20%e8%ae%be%e7%bd%ae%e4%b8%b4%e6%97%b6%e7%9a%84%e5%88%ab%e5%90%8d%20%e5%8f%af%e4%bb%a5%e9%80%9a%e8%bf%87doskey%e5%91%bd%e4%bb%a4%e5%ae%9e%e7%8e%b0%e3%80%82%0a1doskey%20ls%3decho%20%3d%3d%3d%3d%3d%3d%20%5e%26amp%3b%5e%26amp%3b%20dir%20%2fb%20%24%2a%20%5e%26amp%3b%5e%26amp%3b%20echo%20%3d%3d%3d%3d%3d%3d%20%24%2a%e8%a1%a8%e7%a4%ba%e8%bf%98%e5%8f%af%e8%83%bd%e6%9c%89%e5%85%b6%e4%bb%96%e5%91%bd%e4%bb%a4%e5%8f%82%e6%95%b0%ef%bc%8c%5e%26amp%3b%5e%26amp%3b%e7%94%a8%e4%ba%8e%e5%88%86%e5%bc%80%e5%a4%9a%e6%9d%a1%e5%91%bd%e4%bb%a4%e3%80%82%0a%e5%8d%95%e7%ba%af%e5%9c%a8%e4%b8%80%e4%b8%aacmd%e7%aa%97%e5%8f%a3%e4%b8%ad%e4%bd%bf%e7%94%a8doskey%e8%ae%be%e7%bd%ae%e5%88%ab%e5%90%8d%ef%bc%8c%e5%88%ab%e5%90%8d%e5%8f%aa%e8%83%bd%e5%9c%a8%e8%af%a5%e7%aa%97%e5%8f%a3%e4%b8%ad%e4%bd%bf%e7%94%a8%e3%80%82%0a%e8%ae%be%e7%bd%ae%e6%b0%b8%e4%b9%85%e7%9a%84%e5%88%ab%e5%90%8d%20%e5%8f%af%e4%bb%a5%e9%80%9a%e8%bf%87%e5%b0%86doskey%e5%91%bd%e4%bb%a4%e5%86%99%e5%85%a5bat%e8%84%9a%e6%9c%ac%ef%bc%8c%e5%86%8d%e6%8a%8a%e8%84%9a%e6%9c%ac%e8%b7%af%e5%be%84%e6%b7%bb%e5%8a%a0%e5%88%b0%e6%b3%a8%e5%86%8c%e8%a1%a8Autorun%e5%ae%9e%e7%8e%b0%e6%b0%b8%e4%b9%85%e4%b8%94%e6%89%80%e6%9c%89cmd%e9%83%bd%e5%8f%af%e7%94%a8%e7%9a%84%e5%88%ab%e5%90%8d%ef%bc%8c%e5%85%b7%e4%bd%93%e6%ad%a5%e9%aa%a4%e5%a6%82%e4%b8%8b%ef%bc%9a%0a%e7%bc%96%e5%86%99%e8%84%9a%e6%9c%ac%ef%bc%9a%201%40echo%20off%202doskey%20ls%3ddir%20%2fb%20%24%2a%203doskey%20lss%3decho%20%3d%3d%3d%3d%3d%3d%20%5e%26amp%3b%5e%26amp%3b%20dir%20%2fb%20%24%2a%20%5e%26amp%3b%5e%26amp%3b%20echo%20%3d%3d%3d%3d%3d%3d%20%e6%b7%bb%e5%8a%a0%e8%b7%af%e5%be%84%e5%88%b0%e6%b3%a8%e5%86%8c%e8%a1%a8%20%e5%9c%a8HKEY_LOCAL_MACHINE%5cSOFTWARE%5cMicrosoft%5cCommand%20Processor%e4%b8%8b%e7%9a%84Autorun%e4%b8%ad%ef%bc%8c%e5%b0%86%e6%95%b0%e5%80%bc%e8%ae%be%e4%b8%badoskey%e5%91%bd%e4%bb%a4%e8%84%9a%e6%9c%ac%e6%89%80%e5%9c%a8%e7%9a%84%e8%b7%af%e5%be%84%e5%8d%b3%e5%8f%af%e3%80%82%e8%bf%99%e6%a0%b7%e6%89%80%e6%9c%89%e7%94%a8%e6%88%b7%e9%83%bd%e5%8f%af%e4%bb%a5%e4%bd%bf%e7%94%a8%e8%ae%be%e7%bd%ae%e5%a5%bd%e7%9a%84%e5%88%ab%e5%90%8d%e3%80%82%0a%e4%b9%9f%e5%8f%af%e5%9c%a8HKEY_CURRENT_USER%e4%b8%8b%e7%9a%84%e5%af%b9%e5%ba%94%e4%bd%8d%e7%bd%ae%e8%ae%be%e7%bd%ae%ef%bc%8c%e5%8f%aa%e9%92%88%e5%af%b9%e5%bd%93%e5%89%8d%e7%94%a8%e6%88%b7%e8%ae%be%e7%bd%ae%e5%88%ab%e5%90%8d%e3%80%82%0a%e4%bc%98%e7%bc%ba%e7%82%b9%20%e9%80%9a%e8%bf%87doskey%e7%9a%84%e6%96%b9%e5%bc%8f%ef%bc%8c%e6%8c%ba%e6%96%b9%e4%be%bf%e7%9a%84%ef%bc%8c%e4%bd%86%e6%98%af%e5%9c%a8%e5%91%bd%e4%bb%a4%e9%9d%9e%e5%b8%b8%e5%a4%9a%e7%9a%84%e6%83%85%e5%86%b5%e4%b8%8b%e4%b8%8d%e6%98%af%e5%be%88%e6%96%b9%e4%be%bf%ef%bc%8c%e5%90%8c%e6%97%b6%ef%bc%8c%e8%ae%be%e7%bd%ae%e7%9a%84%e5%91%bd%e4%bb%a4%e8%bf%98%e4%b8%8d%e5%8f%af%e4%bb%a5%e5%9c%a8powershell%e4%b8%8b%e8%bf%90%e8%a1%8c%e3%80%82%0aPowerShell%e6%b7%bb%e5%8a%a0%e5%88%ab%e5%90%8d%e7%9a%84%e6%96%b9%e6%b3%95%20%e4%b8%baPowerShell%e8%ae%be%e7%bd%ae%e4%b8%b4%e6%97%b6%e7%9a%84%e5%88%ab%e5%90%8d%201PS%20C%3a%5cUsers%5cakyna%26gt%3b%20set-alias%20escc%20esc%202PS%20C%3a%5cUsers%5cakyna%26gt%3b%20escc%203......%20%e5%a6%82%e6%9e%9c%e5%b8%a6%e5%8f%82%e6%95%b0%ef%bc%8c%e5%88%99%e5%8f%af%e4%bb%a5%e9%80%9a%e8%bf%87function%e8%bf%9b%e8%a1%8c%ef%bc%9a%0a1PS%20C%3a%5cUsers%5cakyna%26gt%3b%20function%20func%7bnircmd%20emptybin%7d%202PS%20C%3a%5cUsers%5cakyna%26gt%3b%20set-alias%20ctrash%20func%203PS%20C%3a%5cUsers%5cakyna%26gt%3b%20ctrash%20%e8%bf%99%e6%a0%b7%e7%9a%84%e5%88%ab%e5%90%8d%e5%8f%aa%e6%98%af%e5%9c%a8%e5%bd%93%e5%89%8d%e4%bc%9a%e8%af%9d%e4%b8%8b%e6%9c%89%e6%95%88%ef%bc%8c%e5%bc%80%e5%90%af%e5%8f%a6%e4%b8%80%e4%b8%aashell%e5%b0%b1%e5%a4%b1%e6%95%88%e4%ba%86%e3%80%82" aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>

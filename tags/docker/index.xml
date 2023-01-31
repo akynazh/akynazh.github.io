@@ -14,7 +14,7 @@
       <pubDate>Thu, 13 Oct 2022 21:28:37 +0800</pubDate>
       
       <guid>/posts/2022/10/docker-software-installation-record/</guid>
-      <description>Docker 1 2 curl -fsSL https://get.docker.com | bash -s docker # curl -sSL https://get.daocloud.io/docker | sh Mirror 1 2 3 4 5 6 7 8 9 10 11 12 13 vim /etc/docker/daemon.json { &amp;#34;registry-mirrors&amp;#34;: [ &amp;#34;https://docker.mirrors.ustc.edu.cn&amp;#34;, &amp;#34;http://hub-mirror.c.163.com&amp;#34;, &amp;#34;https://registry.docker-cn.com&amp;#34; ] } ---------------------------------------------- systemctl restart docker Docker-compose 1 2 3 4 5 6 curl -L &amp;#34;https://github.com/docker/compose/releases/download/v2.2.2/docker-compose-$(uname -s)-$(uname -m)&amp;#34; -o /usr/local/bin/docker-compose # curl -L https://get.daocloud.io/docker/compose/releases/download/v2.4.1/docker-compose-`uname -s`-`uname -m` &amp;gt; /usr/local/bin/docker-compose chmod +x /usr/local/bin/docker-compose ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose # ln -s /usr/local/bin/docker-compose /usr/bin/dockerc 运行权限问题 1 2 sudo usermod -aG docker $USER sudo reboot MySQL 1 2 3 4 5 6 7 8 9 10 11 12 13 docker pull mysql:5.</description>
+      <description>Docker 1curl -fsSL https://get.docker.com | bash -s docker 2# curl -sSL https://get.daocloud.io/docker | sh Mirror 1vim /etc/docker/daemon.json 2 3{ 4 &amp;#34;registry-mirrors&amp;#34;: [ 5 &amp;#34;https://docker.mirrors.ustc.edu.cn&amp;#34;, 6 &amp;#34;http://hub-mirror.c.163.com&amp;#34;, 7 &amp;#34;https://registry.docker-cn.com&amp;#34; 8 ] 9} 10 11---------------------------------------------- 12 13systemctl restart docker Docker-compose 1curl -L &amp;#34;https://github.com/docker/compose/releases/download/v2.2.2/docker-compose-$(uname -s)-$(uname -m)&amp;#34; -o /usr/local/bin/docker-compose 2# curl -L https://get.daocloud.io/docker/compose/releases/download/v2.4.1/docker-compose-`uname -s`-`uname -m` &amp;gt; /usr/local/bin/docker-compose 3 4chmod +x /usr/local/bin/docker-compose 5ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose 6# ln -s /usr/local/bin/docker-compose /usr/bin/dockerc 运行权限问题 1sudo usermod -aG docker $USER 2sudo reboot MySQL 1docker pull mysql:5.</description>
     </item>
     
     <item>
@@ -30,7 +30,7 @@
 服务说明 创建一个简单的服务，注册到上述nacos环境中，通过在bootstrap.yaml中读取nacos配置来验证环境是否配置成功。
 搭建nacos环境 编辑docker-compose的yaml文件 在nacos官网下载nacos-docker到主机上，编辑example/cluster-hostname.yaml文件。
 根据官网说明，在nacos2中需要额外暴露两个端口，分别偏移8848这个端口1000和1001。
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 version: &amp;#34;3&amp;#34; services: nacos1: hostname: nacos-server-1 container_name: nacos1 image: nacos/nacos-server:${NACOS_VERSION} volumes: - .</description>
+1version: &amp;#34;3&amp;#34; 2services: 3 nacos1: 4 hostname: nacos-server-1 5 container_name: nacos1 6 image: nacos/nacos-server:${NACOS_VERSION} 7 volumes: 8 - ./cluster-logs/nacos1:/home/nacos/logs 9 - ./init.d/custom.properties:/home/nacos/init.d/custom.properties 10 ports: 11 - &amp;#34;8848:8848&amp;#34; 12 - &amp;#34;9848:9848&amp;#34; # 偏移1000 13 - &amp;#34;9849:9849&amp;#34; # 偏移1001 14 - &amp;#34;9555:9555&amp;#34; 15 env_file: 16 - ../env/nacos-hostname.env 17 restart: always 18 depends_on: 19 - mysql 20 21 nacos2: 22 hostname: nacos-server-2 23 image: nacos/nacos-server:${NACOS_VERSION} 24 container_name: nacos2 25 volumes: 26 - .</description>
     </item>
     
     <item>
@@ -39,7 +39,7 @@
       <pubDate>Wed, 19 May 2021 22:52:52 +0800</pubDate>
       
       <guid>/posts/2021/05/docker-simple-use-process-record/</guid>
-      <description>下载并运行ubuntu镜像 1 2 [root@VM-0-11-centos ~]# docker run ubuntu:15.10 /bin/echo &amp;#34;crazy thursday&amp;#34; crazy thursday 运行ubuntu并开启bash交互 1 2 3 4 5 6 7 8 9 10 [root@VM-0-11-centos ~]# docker run -i -t ubuntu:15.10 /bin/bash root@fda3220ed59f:/# echo hello hello root@fda3220ed59f:/# cat /proc/version Linux version 3.10.0-1160.45.1.el7.x86_64 (mockbuild@kbuilder.bsys.centos.org) (gcc version 4.8.5 20150623 (Red Hat 4.8.5-44) (GCC) ) #1 SMP Wed Oct 13 17:20:51 UTC 2021 root@fda3220ed59f:/# ls bin dev home lib64 mnt proc run srv tmp var boot etc lib media opt root sbin sys usr root@fda3220ed59f:/# exit exit 运行进程并观察 1 2 3 4 5 [root@VM-0-11-centos ~]# docker run -d ubuntu:15.</description>
+      <description>下载并运行ubuntu镜像 1[root@VM-0-11-centos ~]# docker run ubuntu:15.10 /bin/echo &amp;#34;crazy thursday&amp;#34; 2crazy thursday 运行ubuntu并开启bash交互 1[root@VM-0-11-centos ~]# docker run -i -t ubuntu:15.10 /bin/bash 2root@fda3220ed59f:/# echo hello 3hello 4root@fda3220ed59f:/# cat /proc/version 5Linux version 3.10.0-1160.45.1.el7.x86_64 (mockbuild@kbuilder.bsys.centos.org) (gcc version 4.8.5 20150623 (Red Hat 4.8.5-44) (GCC) ) #1 SMP Wed Oct 13 17:20:51 UTC 2021 6root@fda3220ed59f:/# ls 7bin dev home lib64 mnt proc run srv tmp var 8boot etc lib media opt root sbin sys usr 9root@fda3220ed59f:/# exit 10exit 运行进程并观察 1[root@VM-0-11-centos ~]# docker run -d ubuntu:15.</description>
     </item>
     
   </channel>

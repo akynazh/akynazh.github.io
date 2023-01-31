@@ -7,20 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Jzh</copyright>
-    <lastBuildDate>Mon, 03 Oct 2022 17:22:29 +0800</lastBuildDate><atom:link href="/tags/schtasks/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 31 Jan 2023 17:22:29 +0800</lastBuildDate><atom:link href="/tags/schtasks/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>关于定时任务的总结</title>
-      <link>/posts/2022/10/summary-of-timed-tasks/</link>
-      <pubDate>Mon, 03 Oct 2022 17:22:29 +0800</pubDate>
+      <link>/posts/2023/01/summary-of-timed-tasks/</link>
+      <pubDate>Tue, 31 Jan 2023 17:22:29 +0800</pubDate>
       
-      <guid>/posts/2022/10/summary-of-timed-tasks/</guid>
-      <description>Linux 下的定时任务 规则 1 */1 * * * * cmd 5个单元：
+      <guid>/posts/2023/01/summary-of-timed-tasks/</guid>
+      <description>Linux 下的定时任务 规则 1*/1 * * * * cmd 5个单元：
 分钟（0-59） 小时（0-23 日期（1-31） 月份（1-12） 星期几（0-6，其中 0 代表星期日）
 例子 每分钟执行一次：
-1 * * * * * cmd # or: */1 * * * * cmd 每天早上 6 点 10 分执行一次：
-1 10 6 * * * cmd 每两个小时执行一次：
-1 0 */2 * * * cmd 在 1 月 1 日早上 4 点执行一次：
-1 0 4 1 1 * cmd crontab 环境变量问题 crontab 不会使用在 .</description>
+1* * * * * cmd # or: */1 * * * * cmd 每天早上 6 点 10 分执行一次：
+110 6 * * * cmd 每两个小时执行一次：
+10 */2 * * * cmd 在 1 月 1 日早上 4 点执行一次：
+10 4 1 1 * cmd crontab 环境变量问题 crontab 不会使用在 .bashrc 之类的文件中定义的变量和函数。</description>
     </item>
     
   </channel>

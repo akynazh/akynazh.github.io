@@ -9,8 +9,8 @@
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
   <meta property="og:title" content="Linux 实用操作之进程管理" />
-<meta property="og:description" content="查看所有进程 ps -ef -e : all processes (-A) -f : full-format, including command lines 1 2 [root@VM-0-11-centos ~]# ps -ef | head -n 1 UID PID PPID C STIME TTY TIME CMD 解释如下：
-PPID 父进程ID C 占用CPU百分比 STIME 就是&quot;start time&quot; TTY 进程在哪个终端显示 CMD 命令的名称和参数 ps aux a: all with tty, including other users (和-a是不同的) u: user-oriented format x: processes without controlling ttys 1 2 [root@VM-0-11-centos ~]# ps -aux | head -n 1 USER PID %CPU %MEM VSZ RSS TTY STAT START TIME COMMAND 解释如下：" />
+<meta property="og:description" content="查看所有进程 ps -ef -e : all processes (-A) -f : full-format, including command lines 1[root@VM-0-11-centos ~]# ps -ef | head -n 1 2UID PID PPID C STIME TTY TIME CMD 解释如下：
+PPID 父进程ID C 占用CPU百分比 STIME 就是&quot;start time&quot; TTY 进程在哪个终端显示 CMD 命令的名称和参数 ps aux a: all with tty, including other users (和-a是不同的) u: user-oriented format x: processes without controlling ttys 1[root@VM-0-11-centos ~]# ps -aux | head -n 1 2USER PID %CPU %MEM VSZ RSS TTY STAT START TIME COMMAND 解释如下：" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/2022/10/process-management-of-linux-practical-operation/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-10-02T22:55:53+08:00" />
@@ -18,15 +18,15 @@ PPID 父进程ID C 占用CPU百分比 STIME 就是&quot;start time&quot; TTY 进
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Linux 实用操作之进程管理"/>
-<meta name="twitter:description" content="查看所有进程 ps -ef -e : all processes (-A) -f : full-format, including command lines 1 2 [root@VM-0-11-centos ~]# ps -ef | head -n 1 UID PID PPID C STIME TTY TIME CMD 解释如下：
-PPID 父进程ID C 占用CPU百分比 STIME 就是&quot;start time&quot; TTY 进程在哪个终端显示 CMD 命令的名称和参数 ps aux a: all with tty, including other users (和-a是不同的) u: user-oriented format x: processes without controlling ttys 1 2 [root@VM-0-11-centos ~]# ps -aux | head -n 1 USER PID %CPU %MEM VSZ RSS TTY STAT START TIME COMMAND 解释如下："/>
+<meta name="twitter:description" content="查看所有进程 ps -ef -e : all processes (-A) -f : full-format, including command lines 1[root@VM-0-11-centos ~]# ps -ef | head -n 1 2UID PID PPID C STIME TTY TIME CMD 解释如下：
+PPID 父进程ID C 占用CPU百分比 STIME 就是&quot;start time&quot; TTY 进程在哪个终端显示 CMD 命令的名称和参数 ps aux a: all with tty, including other users (和-a是不同的) u: user-oriented format x: processes without controlling ttys 1[root@VM-0-11-centos ~]# ps -aux | head -n 1 2USER PID %CPU %MEM VSZ RSS TTY STAT START TIME COMMAND 解释如下："/>
 
   
   
   
   
   
-  <link rel="stylesheet" href="/css/styles.d8d1e5ac73f5bd72b0e6919356fcf7f12c9dd5a80e4788cae09111cc3678f69a4294b39d4b852dd69cc393c73ac3d8b6c05c8df3569d49d36331b7f39cfea8d1.css" integrity="sha512-2NHlrHP1vXKw5pGTVvz38Syd1agOR4jK4JERzDZ49ppClLOdS4Ut1pzDk8c6w9i2wFyN81adSdNjMbfznP6o0Q==">
+  <link rel="stylesheet" href="/css/styles.b6e7dac395bc81c65ab67a0be932cbd03925f5afb48f9c825ead224a41084a4a8289db621f5b2236149a32799ae71f4962b1d2531d209f51d8b88cdffaa1877e.css" integrity="sha512-tufaw5W8gcZatnoL6TLL0Dkl9a&#43;0j5yCXq0iSkEISkqCidtiH1siNhSaMnma5x9JYrHSUx0gn1HYuIzf&#43;qGHfg==">
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
@@ -71,7 +71,7 @@ PPID 父进程ID C 占用CPU百分比 STIME 就是&quot;start time&quot; TTY 进
         
         
         <li>
-          <a class="icon" href="/posts/2022/10/summary-of-timed-tasks/" aria-label="Next">
+          <a class="icon" href="/posts/2022/10/solution-and-thinking-about-hwbk/" aria-label="Next">
             <i class="fas fa-chevron-right" aria-hidden="true"></i>
           </a>
         </li>
@@ -143,7 +143,7 @@ PPID 父进程ID C 占用CPU百分比 STIME 就是&quot;start time&quot; TTY 进
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f10%2fprocess-management-of-linux-practical-operation%2f&name=Linux%20%e5%ae%9e%e7%94%a8%e6%93%8d%e4%bd%9c%e4%b9%8b%e8%bf%9b%e7%a8%8b%e7%ae%a1%e7%90%86&description=%e6%9f%a5%e7%9c%8b%e6%89%80%e6%9c%89%e8%bf%9b%e7%a8%8b%20ps%20-ef%20-e%20%3a%20all%20processes%20%28-A%29%20-f%20%3a%20full-format%2c%20including%20command%20lines%201%202%20%5broot%40VM-0-11-centos%20~%5d%23%20ps%20-ef%20%7c%20head%20-n%201%20UID%20PID%20PPID%20C%20STIME%20TTY%20TIME%20CMD%20%e8%a7%a3%e9%87%8a%e5%a6%82%e4%b8%8b%ef%bc%9a%0aPPID%20%e7%88%b6%e8%bf%9b%e7%a8%8bID%20C%20%e5%8d%a0%e7%94%a8CPU%e7%99%be%e5%88%86%e6%af%94%20STIME%20%e5%b0%b1%e6%98%af%26quot%3bstart%20time%26quot%3b%20TTY%20%e8%bf%9b%e7%a8%8b%e5%9c%a8%e5%93%aa%e4%b8%aa%e7%bb%88%e7%ab%af%e6%98%be%e7%a4%ba%20CMD%20%e5%91%bd%e4%bb%a4%e7%9a%84%e5%90%8d%e7%a7%b0%e5%92%8c%e5%8f%82%e6%95%b0%20ps%20aux%20a%3a%20all%20with%20tty%2c%20including%20other%20users%20%28%e5%92%8c-a%e6%98%af%e4%b8%8d%e5%90%8c%e7%9a%84%29%20u%3a%20user-oriented%20format%20x%3a%20processes%20without%20controlling%20ttys%201%202%20%5broot%40VM-0-11-centos%20~%5d%23%20ps%20-aux%20%7c%20head%20-n%201%20USER%20PID%20%25CPU%20%25MEM%20VSZ%20RSS%20TTY%20STAT%20START%20TIME%20COMMAND%20%e8%a7%a3%e9%87%8a%e5%a6%82%e4%b8%8b%ef%bc%9a" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f10%2fprocess-management-of-linux-practical-operation%2f&name=Linux%20%e5%ae%9e%e7%94%a8%e6%93%8d%e4%bd%9c%e4%b9%8b%e8%bf%9b%e7%a8%8b%e7%ae%a1%e7%90%86&description=%e6%9f%a5%e7%9c%8b%e6%89%80%e6%9c%89%e8%bf%9b%e7%a8%8b%20ps%20-ef%20-e%20%3a%20all%20processes%20%28-A%29%20-f%20%3a%20full-format%2c%20including%20command%20lines%201%5broot%40VM-0-11-centos%20~%5d%23%20ps%20-ef%20%7c%20head%20-n%201%202UID%20PID%20PPID%20C%20STIME%20TTY%20TIME%20CMD%20%e8%a7%a3%e9%87%8a%e5%a6%82%e4%b8%8b%ef%bc%9a%0aPPID%20%e7%88%b6%e8%bf%9b%e7%a8%8bID%20C%20%e5%8d%a0%e7%94%a8CPU%e7%99%be%e5%88%86%e6%af%94%20STIME%20%e5%b0%b1%e6%98%af%26quot%3bstart%20time%26quot%3b%20TTY%20%e8%bf%9b%e7%a8%8b%e5%9c%a8%e5%93%aa%e4%b8%aa%e7%bb%88%e7%ab%af%e6%98%be%e7%a4%ba%20CMD%20%e5%91%bd%e4%bb%a4%e7%9a%84%e5%90%8d%e7%a7%b0%e5%92%8c%e5%8f%82%e6%95%b0%20ps%20aux%20a%3a%20all%20with%20tty%2c%20including%20other%20users%20%28%e5%92%8c-a%e6%98%af%e4%b8%8d%e5%90%8c%e7%9a%84%29%20u%3a%20user-oriented%20format%20x%3a%20processes%20without%20controlling%20ttys%201%5broot%40VM-0-11-centos%20~%5d%23%20ps%20-aux%20%7c%20head%20-n%201%202USER%20PID%20%25CPU%20%25MEM%20VSZ%20RSS%20TTY%20STAT%20START%20TIME%20COMMAND%20%e8%a7%a3%e9%87%8a%e5%a6%82%e4%b8%8b%ef%bc%9a" aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -230,17 +230,9 @@ PPID 父进程ID C 占用CPU百分比 STIME 就是&quot;start time&quot; TTY 进
 <li>-e : all processes (-A)</li>
 <li>-f : full-format, including command lines</li>
 </ul>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#ff79c6">[</span>root@VM-0-11-centos ~<span style="color:#ff79c6">]</span><span style="color:#6272a4"># ps -ef | head -n 1</span>
-</span></span><span style="display:flex;"><span>UID PID PPID C STIME TTY TIME CMD
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>解释如下：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#ff79c6">[</span>root@VM-0-11-centos ~<span style="color:#ff79c6">]</span><span style="color:#6272a4"># ps -ef | head -n 1</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>UID PID PPID C STIME TTY TIME CMD
+</span></span></code></pre></div><p>解释如下：</p>
 <ul>
 <li>PPID  父进程ID</li>
 <li>C 占用CPU百分比</li>
@@ -254,17 +246,9 @@ PPID 父进程ID C 占用CPU百分比 STIME 就是&quot;start time&quot; TTY 进
 <li>u: user-oriented format</li>
 <li>x: processes without controlling ttys</li>
 </ul>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#ff79c6">[</span>root@VM-0-11-centos ~<span style="color:#ff79c6">]</span><span style="color:#6272a4"># ps -aux | head -n 1</span>
-</span></span><span style="display:flex;"><span>USER PID %CPU %MEM VSZ RSS TTY STAT START TIME COMMAND
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>解释如下：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#ff79c6">[</span>root@VM-0-11-centos ~<span style="color:#ff79c6">]</span><span style="color:#6272a4"># ps -aux | head -n 1</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>USER PID %CPU %MEM VSZ RSS TTY STAT START TIME COMMAND
+</span></span></code></pre></div><p>解释如下：</p>
 <ul>
 <li>%MEM 占用内存百分比</li>
 <li>VSZ 该进程使用的虚拟內存量（KB）</li>
@@ -272,61 +256,29 @@ PPID 父进程ID C 占用CPU百分比 STIME 就是&quot;start time&quot; TTY 进
 <li>STAT 进程状态</li>
 </ul>
 <p>STAT状态位常见的状态字符有:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>D      //无法中断的休眠状态（通常 IO 的进程）； 
-</span></span><span style="display:flex;"><span>R      //正在运行可中在队列中可过行的； 
-</span></span><span style="display:flex;"><span>S      //处于休眠状态； 
-</span></span><span style="display:flex;"><span>T      //停止或被追踪； 
-</span></span><span style="display:flex;"><span>Z      //僵尸进程； 
-</span></span><span style="display:flex;"><span>s      //进程的领导者（在它之下有子进程）； 
-</span></span><span style="display:flex;"><span>l      //多线程，克隆线程（使用 CLONE_THREAD, 类似 NPTL pthreads）； 
-</span></span><span style="display:flex;"><span>+      //位于后台的进程组；
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="ps--l">ps -l</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>D      //无法中断的休眠状态（通常 IO 的进程）； 
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>R      //正在运行可中在队列中可过行的； 
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>S      //处于休眠状态； 
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>T      //停止或被追踪； 
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>Z      //僵尸进程； 
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>s      //进程的领导者（在它之下有子进程）； 
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span>l      //多线程，克隆线程（使用 CLONE_THREAD, 类似 NPTL pthreads）； 
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span><span>+      //位于后台的进程组；
+</span></span></code></pre></div><h3 id="ps--l">ps -l</h3>
 <p>仅查阅自己的bash相关程序</p>
 <p>&hellip;</p>
 <h2 id="查看相关进程">查看相关进程</h2>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#ff79c6">[</span>root@VM-0-11-centos ~<span style="color:#ff79c6">]</span><span style="color:#6272a4"># ps -ef | head -n 1; ps -ef | grep java</span>
-</span></span><span style="display:flex;"><span>UID        PID  PPID  C STIME TTY          TIME CMD
-</span></span><span style="display:flex;"><span>root     <span style="color:#bd93f9">25889</span> <span style="color:#bd93f9">24972</span>  <span style="color:#bd93f9">4</span> 17:46 pts/1    00:00:11 java -jar LonersHub-0.0.1-SNAPSHOT.jar
-</span></span><span style="display:flex;"><span>root     <span style="color:#bd93f9">26558</span> <span style="color:#bd93f9">24972</span>  <span style="color:#bd93f9">0</span> 17:51 pts/1    00:00:00 grep --color<span style="color:#ff79c6">=</span>auto java
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="终止或重启进程">终止或重启进程</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#ff79c6">[</span>root@VM-0-11-centos ~<span style="color:#ff79c6">]</span><span style="color:#6272a4"># ps -ef | head -n 1; ps -ef | grep java</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>UID        PID  PPID  C STIME TTY          TIME CMD
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>root     <span style="color:#bd93f9">25889</span> <span style="color:#bd93f9">24972</span>  <span style="color:#bd93f9">4</span> 17:46 pts/1    00:00:11 java -jar LonersHub-0.0.1-SNAPSHOT.jar
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>root     <span style="color:#bd93f9">26558</span> <span style="color:#bd93f9">24972</span>  <span style="color:#bd93f9">0</span> 17:51 pts/1    00:00:00 grep --color<span style="color:#ff79c6">=</span>auto java
+</span></span></code></pre></div><h2 id="终止或重启进程">终止或重启进程</h2>
 <h3 id="关于kill命令">关于kill命令</h3>
 <p>kill用于想某个进程发送信号。</p>
 <p>列出所有序号代表的信号含义：</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#ff79c6">[</span>root@VM-0-11-centos ~<span style="color:#ff79c6">]</span><span style="color:#6272a4"># kill -l</span>
-</span></span><span style="display:flex;"><span> 1<span style="color:#ff79c6">)</span> SIGHUP       2<span style="color:#ff79c6">)</span> SIGINT       3<span style="color:#ff79c6">)</span> SIGQUIT      4<span style="color:#ff79c6">)</span> SIGILL       5<span style="color:#ff79c6">)</span> SIGTRAP      6<span style="color:#ff79c6">)</span> SIGABRT      7<span style="color:#ff79c6">)</span> SIGBUS       8<span style="color:#ff79c6">)</span> SIGFPE       9<span style="color:#ff79c6">)</span> SIGKILL ......
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>最常用的信号是：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#ff79c6">[</span>root@VM-0-11-centos ~<span style="color:#ff79c6">]</span><span style="color:#6272a4"># kill -l</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span> 1<span style="color:#ff79c6">)</span> SIGHUP       2<span style="color:#ff79c6">)</span> SIGINT       3<span style="color:#ff79c6">)</span> SIGQUIT      4<span style="color:#ff79c6">)</span> SIGILL       5<span style="color:#ff79c6">)</span> SIGTRAP      6<span style="color:#ff79c6">)</span> SIGABRT      7<span style="color:#ff79c6">)</span> SIGBUS       8<span style="color:#ff79c6">)</span> SIGFPE       9<span style="color:#ff79c6">)</span> SIGKILL ......
+</span></span></code></pre></div><p>最常用的信号是：</p>
 <ul>
 <li>
 <p>1 (SIGHUP)：重新加载进程。</p>
@@ -347,36 +299,15 @@ PPID 父进程ID C 占用CPU百分比 STIME 就是&quot;start time&quot; TTY 进
 <ol>
 <li>获取相关进程PID，再通过kill终止占用该端口的程序：</li>
 </ol>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">kill</span> -9 PID
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>更快捷的方式：（根据某个名称进行操作，可能导致错误，因为多个进程可能含有相同名称，慎用。）</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">kill</span> -9 <span style="color:#f1fa8c">`</span>ps -ef | grep ins | grep -v color | awk <span style="color:#f1fa8c">&#39;{print $2}&#39;</span><span style="color:#f1fa8c">`</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><ol start="2">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#8be9fd;font-style:italic">kill</span> -9 PID
+</span></span></code></pre></div><p>更快捷的方式：（根据某个名称进行操作，可能导致错误，因为多个进程可能含有相同名称，慎用。）</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#8be9fd;font-style:italic">kill</span> -9 <span style="color:#f1fa8c">`</span>ps -ef | grep ins | grep -v color | awk <span style="color:#f1fa8c">&#39;{print $2}&#39;</span><span style="color:#f1fa8c">`</span>
+</span></span></code></pre></div><ol start="2">
 <li>通过相关名称kill</li>
 </ol>
 <p>e.g. 依次询问每个htppd相关程序是否需要被终止</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>killall -i -9 httpd
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="背景工作切换">背景工作切换</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>killall -i -9 httpd
+</span></span></code></pre></div><h2 id="背景工作切换">背景工作切换</h2>
 <ol>
 <li>观察当前工作状态： jobs</li>
 </ol>
@@ -393,24 +324,10 @@ PPID 父进程ID C 占用CPU百分比 STIME 就是&quot;start time&quot; TTY 进
 <p>当按下ctrl-z将vim工作放到背景后，默认情况下，vim工作将处于&quot;Stpped&quot;状态，使用bg开始运行。</p>
 <p>plus: &amp; 将工作放到背景“执行”。</p>
 <h2 id="离线管理">离线管理</h2>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nohub <span style="color:#ff79c6">{</span>cmd<span style="color:#ff79c6">}</span> &amp;
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>不打印日志：</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nohup <span style="color:#ff79c6">{</span>cmd<span style="color:#ff79c6">}</span> &gt;/dev/null 2&gt;&amp;<span style="color:#bd93f9">1</span> &amp;
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p><code>/dev/null</code>类似于回收站，只是无法像window的回收站一样恢复。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>nohub <span style="color:#ff79c6">{</span>cmd<span style="color:#ff79c6">}</span> &amp;
+</span></span></code></pre></div><p>不打印日志：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>nohup <span style="color:#ff79c6">{</span>cmd<span style="color:#ff79c6">}</span> &gt;/dev/null 2&gt;&amp;<span style="color:#bd93f9">1</span> &amp;
+</span></span></code></pre></div><p><code>/dev/null</code>类似于回收站，只是无法像window的回收站一样恢复。</p>
 <p><code>&gt;/dev/null</code>，就是把标准输出（1）写到<code>/dev/null</code>。</p>
 <p>对于<code>2&gt;&amp;1</code>：</p>
 <p>我们知道，1代表标准输出，而2代表标准错误输出，而0代表标准输入，这里就是将标准错误输出重定向到标准输出，这样也让标准错误输出写到了<code>/dev/null</code>。</p>
@@ -526,7 +443,7 @@ PPID 父进程ID C 占用CPU百分比 STIME 就是&quot;start time&quot; TTY 进
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f10%2fprocess-management-of-linux-practical-operation%2f&name=Linux%20%e5%ae%9e%e7%94%a8%e6%93%8d%e4%bd%9c%e4%b9%8b%e8%bf%9b%e7%a8%8b%e7%ae%a1%e7%90%86&description=%e6%9f%a5%e7%9c%8b%e6%89%80%e6%9c%89%e8%bf%9b%e7%a8%8b%20ps%20-ef%20-e%20%3a%20all%20processes%20%28-A%29%20-f%20%3a%20full-format%2c%20including%20command%20lines%201%202%20%5broot%40VM-0-11-centos%20~%5d%23%20ps%20-ef%20%7c%20head%20-n%201%20UID%20PID%20PPID%20C%20STIME%20TTY%20TIME%20CMD%20%e8%a7%a3%e9%87%8a%e5%a6%82%e4%b8%8b%ef%bc%9a%0aPPID%20%e7%88%b6%e8%bf%9b%e7%a8%8bID%20C%20%e5%8d%a0%e7%94%a8CPU%e7%99%be%e5%88%86%e6%af%94%20STIME%20%e5%b0%b1%e6%98%af%26quot%3bstart%20time%26quot%3b%20TTY%20%e8%bf%9b%e7%a8%8b%e5%9c%a8%e5%93%aa%e4%b8%aa%e7%bb%88%e7%ab%af%e6%98%be%e7%a4%ba%20CMD%20%e5%91%bd%e4%bb%a4%e7%9a%84%e5%90%8d%e7%a7%b0%e5%92%8c%e5%8f%82%e6%95%b0%20ps%20aux%20a%3a%20all%20with%20tty%2c%20including%20other%20users%20%28%e5%92%8c-a%e6%98%af%e4%b8%8d%e5%90%8c%e7%9a%84%29%20u%3a%20user-oriented%20format%20x%3a%20processes%20without%20controlling%20ttys%201%202%20%5broot%40VM-0-11-centos%20~%5d%23%20ps%20-aux%20%7c%20head%20-n%201%20USER%20PID%20%25CPU%20%25MEM%20VSZ%20RSS%20TTY%20STAT%20START%20TIME%20COMMAND%20%e8%a7%a3%e9%87%8a%e5%a6%82%e4%b8%8b%ef%bc%9a" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f10%2fprocess-management-of-linux-practical-operation%2f&name=Linux%20%e5%ae%9e%e7%94%a8%e6%93%8d%e4%bd%9c%e4%b9%8b%e8%bf%9b%e7%a8%8b%e7%ae%a1%e7%90%86&description=%e6%9f%a5%e7%9c%8b%e6%89%80%e6%9c%89%e8%bf%9b%e7%a8%8b%20ps%20-ef%20-e%20%3a%20all%20processes%20%28-A%29%20-f%20%3a%20full-format%2c%20including%20command%20lines%201%5broot%40VM-0-11-centos%20~%5d%23%20ps%20-ef%20%7c%20head%20-n%201%202UID%20PID%20PPID%20C%20STIME%20TTY%20TIME%20CMD%20%e8%a7%a3%e9%87%8a%e5%a6%82%e4%b8%8b%ef%bc%9a%0aPPID%20%e7%88%b6%e8%bf%9b%e7%a8%8bID%20C%20%e5%8d%a0%e7%94%a8CPU%e7%99%be%e5%88%86%e6%af%94%20STIME%20%e5%b0%b1%e6%98%af%26quot%3bstart%20time%26quot%3b%20TTY%20%e8%bf%9b%e7%a8%8b%e5%9c%a8%e5%93%aa%e4%b8%aa%e7%bb%88%e7%ab%af%e6%98%be%e7%a4%ba%20CMD%20%e5%91%bd%e4%bb%a4%e7%9a%84%e5%90%8d%e7%a7%b0%e5%92%8c%e5%8f%82%e6%95%b0%20ps%20aux%20a%3a%20all%20with%20tty%2c%20including%20other%20users%20%28%e5%92%8c-a%e6%98%af%e4%b8%8d%e5%90%8c%e7%9a%84%29%20u%3a%20user-oriented%20format%20x%3a%20processes%20without%20controlling%20ttys%201%5broot%40VM-0-11-centos%20~%5d%23%20ps%20-aux%20%7c%20head%20-n%201%202USER%20PID%20%25CPU%20%25MEM%20VSZ%20RSS%20TTY%20STAT%20START%20TIME%20COMMAND%20%e8%a7%a3%e9%87%8a%e5%a6%82%e4%b8%8b%ef%bc%9a" aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>

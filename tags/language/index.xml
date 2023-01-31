@@ -23,7 +23,7 @@ synchronized(Demo.class){...} 锁的是该类。
 synchronized(obj){...} synchronized同步代码块对对象内部的实例加锁。
 假设demo1与demo2方法不相关，此时两个线程对同一个对象实例分别调用demo1与demo2，均能获取各自的锁。
 代码如下：
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 public class Demo { private Object lock1 = new Object(); private Object lock2 = new Object(); public void demo1() { synchronized (lock1) { while (true) { //死循环目的是为了让线程一直持有该锁 System.out.println(Thread.currentThread()); } } } public void demo2() { synchronized (lock2) { while (true) { System.</description>
+1public class Demo { 2 private Object lock1 = new Object(); 3 private Object lock2 = new Object(); 4 5 public void demo1() { 6 synchronized (lock1) { 7 while (true) { //死循环目的是为了让线程一直持有该锁 8 System.out.println(Thread.currentThread()); 9 } 10 } 11 } 12 13 public void demo2() { 14 synchronized (lock2) { 15 while (true) { 16 System.</description>
     </item>
     
   </channel>
