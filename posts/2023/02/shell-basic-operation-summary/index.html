@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> Shell 基本操作总结 | Norwegian Wood</title>
+  <link rel='canonical' href='/posts/2023/02/shell-basic-operation-summary/'>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:title" content="Shell 基本操作总结" />
+<meta property="og:description" content="shell 参数 $# 参数个数 $@ 取出所有参数 $0 取出第一个参数 1if [ &#34;$1&#34; = &#34;-u&#34; ] 2then 3 echo update 4fi 5echo $0 ans:
+1[root =&gt; ~]$ ./test.sh 2./test.sh 3[root =&gt; ~]$ ./test.sh -u 4update 5./test.sh 算术运算 1[root@VM-0-11-centos ~]# a=1 2[root@VM-0-11-centos ~]# b=$((a*12)) 3[root@VM-0-11-centos ~]# echo $b 412 比较运算 指令：-eq -ne -lt -gt -ge -le
+注：字符串比较直接用“=”而不是上述指令。
+1[root@VM-0-11-centos ~]# a=10 2[root@VM-0-11-centos ~]# [ $a -eq 10 ] &amp;&amp; echo yes 3yes 4[root@VM-0-11-centos ~]# [ $a -ge 11 ] &amp;&amp; echo yes || echo no 5no 指令：-a -o" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/2023/02/shell-basic-operation-summary/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-02-01T12:44:10+08:00" />
+<meta property="article:modified_time" content="2023-02-01T12:44:10+08:00" /><meta property="og:site_name" content="Norwegian Wood" />
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Shell 基本操作总结"/>
+<meta name="twitter:description" content="shell 参数 $# 参数个数 $@ 取出所有参数 $0 取出第一个参数 1if [ &#34;$1&#34; = &#34;-u&#34; ] 2then 3 echo update 4fi 5echo $0 ans:
+1[root =&gt; ~]$ ./test.sh 2./test.sh 3[root =&gt; ~]$ ./test.sh -u 4update 5./test.sh 算术运算 1[root@VM-0-11-centos ~]# a=1 2[root@VM-0-11-centos ~]# b=$((a*12)) 3[root@VM-0-11-centos ~]# echo $b 412 比较运算 指令：-eq -ne -lt -gt -ge -le
+注：字符串比较直接用“=”而不是上述指令。
+1[root@VM-0-11-centos ~]# a=10 2[root@VM-0-11-centos ~]# [ $a -eq 10 ] &amp;&amp; echo yes 3yes 4[root@VM-0-11-centos ~]# [ $a -ge 11 ] &amp;&amp; echo yes || echo no 5no 指令：-a -o"/>
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/styles.43c5f4c45b6248e071aa0f9eae2d299f06dc6e7d91ae3c1a2e4bcde6252688b0db6d6f3722b74f3c851c6e1b5ea207cff6868c78a11f7c137fd8cc01748ba457.css" integrity="sha512-Q8X0xFtiSOBxqg&#43;eri0pnwbcbn2RrjwaLkvN5iUmiLDbbW83IrdPPIUcbhteogfP9oaMeKEffBN/2MwBdIukVw==">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+  <link rel="icon" type="image/png" href="/image/base/favicon.ico" />
+
+  
+  
+</head>
+<body class="max-width-blog mx-auto px3 ltr">
+  <div class="content index py4">
+  <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Archives</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href="/posts/2023/01/summary-of-timed-tasks/" aria-label="Previous">
+            <i class="fas fa-chevron-left" aria-hidden="true"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+            <i class="fas fa-chevron-up" aria-hidden="true"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#" aria-label="Search" id="searchBtn">
+            <i class="fa fa-search" aria-hidden="true"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#" aria-label="Share" onclick="$('#share').toggle();return false;">
+            <i class="fas fa-share-alt" aria-hidden="true"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-search" class="info" style="display:none;">Search</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=%2fposts%2f2023%2f02%2fshell-basic-operation-summary%2f" aria-label="Facebook">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=%2fposts%2f2023%2f02%2fshell-basic-operation-summary%2f&text=Shell%20%e5%9f%ba%e6%9c%ac%e6%93%8d%e4%bd%9c%e6%80%bb%e7%bb%93" aria-label="Twitter">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fposts%2f2023%2f02%2fshell-basic-operation-summary%2f&title=Shell%20%e5%9f%ba%e6%9c%ac%e6%93%8d%e4%bd%9c%e6%80%bb%e7%bb%93" aria-label="Linkedin">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fposts%2f2023%2f02%2fshell-basic-operation-summary%2f&is_video=false&description=Shell%20%e5%9f%ba%e6%9c%ac%e6%93%8d%e4%bd%9c%e6%80%bb%e7%bb%93" aria-label="Pinterest">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Shell%20%e5%9f%ba%e6%9c%ac%e6%93%8d%e4%bd%9c%e6%80%bb%e7%bb%93&body=Check out this article: %2fposts%2f2023%2f02%2fshell-basic-operation-summary%2f" aria-label="Email">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=%2fposts%2f2023%2f02%2fshell-basic-operation-summary%2f&title=Shell%20%e5%9f%ba%e6%9c%ac%e6%93%8d%e4%bd%9c%e6%80%bb%e7%bb%93" aria-label="Pocket">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=%2fposts%2f2023%2f02%2fshell-basic-operation-summary%2f&title=Shell%20%e5%9f%ba%e6%9c%ac%e6%93%8d%e4%bd%9c%e6%80%bb%e7%bb%93" aria-label="reddit">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2023%2f02%2fshell-basic-operation-summary%2f&name=Shell%20%e5%9f%ba%e6%9c%ac%e6%93%8d%e4%bd%9c%e6%80%bb%e7%bb%93&description=shell%20%e5%8f%82%e6%95%b0%20%24%23%20%e5%8f%82%e6%95%b0%e4%b8%aa%e6%95%b0%20%24%40%20%e5%8f%96%e5%87%ba%e6%89%80%e6%9c%89%e5%8f%82%e6%95%b0%20%240%20%e5%8f%96%e5%87%ba%e7%ac%ac%e4%b8%80%e4%b8%aa%e5%8f%82%e6%95%b0%201if%20%5b%20%26%2334%3b%241%26%2334%3b%20%3d%20%26%2334%3b-u%26%2334%3b%20%5d%202then%203%20echo%20update%204fi%205echo%20%240%20ans%3a%0a1%5broot%20%3d%26gt%3b%20~%5d%24%20.%2ftest.sh%202.%2ftest.sh%203%5broot%20%3d%26gt%3b%20~%5d%24%20.%2ftest.sh%20-u%204update%205.%2ftest.sh%20%e7%ae%97%e6%9c%af%e8%bf%90%e7%ae%97%201%5broot%40VM-0-11-centos%20~%5d%23%20a%3d1%202%5broot%40VM-0-11-centos%20~%5d%23%20b%3d%24%28%28a%2a12%29%29%203%5broot%40VM-0-11-centos%20~%5d%23%20echo%20%24b%20412%20%e6%af%94%e8%be%83%e8%bf%90%e7%ae%97%20%e6%8c%87%e4%bb%a4%ef%bc%9a-eq%20-ne%20-lt%20-gt%20-ge%20-le%0a%e6%b3%a8%ef%bc%9a%e5%ad%97%e7%ac%a6%e4%b8%b2%e6%af%94%e8%be%83%e7%9b%b4%e6%8e%a5%e7%94%a8%e2%80%9c%3d%e2%80%9d%e8%80%8c%e4%b8%8d%e6%98%af%e4%b8%8a%e8%bf%b0%e6%8c%87%e4%bb%a4%e3%80%82%0a1%5broot%40VM-0-11-centos%20~%5d%23%20a%3d10%202%5broot%40VM-0-11-centos%20~%5d%23%20%5b%20%24a%20-eq%2010%20%5d%20%26amp%3b%26amp%3b%20echo%20yes%203yes%204%5broot%40VM-0-11-centos%20~%5d%23%20%5b%20%24a%20-ge%2011%20%5d%20%26amp%3b%26amp%3b%20echo%20yes%20%7c%7c%20echo%20no%205no%20%e6%8c%87%e4%bb%a4%ef%bc%9a-a%20-o" aria-label="Tumblr">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fposts%2f2023%2f02%2fshell-basic-operation-summary%2f&t=Shell%20%e5%9f%ba%e6%9c%ac%e6%93%8d%e4%bd%9c%e6%80%bb%e7%bb%93" aria-label="Hacker News">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#shell-参数">shell 参数</a></li>
+    <li><a href="#算术运算">算术运算</a></li>
+    <li><a href="#比较运算">比较运算</a></li>
+    <li><a href="#字符串运算">字符串运算</a></li>
+    <li><a href="#字符串的引号使用">字符串的引号使用</a></li>
+    <li><a href="#获取时间">获取时间</a></li>
+    <li><a href="#条件判断">条件判断</a></li>
+    <li><a href="#文件运算">文件运算</a></li>
+    <li><a href="#读取输入">读取输入</a></li>
+    <li><a href="#条件判断语句">条件判断语句</a>
+      <ul>
+        <li><a href="#if-else">if else</a></li>
+        <li><a href="#case">case</a></li>
+      </ul>
+    </li>
+    <li><a href="#循环语句">循环语句</a>
+      <ul>
+        <li><a href="#while">while</a></li>
+        <li><a href="#until">until</a></li>
+        <li><a href="#for">for</a></li>
+      </ul>
+    </li>
+    <li><a href="#sh命令">sh命令</a></li>
+  </ul>
+</nav>
+    </div>
+    
+  </span>
+</div>
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        Shell 基本操作总结
+      </h1>
+      <div class="meta">
+        
+        <div class="postdate">
+          
+          <time datetime="2023-02-01 12:44:10 &#43;0800 CST" itemprop="datePublished">2023-02-01</time>
+          
+        </div>
+        
+        
+        <div class="article-read-time">
+          <i class="far fa-clock"></i>
+          
+          3 minute read
+        </div>
+        
+        
+        <div class="article-category">
+            <i class="fas fa-archive"></i>
+            
+            
+            <a class="category-link" href="/categories/os">Os</a>
+            
+        </div>
+        
+        
+        <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+            
+            <a class="tag-link" href="/tags/linux" rel="tag">linux</a>
+            
+        </div>
+        
+      </div>
+    </header>
+    
+    <div class="content" itemprop="articleBody">
+      <h2 id="shell-参数">shell 参数</h2>
+<ul>
+<li>$# 参数个数</li>
+<li>$@ 取出所有参数</li>
+<li>$0 取出第一个参数</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#ff79c6">if</span> <span style="color:#ff79c6">[</span> <span style="color:#f1fa8c">&#34;</span><span style="color:#8be9fd;font-style:italic">$1</span><span style="color:#f1fa8c">&#34;</span> <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;-u&#34;</span> <span style="color:#ff79c6">]</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#ff79c6">then</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>    <span style="color:#8be9fd;font-style:italic">echo</span> update
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span><span style="color:#ff79c6">fi</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span><span style="color:#8be9fd;font-style:italic">echo</span> <span style="color:#8be9fd;font-style:italic">$0</span>
+</span></span></code></pre></div><p>ans:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>[root =&gt; ~]$ ./test.sh
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>./test.sh
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>[root =&gt; ~]$ ./test.sh -u
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>update
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>./test.sh
+</span></span></code></pre></div><h2 id="算术运算">算术运算</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#ff79c6">[</span>root@VM-0-11-centos ~<span style="color:#ff79c6">]</span><span style="color:#6272a4"># a=1</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#ff79c6">[</span>root@VM-0-11-centos ~<span style="color:#ff79c6">]</span><span style="color:#6272a4"># b=$((a*12))</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#ff79c6">[</span>root@VM-0-11-centos ~<span style="color:#ff79c6">]</span><span style="color:#6272a4"># echo $b</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span><span style="color:#bd93f9">12</span>
+</span></span></code></pre></div><h2 id="比较运算">比较运算</h2>
+<p>指令：-eq -ne -lt -gt -ge -le</p>
+<p>注：字符串比较直接用“=”而不是上述指令。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#ff79c6">[</span>root@VM-0-11-centos ~<span style="color:#ff79c6">]</span><span style="color:#6272a4"># a=10</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#ff79c6">[</span>root@VM-0-11-centos ~<span style="color:#ff79c6">]</span><span style="color:#6272a4"># [ $a -eq 10 ] &amp;&amp; echo yes</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>yes
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span><span style="color:#ff79c6">[</span>root@VM-0-11-centos ~<span style="color:#ff79c6">]</span><span style="color:#6272a4"># [ $a -ge 11 ] &amp;&amp; echo yes || echo no</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>no
+</span></span></code></pre></div><p>指令：-a -o</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#ff79c6">[</span>root@VM-0-11-centos ~<span style="color:#ff79c6">]</span><span style="color:#6272a4"># a=10;b=12;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#ff79c6">[</span>root@VM-0-11-centos ~<span style="color:#ff79c6">]</span><span style="color:#6272a4"># [ $a -lt 11 -a $b -lt 13 ] &amp;&amp; echo yes || echo no</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>yes
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span><span style="color:#ff79c6">[</span>root@VM-0-11-centos ~<span style="color:#ff79c6">]</span><span style="color:#6272a4"># [ $a -lt 11 -a $b -lt 11 ] &amp;&amp; echo yes || echo no</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>no
+</span></span></code></pre></div><h2 id="字符串运算">字符串运算</h2>
+<ol>
+<li>-z（即zero）检测字符串长度是否为0，为0返回 true。</li>
+<li>str检测字符串是否为空，不为空返回 true。</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#ff79c6">[</span>root@VM-0-11-centos ~<span style="color:#ff79c6">]</span><span style="color:#6272a4"># [ -z &#34;jzh&#34; ] &amp;&amp; echo yes || echo no</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>no
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#ff79c6">[</span>root@VM-0-11-centos ~<span style="color:#ff79c6">]</span><span style="color:#6272a4"># [ &#34;jzh&#34; = &#34;zh&#34; ] &amp;&amp; echo yes || echo no</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>no
+</span></span></code></pre></div><h2 id="字符串的引号使用">字符串的引号使用</h2>
+<p>双引号与单引号效果不一样，如下：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>root@ubuntu2004:~# <span style="color:#8be9fd;font-style:italic">echo</span> <span style="color:#f1fa8c">&#34;</span><span style="color:#8be9fd;font-style:italic">$PATH</span><span style="color:#f1fa8c">&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>/usr/local/java/jdk1.8.0_311/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:...
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>root@ubuntu2004:~# <span style="color:#8be9fd;font-style:italic">echo</span> <span style="color:#f1fa8c">&#39;$PATH&#39;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span><span style="color:#8be9fd;font-style:italic">$PATH</span>
+</span></span></code></pre></div><h2 id="获取时间">获取时间</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#6272a4"># 输出格式化时间</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#ff79c6">[</span>root@VM-0-11-centos ~<span style="color:#ff79c6">]</span><span style="color:#6272a4"># date &#39;+%Y-%m-%d %H:%M:%S&#39;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>2022-04-10 13:22:04
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span><span style="color:#6272a4"># 输出当前时间戳</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span><span style="color:#ff79c6">[</span>root@VM-0-11-centos ~<span style="color:#ff79c6">]</span><span style="color:#6272a4"># date +%s</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span><span style="color:#bd93f9">1649568128</span>
+</span></span></code></pre></div><h2 id="条件判断">条件判断</h2>
+<p>注：中括号两端要有空白符。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>[root@VM-0-11-centos tmp]# [ &#34;a&#34; == &#34;b&#34; ] &amp;&amp; echo hello || echo bye
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>bye
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>[root@VM-0-11-centos tmp]# [ &#34;a&#34; == &#34;a&#34; ] &amp;&amp; echo hello || echo bye
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>hello
+</span></span></code></pre></div><h2 id="文件运算">文件运算</h2>
+<ol>
+<li>-r 即read</li>
+<li>-w 即write</li>
+<li>-x 即exec</li>
+<li>-s 即文件不为空</li>
+<li>-e 即exist</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#ff79c6">[</span>root@VM-0-11-centos ~<span style="color:#ff79c6">]</span><span style="color:#6272a4"># touch t.sh</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#ff79c6">[</span>root@VM-0-11-centos ~<span style="color:#ff79c6">]</span><span style="color:#6272a4"># [ -s ./t.sh ] &amp;&amp; echo yes || echo no</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>no
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span><span style="color:#ff79c6">[</span>root@VM-0-11-centos ~<span style="color:#ff79c6">]</span><span style="color:#6272a4"># [ -e ./t.sh ] &amp;&amp; echo yes || echo no</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>yes
+</span></span></code></pre></div><h2 id="读取输入">读取输入</h2>
+<p>read -p &ldquo;prompt words&rdquo; var_name</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#ff79c6">[</span>root@VM-0-11-centos ~<span style="color:#ff79c6">]</span><span style="color:#6272a4"># read -p &#34;age:&#34; age</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>age:12
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#ff79c6">[</span>root@VM-0-11-centos ~<span style="color:#ff79c6">]</span><span style="color:#6272a4"># echo $age</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span><span style="color:#bd93f9">12</span>
+</span></span></code></pre></div><p>read -a variable_name （读取数组）</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#ff79c6">[</span>root@VM-0-11-centos tmp<span style="color:#ff79c6">]</span><span style="color:#6272a4"># read -a arr</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#bd93f9">1</span> <span style="color:#bd93f9">2</span> <span style="color:#bd93f9">3</span> <span style="color:#bd93f9">4</span> <span style="color:#bd93f9">5</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#ff79c6">[</span>root@VM-0-11-centos tmp<span style="color:#ff79c6">]</span><span style="color:#6272a4"># echo ${arr[4]}</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span><span style="color:#bd93f9">5</span>
+</span></span></code></pre></div><h2 id="条件判断语句">条件判断语句</h2>
+<h3 id="if-else">if else</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#ff79c6">if</span> <span style="color:#ff79c6">[</span>  <span style="color:#ff79c6">]</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#ff79c6">then</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>	<span style="color:#ff79c6">do</span> something
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span><span style="color:#ff79c6">elif</span> <span style="color:#ff79c6">[</span>  <span style="color:#ff79c6">]</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span><span style="color:#ff79c6">then</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>	<span style="color:#ff79c6">do</span> something
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span><span style="color:#ff79c6">else</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span><span>	<span style="color:#ff79c6">do</span> something
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9</span><span><span style="color:#ff79c6">fi</span>
+</span></span></code></pre></div><h3 id="case">case</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#ff79c6">case</span> <span style="color:#f1fa8c">${</span><span style="color:#8be9fd;font-style:italic">var</span><span style="color:#f1fa8c">}</span> in
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#f1fa8c">&#34;condition1&#34;</span><span style="color:#ff79c6">)</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span><span style="color:#ff79c6">do</span> something
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>;;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span><span style="color:#f1fa8c">&#34;condition2&#34;</span><span style="color:#ff79c6">)</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span><span style="color:#ff79c6">do</span> something
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>;;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>*<span style="color:#ff79c6">)</span> <span style="color:#6272a4">#anything</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span><span style="color:#ff79c6">do</span> something
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>;;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span><span style="color:#ff79c6">esac</span>
+</span></span></code></pre></div><h2 id="循环语句">循环语句</h2>
+<h3 id="while">while</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#ff79c6">while</span> <span style="color:#ff79c6">[</span> condition <span style="color:#ff79c6">]</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#ff79c6">do</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>	<span style="color:#ff79c6">do</span> something
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span><span style="color:#ff79c6">done</span>
+</span></span></code></pre></div><p>when meet the condition, start the loop.</p>
+<h3 id="until">until</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#ff79c6">until</span> <span style="color:#ff79c6">[</span> condition <span style="color:#ff79c6">]</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#ff79c6">do</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>	<span style="color:#ff79c6">do</span> something
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span><span style="color:#ff79c6">done</span>
+</span></span></code></pre></div><p>when meet the condition, end the loop.</p>
+<h3 id="for">for</h3>
+<p>遍历数组：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#ff79c6">for</span> <span style="color:#8be9fd;font-style:italic">$var</span> in <span style="color:#f1fa8c">${</span><span style="color:#8be9fd;font-style:italic">array</span><span style="color:#f1fa8c">}</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#ff79c6">do</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>	<span style="color:#ff79c6">do</span> something
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span><span style="color:#ff79c6">done</span>
+</span></span></code></pre></div><p>遍历指定数字序列：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#ff79c6">for</span> <span style="color:#8be9fd;font-style:italic">$var</span> in <span style="color:#ff79c6">{</span>1..100<span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#ff79c6">do</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>	<span style="color:#ff79c6">do</span> something
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span><span style="color:#ff79c6">done</span>
+</span></span></code></pre></div><p>条件遍历：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd;font-style:italic">i</span><span style="color:#ff79c6">=</span>1; i&lt;<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">${</span><span style="color:#8be9fd;font-style:italic">var</span><span style="color:#f1fa8c">}</span>; i++<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">)</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#ff79c6">do</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>	<span style="color:#ff79c6">do</span> something
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span><span style="color:#ff79c6">done</span>
+</span></span></code></pre></div><h2 id="sh命令">sh命令</h2>
+<ul>
+<li>-n 不执行，只检查语法 not execute but check</li>
+<li>-v 执行前输出脚本内容 view the script</li>
+<li>-x 将使用到脚本内容输出</li>
+</ul>
+<hr>
+<p><strong>From my blog: <a href="https://akynazh.site">akynazh</a></strong>.</p>
+<p><strong>Over.</strong></p>
+
+    </div>
+  </article>
+  
+  
+
+
+
+
+  <div class="blog-post-comments">
+    
+      <div id="disquss_thread">
+  <script src="https://utteranc.es/client.js"
+    repo="akynazh/hugo-comment"
+    issue-term="pathname"
+    label="akynazh"
+    theme="github-dark"
+    crossorigin="anonymous"
+    async>
+  </script>
+</div>
+    
+  </div>
+
+
+    
+    <div id="fastSearch">
+      <input id="searchInput" tabindex="0"/>
+      <ul id="searchResults"></ul>
+    </div>
+  <div id="footer-post-container">
+  <div id="footer-post">
+    
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#shell-参数">shell 参数</a></li>
+    <li><a href="#算术运算">算术运算</a></li>
+    <li><a href="#比较运算">比较运算</a></li>
+    <li><a href="#字符串运算">字符串运算</a></li>
+    <li><a href="#字符串的引号使用">字符串的引号使用</a></li>
+    <li><a href="#获取时间">获取时间</a></li>
+    <li><a href="#条件判断">条件判断</a></li>
+    <li><a href="#文件运算">文件运算</a></li>
+    <li><a href="#读取输入">读取输入</a></li>
+    <li><a href="#条件判断语句">条件判断语句</a>
+      <ul>
+        <li><a href="#if-else">if else</a></li>
+        <li><a href="#case">case</a></li>
+      </ul>
+    </li>
+    <li><a href="#循环语句">循环语句</a>
+      <ul>
+        <li><a href="#while">while</a></li>
+        <li><a href="#until">until</a></li>
+        <li><a href="#for">for</a></li>
+      </ul>
+    </li>
+    <li><a href="#sh命令">sh命令</a></li>
+  </ul>
+</nav>
+    </div>
+    
+    
+    <div id="nav-footer" style="display: none">
+      
+      <ul style="display:inline;"><li><a href="/">Home</a></li></ul>
+      
+      <ul style="display:inline;"><li><a href="/posts">Archives</a></li></ul>
+      
+      <ul style="display:inline;"><li><a href="/about">About</a></li></ul>
+      
+    </div>
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=%2fposts%2f2023%2f02%2fshell-basic-operation-summary%2f" aria-label="Facebook">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=%2fposts%2f2023%2f02%2fshell-basic-operation-summary%2f&text=Shell%20%e5%9f%ba%e6%9c%ac%e6%93%8d%e4%bd%9c%e6%80%bb%e7%bb%93" aria-label="Twitter">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fposts%2f2023%2f02%2fshell-basic-operation-summary%2f&title=Shell%20%e5%9f%ba%e6%9c%ac%e6%93%8d%e4%bd%9c%e6%80%bb%e7%bb%93" aria-label="Linkedin">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fposts%2f2023%2f02%2fshell-basic-operation-summary%2f&is_video=false&description=Shell%20%e5%9f%ba%e6%9c%ac%e6%93%8d%e4%bd%9c%e6%80%bb%e7%bb%93" aria-label="Pinterest">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Shell%20%e5%9f%ba%e6%9c%ac%e6%93%8d%e4%bd%9c%e6%80%bb%e7%bb%93&body=Check out this article: %2fposts%2f2023%2f02%2fshell-basic-operation-summary%2f" aria-label="Email">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=%2fposts%2f2023%2f02%2fshell-basic-operation-summary%2f&title=Shell%20%e5%9f%ba%e6%9c%ac%e6%93%8d%e4%bd%9c%e6%80%bb%e7%bb%93" aria-label="Pocket">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=%2fposts%2f2023%2f02%2fshell-basic-operation-summary%2f&title=Shell%20%e5%9f%ba%e6%9c%ac%e6%93%8d%e4%bd%9c%e6%80%bb%e7%bb%93" aria-label="reddit">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2023%2f02%2fshell-basic-operation-summary%2f&name=Shell%20%e5%9f%ba%e6%9c%ac%e6%93%8d%e4%bd%9c%e6%80%bb%e7%bb%93&description=shell%20%e5%8f%82%e6%95%b0%20%24%23%20%e5%8f%82%e6%95%b0%e4%b8%aa%e6%95%b0%20%24%40%20%e5%8f%96%e5%87%ba%e6%89%80%e6%9c%89%e5%8f%82%e6%95%b0%20%240%20%e5%8f%96%e5%87%ba%e7%ac%ac%e4%b8%80%e4%b8%aa%e5%8f%82%e6%95%b0%201if%20%5b%20%26%2334%3b%241%26%2334%3b%20%3d%20%26%2334%3b-u%26%2334%3b%20%5d%202then%203%20echo%20update%204fi%205echo%20%240%20ans%3a%0a1%5broot%20%3d%26gt%3b%20~%5d%24%20.%2ftest.sh%202.%2ftest.sh%203%5broot%20%3d%26gt%3b%20~%5d%24%20.%2ftest.sh%20-u%204update%205.%2ftest.sh%20%e7%ae%97%e6%9c%af%e8%bf%90%e7%ae%97%201%5broot%40VM-0-11-centos%20~%5d%23%20a%3d1%202%5broot%40VM-0-11-centos%20~%5d%23%20b%3d%24%28%28a%2a12%29%29%203%5broot%40VM-0-11-centos%20~%5d%23%20echo%20%24b%20412%20%e6%af%94%e8%be%83%e8%bf%90%e7%ae%97%20%e6%8c%87%e4%bb%a4%ef%bc%9a-eq%20-ne%20-lt%20-gt%20-ge%20-le%0a%e6%b3%a8%ef%bc%9a%e5%ad%97%e7%ac%a6%e4%b8%b2%e6%af%94%e8%be%83%e7%9b%b4%e6%8e%a5%e7%94%a8%e2%80%9c%3d%e2%80%9d%e8%80%8c%e4%b8%8d%e6%98%af%e4%b8%8a%e8%bf%b0%e6%8c%87%e4%bb%a4%e3%80%82%0a1%5broot%40VM-0-11-centos%20~%5d%23%20a%3d10%202%5broot%40VM-0-11-centos%20~%5d%23%20%5b%20%24a%20-eq%2010%20%5d%20%26amp%3b%26amp%3b%20echo%20yes%203yes%204%5broot%40VM-0-11-centos%20~%5d%23%20%5b%20%24a%20-ge%2011%20%5d%20%26amp%3b%26amp%3b%20echo%20yes%20%7c%7c%20echo%20no%205no%20%e6%8c%87%e4%bb%a4%ef%bc%9a-a%20-o" aria-label="Tumblr">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fposts%2f2023%2f02%2fshell-basic-operation-summary%2f&t=Shell%20%e5%9f%ba%e6%9c%ac%e6%93%8d%e4%bd%9c%e6%80%bb%e7%bb%93" aria-label="Hacker News">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').show();$('#toc-footer').hide();$('#share-footer').hide();return false;" aria-label="Menu">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+        <a id="toc-toggle" class="icon" href="#" onclick="$('#toc-footer').show();$('#nav-footer').hide();$('#share-footer').hide();return false;" aria-label="TOC">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+        <a id="searchBtn1" class="icon" href="#" aria-label="Search">
+          <i class="fa fa-search" aria-hidden="true"></i> Search</a>
+        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').show();$('#toc-footer').hide();$('#nav-footer').hide();return false;" aria-label="Share">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+    </div>
+
+  </div>
+</div>
+
+  <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2023  Jzh 
+    | <a href='https://beian.miit.gov.cn/' style="text-decoration:none;">陕ICP备2022007986号-1</a>
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Archives</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+  </div>
+</body>
+<script src="/js/fuse.min.js"></script>
+<script src="/js/fastsearch.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+</html>
