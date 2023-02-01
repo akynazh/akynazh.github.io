@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Jzh</copyright>
-    <lastBuildDate>Tue, 31 Jan 2023 17:22:29 +0800</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 01 Feb 2023 13:02:21 +0800</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>excerpt</title>
+      <link>https://akynazh.site/tags/excerpt/</link>
+      <pubDate>Wed, 01 Feb 2023 13:02:21 +0800</pubDate>
+      
+      <guid>https://akynazh.site/tags/excerpt/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>crontab</title>
       <link>https://akynazh.site/tags/crontab/</link>
@@ -149,15 +158,6 @@
       <pubDate>Mon, 03 Oct 2022 20:52:12 +0800</pubDate>
       
       <guid>https://akynazh.site/tags/android/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>excerpt</title>
-      <link>https://akynazh.site/tags/excerpt/</link>
-      <pubDate>Thu, 01 Sep 2022 14:15:44 +0800</pubDate>
-      
-      <guid>https://akynazh.site/tags/excerpt/</guid>
       <description></description>
     </item>
     
