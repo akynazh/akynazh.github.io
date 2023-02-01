@@ -2,17 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>network on Norwegian Wood</title>
-    <link>https://akynazh.site</link>
+    <link>https://akynazh.site/tags/network/</link>
     <description>Recent content in network on Norwegian Wood</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
+    <managingEditor>akynazh@qq.com (Jzh)</managingEditor>
+    <webMaster>akynazh@qq.com (Jzh)</webMaster>
     <copyright>Jzh</copyright>
-    <lastBuildDate>Sun, 13 Feb 2022 21:20:01 +0800</lastBuildDate><atom:link href="/tags/network/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 13 Feb 2022 21:20:01 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/network/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>配置网络以实现主机和虚拟机系统互通</title>
       <link>https://akynazh.site/posts/2022/02/configure-the-network-to-realize-the-interworking-between-host-and-virtual-machine-system/</link>
       <pubDate>Sun, 13 Feb 2022 21:20:01 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/posts/2022/02/configure-the-network-to-realize-the-interworking-between-host-and-virtual-machine-system/</guid>
       <description>主机配置防火墙入站规则 主机如果没开启防火墙则可以跳过这一步。
 进入防火墙管理界面，新建入站规则放通目标虚拟机系统IP即可。
@@ -29,7 +31,7 @@ CentOS配置静态IP 找到当前网络下网卡名，然后编辑/etc/sysconfig
       <title>Linux 实用操作之网络管理</title>
       <link>https://akynazh.site/posts/2021/01/network-management-of-linux-practical-operation/</link>
       <pubDate>Sun, 03 Jan 2021 00:27:58 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/posts/2021/01/network-management-of-linux-practical-operation/</guid>
       <description>查看内网IP grep抓取inet行，sed删除inet字串和netmask.*字串
 1alias myip=&amp;#34; ifconfig eth0 | grep &amp;#39;inet &amp;#39; | sed &amp;#39;s/inet//g&amp;#39; | sed &amp;#39;s/netmask.*$//g&amp;#39;&amp;#34; test:

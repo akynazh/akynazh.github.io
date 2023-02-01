@@ -2,17 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>OS on Norwegian Wood</title>
-    <link>https://akynazh.site</link>
+    <link>https://akynazh.site/categories/os/</link>
     <description>Recent content in OS on Norwegian Wood</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
+    <managingEditor>akynazh@qq.com (Jzh)</managingEditor>
+    <webMaster>akynazh@qq.com (Jzh)</webMaster>
     <copyright>Jzh</copyright>
-    <lastBuildDate>Tue, 31 Jan 2023 17:22:29 +0800</lastBuildDate><atom:link href="/categories/os/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 31 Jan 2023 17:22:29 +0800</lastBuildDate><atom:link href="https://akynazh.site/categories/os/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>关于定时任务的总结</title>
       <link>https://akynazh.site/posts/2023/01/summary-of-timed-tasks/</link>
       <pubDate>Tue, 31 Jan 2023 17:22:29 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/posts/2023/01/summary-of-timed-tasks/</guid>
       <description>Linux 下的定时任务 规则 1*/1 * * * * cmd 5个单元：
 分钟（0-59） 小时（0-23 日期（1-31） 月份（1-12） 星期几（0-6，其中 0 代表星期日）
@@ -27,7 +29,7 @@
       <title>Shell 基本操作总结</title>
       <link>https://akynazh.site/posts/2022/10/shell-basic-operation-summary/</link>
       <pubDate>Wed, 19 Oct 2022 22:44:10 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/posts/2022/10/shell-basic-operation-summary/</guid>
       <description>shell 参数 $# 参数个数 $@ 取出所有参数 $0 取出第一个参数 1if [ &amp;#34;$1&amp;#34; = &amp;#34;-u&amp;#34; ] 2then 3 echo update 4fi 5echo $0 ans:
 1[root =&amp;gt; ~]$ ./test.sh 2./test.sh 3[root =&amp;gt; ~]$ ./test.sh -u 4update 5./test.sh 算术运算 1[root@VM-0-11-centos ~]# a=1 2[root@VM-0-11-centos ~]# b=$((a*12)) 3[root@VM-0-11-centos ~]# echo $b 412 比较运算 指令：-eq -ne -lt -gt -ge -le
@@ -39,7 +41,7 @@
       <title>Linux 文件部分总结</title>
       <link>https://akynazh.site/posts/2022/10/linux-files-section-summary/</link>
       <pubDate>Wed, 19 Oct 2022 22:43:03 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/posts/2022/10/linux-files-section-summary/</guid>
       <description>文件类型 d: directory -: file l: link p: pipeline，管道文件 b: block，块设备文件 c: character，字符设备文件 s: socket，套接字文件 配置文件 对于bashrc：
 /etc/bashrc：针对所有用户，每开启一个shell都会执行一次
@@ -65,7 +67,7 @@ win to unix 多了\r -&amp;gt; \r\n -&amp;gt; ^M。
       <title>Linux 实用操作之进程管理</title>
       <link>https://akynazh.site/posts/2022/10/process-management-of-linux-practical-operation/</link>
       <pubDate>Sun, 02 Oct 2022 22:55:53 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/posts/2022/10/process-management-of-linux-practical-operation/</guid>
       <description>查看所有进程 ps -ef -e : all processes (-A) -f : full-format, including command lines 1[root@VM-0-11-centos ~]# ps -ef | head -n 1 2UID PID PPID C STIME TTY TIME CMD 解释如下：
 PPID 父进程ID C 占用CPU百分比 STIME 就是&amp;quot;start time&amp;quot; TTY 进程在哪个终端显示 CMD 命令的名称和参数 ps aux a: all with tty, including other users (和-a是不同的) u: user-oriented format x: processes without controlling ttys 1[root@VM-0-11-centos ~]# ps -aux | head -n 1 2USER PID %CPU %MEM VSZ RSS TTY STAT START TIME COMMAND 解释如下：</description>
@@ -75,7 +77,7 @@ PPID 父进程ID C 占用CPU百分比 STIME 就是&amp;quot;start time&amp;quot;
       <title>Linux 实用操作之系统服务管理</title>
       <link>https://akynazh.site/posts/2022/07/system-service-management-of-linux-practical-operation/</link>
       <pubDate>Sun, 24 Jul 2022 20:42:27 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/posts/2022/07/system-service-management-of-linux-practical-operation/</guid>
       <description>systemctl指令 立即启动一个服务：systemctl start my.service 立即停止一个服务：systemctl stop my.service 重启一个服务：systemctl restart my.service 重新加载一个服务的配置文件：systemctl reload my.service 重载所有修改过的配置文件：systemctl daemon-reload 开启自启动服务：systemctl enable my.service 取消开启自启动：systemctl disable my.service 查看是否已经自启动：systemctl is-enabled my.service 查看服务运行状态：systemctl status my.service 查看所有服务：systemctl --type service service和chkconfig指令 启动服务：service my.service start 终止服务：service my.service stop 重启服务：service my.service restart 查看服务运行状态：service my.service status 开启或取消开机自启动：chkconfig my.service on/off 查看开机自启动列表：chkconfig --list Unit配置文件解释 1- Unit 2 - Description，服务的描述 3 - Requires，定义此unit需在哪个daemon启动后才能够启动 4- Service 5 - Type，定义启动时的进程行为。它有以下几种值。 6 - Type=simple，默认值，执行ExecStart指定的命令，启动主进程 7 - Type=forking，以 fork 方式从父进程创建子进程，创建后父进程会立即退出 8 - Type=oneshot，一次性进程，Systemd 会等当前服务退出，再继续往下执行 9 - Type=dbus，当前服务通过D-Bus启动 10 - Type=notify，当前服务启动完毕，会通知Systemd，再继续往下执行 11 - Type=idle，若有其他任务执行完毕，当前服务才会运行 12 - ExecStart，启动当前服务的命令 13 - ExecStartPre，启动当前服务之前执行的命令 14 - ExecStartPost，启动当前服务之后执行的命令 15 - ExecReload，重启当前服务时执行的命令 16 - ExecStop，停止当前服务时执行的命令 17 - ExecStopPost，停止当其服务之后执行的命令 18 - RestartSec，自动重启当前服务间隔的秒数 19 - Restart，定义何种情况 Systemd 会自动重启当前服务，可能的值包括always（总是重启）、on-success、on-failure、on-abnormal、on-abort、on-watchdog 20 - TimeoutSec，定义 Systemd 停止当前服务之前等待的秒数 21 - Environment，指定环境变量 22- Install 23 - WantedBy，值是一个或多个Target，当前Unit激活(enable)时，符号链接会放入/etc/systemd/system目录下面以Target名+.</description>
     </item>
@@ -84,7 +86,7 @@ PPID 父进程ID C 占用CPU百分比 STIME 就是&amp;quot;start time&amp;quot;
       <title>Wsl 主要操作记录</title>
       <link>https://akynazh.site/posts/2022/07/wsl-main-operation-records/</link>
       <pubDate>Sat, 23 Jul 2022 17:34:52 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/posts/2022/07/wsl-main-operation-records/</guid>
       <description>wsl在window开机后自启ssh服务 wsl下创建脚本，执行：vim /etc/init.wsl，并根据需要写入服务：
 1/etc/init.d/${需要的服务} # 或者使用service/systemctl命令 再赋予init.wsl执行权限，执行：chmod +x /etc/init.wsl
@@ -101,7 +103,7 @@ wsl一些常用命令 wsl ~ -u jzh: 以jzh用户登录并进入用户文件夹 w
       <title>使用 x86_64 汇编写一个自旋锁</title>
       <link>https://akynazh.site/posts/2022/06/use-x86-64-assemble-and-write-a-spin-lock/</link>
       <pubDate>Thu, 09 Jun 2022 23:37:51 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/posts/2022/06/use-x86-64-assemble-and-write-a-spin-lock/</guid>
       <description>一、理论分析 自旋锁，顾名思义，即自己不断旋转重复进行的锁，当多个线程访问同一资源时，为实现互斥访问，必须给目标资源加锁，此时只允许一个线程访问，此时其他线程无法访问，并且一直重复请求访问，直到该锁被释放。访问完资源的线程及时释放锁以供其他资源访问。
 自旋锁可以通过比较替换算法实现：设锁为1时被占用，为0时空闲。当一个线程请求锁时，即进入请求锁循环“spinlock”，设预期值为0，修改值为1，让锁值与预期值比较，若锁值等于预期值，则锁空闲，将锁值置为修改值，退出spinlock循环；若锁值不等于预期值，则证明锁被占用，继续spinlock循环。
@@ -114,7 +116,7 @@ Intel语法 1// 尝试获取锁 2void lock(long *p) { 3 long a = 0, c = 1; 4 pri
       <title>Linux 实用操作之权限管理</title>
       <link>https://akynazh.site/posts/2021/12/permission-management-of-linux-practical-operation/</link>
       <pubDate>Mon, 20 Dec 2021 10:15:34 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/posts/2021/12/permission-management-of-linux-practical-operation/</guid>
       <description>添加用户 1[root@VM-0-11-centos ~]# useradd jzh 2 3[root@VM-0-11-centos /]# id jzh 4uid=1000(jzh) gid=1000(jzh) groups=1000(jzh) 5 6[root@VM-0-11-centos /]# grep jzh /etc/passwd /etc/shadow /etc/group 7/etc/passwd:jzh:x:1000:1000::/home/jzh:/bin/bash 8/etc/shadow:jzh:!!:18980:0:99999:7::: 9/etc/group:jzh:x:1000: x指代密码，对应到shadow中，未设定即为“!!”
 设置密码 在进行useradd后密码还未设定。
@@ -126,7 +128,7 @@ Intel语法 1// 尝试获取锁 2void lock(long *p) { 3 long a = 0, c = 1; 4 pri
       <title>Linux 实用操作之文本操作</title>
       <link>https://akynazh.site/posts/2021/12/text-operation-of-linux-practical-operation/</link>
       <pubDate>Sun, 05 Dec 2021 00:20:09 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/posts/2021/12/text-operation-of-linux-practical-operation/</guid>
       <description>使用grep抓取期望的结果 在过去登录主机的人中截取登录信息含root的行信息
 1last | grep &amp;#39;root&amp;#39; 比较重要，记忆：
@@ -151,7 +153,7 @@ awk命令操作文本 格式化输出：以tab隔开打印前五行中每行的�
       <title>Linux 上部署 JAR 包项目后的文件上传问题</title>
       <link>https://akynazh.site/posts/2021/11/file-upload-problem-after-deploying-jar-package-project-on-linux/</link>
       <pubDate>Wed, 03 Nov 2021 00:38:12 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/posts/2021/11/file-upload-problem-after-deploying-jar-package-project-on-linux/</guid>
       <description>在进行上传文件时，一般会先获取项目类路径：
 1File relativePathFile = new File(URLDecoder.decode(ResourceUtils.getURL(&amp;#34;classpath:&amp;#34;).getPath(), &amp;#34;utf-8&amp;#34;)); 2String absolutePath = relativePathFile.getAbsoluteFile().getPath(); 首先取得相对路径，再进一步取得绝对路径，结果如下：
@@ -178,7 +180,7 @@ e.g. ${project}/target/classes/static/avatar/test.jpg
       <title>Linux 主机部署 springboot 项目全过程</title>
       <link>https://akynazh.site/posts/2021/11/the-whole-process-of-linux-host-deployment-springboot-project/</link>
       <pubDate>Wed, 03 Nov 2021 00:30:25 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/posts/2021/11/the-whole-process-of-linux-host-deployment-springboot-project/</guid>
       <description>注：部署环境为centos7.9版本
 配置环境 配好mysql，redis，java开发环境。
@@ -194,7 +196,7 @@ e.g. ${project}/target/classes/static/avatar/test.jpg
       <title>Linux 实用操作之网络管理</title>
       <link>https://akynazh.site/posts/2021/01/network-management-of-linux-practical-operation/</link>
       <pubDate>Sun, 03 Jan 2021 00:27:58 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/posts/2021/01/network-management-of-linux-practical-operation/</guid>
       <description>查看内网IP grep抓取inet行，sed删除inet字串和netmask.*字串
 1alias myip=&amp;#34; ifconfig eth0 | grep &amp;#39;inet &amp;#39; | sed &amp;#39;s/inet//g&amp;#39; | sed &amp;#39;s/netmask.*$//g&amp;#39;&amp;#34; test:

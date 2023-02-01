@@ -2,17 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>cpu on Norwegian Wood</title>
-    <link>https://akynazh.site</link>
+    <link>https://akynazh.site/tags/cpu/</link>
     <description>Recent content in cpu on Norwegian Wood</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
+    <managingEditor>akynazh@qq.com (Jzh)</managingEditor>
+    <webMaster>akynazh@qq.com (Jzh)</webMaster>
     <copyright>Jzh</copyright>
-    <lastBuildDate>Tue, 04 Oct 2022 23:18:24 +0800</lastBuildDate><atom:link href="/tags/cpu/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 04 Oct 2022 23:18:24 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/cpu/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>8086 汇编学习记录</title>
       <link>https://akynazh.site/posts/2022/10/8086-assembly-learning-record/</link>
       <pubDate>Tue, 04 Oct 2022 23:18:24 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/posts/2022/10/8086-assembly-learning-record/</guid>
       <description>8086 PC 机内存地址空间分配 00000~9FFFF: 主存储器地址空间（RAM） A0000~BFFFF: 显存地址空间 C0000~FFFFF: 各类ROM地址空间 段寄存器 8086CPU不支持将数据直接送入段寄存器的操作，ds 是一个段寄存器，所以mov ds，1000H这条指令是非法的。
 要将1000H送入ds，只好用一个寄存器来进行中转，即先将1000H送入一个一般的寄存器，如bx，再将bx中的内容送入ds。

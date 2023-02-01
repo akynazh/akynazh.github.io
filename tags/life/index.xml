@@ -2,17 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>life on Norwegian Wood</title>
-    <link>https://akynazh.site</link>
+    <link>https://akynazh.site/tags/life/</link>
     <description>Recent content in life on Norwegian Wood</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
+    <managingEditor>akynazh@qq.com (Jzh)</managingEditor>
+    <webMaster>akynazh@qq.com (Jzh)</webMaster>
     <copyright>Jzh</copyright>
-    <lastBuildDate>Mon, 21 Mar 2022 18:02:04 +0800</lastBuildDate><atom:link href="/tags/life/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 21 Mar 2022 18:02:04 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/life/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>山脉游览录（一）</title>
       <link>https://akynazh.site/posts/2022/03/mountain-tour-1/</link>
       <pubDate>Mon, 21 Mar 2022 18:02:04 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/posts/2022/03/mountain-tour-1/</guid>
       <description>山的记忆 每一座山都有独特的感觉，每一座山都有自己的故事。
 我和踏过的每一座山都有一段故事。
@@ -42,7 +44,7 @@
       <title>简洁之美</title>
       <link>https://akynazh.site/posts/2022/02/the-beauty-of-simplicity/</link>
       <pubDate>Sun, 06 Feb 2022 21:42:50 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/posts/2022/02/the-beauty-of-simplicity/</guid>
       <description>身处繁杂的社会生活 现代社会，是一个信息爆炸的时代，是一个充满无尽焦虑的时代，是一个繁杂的时代。
 在离不开网络的世界里，我们难以摆脱网络上各种信息的侵扰，参差不齐的信息爬满了我们的心房。
@@ -79,7 +81,7 @@
       <title>跑步记忆</title>
       <link>https://akynazh.site/posts/2021/11/running-memory/</link>
       <pubDate>Tue, 23 Nov 2021 18:20:39 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/posts/2021/11/running-memory/</guid>
       <description>跑步的记忆，旧日的时光，思念的味道，生活的无常。
 一. 跑步的挚友 念起中学生活，就会想起那位挚友。

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title> Java 开发中遇到的 bug 记录 | Norwegian Wood</title>
-  <link rel='canonical' href='/posts/2022/01/record-of-bugs-encountered-in-java-development/'>
+  <link rel='canonical' href='https://akynazh.site/posts/2022/01/record-of-bugs-encountered-in-java-development/'>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
@@ -14,7 +14,7 @@ BufferedWriter 无法正确写出问题 这是一段客户端代码，向服务�
 1try ( 2 BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream())); 3 BufferedWriter out = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream())) 4) { 5 String message; 6 while((message = stdIn.readLine()) != null) { 7 out.write(message); 8 out.flush(); 9 System.out.println(&#34;Receive from server: &#34; &#43; in.readLine()); 10 } 11} catch (Exception e) { 12 System.out.println(e.getMessage()); 13} 这是服务端代码的一部分，接收客户端消息，并向客户端回复：
 1try ( 2 BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream())); 3 BufferedWriter out = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream())) 4) { 5 String message; 6 while((message = in." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/posts/2022/01/record-of-bugs-encountered-in-java-development/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://akynazh.site/posts/2022/01/record-of-bugs-encountered-in-java-development/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-01-06T17:23:00+08:00" />
 <meta property="article:modified_time" content="2022-01-06T17:23:00+08:00" /><meta property="og:site_name" content="Norwegian Wood" />
 
@@ -30,7 +30,7 @@ BufferedWriter 无法正确写出问题 这是一段客户端代码，向服务�
   
   
   
-  <link rel="stylesheet" href="/css/styles.43c5f4c45b6248e071aa0f9eae2d299f06dc6e7d91ae3c1a2e4bcde6252688b0db6d6f3722b74f3c851c6e1b5ea207cff6868c78a11f7c137fd8cc01748ba457.css" integrity="sha512-Q8X0xFtiSOBxqg&#43;eri0pnwbcbn2RrjwaLkvN5iUmiLDbbW83IrdPPIUcbhteogfP9oaMeKEffBN/2MwBdIukVw==">
+  <link rel="stylesheet" href="https://akynazh.site/css/styles.54a004dcb18c41cec44945b800598274d93a311a692d3cedfc239acce63bcfcbc22c2f254f565108dde035bfbe20d307ea6f0c0772a7f4c302c9d85751358ebb.css" integrity="sha512-VKAE3LGMQc7ESUW4AFmCdNk6MRppLTzt/COazOY7z8vCLC8lT1ZRCN3gNb&#43;&#43;INMH6m8MB3Kn9MMCydhXUTWOuw==">
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
@@ -68,14 +68,14 @@ BufferedWriter 无法正确写出问题 这是一段客户端代码，向服务�
       <ul>
         
         <li>
-          <a class="icon" href="/posts/2021/12/permission-management-of-linux-practical-operation/" aria-label="Previous">
+          <a class="icon" href="https://akynazh.site/posts/2021/12/permission-management-of-linux-practical-operation/" aria-label="Previous">
             <i class="fas fa-chevron-left" aria-hidden="true"></i>
           </a>
         </li>
         
         
         <li>
-          <a class="icon" href="/posts/2022/02/the-beauty-of-simplicity/" aria-label="Next">
+          <a class="icon" href="https://akynazh.site/posts/2022/02/the-beauty-of-simplicity/" aria-label="Next">
             <i class="fas fa-chevron-right" aria-hidden="true"></i>
           </a>
         </li>
@@ -112,47 +112,47 @@ BufferedWriter 无法正确写出问题 这是一段客户端代码，向服务�
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=%2fposts%2f2022%2f01%2frecord-of-bugs-encountered-in-java-development%2f" aria-label="Facebook">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f01%2frecord-of-bugs-encountered-in-java-development%2f" aria-label="Facebook">
       <i class="fab fa-facebook " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=%2fposts%2f2022%2f01%2frecord-of-bugs-encountered-in-java-development%2f&text=Java%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f01%2frecord-of-bugs-encountered-in-java-development%2f&text=Java%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95" aria-label="Twitter">
       <i class="fab fa-twitter " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fposts%2f2022%2f01%2frecord-of-bugs-encountered-in-java-development%2f&title=Java%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f01%2frecord-of-bugs-encountered-in-java-development%2f&title=Java%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95" aria-label="Linkedin">
       <i class="fab fa-linkedin " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fposts%2f2022%2f01%2frecord-of-bugs-encountered-in-java-development%2f&is_video=false&description=Java%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f01%2frecord-of-bugs-encountered-in-java-development%2f&is_video=false&description=Java%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95" aria-label="Pinterest">
       <i class="fab fa-pinterest " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=Java%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95&body=Check out this article: %2fposts%2f2022%2f01%2frecord-of-bugs-encountered-in-java-development%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=Java%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95&body=Check out this article: https%3a%2f%2fakynazh.site%2fposts%2f2022%2f01%2frecord-of-bugs-encountered-in-java-development%2f" aria-label="Email">
       <i class="fas fa-envelope " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=%2fposts%2f2022%2f01%2frecord-of-bugs-encountered-in-java-development%2f&title=Java%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f01%2frecord-of-bugs-encountered-in-java-development%2f&title=Java%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95" aria-label="Pocket">
       <i class="fab fa-get-pocket " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=%2fposts%2f2022%2f01%2frecord-of-bugs-encountered-in-java-development%2f&title=Java%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f01%2frecord-of-bugs-encountered-in-java-development%2f&title=Java%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95" aria-label="reddit">
       <i class="fab fa-reddit " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f01%2frecord-of-bugs-encountered-in-java-development%2f&name=Java%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95&description=%e6%8c%81%e7%bb%ad%e6%9b%b4%e6%96%b0%e4%b8%ad%e3%80%82%0aBufferedWriter%20%e6%97%a0%e6%b3%95%e6%ad%a3%e7%a1%ae%e5%86%99%e5%87%ba%e9%97%ae%e9%a2%98%20%e8%bf%99%e6%98%af%e4%b8%80%e6%ae%b5%e5%ae%a2%e6%88%b7%e7%ab%af%e4%bb%a3%e7%a0%81%ef%bc%8c%e5%90%91%e6%9c%8d%e5%8a%a1%e5%99%a8%e7%ab%af%e5%8f%91%e9%80%81%e6%b6%88%e6%81%af%ef%bc%8c%e7%84%b6%e5%90%8e%e6%8e%a5%e6%94%b6%e6%9c%8d%e5%8a%a1%e5%99%a8%e7%ab%af%e7%9a%84%e5%9b%9e%e5%a4%8d%ef%bc%9a%0a1try%20%28%202%20BufferedReader%20in%20%3d%20new%20BufferedReader%28new%20InputStreamReader%28socket.getInputStream%28%29%29%29%3b%203%20BufferedWriter%20out%20%3d%20new%20BufferedWriter%28new%20OutputStreamWriter%28socket.getOutputStream%28%29%29%29%204%29%20%7b%205%20String%20message%3b%206%20while%28%28message%20%3d%20stdIn.readLine%28%29%29%20%21%3d%20null%29%20%7b%207%20out.write%28message%29%3b%208%20out.flush%28%29%3b%209%20System.out.println%28%26%2334%3bReceive%20from%20server%3a%20%26%2334%3b%20%2b%20in.readLine%28%29%29%3b%2010%20%7d%2011%7d%20catch%20%28Exception%20e%29%20%7b%2012%20System.out.println%28e.getMessage%28%29%29%3b%2013%7d%20%e8%bf%99%e6%98%af%e6%9c%8d%e5%8a%a1%e7%ab%af%e4%bb%a3%e7%a0%81%e7%9a%84%e4%b8%80%e9%83%a8%e5%88%86%ef%bc%8c%e6%8e%a5%e6%94%b6%e5%ae%a2%e6%88%b7%e7%ab%af%e6%b6%88%e6%81%af%ef%bc%8c%e5%b9%b6%e5%90%91%e5%ae%a2%e6%88%b7%e7%ab%af%e5%9b%9e%e5%a4%8d%ef%bc%9a%0a1try%20%28%202%20BufferedReader%20in%20%3d%20new%20BufferedReader%28new%20InputStreamReader%28socket.getInputStream%28%29%29%29%3b%203%20BufferedWriter%20out%20%3d%20new%20BufferedWriter%28new%20OutputStreamWriter%28socket.getOutputStream%28%29%29%29%204%29%20%7b%205%20String%20message%3b%206%20while%28%28message%20%3d%20in." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f01%2frecord-of-bugs-encountered-in-java-development%2f&name=Java%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95&description=%e6%8c%81%e7%bb%ad%e6%9b%b4%e6%96%b0%e4%b8%ad%e3%80%82%0aBufferedWriter%20%e6%97%a0%e6%b3%95%e6%ad%a3%e7%a1%ae%e5%86%99%e5%87%ba%e9%97%ae%e9%a2%98%20%e8%bf%99%e6%98%af%e4%b8%80%e6%ae%b5%e5%ae%a2%e6%88%b7%e7%ab%af%e4%bb%a3%e7%a0%81%ef%bc%8c%e5%90%91%e6%9c%8d%e5%8a%a1%e5%99%a8%e7%ab%af%e5%8f%91%e9%80%81%e6%b6%88%e6%81%af%ef%bc%8c%e7%84%b6%e5%90%8e%e6%8e%a5%e6%94%b6%e6%9c%8d%e5%8a%a1%e5%99%a8%e7%ab%af%e7%9a%84%e5%9b%9e%e5%a4%8d%ef%bc%9a%0a1try%20%28%202%20BufferedReader%20in%20%3d%20new%20BufferedReader%28new%20InputStreamReader%28socket.getInputStream%28%29%29%29%3b%203%20BufferedWriter%20out%20%3d%20new%20BufferedWriter%28new%20OutputStreamWriter%28socket.getOutputStream%28%29%29%29%204%29%20%7b%205%20String%20message%3b%206%20while%28%28message%20%3d%20stdIn.readLine%28%29%29%20%21%3d%20null%29%20%7b%207%20out.write%28message%29%3b%208%20out.flush%28%29%3b%209%20System.out.println%28%26%2334%3bReceive%20from%20server%3a%20%26%2334%3b%20%2b%20in.readLine%28%29%29%3b%2010%20%7d%2011%7d%20catch%20%28Exception%20e%29%20%7b%2012%20System.out.println%28e.getMessage%28%29%29%3b%2013%7d%20%e8%bf%99%e6%98%af%e6%9c%8d%e5%8a%a1%e7%ab%af%e4%bb%a3%e7%a0%81%e7%9a%84%e4%b8%80%e9%83%a8%e5%88%86%ef%bc%8c%e6%8e%a5%e6%94%b6%e5%ae%a2%e6%88%b7%e7%ab%af%e6%b6%88%e6%81%af%ef%bc%8c%e5%b9%b6%e5%90%91%e5%ae%a2%e6%88%b7%e7%ab%af%e5%9b%9e%e5%a4%8d%ef%bc%9a%0a1try%20%28%202%20BufferedReader%20in%20%3d%20new%20BufferedReader%28new%20InputStreamReader%28socket.getInputStream%28%29%29%29%3b%203%20BufferedWriter%20out%20%3d%20new%20BufferedWriter%28new%20OutputStreamWriter%28socket.getOutputStream%28%29%29%29%204%29%20%7b%205%20String%20message%3b%206%20while%28%28message%20%3d%20in." aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fposts%2f2022%2f01%2frecord-of-bugs-encountered-in-java-development%2f&t=Java%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f01%2frecord-of-bugs-encountered-in-java-development%2f&t=Java%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95" aria-label="Hacker News">
       <i class="fab fa-hacker-news " aria-hidden="true"></i>
     </a>
   </li>
@@ -316,47 +316,47 @@ BufferedWriter 无法正确写出问题 这是一段客户端代码，向服务�
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=%2fposts%2f2022%2f01%2frecord-of-bugs-encountered-in-java-development%2f" aria-label="Facebook">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f01%2frecord-of-bugs-encountered-in-java-development%2f" aria-label="Facebook">
       <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=%2fposts%2f2022%2f01%2frecord-of-bugs-encountered-in-java-development%2f&text=Java%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f01%2frecord-of-bugs-encountered-in-java-development%2f&text=Java%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95" aria-label="Twitter">
       <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fposts%2f2022%2f01%2frecord-of-bugs-encountered-in-java-development%2f&title=Java%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f01%2frecord-of-bugs-encountered-in-java-development%2f&title=Java%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95" aria-label="Linkedin">
       <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fposts%2f2022%2f01%2frecord-of-bugs-encountered-in-java-development%2f&is_video=false&description=Java%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f01%2frecord-of-bugs-encountered-in-java-development%2f&is_video=false&description=Java%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95" aria-label="Pinterest">
       <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=Java%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95&body=Check out this article: %2fposts%2f2022%2f01%2frecord-of-bugs-encountered-in-java-development%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=Java%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95&body=Check out this article: https%3a%2f%2fakynazh.site%2fposts%2f2022%2f01%2frecord-of-bugs-encountered-in-java-development%2f" aria-label="Email">
       <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=%2fposts%2f2022%2f01%2frecord-of-bugs-encountered-in-java-development%2f&title=Java%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f01%2frecord-of-bugs-encountered-in-java-development%2f&title=Java%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95" aria-label="Pocket">
       <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=%2fposts%2f2022%2f01%2frecord-of-bugs-encountered-in-java-development%2f&title=Java%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f01%2frecord-of-bugs-encountered-in-java-development%2f&title=Java%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95" aria-label="reddit">
       <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f01%2frecord-of-bugs-encountered-in-java-development%2f&name=Java%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95&description=%e6%8c%81%e7%bb%ad%e6%9b%b4%e6%96%b0%e4%b8%ad%e3%80%82%0aBufferedWriter%20%e6%97%a0%e6%b3%95%e6%ad%a3%e7%a1%ae%e5%86%99%e5%87%ba%e9%97%ae%e9%a2%98%20%e8%bf%99%e6%98%af%e4%b8%80%e6%ae%b5%e5%ae%a2%e6%88%b7%e7%ab%af%e4%bb%a3%e7%a0%81%ef%bc%8c%e5%90%91%e6%9c%8d%e5%8a%a1%e5%99%a8%e7%ab%af%e5%8f%91%e9%80%81%e6%b6%88%e6%81%af%ef%bc%8c%e7%84%b6%e5%90%8e%e6%8e%a5%e6%94%b6%e6%9c%8d%e5%8a%a1%e5%99%a8%e7%ab%af%e7%9a%84%e5%9b%9e%e5%a4%8d%ef%bc%9a%0a1try%20%28%202%20BufferedReader%20in%20%3d%20new%20BufferedReader%28new%20InputStreamReader%28socket.getInputStream%28%29%29%29%3b%203%20BufferedWriter%20out%20%3d%20new%20BufferedWriter%28new%20OutputStreamWriter%28socket.getOutputStream%28%29%29%29%204%29%20%7b%205%20String%20message%3b%206%20while%28%28message%20%3d%20stdIn.readLine%28%29%29%20%21%3d%20null%29%20%7b%207%20out.write%28message%29%3b%208%20out.flush%28%29%3b%209%20System.out.println%28%26%2334%3bReceive%20from%20server%3a%20%26%2334%3b%20%2b%20in.readLine%28%29%29%3b%2010%20%7d%2011%7d%20catch%20%28Exception%20e%29%20%7b%2012%20System.out.println%28e.getMessage%28%29%29%3b%2013%7d%20%e8%bf%99%e6%98%af%e6%9c%8d%e5%8a%a1%e7%ab%af%e4%bb%a3%e7%a0%81%e7%9a%84%e4%b8%80%e9%83%a8%e5%88%86%ef%bc%8c%e6%8e%a5%e6%94%b6%e5%ae%a2%e6%88%b7%e7%ab%af%e6%b6%88%e6%81%af%ef%bc%8c%e5%b9%b6%e5%90%91%e5%ae%a2%e6%88%b7%e7%ab%af%e5%9b%9e%e5%a4%8d%ef%bc%9a%0a1try%20%28%202%20BufferedReader%20in%20%3d%20new%20BufferedReader%28new%20InputStreamReader%28socket.getInputStream%28%29%29%29%3b%203%20BufferedWriter%20out%20%3d%20new%20BufferedWriter%28new%20OutputStreamWriter%28socket.getOutputStream%28%29%29%29%204%29%20%7b%205%20String%20message%3b%206%20while%28%28message%20%3d%20in." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f01%2frecord-of-bugs-encountered-in-java-development%2f&name=Java%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95&description=%e6%8c%81%e7%bb%ad%e6%9b%b4%e6%96%b0%e4%b8%ad%e3%80%82%0aBufferedWriter%20%e6%97%a0%e6%b3%95%e6%ad%a3%e7%a1%ae%e5%86%99%e5%87%ba%e9%97%ae%e9%a2%98%20%e8%bf%99%e6%98%af%e4%b8%80%e6%ae%b5%e5%ae%a2%e6%88%b7%e7%ab%af%e4%bb%a3%e7%a0%81%ef%bc%8c%e5%90%91%e6%9c%8d%e5%8a%a1%e5%99%a8%e7%ab%af%e5%8f%91%e9%80%81%e6%b6%88%e6%81%af%ef%bc%8c%e7%84%b6%e5%90%8e%e6%8e%a5%e6%94%b6%e6%9c%8d%e5%8a%a1%e5%99%a8%e7%ab%af%e7%9a%84%e5%9b%9e%e5%a4%8d%ef%bc%9a%0a1try%20%28%202%20BufferedReader%20in%20%3d%20new%20BufferedReader%28new%20InputStreamReader%28socket.getInputStream%28%29%29%29%3b%203%20BufferedWriter%20out%20%3d%20new%20BufferedWriter%28new%20OutputStreamWriter%28socket.getOutputStream%28%29%29%29%204%29%20%7b%205%20String%20message%3b%206%20while%28%28message%20%3d%20stdIn.readLine%28%29%29%20%21%3d%20null%29%20%7b%207%20out.write%28message%29%3b%208%20out.flush%28%29%3b%209%20System.out.println%28%26%2334%3bReceive%20from%20server%3a%20%26%2334%3b%20%2b%20in.readLine%28%29%29%3b%2010%20%7d%2011%7d%20catch%20%28Exception%20e%29%20%7b%2012%20System.out.println%28e.getMessage%28%29%29%3b%2013%7d%20%e8%bf%99%e6%98%af%e6%9c%8d%e5%8a%a1%e7%ab%af%e4%bb%a3%e7%a0%81%e7%9a%84%e4%b8%80%e9%83%a8%e5%88%86%ef%bc%8c%e6%8e%a5%e6%94%b6%e5%ae%a2%e6%88%b7%e7%ab%af%e6%b6%88%e6%81%af%ef%bc%8c%e5%b9%b6%e5%90%91%e5%ae%a2%e6%88%b7%e7%ab%af%e5%9b%9e%e5%a4%8d%ef%bc%9a%0a1try%20%28%202%20BufferedReader%20in%20%3d%20new%20BufferedReader%28new%20InputStreamReader%28socket.getInputStream%28%29%29%29%3b%203%20BufferedWriter%20out%20%3d%20new%20BufferedWriter%28new%20OutputStreamWriter%28socket.getOutputStream%28%29%29%29%204%29%20%7b%205%20String%20message%3b%206%20while%28%28message%20%3d%20in." aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fposts%2f2022%2f01%2frecord-of-bugs-encountered-in-java-development%2f&t=Java%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f01%2frecord-of-bugs-encountered-in-java-development%2f&t=Java%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95" aria-label="Hacker News">
       <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
     </a>
   </li>
@@ -385,7 +385,7 @@ BufferedWriter 无法正确写出问题 这是一段客户端代码，向服务�
   <footer id="footer">
   <div class="footer-left">
     Copyright  &copy; 2023  Jzh 
-    | <a href='https://beian.miit.gov.cn/' style="text-decoration:none;">陕ICP备2022007986号-1</a>
+    | <a href="https://beian.miit.gov.cn/" style="text-decoration:none;">陕ICP备2022007986号-1</a>
   </div>
   <div class="footer-right">
     <nav>
@@ -401,7 +401,6 @@ BufferedWriter 无法正确写出问题 这是一段客户端代码，向服务�
     </nav>
   </div>
 </footer>
-
   </div>
 </body>
 <script src="/js/fuse.min.js"></script>

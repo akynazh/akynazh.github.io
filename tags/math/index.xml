@@ -2,17 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>math on Norwegian Wood</title>
-    <link>https://akynazh.site</link>
+    <link>https://akynazh.site/tags/math/</link>
     <description>Recent content in math on Norwegian Wood</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
+    <managingEditor>akynazh@qq.com (Jzh)</managingEditor>
+    <webMaster>akynazh@qq.com (Jzh)</webMaster>
     <copyright>Jzh</copyright>
-    <lastBuildDate>Thu, 21 Jul 2022 20:44:54 +0800</lastBuildDate><atom:link href="/tags/math/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 21 Jul 2022 20:44:54 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/math/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>理解快速幂运算并进行应用</title>
       <link>https://akynazh.site/posts/2022/07/understand-and-apply-fast-power-operation/</link>
       <pubDate>Thu, 21 Jul 2022 20:44:54 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/posts/2022/07/understand-and-apply-fast-power-operation/</guid>
       <description>快速幂运算的解释 问n是否满足$x^n \mod n = x (1 &amp;lt; x &amp;lt; n)$？
 先由一个例子引入：
@@ -32,7 +34,7 @@ $result = 3 \times 9 \times 6561 = 3^{2^0} \times 3^{2^1} \times 3^{2^3}$
       <title>关于辗转相除法和扩展欧几里得算法</title>
       <link>https://akynazh.site/posts/2020/07/on-rolling-division-and-extended-euclidean-algorithm/</link>
       <pubDate>Tue, 21 Jul 2020 20:48:53 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/posts/2020/07/on-rolling-division-and-extended-euclidean-algorithm/</guid>
       <description>gcd辗转相除法求最大公约数 思路：反复交换取余，直到小的数为0。
 1int gcd(int a, int b){ 2	if(b == 0) return a; 3	return gcd(b, a % b); 4} exgcd扩展欧几里得算法 先介绍贝祖定理：
@@ -52,7 +54,7 @@ $ay_1 + b \times (x_1 -(a \div b) \times y_1) == gcd(a,b) $(2)</description>
       <title>有关素数的一些算法</title>
       <link>https://akynazh.site/posts/2020/07/some-algorithms-about-prime-numbers/</link>
       <pubDate>Tue, 21 Jul 2020 20:43:04 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/posts/2020/07/some-algorithms-about-prime-numbers/</guid>
       <description>埃氏筛法 问1000000000000以内有多少个素数？
 运用朴素算法必TLE，这时考虑埃氏筛法。
@@ -65,7 +67,7 @@ $ay_1 + b \times (x_1 -(a \div b) \times y_1) == gcd(a,b) $(2)</description>
       <title>Matlab 基本用法整理</title>
       <link>https://akynazh.site/posts/2020/02/basic-usage-sorting-of-matlab/</link>
       <pubDate>Thu, 06 Feb 2020 20:41:12 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/posts/2020/02/basic-usage-sorting-of-matlab/</guid>
       <description>基本语法方面 提取矩阵某行或某列 1A(:, [2 3]) 返回第2和第3列 获取随机数 1randi(100); % 1 到 100 之间的随机整数 初始化数组 1zeros(1, 30); % 1行30列的全0数组 控制语句 1for i = 0 : 100 2 for j = 1 : 10 3 if (...) 4 ... 5 else 6 ... 7 end 8 end 9 ... 10end 格式化输出 1fprintf(&amp;#34;若选手选择改变，则成功次数为：%d, 成功率为：%f\n&amp;#34;, count, count / SUM); 初等数学方面 求解方程组 注：solve已经改版，不可传入字符串
 实例：求解二元一次方程

@@ -2,17 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>music on Norwegian Wood</title>
-    <link>https://akynazh.site</link>
+    <link>https://akynazh.site/tags/music/</link>
     <description>Recent content in music on Norwegian Wood</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
+    <managingEditor>akynazh@qq.com (Jzh)</managingEditor>
+    <webMaster>akynazh@qq.com (Jzh)</webMaster>
     <copyright>Jzh</copyright>
-    <lastBuildDate>Fri, 06 Jan 2023 17:22:27 +0800</lastBuildDate><atom:link href="/tags/music/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 06 Jan 2023 17:22:27 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/music/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>基本乐理知识记录</title>
       <link>https://akynazh.site/posts/2023/01/record-of-basic-music-theory-knowledge/</link>
       <pubDate>Fri, 06 Jan 2023 17:22:27 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/posts/2023/01/record-of-basic-music-theory-knowledge/</guid>
       <description>八度 我们可以用唱名Do[1] Re[2] Mi[3] Fa[4] Sol[5] La[6] Ti[7] Do[8]唱出歌曲的旋律，“[]”中的数字就是 音级（Degree ）。
 我们以Do[1]到Do[1]为一度，Do[1]到Re[2]为二度，以此类推。于是从Do[1]到上面Do[8]之间音高上的距离(音程，Interval)就叫做 八度（Octave），因此说Do[8]比Do[1]高了一个八度。
@@ -35,7 +37,7 @@ C C#/Db D D#/Eb E F F#/Gb G G#/Ab A A#/Bb B 261.6 277.2 293.7 311.1 329.6 349.2 
       <title>《挪威的森林》中的披头士</title>
       <link>https://akynazh.site/posts/2022/05/the-beatles-in-norwegian-forest/</link>
       <pubDate>Sat, 14 May 2022 11:47:43 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/posts/2022/05/the-beatles-in-norwegian-forest/</guid>
       <description>“飞机一着陆，禁烟显示牌倏然消失，天花板扩音器中低声流出背景音乐，那是一个管弦乐队自鸣得意地演奏的甲壳虫乐队的《挪威的森林》。那旋律一如往日地使我难以自已，不，比往日还要强烈地摇撼着我的身心。
 《挪威的森林》—— Norwegian Wood “她一边这样说着，一边弹起《米歇尔》，弹得极其精彩。“好曲子，我，无比喜欢！”说完，玲子喝了一口葡萄酒，吸了口烟，“简直就像霏霏细雨轻轻洒在无边无际的草原。”

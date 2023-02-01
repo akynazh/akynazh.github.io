@@ -2,17 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Norwegian Wood</title>
-    <link>https://akynazh.site</link>
+    <link>https://akynazh.site/tags/</link>
     <description>Recent content in Tags on Norwegian Wood</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
+    <managingEditor>akynazh@qq.com (Jzh)</managingEditor>
+    <webMaster>akynazh@qq.com (Jzh)</webMaster>
     <copyright>Jzh</copyright>
-    <lastBuildDate>Tue, 31 Jan 2023 17:22:29 +0800</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 31 Jan 2023 17:22:29 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>crontab</title>
       <link>https://akynazh.site/tags/crontab/</link>
       <pubDate>Tue, 31 Jan 2023 17:22:29 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/tags/crontab/</guid>
       <description></description>
     </item>
@@ -21,7 +23,7 @@
       <title>schtasks</title>
       <link>https://akynazh.site/tags/schtasks/</link>
       <pubDate>Tue, 31 Jan 2023 17:22:29 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/tags/schtasks/</guid>
       <description></description>
     </item>
@@ -30,7 +32,7 @@
       <title>proxy</title>
       <link>https://akynazh.site/tags/proxy/</link>
       <pubDate>Fri, 13 Jan 2023 21:43:06 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/tags/proxy/</guid>
       <description></description>
     </item>
@@ -39,7 +41,7 @@
       <title>music</title>
       <link>https://akynazh.site/tags/music/</link>
       <pubDate>Fri, 06 Jan 2023 17:22:27 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/tags/music/</guid>
       <description></description>
     </item>
@@ -48,7 +50,7 @@
       <title>python</title>
       <link>https://akynazh.site/tags/python/</link>
       <pubDate>Wed, 04 Jan 2023 22:55:27 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/tags/python/</guid>
       <description></description>
     </item>
@@ -57,7 +59,7 @@
       <title>circuit</title>
       <link>https://akynazh.site/tags/circuit/</link>
       <pubDate>Thu, 15 Dec 2022 21:21:16 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/tags/circuit/</guid>
       <description></description>
     </item>
@@ -66,7 +68,7 @@
       <title>web</title>
       <link>https://akynazh.site/tags/web/</link>
       <pubDate>Thu, 08 Dec 2022 16:35:54 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/tags/web/</guid>
       <description></description>
     </item>
@@ -75,7 +77,7 @@
       <title>naming</title>
       <link>https://akynazh.site/tags/naming/</link>
       <pubDate>Thu, 08 Dec 2022 15:40:09 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/tags/naming/</guid>
       <description></description>
     </item>
@@ -84,7 +86,7 @@
       <title>git</title>
       <link>https://akynazh.site/tags/git/</link>
       <pubDate>Tue, 06 Dec 2022 11:42:39 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/tags/git/</guid>
       <description></description>
     </item>
@@ -93,7 +95,7 @@
       <title>linux</title>
       <link>https://akynazh.site/tags/linux/</link>
       <pubDate>Sun, 13 Nov 2022 21:15:53 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/tags/linux/</guid>
       <description></description>
     </item>
@@ -102,7 +104,7 @@
       <title>software</title>
       <link>https://akynazh.site/tags/software/</link>
       <pubDate>Sun, 13 Nov 2022 21:15:53 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/tags/software/</guid>
       <description></description>
     </item>
@@ -111,7 +113,7 @@
       <title>bug</title>
       <link>https://akynazh.site/tags/bug/</link>
       <pubDate>Fri, 04 Nov 2022 22:53:34 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/tags/bug/</guid>
       <description></description>
     </item>
@@ -120,7 +122,7 @@
       <title>docker</title>
       <link>https://akynazh.site/tags/docker/</link>
       <pubDate>Thu, 13 Oct 2022 21:28:37 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/tags/docker/</guid>
       <description></description>
     </item>
@@ -129,7 +131,7 @@
       <title>assembly</title>
       <link>https://akynazh.site/tags/assembly/</link>
       <pubDate>Tue, 04 Oct 2022 23:18:24 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/tags/assembly/</guid>
       <description></description>
     </item>
@@ -138,7 +140,7 @@
       <title>cpu</title>
       <link>https://akynazh.site/tags/cpu/</link>
       <pubDate>Tue, 04 Oct 2022 23:18:24 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/tags/cpu/</guid>
       <description></description>
     </item>
@@ -147,7 +149,7 @@
       <title>android</title>
       <link>https://akynazh.site/tags/android/</link>
       <pubDate>Mon, 03 Oct 2022 20:52:12 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/tags/android/</guid>
       <description></description>
     </item>
@@ -156,7 +158,7 @@
       <title>excerpt</title>
       <link>https://akynazh.site/tags/excerpt/</link>
       <pubDate>Thu, 01 Sep 2022 14:15:44 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/tags/excerpt/</guid>
       <description></description>
     </item>
@@ -165,7 +167,7 @@
       <title>design</title>
       <link>https://akynazh.site/tags/design/</link>
       <pubDate>Fri, 26 Aug 2022 16:04:19 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/tags/design/</guid>
       <description></description>
     </item>
@@ -174,7 +176,7 @@
       <title>java</title>
       <link>https://akynazh.site/tags/java/</link>
       <pubDate>Fri, 26 Aug 2022 16:04:19 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/tags/java/</guid>
       <description></description>
     </item>
@@ -183,7 +185,7 @@
       <title>game</title>
       <link>https://akynazh.site/tags/game/</link>
       <pubDate>Mon, 15 Aug 2022 16:11:17 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/tags/game/</guid>
       <description></description>
     </item>
@@ -192,7 +194,7 @@
       <title>microservice</title>
       <link>https://akynazh.site/tags/microservice/</link>
       <pubDate>Tue, 09 Aug 2022 21:41:53 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/tags/microservice/</guid>
       <description></description>
     </item>
@@ -201,7 +203,7 @@
       <title>springcloud</title>
       <link>https://akynazh.site/tags/springcloud/</link>
       <pubDate>Tue, 09 Aug 2022 21:41:53 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/tags/springcloud/</guid>
       <description></description>
     </item>
@@ -210,7 +212,7 @@
       <title>batch</title>
       <link>https://akynazh.site/tags/batch/</link>
       <pubDate>Wed, 03 Aug 2022 23:34:36 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/tags/batch/</guid>
       <description></description>
     </item>
@@ -219,7 +221,7 @@
       <title>windows</title>
       <link>https://akynazh.site/tags/windows/</link>
       <pubDate>Wed, 03 Aug 2022 23:34:36 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/tags/windows/</guid>
       <description></description>
     </item>
@@ -228,7 +230,7 @@
       <title>hystrix</title>
       <link>https://akynazh.site/tags/hystrix/</link>
       <pubDate>Tue, 26 Jul 2022 11:39:11 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/tags/hystrix/</guid>
       <description></description>
     </item>
@@ -237,7 +239,7 @@
       <title>wsl</title>
       <link>https://akynazh.site/tags/wsl/</link>
       <pubDate>Sat, 23 Jul 2022 17:34:52 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/tags/wsl/</guid>
       <description></description>
     </item>
@@ -246,7 +248,7 @@
       <title>algorithm</title>
       <link>https://akynazh.site/tags/algorithm/</link>
       <pubDate>Thu, 21 Jul 2022 20:44:54 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/tags/algorithm/</guid>
       <description></description>
     </item>
@@ -255,7 +257,7 @@
       <title>math</title>
       <link>https://akynazh.site/tags/math/</link>
       <pubDate>Thu, 21 Jul 2022 20:44:54 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/tags/math/</guid>
       <description></description>
     </item>
@@ -264,7 +266,7 @@
       <title>hugo</title>
       <link>https://akynazh.site/tags/hugo/</link>
       <pubDate>Wed, 20 Jul 2022 23:46:01 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/tags/hugo/</guid>
       <description></description>
     </item>
@@ -273,7 +275,7 @@
       <title>site</title>
       <link>https://akynazh.site/tags/site/</link>
       <pubDate>Wed, 20 Jul 2022 23:46:01 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/tags/site/</guid>
       <description></description>
     </item>
@@ -282,7 +284,7 @@
       <title>springboot</title>
       <link>https://akynazh.site/tags/springboot/</link>
       <pubDate>Sat, 25 Jun 2022 21:20:38 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/tags/springboot/</guid>
       <description></description>
     </item>
@@ -291,7 +293,7 @@
       <title>powershell</title>
       <link>https://akynazh.site/tags/powershell/</link>
       <pubDate>Fri, 24 Jun 2022 22:52:59 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/tags/powershell/</guid>
       <description></description>
     </item>
@@ -300,7 +302,7 @@
       <title>os</title>
       <link>https://akynazh.site/tags/os/</link>
       <pubDate>Thu, 09 Jun 2022 23:37:51 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/tags/os/</guid>
       <description></description>
     </item>
@@ -309,7 +311,7 @@
       <title>tcp</title>
       <link>https://akynazh.site/tags/tcp/</link>
       <pubDate>Thu, 09 Jun 2022 23:18:55 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/tags/tcp/</guid>
       <description></description>
     </item>
@@ -318,7 +320,7 @@
       <title>poem</title>
       <link>https://akynazh.site/tags/poem/</link>
       <pubDate>Mon, 30 May 2022 20:11:37 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/tags/poem/</guid>
       <description></description>
     </item>
@@ -327,7 +329,7 @@
       <title>cmd</title>
       <link>https://akynazh.site/tags/cmd/</link>
       <pubDate>Mon, 18 Apr 2022 23:10:39 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/tags/cmd/</guid>
       <description></description>
     </item>
@@ -336,7 +338,7 @@
       <title>journey</title>
       <link>https://akynazh.site/tags/journey/</link>
       <pubDate>Mon, 21 Mar 2022 18:02:04 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/tags/journey/</guid>
       <description></description>
     </item>
@@ -345,7 +347,7 @@
       <title>life</title>
       <link>https://akynazh.site/tags/life/</link>
       <pubDate>Mon, 21 Mar 2022 18:02:04 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/tags/life/</guid>
       <description></description>
     </item>
@@ -354,7 +356,7 @@
       <title>network</title>
       <link>https://akynazh.site/tags/network/</link>
       <pubDate>Sun, 13 Feb 2022 21:20:01 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/tags/network/</guid>
       <description></description>
     </item>
@@ -363,7 +365,7 @@
       <title>thinking</title>
       <link>https://akynazh.site/tags/thinking/</link>
       <pubDate>Sun, 06 Feb 2022 21:42:50 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/tags/thinking/</guid>
       <description></description>
     </item>
@@ -372,7 +374,7 @@
       <title>database</title>
       <link>https://akynazh.site/tags/database/</link>
       <pubDate>Mon, 20 Dec 2021 10:15:05 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/tags/database/</guid>
       <description></description>
     </item>
@@ -381,7 +383,7 @@
       <title>redis</title>
       <link>https://akynazh.site/tags/redis/</link>
       <pubDate>Mon, 20 Dec 2021 10:15:05 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/tags/redis/</guid>
       <description></description>
     </item>
@@ -390,7 +392,7 @@
       <title>cpp</title>
       <link>https://akynazh.site/tags/cpp/</link>
       <pubDate>Sun, 05 Dec 2021 12:37:32 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/tags/cpp/</guid>
       <description></description>
     </item>
@@ -399,7 +401,7 @@
       <title>language</title>
       <link>https://akynazh.site/tags/language/</link>
       <pubDate>Wed, 19 May 2021 22:43:45 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/tags/language/</guid>
       <description></description>
     </item>
@@ -408,7 +410,7 @@
       <title>ssh</title>
       <link>https://akynazh.site/tags/ssh/</link>
       <pubDate>Wed, 13 Jan 2021 21:53:43 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/tags/ssh/</guid>
       <description></description>
     </item>
@@ -417,7 +419,7 @@
       <title>acgn</title>
       <link>https://akynazh.site/tags/acgn/</link>
       <pubDate>Sat, 28 Nov 2020 18:24:12 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/tags/acgn/</guid>
       <description></description>
     </item>
@@ -426,7 +428,7 @@
       <title>script</title>
       <link>https://akynazh.site/tags/script/</link>
       <pubDate>Fri, 20 Nov 2020 18:17:33 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/tags/script/</guid>
       <description></description>
     </item>
@@ -435,7 +437,7 @@
       <title>matlab</title>
       <link>https://akynazh.site/tags/matlab/</link>
       <pubDate>Thu, 06 Feb 2020 20:41:12 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/tags/matlab/</guid>
       <description></description>
     </item>

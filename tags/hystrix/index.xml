@@ -2,17 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>hystrix on Norwegian Wood</title>
-    <link>https://akynazh.site</link>
+    <link>https://akynazh.site/tags/hystrix/</link>
     <description>Recent content in hystrix on Norwegian Wood</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
+    <managingEditor>akynazh@qq.com (Jzh)</managingEditor>
+    <webMaster>akynazh@qq.com (Jzh)</webMaster>
     <copyright>Jzh</copyright>
-    <lastBuildDate>Tue, 26 Jul 2022 11:39:11 +0800</lastBuildDate><atom:link href="/tags/hystrix/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 26 Jul 2022 11:39:11 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/hystrix/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hystrix 实现服务熔断与监控</title>
       <link>https://akynazh.site/posts/2022/07/hytrix-realizes-service-fusing-and-monitoring/</link>
       <pubDate>Tue, 26 Jul 2022 11:39:11 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/posts/2022/07/hytrix-realizes-service-fusing-and-monitoring/</guid>
       <description>什么是服务熔断 概念 应对微服务雪崩效应的一种链路保护机制，类似保险丝。
 关于雪崩效应 微服务之间的数据交互是通过远程调用来完成的。服务A调用服务，服务B调用服务C，某一时间链路上对服务C的调用响应时间过长或者服务C不可用，随着时间的增长，对服务C的调用也越来越多，然后服务C崩溃了，但是链路调用还在，对服务B的调用也在持续增多，然后服务B崩溃，随之A也崩溃，导致雪崩效应。
@@ -32,7 +34,7 @@ Hystrix实现服务熔断 环境搭建 1. 关于pom.xml 1&amp;lt;dependency&amp;
       <title>Hystrix 实现服务降级</title>
       <link>https://akynazh.site/posts/2022/07/hytrix-enables-service-degradation/</link>
       <pubDate>Tue, 26 Jul 2022 10:59:08 +0800</pubDate>
-      
+      <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/posts/2022/07/hytrix-enables-service-degradation/</guid>
       <description>什么是服务降级 概念 一般指在服务器压力剧增的时候，根据实际业务使用情况以及流量，对一些服务和页面有策略的不处理或者用一种简单的方式进行处理，从而释放服务器资源的资源以保证核心业务的正常高效运行。
 应用场景 多用于微服务架构中，一般当整个微服务架构整体的负载超出了预设的上限阈值（和服务器的配置性能有关系），或者即将到来的流量预计会超过预设的阈值时。
