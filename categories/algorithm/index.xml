@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Algorithm on Norwegian Wood</title>
-    <link>akynazh.site/categories/algorithm/</link>
+    <link>https://akynazh.site/categories/algorithm/</link>
     <description>Recent content in Algorithm on Norwegian Wood</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Jzh</copyright>
-    <lastBuildDate>Thu, 21 Jul 2022 20:44:54 +0800</lastBuildDate><atom:link href="akynazh.site/categories/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 21 Jul 2022 20:44:54 +0800</lastBuildDate><atom:link href="https://akynazh.site/categories/algorithm/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>理解快速幂运算并进行应用</title>
-      <link>akynazh.site/posts/2022/07/understand-and-apply-fast-power-operation/</link>
+      <link>https://akynazh.site/posts/2022/07/understand-and-apply-fast-power-operation/</link>
       <pubDate>Thu, 21 Jul 2022 20:44:54 +0800</pubDate>
       
-      <guid>akynazh.site/posts/2022/07/understand-and-apply-fast-power-operation/</guid>
+      <guid>https://akynazh.site/posts/2022/07/understand-and-apply-fast-power-operation/</guid>
       <description>快速幂运算的解释 问n是否满足$x^n \mod n = x (1 &amp;lt; x &amp;lt; n)$？
 先由一个例子引入：
 $3^{11} = 3 \times 9^5 = 3 \times 9 \times 81^2 = 3 \times 9 \times 6561^1$
@@ -30,10 +30,10 @@ $result = 3 \times 9 \times 6561 = 3^{2^0} \times 3^{2^1} \times 3^{2^3}$
     
     <item>
       <title>图的着色问题汇总</title>
-      <link>akynazh.site/posts/2020/12/summary-of-coloring-problems-of-graphs/</link>
+      <link>https://akynazh.site/posts/2020/12/summary-of-coloring-problems-of-graphs/</link>
       <pubDate>Sat, 05 Dec 2020 12:34:05 +0800</pubDate>
       
-      <guid>akynazh.site/posts/2020/12/summary-of-coloring-problems-of-graphs/</guid>
+      <guid>https://akynazh.site/posts/2020/12/summary-of-coloring-problems-of-graphs/</guid>
       <description>二分图问题 能否只用2种颜色对一个图上色，并且使得共边顶点不同色？
 代码解决：
 1vector&amp;lt;int&amp;gt; G[MAX_V]; 2int vertexes; 3int edges; 4int color[MAX_V]; //二分图，颜色为1或-1 5bool dfs(int v, int c) { 6 color[v] = c; 7 for (int i = 0; i &amp;lt; G[v].size(); i++) { 8 if (color[G[v][i]] == c) return false; 9 if (color[G[v][i]] == 0 &amp;amp;&amp;amp; !dfs(G[v][i], -c)) return false; 10 } 11 return true; 12} 13void solve() { 14 for (int i = 0; i &amp;lt; vertexes; i++) { 15 if (color[i] == 0) { 16 if (!</description>
@@ -41,10 +41,10 @@ $result = 3 \times 9 \times 6561 = 3^{2^0} \times 3^{2^1} \times 3^{2^3}$
     
     <item>
       <title>求解有向图和无向图中是否存在环的方法</title>
-      <link>akynazh.site/posts/2020/12/a-method-to-solve-whether-there-are-rings-in-directed-graphs-and-undirected-graphs/</link>
+      <link>https://akynazh.site/posts/2020/12/a-method-to-solve-whether-there-are-rings-in-directed-graphs-and-undirected-graphs/</link>
       <pubDate>Wed, 02 Dec 2020 23:50:44 +0800</pubDate>
       
-      <guid>akynazh.site/posts/2020/12/a-method-to-solve-whether-there-are-rings-in-directed-graphs-and-undirected-graphs/</guid>
+      <guid>https://akynazh.site/posts/2020/12/a-method-to-solve-whether-there-are-rings-in-directed-graphs-and-undirected-graphs/</guid>
       <description>求解无向图中是否存在环 无向图中是否存在环，可以通过DFS来实现。
 由于他是无向图，所以每次开始一次新的递归即进入一个新的连通子图，在该次dfs中可以通过判断新纳入的结点是否与所在连通子图中其他已经访问过的结点存在边，如果存在则证明存在环。
 1int mat[maxn][maxn], vis[maxn]; 2int dfs(int v) { 3 vis[v] = 1; 4 for (int i = 0; i &amp;lt; num; i++) if (mat[v][i]) { 5 if (vis[i] || dfs(i)) return 1; // 该连通子图新纳入的结点与原连通子图中的某一结点有边，即产生了环 6 } 7 return 0; 8} 9 10memset(vis, 0, sizeof(vis)); 11int flag = 0; // 无环标志 12for (int j = 0; j &amp;lt; num; j++) { 13 if (!vis[j]) flag = dfs(j); 14 // 因为是无向图，所以每开始一次新的递归即进入一个新的连通子图，一定不会访问到其他连通子图的结点 15 if (flag) break; // 如果在该连通子图中找到环则直接结束递归 16} 求解有向图中是否存在环 这里我也尝试过使用如上DFS的解法，但似乎行不通。</description>
@@ -52,10 +52,10 @@ $result = 3 \times 9 \times 6561 = 3^{2^0} \times 3^{2^1} \times 3^{2^3}$
     
     <item>
       <title>矩阵快速幂的介绍及其应用</title>
-      <link>akynazh.site/posts/2020/11/introduction-and-application-of-matrix-fast-power/</link>
+      <link>https://akynazh.site/posts/2020/11/introduction-and-application-of-matrix-fast-power/</link>
       <pubDate>Wed, 18 Nov 2020 23:47:15 +0800</pubDate>
       
-      <guid>akynazh.site/posts/2020/11/introduction-and-application-of-matrix-fast-power/</guid>
+      <guid>https://akynazh.site/posts/2020/11/introduction-and-application-of-matrix-fast-power/</guid>
       <description>矩阵快速幂介绍 题目描述
 给定n×n的矩阵A，求 A^k。
 输入格式
@@ -73,20 +73,20 @@ $result = 3 \times 9 \times 6561 = 3^{2^0} \times 3^{2^1} \times 3^{2^3}$
     
     <item>
       <title>最短路问题汇总</title>
-      <link>akynazh.site/posts/2020/11/summary-of-shortest-path-problems/</link>
+      <link>https://akynazh.site/posts/2020/11/summary-of-shortest-path-problems/</link>
       <pubDate>Tue, 17 Nov 2020 17:55:32 +0800</pubDate>
       
-      <guid>akynazh.site/posts/2020/11/summary-of-shortest-path-problems/</guid>
+      <guid>https://akynazh.site/posts/2020/11/summary-of-shortest-path-problems/</guid>
       <description>注意，这里为了方便描述算法，所以都用了最易理解的邻接矩阵来写，比赛中为了追求效率，一般将邻接矩阵改为链式前向星或者邻接表。
 迪杰斯特拉算法 O(V^2) 1const int MAXN = 100; 2const int INF = 0x3f3f3f3f; 3// 有向无环图 DAG 4int V, E; // 顶点数和边数 5int graph[MAXN][MAXN]; // DAG邻接矩阵，初始值为INF，不可达为INF，否则为cost值 6int d[MAXN]; // 从某点s出发到其它任意结点的最短路径长度，初始值为INF 7int visited[MAXN]; // 某点是否访问过，访问过则为1否则为0 8 9// 初始化图 10void init() { 11	memset(graph, 0x3f, sizeof(graph)); 12	cin &amp;gt;&amp;gt; V &amp;gt;&amp;gt; E; 13	int from, to, cost; 14	for (int i = 0 ; i &amp;lt; E; i++) { 15	cin &amp;gt;&amp;gt; from &amp;gt;&amp;gt; to &amp;gt;&amp;gt; cost; 16	graph[from][to] = cost; 17	} 18} 19// 迪杰斯特拉算法求解最短路，针对点展开 20void Dijkstra(int s) { 21	memset(d, 0x3f, sizeof(d)); 22	memset(visited, 0, sizeof(visited)); 23	visited[s] = 1; 24	for(int i = 0; i &amp;lt; V; i++) d[i] = graph[s][i]; 25	d[s] = 0; 26	int k, min_cost; 27	// 无负边时最多更新n-1(其他结点数)次 28	for(int i = 0; i &amp;lt; V - 1; i++){ 29	min_cost = INF; 30	// 寻找最未被访问的且权值最小的路径，需要优化的地方 31	for(int j = 0; j &amp;lt; V; j++){ 32	if(!</description>
     </item>
     
     <item>
       <title>关于辗转相除法和扩展欧几里得算法</title>
-      <link>akynazh.site/posts/2020/07/on-rolling-division-and-extended-euclidean-algorithm/</link>
+      <link>https://akynazh.site/posts/2020/07/on-rolling-division-and-extended-euclidean-algorithm/</link>
       <pubDate>Tue, 21 Jul 2020 20:48:53 +0800</pubDate>
       
-      <guid>akynazh.site/posts/2020/07/on-rolling-division-and-extended-euclidean-algorithm/</guid>
+      <guid>https://akynazh.site/posts/2020/07/on-rolling-division-and-extended-euclidean-algorithm/</guid>
       <description>gcd辗转相除法求最大公约数 思路：反复交换取余，直到小的数为0。
 1int gcd(int a, int b){ 2	if(b == 0) return a; 3	return gcd(b, a % b); 4} exgcd扩展欧几里得算法 先介绍贝祖定理：
 若a,b为整数，则一定存在整数x,y，使得$ax + by = gcd(a,b)$。
@@ -103,10 +103,10 @@ $ay_1 + b \times (x_1 -(a \div b) \times y_1) == gcd(a,b) $(2)</description>
     
     <item>
       <title>有关素数的一些算法</title>
-      <link>akynazh.site/posts/2020/07/some-algorithms-about-prime-numbers/</link>
+      <link>https://akynazh.site/posts/2020/07/some-algorithms-about-prime-numbers/</link>
       <pubDate>Tue, 21 Jul 2020 20:43:04 +0800</pubDate>
       
-      <guid>akynazh.site/posts/2020/07/some-algorithms-about-prime-numbers/</guid>
+      <guid>https://akynazh.site/posts/2020/07/some-algorithms-about-prime-numbers/</guid>
       <description>埃氏筛法 问1000000000000以内有多少个素数？
 运用朴素算法必TLE，这时考虑埃氏筛法。
 算法思路：

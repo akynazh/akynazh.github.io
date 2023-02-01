@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title> Java 重写 equals 方法的同时为什么要重写 hashcode 方法 | Norwegian Wood</title>
-  <link rel='canonical' href='akynazh.site/posts/2021/11/why-should-java-rewrite-the-hashcode-method-when-rewriting-the-equals-method/'>
+  <link rel='canonical' href='https://akynazh.site/posts/2021/11/why-should-java-rewrite-the-hashcode-method-when-rewriting-the-equals-method/'>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
@@ -13,7 +13,7 @@
 当两个人年龄相同时，我们认为这两个对象相同：
 1class Person { 2 private int age; 3 private String name; 4 5 public Person(int age, String name) { 6 this.age = age; 7 this.name = name; 8 } 9 10 @Override 11 public String toString() { 12 return &#34;Person{&#34; &#43; 13 &#34;age=&#34; &#43; age &#43; 14 &#34;, name=&#39;&#34; &#43; name &#43; &#39;\&#39;&#39; &#43; 15 &#39;}&#39;; 16 } 17 18 @Override 19 public boolean equals(Object o) { 20 if (this == o) return true; 21 if (o == null || getClass() !" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="akynazh.site/posts/2021/11/why-should-java-rewrite-the-hashcode-method-when-rewriting-the-equals-method/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://akynazh.site/posts/2021/11/why-should-java-rewrite-the-hashcode-method-when-rewriting-the-equals-method/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-11-26T09:23:27+08:00" />
 <meta property="article:modified_time" content="2021-11-26T09:23:27+08:00" /><meta property="og:site_name" content="Norwegian Wood" />
 
@@ -28,7 +28,7 @@
   
   
   
-  <link rel="stylesheet" href="/akynazh.site/css/styles.43c5f4c45b6248e071aa0f9eae2d299f06dc6e7d91ae3c1a2e4bcde6252688b0db6d6f3722b74f3c851c6e1b5ea207cff6868c78a11f7c137fd8cc01748ba457.css" integrity="sha512-Q8X0xFtiSOBxqg&#43;eri0pnwbcbn2RrjwaLkvN5iUmiLDbbW83IrdPPIUcbhteogfP9oaMeKEffBN/2MwBdIukVw==">
+  <link rel="stylesheet" href="https://akynazh.site/css/styles.43c5f4c45b6248e071aa0f9eae2d299f06dc6e7d91ae3c1a2e4bcde6252688b0db6d6f3722b74f3c851c6e1b5ea207cff6868c78a11f7c137fd8cc01748ba457.css" integrity="sha512-Q8X0xFtiSOBxqg&#43;eri0pnwbcbn2RrjwaLkvN5iUmiLDbbW83IrdPPIUcbhteogfP9oaMeKEffBN/2MwBdIukVw==">
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
@@ -53,11 +53,11 @@
     <span id="nav">
       <ul>
          
-        <li><a href="akynazh.site/">Home</a></li>
+        <li><a href="/">Home</a></li>
          
-        <li><a href="akynazh.site/posts">Archives</a></li>
+        <li><a href="/posts">Archives</a></li>
          
-        <li><a href="akynazh.site/about">About</a></li>
+        <li><a href="/about">About</a></li>
         
       </ul>
     </span>
@@ -66,14 +66,14 @@
       <ul>
         
         <li>
-          <a class="icon" href="akynazh.site/posts/2021/11/running-memory/" aria-label="Previous">
+          <a class="icon" href="https://akynazh.site/posts/2021/11/running-memory/" aria-label="Previous">
             <i class="fas fa-chevron-left" aria-hidden="true"></i>
           </a>
         </li>
         
         
         <li>
-          <a class="icon" href="akynazh.site/posts/2021/12/text-operation-of-linux-practical-operation/" aria-label="Next">
+          <a class="icon" href="https://akynazh.site/posts/2021/12/text-operation-of-linux-practical-operation/" aria-label="Next">
             <i class="fas fa-chevron-right" aria-hidden="true"></i>
           </a>
         </li>
@@ -110,47 +110,47 @@
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=akynazh.site%2fposts%2f2021%2f11%2fwhy-should-java-rewrite-the-hashcode-method-when-rewriting-the-equals-method%2f" aria-label="Facebook">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fakynazh.site%2fposts%2f2021%2f11%2fwhy-should-java-rewrite-the-hashcode-method-when-rewriting-the-equals-method%2f" aria-label="Facebook">
       <i class="fab fa-facebook " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=akynazh.site%2fposts%2f2021%2f11%2fwhy-should-java-rewrite-the-hashcode-method-when-rewriting-the-equals-method%2f&text=Java%20%e9%87%8d%e5%86%99%20equals%20%e6%96%b9%e6%b3%95%e7%9a%84%e5%90%8c%e6%97%b6%e4%b8%ba%e4%bb%80%e4%b9%88%e8%a6%81%e9%87%8d%e5%86%99%20hashcode%20%e6%96%b9%e6%b3%95" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fakynazh.site%2fposts%2f2021%2f11%2fwhy-should-java-rewrite-the-hashcode-method-when-rewriting-the-equals-method%2f&text=Java%20%e9%87%8d%e5%86%99%20equals%20%e6%96%b9%e6%b3%95%e7%9a%84%e5%90%8c%e6%97%b6%e4%b8%ba%e4%bb%80%e4%b9%88%e8%a6%81%e9%87%8d%e5%86%99%20hashcode%20%e6%96%b9%e6%b3%95" aria-label="Twitter">
       <i class="fab fa-twitter " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=akynazh.site%2fposts%2f2021%2f11%2fwhy-should-java-rewrite-the-hashcode-method-when-rewriting-the-equals-method%2f&title=Java%20%e9%87%8d%e5%86%99%20equals%20%e6%96%b9%e6%b3%95%e7%9a%84%e5%90%8c%e6%97%b6%e4%b8%ba%e4%bb%80%e4%b9%88%e8%a6%81%e9%87%8d%e5%86%99%20hashcode%20%e6%96%b9%e6%b3%95" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fakynazh.site%2fposts%2f2021%2f11%2fwhy-should-java-rewrite-the-hashcode-method-when-rewriting-the-equals-method%2f&title=Java%20%e9%87%8d%e5%86%99%20equals%20%e6%96%b9%e6%b3%95%e7%9a%84%e5%90%8c%e6%97%b6%e4%b8%ba%e4%bb%80%e4%b9%88%e8%a6%81%e9%87%8d%e5%86%99%20hashcode%20%e6%96%b9%e6%b3%95" aria-label="Linkedin">
       <i class="fab fa-linkedin " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=akynazh.site%2fposts%2f2021%2f11%2fwhy-should-java-rewrite-the-hashcode-method-when-rewriting-the-equals-method%2f&is_video=false&description=Java%20%e9%87%8d%e5%86%99%20equals%20%e6%96%b9%e6%b3%95%e7%9a%84%e5%90%8c%e6%97%b6%e4%b8%ba%e4%bb%80%e4%b9%88%e8%a6%81%e9%87%8d%e5%86%99%20hashcode%20%e6%96%b9%e6%b3%95" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fakynazh.site%2fposts%2f2021%2f11%2fwhy-should-java-rewrite-the-hashcode-method-when-rewriting-the-equals-method%2f&is_video=false&description=Java%20%e9%87%8d%e5%86%99%20equals%20%e6%96%b9%e6%b3%95%e7%9a%84%e5%90%8c%e6%97%b6%e4%b8%ba%e4%bb%80%e4%b9%88%e8%a6%81%e9%87%8d%e5%86%99%20hashcode%20%e6%96%b9%e6%b3%95" aria-label="Pinterest">
       <i class="fab fa-pinterest " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=Java%20%e9%87%8d%e5%86%99%20equals%20%e6%96%b9%e6%b3%95%e7%9a%84%e5%90%8c%e6%97%b6%e4%b8%ba%e4%bb%80%e4%b9%88%e8%a6%81%e9%87%8d%e5%86%99%20hashcode%20%e6%96%b9%e6%b3%95&body=Check out this article: akynazh.site%2fposts%2f2021%2f11%2fwhy-should-java-rewrite-the-hashcode-method-when-rewriting-the-equals-method%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=Java%20%e9%87%8d%e5%86%99%20equals%20%e6%96%b9%e6%b3%95%e7%9a%84%e5%90%8c%e6%97%b6%e4%b8%ba%e4%bb%80%e4%b9%88%e8%a6%81%e9%87%8d%e5%86%99%20hashcode%20%e6%96%b9%e6%b3%95&body=Check out this article: https%3a%2f%2fakynazh.site%2fposts%2f2021%2f11%2fwhy-should-java-rewrite-the-hashcode-method-when-rewriting-the-equals-method%2f" aria-label="Email">
       <i class="fas fa-envelope " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=akynazh.site%2fposts%2f2021%2f11%2fwhy-should-java-rewrite-the-hashcode-method-when-rewriting-the-equals-method%2f&title=Java%20%e9%87%8d%e5%86%99%20equals%20%e6%96%b9%e6%b3%95%e7%9a%84%e5%90%8c%e6%97%b6%e4%b8%ba%e4%bb%80%e4%b9%88%e8%a6%81%e9%87%8d%e5%86%99%20hashcode%20%e6%96%b9%e6%b3%95" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fakynazh.site%2fposts%2f2021%2f11%2fwhy-should-java-rewrite-the-hashcode-method-when-rewriting-the-equals-method%2f&title=Java%20%e9%87%8d%e5%86%99%20equals%20%e6%96%b9%e6%b3%95%e7%9a%84%e5%90%8c%e6%97%b6%e4%b8%ba%e4%bb%80%e4%b9%88%e8%a6%81%e9%87%8d%e5%86%99%20hashcode%20%e6%96%b9%e6%b3%95" aria-label="Pocket">
       <i class="fab fa-get-pocket " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=akynazh.site%2fposts%2f2021%2f11%2fwhy-should-java-rewrite-the-hashcode-method-when-rewriting-the-equals-method%2f&title=Java%20%e9%87%8d%e5%86%99%20equals%20%e6%96%b9%e6%b3%95%e7%9a%84%e5%90%8c%e6%97%b6%e4%b8%ba%e4%bb%80%e4%b9%88%e8%a6%81%e9%87%8d%e5%86%99%20hashcode%20%e6%96%b9%e6%b3%95" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fakynazh.site%2fposts%2f2021%2f11%2fwhy-should-java-rewrite-the-hashcode-method-when-rewriting-the-equals-method%2f&title=Java%20%e9%87%8d%e5%86%99%20equals%20%e6%96%b9%e6%b3%95%e7%9a%84%e5%90%8c%e6%97%b6%e4%b8%ba%e4%bb%80%e4%b9%88%e8%a6%81%e9%87%8d%e5%86%99%20hashcode%20%e6%96%b9%e6%b3%95" aria-label="reddit">
       <i class="fab fa-reddit " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=akynazh.site%2fposts%2f2021%2f11%2fwhy-should-java-rewrite-the-hashcode-method-when-rewriting-the-equals-method%2f&name=Java%20%e9%87%8d%e5%86%99%20equals%20%e6%96%b9%e6%b3%95%e7%9a%84%e5%90%8c%e6%97%b6%e4%b8%ba%e4%bb%80%e4%b9%88%e8%a6%81%e9%87%8d%e5%86%99%20hashcode%20%e6%96%b9%e6%b3%95&description=%e6%8f%90%e5%87%ba%e9%97%ae%e9%a2%98%20%e5%85%88%e7%9c%8b%e4%b8%80%e4%b8%aa%e4%be%8b%e5%ad%90%ef%bc%9a%0a%e5%bd%93%e4%b8%a4%e4%b8%aa%e4%ba%ba%e5%b9%b4%e9%be%84%e7%9b%b8%e5%90%8c%e6%97%b6%ef%bc%8c%e6%88%91%e4%bb%ac%e8%ae%a4%e4%b8%ba%e8%bf%99%e4%b8%a4%e4%b8%aa%e5%af%b9%e8%b1%a1%e7%9b%b8%e5%90%8c%ef%bc%9a%0a1class%20Person%20%7b%202%20private%20int%20age%3b%203%20private%20String%20name%3b%204%205%20public%20Person%28int%20age%2c%20String%20name%29%20%7b%206%20this.age%20%3d%20age%3b%207%20this.name%20%3d%20name%3b%208%20%7d%209%2010%20%40Override%2011%20public%20String%20toString%28%29%20%7b%2012%20return%20%26%2334%3bPerson%7b%26%2334%3b%20%2b%2013%20%26%2334%3bage%3d%26%2334%3b%20%2b%20age%20%2b%2014%20%26%2334%3b%2c%20name%3d%26%2339%3b%26%2334%3b%20%2b%20name%20%2b%20%26%2339%3b%5c%26%2339%3b%26%2339%3b%20%2b%2015%20%26%2339%3b%7d%26%2339%3b%3b%2016%20%7d%2017%2018%20%40Override%2019%20public%20boolean%20equals%28Object%20o%29%20%7b%2020%20if%20%28this%20%3d%3d%20o%29%20return%20true%3b%2021%20if%20%28o%20%3d%3d%20null%20%7c%7c%20getClass%28%29%20%21" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f2021%2f11%2fwhy-should-java-rewrite-the-hashcode-method-when-rewriting-the-equals-method%2f&name=Java%20%e9%87%8d%e5%86%99%20equals%20%e6%96%b9%e6%b3%95%e7%9a%84%e5%90%8c%e6%97%b6%e4%b8%ba%e4%bb%80%e4%b9%88%e8%a6%81%e9%87%8d%e5%86%99%20hashcode%20%e6%96%b9%e6%b3%95&description=%e6%8f%90%e5%87%ba%e9%97%ae%e9%a2%98%20%e5%85%88%e7%9c%8b%e4%b8%80%e4%b8%aa%e4%be%8b%e5%ad%90%ef%bc%9a%0a%e5%bd%93%e4%b8%a4%e4%b8%aa%e4%ba%ba%e5%b9%b4%e9%be%84%e7%9b%b8%e5%90%8c%e6%97%b6%ef%bc%8c%e6%88%91%e4%bb%ac%e8%ae%a4%e4%b8%ba%e8%bf%99%e4%b8%a4%e4%b8%aa%e5%af%b9%e8%b1%a1%e7%9b%b8%e5%90%8c%ef%bc%9a%0a1class%20Person%20%7b%202%20private%20int%20age%3b%203%20private%20String%20name%3b%204%205%20public%20Person%28int%20age%2c%20String%20name%29%20%7b%206%20this.age%20%3d%20age%3b%207%20this.name%20%3d%20name%3b%208%20%7d%209%2010%20%40Override%2011%20public%20String%20toString%28%29%20%7b%2012%20return%20%26%2334%3bPerson%7b%26%2334%3b%20%2b%2013%20%26%2334%3bage%3d%26%2334%3b%20%2b%20age%20%2b%2014%20%26%2334%3b%2c%20name%3d%26%2339%3b%26%2334%3b%20%2b%20name%20%2b%20%26%2339%3b%5c%26%2339%3b%26%2339%3b%20%2b%2015%20%26%2339%3b%7d%26%2339%3b%3b%2016%20%7d%2017%2018%20%40Override%2019%20public%20boolean%20equals%28Object%20o%29%20%7b%2020%20if%20%28this%20%3d%3d%20o%29%20return%20true%3b%2021%20if%20%28o%20%3d%3d%20null%20%7c%7c%20getClass%28%29%20%21" aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=akynazh.site%2fposts%2f2021%2f11%2fwhy-should-java-rewrite-the-hashcode-method-when-rewriting-the-equals-method%2f&t=Java%20%e9%87%8d%e5%86%99%20equals%20%e6%96%b9%e6%b3%95%e7%9a%84%e5%90%8c%e6%97%b6%e4%b8%ba%e4%bb%80%e4%b9%88%e8%a6%81%e9%87%8d%e5%86%99%20hashcode%20%e6%96%b9%e6%b3%95" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fakynazh.site%2fposts%2f2021%2f11%2fwhy-should-java-rewrite-the-hashcode-method-when-rewriting-the-equals-method%2f&t=Java%20%e9%87%8d%e5%86%99%20equals%20%e6%96%b9%e6%b3%95%e7%9a%84%e5%90%8c%e6%97%b6%e4%b8%ba%e4%bb%80%e4%b9%88%e8%a6%81%e9%87%8d%e5%86%99%20hashcode%20%e6%96%b9%e6%b3%95" aria-label="Hacker News">
       <i class="fab fa-hacker-news " aria-hidden="true"></i>
     </a>
   </li>
@@ -309,11 +309,11 @@
     
     <div id="nav-footer" style="display: none">
       
-      <ul style="display:inline;"><li><a href="akynazh.site/">Home</a></li></ul>
+      <ul style="display:inline;"><li><a href="/">Home</a></li></ul>
       
-      <ul style="display:inline;"><li><a href="akynazh.site/posts">Archives</a></li></ul>
+      <ul style="display:inline;"><li><a href="/posts">Archives</a></li></ul>
       
-      <ul style="display:inline;"><li><a href="akynazh.site/about">About</a></li></ul>
+      <ul style="display:inline;"><li><a href="/about">About</a></li></ul>
       
     </div>
 
@@ -326,47 +326,47 @@
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=akynazh.site%2fposts%2f2021%2f11%2fwhy-should-java-rewrite-the-hashcode-method-when-rewriting-the-equals-method%2f" aria-label="Facebook">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fakynazh.site%2fposts%2f2021%2f11%2fwhy-should-java-rewrite-the-hashcode-method-when-rewriting-the-equals-method%2f" aria-label="Facebook">
       <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=akynazh.site%2fposts%2f2021%2f11%2fwhy-should-java-rewrite-the-hashcode-method-when-rewriting-the-equals-method%2f&text=Java%20%e9%87%8d%e5%86%99%20equals%20%e6%96%b9%e6%b3%95%e7%9a%84%e5%90%8c%e6%97%b6%e4%b8%ba%e4%bb%80%e4%b9%88%e8%a6%81%e9%87%8d%e5%86%99%20hashcode%20%e6%96%b9%e6%b3%95" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fakynazh.site%2fposts%2f2021%2f11%2fwhy-should-java-rewrite-the-hashcode-method-when-rewriting-the-equals-method%2f&text=Java%20%e9%87%8d%e5%86%99%20equals%20%e6%96%b9%e6%b3%95%e7%9a%84%e5%90%8c%e6%97%b6%e4%b8%ba%e4%bb%80%e4%b9%88%e8%a6%81%e9%87%8d%e5%86%99%20hashcode%20%e6%96%b9%e6%b3%95" aria-label="Twitter">
       <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=akynazh.site%2fposts%2f2021%2f11%2fwhy-should-java-rewrite-the-hashcode-method-when-rewriting-the-equals-method%2f&title=Java%20%e9%87%8d%e5%86%99%20equals%20%e6%96%b9%e6%b3%95%e7%9a%84%e5%90%8c%e6%97%b6%e4%b8%ba%e4%bb%80%e4%b9%88%e8%a6%81%e9%87%8d%e5%86%99%20hashcode%20%e6%96%b9%e6%b3%95" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fakynazh.site%2fposts%2f2021%2f11%2fwhy-should-java-rewrite-the-hashcode-method-when-rewriting-the-equals-method%2f&title=Java%20%e9%87%8d%e5%86%99%20equals%20%e6%96%b9%e6%b3%95%e7%9a%84%e5%90%8c%e6%97%b6%e4%b8%ba%e4%bb%80%e4%b9%88%e8%a6%81%e9%87%8d%e5%86%99%20hashcode%20%e6%96%b9%e6%b3%95" aria-label="Linkedin">
       <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=akynazh.site%2fposts%2f2021%2f11%2fwhy-should-java-rewrite-the-hashcode-method-when-rewriting-the-equals-method%2f&is_video=false&description=Java%20%e9%87%8d%e5%86%99%20equals%20%e6%96%b9%e6%b3%95%e7%9a%84%e5%90%8c%e6%97%b6%e4%b8%ba%e4%bb%80%e4%b9%88%e8%a6%81%e9%87%8d%e5%86%99%20hashcode%20%e6%96%b9%e6%b3%95" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fakynazh.site%2fposts%2f2021%2f11%2fwhy-should-java-rewrite-the-hashcode-method-when-rewriting-the-equals-method%2f&is_video=false&description=Java%20%e9%87%8d%e5%86%99%20equals%20%e6%96%b9%e6%b3%95%e7%9a%84%e5%90%8c%e6%97%b6%e4%b8%ba%e4%bb%80%e4%b9%88%e8%a6%81%e9%87%8d%e5%86%99%20hashcode%20%e6%96%b9%e6%b3%95" aria-label="Pinterest">
       <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=Java%20%e9%87%8d%e5%86%99%20equals%20%e6%96%b9%e6%b3%95%e7%9a%84%e5%90%8c%e6%97%b6%e4%b8%ba%e4%bb%80%e4%b9%88%e8%a6%81%e9%87%8d%e5%86%99%20hashcode%20%e6%96%b9%e6%b3%95&body=Check out this article: akynazh.site%2fposts%2f2021%2f11%2fwhy-should-java-rewrite-the-hashcode-method-when-rewriting-the-equals-method%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=Java%20%e9%87%8d%e5%86%99%20equals%20%e6%96%b9%e6%b3%95%e7%9a%84%e5%90%8c%e6%97%b6%e4%b8%ba%e4%bb%80%e4%b9%88%e8%a6%81%e9%87%8d%e5%86%99%20hashcode%20%e6%96%b9%e6%b3%95&body=Check out this article: https%3a%2f%2fakynazh.site%2fposts%2f2021%2f11%2fwhy-should-java-rewrite-the-hashcode-method-when-rewriting-the-equals-method%2f" aria-label="Email">
       <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=akynazh.site%2fposts%2f2021%2f11%2fwhy-should-java-rewrite-the-hashcode-method-when-rewriting-the-equals-method%2f&title=Java%20%e9%87%8d%e5%86%99%20equals%20%e6%96%b9%e6%b3%95%e7%9a%84%e5%90%8c%e6%97%b6%e4%b8%ba%e4%bb%80%e4%b9%88%e8%a6%81%e9%87%8d%e5%86%99%20hashcode%20%e6%96%b9%e6%b3%95" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fakynazh.site%2fposts%2f2021%2f11%2fwhy-should-java-rewrite-the-hashcode-method-when-rewriting-the-equals-method%2f&title=Java%20%e9%87%8d%e5%86%99%20equals%20%e6%96%b9%e6%b3%95%e7%9a%84%e5%90%8c%e6%97%b6%e4%b8%ba%e4%bb%80%e4%b9%88%e8%a6%81%e9%87%8d%e5%86%99%20hashcode%20%e6%96%b9%e6%b3%95" aria-label="Pocket">
       <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=akynazh.site%2fposts%2f2021%2f11%2fwhy-should-java-rewrite-the-hashcode-method-when-rewriting-the-equals-method%2f&title=Java%20%e9%87%8d%e5%86%99%20equals%20%e6%96%b9%e6%b3%95%e7%9a%84%e5%90%8c%e6%97%b6%e4%b8%ba%e4%bb%80%e4%b9%88%e8%a6%81%e9%87%8d%e5%86%99%20hashcode%20%e6%96%b9%e6%b3%95" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fakynazh.site%2fposts%2f2021%2f11%2fwhy-should-java-rewrite-the-hashcode-method-when-rewriting-the-equals-method%2f&title=Java%20%e9%87%8d%e5%86%99%20equals%20%e6%96%b9%e6%b3%95%e7%9a%84%e5%90%8c%e6%97%b6%e4%b8%ba%e4%bb%80%e4%b9%88%e8%a6%81%e9%87%8d%e5%86%99%20hashcode%20%e6%96%b9%e6%b3%95" aria-label="reddit">
       <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=akynazh.site%2fposts%2f2021%2f11%2fwhy-should-java-rewrite-the-hashcode-method-when-rewriting-the-equals-method%2f&name=Java%20%e9%87%8d%e5%86%99%20equals%20%e6%96%b9%e6%b3%95%e7%9a%84%e5%90%8c%e6%97%b6%e4%b8%ba%e4%bb%80%e4%b9%88%e8%a6%81%e9%87%8d%e5%86%99%20hashcode%20%e6%96%b9%e6%b3%95&description=%e6%8f%90%e5%87%ba%e9%97%ae%e9%a2%98%20%e5%85%88%e7%9c%8b%e4%b8%80%e4%b8%aa%e4%be%8b%e5%ad%90%ef%bc%9a%0a%e5%bd%93%e4%b8%a4%e4%b8%aa%e4%ba%ba%e5%b9%b4%e9%be%84%e7%9b%b8%e5%90%8c%e6%97%b6%ef%bc%8c%e6%88%91%e4%bb%ac%e8%ae%a4%e4%b8%ba%e8%bf%99%e4%b8%a4%e4%b8%aa%e5%af%b9%e8%b1%a1%e7%9b%b8%e5%90%8c%ef%bc%9a%0a1class%20Person%20%7b%202%20private%20int%20age%3b%203%20private%20String%20name%3b%204%205%20public%20Person%28int%20age%2c%20String%20name%29%20%7b%206%20this.age%20%3d%20age%3b%207%20this.name%20%3d%20name%3b%208%20%7d%209%2010%20%40Override%2011%20public%20String%20toString%28%29%20%7b%2012%20return%20%26%2334%3bPerson%7b%26%2334%3b%20%2b%2013%20%26%2334%3bage%3d%26%2334%3b%20%2b%20age%20%2b%2014%20%26%2334%3b%2c%20name%3d%26%2339%3b%26%2334%3b%20%2b%20name%20%2b%20%26%2339%3b%5c%26%2339%3b%26%2339%3b%20%2b%2015%20%26%2339%3b%7d%26%2339%3b%3b%2016%20%7d%2017%2018%20%40Override%2019%20public%20boolean%20equals%28Object%20o%29%20%7b%2020%20if%20%28this%20%3d%3d%20o%29%20return%20true%3b%2021%20if%20%28o%20%3d%3d%20null%20%7c%7c%20getClass%28%29%20%21" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f2021%2f11%2fwhy-should-java-rewrite-the-hashcode-method-when-rewriting-the-equals-method%2f&name=Java%20%e9%87%8d%e5%86%99%20equals%20%e6%96%b9%e6%b3%95%e7%9a%84%e5%90%8c%e6%97%b6%e4%b8%ba%e4%bb%80%e4%b9%88%e8%a6%81%e9%87%8d%e5%86%99%20hashcode%20%e6%96%b9%e6%b3%95&description=%e6%8f%90%e5%87%ba%e9%97%ae%e9%a2%98%20%e5%85%88%e7%9c%8b%e4%b8%80%e4%b8%aa%e4%be%8b%e5%ad%90%ef%bc%9a%0a%e5%bd%93%e4%b8%a4%e4%b8%aa%e4%ba%ba%e5%b9%b4%e9%be%84%e7%9b%b8%e5%90%8c%e6%97%b6%ef%bc%8c%e6%88%91%e4%bb%ac%e8%ae%a4%e4%b8%ba%e8%bf%99%e4%b8%a4%e4%b8%aa%e5%af%b9%e8%b1%a1%e7%9b%b8%e5%90%8c%ef%bc%9a%0a1class%20Person%20%7b%202%20private%20int%20age%3b%203%20private%20String%20name%3b%204%205%20public%20Person%28int%20age%2c%20String%20name%29%20%7b%206%20this.age%20%3d%20age%3b%207%20this.name%20%3d%20name%3b%208%20%7d%209%2010%20%40Override%2011%20public%20String%20toString%28%29%20%7b%2012%20return%20%26%2334%3bPerson%7b%26%2334%3b%20%2b%2013%20%26%2334%3bage%3d%26%2334%3b%20%2b%20age%20%2b%2014%20%26%2334%3b%2c%20name%3d%26%2339%3b%26%2334%3b%20%2b%20name%20%2b%20%26%2339%3b%5c%26%2339%3b%26%2339%3b%20%2b%2015%20%26%2339%3b%7d%26%2339%3b%3b%2016%20%7d%2017%2018%20%40Override%2019%20public%20boolean%20equals%28Object%20o%29%20%7b%2020%20if%20%28this%20%3d%3d%20o%29%20return%20true%3b%2021%20if%20%28o%20%3d%3d%20null%20%7c%7c%20getClass%28%29%20%21" aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=akynazh.site%2fposts%2f2021%2f11%2fwhy-should-java-rewrite-the-hashcode-method-when-rewriting-the-equals-method%2f&t=Java%20%e9%87%8d%e5%86%99%20equals%20%e6%96%b9%e6%b3%95%e7%9a%84%e5%90%8c%e6%97%b6%e4%b8%ba%e4%bb%80%e4%b9%88%e8%a6%81%e9%87%8d%e5%86%99%20hashcode%20%e6%96%b9%e6%b3%95" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fakynazh.site%2fposts%2f2021%2f11%2fwhy-should-java-rewrite-the-hashcode-method-when-rewriting-the-equals-method%2f&t=Java%20%e9%87%8d%e5%86%99%20equals%20%e6%96%b9%e6%b3%95%e7%9a%84%e5%90%8c%e6%97%b6%e4%b8%ba%e4%bb%80%e4%b9%88%e8%a6%81%e9%87%8d%e5%86%99%20hashcode%20%e6%96%b9%e6%b3%95" aria-label="Hacker News">
       <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
     </a>
   </li>
@@ -401,11 +401,11 @@
     <nav>
       <ul>
          
-        <li><a href="akynazh.site/">Home</a></li>
+        <li><a href="/">Home</a></li>
          
-        <li><a href="akynazh.site/posts">Archives</a></li>
+        <li><a href="/posts">Archives</a></li>
          
-        <li><a href="akynazh.site/about">About</a></li>
+        <li><a href="/about">About</a></li>
         
       </ul>
     </nav>

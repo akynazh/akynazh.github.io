@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title> 代理模式 | Norwegian Wood</title>
-  <link rel='canonical' href='akynazh.site/posts/2022/08/proxy-pattern/'>
+  <link rel='canonical' href='https://akynazh.site/posts/2022/08/proxy-pattern/'>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
@@ -22,7 +22,7 @@
 下面是一个图像代理对象：
 1class ImageProxy implements Icon { 2	volatile ImageIcon imageIcon; 3	final URL imageURL; 4	Thread retrievalThread; 5	boolean retrieving = false; 6 7	public ImageProxy(URL url) { imageURL = url; } 8 9	public int getIconWidth() { 10 ... 11	} 12 13	public int getIconHeight() { 14 ... 15	} 16	17	synchronized void setImageIcon(ImageIcon imageIcon) { 18	this." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="akynazh.site/posts/2022/08/proxy-pattern/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://akynazh.site/posts/2022/08/proxy-pattern/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-08-26T10:41:19+08:00" />
 <meta property="article:modified_time" content="2022-08-26T10:41:19+08:00" /><meta property="og:site_name" content="Norwegian Wood" />
 
@@ -46,7 +46,7 @@
   
   
   
-  <link rel="stylesheet" href="/akynazh.site/css/styles.43c5f4c45b6248e071aa0f9eae2d299f06dc6e7d91ae3c1a2e4bcde6252688b0db6d6f3722b74f3c851c6e1b5ea207cff6868c78a11f7c137fd8cc01748ba457.css" integrity="sha512-Q8X0xFtiSOBxqg&#43;eri0pnwbcbn2RrjwaLkvN5iUmiLDbbW83IrdPPIUcbhteogfP9oaMeKEffBN/2MwBdIukVw==">
+  <link rel="stylesheet" href="https://akynazh.site/css/styles.43c5f4c45b6248e071aa0f9eae2d299f06dc6e7d91ae3c1a2e4bcde6252688b0db6d6f3722b74f3c851c6e1b5ea207cff6868c78a11f7c137fd8cc01748ba457.css" integrity="sha512-Q8X0xFtiSOBxqg&#43;eri0pnwbcbn2RrjwaLkvN5iUmiLDbbW83IrdPPIUcbhteogfP9oaMeKEffBN/2MwBdIukVw==">
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
@@ -71,11 +71,11 @@
     <span id="nav">
       <ul>
          
-        <li><a href="akynazh.site/">Home</a></li>
+        <li><a href="/">Home</a></li>
          
-        <li><a href="akynazh.site/posts">Archives</a></li>
+        <li><a href="/posts">Archives</a></li>
          
-        <li><a href="akynazh.site/about">About</a></li>
+        <li><a href="/about">About</a></li>
         
       </ul>
     </span>
@@ -84,14 +84,14 @@
       <ul>
         
         <li>
-          <a class="icon" href="akynazh.site/posts/2022/08/status-mode/" aria-label="Previous">
+          <a class="icon" href="https://akynazh.site/posts/2022/08/status-mode/" aria-label="Previous">
             <i class="fas fa-chevron-left" aria-hidden="true"></i>
           </a>
         </li>
         
         
         <li>
-          <a class="icon" href="akynazh.site/posts/2022/08/policy-mode/" aria-label="Next">
+          <a class="icon" href="https://akynazh.site/posts/2022/08/policy-mode/" aria-label="Next">
             <i class="fas fa-chevron-right" aria-hidden="true"></i>
           </a>
         </li>
@@ -128,47 +128,47 @@
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=akynazh.site%2fposts%2f2022%2f08%2fproxy-pattern%2f" aria-label="Facebook">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fproxy-pattern%2f" aria-label="Facebook">
       <i class="fab fa-facebook " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=akynazh.site%2fposts%2f2022%2f08%2fproxy-pattern%2f&text=%e4%bb%a3%e7%90%86%e6%a8%a1%e5%bc%8f" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fproxy-pattern%2f&text=%e4%bb%a3%e7%90%86%e6%a8%a1%e5%bc%8f" aria-label="Twitter">
       <i class="fab fa-twitter " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=akynazh.site%2fposts%2f2022%2f08%2fproxy-pattern%2f&title=%e4%bb%a3%e7%90%86%e6%a8%a1%e5%bc%8f" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fproxy-pattern%2f&title=%e4%bb%a3%e7%90%86%e6%a8%a1%e5%bc%8f" aria-label="Linkedin">
       <i class="fab fa-linkedin " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=akynazh.site%2fposts%2f2022%2f08%2fproxy-pattern%2f&is_video=false&description=%e4%bb%a3%e7%90%86%e6%a8%a1%e5%bc%8f" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fproxy-pattern%2f&is_video=false&description=%e4%bb%a3%e7%90%86%e6%a8%a1%e5%bc%8f" aria-label="Pinterest">
       <i class="fab fa-pinterest " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=%e4%bb%a3%e7%90%86%e6%a8%a1%e5%bc%8f&body=Check out this article: akynazh.site%2fposts%2f2022%2f08%2fproxy-pattern%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=%e4%bb%a3%e7%90%86%e6%a8%a1%e5%bc%8f&body=Check out this article: https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fproxy-pattern%2f" aria-label="Email">
       <i class="fas fa-envelope " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=akynazh.site%2fposts%2f2022%2f08%2fproxy-pattern%2f&title=%e4%bb%a3%e7%90%86%e6%a8%a1%e5%bc%8f" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fproxy-pattern%2f&title=%e4%bb%a3%e7%90%86%e6%a8%a1%e5%bc%8f" aria-label="Pocket">
       <i class="fab fa-get-pocket " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=akynazh.site%2fposts%2f2022%2f08%2fproxy-pattern%2f&title=%e4%bb%a3%e7%90%86%e6%a8%a1%e5%bc%8f" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fproxy-pattern%2f&title=%e4%bb%a3%e7%90%86%e6%a8%a1%e5%bc%8f" aria-label="reddit">
       <i class="fab fa-reddit " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=akynazh.site%2fposts%2f2022%2f08%2fproxy-pattern%2f&name=%e4%bb%a3%e7%90%86%e6%a8%a1%e5%bc%8f&description=%e5%ae%9a%e4%b9%89%20%e4%bb%a3%e7%90%86%e6%a8%a1%e5%bc%8f%e4%b8%ba%e5%8f%a6%e4%b8%80%e4%b8%aa%e5%af%b9%e8%b1%a1%e6%8f%90%e4%be%9b%e4%b8%80%e4%b8%aa%e6%9b%bf%e8%ba%ab%e6%88%96%e5%8d%a0%e4%bd%8d%e7%ac%a6%e4%bb%a5%e6%8e%a7%e5%88%b6%e5%af%b9%e8%bf%99%e4%b8%aa%e5%af%b9%e8%b1%a1%e7%9a%84%e8%ae%bf%e9%97%ae%e3%80%82%0a%e6%88%91%e4%bb%ac%e5%af%b9%e4%b8%80%e4%b8%aa%e5%af%b9%e8%b1%a1%e7%9a%84%e4%bd%bf%e7%94%a8%e6%88%96%e8%80%85%e4%b8%80%e4%b8%aa%e5%af%b9%e8%b1%a1%e4%b8%ad%e6%96%b9%e6%b3%95%e7%9a%84%e8%b0%83%e7%94%a8%ef%bc%8c%e5%8f%af%e4%bb%a5%e9%80%9a%e8%bf%87%e8%bf%99%e4%b8%aa%e5%af%b9%e8%b1%a1%e7%9a%84%e4%bb%a3%e7%90%86%e4%ba%ba%e8%bf%9b%e8%a1%8c%e8%ae%bf%e9%97%ae%ef%bc%8c%e8%bf%99%e4%b8%aa%e4%bb%a3%e7%90%86%e4%ba%ba%e5%8f%af%e4%bb%a5%e6%96%b9%e4%be%bf%e5%9c%b0%e6%8e%a7%e5%88%b6%e8%bf%99%e4%b8%aa%e5%af%b9%e8%b1%a1%ef%bc%8c%e8%ae%a9%e5%af%b9%e8%b1%a1%e7%9a%84%e5%8a%9f%e8%83%bd%e6%9b%b4%e4%b8%ba%e5%bc%ba%e5%a4%a7%e6%88%96%e6%9b%b4%e6%98%93%e4%ba%8e%e4%bd%bf%e7%94%a8%e3%80%82%0a%e5%b8%b8%e8%a7%81%e7%9a%84%e4%bb%a3%e7%90%86%e6%9c%89%ef%bc%9a%e8%bf%9c%e7%a8%8b%e4%bb%a3%e7%90%86%ef%bc%8c%e8%99%9a%e6%8b%9f%e4%bb%a3%e7%90%86%ef%bc%8c%e5%8a%a8%e6%80%81%e4%bb%a3%e7%90%86%e3%80%82%0a%e8%bf%9c%e7%a8%8b%e4%bb%a3%e7%90%86%20%e5%af%b9%e4%ba%8e%e8%bf%9c%e7%a8%8b%e4%bb%a3%e7%90%86%ef%bc%8c%e5%85%b6%e5%ae%9e%e5%b0%b1%e6%98%af%e6%9c%ac%e5%9c%b0%e8%b0%83%e7%94%a8%e8%bf%9c%e7%a8%8b%e7%9a%84%e6%96%b9%e6%b3%95%ef%bc%8c%e6%9c%ac%e5%9c%b0%e5%a0%86%ef%bc%88%e5%ae%a2%e6%88%b7%e7%ab%af%ef%bc%89%e6%9c%89%e4%b8%80%e4%b8%aaStub%e4%bb%a3%e7%90%86%e5%af%b9%e8%b1%a1%ef%bc%8c%e8%bf%99%e4%b8%aa%e5%af%b9%e8%b1%a1%e8%b4%9f%e8%b4%a3%e5%ae%8c%e6%88%90RMI%e6%93%8d%e4%bd%9c%ef%bc%8c%e4%b9%9f%e5%b0%b1%e6%98%af%e8%bf%9c%e7%a8%8b%e6%96%b9%e6%b3%95%e8%b0%83%e7%94%a8%ef%bc%8c%e8%80%8c%e8%bf%9c%e7%a8%8b%e5%a0%86%ef%bc%88%e6%9c%8d%e5%8a%a1%e7%ab%af%ef%bc%89%e6%9c%89%e4%b8%80%e4%b8%aaSkeleton%e4%bb%a3%e7%90%86%e5%af%b9%e8%b1%a1%ef%bc%8c%e5%ae%83%e6%8e%a5%e6%94%b6%e5%ae%a2%e6%88%b7%e7%ab%af%e7%9a%84RMI%e6%93%8d%e4%bd%9c%ef%bc%8c%e5%b9%b6%e4%bc%a0%e9%80%92%e7%bb%99%e7%9c%9f%e6%ad%a3%e7%9a%84%e6%9c%8d%e5%8a%a1%e5%af%b9%e8%b1%a1%e8%bf%9b%e8%a1%8c%e6%9c%8d%e5%8a%a1%ef%bc%8c%e4%b9%8b%e5%90%8e%e5%86%8d%e8%bf%94%e5%9b%9e%e7%bb%99%e5%ae%a2%e6%88%b7%e7%ab%af%e7%bb%93%e6%9e%9c%e3%80%82%0a%e4%bd%bf%e7%94%a8%e8%bf%87%e7%a8%8b%e4%b8%ad%e9%9c%80%e8%a6%81%e6%b3%a8%e6%84%8f%e8%b0%83%e7%94%a8%e7%9a%84%e5%af%b9%e8%b1%a1%e5%bf%85%e9%a1%bb%e6%98%af%e5%8f%af%e5%ba%8f%e5%88%97%e5%8c%96%e7%9a%84%ef%bc%8c%e6%97%a0%e9%9c%80%e5%ba%8f%e5%88%97%e5%8c%96%e7%9a%84%e5%af%b9%e8%b1%a1%e5%8f%af%e4%bb%a5%e6%b7%bb%e5%8a%a0transient%e5%85%b3%e9%94%ae%e5%ad%97%e3%80%82%e9%80%9a%e8%bf%87rmiregistry%20%26amp%3b%e5%bc%80%e5%90%afRMI%ef%bc%8c%e4%b9%8b%e5%90%8e%e8%bf%9b%e8%a1%8c%e6%9c%8d%e5%8a%a1%e6%b3%a8%e5%86%8c%e3%80%82%e6%9c%8d%e5%8a%a1%e7%ab%af%e9%80%9a%e8%bf%87Naming.rebind%28%29%e7%bb%91%e5%ae%9a%e6%9c%8d%e5%8a%a1%e5%9c%b0%e5%9d%80%ef%bc%8c%e5%ae%a2%e6%88%b7%e7%ab%af%e9%80%9a%e8%bf%87Naming.lookup%28%29%e8%b0%83%e7%94%a8%e8%bf%9c%e7%a8%8b%e6%96%b9%e6%b3%95%e3%80%82%e5%8f%a6%e5%a4%96%ef%bc%8c%e8%bf%9c%e7%a8%8b%e4%bc%a0%e8%be%93%e5%af%b9%e8%b1%a1%e9%9c%80%e8%a6%81%e7%bb%a7%e6%89%bf%e4%ba%8eUnicastRemoteObject%e3%80%82%0a%e5%9c%a8Java5%e4%b8%ad%ef%bc%8cRMI%e5%92%8c%e5%8a%a8%e6%80%81%e4%bb%a3%e7%90%86%e6%90%ad%e9%85%8d%e4%bd%bf%e7%94%a8%ef%bc%8c%e5%8a%a8%e6%80%81%e4%bb%a3%e7%90%86%e5%8a%a8%e6%80%81%e4%ba%a7%e7%94%9fStub%ef%bc%8c%e8%bf%9c%e7%a8%8b%e5%af%b9%e8%b1%a1%e7%9a%84Stub%e6%98%afProxy%e5%ae%9e%e4%be%8b%ef%bc%8c%e5%ae%83%e6%98%af%e8%87%aa%e5%8a%a8%e4%ba%a7%e7%94%9f%e7%9a%84%ef%bc%8c%e6%9d%a5%e5%a4%84%e7%90%86%e6%89%80%e6%9c%89%e6%8a%8a%e5%ae%a2%e6%88%b7%e7%9a%84%e6%9c%ac%e5%9c%b0%e8%b0%83%e7%94%a8%e5%8f%98%e6%88%90%e8%bf%9c%e7%a8%8b%e8%b0%83%e7%94%a8%e7%9a%84%e7%bb%86%e8%8a%82%e3%80%82%0a%e8%99%9a%e6%8b%9f%e4%bb%a3%e7%90%86%20%e5%af%b9%e4%ba%8e%e8%99%9a%e6%8b%9f%e4%bb%a3%e7%90%86%ef%bc%8c%e4%b9%9f%e5%b0%b1%e6%98%af%e8%af%b4%e8%bf%99%e4%b8%aa%e4%bb%a3%e7%90%86%e5%af%b9%e8%b1%a1%e6%98%af%e8%99%9a%e6%8b%9f%e7%9a%84%ef%bc%8c%e7%94%b1%e4%bb%a3%e7%90%86%e6%9d%a5%e6%89%ae%e6%bc%94%e5%af%b9%e8%b1%a1%e7%9a%84%e6%9b%bf%e8%ba%ab%e3%80%82%0a%e6%af%94%e5%a6%82%e5%af%b9%e4%ba%8e%e4%bb%8e%e7%bd%91%e7%bb%9c%e5%8a%a0%e8%bd%bd%e4%b8%80%e5%89%af%e5%9b%be%e5%83%8f%e5%b1%95%e7%8e%b0%e7%bb%99%e7%94%a8%e6%88%b7%ef%bc%8c%e6%88%91%e4%bb%ac%e5%8f%af%e8%83%bd%e9%9c%80%e8%a6%81%e7%ad%89%e5%be%85%e4%b8%80%e5%ae%9a%e6%97%b6%e9%97%b4%ef%bc%8c%e8%bf%99%e6%ae%b5%e6%97%b6%e9%97%b4%e5%86%85%e5%9b%be%e5%83%8f%e5%ba%94%e8%af%a5%e5%b1%95%e7%8e%b0%e4%b8%ba%e7%94%a8%e6%88%b7%e5%8f%8b%e5%a5%bd%e7%9a%84%e2%80%9c%e7%ad%89%e5%be%85%e4%b8%ad%e2%80%9d%e5%ad%97%e6%a0%b7%ef%bc%8c%e8%80%8c%e5%9c%a8%e7%bd%91%e7%bb%9c%e5%9b%be%e5%83%8f%e8%8e%b7%e5%8f%96%e6%88%90%e5%8a%9f%e5%90%8e%e8%bf%9b%e8%a1%8c%e7%bd%91%e7%bb%9c%e5%9b%be%e5%83%8f%e7%9a%84%e5%b1%95%e7%8e%b0%e3%80%82%0a%e8%bf%99%e4%b8%aa%e8%bf%87%e7%a8%8b%e5%8f%af%e4%bb%a5%e9%80%9a%e8%bf%87%e4%bb%a3%e7%90%86%e7%9a%84%e6%96%b9%e5%bc%8f%e6%96%b9%e4%be%bf%e5%9c%b0%e5%ae%8c%e6%88%90%ef%bc%9a%e8%99%9a%e6%8b%9f%e4%bb%a3%e7%90%86%e5%af%b9%e8%b1%a1%e6%89%ae%e6%bc%94%e5%9b%be%e5%83%8f%e7%9a%84%e6%9b%bf%e8%ba%ab%ef%bc%8c%e5%ae%83%e9%80%9a%e8%bf%87%e5%88%9b%e5%bb%ba%e4%b8%80%e4%b8%aa%e7%ba%bf%e7%a8%8b%e5%8a%a0%e8%bd%bd%e7%bd%91%e7%bb%9c%e5%9b%be%e5%83%8f%ef%bc%8c%e5%8a%a0%e8%bd%bd%e6%9c%9f%e9%97%b4%e5%b0%86%e5%9b%be%e5%83%8f%e5%8a%a8%e6%80%81%e5%9c%b0%e5%8f%98%e4%b8%ba%e7%94%a8%e6%88%b7%e5%8f%8b%e5%a5%bd%e5%ad%97%e6%a0%b7%ef%bc%8c%e5%ae%8c%e6%88%90%e5%8a%a0%e8%bd%bd%e5%90%8e%e6%94%b9%e4%b8%ba%e7%bd%91%e7%bb%9c%e5%9b%be%e5%83%8f%e3%80%82%0a%e5%8f%af%e4%bb%a5%e5%8f%91%e7%8e%b0%e6%88%91%e4%bb%ac%e4%b8%8d%e6%98%af%e7%9b%b4%e6%8e%a5%e4%bd%bf%e7%94%a8%e5%9b%be%e5%83%8f%e6%9c%ac%e8%ba%ab%ef%bc%8c%e8%80%8c%e4%bd%bf%e7%94%a8%e4%ba%86%e4%bb%a3%e7%90%86%e5%af%b9%e8%b1%a1%e4%bd%9c%e4%b8%ba%e5%9b%be%e5%83%8f%ef%bc%8c%e4%b9%9f%e5%b0%b1%e6%98%af%e8%af%b4%ef%bc%8c%e4%bb%a3%e7%90%86%e6%89%ae%e6%bc%94%e4%ba%86%e5%9b%be%e5%83%8f%e8%bf%99%e4%b8%aa%e8%a7%92%e8%89%b2%e3%80%82%0a%e4%b8%8b%e9%9d%a2%e6%98%af%e4%b8%80%e4%b8%aa%e5%9b%be%e5%83%8f%e4%bb%a3%e7%90%86%e5%af%b9%e8%b1%a1%ef%bc%9a%0a1class%20ImageProxy%20implements%20Icon%20%7b%202%09volatile%20ImageIcon%20imageIcon%3b%203%09final%20URL%20imageURL%3b%204%09Thread%20retrievalThread%3b%205%09boolean%20retrieving%20%3d%20false%3b%206%207%09public%20ImageProxy%28URL%20url%29%20%7b%20imageURL%20%3d%20url%3b%20%7d%208%209%09public%20int%20getIconWidth%28%29%20%7b%2010%20...%2011%09%7d%2012%2013%09public%20int%20getIconHeight%28%29%20%7b%2014%20...%2015%09%7d%2016%0917%09synchronized%20void%20setImageIcon%28ImageIcon%20imageIcon%29%20%7b%2018%09this." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fproxy-pattern%2f&name=%e4%bb%a3%e7%90%86%e6%a8%a1%e5%bc%8f&description=%e5%ae%9a%e4%b9%89%20%e4%bb%a3%e7%90%86%e6%a8%a1%e5%bc%8f%e4%b8%ba%e5%8f%a6%e4%b8%80%e4%b8%aa%e5%af%b9%e8%b1%a1%e6%8f%90%e4%be%9b%e4%b8%80%e4%b8%aa%e6%9b%bf%e8%ba%ab%e6%88%96%e5%8d%a0%e4%bd%8d%e7%ac%a6%e4%bb%a5%e6%8e%a7%e5%88%b6%e5%af%b9%e8%bf%99%e4%b8%aa%e5%af%b9%e8%b1%a1%e7%9a%84%e8%ae%bf%e9%97%ae%e3%80%82%0a%e6%88%91%e4%bb%ac%e5%af%b9%e4%b8%80%e4%b8%aa%e5%af%b9%e8%b1%a1%e7%9a%84%e4%bd%bf%e7%94%a8%e6%88%96%e8%80%85%e4%b8%80%e4%b8%aa%e5%af%b9%e8%b1%a1%e4%b8%ad%e6%96%b9%e6%b3%95%e7%9a%84%e8%b0%83%e7%94%a8%ef%bc%8c%e5%8f%af%e4%bb%a5%e9%80%9a%e8%bf%87%e8%bf%99%e4%b8%aa%e5%af%b9%e8%b1%a1%e7%9a%84%e4%bb%a3%e7%90%86%e4%ba%ba%e8%bf%9b%e8%a1%8c%e8%ae%bf%e9%97%ae%ef%bc%8c%e8%bf%99%e4%b8%aa%e4%bb%a3%e7%90%86%e4%ba%ba%e5%8f%af%e4%bb%a5%e6%96%b9%e4%be%bf%e5%9c%b0%e6%8e%a7%e5%88%b6%e8%bf%99%e4%b8%aa%e5%af%b9%e8%b1%a1%ef%bc%8c%e8%ae%a9%e5%af%b9%e8%b1%a1%e7%9a%84%e5%8a%9f%e8%83%bd%e6%9b%b4%e4%b8%ba%e5%bc%ba%e5%a4%a7%e6%88%96%e6%9b%b4%e6%98%93%e4%ba%8e%e4%bd%bf%e7%94%a8%e3%80%82%0a%e5%b8%b8%e8%a7%81%e7%9a%84%e4%bb%a3%e7%90%86%e6%9c%89%ef%bc%9a%e8%bf%9c%e7%a8%8b%e4%bb%a3%e7%90%86%ef%bc%8c%e8%99%9a%e6%8b%9f%e4%bb%a3%e7%90%86%ef%bc%8c%e5%8a%a8%e6%80%81%e4%bb%a3%e7%90%86%e3%80%82%0a%e8%bf%9c%e7%a8%8b%e4%bb%a3%e7%90%86%20%e5%af%b9%e4%ba%8e%e8%bf%9c%e7%a8%8b%e4%bb%a3%e7%90%86%ef%bc%8c%e5%85%b6%e5%ae%9e%e5%b0%b1%e6%98%af%e6%9c%ac%e5%9c%b0%e8%b0%83%e7%94%a8%e8%bf%9c%e7%a8%8b%e7%9a%84%e6%96%b9%e6%b3%95%ef%bc%8c%e6%9c%ac%e5%9c%b0%e5%a0%86%ef%bc%88%e5%ae%a2%e6%88%b7%e7%ab%af%ef%bc%89%e6%9c%89%e4%b8%80%e4%b8%aaStub%e4%bb%a3%e7%90%86%e5%af%b9%e8%b1%a1%ef%bc%8c%e8%bf%99%e4%b8%aa%e5%af%b9%e8%b1%a1%e8%b4%9f%e8%b4%a3%e5%ae%8c%e6%88%90RMI%e6%93%8d%e4%bd%9c%ef%bc%8c%e4%b9%9f%e5%b0%b1%e6%98%af%e8%bf%9c%e7%a8%8b%e6%96%b9%e6%b3%95%e8%b0%83%e7%94%a8%ef%bc%8c%e8%80%8c%e8%bf%9c%e7%a8%8b%e5%a0%86%ef%bc%88%e6%9c%8d%e5%8a%a1%e7%ab%af%ef%bc%89%e6%9c%89%e4%b8%80%e4%b8%aaSkeleton%e4%bb%a3%e7%90%86%e5%af%b9%e8%b1%a1%ef%bc%8c%e5%ae%83%e6%8e%a5%e6%94%b6%e5%ae%a2%e6%88%b7%e7%ab%af%e7%9a%84RMI%e6%93%8d%e4%bd%9c%ef%bc%8c%e5%b9%b6%e4%bc%a0%e9%80%92%e7%bb%99%e7%9c%9f%e6%ad%a3%e7%9a%84%e6%9c%8d%e5%8a%a1%e5%af%b9%e8%b1%a1%e8%bf%9b%e8%a1%8c%e6%9c%8d%e5%8a%a1%ef%bc%8c%e4%b9%8b%e5%90%8e%e5%86%8d%e8%bf%94%e5%9b%9e%e7%bb%99%e5%ae%a2%e6%88%b7%e7%ab%af%e7%bb%93%e6%9e%9c%e3%80%82%0a%e4%bd%bf%e7%94%a8%e8%bf%87%e7%a8%8b%e4%b8%ad%e9%9c%80%e8%a6%81%e6%b3%a8%e6%84%8f%e8%b0%83%e7%94%a8%e7%9a%84%e5%af%b9%e8%b1%a1%e5%bf%85%e9%a1%bb%e6%98%af%e5%8f%af%e5%ba%8f%e5%88%97%e5%8c%96%e7%9a%84%ef%bc%8c%e6%97%a0%e9%9c%80%e5%ba%8f%e5%88%97%e5%8c%96%e7%9a%84%e5%af%b9%e8%b1%a1%e5%8f%af%e4%bb%a5%e6%b7%bb%e5%8a%a0transient%e5%85%b3%e9%94%ae%e5%ad%97%e3%80%82%e9%80%9a%e8%bf%87rmiregistry%20%26amp%3b%e5%bc%80%e5%90%afRMI%ef%bc%8c%e4%b9%8b%e5%90%8e%e8%bf%9b%e8%a1%8c%e6%9c%8d%e5%8a%a1%e6%b3%a8%e5%86%8c%e3%80%82%e6%9c%8d%e5%8a%a1%e7%ab%af%e9%80%9a%e8%bf%87Naming.rebind%28%29%e7%bb%91%e5%ae%9a%e6%9c%8d%e5%8a%a1%e5%9c%b0%e5%9d%80%ef%bc%8c%e5%ae%a2%e6%88%b7%e7%ab%af%e9%80%9a%e8%bf%87Naming.lookup%28%29%e8%b0%83%e7%94%a8%e8%bf%9c%e7%a8%8b%e6%96%b9%e6%b3%95%e3%80%82%e5%8f%a6%e5%a4%96%ef%bc%8c%e8%bf%9c%e7%a8%8b%e4%bc%a0%e8%be%93%e5%af%b9%e8%b1%a1%e9%9c%80%e8%a6%81%e7%bb%a7%e6%89%bf%e4%ba%8eUnicastRemoteObject%e3%80%82%0a%e5%9c%a8Java5%e4%b8%ad%ef%bc%8cRMI%e5%92%8c%e5%8a%a8%e6%80%81%e4%bb%a3%e7%90%86%e6%90%ad%e9%85%8d%e4%bd%bf%e7%94%a8%ef%bc%8c%e5%8a%a8%e6%80%81%e4%bb%a3%e7%90%86%e5%8a%a8%e6%80%81%e4%ba%a7%e7%94%9fStub%ef%bc%8c%e8%bf%9c%e7%a8%8b%e5%af%b9%e8%b1%a1%e7%9a%84Stub%e6%98%afProxy%e5%ae%9e%e4%be%8b%ef%bc%8c%e5%ae%83%e6%98%af%e8%87%aa%e5%8a%a8%e4%ba%a7%e7%94%9f%e7%9a%84%ef%bc%8c%e6%9d%a5%e5%a4%84%e7%90%86%e6%89%80%e6%9c%89%e6%8a%8a%e5%ae%a2%e6%88%b7%e7%9a%84%e6%9c%ac%e5%9c%b0%e8%b0%83%e7%94%a8%e5%8f%98%e6%88%90%e8%bf%9c%e7%a8%8b%e8%b0%83%e7%94%a8%e7%9a%84%e7%bb%86%e8%8a%82%e3%80%82%0a%e8%99%9a%e6%8b%9f%e4%bb%a3%e7%90%86%20%e5%af%b9%e4%ba%8e%e8%99%9a%e6%8b%9f%e4%bb%a3%e7%90%86%ef%bc%8c%e4%b9%9f%e5%b0%b1%e6%98%af%e8%af%b4%e8%bf%99%e4%b8%aa%e4%bb%a3%e7%90%86%e5%af%b9%e8%b1%a1%e6%98%af%e8%99%9a%e6%8b%9f%e7%9a%84%ef%bc%8c%e7%94%b1%e4%bb%a3%e7%90%86%e6%9d%a5%e6%89%ae%e6%bc%94%e5%af%b9%e8%b1%a1%e7%9a%84%e6%9b%bf%e8%ba%ab%e3%80%82%0a%e6%af%94%e5%a6%82%e5%af%b9%e4%ba%8e%e4%bb%8e%e7%bd%91%e7%bb%9c%e5%8a%a0%e8%bd%bd%e4%b8%80%e5%89%af%e5%9b%be%e5%83%8f%e5%b1%95%e7%8e%b0%e7%bb%99%e7%94%a8%e6%88%b7%ef%bc%8c%e6%88%91%e4%bb%ac%e5%8f%af%e8%83%bd%e9%9c%80%e8%a6%81%e7%ad%89%e5%be%85%e4%b8%80%e5%ae%9a%e6%97%b6%e9%97%b4%ef%bc%8c%e8%bf%99%e6%ae%b5%e6%97%b6%e9%97%b4%e5%86%85%e5%9b%be%e5%83%8f%e5%ba%94%e8%af%a5%e5%b1%95%e7%8e%b0%e4%b8%ba%e7%94%a8%e6%88%b7%e5%8f%8b%e5%a5%bd%e7%9a%84%e2%80%9c%e7%ad%89%e5%be%85%e4%b8%ad%e2%80%9d%e5%ad%97%e6%a0%b7%ef%bc%8c%e8%80%8c%e5%9c%a8%e7%bd%91%e7%bb%9c%e5%9b%be%e5%83%8f%e8%8e%b7%e5%8f%96%e6%88%90%e5%8a%9f%e5%90%8e%e8%bf%9b%e8%a1%8c%e7%bd%91%e7%bb%9c%e5%9b%be%e5%83%8f%e7%9a%84%e5%b1%95%e7%8e%b0%e3%80%82%0a%e8%bf%99%e4%b8%aa%e8%bf%87%e7%a8%8b%e5%8f%af%e4%bb%a5%e9%80%9a%e8%bf%87%e4%bb%a3%e7%90%86%e7%9a%84%e6%96%b9%e5%bc%8f%e6%96%b9%e4%be%bf%e5%9c%b0%e5%ae%8c%e6%88%90%ef%bc%9a%e8%99%9a%e6%8b%9f%e4%bb%a3%e7%90%86%e5%af%b9%e8%b1%a1%e6%89%ae%e6%bc%94%e5%9b%be%e5%83%8f%e7%9a%84%e6%9b%bf%e8%ba%ab%ef%bc%8c%e5%ae%83%e9%80%9a%e8%bf%87%e5%88%9b%e5%bb%ba%e4%b8%80%e4%b8%aa%e7%ba%bf%e7%a8%8b%e5%8a%a0%e8%bd%bd%e7%bd%91%e7%bb%9c%e5%9b%be%e5%83%8f%ef%bc%8c%e5%8a%a0%e8%bd%bd%e6%9c%9f%e9%97%b4%e5%b0%86%e5%9b%be%e5%83%8f%e5%8a%a8%e6%80%81%e5%9c%b0%e5%8f%98%e4%b8%ba%e7%94%a8%e6%88%b7%e5%8f%8b%e5%a5%bd%e5%ad%97%e6%a0%b7%ef%bc%8c%e5%ae%8c%e6%88%90%e5%8a%a0%e8%bd%bd%e5%90%8e%e6%94%b9%e4%b8%ba%e7%bd%91%e7%bb%9c%e5%9b%be%e5%83%8f%e3%80%82%0a%e5%8f%af%e4%bb%a5%e5%8f%91%e7%8e%b0%e6%88%91%e4%bb%ac%e4%b8%8d%e6%98%af%e7%9b%b4%e6%8e%a5%e4%bd%bf%e7%94%a8%e5%9b%be%e5%83%8f%e6%9c%ac%e8%ba%ab%ef%bc%8c%e8%80%8c%e4%bd%bf%e7%94%a8%e4%ba%86%e4%bb%a3%e7%90%86%e5%af%b9%e8%b1%a1%e4%bd%9c%e4%b8%ba%e5%9b%be%e5%83%8f%ef%bc%8c%e4%b9%9f%e5%b0%b1%e6%98%af%e8%af%b4%ef%bc%8c%e4%bb%a3%e7%90%86%e6%89%ae%e6%bc%94%e4%ba%86%e5%9b%be%e5%83%8f%e8%bf%99%e4%b8%aa%e8%a7%92%e8%89%b2%e3%80%82%0a%e4%b8%8b%e9%9d%a2%e6%98%af%e4%b8%80%e4%b8%aa%e5%9b%be%e5%83%8f%e4%bb%a3%e7%90%86%e5%af%b9%e8%b1%a1%ef%bc%9a%0a1class%20ImageProxy%20implements%20Icon%20%7b%202%09volatile%20ImageIcon%20imageIcon%3b%203%09final%20URL%20imageURL%3b%204%09Thread%20retrievalThread%3b%205%09boolean%20retrieving%20%3d%20false%3b%206%207%09public%20ImageProxy%28URL%20url%29%20%7b%20imageURL%20%3d%20url%3b%20%7d%208%209%09public%20int%20getIconWidth%28%29%20%7b%2010%20...%2011%09%7d%2012%2013%09public%20int%20getIconHeight%28%29%20%7b%2014%20...%2015%09%7d%2016%0917%09synchronized%20void%20setImageIcon%28ImageIcon%20imageIcon%29%20%7b%2018%09this." aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=akynazh.site%2fposts%2f2022%2f08%2fproxy-pattern%2f&t=%e4%bb%a3%e7%90%86%e6%a8%a1%e5%bc%8f" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fproxy-pattern%2f&t=%e4%bb%a3%e7%90%86%e6%a8%a1%e5%bc%8f" aria-label="Hacker News">
       <i class="fab fa-hacker-news " aria-hidden="true"></i>
     </a>
   </li>
@@ -422,11 +422,11 @@
     
     <div id="nav-footer" style="display: none">
       
-      <ul style="display:inline;"><li><a href="akynazh.site/">Home</a></li></ul>
+      <ul style="display:inline;"><li><a href="/">Home</a></li></ul>
       
-      <ul style="display:inline;"><li><a href="akynazh.site/posts">Archives</a></li></ul>
+      <ul style="display:inline;"><li><a href="/posts">Archives</a></li></ul>
       
-      <ul style="display:inline;"><li><a href="akynazh.site/about">About</a></li></ul>
+      <ul style="display:inline;"><li><a href="/about">About</a></li></ul>
       
     </div>
 
@@ -439,47 +439,47 @@
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=akynazh.site%2fposts%2f2022%2f08%2fproxy-pattern%2f" aria-label="Facebook">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fproxy-pattern%2f" aria-label="Facebook">
       <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=akynazh.site%2fposts%2f2022%2f08%2fproxy-pattern%2f&text=%e4%bb%a3%e7%90%86%e6%a8%a1%e5%bc%8f" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fproxy-pattern%2f&text=%e4%bb%a3%e7%90%86%e6%a8%a1%e5%bc%8f" aria-label="Twitter">
       <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=akynazh.site%2fposts%2f2022%2f08%2fproxy-pattern%2f&title=%e4%bb%a3%e7%90%86%e6%a8%a1%e5%bc%8f" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fproxy-pattern%2f&title=%e4%bb%a3%e7%90%86%e6%a8%a1%e5%bc%8f" aria-label="Linkedin">
       <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=akynazh.site%2fposts%2f2022%2f08%2fproxy-pattern%2f&is_video=false&description=%e4%bb%a3%e7%90%86%e6%a8%a1%e5%bc%8f" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fproxy-pattern%2f&is_video=false&description=%e4%bb%a3%e7%90%86%e6%a8%a1%e5%bc%8f" aria-label="Pinterest">
       <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=%e4%bb%a3%e7%90%86%e6%a8%a1%e5%bc%8f&body=Check out this article: akynazh.site%2fposts%2f2022%2f08%2fproxy-pattern%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=%e4%bb%a3%e7%90%86%e6%a8%a1%e5%bc%8f&body=Check out this article: https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fproxy-pattern%2f" aria-label="Email">
       <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=akynazh.site%2fposts%2f2022%2f08%2fproxy-pattern%2f&title=%e4%bb%a3%e7%90%86%e6%a8%a1%e5%bc%8f" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fproxy-pattern%2f&title=%e4%bb%a3%e7%90%86%e6%a8%a1%e5%bc%8f" aria-label="Pocket">
       <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=akynazh.site%2fposts%2f2022%2f08%2fproxy-pattern%2f&title=%e4%bb%a3%e7%90%86%e6%a8%a1%e5%bc%8f" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fproxy-pattern%2f&title=%e4%bb%a3%e7%90%86%e6%a8%a1%e5%bc%8f" aria-label="reddit">
       <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=akynazh.site%2fposts%2f2022%2f08%2fproxy-pattern%2f&name=%e4%bb%a3%e7%90%86%e6%a8%a1%e5%bc%8f&description=%e5%ae%9a%e4%b9%89%20%e4%bb%a3%e7%90%86%e6%a8%a1%e5%bc%8f%e4%b8%ba%e5%8f%a6%e4%b8%80%e4%b8%aa%e5%af%b9%e8%b1%a1%e6%8f%90%e4%be%9b%e4%b8%80%e4%b8%aa%e6%9b%bf%e8%ba%ab%e6%88%96%e5%8d%a0%e4%bd%8d%e7%ac%a6%e4%bb%a5%e6%8e%a7%e5%88%b6%e5%af%b9%e8%bf%99%e4%b8%aa%e5%af%b9%e8%b1%a1%e7%9a%84%e8%ae%bf%e9%97%ae%e3%80%82%0a%e6%88%91%e4%bb%ac%e5%af%b9%e4%b8%80%e4%b8%aa%e5%af%b9%e8%b1%a1%e7%9a%84%e4%bd%bf%e7%94%a8%e6%88%96%e8%80%85%e4%b8%80%e4%b8%aa%e5%af%b9%e8%b1%a1%e4%b8%ad%e6%96%b9%e6%b3%95%e7%9a%84%e8%b0%83%e7%94%a8%ef%bc%8c%e5%8f%af%e4%bb%a5%e9%80%9a%e8%bf%87%e8%bf%99%e4%b8%aa%e5%af%b9%e8%b1%a1%e7%9a%84%e4%bb%a3%e7%90%86%e4%ba%ba%e8%bf%9b%e8%a1%8c%e8%ae%bf%e9%97%ae%ef%bc%8c%e8%bf%99%e4%b8%aa%e4%bb%a3%e7%90%86%e4%ba%ba%e5%8f%af%e4%bb%a5%e6%96%b9%e4%be%bf%e5%9c%b0%e6%8e%a7%e5%88%b6%e8%bf%99%e4%b8%aa%e5%af%b9%e8%b1%a1%ef%bc%8c%e8%ae%a9%e5%af%b9%e8%b1%a1%e7%9a%84%e5%8a%9f%e8%83%bd%e6%9b%b4%e4%b8%ba%e5%bc%ba%e5%a4%a7%e6%88%96%e6%9b%b4%e6%98%93%e4%ba%8e%e4%bd%bf%e7%94%a8%e3%80%82%0a%e5%b8%b8%e8%a7%81%e7%9a%84%e4%bb%a3%e7%90%86%e6%9c%89%ef%bc%9a%e8%bf%9c%e7%a8%8b%e4%bb%a3%e7%90%86%ef%bc%8c%e8%99%9a%e6%8b%9f%e4%bb%a3%e7%90%86%ef%bc%8c%e5%8a%a8%e6%80%81%e4%bb%a3%e7%90%86%e3%80%82%0a%e8%bf%9c%e7%a8%8b%e4%bb%a3%e7%90%86%20%e5%af%b9%e4%ba%8e%e8%bf%9c%e7%a8%8b%e4%bb%a3%e7%90%86%ef%bc%8c%e5%85%b6%e5%ae%9e%e5%b0%b1%e6%98%af%e6%9c%ac%e5%9c%b0%e8%b0%83%e7%94%a8%e8%bf%9c%e7%a8%8b%e7%9a%84%e6%96%b9%e6%b3%95%ef%bc%8c%e6%9c%ac%e5%9c%b0%e5%a0%86%ef%bc%88%e5%ae%a2%e6%88%b7%e7%ab%af%ef%bc%89%e6%9c%89%e4%b8%80%e4%b8%aaStub%e4%bb%a3%e7%90%86%e5%af%b9%e8%b1%a1%ef%bc%8c%e8%bf%99%e4%b8%aa%e5%af%b9%e8%b1%a1%e8%b4%9f%e8%b4%a3%e5%ae%8c%e6%88%90RMI%e6%93%8d%e4%bd%9c%ef%bc%8c%e4%b9%9f%e5%b0%b1%e6%98%af%e8%bf%9c%e7%a8%8b%e6%96%b9%e6%b3%95%e8%b0%83%e7%94%a8%ef%bc%8c%e8%80%8c%e8%bf%9c%e7%a8%8b%e5%a0%86%ef%bc%88%e6%9c%8d%e5%8a%a1%e7%ab%af%ef%bc%89%e6%9c%89%e4%b8%80%e4%b8%aaSkeleton%e4%bb%a3%e7%90%86%e5%af%b9%e8%b1%a1%ef%bc%8c%e5%ae%83%e6%8e%a5%e6%94%b6%e5%ae%a2%e6%88%b7%e7%ab%af%e7%9a%84RMI%e6%93%8d%e4%bd%9c%ef%bc%8c%e5%b9%b6%e4%bc%a0%e9%80%92%e7%bb%99%e7%9c%9f%e6%ad%a3%e7%9a%84%e6%9c%8d%e5%8a%a1%e5%af%b9%e8%b1%a1%e8%bf%9b%e8%a1%8c%e6%9c%8d%e5%8a%a1%ef%bc%8c%e4%b9%8b%e5%90%8e%e5%86%8d%e8%bf%94%e5%9b%9e%e7%bb%99%e5%ae%a2%e6%88%b7%e7%ab%af%e7%bb%93%e6%9e%9c%e3%80%82%0a%e4%bd%bf%e7%94%a8%e8%bf%87%e7%a8%8b%e4%b8%ad%e9%9c%80%e8%a6%81%e6%b3%a8%e6%84%8f%e8%b0%83%e7%94%a8%e7%9a%84%e5%af%b9%e8%b1%a1%e5%bf%85%e9%a1%bb%e6%98%af%e5%8f%af%e5%ba%8f%e5%88%97%e5%8c%96%e7%9a%84%ef%bc%8c%e6%97%a0%e9%9c%80%e5%ba%8f%e5%88%97%e5%8c%96%e7%9a%84%e5%af%b9%e8%b1%a1%e5%8f%af%e4%bb%a5%e6%b7%bb%e5%8a%a0transient%e5%85%b3%e9%94%ae%e5%ad%97%e3%80%82%e9%80%9a%e8%bf%87rmiregistry%20%26amp%3b%e5%bc%80%e5%90%afRMI%ef%bc%8c%e4%b9%8b%e5%90%8e%e8%bf%9b%e8%a1%8c%e6%9c%8d%e5%8a%a1%e6%b3%a8%e5%86%8c%e3%80%82%e6%9c%8d%e5%8a%a1%e7%ab%af%e9%80%9a%e8%bf%87Naming.rebind%28%29%e7%bb%91%e5%ae%9a%e6%9c%8d%e5%8a%a1%e5%9c%b0%e5%9d%80%ef%bc%8c%e5%ae%a2%e6%88%b7%e7%ab%af%e9%80%9a%e8%bf%87Naming.lookup%28%29%e8%b0%83%e7%94%a8%e8%bf%9c%e7%a8%8b%e6%96%b9%e6%b3%95%e3%80%82%e5%8f%a6%e5%a4%96%ef%bc%8c%e8%bf%9c%e7%a8%8b%e4%bc%a0%e8%be%93%e5%af%b9%e8%b1%a1%e9%9c%80%e8%a6%81%e7%bb%a7%e6%89%bf%e4%ba%8eUnicastRemoteObject%e3%80%82%0a%e5%9c%a8Java5%e4%b8%ad%ef%bc%8cRMI%e5%92%8c%e5%8a%a8%e6%80%81%e4%bb%a3%e7%90%86%e6%90%ad%e9%85%8d%e4%bd%bf%e7%94%a8%ef%bc%8c%e5%8a%a8%e6%80%81%e4%bb%a3%e7%90%86%e5%8a%a8%e6%80%81%e4%ba%a7%e7%94%9fStub%ef%bc%8c%e8%bf%9c%e7%a8%8b%e5%af%b9%e8%b1%a1%e7%9a%84Stub%e6%98%afProxy%e5%ae%9e%e4%be%8b%ef%bc%8c%e5%ae%83%e6%98%af%e8%87%aa%e5%8a%a8%e4%ba%a7%e7%94%9f%e7%9a%84%ef%bc%8c%e6%9d%a5%e5%a4%84%e7%90%86%e6%89%80%e6%9c%89%e6%8a%8a%e5%ae%a2%e6%88%b7%e7%9a%84%e6%9c%ac%e5%9c%b0%e8%b0%83%e7%94%a8%e5%8f%98%e6%88%90%e8%bf%9c%e7%a8%8b%e8%b0%83%e7%94%a8%e7%9a%84%e7%bb%86%e8%8a%82%e3%80%82%0a%e8%99%9a%e6%8b%9f%e4%bb%a3%e7%90%86%20%e5%af%b9%e4%ba%8e%e8%99%9a%e6%8b%9f%e4%bb%a3%e7%90%86%ef%bc%8c%e4%b9%9f%e5%b0%b1%e6%98%af%e8%af%b4%e8%bf%99%e4%b8%aa%e4%bb%a3%e7%90%86%e5%af%b9%e8%b1%a1%e6%98%af%e8%99%9a%e6%8b%9f%e7%9a%84%ef%bc%8c%e7%94%b1%e4%bb%a3%e7%90%86%e6%9d%a5%e6%89%ae%e6%bc%94%e5%af%b9%e8%b1%a1%e7%9a%84%e6%9b%bf%e8%ba%ab%e3%80%82%0a%e6%af%94%e5%a6%82%e5%af%b9%e4%ba%8e%e4%bb%8e%e7%bd%91%e7%bb%9c%e5%8a%a0%e8%bd%bd%e4%b8%80%e5%89%af%e5%9b%be%e5%83%8f%e5%b1%95%e7%8e%b0%e7%bb%99%e7%94%a8%e6%88%b7%ef%bc%8c%e6%88%91%e4%bb%ac%e5%8f%af%e8%83%bd%e9%9c%80%e8%a6%81%e7%ad%89%e5%be%85%e4%b8%80%e5%ae%9a%e6%97%b6%e9%97%b4%ef%bc%8c%e8%bf%99%e6%ae%b5%e6%97%b6%e9%97%b4%e5%86%85%e5%9b%be%e5%83%8f%e5%ba%94%e8%af%a5%e5%b1%95%e7%8e%b0%e4%b8%ba%e7%94%a8%e6%88%b7%e5%8f%8b%e5%a5%bd%e7%9a%84%e2%80%9c%e7%ad%89%e5%be%85%e4%b8%ad%e2%80%9d%e5%ad%97%e6%a0%b7%ef%bc%8c%e8%80%8c%e5%9c%a8%e7%bd%91%e7%bb%9c%e5%9b%be%e5%83%8f%e8%8e%b7%e5%8f%96%e6%88%90%e5%8a%9f%e5%90%8e%e8%bf%9b%e8%a1%8c%e7%bd%91%e7%bb%9c%e5%9b%be%e5%83%8f%e7%9a%84%e5%b1%95%e7%8e%b0%e3%80%82%0a%e8%bf%99%e4%b8%aa%e8%bf%87%e7%a8%8b%e5%8f%af%e4%bb%a5%e9%80%9a%e8%bf%87%e4%bb%a3%e7%90%86%e7%9a%84%e6%96%b9%e5%bc%8f%e6%96%b9%e4%be%bf%e5%9c%b0%e5%ae%8c%e6%88%90%ef%bc%9a%e8%99%9a%e6%8b%9f%e4%bb%a3%e7%90%86%e5%af%b9%e8%b1%a1%e6%89%ae%e6%bc%94%e5%9b%be%e5%83%8f%e7%9a%84%e6%9b%bf%e8%ba%ab%ef%bc%8c%e5%ae%83%e9%80%9a%e8%bf%87%e5%88%9b%e5%bb%ba%e4%b8%80%e4%b8%aa%e7%ba%bf%e7%a8%8b%e5%8a%a0%e8%bd%bd%e7%bd%91%e7%bb%9c%e5%9b%be%e5%83%8f%ef%bc%8c%e5%8a%a0%e8%bd%bd%e6%9c%9f%e9%97%b4%e5%b0%86%e5%9b%be%e5%83%8f%e5%8a%a8%e6%80%81%e5%9c%b0%e5%8f%98%e4%b8%ba%e7%94%a8%e6%88%b7%e5%8f%8b%e5%a5%bd%e5%ad%97%e6%a0%b7%ef%bc%8c%e5%ae%8c%e6%88%90%e5%8a%a0%e8%bd%bd%e5%90%8e%e6%94%b9%e4%b8%ba%e7%bd%91%e7%bb%9c%e5%9b%be%e5%83%8f%e3%80%82%0a%e5%8f%af%e4%bb%a5%e5%8f%91%e7%8e%b0%e6%88%91%e4%bb%ac%e4%b8%8d%e6%98%af%e7%9b%b4%e6%8e%a5%e4%bd%bf%e7%94%a8%e5%9b%be%e5%83%8f%e6%9c%ac%e8%ba%ab%ef%bc%8c%e8%80%8c%e4%bd%bf%e7%94%a8%e4%ba%86%e4%bb%a3%e7%90%86%e5%af%b9%e8%b1%a1%e4%bd%9c%e4%b8%ba%e5%9b%be%e5%83%8f%ef%bc%8c%e4%b9%9f%e5%b0%b1%e6%98%af%e8%af%b4%ef%bc%8c%e4%bb%a3%e7%90%86%e6%89%ae%e6%bc%94%e4%ba%86%e5%9b%be%e5%83%8f%e8%bf%99%e4%b8%aa%e8%a7%92%e8%89%b2%e3%80%82%0a%e4%b8%8b%e9%9d%a2%e6%98%af%e4%b8%80%e4%b8%aa%e5%9b%be%e5%83%8f%e4%bb%a3%e7%90%86%e5%af%b9%e8%b1%a1%ef%bc%9a%0a1class%20ImageProxy%20implements%20Icon%20%7b%202%09volatile%20ImageIcon%20imageIcon%3b%203%09final%20URL%20imageURL%3b%204%09Thread%20retrievalThread%3b%205%09boolean%20retrieving%20%3d%20false%3b%206%207%09public%20ImageProxy%28URL%20url%29%20%7b%20imageURL%20%3d%20url%3b%20%7d%208%209%09public%20int%20getIconWidth%28%29%20%7b%2010%20...%2011%09%7d%2012%2013%09public%20int%20getIconHeight%28%29%20%7b%2014%20...%2015%09%7d%2016%0917%09synchronized%20void%20setImageIcon%28ImageIcon%20imageIcon%29%20%7b%2018%09this." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fproxy-pattern%2f&name=%e4%bb%a3%e7%90%86%e6%a8%a1%e5%bc%8f&description=%e5%ae%9a%e4%b9%89%20%e4%bb%a3%e7%90%86%e6%a8%a1%e5%bc%8f%e4%b8%ba%e5%8f%a6%e4%b8%80%e4%b8%aa%e5%af%b9%e8%b1%a1%e6%8f%90%e4%be%9b%e4%b8%80%e4%b8%aa%e6%9b%bf%e8%ba%ab%e6%88%96%e5%8d%a0%e4%bd%8d%e7%ac%a6%e4%bb%a5%e6%8e%a7%e5%88%b6%e5%af%b9%e8%bf%99%e4%b8%aa%e5%af%b9%e8%b1%a1%e7%9a%84%e8%ae%bf%e9%97%ae%e3%80%82%0a%e6%88%91%e4%bb%ac%e5%af%b9%e4%b8%80%e4%b8%aa%e5%af%b9%e8%b1%a1%e7%9a%84%e4%bd%bf%e7%94%a8%e6%88%96%e8%80%85%e4%b8%80%e4%b8%aa%e5%af%b9%e8%b1%a1%e4%b8%ad%e6%96%b9%e6%b3%95%e7%9a%84%e8%b0%83%e7%94%a8%ef%bc%8c%e5%8f%af%e4%bb%a5%e9%80%9a%e8%bf%87%e8%bf%99%e4%b8%aa%e5%af%b9%e8%b1%a1%e7%9a%84%e4%bb%a3%e7%90%86%e4%ba%ba%e8%bf%9b%e8%a1%8c%e8%ae%bf%e9%97%ae%ef%bc%8c%e8%bf%99%e4%b8%aa%e4%bb%a3%e7%90%86%e4%ba%ba%e5%8f%af%e4%bb%a5%e6%96%b9%e4%be%bf%e5%9c%b0%e6%8e%a7%e5%88%b6%e8%bf%99%e4%b8%aa%e5%af%b9%e8%b1%a1%ef%bc%8c%e8%ae%a9%e5%af%b9%e8%b1%a1%e7%9a%84%e5%8a%9f%e8%83%bd%e6%9b%b4%e4%b8%ba%e5%bc%ba%e5%a4%a7%e6%88%96%e6%9b%b4%e6%98%93%e4%ba%8e%e4%bd%bf%e7%94%a8%e3%80%82%0a%e5%b8%b8%e8%a7%81%e7%9a%84%e4%bb%a3%e7%90%86%e6%9c%89%ef%bc%9a%e8%bf%9c%e7%a8%8b%e4%bb%a3%e7%90%86%ef%bc%8c%e8%99%9a%e6%8b%9f%e4%bb%a3%e7%90%86%ef%bc%8c%e5%8a%a8%e6%80%81%e4%bb%a3%e7%90%86%e3%80%82%0a%e8%bf%9c%e7%a8%8b%e4%bb%a3%e7%90%86%20%e5%af%b9%e4%ba%8e%e8%bf%9c%e7%a8%8b%e4%bb%a3%e7%90%86%ef%bc%8c%e5%85%b6%e5%ae%9e%e5%b0%b1%e6%98%af%e6%9c%ac%e5%9c%b0%e8%b0%83%e7%94%a8%e8%bf%9c%e7%a8%8b%e7%9a%84%e6%96%b9%e6%b3%95%ef%bc%8c%e6%9c%ac%e5%9c%b0%e5%a0%86%ef%bc%88%e5%ae%a2%e6%88%b7%e7%ab%af%ef%bc%89%e6%9c%89%e4%b8%80%e4%b8%aaStub%e4%bb%a3%e7%90%86%e5%af%b9%e8%b1%a1%ef%bc%8c%e8%bf%99%e4%b8%aa%e5%af%b9%e8%b1%a1%e8%b4%9f%e8%b4%a3%e5%ae%8c%e6%88%90RMI%e6%93%8d%e4%bd%9c%ef%bc%8c%e4%b9%9f%e5%b0%b1%e6%98%af%e8%bf%9c%e7%a8%8b%e6%96%b9%e6%b3%95%e8%b0%83%e7%94%a8%ef%bc%8c%e8%80%8c%e8%bf%9c%e7%a8%8b%e5%a0%86%ef%bc%88%e6%9c%8d%e5%8a%a1%e7%ab%af%ef%bc%89%e6%9c%89%e4%b8%80%e4%b8%aaSkeleton%e4%bb%a3%e7%90%86%e5%af%b9%e8%b1%a1%ef%bc%8c%e5%ae%83%e6%8e%a5%e6%94%b6%e5%ae%a2%e6%88%b7%e7%ab%af%e7%9a%84RMI%e6%93%8d%e4%bd%9c%ef%bc%8c%e5%b9%b6%e4%bc%a0%e9%80%92%e7%bb%99%e7%9c%9f%e6%ad%a3%e7%9a%84%e6%9c%8d%e5%8a%a1%e5%af%b9%e8%b1%a1%e8%bf%9b%e8%a1%8c%e6%9c%8d%e5%8a%a1%ef%bc%8c%e4%b9%8b%e5%90%8e%e5%86%8d%e8%bf%94%e5%9b%9e%e7%bb%99%e5%ae%a2%e6%88%b7%e7%ab%af%e7%bb%93%e6%9e%9c%e3%80%82%0a%e4%bd%bf%e7%94%a8%e8%bf%87%e7%a8%8b%e4%b8%ad%e9%9c%80%e8%a6%81%e6%b3%a8%e6%84%8f%e8%b0%83%e7%94%a8%e7%9a%84%e5%af%b9%e8%b1%a1%e5%bf%85%e9%a1%bb%e6%98%af%e5%8f%af%e5%ba%8f%e5%88%97%e5%8c%96%e7%9a%84%ef%bc%8c%e6%97%a0%e9%9c%80%e5%ba%8f%e5%88%97%e5%8c%96%e7%9a%84%e5%af%b9%e8%b1%a1%e5%8f%af%e4%bb%a5%e6%b7%bb%e5%8a%a0transient%e5%85%b3%e9%94%ae%e5%ad%97%e3%80%82%e9%80%9a%e8%bf%87rmiregistry%20%26amp%3b%e5%bc%80%e5%90%afRMI%ef%bc%8c%e4%b9%8b%e5%90%8e%e8%bf%9b%e8%a1%8c%e6%9c%8d%e5%8a%a1%e6%b3%a8%e5%86%8c%e3%80%82%e6%9c%8d%e5%8a%a1%e7%ab%af%e9%80%9a%e8%bf%87Naming.rebind%28%29%e7%bb%91%e5%ae%9a%e6%9c%8d%e5%8a%a1%e5%9c%b0%e5%9d%80%ef%bc%8c%e5%ae%a2%e6%88%b7%e7%ab%af%e9%80%9a%e8%bf%87Naming.lookup%28%29%e8%b0%83%e7%94%a8%e8%bf%9c%e7%a8%8b%e6%96%b9%e6%b3%95%e3%80%82%e5%8f%a6%e5%a4%96%ef%bc%8c%e8%bf%9c%e7%a8%8b%e4%bc%a0%e8%be%93%e5%af%b9%e8%b1%a1%e9%9c%80%e8%a6%81%e7%bb%a7%e6%89%bf%e4%ba%8eUnicastRemoteObject%e3%80%82%0a%e5%9c%a8Java5%e4%b8%ad%ef%bc%8cRMI%e5%92%8c%e5%8a%a8%e6%80%81%e4%bb%a3%e7%90%86%e6%90%ad%e9%85%8d%e4%bd%bf%e7%94%a8%ef%bc%8c%e5%8a%a8%e6%80%81%e4%bb%a3%e7%90%86%e5%8a%a8%e6%80%81%e4%ba%a7%e7%94%9fStub%ef%bc%8c%e8%bf%9c%e7%a8%8b%e5%af%b9%e8%b1%a1%e7%9a%84Stub%e6%98%afProxy%e5%ae%9e%e4%be%8b%ef%bc%8c%e5%ae%83%e6%98%af%e8%87%aa%e5%8a%a8%e4%ba%a7%e7%94%9f%e7%9a%84%ef%bc%8c%e6%9d%a5%e5%a4%84%e7%90%86%e6%89%80%e6%9c%89%e6%8a%8a%e5%ae%a2%e6%88%b7%e7%9a%84%e6%9c%ac%e5%9c%b0%e8%b0%83%e7%94%a8%e5%8f%98%e6%88%90%e8%bf%9c%e7%a8%8b%e8%b0%83%e7%94%a8%e7%9a%84%e7%bb%86%e8%8a%82%e3%80%82%0a%e8%99%9a%e6%8b%9f%e4%bb%a3%e7%90%86%20%e5%af%b9%e4%ba%8e%e8%99%9a%e6%8b%9f%e4%bb%a3%e7%90%86%ef%bc%8c%e4%b9%9f%e5%b0%b1%e6%98%af%e8%af%b4%e8%bf%99%e4%b8%aa%e4%bb%a3%e7%90%86%e5%af%b9%e8%b1%a1%e6%98%af%e8%99%9a%e6%8b%9f%e7%9a%84%ef%bc%8c%e7%94%b1%e4%bb%a3%e7%90%86%e6%9d%a5%e6%89%ae%e6%bc%94%e5%af%b9%e8%b1%a1%e7%9a%84%e6%9b%bf%e8%ba%ab%e3%80%82%0a%e6%af%94%e5%a6%82%e5%af%b9%e4%ba%8e%e4%bb%8e%e7%bd%91%e7%bb%9c%e5%8a%a0%e8%bd%bd%e4%b8%80%e5%89%af%e5%9b%be%e5%83%8f%e5%b1%95%e7%8e%b0%e7%bb%99%e7%94%a8%e6%88%b7%ef%bc%8c%e6%88%91%e4%bb%ac%e5%8f%af%e8%83%bd%e9%9c%80%e8%a6%81%e7%ad%89%e5%be%85%e4%b8%80%e5%ae%9a%e6%97%b6%e9%97%b4%ef%bc%8c%e8%bf%99%e6%ae%b5%e6%97%b6%e9%97%b4%e5%86%85%e5%9b%be%e5%83%8f%e5%ba%94%e8%af%a5%e5%b1%95%e7%8e%b0%e4%b8%ba%e7%94%a8%e6%88%b7%e5%8f%8b%e5%a5%bd%e7%9a%84%e2%80%9c%e7%ad%89%e5%be%85%e4%b8%ad%e2%80%9d%e5%ad%97%e6%a0%b7%ef%bc%8c%e8%80%8c%e5%9c%a8%e7%bd%91%e7%bb%9c%e5%9b%be%e5%83%8f%e8%8e%b7%e5%8f%96%e6%88%90%e5%8a%9f%e5%90%8e%e8%bf%9b%e8%a1%8c%e7%bd%91%e7%bb%9c%e5%9b%be%e5%83%8f%e7%9a%84%e5%b1%95%e7%8e%b0%e3%80%82%0a%e8%bf%99%e4%b8%aa%e8%bf%87%e7%a8%8b%e5%8f%af%e4%bb%a5%e9%80%9a%e8%bf%87%e4%bb%a3%e7%90%86%e7%9a%84%e6%96%b9%e5%bc%8f%e6%96%b9%e4%be%bf%e5%9c%b0%e5%ae%8c%e6%88%90%ef%bc%9a%e8%99%9a%e6%8b%9f%e4%bb%a3%e7%90%86%e5%af%b9%e8%b1%a1%e6%89%ae%e6%bc%94%e5%9b%be%e5%83%8f%e7%9a%84%e6%9b%bf%e8%ba%ab%ef%bc%8c%e5%ae%83%e9%80%9a%e8%bf%87%e5%88%9b%e5%bb%ba%e4%b8%80%e4%b8%aa%e7%ba%bf%e7%a8%8b%e5%8a%a0%e8%bd%bd%e7%bd%91%e7%bb%9c%e5%9b%be%e5%83%8f%ef%bc%8c%e5%8a%a0%e8%bd%bd%e6%9c%9f%e9%97%b4%e5%b0%86%e5%9b%be%e5%83%8f%e5%8a%a8%e6%80%81%e5%9c%b0%e5%8f%98%e4%b8%ba%e7%94%a8%e6%88%b7%e5%8f%8b%e5%a5%bd%e5%ad%97%e6%a0%b7%ef%bc%8c%e5%ae%8c%e6%88%90%e5%8a%a0%e8%bd%bd%e5%90%8e%e6%94%b9%e4%b8%ba%e7%bd%91%e7%bb%9c%e5%9b%be%e5%83%8f%e3%80%82%0a%e5%8f%af%e4%bb%a5%e5%8f%91%e7%8e%b0%e6%88%91%e4%bb%ac%e4%b8%8d%e6%98%af%e7%9b%b4%e6%8e%a5%e4%bd%bf%e7%94%a8%e5%9b%be%e5%83%8f%e6%9c%ac%e8%ba%ab%ef%bc%8c%e8%80%8c%e4%bd%bf%e7%94%a8%e4%ba%86%e4%bb%a3%e7%90%86%e5%af%b9%e8%b1%a1%e4%bd%9c%e4%b8%ba%e5%9b%be%e5%83%8f%ef%bc%8c%e4%b9%9f%e5%b0%b1%e6%98%af%e8%af%b4%ef%bc%8c%e4%bb%a3%e7%90%86%e6%89%ae%e6%bc%94%e4%ba%86%e5%9b%be%e5%83%8f%e8%bf%99%e4%b8%aa%e8%a7%92%e8%89%b2%e3%80%82%0a%e4%b8%8b%e9%9d%a2%e6%98%af%e4%b8%80%e4%b8%aa%e5%9b%be%e5%83%8f%e4%bb%a3%e7%90%86%e5%af%b9%e8%b1%a1%ef%bc%9a%0a1class%20ImageProxy%20implements%20Icon%20%7b%202%09volatile%20ImageIcon%20imageIcon%3b%203%09final%20URL%20imageURL%3b%204%09Thread%20retrievalThread%3b%205%09boolean%20retrieving%20%3d%20false%3b%206%207%09public%20ImageProxy%28URL%20url%29%20%7b%20imageURL%20%3d%20url%3b%20%7d%208%209%09public%20int%20getIconWidth%28%29%20%7b%2010%20...%2011%09%7d%2012%2013%09public%20int%20getIconHeight%28%29%20%7b%2014%20...%2015%09%7d%2016%0917%09synchronized%20void%20setImageIcon%28ImageIcon%20imageIcon%29%20%7b%2018%09this." aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=akynazh.site%2fposts%2f2022%2f08%2fproxy-pattern%2f&t=%e4%bb%a3%e7%90%86%e6%a8%a1%e5%bc%8f" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fproxy-pattern%2f&t=%e4%bb%a3%e7%90%86%e6%a8%a1%e5%bc%8f" aria-label="Hacker News">
       <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
     </a>
   </li>
@@ -514,11 +514,11 @@
     <nav>
       <ul>
          
-        <li><a href="akynazh.site/">Home</a></li>
+        <li><a href="/">Home</a></li>
          
-        <li><a href="akynazh.site/posts">Archives</a></li>
+        <li><a href="/posts">Archives</a></li>
          
-        <li><a href="akynazh.site/about">About</a></li>
+        <li><a href="/about">About</a></li>
         
       </ul>
     </nav>

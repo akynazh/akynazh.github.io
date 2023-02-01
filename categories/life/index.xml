@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Life on Norwegian Wood</title>
-    <link>akynazh.site/categories/life/</link>
+    <link>https://akynazh.site/categories/life/</link>
     <description>Recent content in Life on Norwegian Wood</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Jzh</copyright>
-    <lastBuildDate>Fri, 06 Jan 2023 17:22:27 +0800</lastBuildDate><atom:link href="akynazh.site/categories/life/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 06 Jan 2023 17:22:27 +0800</lastBuildDate><atom:link href="https://akynazh.site/categories/life/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>基本乐理知识记录</title>
-      <link>akynazh.site/posts/2023/01/record-of-basic-music-theory-knowledge/</link>
+      <link>https://akynazh.site/posts/2023/01/record-of-basic-music-theory-knowledge/</link>
       <pubDate>Fri, 06 Jan 2023 17:22:27 +0800</pubDate>
       
-      <guid>akynazh.site/posts/2023/01/record-of-basic-music-theory-knowledge/</guid>
+      <guid>https://akynazh.site/posts/2023/01/record-of-basic-music-theory-knowledge/</guid>
       <description>八度 我们可以用唱名Do[1] Re[2] Mi[3] Fa[4] Sol[5] La[6] Ti[7] Do[8]唱出歌曲的旋律，“[]”中的数字就是 音级（Degree ）。
 我们以Do[1]到Do[1]为一度，Do[1]到Re[2]为二度，以此类推。于是从Do[1]到上面Do[8]之间音高上的距离(音程，Interval)就叫做 八度（Octave），因此说Do[8]比Do[1]高了一个八度。
 音名和唱名 音名：用C，D，E，F，G，A，B来标记基本音级的，叫做音名，它们表示一定的音高。
@@ -33,10 +33,10 @@ C C#/Db D D#/Eb E F F#/Gb G G#/Ab A A#/Bb B 261.6 277.2 293.7 311.1 329.6 349.2 
     
     <item>
       <title>从面包板的制作中得到的一些感悟</title>
-      <link>akynazh.site/posts/2022/12/some-insights-from-making-bread-boards/</link>
+      <link>https://akynazh.site/posts/2022/12/some-insights-from-making-bread-boards/</link>
       <pubDate>Thu, 15 Dec 2022 21:21:16 +0800</pubDate>
       
-      <guid>akynazh.site/posts/2022/12/some-insights-from-making-bread-boards/</guid>
+      <guid>https://akynazh.site/posts/2022/12/some-insights-from-making-bread-boards/</guid>
       <description>大三上半学期有个有趣的实验，要求学生设计电路并制作一个面包板。
 刚听到这个实验时，我倒是不怎么在意，感觉应该就是一个普通的硬件实验，应该挺快能完成水过去。
 到了实验室上手时才发现，确实还是太天真，很多事情并不是想象中那么容易的。
@@ -65,10 +65,10 @@ Over.</description>
     
     <item>
       <title>《只狼》游戏回忆和场景记录</title>
-      <link>akynazh.site/posts/2022/08/sekiro-memoir/</link>
+      <link>https://akynazh.site/posts/2022/08/sekiro-memoir/</link>
       <pubDate>Mon, 15 Aug 2022 16:11:17 +0800</pubDate>
       
-      <guid>akynazh.site/posts/2022/08/sekiro-memoir/</guid>
+      <guid>https://akynazh.site/posts/2022/08/sekiro-memoir/</guid>
       <description>记录下沉浸在只狼的世界中的那段时光里，让我印象深刻的一些地方。
 这是白雪覆盖之下的苇名城，颇具美感。
 第一个感觉难残的boss是赤鬼，但凡多贪一刀就很容易被抓住干掉，同时如果不知道红颜怪怕火这个特点，那么只能跟它一来一回磨血量了。后面双难模式下打赤鬼，虽然被抓到就是秒杀，但是如果使用火刀，反而轻而易举地可以拿下赤鬼。和赤鬼的战斗十分刺激，也十分绝望，当时花了不少时间，在一次又一次的死亡中，吸取教训，提高熟练度，最终战胜强敌。
@@ -95,10 +95,10 @@ Over.</description>
     
     <item>
       <title>山脉游览录（一）</title>
-      <link>akynazh.site/posts/2022/03/mountain-tour-1/</link>
+      <link>https://akynazh.site/posts/2022/03/mountain-tour-1/</link>
       <pubDate>Mon, 21 Mar 2022 18:02:04 +0800</pubDate>
       
-      <guid>akynazh.site/posts/2022/03/mountain-tour-1/</guid>
+      <guid>https://akynazh.site/posts/2022/03/mountain-tour-1/</guid>
       <description>山的记忆 每一座山都有独特的感觉，每一座山都有自己的故事。
 我和踏过的每一座山都有一段故事。
 我的山脉游览录，记录那些年那些山。
@@ -125,10 +125,10 @@ Over.</description>
     
     <item>
       <title>简洁之美</title>
-      <link>akynazh.site/posts/2022/02/the-beauty-of-simplicity/</link>
+      <link>https://akynazh.site/posts/2022/02/the-beauty-of-simplicity/</link>
       <pubDate>Sun, 06 Feb 2022 21:42:50 +0800</pubDate>
       
-      <guid>akynazh.site/posts/2022/02/the-beauty-of-simplicity/</guid>
+      <guid>https://akynazh.site/posts/2022/02/the-beauty-of-simplicity/</guid>
       <description>身处繁杂的社会生活 现代社会，是一个信息爆炸的时代，是一个充满无尽焦虑的时代，是一个繁杂的时代。
 在离不开网络的世界里，我们难以摆脱网络上各种信息的侵扰，参差不齐的信息爬满了我们的心房。
 在竞争相当激烈的当代社会，我们变得更加焦虑，思绪更加杂乱。
@@ -162,10 +162,10 @@ Over.</description>
     
     <item>
       <title>跑步记忆</title>
-      <link>akynazh.site/posts/2021/11/running-memory/</link>
+      <link>https://akynazh.site/posts/2021/11/running-memory/</link>
       <pubDate>Tue, 23 Nov 2021 18:20:39 +0800</pubDate>
       
-      <guid>akynazh.site/posts/2021/11/running-memory/</guid>
+      <guid>https://akynazh.site/posts/2021/11/running-memory/</guid>
       <description>跑步的记忆，旧日的时光，思念的味道，生活的无常。
 一. 跑步的挚友 念起中学生活，就会想起那位挚友。
 一同骑行，跑步的挚友。
@@ -217,10 +217,10 @@ Over.</description>
     
     <item>
       <title>二次元随想</title>
-      <link>akynazh.site/posts/2020/11/two-dimensional-capriccio/</link>
+      <link>https://akynazh.site/posts/2020/11/two-dimensional-capriccio/</link>
       <pubDate>Sat, 28 Nov 2020 18:24:12 +0800</pubDate>
       
-      <guid>akynazh.site/posts/2020/11/two-dimensional-capriccio/</guid>
+      <guid>https://akynazh.site/posts/2020/11/two-dimensional-capriccio/</guid>
       <description>之前看完冰菓之后，内心有一丝莫名的伤感。最近终于也把春物小说读完了，同样的感觉又涌上心头，这是一种难以言说的情愫。
 也许是对一段故事谢幕的不舍。欣赏一部优秀的作品，走进另一个世界，见证一段故事。在故事尾声，我总希望剧情能不断延长下去。可就像一段青春时光，一段故事总要落幕。结束了的就只能成为回忆&amp;hellip;&amp;hellip;虚拟世界里的东西，往往是现实中难以企及的。
 也许是对二次元世界的那种向往。 二次元世界有着独特的美感，每一个画面都扣人心弦，那种干净的，美好的画面，都是现实中难以遇见的。尤其是京阿尼的冰菓，每一帧画面都是精品。所以在经历了一段时间的美感洗礼之后又回到现实，我也许因此莫名的迷惘，失落吧。
