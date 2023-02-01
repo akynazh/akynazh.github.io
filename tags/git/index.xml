@@ -10,10 +10,10 @@
     <lastBuildDate>Tue, 06 Dec 2022 11:42:39 +0800</lastBuildDate><atom:link href="/tags/git/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Git 版本与提交管理</title>
-      <link>https://akynazh.site</link>
+      <link>https://akynazh.site/posts/2022/12/git-version-and-submission-management/</link>
       <pubDate>Tue, 06 Dec 2022 11:42:39 +0800</pubDate>
       
-      <guid>https://akynazh.site</guid>
+      <guid>https://akynazh.site/posts/2022/12/git-version-and-submission-management/</guid>
       <description>关于HEAD HEAD 代表当前分支的最新提交名称，它可以由一些修饰符进行修饰进而产生不同的含义。
 关于 HEAD~{n}
 ~ 是用来在当前提交路径上回溯的修饰符。
@@ -28,19 +28,19 @@ HEAD^ = HEAD^1 第一个父级提交 HEAD^2~1 第二个父级提交的上一次�
     
     <item>
       <title>Git 配置记录</title>
-      <link>https://akynazh.site</link>
+      <link>https://akynazh.site/posts/2022/10/git-configuration-record/</link>
       <pubDate>Thu, 13 Oct 2022 21:40:46 +0800</pubDate>
       
-      <guid>https://akynazh.site</guid>
+      <guid>https://akynazh.site/posts/2022/10/git-configuration-record/</guid>
       <description>Git 初始化 1git config --global user.name &amp;#34;akynazh&amp;#34; 2git config --global user.email &amp;#34;akynazh@qq.com&amp;#34; 3# git config pull.rebase false 配置 Http 代理 1git config --global http.https://github.com.proxy socks5://127.0.0.1:7890 配置 SSH 代理 1# ~/.ssh/config 2 3Host github.com 4 User git 5 Port 22 6 Hostname github.com 7 IdentityFile ~/.ssh/id_rsa 8 ProxyCommand connect -S 127.0.0.1:7890 -a none %h %p 9 10Host ssh.github.com 11 User git 12 Port 443 13 Hostname ssh.github.com 14 IdentityFile ~/.ssh/id_rsa 15 ProxyCommand connect -S 127.</description>
     </item>
     
     <item>
       <title>Git 快速初始化操作</title>
-      <link>https://akynazh.site</link>
+      <link>https://akynazh.site/posts/2021/12/git-quick-initialization-operation/</link>
       <pubDate>Fri, 10 Dec 2021 18:10:07 +0800</pubDate>
       
-      <guid>https://akynazh.site</guid>
+      <guid>https://akynazh.site/posts/2021/12/git-quick-initialization-operation/</guid>
       <description>git初次拉取远程仓库 首先从github建立一个仓库，获取仓库地址url，然后进入项目所在文件夹，运行以下代码：
 1&amp;gt; git init # 初始化仓库，生成.git文件 2 3&amp;gt; git add . # 将项目文件的修改信息添加到.git内的一个暂存区（index） 4 5&amp;gt; git commit -m “init” # 将暂存区的修改信息提交到分支 6 7&amp;gt; git remote add origin ${url} # 添加远程仓库 8 9&amp;gt; git push origin master # 将本地分支推送到远程仓库 这里执行完 git commit -m &amp;quot;init&amp;quot; 后，我们查看一下本地分支信息：
 1&amp;gt; git branch 2* master 可见git自动为我们本地创建了一个master分支。

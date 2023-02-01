@@ -10,10 +10,10 @@
     <lastBuildDate>Wed, 03 Aug 2022 23:34:36 +0800</lastBuildDate><atom:link href="/tags/windows/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Batch 基本编写方法记录</title>
-      <link>https://akynazh.site</link>
+      <link>https://akynazh.site/posts/2022/08/batch-basic-compilation-method-record/</link>
       <pubDate>Wed, 03 Aug 2022 23:34:36 +0800</pubDate>
       
-      <guid>https://akynazh.site</guid>
+      <guid>https://akynazh.site/posts/2022/08/batch-basic-compilation-method-record/</guid>
       <description>读取输入 1set /p ch=&amp;#34;y/n:&amp;#34; 2echo %ch% 变量运算 通过%{var}%访问变量，通过/a进行表达式计算设置值。
 1@echo off 2 3set money=100 4echo 初始金额： %money% 5 6set /a money=%money%*2 7set /a money=%money%+100 8echo 现在的金额：%money% 选择并跳转 :{point} 用于指定一个跳转点。
 1@echo off 2 3set /p ch=&amp;#34;y/n:&amp;#34; 4if &amp;#34;%ch%&amp;#34;==&amp;#34;&amp;#34; ( 5 goto end 6) else if &amp;#34;%ch%&amp;#34;==&amp;#34;n&amp;#34; ( 7 goto no 8) else if &amp;#34;%ch%&amp;#34;==&amp;#34;y&amp;#34; ( 9 goto yes 10) else ( 11 goto end 12) 13 14:no 15echo NO 16goto end 17 18:yes 19echo YES 20goto end 21 22:end 循环语句 通过%%x设置和访问循环值； 通过(start, steps, end)设置循环； /l 将通过比较start和end来执行迭代。 1@echo off 2 3for /l %%x in (1, 5, 100) do ( 4 echo hello, jzh-%%x 5) 变量动态变化 setlocal enabledelayedexpansion开启变量延迟，使得变量可以动态变化; 需通过!</description>
@@ -21,10 +21,10 @@
     
     <item>
       <title>Wsl 主要操作记录</title>
-      <link>https://akynazh.site</link>
+      <link>https://akynazh.site/posts/2022/07/wsl-main-operation-records/</link>
       <pubDate>Sat, 23 Jul 2022 17:34:52 +0800</pubDate>
       
-      <guid>https://akynazh.site</guid>
+      <guid>https://akynazh.site/posts/2022/07/wsl-main-operation-records/</guid>
       <description>wsl在window开机后自启ssh服务 wsl下创建脚本，执行：vim /etc/init.wsl，并根据需要写入服务：
 1/etc/init.d/${需要的服务} # 或者使用service/systemctl命令 再赋予init.wsl执行权限，执行：chmod +x /etc/init.wsl
 window下在启动目录下创建脚本：wsl.bat，写入开机命令如下：
@@ -38,10 +38,10 @@ wsl一些常用命令 wsl ~ -u jzh: 以jzh用户登录并进入用户文件夹 w
     
     <item>
       <title>Wsl 自定义安装位置</title>
-      <link>https://akynazh.site</link>
+      <link>https://akynazh.site/posts/2022/07/wsl-custom-installation-location/</link>
       <pubDate>Sat, 23 Jul 2022 17:27:31 +0800</pubDate>
       
-      <guid>https://akynazh.site</guid>
+      <guid>https://akynazh.site/posts/2022/07/wsl-custom-installation-location/</guid>
       <description>自定义wsl安装位置 下载wsl-ubuntu： 20.04版本：https://aka.ms/wslubuntu2004 18.04版本：https://aka.ms/wsl-ubuntu-1804 其他版本自行前往官网查找。
 修改后缀名 下载后得到AppxBundle文件，将后缀名改为zip，然后解压。
 解压后得到如下内容：
@@ -58,10 +58,10 @@ Over.</description>
     
     <item>
       <title>Window 添加命令别名的方法</title>
-      <link>https://akynazh.site</link>
+      <link>https://akynazh.site/posts/2022/06/how-to-add-command-alias-in-window/</link>
       <pubDate>Fri, 24 Jun 2022 22:52:59 +0800</pubDate>
       
-      <guid>https://akynazh.site</guid>
+      <guid>https://akynazh.site/posts/2022/06/how-to-add-command-alias-in-window/</guid>
       <description>前言 下面将介绍3种方法：
 CMD添加别名的方法 PowerShell添加别名的方法 通过添加环境变量的方式设置别名 CMD添加别名的方法 设置临时的别名 可以通过doskey命令实现。
 1doskey ls=echo ====== ^&amp;amp;^&amp;amp; dir /b $* ^&amp;amp;^&amp;amp; echo ====== $*表示还可能有其他命令参数，^&amp;amp;^&amp;amp;用于分开多条命令。
@@ -76,10 +76,10 @@ PowerShell添加别名的方法 为PowerShell设置临时的别名 1PS C:\Users\
     
     <item>
       <title>Window 实用命令记录之进程与网络控制</title>
-      <link>https://akynazh.site</link>
+      <link>https://akynazh.site/posts/2022/04/process-and-network-control-of-window-practical-command-recording/</link>
       <pubDate>Mon, 18 Apr 2022 23:10:39 +0800</pubDate>
       
-      <guid>https://akynazh.site</guid>
+      <guid>https://akynazh.site/posts/2022/04/process-and-network-control-of-window-practical-command-recording/</guid>
       <description>进程相关 tasklist tasklist用于查看运行的进程 findstr相当于linux的grep 1PS C:\Users\akyna&amp;gt; Tasklist | findstr Code 2Code.exe 19184 Console 1 94,012 K 3Code.exe 19300 Console 1 26,324 K 4...... taskkill 使用该工具按照进程 ID (PID) 或映像名称终止任务。
 参数列表:
 /PID processid 指定要终止的进程的 PID。 /IM imagename 指定要终止的进程的映像名称。 /T 终止指定的进程和由它启用的子进程。 /F 指定强制终止进程。 /? 显示帮助消息。 e.g.
@@ -89,10 +89,10 @@ PowerShell添加别名的方法 为PowerShell设置临时的别名 1PS C:\Users\
     
     <item>
       <title>Window 增加右键打开选项</title>
-      <link>https://akynazh.site</link>
+      <link>https://akynazh.site/posts/2021/11/add-right-click-open-option-in-window/</link>
       <pubDate>Sat, 20 Nov 2021 18:10:30 +0800</pubDate>
       
-      <guid>https://akynazh.site</guid>
+      <guid>https://akynazh.site/posts/2021/11/add-right-click-open-option-in-window/</guid>
       <description>加入注册表界面 win+R
 regedit
 增加右键操作文件选项 以vscode作为编辑文件实例 注册表页面下进入：
@@ -116,10 +116,10 @@ regedit
     
     <item>
       <title>Window 实用命令记录之文件操作</title>
-      <link>https://akynazh.site</link>
+      <link>https://akynazh.site/posts/2021/04/file-operation-recorded-by-window-utility-command/</link>
       <pubDate>Mon, 19 Apr 2021 13:48:19 +0800</pubDate>
       
-      <guid>https://akynazh.site</guid>
+      <guid>https://akynazh.site/posts/2021/04/file-operation-recorded-by-window-utility-command/</guid>
       <description>创建文件或文件夹 cmd下创建文件 1type nul &amp;gt; test.jpg powershell下创建文件 1new-item test.jpg 创建文件夹 1mkdir test 重命名文件 注意不能指定到新的路径。
 1PS D:\a\tmp\test&amp;gt; ren test.txt my.txt 移动文件 该命令也可用于重命名。
 1PS D:\a\tmp\test&amp;gt; move test.jpg mydir 复制文件和文件夹 copy无法递归复制，而xcopy可以。

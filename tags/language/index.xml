@@ -10,10 +10,10 @@
     <lastBuildDate>Wed, 19 May 2021 22:43:45 +0800</lastBuildDate><atom:link href="/tags/language/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Synchronized 到底锁了谁</title>
-      <link>https://akynazh.site</link>
+      <link>https://akynazh.site/posts/2021/05/who-the-hell-is-synchronized-locking/</link>
       <pubDate>Wed, 19 May 2021 22:43:45 +0800</pubDate>
       
-      <guid>https://akynazh.site</guid>
+      <guid>https://akynazh.site/posts/2021/05/who-the-hell-is-synchronized-locking/</guid>
       <description>Synchronized方法 静态方法上的锁
 静态方法是属于“类”，不属于某个实例，是所有对象实例所共享的方法。也就是说如果在静态方法上加入synchronized，那么它获取的就是这个类的锁，锁住的就是这个类。
 普通方法上的锁

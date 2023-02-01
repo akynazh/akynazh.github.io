@@ -10,10 +10,10 @@
     <lastBuildDate>Fri, 26 Aug 2022 16:04:19 +0800</lastBuildDate><atom:link href="/tags/design/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>策略模式</title>
-      <link>https://akynazh.site</link>
+      <link>https://akynazh.site/posts/2022/08/policy-mode/</link>
       <pubDate>Fri, 26 Aug 2022 16:04:19 +0800</pubDate>
       
-      <guid>https://akynazh.site</guid>
+      <guid>https://akynazh.site/posts/2022/08/policy-mode/</guid>
       <description>定义 策略模式定义了算法族，分别封装起来，让它们之间可以互相替换，此模式让算法的变化独立于使用算法的客户。
 比如对于鸭子而言，不同鸭子的叫声方式可能不一样也可能一样，我们可以定义一个叫声行为接口，然后通过创建不同的叫声行为实现这个接口，在实例化鸭子时设定叫声行为即可。
 这样相比于直接继承抽象鸭子后重写叫声行为方法，好处是减少了重复代码，而坏处是增加了类的数量。
@@ -26,10 +26,10 @@
     
     <item>
       <title>代理模式</title>
-      <link>https://akynazh.site</link>
+      <link>https://akynazh.site/posts/2022/08/proxy-pattern/</link>
       <pubDate>Fri, 26 Aug 2022 10:41:19 +0800</pubDate>
       
-      <guid>https://akynazh.site</guid>
+      <guid>https://akynazh.site/posts/2022/08/proxy-pattern/</guid>
       <description>定义 代理模式为另一个对象提供一个替身或占位符以控制对这个对象的访问。
 我们对一个对象的使用或者一个对象中方法的调用，可以通过这个对象的代理人进行访问，这个代理人可以方便地控制这个对象，让对象的功能更为强大或更易于使用。
 常见的代理有：远程代理，虚拟代理，动态代理。
@@ -46,10 +46,10 @@
     
     <item>
       <title>状态模式</title>
-      <link>https://akynazh.site</link>
+      <link>https://akynazh.site/posts/2022/08/status-mode/</link>
       <pubDate>Thu, 25 Aug 2022 22:54:26 +0800</pubDate>
       
-      <guid>https://akynazh.site</guid>
+      <guid>https://akynazh.site/posts/2022/08/status-mode/</guid>
       <description>定义 状态模式允许对象在内部状态改变时改变它的行为，对象看起来好像修改了它的类。
 比如某个机器有各种复杂的状态，每个状态都着共同的参数，而这些参数值有区别。用户通过某些操作会改变机器的状态，机器转变状态后，以当前状态的方法给用户反馈。
 代码展示 以机器的例子说明。
@@ -59,10 +59,10 @@
     
     <item>
       <title>组合模式</title>
-      <link>https://akynazh.site</link>
+      <link>https://akynazh.site/posts/2022/08/combination-mode/</link>
       <pubDate>Thu, 25 Aug 2022 21:58:13 +0800</pubDate>
       
-      <guid>https://akynazh.site</guid>
+      <guid>https://akynazh.site/posts/2022/08/combination-mode/</guid>
       <description>定义 组合模式允许你将对象组合成树形结构来表现“整体/部分”层次结构。组合能让客户以一致的方式处理个别对象以及对象组合。
 对于菜单内容而言，假如只有简单的菜品项，那么通过迭代器可以轻松地遍历，但是如果菜单内容中含有子菜单，那么就需要组合模式了。
 代码展示 下面就以菜单为例子展示组合模式。
@@ -72,10 +72,10 @@
     
     <item>
       <title>迭代器模式</title>
-      <link>https://akynazh.site</link>
+      <link>https://akynazh.site/posts/2022/08/iterators-mode/</link>
       <pubDate>Thu, 25 Aug 2022 11:26:17 +0800</pubDate>
       
-      <guid>https://akynazh.site</guid>
+      <guid>https://akynazh.site/posts/2022/08/iterators-mode/</guid>
       <description>定义 迭代器模式提供一种方法顺序访问一个聚合对象中的各个元素，而又不暴露其内部的表示。
 通过一个Iterator，可以方便地遍历各种类型，如HashMap，ArrayList等。
 代码展示 下面通过菜单的例子进行说明。
@@ -88,10 +88,10 @@
     
     <item>
       <title>模板方法模式</title>
-      <link>https://akynazh.site</link>
+      <link>https://akynazh.site/posts/2022/08/template-method-mode/</link>
       <pubDate>Wed, 24 Aug 2022 17:14:16 +0800</pubDate>
       
-      <guid>https://akynazh.site</guid>
+      <guid>https://akynazh.site/posts/2022/08/template-method-mode/</guid>
       <description>定义 模板方法模式在一个方法中定义一个算法的骨架，而将一些步骤延迟到子类中。模板方法使得子类可以在不改变算法结构的情况下，重新定义算法中的某些步骤。
 “好莱坞”原则 别调用我们，我们会调用你。
 其实就是防止“依赖腐败”，也就是要避免高层组件和低层组件相互依赖。一般由高层组件依赖低层组件。
@@ -103,10 +103,10 @@
     
     <item>
       <title>外观模式</title>
-      <link>https://akynazh.site</link>
+      <link>https://akynazh.site/posts/2022/08/appearance-mode/</link>
       <pubDate>Tue, 23 Aug 2022 16:20:06 +0800</pubDate>
       
-      <guid>https://akynazh.site</guid>
+      <guid>https://akynazh.site/posts/2022/08/appearance-mode/</guid>
       <description>外观模式 定义 外观模式提供了一个统一的接口，用来访问子系统中的一群接口，外观定义了一个高层接口，让子系统更容易使用。
 “最少知识”原则 减少对象之间的交互，只和“密友”谈话，也就是减少一个类所交互的类的数量。
 代码展示 执行一些复杂操作需要一步步执行许多小操作，那么可以将复杂操作封装为一个高层类中的方法，将所有复杂操作需要用到的类作为高层类的成员，在复杂操作的方法中可以方便的调用各个类执行各自的功能。
@@ -116,10 +116,10 @@
     
     <item>
       <title>适配器模式</title>
-      <link>https://akynazh.site</link>
+      <link>https://akynazh.site/posts/2022/08/adapter-mode/</link>
       <pubDate>Tue, 23 Aug 2022 16:00:04 +0800</pubDate>
       
-      <guid>https://akynazh.site</guid>
+      <guid>https://akynazh.site/posts/2022/08/adapter-mode/</guid>
       <description>适配器模式 定义 适配器模式将一个类的接口，转换成客户期望的另一个接口，适配器让原本接口不兼容的类可以合作无间。
 代码展示 鸭子和火鸡叫声不一样，通过编写适配器让火鸡适配鸭的方法。
 从接口开始 1public interface Duck { 2	public void quack(); 3	public void fly(); 4} 1public interface Turkey { 2	public void gobble(); 3	public void fly(); 4} 编写适配器 1public class TurkeyAdapter implements Duck { 2	Turkey turkey; 3 4	public TurkeyAdapter(Turkey turkey) { 5	this.turkey = turkey; 6	} 7 8	public void quack() { 9	turkey.gobble(); 10	} 11 12	public void fly() { 13	for(int i=0; i &amp;lt; 5; i++) { 14	turkey.</description>
@@ -127,10 +127,10 @@
     
     <item>
       <title>命令模式</title>
-      <link>https://akynazh.site</link>
+      <link>https://akynazh.site/posts/2022/08/command-mode/</link>
       <pubDate>Mon, 22 Aug 2022 11:41:33 +0800</pubDate>
       
-      <guid>https://akynazh.site</guid>
+      <guid>https://akynazh.site/posts/2022/08/command-mode/</guid>
       <description>定义 命令模式将“请求”封装成对象，以便使用不同的请求、队列或者日志来参数化其他对象。命令模式也支持可撤销的操作。
 比如对于遥控器而已，我们会将操作封装为一个按钮（命令）对象，通过按下按钮执行操作。
 代码展示 下面以遥控器作为例子：
@@ -141,10 +141,10 @@
     
     <item>
       <title>单件模式</title>
-      <link>https://akynazh.site</link>
+      <link>https://akynazh.site/posts/2022/08/singleton-pattern/</link>
       <pubDate>Mon, 22 Aug 2022 11:14:23 +0800</pubDate>
       
-      <guid>https://akynazh.site</guid>
+      <guid>https://akynazh.site/posts/2022/08/singleton-pattern/</guid>
       <description>我的思考 单件模式，容易知道需要某个对象是独一无二的，那么它首先应该是静态的，不能在程序动态运行期间被再次创建。
 当在多个线程中用到它时，在创建时需要考虑线程安全问题，可通过加锁等方式解决。
 代码实现 传统的单件 定义一个私有实例化的对象，把单件对象作为一个私有的静态成员变量，通过静态方法Singleton.getInstance()获取，若获取为null则创建对象。
@@ -154,10 +154,10 @@
     
     <item>
       <title>工厂模式</title>
-      <link>https://akynazh.site</link>
+      <link>https://akynazh.site/posts/2022/08/factory-mode/</link>
       <pubDate>Sun, 21 Aug 2022 23:31:45 +0800</pubDate>
       
-      <guid>https://akynazh.site</guid>
+      <guid>https://akynazh.site/posts/2022/08/factory-mode/</guid>
       <description>我的思考 工厂模式，包括工厂方法模式和抽象工厂模式。
 对于工厂方法模式，工厂是一个抽象类，提供了一些默认实现方法和一些抽象方法，具体工厂继承于它，实现对应抽象方法。
 假设有多家比萨店，他们提供不同口味的比萨，而都有相同的订购比萨的方法，那么可以定义一个抽象类，提供订购比萨的具体方法和创建比萨的抽象方法。
@@ -171,10 +171,10 @@
     
     <item>
       <title>装饰者模式</title>
-      <link>https://akynazh.site</link>
+      <link>https://akynazh.site/posts/2022/08/decorator-mode/</link>
       <pubDate>Sun, 21 Aug 2022 23:17:27 +0800</pubDate>
       
-      <guid>https://akynazh.site</guid>
+      <guid>https://akynazh.site/posts/2022/08/decorator-mode/</guid>
       <description>我的思考 装饰，如其名，就是对一个对象进行加工，包装，修饰。
 假设一杯“普通的咖啡，价格10”，我们可以选择添加自己喜欢的配料。
 首先我们添加牛奶，那么就变成了一杯“含牛奶配料的咖啡，价格2 +（价格12）”；
@@ -190,10 +190,10 @@
     
     <item>
       <title>观察者模式</title>
-      <link>https://akynazh.site</link>
+      <link>https://akynazh.site/posts/2022/08/observer-mode/</link>
       <pubDate>Sun, 21 Aug 2022 22:59:33 +0800</pubDate>
       
-      <guid>https://akynazh.site</guid>
+      <guid>https://akynazh.site/posts/2022/08/observer-mode/</guid>
       <description>我的思考 对于观察者模式，既然有观察者，那么就首先有被观察者。
 观察者可以通过订阅，监听等方式实现“观察”，被观察者需要通过通知，发消息之类的方式通知观察者接收信息。
 假设有一个气象观测站，天气数据对象作为被观察者，各个气象观测站作为观察者订阅天气数据，而天气数据记录各个订阅了自己的观测站，以便于通知。具体代码实现如下文。

@@ -10,10 +10,10 @@
     <lastBuildDate>Sun, 05 Dec 2021 12:37:32 +0800</lastBuildDate><atom:link href="/tags/cpp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>关于 char*, char[], string 的理解</title>
-      <link>https://akynazh.site</link>
+      <link>https://akynazh.site/posts/2021/12/understanding-of-char-char-string/</link>
       <pubDate>Sun, 05 Dec 2021 12:37:32 +0800</pubDate>
       
-      <guid>https://akynazh.site</guid>
+      <guid>https://akynazh.site/posts/2021/12/understanding-of-char-char-string/</guid>
       <description>关于char[]与char*的区别 1char s1[] = &amp;#34;abc&amp;#34;; 2cout &amp;lt;&amp;lt; s1 &amp;lt;&amp;lt; endl; // abc 3s1[1] = &amp;#39;d&amp;#39;; // 改变值 4cout &amp;lt;&amp;lt; s1 &amp;lt;&amp;lt; endl; // adc &amp;ldquo;abc&amp;quot;为字符串常量，s1为指针常量，即指针是一个常量，所以指向地址不能改变，指向地址的值可变
 1const char* s2 = &amp;#34;abc&amp;#34;; // const是默认存在的 2cout &amp;lt;&amp;lt; s2 &amp;lt;&amp;lt; endl; // abc 3s2 = &amp;#34;dfs&amp;#34;; // 改变地址 4cout &amp;lt;&amp;lt; s2 &amp;lt;&amp;lt; endl; // dfs &amp;ldquo;abc&amp;quot;为字符串常量，s2为常量指针，指向地址可变，但指向的地址的值不能变
 以上两者皆可用于函数传值
@@ -22,10 +22,10 @@
     
     <item>
       <title>Java 与 C&#43;&#43; 中的值传递和引用传递解析</title>
-      <link>https://akynazh.site</link>
+      <link>https://akynazh.site/posts/2021/05/value-passing-and-reference-passing-parsing-in-java-and-c/</link>
       <pubDate>Sat, 01 May 2021 20:16:39 +0800</pubDate>
       
-      <guid>https://akynazh.site</guid>
+      <guid>https://akynazh.site/posts/2021/05/value-passing-and-reference-passing-parsing-in-java-and-c/</guid>
       <description>先说结论：Java只有值传递，而C++既有值传递又有引用传递。
 Java的参数传递 先定义3个方法如下：
 1public static void change1(String str, int num) { 2 str = &amp;#34;world&amp;#34;; // 这里就相当与新new了一个对象! 3 num = 100; 4} 5public static void change2(User user) { 6 user.age = 1; 7 user.name = &amp;#34;mary&amp;#34;; 8} 9public static void change3(User user) { 10 user = new User(1, &amp;#34;mary&amp;#34;); 11} 进行测试：

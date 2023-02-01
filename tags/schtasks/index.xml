@@ -10,10 +10,10 @@
     <lastBuildDate>Tue, 31 Jan 2023 17:22:29 +0800</lastBuildDate><atom:link href="/tags/schtasks/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>关于定时任务的总结</title>
-      <link>https://akynazh.site</link>
+      <link>https://akynazh.site/posts/2023/01/summary-of-timed-tasks/</link>
       <pubDate>Tue, 31 Jan 2023 17:22:29 +0800</pubDate>
       
-      <guid>https://akynazh.site</guid>
+      <guid>https://akynazh.site/posts/2023/01/summary-of-timed-tasks/</guid>
       <description>Linux 下的定时任务 规则 1*/1 * * * * cmd 5个单元：
 分钟（0-59） 小时（0-23 日期（1-31） 月份（1-12） 星期几（0-6，其中 0 代表星期日）
 例子 每分钟执行一次：

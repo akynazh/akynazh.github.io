@@ -10,19 +10,19 @@
     <lastBuildDate>Thu, 13 Oct 2022 21:28:37 +0800</lastBuildDate><atom:link href="/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Docker 软件安装记录</title>
-      <link>https://akynazh.site</link>
+      <link>https://akynazh.site/posts/2022/10/docker-software-installation-record/</link>
       <pubDate>Thu, 13 Oct 2022 21:28:37 +0800</pubDate>
       
-      <guid>https://akynazh.site</guid>
+      <guid>https://akynazh.site/posts/2022/10/docker-software-installation-record/</guid>
       <description>Docker 1curl -fsSL https://get.docker.com | bash -s docker 2# curl -sSL https://get.daocloud.io/docker | sh Mirror 1vim /etc/docker/daemon.json 2 3{ 4 &amp;#34;registry-mirrors&amp;#34;: [ 5 &amp;#34;https://docker.mirrors.ustc.edu.cn&amp;#34;, 6 &amp;#34;http://hub-mirror.c.163.com&amp;#34;, 7 &amp;#34;https://registry.docker-cn.com&amp;#34; 8 ] 9} 10 11---------------------------------------------- 12 13systemctl restart docker Docker-compose 1curl -L &amp;#34;https://github.com/docker/compose/releases/download/v2.2.2/docker-compose-$(uname -s)-$(uname -m)&amp;#34; -o /usr/local/bin/docker-compose 2# curl -L https://get.daocloud.io/docker/compose/releases/download/v2.4.1/docker-compose-`uname -s`-`uname -m` &amp;gt; /usr/local/bin/docker-compose 3 4chmod +x /usr/local/bin/docker-compose 5ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose 6# ln -s /usr/local/bin/docker-compose /usr/bin/dockerc 运行权限问题 1sudo usermod -aG docker $USER 2sudo reboot MySQL 1docker pull mysql:5.</description>
     </item>
     
     <item>
       <title>Docker-compose 快速配置 nacos 集群环境</title>
-      <link>https://akynazh.site</link>
+      <link>https://akynazh.site/posts/2022/08/docker-compose-quickly-configures-nacos-cluster-environment/</link>
       <pubDate>Sun, 07 Aug 2022 16:02:27 +0800</pubDate>
       
-      <guid>https://akynazh.site</guid>
+      <guid>https://akynazh.site/posts/2022/08/docker-compose-quickly-configures-nacos-cluster-environment/</guid>
       <description>前言 总体架构说明 在一台CentOS主机上部署，版本为7.9，IP为192.168.1.127。
 通过docker创建三台nacos环境的机器，端口均运行在8848，分别映射到主机的8848，8858，8868端口上，名称（hostname）分别为nacos-server1，nacos-server2，nacos-server3。
 主机通过nginx监听8080端口，通过负载均衡将请求转发到三台nacos机器上。
@@ -35,10 +35,10 @@
     
     <item>
       <title>Docker 简单使用记录</title>
-      <link>https://akynazh.site</link>
+      <link>https://akynazh.site/posts/2021/05/docker-simple-use-process-record/</link>
       <pubDate>Wed, 19 May 2021 22:52:52 +0800</pubDate>
       
-      <guid>https://akynazh.site</guid>
+      <guid>https://akynazh.site/posts/2021/05/docker-simple-use-process-record/</guid>
       <description>下载并运行ubuntu镜像 1[root@VM-0-11-centos ~]# docker run ubuntu:15.10 /bin/echo &amp;#34;crazy thursday&amp;#34; 2crazy thursday 运行ubuntu并开启bash交互 1[root@VM-0-11-centos ~]# docker run -i -t ubuntu:15.10 /bin/bash 2root@fda3220ed59f:/# echo hello 3hello 4root@fda3220ed59f:/# cat /proc/version 5Linux version 3.10.0-1160.45.1.el7.x86_64 (mockbuild@kbuilder.bsys.centos.org) (gcc version 4.8.5 20150623 (Red Hat 4.8.5-44) (GCC) ) #1 SMP Wed Oct 13 17:20:51 UTC 2021 6root@fda3220ed59f:/# ls 7bin dev home lib64 mnt proc run srv tmp var 8boot etc lib media opt root sbin sys usr 9root@fda3220ed59f:/# exit 10exit 运行进程并观察 1[root@VM-0-11-centos ~]# docker run -d ubuntu:15.</description>
     </item>
     

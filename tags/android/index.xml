@@ -10,10 +10,10 @@
     <lastBuildDate>Mon, 03 Oct 2022 20:52:12 +0800</lastBuildDate><atom:link href="/tags/android/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>关于 hwbk 文件问题的解决和思考</title>
-      <link>https://akynazh.site</link>
+      <link>https://akynazh.site/posts/2022/10/solution-and-thinking-about-hwbk/</link>
       <pubDate>Mon, 03 Oct 2022 20:52:12 +0800</pubDate>
       
-      <guid>https://akynazh.site</guid>
+      <guid>https://akynazh.site/posts/2022/10/solution-and-thinking-about-hwbk/</guid>
       <description>hwbk文件问题 假如你知道hwbk是什么，那么你肯定为它的存在而烦恼过。
 在华为系的机子上，任何第三方工具想要删除相册的一张图片，系统都会做出保护，你使用的第三方工具并没有真的删除那张图片，系统拦截了删除操作并再对文件添加后缀名.hwbk。
 更新：现在只要不卸载系统图库，系统会拦截第三方软件的删除操作，并将删除的照片送进图库的回收站，并不会生成hwbk文件。如果卸载了系统自带图库，则可以参考本文。
