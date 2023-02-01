@@ -2,29 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Norwegian Wood</title>
-    <link>https://akynazh.site/</link>
+    <link>http://akynazh.site/</link>
     <description>Recent content on Norwegian Wood</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Jzh</copyright>
-    <lastBuildDate>Wed, 01 Feb 2023 13:50:44 +0800</lastBuildDate><atom:link href="https://akynazh.site/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>求解有向图和无向图中是否存在环的方法</title>
-      <link>https://akynazh.site/posts/2023/02/a-method-to-solve-whether-there-are-rings-in-directed-graphs-and-undirected-graphs/</link>
-      <pubDate>Wed, 01 Feb 2023 13:50:44 +0800</pubDate>
-      
-      <guid>https://akynazh.site/posts/2023/02/a-method-to-solve-whether-there-are-rings-in-directed-graphs-and-undirected-graphs/</guid>
-      <description>求解无向图中是否存在环 无向图中是否存在环，可以通过DFS来实现。
-由于他是无向图，所以每次开始一次新的递归即进入一个新的连通子图，在该次dfs中可以通过判断新纳入的结点是否与所在连通子图中其他已经访问过的结点存在边，如果存在则证明存在环。
-1int mat[maxn][maxn], vis[maxn]; 2int dfs(int v) { 3 vis[v] = 1; 4 for (int i = 0; i &amp;lt; num; i++) if (mat[v][i]) { 5 if (vis[i] || dfs(i)) return 1; // 该连通子图新纳入的结点与原连通子图中的某一结点有边，即产生了环 6 } 7 return 0; 8} 9 10memset(vis, 0, sizeof(vis)); 11int flag = 0; // 无环标志 12for (int j = 0; j &amp;lt; num; j++) { 13 if (!vis[j]) flag = dfs(j); 14 // 因为是无向图，所以每开始一次新的递归即进入一个新的连通子图，一定不会访问到其他连通子图的结点 15 if (flag) break; // 如果在该连通子图中找到环则直接结束递归 16} 求解有向图中是否存在环 这里我也尝试过使用如上DFS的解法，但似乎行不通。</description>
-    </item>
-    
+    <lastBuildDate>Tue, 31 Jan 2023 17:22:29 +0800</lastBuildDate><atom:link href="http://akynazh.site/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>关于定时任务的总结</title>
-      <link>https://akynazh.site/posts/2023/01/summary-of-timed-tasks/</link>
+      <link>http://akynazh.site/posts/2023/01/summary-of-timed-tasks/</link>
       <pubDate>Tue, 31 Jan 2023 17:22:29 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2023/01/summary-of-timed-tasks/</guid>
+      <guid>http://akynazh.site/posts/2023/01/summary-of-timed-tasks/</guid>
       <description>Linux 下的定时任务 规则 1*/1 * * * * cmd 5个单元：
 分钟（0-59） 小时（0-23 日期（1-31） 月份（1-12） 星期几（0-6，其中 0 代表星期日）
 例子 每分钟执行一次：
@@ -36,10 +25,10 @@
     
     <item>
       <title>Clash-Linux 配置使用记录</title>
-      <link>https://akynazh.site/posts/2023/01/clash-linux-configuration-usage-record/</link>
+      <link>http://akynazh.site/posts/2023/01/clash-linux-configuration-usage-record/</link>
       <pubDate>Fri, 13 Jan 2023 21:43:06 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2023/01/clash-linux-configuration-usage-record/</guid>
+      <guid>http://akynazh.site/posts/2023/01/clash-linux-configuration-usage-record/</guid>
       <description>安装 1wget https://github.com/Dreamacro/clash/releases/download/v1.11.8/clash-linux-amd64-v1.11.8.gz 2gzip -d clash-linux-amd64-v1.11.8.gz 3sudo mv clash-linux-amd64-v1.11.8 /usr/bin/clash 4chmod +x /usr/bin/clash 获取订阅链接并配置 在自己使用的机场中获取clash订阅链接，然后下载配置文件到 ~/.config/clash/config.yaml:
 1mkdir -p ~/.config/clash 2cd ~/.config/clash 3wget -O config.yaml {link} 4 5vim config.yaml 6 7# 不允许局域网中其它电脑使用该代理 8allow-lan: false 9# 设置 clash 管理界面密码 10secret: your password 11# 允许从外部访问 clash 管理界面，其中端口 9090 可自行配置 12external-controller: &amp;#39;0.0.0.0:9090&amp;#39; 运行代理并选择节点 1# 第一次需要下载Country.mmdb，可考虑先运行以下命令 2# clash -f ~/.config/clash/config.yaml 3 4nohup clash -f ~/.config/clash/config.yaml &amp;gt;/dev/null 2&amp;gt;&amp;amp;1 &amp;amp; 登录clash管理界面进行网速的测试和节点的切换：
 访问clash.razord.top，设置Host为主机IP，端口默认为9090，密钥为刚刚配置的密码。
@@ -50,10 +39,10 @@
     
     <item>
       <title>基本乐理知识记录</title>
-      <link>https://akynazh.site/posts/2023/01/record-of-basic-music-theory-knowledge/</link>
+      <link>http://akynazh.site/posts/2023/01/record-of-basic-music-theory-knowledge/</link>
       <pubDate>Fri, 06 Jan 2023 17:22:27 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2023/01/record-of-basic-music-theory-knowledge/</guid>
+      <guid>http://akynazh.site/posts/2023/01/record-of-basic-music-theory-knowledge/</guid>
       <description>八度 我们可以用唱名Do[1] Re[2] Mi[3] Fa[4] Sol[5] La[6] Ti[7] Do[8]唱出歌曲的旋律，“[]”中的数字就是 音级（Degree ）。
 我们以Do[1]到Do[1]为一度，Do[1]到Re[2]为二度，以此类推。于是从Do[1]到上面Do[8]之间音高上的距离(音程，Interval)就叫做 八度（Octave），因此说Do[8]比Do[1]高了一个八度。
 音名和唱名 音名：用C，D，E，F，G，A，B来标记基本音级的，叫做音名，它们表示一定的音高。
@@ -73,10 +62,10 @@ C C#/Db D D#/Eb E F F#/Gb G G#/Ab A A#/Bb B 261.6 277.2 293.7 311.1 329.6 349.2 
     
     <item>
       <title>pipenv 简单使用记录</title>
-      <link>https://akynazh.site/posts/2023/01/simple-use-record-of-pipenv/</link>
+      <link>http://akynazh.site/posts/2023/01/simple-use-record-of-pipenv/</link>
       <pubDate>Wed, 04 Jan 2023 22:55:27 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2023/01/simple-use-record-of-pipenv/</guid>
+      <guid>http://akynazh.site/posts/2023/01/simple-use-record-of-pipenv/</guid>
       <description>关于pipenv pipenv集成了pip，virtualenv两者的功能，且完善了两者的一些缺陷。
 安装pipenv 1pip install pipenv -U 创建虚拟环境 初次创建环境可以使用以下类似命令：
 1pipenv install --python C:/Users/akyna/AppData/Local/Programs/Python/Python37/python.exe --pypi-mirror https://pypi.tuna.tsinghua.edu.cn/simple --python 是可选的，可以指定python版本，参数为python解释器的绝对路径，如果不指定，默认使用当前系统的python。
@@ -94,10 +83,10 @@ C C#/Db D D#/Eb E F F#/Gb G G#/Ab A A#/Bb B 261.6 277.2 293.7 311.1 329.6 349.2 
     
     <item>
       <title>从面包板的制作中得到的一些感悟</title>
-      <link>https://akynazh.site/posts/2022/12/some-insights-from-making-bread-boards/</link>
+      <link>http://akynazh.site/posts/2022/12/some-insights-from-making-bread-boards/</link>
       <pubDate>Thu, 15 Dec 2022 21:21:16 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/12/some-insights-from-making-bread-boards/</guid>
+      <guid>http://akynazh.site/posts/2022/12/some-insights-from-making-bread-boards/</guid>
       <description>大三上半学期有个有趣的实验，要求学生设计电路并制作一个面包板。
 刚听到这个实验时，我倒是不怎么在意，感觉应该就是一个普通的硬件实验，应该挺快能完成水过去。
 到了实验室上手时才发现，确实还是太天真，很多事情并不是想象中那么容易的。
@@ -126,10 +115,10 @@ Over.</description>
     
     <item>
       <title>对于 Rest 风格的理解</title>
-      <link>https://akynazh.site/posts/2022/12/understanding-of-rest-style/</link>
+      <link>http://akynazh.site/posts/2022/12/understanding-of-rest-style/</link>
       <pubDate>Thu, 08 Dec 2022 16:35:54 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/12/understanding-of-rest-style/</guid>
+      <guid>http://akynazh.site/posts/2022/12/understanding-of-rest-style/</guid>
       <description>REST，全称 Representational State Transfer，即表现层状态转移。
 符合REST规范的写法：
 1POST http://www.test.com/lemon // 创建 2Get http://www.test.com/lemon // 查询 3PUT http://www.test.com/lemon // 修改 4DELETE http://www.test.com/lemon //删除 不符合REST规范的写法：
@@ -141,10 +130,10 @@ Over.</description>
     
     <item>
       <title>开发中遇到的命名规范问题</title>
-      <link>https://akynazh.site/posts/2022/12/naming-standard-problems-encountered-in-development/</link>
+      <link>http://akynazh.site/posts/2022/12/naming-standard-problems-encountered-in-development/</link>
       <pubDate>Thu, 08 Dec 2022 15:40:09 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/12/naming-standard-problems-encountered-in-development/</guid>
+      <guid>http://akynazh.site/posts/2022/12/naming-standard-problems-encountered-in-development/</guid>
       <description>后端中与数据库交互时 数据库一般采用下划线命名，而对于 java 而言，实体类的命名应当是驼峰式的命名，所以在与数据库交互时需要注意进行转换。
 对于采用了 Mybatis-plus 框架的应用，无需考虑此问题，因为它已经帮我们做好转换了，对应的配置如下：
 1mybatis-plus: 2 configuration: 3 map-underscore-to-camel-case: true 如果你数据库命名已经采用了驼峰式命名，需要将该配置置为 false。（默认为 true）
@@ -164,10 +153,10 @@ hTTps://aKYnazh.site 和 https://akynazh.</description>
     
     <item>
       <title>Git 版本与提交管理</title>
-      <link>https://akynazh.site/posts/2022/12/git-version-and-submission-management/</link>
+      <link>http://akynazh.site/posts/2022/12/git-version-and-submission-management/</link>
       <pubDate>Tue, 06 Dec 2022 11:42:39 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/12/git-version-and-submission-management/</guid>
+      <guid>http://akynazh.site/posts/2022/12/git-version-and-submission-management/</guid>
       <description>关于HEAD HEAD 代表当前分支的最新提交名称，它可以由一些修饰符进行修饰进而产生不同的含义。
 关于 HEAD~{n}
 ~ 是用来在当前提交路径上回溯的修饰符。
@@ -182,19 +171,19 @@ HEAD^ = HEAD^1 第一个父级提交 HEAD^2~1 第二个父级提交的上一次�
     
     <item>
       <title>Linux 软件安装和配置记录</title>
-      <link>https://akynazh.site/posts/2022/11/linux-software-installation-and-configuration-records/</link>
+      <link>http://akynazh.site/posts/2022/11/linux-software-installation-and-configuration-records/</link>
       <pubDate>Sun, 13 Nov 2022 21:15:53 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/11/linux-software-installation-and-configuration-records/</guid>
+      <guid>http://akynazh.site/posts/2022/11/linux-software-installation-and-configuration-records/</guid>
       <description>BASE 1apt update -y 2apt install curl wget vim net-tools git nginx -y 3# apt install openssh* 4 5-------------------------------------------- 6 7yum update -y 8yum install curl wget vim net-tools git nginx -y 9yum install openssh* yum镜像 1mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.bak 2wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo # centos7 3 4yum makecache 5yum -y update apt镜像 1cp /etc/apt/sources.list /etc/apt/sources.list.bak 2vim /etc/apt/sources.list 3 4lsb_release -c 查看版本代码 5 6如要用于其他版本，把 focal 换成其他版本代号即可: 22.04：jammy；20.04：focal；18.04：bionic；16.04：xenial；14.04：trusty。 7 8# 默认注释了源码仓库，如有需要可自行取消注释 9deb https://mirrors.</description>
     </item>
     
     <item>
       <title>Python 开发中遇到的 bug 记录</title>
-      <link>https://akynazh.site/posts/2022/11/record-of-bugs-encountered-in-python-development/</link>
+      <link>http://akynazh.site/posts/2022/11/record-of-bugs-encountered-in-python-development/</link>
       <pubDate>Fri, 04 Nov 2022 22:53:34 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/11/record-of-bugs-encountered-in-python-development/</guid>
+      <guid>http://akynazh.site/posts/2022/11/record-of-bugs-encountered-in-python-development/</guid>
       <description>持续更新中。
 pipenv 无法正常 install 1PS C:\Users\akyna\Codes\test\test_py&amp;gt; pipenv install 2Usage: pipenv install [OPTIONS] [PACKAGES]... 3 4ERROR:: --system is intended to be used for pre-existing Pipfile installation, not installation of specific packages. Aborting. 解决方法：
 因为pipenv检测到之前在该目录下创建过了环境，需要先删除之前的环境才可以：
@@ -205,10 +194,10 @@ pipenv 无法正常 install 1PS C:\Users\akyna\Codes\test\test_py&amp;gt; pipenv
     
     <item>
       <title>Shell 基本操作总结</title>
-      <link>https://akynazh.site/posts/2022/10/shell-basic-operation-summary/</link>
+      <link>http://akynazh.site/posts/2022/10/shell-basic-operation-summary/</link>
       <pubDate>Wed, 19 Oct 2022 22:44:10 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/10/shell-basic-operation-summary/</guid>
+      <guid>http://akynazh.site/posts/2022/10/shell-basic-operation-summary/</guid>
       <description>shell 参数 $# 参数个数 $@ 取出所有参数 $0 取出第一个参数 1if [ &amp;#34;$1&amp;#34; = &amp;#34;-u&amp;#34; ] 2then 3 echo update 4fi 5echo $0 ans:
 1[root =&amp;gt; ~]$ ./test.sh 2./test.sh 3[root =&amp;gt; ~]$ ./test.sh -u 4update 5./test.sh 算术运算 1[root@VM-0-11-centos ~]# a=1 2[root@VM-0-11-centos ~]# b=$((a*12)) 3[root@VM-0-11-centos ~]# echo $b 412 比较运算 指令：-eq -ne -lt -gt -ge -le
 注：字符串比较直接用“=”而不是上述指令。
@@ -217,10 +206,10 @@ pipenv 无法正常 install 1PS C:\Users\akyna\Codes\test\test_py&amp;gt; pipenv
     
     <item>
       <title>Linux 文件部分总结</title>
-      <link>https://akynazh.site/posts/2022/10/linux-files-section-summary/</link>
+      <link>http://akynazh.site/posts/2022/10/linux-files-section-summary/</link>
       <pubDate>Wed, 19 Oct 2022 22:43:03 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/10/linux-files-section-summary/</guid>
+      <guid>http://akynazh.site/posts/2022/10/linux-files-section-summary/</guid>
       <description>文件类型 d: directory -: file l: link p: pipeline，管道文件 b: block，块设备文件 c: character，字符设备文件 s: socket，套接字文件 配置文件 对于bashrc：
 /etc/bashrc：针对所有用户，每开启一个shell都会执行一次
 /etc/skel/.bashrc：针对所有用户，用于在新建一个用户时默认给用户配置的bashrc
@@ -243,28 +232,28 @@ win to unix 多了\r -&amp;gt; \r\n -&amp;gt; ^M。
     
     <item>
       <title>Git 配置记录</title>
-      <link>https://akynazh.site/posts/2022/10/git-configuration-record/</link>
+      <link>http://akynazh.site/posts/2022/10/git-configuration-record/</link>
       <pubDate>Thu, 13 Oct 2022 21:40:46 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/10/git-configuration-record/</guid>
+      <guid>http://akynazh.site/posts/2022/10/git-configuration-record/</guid>
       <description>Git 初始化 1git config --global user.name &amp;#34;akynazh&amp;#34; 2git config --global user.email &amp;#34;akynazh@qq.com&amp;#34; 3# git config pull.rebase false 配置 Http 代理 1git config --global http.https://github.com.proxy socks5://127.0.0.1:7890 配置 SSH 代理 1# ~/.ssh/config 2 3Host github.com 4 User git 5 Port 22 6 Hostname github.com 7 IdentityFile ~/.ssh/id_rsa 8 ProxyCommand connect -S 127.0.0.1:7890 -a none %h %p 9 10Host ssh.github.com 11 User git 12 Port 443 13 Hostname ssh.github.com 14 IdentityFile ~/.ssh/id_rsa 15 ProxyCommand connect -S 127.</description>
     </item>
     
     <item>
       <title>Docker 软件安装记录</title>
-      <link>https://akynazh.site/posts/2022/10/docker-software-installation-record/</link>
+      <link>http://akynazh.site/posts/2022/10/docker-software-installation-record/</link>
       <pubDate>Thu, 13 Oct 2022 21:28:37 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/10/docker-software-installation-record/</guid>
+      <guid>http://akynazh.site/posts/2022/10/docker-software-installation-record/</guid>
       <description>Docker 1curl -fsSL https://get.docker.com | bash -s docker 2# curl -sSL https://get.daocloud.io/docker | sh Mirror 1vim /etc/docker/daemon.json 2 3{ 4 &amp;#34;registry-mirrors&amp;#34;: [ 5 &amp;#34;https://docker.mirrors.ustc.edu.cn&amp;#34;, 6 &amp;#34;http://hub-mirror.c.163.com&amp;#34;, 7 &amp;#34;https://registry.docker-cn.com&amp;#34; 8 ] 9} 10 11---------------------------------------------- 12 13systemctl restart docker Docker-compose 1curl -L &amp;#34;https://github.com/docker/compose/releases/download/v2.2.2/docker-compose-$(uname -s)-$(uname -m)&amp;#34; -o /usr/local/bin/docker-compose 2# curl -L https://get.daocloud.io/docker/compose/releases/download/v2.4.1/docker-compose-`uname -s`-`uname -m` &amp;gt; /usr/local/bin/docker-compose 3 4chmod +x /usr/local/bin/docker-compose 5ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose 6# ln -s /usr/local/bin/docker-compose /usr/bin/dockerc 运行权限问题 1sudo usermod -aG docker $USER 2sudo reboot MySQL 1docker pull mysql:5.</description>
     </item>
     
     <item>
       <title>8086 汇编学习记录</title>
-      <link>https://akynazh.site/posts/2022/10/8086-assembly-learning-record/</link>
+      <link>http://akynazh.site/posts/2022/10/8086-assembly-learning-record/</link>
       <pubDate>Tue, 04 Oct 2022 23:18:24 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/10/8086-assembly-learning-record/</guid>
+      <guid>http://akynazh.site/posts/2022/10/8086-assembly-learning-record/</guid>
       <description>8086 PC 机内存地址空间分配 00000~9FFFF: 主存储器地址空间（RAM） A0000~BFFFF: 显存地址空间 C0000~FFFFF: 各类ROM地址空间 段寄存器 8086CPU不支持将数据直接送入段寄存器的操作，ds 是一个段寄存器，所以mov ds，1000H这条指令是非法的。
 要将1000H送入ds，只好用一个寄存器来进行中转，即先将1000H送入一个一般的寄存器，如bx，再将bx中的内容送入ds。
 为什么8086CPU不支持将数据直接送入段寄存器的操作?
@@ -288,10 +277,10 @@ win to unix 多了\r -&amp;gt; \r\n -&amp;gt; ^M。
     
     <item>
       <title>关于 hwbk 文件问题的解决和思考</title>
-      <link>https://akynazh.site/posts/2022/10/solution-and-thinking-about-hwbk/</link>
+      <link>http://akynazh.site/posts/2022/10/solution-and-thinking-about-hwbk/</link>
       <pubDate>Mon, 03 Oct 2022 20:52:12 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/10/solution-and-thinking-about-hwbk/</guid>
+      <guid>http://akynazh.site/posts/2022/10/solution-and-thinking-about-hwbk/</guid>
       <description>hwbk文件问题 假如你知道hwbk是什么，那么你肯定为它的存在而烦恼过。
 在华为系的机子上，任何第三方工具想要删除相册的一张图片，系统都会做出保护，你使用的第三方工具并没有真的删除那张图片，系统拦截了删除操作并再对文件添加后缀名.hwbk。
 更新：现在只要不卸载系统图库，系统会拦截第三方软件的删除操作，并将删除的照片送进图库的回收站，并不会生成hwbk文件。如果卸载了系统自带图库，则可以参考本文。
@@ -319,20 +308,20 @@ kill_hwbk.js
     
     <item>
       <title>Linux 实用操作之进程管理</title>
-      <link>https://akynazh.site/posts/2022/10/process-management-of-linux-practical-operation/</link>
+      <link>http://akynazh.site/posts/2022/10/process-management-of-linux-practical-operation/</link>
       <pubDate>Sun, 02 Oct 2022 22:55:53 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/10/process-management-of-linux-practical-operation/</guid>
+      <guid>http://akynazh.site/posts/2022/10/process-management-of-linux-practical-operation/</guid>
       <description>查看所有进程 ps -ef -e : all processes (-A) -f : full-format, including command lines 1[root@VM-0-11-centos ~]# ps -ef | head -n 1 2UID PID PPID C STIME TTY TIME CMD 解释如下：
 PPID 父进程ID C 占用CPU百分比 STIME 就是&amp;quot;start time&amp;quot; TTY 进程在哪个终端显示 CMD 命令的名称和参数 ps aux a: all with tty, including other users (和-a是不同的) u: user-oriented format x: processes without controlling ttys 1[root@VM-0-11-centos ~]# ps -aux | head -n 1 2USER PID %CPU %MEM VSZ RSS TTY STAT START TIME COMMAND 解释如下：</description>
     </item>
     
     <item>
       <title>《房思琪的初恋乐园》文摘</title>
-      <link>https://akynazh.site/posts/2022/09/fang-siqis-first-love-paradise-abstract/</link>
+      <link>http://akynazh.site/posts/2022/09/fang-siqis-first-love-paradise-abstract/</link>
       <pubDate>Tue, 06 Sep 2022 17:16:05 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/09/fang-siqis-first-love-paradise-abstract/</guid>
+      <guid>http://akynazh.site/posts/2022/09/fang-siqis-first-love-paradise-abstract/</guid>
       <description>作者：林奕含
 她们以前是思想上的双胞胎，精神的双胞胎，灵魂的双胞胎。以前伊纹姊姊说书，突然说好羡慕她们，她们马上异口同声说我们才羡慕姊姊和一维哥哥。伊纹姊姊说：恋爱啊，恋爱是不一样的，柏拉图说人求索他缺失的另一半，那就是说两个人合在一起才是完整，可是合起来就变成一个了，你们懂吗？像你们这样，无论缺少或多出什么都无所谓，因为有一个人与你镜像对称，「只有永远合不起来，才可以永远作伴」。
 思琪她们北上念书之后，伊纹的生活更苍白了。她开始陪一维出差。最喜欢陪一维飞日本，一维去工作，她就从他们在银座的公寓里走出来，闲晃大半天。日本真好，每个人脸上都写着待办事项四个字，每个人走路都急得像赶一场亲人的喜事，或是丧事。一个九十秒的路灯日本人只要十秒就可以走完，伊纹可以慢慢地走，走整整九十秒，想到自己的心事被投进人潮之中变得稀释，想到她总是可以走整整九十秒的斑马线，黑，白，黑，白地走。她浪费了多少时间啊。她还有那么多的人生等着被浪费！
@@ -346,10 +335,10 @@ Over.</description>
     
     <item>
       <title>《1Q84 Book1》文摘</title>
-      <link>https://akynazh.site/posts/2022/09/1q84book1-excerpt/</link>
+      <link>http://akynazh.site/posts/2022/09/1q84book1-excerpt/</link>
       <pubDate>Thu, 01 Sep 2022 14:15:44 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/09/1q84book1-excerpt/</guid>
+      <guid>http://akynazh.site/posts/2022/09/1q84book1-excerpt/</guid>
       <description>作者：村上春树
 第9章 青豆 风景变了，规则变了 1Q84年——我就这么来称呼这个新世界吧。青豆决定。
 Q是question mark的Q。背负着疑问的东两。
@@ -367,10 +356,10 @@ Over.</description>
     
     <item>
       <title>策略模式</title>
-      <link>https://akynazh.site/posts/2022/08/policy-mode/</link>
+      <link>http://akynazh.site/posts/2022/08/policy-mode/</link>
       <pubDate>Fri, 26 Aug 2022 16:04:19 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/08/policy-mode/</guid>
+      <guid>http://akynazh.site/posts/2022/08/policy-mode/</guid>
       <description>定义 策略模式定义了算法族，分别封装起来，让它们之间可以互相替换，此模式让算法的变化独立于使用算法的客户。
 比如对于鸭子而言，不同鸭子的叫声方式可能不一样也可能一样，我们可以定义一个叫声行为接口，然后通过创建不同的叫声行为实现这个接口，在实例化鸭子时设定叫声行为即可。
 这样相比于直接继承抽象鸭子后重写叫声行为方法，好处是减少了重复代码，而坏处是增加了类的数量。
@@ -383,10 +372,10 @@ Over.</description>
     
     <item>
       <title>代理模式</title>
-      <link>https://akynazh.site/posts/2022/08/proxy-pattern/</link>
+      <link>http://akynazh.site/posts/2022/08/proxy-pattern/</link>
       <pubDate>Fri, 26 Aug 2022 10:41:19 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/08/proxy-pattern/</guid>
+      <guid>http://akynazh.site/posts/2022/08/proxy-pattern/</guid>
       <description>定义 代理模式为另一个对象提供一个替身或占位符以控制对这个对象的访问。
 我们对一个对象的使用或者一个对象中方法的调用，可以通过这个对象的代理人进行访问，这个代理人可以方便地控制这个对象，让对象的功能更为强大或更易于使用。
 常见的代理有：远程代理，虚拟代理，动态代理。
@@ -403,10 +392,10 @@ Over.</description>
     
     <item>
       <title>状态模式</title>
-      <link>https://akynazh.site/posts/2022/08/status-mode/</link>
+      <link>http://akynazh.site/posts/2022/08/status-mode/</link>
       <pubDate>Thu, 25 Aug 2022 22:54:26 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/08/status-mode/</guid>
+      <guid>http://akynazh.site/posts/2022/08/status-mode/</guid>
       <description>定义 状态模式允许对象在内部状态改变时改变它的行为，对象看起来好像修改了它的类。
 比如某个机器有各种复杂的状态，每个状态都着共同的参数，而这些参数值有区别。用户通过某些操作会改变机器的状态，机器转变状态后，以当前状态的方法给用户反馈。
 代码展示 以机器的例子说明。
@@ -416,10 +405,10 @@ Over.</description>
     
     <item>
       <title>组合模式</title>
-      <link>https://akynazh.site/posts/2022/08/combination-mode/</link>
+      <link>http://akynazh.site/posts/2022/08/combination-mode/</link>
       <pubDate>Thu, 25 Aug 2022 21:58:13 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/08/combination-mode/</guid>
+      <guid>http://akynazh.site/posts/2022/08/combination-mode/</guid>
       <description>定义 组合模式允许你将对象组合成树形结构来表现“整体/部分”层次结构。组合能让客户以一致的方式处理个别对象以及对象组合。
 对于菜单内容而言，假如只有简单的菜品项，那么通过迭代器可以轻松地遍历，但是如果菜单内容中含有子菜单，那么就需要组合模式了。
 代码展示 下面就以菜单为例子展示组合模式。
@@ -429,10 +418,10 @@ Over.</description>
     
     <item>
       <title>迭代器模式</title>
-      <link>https://akynazh.site/posts/2022/08/iterators-mode/</link>
+      <link>http://akynazh.site/posts/2022/08/iterators-mode/</link>
       <pubDate>Thu, 25 Aug 2022 11:26:17 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/08/iterators-mode/</guid>
+      <guid>http://akynazh.site/posts/2022/08/iterators-mode/</guid>
       <description>定义 迭代器模式提供一种方法顺序访问一个聚合对象中的各个元素，而又不暴露其内部的表示。
 通过一个Iterator，可以方便地遍历各种类型，如HashMap，ArrayList等。
 代码展示 下面通过菜单的例子进行说明。
@@ -445,10 +434,10 @@ Over.</description>
     
     <item>
       <title>模板方法模式</title>
-      <link>https://akynazh.site/posts/2022/08/template-method-mode/</link>
+      <link>http://akynazh.site/posts/2022/08/template-method-mode/</link>
       <pubDate>Wed, 24 Aug 2022 17:14:16 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/08/template-method-mode/</guid>
+      <guid>http://akynazh.site/posts/2022/08/template-method-mode/</guid>
       <description>定义 模板方法模式在一个方法中定义一个算法的骨架，而将一些步骤延迟到子类中。模板方法使得子类可以在不改变算法结构的情况下，重新定义算法中的某些步骤。
 “好莱坞”原则 别调用我们，我们会调用你。
 其实就是防止“依赖腐败”，也就是要避免高层组件和低层组件相互依赖。一般由高层组件依赖低层组件。
@@ -460,10 +449,10 @@ Over.</description>
     
     <item>
       <title>外观模式</title>
-      <link>https://akynazh.site/posts/2022/08/appearance-mode/</link>
+      <link>http://akynazh.site/posts/2022/08/appearance-mode/</link>
       <pubDate>Tue, 23 Aug 2022 16:20:06 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/08/appearance-mode/</guid>
+      <guid>http://akynazh.site/posts/2022/08/appearance-mode/</guid>
       <description>外观模式 定义 外观模式提供了一个统一的接口，用来访问子系统中的一群接口，外观定义了一个高层接口，让子系统更容易使用。
 “最少知识”原则 减少对象之间的交互，只和“密友”谈话，也就是减少一个类所交互的类的数量。
 代码展示 执行一些复杂操作需要一步步执行许多小操作，那么可以将复杂操作封装为一个高层类中的方法，将所有复杂操作需要用到的类作为高层类的成员，在复杂操作的方法中可以方便的调用各个类执行各自的功能。
@@ -473,10 +462,10 @@ Over.</description>
     
     <item>
       <title>适配器模式</title>
-      <link>https://akynazh.site/posts/2022/08/adapter-mode/</link>
+      <link>http://akynazh.site/posts/2022/08/adapter-mode/</link>
       <pubDate>Tue, 23 Aug 2022 16:00:04 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/08/adapter-mode/</guid>
+      <guid>http://akynazh.site/posts/2022/08/adapter-mode/</guid>
       <description>适配器模式 定义 适配器模式将一个类的接口，转换成客户期望的另一个接口，适配器让原本接口不兼容的类可以合作无间。
 代码展示 鸭子和火鸡叫声不一样，通过编写适配器让火鸡适配鸭的方法。
 从接口开始 1public interface Duck { 2	public void quack(); 3	public void fly(); 4} 1public interface Turkey { 2	public void gobble(); 3	public void fly(); 4} 编写适配器 1public class TurkeyAdapter implements Duck { 2	Turkey turkey; 3 4	public TurkeyAdapter(Turkey turkey) { 5	this.turkey = turkey; 6	} 7 8	public void quack() { 9	turkey.gobble(); 10	} 11 12	public void fly() { 13	for(int i=0; i &amp;lt; 5; i++) { 14	turkey.</description>
@@ -484,10 +473,10 @@ Over.</description>
     
     <item>
       <title>《菊与刀》文摘</title>
-      <link>https://akynazh.site/posts/2022/08/chrysanthemum-and-knife-abstract/</link>
+      <link>http://akynazh.site/posts/2022/08/chrysanthemum-and-knife-abstract/</link>
       <pubDate>Tue, 23 Aug 2022 15:14:43 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/08/chrysanthemum-and-knife-abstract/</guid>
+      <guid>http://akynazh.site/posts/2022/08/chrysanthemum-and-knife-abstract/</guid>
       <description>作者：本尼迪克特
 第5章 背负着历史和社会恩情债的日本人 日本人对于卷入“恩情”的事都表现得十分谨慎。即使是一支烟，递烟的人要是过去与他没有什么交往，也会让他感到别扭。碰到这种情况，日本人表达谢意的最礼貌回答一般是：“真过意不去”（日语是“の毒”，它原本的意思是让人为难的感情）。
 曾经有一个日本人给我解释了为什么要这样说：“碰到这样的事，把自己感到为难的情况直接表达出来还会更好受一些，虽然拒绝总是让人难为情。如果轻易接受了这样的帮助，而你又根本没有想过为对方做事，那么你的‘受恩’就是让人感到羞耻的。”因此只能说，“真过意不去”（の毒）。
@@ -508,10 +497,10 @@ Over.</description>
     
     <item>
       <title>《不能承受的生命之轻》文摘</title>
-      <link>https://akynazh.site/posts/2022/08/abstract-of-unbearable-lightness-of-life/</link>
+      <link>http://akynazh.site/posts/2022/08/abstract-of-unbearable-lightness-of-life/</link>
       <pubDate>Tue, 23 Aug 2022 14:52:39 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/08/abstract-of-unbearable-lightness-of-life/</guid>
+      <guid>http://akynazh.site/posts/2022/08/abstract-of-unbearable-lightness-of-life/</guid>
       <description>作者：米兰·昆德拉
 第一部 轻与重 他付了账，走出饭店，想在街上逛逛，满怀的忧郁渐渐地令他心醉。他同特蕾莎已经生活了七个春秋，此刻他才发现，对这些岁月的回忆远比他们在一起生活时更加美好。
 他和特蕾莎之间的爱情无疑是美好的，但也很累人：总要瞒着什么，又是隐藏，又是假装，还得讲和，让她振作，给她安慰，翻来覆去地向她证明他爱她，还要忍受因为嫉妒、痛苦、做噩梦而产生的满腹怨艾，总之，他总感到自己有罪，得为自己开脱，请对方原谅。现在，再也不用受累了，剩下的只有美好。
@@ -546,10 +535,10 @@ Over.</description>
     
     <item>
       <title>命令模式</title>
-      <link>https://akynazh.site/posts/2022/08/command-mode/</link>
+      <link>http://akynazh.site/posts/2022/08/command-mode/</link>
       <pubDate>Mon, 22 Aug 2022 11:41:33 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/08/command-mode/</guid>
+      <guid>http://akynazh.site/posts/2022/08/command-mode/</guid>
       <description>定义 命令模式将“请求”封装成对象，以便使用不同的请求、队列或者日志来参数化其他对象。命令模式也支持可撤销的操作。
 比如对于遥控器而已，我们会将操作封装为一个按钮（命令）对象，通过按下按钮执行操作。
 代码展示 下面以遥控器作为例子：
@@ -560,10 +549,10 @@ Over.</description>
     
     <item>
       <title>单件模式</title>
-      <link>https://akynazh.site/posts/2022/08/singleton-pattern/</link>
+      <link>http://akynazh.site/posts/2022/08/singleton-pattern/</link>
       <pubDate>Mon, 22 Aug 2022 11:14:23 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/08/singleton-pattern/</guid>
+      <guid>http://akynazh.site/posts/2022/08/singleton-pattern/</guid>
       <description>我的思考 单件模式，容易知道需要某个对象是独一无二的，那么它首先应该是静态的，不能在程序动态运行期间被再次创建。
 当在多个线程中用到它时，在创建时需要考虑线程安全问题，可通过加锁等方式解决。
 代码实现 传统的单件 定义一个私有实例化的对象，把单件对象作为一个私有的静态成员变量，通过静态方法Singleton.getInstance()获取，若获取为null则创建对象。
@@ -573,10 +562,10 @@ Over.</description>
     
     <item>
       <title>工厂模式</title>
-      <link>https://akynazh.site/posts/2022/08/factory-mode/</link>
+      <link>http://akynazh.site/posts/2022/08/factory-mode/</link>
       <pubDate>Sun, 21 Aug 2022 23:31:45 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/08/factory-mode/</guid>
+      <guid>http://akynazh.site/posts/2022/08/factory-mode/</guid>
       <description>我的思考 工厂模式，包括工厂方法模式和抽象工厂模式。
 对于工厂方法模式，工厂是一个抽象类，提供了一些默认实现方法和一些抽象方法，具体工厂继承于它，实现对应抽象方法。
 假设有多家比萨店，他们提供不同口味的比萨，而都有相同的订购比萨的方法，那么可以定义一个抽象类，提供订购比萨的具体方法和创建比萨的抽象方法。
@@ -590,10 +579,10 @@ Over.</description>
     
     <item>
       <title>装饰者模式</title>
-      <link>https://akynazh.site/posts/2022/08/decorator-mode/</link>
+      <link>http://akynazh.site/posts/2022/08/decorator-mode/</link>
       <pubDate>Sun, 21 Aug 2022 23:17:27 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/08/decorator-mode/</guid>
+      <guid>http://akynazh.site/posts/2022/08/decorator-mode/</guid>
       <description>我的思考 装饰，如其名，就是对一个对象进行加工，包装，修饰。
 假设一杯“普通的咖啡，价格10”，我们可以选择添加自己喜欢的配料。
 首先我们添加牛奶，那么就变成了一杯“含牛奶配料的咖啡，价格2 +（价格12）”；
@@ -609,10 +598,10 @@ Over.</description>
     
     <item>
       <title>观察者模式</title>
-      <link>https://akynazh.site/posts/2022/08/observer-mode/</link>
+      <link>http://akynazh.site/posts/2022/08/observer-mode/</link>
       <pubDate>Sun, 21 Aug 2022 22:59:33 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/08/observer-mode/</guid>
+      <guid>http://akynazh.site/posts/2022/08/observer-mode/</guid>
       <description>我的思考 对于观察者模式，既然有观察者，那么就首先有被观察者。
 观察者可以通过订阅，监听等方式实现“观察”，被观察者需要通过通知，发消息之类的方式通知观察者接收信息。
 假设有一个气象观测站，天气数据对象作为被观察者，各个气象观测站作为观察者订阅天气数据，而天气数据记录各个订阅了自己的观测站，以便于通知。具体代码实现如下文。
@@ -624,10 +613,10 @@ Over.</description>
     
     <item>
       <title>《克莱因壶》文摘</title>
-      <link>https://akynazh.site/posts/2022/08/klein-pot-abstract/</link>
+      <link>http://akynazh.site/posts/2022/08/klein-pot-abstract/</link>
       <pubDate>Mon, 15 Aug 2022 20:11:50 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/08/klein-pot-abstract/</guid>
+      <guid>http://akynazh.site/posts/2022/08/klein-pot-abstract/</guid>
       <description>作者：冈岛二人
 梨纱凝视着我。她的鼻子近在咫尺。我俩的鼻尖蹭在了一起，梨纱缓缓闭上了眼睛。于是我贴近她的脸，让唇与唇轻轻触碰。她的吐息拂过我的脸颊。我加深了吻，她的气息中顿时掺杂了如啜泣般的声音。
 ——快回去。
@@ -650,10 +639,10 @@ Over.</description>
     
     <item>
       <title>《只狼》游戏回忆和场景记录</title>
-      <link>https://akynazh.site/posts/2022/08/sekiro-memoir/</link>
+      <link>http://akynazh.site/posts/2022/08/sekiro-memoir/</link>
       <pubDate>Mon, 15 Aug 2022 16:11:17 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/08/sekiro-memoir/</guid>
+      <guid>http://akynazh.site/posts/2022/08/sekiro-memoir/</guid>
       <description>记录下沉浸在只狼的世界中的那段时光里，让我印象深刻的一些地方。
 这是白雪覆盖之下的苇名城，颇具美感。
 第一个感觉难残的boss是赤鬼，但凡多贪一刀就很容易被抓住干掉，同时如果不知道红颜怪怕火这个特点，那么只能跟它一来一回磨血量了。后面双难模式下打赤鬼，虽然被抓到就是秒杀，但是如果使用火刀，反而轻而易举地可以拿下赤鬼。和赤鬼的战斗十分刺激，也十分绝望，当时花了不少时间，在一次又一次的死亡中，吸取教训，提高熟练度，最终战胜强敌。
@@ -680,10 +669,10 @@ Over.</description>
     
     <item>
       <title>使用 Seata 处理分布式事务</title>
-      <link>https://akynazh.site/posts/2022/08/using-seata-to-process-distributed-transactions/</link>
+      <link>http://akynazh.site/posts/2022/08/using-seata-to-process-distributed-transactions/</link>
       <pubDate>Tue, 09 Aug 2022 21:41:53 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/08/using-seata-to-process-distributed-transactions/</guid>
+      <guid>http://akynazh.site/posts/2022/08/using-seata-to-process-distributed-transactions/</guid>
       <description>关于分布式事务 ​分布式系统会把一个应用系统拆分为可独立部署的多个服务，因此需要服务与服务之间远程协作才能完成事务操作。
 这种分布式系统环境下由不同的服务之间通过网络远程协作完成事务称之为分布式事务。
 例如用户下一个订单，需要首先创建订单，然后删减库存，接着扣除用户的金钱，最后完成订单。这个过程中，每个操作都可以作为一个微服务，每个微服务操作对应的数据库，而各个数据库可能分布在不同机器上，那么分布式事务就产生了，我们要确保一个事务被正确地处理，必须解决好分布式事务的数据提交与回滚。
@@ -707,10 +696,10 @@ type修改为nacos
     
     <item>
       <title>Sentinel 使用记录</title>
-      <link>https://akynazh.site/posts/2022/08/sentinel-usage-record/</link>
+      <link>http://akynazh.site/posts/2022/08/sentinel-usage-record/</link>
       <pubDate>Mon, 08 Aug 2022 17:46:49 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/08/sentinel-usage-record/</guid>
+      <guid>http://akynazh.site/posts/2022/08/sentinel-usage-record/</guid>
       <description>Sentinel是什么 Sentinel 是面向分布式、多语言异构化服务架构的流量治理组件，主要以流量为切入点，从流量路由、流量控制、流量整形、熔断降级、系统自适应过载保护、热点流量防护等多个维度来帮助开发者保障微服务的稳定性。（来源于官方文档）
 个人使用感觉：类似于Hystrix，使用上感觉比Hystrix更容易，功能也更强大。
 架构说明 两个生产者服务运行在9001和9002端口，一个消费者服务运行在80端口，均注册到nacos，消费者调用两个生产者的服务。
@@ -727,10 +716,10 @@ service下的方法指定好关于生产者的服务限流，降级或熔断等�
     
     <item>
       <title>Docker-compose 快速配置 nacos 集群环境</title>
-      <link>https://akynazh.site/posts/2022/08/docker-compose-quickly-configures-nacos-cluster-environment/</link>
+      <link>http://akynazh.site/posts/2022/08/docker-compose-quickly-configures-nacos-cluster-environment/</link>
       <pubDate>Sun, 07 Aug 2022 16:02:27 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/08/docker-compose-quickly-configures-nacos-cluster-environment/</guid>
+      <guid>http://akynazh.site/posts/2022/08/docker-compose-quickly-configures-nacos-cluster-environment/</guid>
       <description>前言 总体架构说明 在一台CentOS主机上部署，版本为7.9，IP为192.168.1.127。
 通过docker创建三台nacos环境的机器，端口均运行在8848，分别映射到主机的8848，8858，8868端口上，名称（hostname）分别为nacos-server1，nacos-server2，nacos-server3。
 主机通过nginx监听8080端口，通过负载均衡将请求转发到三台nacos机器上。
@@ -743,10 +732,10 @@ service下的方法指定好关于生产者的服务限流，降级或熔断等�
     
     <item>
       <title>Batch 基本编写方法记录</title>
-      <link>https://akynazh.site/posts/2022/08/batch-basic-compilation-method-record/</link>
+      <link>http://akynazh.site/posts/2022/08/batch-basic-compilation-method-record/</link>
       <pubDate>Wed, 03 Aug 2022 23:34:36 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/08/batch-basic-compilation-method-record/</guid>
+      <guid>http://akynazh.site/posts/2022/08/batch-basic-compilation-method-record/</guid>
       <description>读取输入 1set /p ch=&amp;#34;y/n:&amp;#34; 2echo %ch% 变量运算 通过%{var}%访问变量，通过/a进行表达式计算设置值。
 1@echo off 2 3set money=100 4echo 初始金额： %money% 5 6set /a money=%money%*2 7set /a money=%money%+100 8echo 现在的金额：%money% 选择并跳转 :{point} 用于指定一个跳转点。
 1@echo off 2 3set /p ch=&amp;#34;y/n:&amp;#34; 4if &amp;#34;%ch%&amp;#34;==&amp;#34;&amp;#34; ( 5 goto end 6) else if &amp;#34;%ch%&amp;#34;==&amp;#34;n&amp;#34; ( 7 goto no 8) else if &amp;#34;%ch%&amp;#34;==&amp;#34;y&amp;#34; ( 9 goto yes 10) else ( 11 goto end 12) 13 14:no 15echo NO 16goto end 17 18:yes 19echo YES 20goto end 21 22:end 循环语句 通过%%x设置和访问循环值； 通过(start, steps, end)设置循环； /l 将通过比较start和end来执行迭代。 1@echo off 2 3for /l %%x in (1, 5, 100) do ( 4 echo hello, jzh-%%x 5) 变量动态变化 setlocal enabledelayedexpansion开启变量延迟，使得变量可以动态变化; 需通过!</description>
@@ -754,10 +743,10 @@ service下的方法指定好关于生产者的服务限流，降级或熔断等�
     
     <item>
       <title>Zipkin 使用记录</title>
-      <link>https://akynazh.site/posts/2022/07/zipkin-usage-record/</link>
+      <link>http://akynazh.site/posts/2022/07/zipkin-usage-record/</link>
       <pubDate>Fri, 29 Jul 2022 18:26:44 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/07/zipkin-usage-record/</guid>
+      <guid>http://akynazh.site/posts/2022/07/zipkin-usage-record/</guid>
       <description>Zipkin的作用 查看微服务调用过程； 分析微服务依赖关系； 方便地找到调用过程错误发生位置。 Zipkin使用记录 一、下载Zipkin并运行：
 1java -jar zipkin.jar 这样成功运行后，默认在端口9411可以查看图形管理界面。
 二、依赖引入
@@ -770,10 +759,10 @@ Over.</description>
     
     <item>
       <title>SpringCloud-Stream 使用记录</title>
-      <link>https://akynazh.site/posts/2022/07/springcloud-stream-usage-record/</link>
+      <link>http://akynazh.site/posts/2022/07/springcloud-stream-usage-record/</link>
       <pubDate>Fri, 29 Jul 2022 17:26:05 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/07/springcloud-stream-usage-record/</guid>
+      <guid>http://akynazh.site/posts/2022/07/springcloud-stream-usage-record/</guid>
       <description>为何使用Stream？ 实现消息的收发可以用许多种方式来实现，如Kafka，RabbitMQ等，而通过Stream可以方便地通过一个Binder对象与这些不同的实现工具对接，应用程序通过Inputs和Outputs来与Binder交互即可实现消息的收发，这样我们就只需要知道如何与Stream交互即可方便地使用消息驱动。
 下图即Stream工作原理：
 Stream使用记录 一、依赖导入 除去一些基本依赖之外，发布端和订阅端均导入：
@@ -784,10 +773,10 @@ Stream使用记录 一、依赖导入 除去一些基本依赖之外，发布端
     
     <item>
       <title>Config 结合 Bus 使用记录</title>
-      <link>https://akynazh.site/posts/2022/07/config-combined-with-bus-usage-record/</link>
+      <link>http://akynazh.site/posts/2022/07/config-combined-with-bus-usage-record/</link>
       <pubDate>Wed, 27 Jul 2022 22:00:55 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/07/config-combined-with-bus-usage-record/</guid>
+      <guid>http://akynazh.site/posts/2022/07/config-combined-with-bus-usage-record/</guid>
       <description>为何要使用Config和Bus Config可以进行多个微服务下的全局配置，更加方便，易于管理。
 当全局配置修改时，需要通知各个微服务，一个一个地通知是非常耗时的，如果可以通过广播的方式快速将消息传递出去就轻松多了，而通过Bus即可实现这一点。
 测试方法 一、在6996端口通过git拉取全局配置，相当于一个ConfigServer，6886和6776端口作为ConfigClient；
@@ -802,10 +791,10 @@ Stream使用记录 一、依赖导入 除去一些基本依赖之外，发布端
     
     <item>
       <title>SpringCloud-Gateway 使用记录</title>
-      <link>https://akynazh.site/posts/2022/07/springcloud-gateway-usage-record/</link>
+      <link>http://akynazh.site/posts/2022/07/springcloud-gateway-usage-record/</link>
       <pubDate>Tue, 26 Jul 2022 18:33:44 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/07/springcloud-gateway-usage-record/</guid>
+      <guid>http://akynazh.site/posts/2022/07/springcloud-gateway-usage-record/</guid>
       <description>网关的作用 如图所示，网关介于外部请求和具体微服务之间，在不暴露内部微服务端口的情况下，通过一个或者多个指定的网关端口统一地处理外部各种请求。
 使用SpringCloud Gateway 依赖引入 除了基本依赖以外，引入下列依赖：
 1&amp;lt;!-- others --&amp;gt; 2&amp;lt;dependency&amp;gt; 3 &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; 4 &amp;lt;artifactId&amp;gt;spring-cloud-starter-netflix-eureka-client&amp;lt;/artifactId&amp;gt; 5&amp;lt;/dependency&amp;gt; 6&amp;lt;dependency&amp;gt; 7 &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; 8 &amp;lt;artifactId&amp;gt;spring-cloud-starter-gateway&amp;lt;/artifactId&amp;gt; 9&amp;lt;/dependency&amp;gt; 注意不能引入web相关依赖，因为Gateway是基于WebFlux的。
@@ -816,10 +805,10 @@ Stream使用记录 一、依赖导入 除去一些基本依赖之外，发布端
     
     <item>
       <title>Hystrix 实现服务熔断与监控</title>
-      <link>https://akynazh.site/posts/2022/07/hytrix-realizes-service-fusing-and-monitoring/</link>
+      <link>http://akynazh.site/posts/2022/07/hytrix-realizes-service-fusing-and-monitoring/</link>
       <pubDate>Tue, 26 Jul 2022 11:39:11 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/07/hytrix-realizes-service-fusing-and-monitoring/</guid>
+      <guid>http://akynazh.site/posts/2022/07/hytrix-realizes-service-fusing-and-monitoring/</guid>
       <description>什么是服务熔断 概念 应对微服务雪崩效应的一种链路保护机制，类似保险丝。
 关于雪崩效应 微服务之间的数据交互是通过远程调用来完成的。服务A调用服务，服务B调用服务C，某一时间链路上对服务C的调用响应时间过长或者服务C不可用，随着时间的增长，对服务C的调用也越来越多，然后服务C崩溃了，但是链路调用还在，对服务B的调用也在持续增多，然后服务B崩溃，随之A也崩溃，导致雪崩效应。
 实现机制 当某服务出现不可用或响应超时的情况时，为了防止整个系统出现雪崩，暂时停止对该服务的调用。
@@ -836,10 +825,10 @@ Hystrix实现服务熔断 环境搭建 1. 关于pom.xml 1&amp;lt;dependency&amp;
     
     <item>
       <title>Hystrix 实现服务降级</title>
-      <link>https://akynazh.site/posts/2022/07/hytrix-enables-service-degradation/</link>
+      <link>http://akynazh.site/posts/2022/07/hytrix-enables-service-degradation/</link>
       <pubDate>Tue, 26 Jul 2022 10:59:08 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/07/hytrix-enables-service-degradation/</guid>
+      <guid>http://akynazh.site/posts/2022/07/hytrix-enables-service-degradation/</guid>
       <description>什么是服务降级 概念 一般指在服务器压力剧增的时候，根据实际业务使用情况以及流量，对一些服务和页面有策略的不处理或者用一种简单的方式进行处理，从而释放服务器资源的资源以保证核心业务的正常高效运行。
 应用场景 多用于微服务架构中，一般当整个微服务架构整体的负载超出了预设的上限阈值（和服务器的配置性能有关系），或者即将到来的流量预计会超过预设的阈值时。
 大致实现过程 为了预防某些功能出现负荷过载或者响应慢的情况，在其内部暂时舍弃对一些非核心的接口和数据的请求，而直接返回一个提前准备好的fallback（退路）错误处理信息。这样，虽然提供的是一个有损的服务，但却保证了整个系统的稳定性和可用性。
@@ -856,19 +845,19 @@ Hystrix实现服务熔断 环境搭建 1. 关于pom.xml 1&amp;lt;dependency&amp;
     
     <item>
       <title>Linux 实用操作之系统服务管理</title>
-      <link>https://akynazh.site/posts/2022/07/system-service-management-of-linux-practical-operation/</link>
+      <link>http://akynazh.site/posts/2022/07/system-service-management-of-linux-practical-operation/</link>
       <pubDate>Sun, 24 Jul 2022 20:42:27 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/07/system-service-management-of-linux-practical-operation/</guid>
+      <guid>http://akynazh.site/posts/2022/07/system-service-management-of-linux-practical-operation/</guid>
       <description>systemctl指令 立即启动一个服务：systemctl start my.service 立即停止一个服务：systemctl stop my.service 重启一个服务：systemctl restart my.service 重新加载一个服务的配置文件：systemctl reload my.service 重载所有修改过的配置文件：systemctl daemon-reload 开启自启动服务：systemctl enable my.service 取消开启自启动：systemctl disable my.service 查看是否已经自启动：systemctl is-enabled my.service 查看服务运行状态：systemctl status my.service 查看所有服务：systemctl --type service service和chkconfig指令 启动服务：service my.service start 终止服务：service my.service stop 重启服务：service my.service restart 查看服务运行状态：service my.service status 开启或取消开机自启动：chkconfig my.service on/off 查看开机自启动列表：chkconfig --list Unit配置文件解释 1- Unit 2 - Description，服务的描述 3 - Requires，定义此unit需在哪个daemon启动后才能够启动 4- Service 5 - Type，定义启动时的进程行为。它有以下几种值。 6 - Type=simple，默认值，执行ExecStart指定的命令，启动主进程 7 - Type=forking，以 fork 方式从父进程创建子进程，创建后父进程会立即退出 8 - Type=oneshot，一次性进程，Systemd 会等当前服务退出，再继续往下执行 9 - Type=dbus，当前服务通过D-Bus启动 10 - Type=notify，当前服务启动完毕，会通知Systemd，再继续往下执行 11 - Type=idle，若有其他任务执行完毕，当前服务才会运行 12 - ExecStart，启动当前服务的命令 13 - ExecStartPre，启动当前服务之前执行的命令 14 - ExecStartPost，启动当前服务之后执行的命令 15 - ExecReload，重启当前服务时执行的命令 16 - ExecStop，停止当前服务时执行的命令 17 - ExecStopPost，停止当其服务之后执行的命令 18 - RestartSec，自动重启当前服务间隔的秒数 19 - Restart，定义何种情况 Systemd 会自动重启当前服务，可能的值包括always（总是重启）、on-success、on-failure、on-abnormal、on-abort、on-watchdog 20 - TimeoutSec，定义 Systemd 停止当前服务之前等待的秒数 21 - Environment，指定环境变量 22- Install 23 - WantedBy，值是一个或多个Target，当前Unit激活(enable)时，符号链接会放入/etc/systemd/system目录下面以Target名+.</description>
     </item>
     
     <item>
       <title>Wsl 主要操作记录</title>
-      <link>https://akynazh.site/posts/2022/07/wsl-main-operation-records/</link>
+      <link>http://akynazh.site/posts/2022/07/wsl-main-operation-records/</link>
       <pubDate>Sat, 23 Jul 2022 17:34:52 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/07/wsl-main-operation-records/</guid>
+      <guid>http://akynazh.site/posts/2022/07/wsl-main-operation-records/</guid>
       <description>wsl在window开机后自启ssh服务 wsl下创建脚本，执行：vim /etc/init.wsl，并根据需要写入服务：
 1/etc/init.d/${需要的服务} # 或者使用service/systemctl命令 再赋予init.wsl执行权限，执行：chmod +x /etc/init.wsl
 window下在启动目录下创建脚本：wsl.bat，写入开机命令如下：
@@ -882,10 +871,10 @@ wsl一些常用命令 wsl ~ -u jzh: 以jzh用户登录并进入用户文件夹 w
     
     <item>
       <title>Wsl 自定义安装位置</title>
-      <link>https://akynazh.site/posts/2022/07/wsl-custom-installation-location/</link>
+      <link>http://akynazh.site/posts/2022/07/wsl-custom-installation-location/</link>
       <pubDate>Sat, 23 Jul 2022 17:27:31 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/07/wsl-custom-installation-location/</guid>
+      <guid>http://akynazh.site/posts/2022/07/wsl-custom-installation-location/</guid>
       <description>自定义wsl安装位置 下载wsl-ubuntu： 20.04版本：https://aka.ms/wslubuntu2004 18.04版本：https://aka.ms/wsl-ubuntu-1804 其他版本自行前往官网查找。
 修改后缀名 下载后得到AppxBundle文件，将后缀名改为zip，然后解压。
 解压后得到如下内容：
@@ -902,10 +891,10 @@ Over.</description>
     
     <item>
       <title>OpenFeign 使用记录</title>
-      <link>https://akynazh.site/posts/2022/07/openfeign-usage-record/</link>
+      <link>http://akynazh.site/posts/2022/07/openfeign-usage-record/</link>
       <pubDate>Fri, 22 Jul 2022 17:39:24 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/07/openfeign-usage-record/</guid>
+      <guid>http://akynazh.site/posts/2022/07/openfeign-usage-record/</guid>
       <description>为什么要使用OpenFeign 之前在消费端使用RestTemplate时，每次请求都要进行诸如
 1restTemplate.postForObject(PAYMENT_URL + &amp;#34;/payment/create&amp;#34;, payment, CommonResult.class); 这样的调用，需要指定较多参数，当一个接口调用中需要非常多这样的请求时，会比较繁琐，而且这种方式不够抽象。
 OpenFegin利用面向接口编程的思想，抽象化，简化了上述操作。
@@ -916,10 +905,10 @@ OpenFegin利用面向接口编程的思想，抽象化，简化了上述操作�
     
     <item>
       <title>理解快速幂运算并进行应用</title>
-      <link>https://akynazh.site/posts/2022/07/understand-and-apply-fast-power-operation/</link>
+      <link>http://akynazh.site/posts/2022/07/understand-and-apply-fast-power-operation/</link>
       <pubDate>Thu, 21 Jul 2022 20:44:54 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/07/understand-and-apply-fast-power-operation/</guid>
+      <guid>http://akynazh.site/posts/2022/07/understand-and-apply-fast-power-operation/</guid>
       <description>快速幂运算的解释 问n是否满足$x^n \mod n = x (1 &amp;lt; x &amp;lt; n)$？
 先由一个例子引入：
 $3^{11} = 3 \times 9^5 = 3 \times 9 \times 81^2 = 3 \times 9 \times 6561^1$
@@ -936,10 +925,10 @@ $result = 3 \times 9 \times 6561 = 3^{2^0} \times 3^{2^1} \times 3^{2^3}$
     
     <item>
       <title>Hugo 通过 Algolia 添加站内搜索功能</title>
-      <link>https://akynazh.site/posts/2022/07/hugo-adds-onsite-search-function-through-algolia/</link>
+      <link>http://akynazh.site/posts/2022/07/hugo-adds-onsite-search-function-through-algolia/</link>
       <pubDate>Wed, 20 Jul 2022 23:46:01 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/07/hugo-adds-onsite-search-function-through-algolia/</guid>
+      <guid>http://akynazh.site/posts/2022/07/hugo-adds-onsite-search-function-through-algolia/</guid>
       <description>注册账号并创建Index 官网链接：Algolia，注册完成后保存好ApiID和ApiKey。
 接着，创建一个Index，保存好Index的名称。
 数据生成以及上传Algolia 方法一：通过hugo-algolia插件的方式 一、下载hugo-algolia： npm install -g hugo-algolia
@@ -957,10 +946,10 @@ $result = 3 \times 9 \times 6561 = 3^{2^0} \times 3^{2^1} \times 3^{2^3}$
     
     <item>
       <title>理解 Ribbon 并自己实现负载均衡</title>
-      <link>https://akynazh.site/posts/2022/07/understand-ribbon-and-realize-load-balancing-by-yourself/</link>
+      <link>http://akynazh.site/posts/2022/07/understand-ribbon-and-realize-load-balancing-by-yourself/</link>
       <pubDate>Wed, 20 Jul 2022 17:07:35 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/07/understand-ribbon-and-realize-load-balancing-by-yourself/</guid>
+      <guid>http://akynazh.site/posts/2022/07/understand-ribbon-and-realize-load-balancing-by-yourself/</guid>
       <description>负载均衡（LB）是什么 对于用户的某个请求，将有多个相同功能的服务点服务该请求，某个服务点挂了，其他服务点还是可以进行服务，这样就实现了系统的高可用。
 关于集中式LB和进程内LB 集中式LB 在服务的消费方和提供方之间使用独立的LB设施，（软硬件均可，软件如Nginx，硬件如F5），由该设施负责把访问请求通过某种策略（可自行指定）转发至服务的提供方。
 进程内LB 将LB逻辑集成到消费方，消费方从服务注册中心获知有哪些地址可用，然后自己再从这些地址中选择出一个合适的服务点进行服务。
@@ -975,10 +964,10 @@ Ribbon属于进程内LB，它只是一个类库，集成于消费方进程，消
     
     <item>
       <title>Consul 配置过程及测试</title>
-      <link>https://akynazh.site/posts/2022/07/consul-configuration-process-and-test/</link>
+      <link>http://akynazh.site/posts/2022/07/consul-configuration-process-and-test/</link>
       <pubDate>Tue, 19 Jul 2022 16:34:39 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/07/consul-configuration-process-and-test/</guid>
+      <guid>http://akynazh.site/posts/2022/07/consul-configuration-process-and-test/</guid>
       <description>前言 类似于zookeeper和eureka，也起到微服务注册中心的作用, 满足分布式系统中的CP原则，是弱可用性的。
 不同于zookeeper和eureka这两种主要由Java编写的语言，它主要由Go语言编写。
 配置Consul环境 下载consul，配置环境变量。 运行consul agent -dev开启服务。 默认端口为8500，访问localhost:8500进入管理界面。 编写springcloud服务代码 一、关于pom.xml
@@ -992,10 +981,10 @@ Over.</description>
     
     <item>
       <title>Zookeeper 配置过程与测试</title>
-      <link>https://akynazh.site/posts/2022/07/zookeeper-configuration-process-and-test/</link>
+      <link>http://akynazh.site/posts/2022/07/zookeeper-configuration-process-and-test/</link>
       <pubDate>Tue, 19 Jul 2022 12:00:37 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/07/zookeeper-configuration-process-and-test/</guid>
+      <guid>http://akynazh.site/posts/2022/07/zookeeper-configuration-process-and-test/</guid>
       <description>前言 Zookeeper类似于Eureka，起到微服务注册中心的作用，满足分布式系统中的CP原则，是弱可用性的。
 配置zookeeper环境 安装zookeeper 下载并解压zookeeper包为zookeeper3.7.1（假设下载的是3.7.1版本）。
 然后将zookeeper解压缩到/usr/local/zookeeper3.7.1。
@@ -1016,10 +1005,10 @@ Over.</description>
     
     <item>
       <title>Eureka 配置过程与理解</title>
-      <link>https://akynazh.site/posts/2022/07/eureka-configuration-process-and-understanding/</link>
+      <link>http://akynazh.site/posts/2022/07/eureka-configuration-process-and-understanding/</link>
       <pubDate>Sun, 17 Jul 2022 11:39:35 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/07/eureka-configuration-process-and-understanding/</guid>
+      <guid>http://akynazh.site/posts/2022/07/eureka-configuration-process-and-understanding/</guid>
       <description>前言 起到微服务注册中心的作用，满足分布式系统中的AP原则，是弱一致性的。
 Eureka微服务架构图 服务接口采用集群模式，8001和8002端口都实现支付接口服务。 用户接口在运行在80端口，调用8001和8002的服务。 注册中心内部也采用集群模式，7001和7002端口都实现注册服务。 引入Eureka依赖说明 client端：
 1&amp;lt;dependency&amp;gt; 2 &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; 3 &amp;lt;artifactId&amp;gt;spring-cloud-starter-netflix-eureka-client&amp;lt;/artifactId&amp;gt; 4&amp;lt;/dependency&amp;gt; server端：
@@ -1031,10 +1020,10 @@ Eureka微服务架构图 服务接口采用集群模式，8001和8002端口都�
     
     <item>
       <title>Linux 展示性内容配置记录</title>
-      <link>https://akynazh.site/posts/2022/07/linux-display-content-configuration-record/</link>
+      <link>http://akynazh.site/posts/2022/07/linux-display-content-configuration-record/</link>
       <pubDate>Wed, 13 Jul 2022 21:21:50 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/07/linux-display-content-configuration-record/</guid>
+      <guid>http://akynazh.site/posts/2022/07/linux-display-content-configuration-record/</guid>
       <description>Vim 1vim /etc/vimrc 2# vim /etc/vim/vimrc 3 4set tabstop=4 # 修改vim中tab长度 5set shiftwidth=4 # 修改vim自动缩进长度 6set noeb vb t_vb= # 禁用vim蜂鸣声 1vim /etc/inputrc 2 3set bell-style none # 禁用bash蜂鸣声 主机名称 1hostnamectl 2 3hostnamectl set-hostname xxx 登录欢迎信息配置 1vim /etc/update-motd.d 自行修改基本欢迎信息。
 1vim /etc/ssh/sshd_config 2 3PrintLastLog no 不打印上次登录信息。
 命令提示符 1vim ~/.bashrc 2 3export PS1=&amp;#34;[\u =&amp;gt; \w]\$ &amp;#34; 1\a	铃声字符 2\d	格式为“日 月 年”的日期 3\e	ASCII 转义字符 4\h	本地主机名 5\H	完全合格的限定域主机名 6\j	shell 当前管理的作业数 7\1	shell 终端设备名的基本名称 8\n	ASCII 换行字符 9\r	ASCII 回车 10\s	shell 的名称 11\t	格式为“小时:分钟:秒”的24小时制的当前时间 12\T	格式为“小时:分钟:秒”的12小时制的当前时间 13\A	格式为“小时:分钟”的24小时制的当前时间 14@	格式为 am/pm 的12小时制的当前时间 15\s	shell的名字 16\u	当前用户的用户名 17\v	bash shell 的版本 18\V	bash shell 的发布级别 19\w	当前工作目录 20\W	当前工作目录的基本名称 21!</description>
@@ -1042,10 +1031,10 @@ Eureka微服务架构图 服务接口采用集群模式，8001和8002端口都�
     
     <item>
       <title>《雪国》文摘</title>
-      <link>https://akynazh.site/posts/2022/07/snow-country-abstract/</link>
+      <link>http://akynazh.site/posts/2022/07/snow-country-abstract/</link>
       <pubDate>Tue, 12 Jul 2022 23:11:48 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/07/snow-country-abstract/</guid>
+      <guid>http://akynazh.site/posts/2022/07/snow-country-abstract/</guid>
       <description>作者：川端康成
 黄昏的景色在镜后移动着。也就是说，镜面映现的虚像与镜后的实物在晃动，好像电影里的叠影一样。出场人物和背景没有任何联系。而且人物是一种透明的幻象，景物则是在夜霭中的朦胧暗流，两者消融在一起，描绘出一个超脱人世的象征世界。特别是当山野里的灯火映照在姑娘的脸上时，那种无法形容的美，使岛村的心都几乎为之颤动。 在遥远的山巅上空，还淡淡地残留着晚霞的余晖。透过车窗玻璃看见的景物轮廓，退到远方，却没有消逝，但已经黯然失色。尽管火车继续往前奔驰，在他看来，山野那平凡的姿态显得更加平凡。由于什么东西都不十分惹他注目，他内心反而好像隐隐地存在着一股巨大的感情激流。这自然是由于镜中浮现出姑娘的脸的缘故。只有身影映在窗玻璃上的部分，遮住了窗外的暮景，然而，景色却在姑娘的轮廓周围不断地移动，使人觉得姑娘的脸也像是透明的。是不是真的透明呢？这是一种错觉。因为从姑娘面影后面不停地掠过的暮景，仿佛是从她脸的前面流过。定睛细看，却又扑朔迷离。 车厢里也不太明亮。窗玻璃上的映像，不像真的镜子那样清晰。没有反光。这使岛村看得入了神，他渐渐地忘却了镜子的存在，只觉得姑娘好像漂浮在流逝的暮景之中。 这当儿，姑娘的脸上闪现着灯光。镜中映像的清晰度并没有减弱窗外的灯火。灯火也没有把映像抹去。灯火就这样从她的脸上闪过，但并没有把她的脸照亮。这是一束从远方投来的寒光，模模糊糊地照亮了她眼睛的周围。她的眼睛同灯光重叠的那一瞬间，就像在夕阳的余晖里飞舞的夜光虫，妖艳而美丽。
 岛村明白，自己从一开头就是想找这个女子，可偏偏和平常一样拐弯抹角，不免讨厌起自己来。与此同时，越发觉得这个女子格外的美。从刚才她站在杉树背后喊自己开始，他就感到这个女子的倩影是多么袅娜多姿啊。 玲珑而悬直的鼻梁，虽嫌单薄些，但在下方搭配着的小巧的紧闭的柔唇，却宛如美极了的水蛭环节，光滑而伸缩自如，在默默无言中也有一种动的感觉。如果嘴唇起了皱纹，或者色泽不好，就会显得不洁净。她的嘴唇却不是这样，而是滋润光泽的。两只眼睛，眼梢不翘起也不垂下，简直像有意描直了似的，虽逗人发笑，却恰到好处地镶嵌在两道微微下弯的浓密的短眉毛下。颧骨稍耸的圆脸，轮廓一般，但肤色恰似在白瓷上抹了一层淡淡的胭脂。脖颈底下的肌肉尚未丰满。她虽算不上是个美人，但比谁都要显得洁净。
@@ -1058,20 +1047,20 @@ Eureka微服务架构图 服务接口采用集群模式，8001和8002端口都�
     
     <item>
       <title>Swagger 使用记录</title>
-      <link>https://akynazh.site/posts/2022/06/swagger-usage-record/</link>
+      <link>http://akynazh.site/posts/2022/06/swagger-usage-record/</link>
       <pubDate>Sat, 25 Jun 2022 21:20:38 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/06/swagger-usage-record/</guid>
+      <guid>http://akynazh.site/posts/2022/06/swagger-usage-record/</guid>
       <description>依赖导入： 1&amp;lt;!-- swagger所需依赖 --&amp;gt; 2&amp;lt;dependency&amp;gt; 3 &amp;lt;groupId&amp;gt;io.springfox&amp;lt;/groupId&amp;gt; 4 &amp;lt;artifactId&amp;gt;springfox-swagger2&amp;lt;/artifactId&amp;gt; 5 &amp;lt;version&amp;gt;2.6.1&amp;lt;/version&amp;gt; 6&amp;lt;/dependency&amp;gt; 7&amp;lt;dependency&amp;gt; 8 &amp;lt;groupId&amp;gt;io.springfox&amp;lt;/groupId&amp;gt; 9 &amp;lt;artifactId&amp;gt;springfox-swagger-ui&amp;lt;/artifactId&amp;gt; 10 &amp;lt;version&amp;gt;2.6.1&amp;lt;/version&amp;gt; 11&amp;lt;/dependency&amp;gt; 配置Swagger /config/SwaggerConfig.java
 1@Configuration 2@EnableSwagger2 3public class SwaggerConfig { 4 @Bean 5 public Docket createRestApi() { 6 return new Docket(DocumentationType.SWAGGER_2) 7 .apiInfo(apiInfo()) 8 .select() 9 .apis(RequestHandlerSelectors.withClassAnnotation(Api.class)) 10 .paths(PathSelectors.any()) 11 .build(); 12 } 13 14 // 基本信息的配置，信息会在api文档上显示 15 private ApiInfo apiInfo() { 16 return new ApiInfoBuilder() 17 .title(&amp;#34;jzh测试的接口文档&amp;#34;) 18 .description(&amp;#34;xx相关接口的文档&amp;#34;) 19 .termsOfServiceUrl(&amp;#34;http://localhost:7777&amp;#34;) 20 .</description>
     </item>
     
     <item>
       <title>Window 添加命令别名的方法</title>
-      <link>https://akynazh.site/posts/2022/06/how-to-add-command-alias-in-window/</link>
+      <link>http://akynazh.site/posts/2022/06/how-to-add-command-alias-in-window/</link>
       <pubDate>Fri, 24 Jun 2022 22:52:59 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/06/how-to-add-command-alias-in-window/</guid>
+      <guid>http://akynazh.site/posts/2022/06/how-to-add-command-alias-in-window/</guid>
       <description>前言 下面将介绍3种方法：
 CMD添加别名的方法 PowerShell添加别名的方法 通过添加环境变量的方式设置别名 CMD添加别名的方法 设置临时的别名 可以通过doskey命令实现。
 1doskey ls=echo ====== ^&amp;amp;^&amp;amp; dir /b $* ^&amp;amp;^&amp;amp; echo ====== $*表示还可能有其他命令参数，^&amp;amp;^&amp;amp;用于分开多条命令。
@@ -1086,10 +1075,10 @@ PowerShell添加别名的方法 为PowerShell设置临时的别名 1PS C:\Users\
     
     <item>
       <title>SpringBoot 邮箱服务</title>
-      <link>https://akynazh.site/posts/2022/06/springboot-mailbox-service/</link>
+      <link>http://akynazh.site/posts/2022/06/springboot-mailbox-service/</link>
       <pubDate>Thu, 16 Jun 2022 21:13:15 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/06/springboot-mailbox-service/</guid>
+      <guid>http://akynazh.site/posts/2022/06/springboot-mailbox-service/</guid>
       <description>一、导入依赖： 1&amp;lt;!--发送邮件--&amp;gt; 2&amp;lt;dependency&amp;gt; 3 &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt; 4 &amp;lt;artifactId&amp;gt;spring-boot-starter-mail&amp;lt;/artifactId&amp;gt; 5&amp;lt;/dependency&amp;gt; 二、配置文件： QQ邮箱需要先开通好邮箱SMTP服务。
 1spring: 2 # 邮件服务 3 mail: 4 password: xxxxxx 5 username: xxx@qq.com 6 host: smtp.QQ.com 7 properties: 8 mail: 9 smtp: 10 auth: true 11 starttls: 12 enable: true 13 required: true 14 default-encoding: UTF-8 三、编写邮件服务 sendSimpleMailMessage()实现只含普通文本信息的邮件发送 sendMimeMessage()可以发送带附件的邮件 MailService.java
 1@Service 2public class MailService { 3 private final JavaMailSender mailSender; 4 @Value(&amp;#34;${spring.mail.username}&amp;#34;) 5 private String SENDER; 6 7 public MailService(JavaMailSender mailSender) { 8 this.</description>
@@ -1097,10 +1086,10 @@ PowerShell添加别名的方法 为PowerShell设置临时的别名 1PS C:\Users\
     
     <item>
       <title>Quartz 实现定时任务</title>
-      <link>https://akynazh.site/posts/2022/06/quartz-implements-timed-tasks/</link>
+      <link>http://akynazh.site/posts/2022/06/quartz-implements-timed-tasks/</link>
       <pubDate>Wed, 15 Jun 2022 21:11:27 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/06/quartz-implements-timed-tasks/</guid>
+      <guid>http://akynazh.site/posts/2022/06/quartz-implements-timed-tasks/</guid>
       <description>一、添加注解 主启动类添加@EnableScheduling注解；
 二、添加依赖： 1&amp;lt;!--定时任务 --&amp;gt; 2&amp;lt;dependency&amp;gt; 3 &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt; 4 &amp;lt;artifactId&amp;gt;spring-boot-starter-quartz&amp;lt;/artifactId&amp;gt; 5&amp;lt;/dependency&amp;gt; 三、创建任务 /TestTask1.java
 1public class TestTask1 extends QuartzJobBean { 2 @Override 3 protected void executeInternal(JobExecutionContext context) { 4 SimpleDateFormat sdf = new SimpleDateFormat(&amp;#34;yyyy-MM-dd HH:mm:ss&amp;#34;); 5 System.out.println(&amp;#34;Test1---&amp;#34; + sdf.format(new Date())); 6 } 7} /TestTask2.java
@@ -1109,10 +1098,10 @@ PowerShell添加别名的方法 为PowerShell设置临时的别名 1PS C:\Users\
     
     <item>
       <title>使用 x86_64 汇编写一个自旋锁</title>
-      <link>https://akynazh.site/posts/2022/06/use-x86-64-assemble-and-write-a-spin-lock/</link>
+      <link>http://akynazh.site/posts/2022/06/use-x86-64-assemble-and-write-a-spin-lock/</link>
       <pubDate>Thu, 09 Jun 2022 23:37:51 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/06/use-x86-64-assemble-and-write-a-spin-lock/</guid>
+      <guid>http://akynazh.site/posts/2022/06/use-x86-64-assemble-and-write-a-spin-lock/</guid>
       <description>一、理论分析 自旋锁，顾名思义，即自己不断旋转重复进行的锁，当多个线程访问同一资源时，为实现互斥访问，必须给目标资源加锁，此时只允许一个线程访问，此时其他线程无法访问，并且一直重复请求访问，直到该锁被释放。访问完资源的线程及时释放锁以供其他资源访问。
 自旋锁可以通过比较替换算法实现：设锁为1时被占用，为0时空闲。当一个线程请求锁时，即进入请求锁循环“spinlock”，设预期值为0，修改值为1，让锁值与预期值比较，若锁值等于预期值，则锁空闲，将锁值置为修改值，退出spinlock循环；若锁值不等于预期值，则证明锁被占用，继续spinlock循环。
 为验证是否成功实现自旋，开启一个释放锁线程，请求锁线程自旋一段时间后，释放锁线程进行锁的释放，即把锁值置为预期值0。此时，请求锁线程成功获得锁并退出spinlock循环。
@@ -1122,10 +1111,10 @@ Intel语法 1// 尝试获取锁 2void lock(long *p) { 3 long a = 0, c = 1; 4 pri
     
     <item>
       <title>通过 Wireshark 分析 TCP 原理</title>
-      <link>https://akynazh.site/posts/2022/06/analyze-tcp-principle-through-wireshark/</link>
+      <link>http://akynazh.site/posts/2022/06/analyze-tcp-principle-through-wireshark/</link>
       <pubDate>Thu, 09 Jun 2022 23:18:55 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/06/analyze-tcp-principle-through-wireshark/</guid>
+      <guid>http://akynazh.site/posts/2022/06/analyze-tcp-principle-through-wireshark/</guid>
       <description>使用Wireshark作为抓包工具，通过ftp文件上传过程分析tcp原理，主要分析过程包括三次握手建立连接的过程，文件传输的过程，四次挥手断开连接的过程。
 设备信息 主机：安装了ftp的window11（ip:172.23.224.1） 虚拟机：安装了vsftpd的wsl2（ubuntu18）(ip:172.23.234.65) 操作与分析过程 打开Wireshark进行捕获 选择**vEthernet(WSL)**连接进行捕获。 使用过滤表达式ip.addr==172.23.234.65&amp;amp;&amp;amp;tcp进行捕获。 通过ftp上传文件 1PS C:\Users\akyna&amp;gt; ftp 172.23.234.65 2连接到 172.23.234.65。 3220 (vsFTPd 3.0.3) 4200 Always in UTF8 mode. 5用户(172.23.234.65:(none)): akyna 6331 Please specify the password. 7密码: 8230 Login successful. 9 10ftp&amp;gt; put a.txt 11200 PORT command successful. Consider using PASV. 12150 Ok to send data. 13226 Transfer complete. 14ftp: 发送 42 字节，用时 0.00秒 42000.00千字节/秒。 可见已经传输成功。
 对捕获的数据进行分析 回到Wireshark，分析捕获的数据：
@@ -1141,10 +1130,10 @@ Intel语法 1// 尝试获取锁 2void lock(long *p) { 3 long a = 0, c = 1; 4 pri
     
     <item>
       <title>乙一短篇摘录</title>
-      <link>https://akynazh.site/posts/2022/06/yi-short-excerpt/</link>
+      <link>http://akynazh.site/posts/2022/06/yi-short-excerpt/</link>
       <pubDate>Mon, 06 Jun 2022 22:00:13 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/06/yi-short-excerpt/</guid>
+      <guid>http://akynazh.site/posts/2022/06/yi-short-excerpt/</guid>
       <description>七个房间 ——黑乙一
 “我小的时候，常在老家旁边的小溪玩耍。”
 据她说那是一条连溪底的石头都看得到的清澈溪流。我听着她的话，想象着犹如梦幻世界一般的那条小溪。摇摇晃晃的水面反射着太阳光，细碎的光芒闪耀着，那是一个非常明亮的世界，头顶万里无云，晴空没有尽头，仿佛自己的身体违反了重力，不断地往上再往上被吸进去似的，无边无际。
@@ -1168,10 +1157,10 @@ Intel语法 1// 尝试获取锁 2void lock(long *p) { 3 long a = 0, c = 1; 4 pri
     
     <item>
       <title>海子的诗</title>
-      <link>https://akynazh.site/posts/2022/05/haizis-poems/</link>
+      <link>http://akynazh.site/posts/2022/05/haizis-poems/</link>
       <pubDate>Mon, 30 May 2022 20:11:37 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/05/haizis-poems/</guid>
+      <guid>http://akynazh.site/posts/2022/05/haizis-poems/</guid>
       <description>九月 目击众神死亡的草原上野花一片
 远在远方的风比远方更远
 我的琴声呜咽 泪水全无
@@ -1218,10 +1207,10 @@ Intel语法 1// 尝试获取锁 2void lock(long *p) { 3 long a = 0, c = 1; 4 pri
     
     <item>
       <title>《1984》文摘</title>
-      <link>https://akynazh.site/posts/2022/05/1984-abstracts/</link>
+      <link>http://akynazh.site/posts/2022/05/1984-abstracts/</link>
       <pubDate>Thu, 19 May 2022 20:22:22 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/05/1984-abstracts/</guid>
+      <guid>http://akynazh.site/posts/2022/05/1984-abstracts/</guid>
       <description>作者：乔治·奥威尔
 第6章 温斯顿把手垂到身边，缓慢地将肺部又吸满空气，他的大脑滑向一个双重思想的迷宫世界。知道又不知道；明白全部事实，却说着精心编造的谎言；
 同时拥有两种针锋相对的意见，一方面知道两者之间的矛盾，一方面又两者都相信；
@@ -1247,10 +1236,10 @@ Intel语法 1// 尝试获取锁 2void lock(long *p) { 3 long a = 0, c = 1; 4 pri
     
     <item>
       <title>Java 复习记录（一）</title>
-      <link>https://akynazh.site/posts/2022/05/java-review-1/</link>
+      <link>http://akynazh.site/posts/2022/05/java-review-1/</link>
       <pubDate>Sun, 15 May 2022 15:15:51 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/05/java-review-1/</guid>
+      <guid>http://akynazh.site/posts/2022/05/java-review-1/</guid>
       <description>JDK JRE JVM 关系 为什么说 Java 语言“编译与解释并存”？ 高级编程语言按照程序的执行方式分为编译型和解释型两种。
 编译型语言是指编译器针对特定的操作系统将源代码一次性翻译成可被该平台执行的机器码，不能跨平台。
 解释型语言是指解释器对源程序逐行解释成特定平台的机器码并立即执行，一次编写，到处执行。
@@ -1275,10 +1264,10 @@ Java 语言既具有编译型语言的特征，也具有解释型语言的特征
     
     <item>
       <title>《挪威的森林》中的披头士</title>
-      <link>https://akynazh.site/posts/2022/05/the-beatles-in-norwegian-forest/</link>
+      <link>http://akynazh.site/posts/2022/05/the-beatles-in-norwegian-forest/</link>
       <pubDate>Sat, 14 May 2022 11:47:43 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/05/the-beatles-in-norwegian-forest/</guid>
+      <guid>http://akynazh.site/posts/2022/05/the-beatles-in-norwegian-forest/</guid>
       <description>“飞机一着陆，禁烟显示牌倏然消失，天花板扩音器中低声流出背景音乐，那是一个管弦乐队自鸣得意地演奏的甲壳虫乐队的《挪威的森林》。那旋律一如往日地使我难以自已，不，比往日还要强烈地摇撼着我的身心。
 《挪威的森林》—— Norwegian Wood “她一边这样说着，一边弹起《米歇尔》，弹得极其精彩。“好曲子，我，无比喜欢！”说完，玲子喝了一口葡萄酒，吸了口烟，“简直就像霏霏细雨轻轻洒在无边无际的草原。”
 《米歇尔》—— Michelle “接着，她弹了《没有归宿的人》，弹了《朱丽娅》。有时边弹边闭上眼摇着头，然后又呷口酒吸口烟。
@@ -1291,10 +1280,10 @@ Java 语言既具有编译型语言的特征，也具有解释型语言的特征
     
     <item>
       <title>《杀死一只知更鸟》文摘二</title>
-      <link>https://akynazh.site/posts/2022/05/kill-a-mockingbird-digest-ii/</link>
+      <link>http://akynazh.site/posts/2022/05/kill-a-mockingbird-digest-ii/</link>
       <pubDate>Mon, 09 May 2022 11:34:32 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/05/kill-a-mockingbird-digest-ii/</guid>
+      <guid>http://akynazh.site/posts/2022/05/kill-a-mockingbird-digest-ii/</guid>
       <description>作者：哈珀·李
 第十一章 “勇敢就是，在你还没开始的时候就知道自己注定会输，但依然义无反顾地去做，并且不管发生什么都坚持到底。一个人很少能赢，但也总会有赢的时候。杜博斯太太赢了，全凭她那九十八磅重的身躯。用她的话来说，她死得无牵无挂，不亏欠任何人，也不依赖任何东西。她是我见过的最勇敢的人。”
 第二十章 “我们都知道，某些人灌输给我们的‘人人生而平等’，实际上是个谬论——事实上，有些人就是比别人聪明睿智，有些人就是比别人享有更多的机会，因为他们生来如此，有些男人比别的男人挣钱多，有些女士做的蛋糕比别的女士更胜一筹——总而言之，有些人天生就比大多数普通人具有更高的天赋和才华。”
@@ -1313,10 +1302,10 @@ Java 语言既具有编译型语言的特征，也具有解释型语言的特征
     
     <item>
       <title>《杀死一只知更鸟》文摘一</title>
-      <link>https://akynazh.site/posts/2022/05/kill-a-mockingbird-digest-1/</link>
+      <link>http://akynazh.site/posts/2022/05/kill-a-mockingbird-digest-1/</link>
       <pubDate>Mon, 09 May 2022 11:25:47 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/05/kill-a-mockingbird-digest-1/</guid>
+      <guid>http://akynazh.site/posts/2022/05/kill-a-mockingbird-digest-1/</guid>
       <description>作者：哈珀·李
 第九章 “杰克！看在老天的分上，当一个孩子问你问题的时候，你要正儿八经地回答，不要东拉西扯，顾左右而言他。虽说孩子毕竟只是孩子，但他们会比成人更敏锐地察觉到你在回避问题，回避只会让他们糊里糊涂。”
 父亲沉吟着说道，“今天下午你的回应是对的，但你的理由有偏差。说脏话是所有孩子都会经历的一个阶段，随着他们一天天长大，他们会发现满口脏话并不能让他们成为众人瞩目的明星，他们就会改掉这个毛病。但是脾气暴躁可不好改。斯库特必须学会保持冷静，接下来的几个月里她还会经历很多事情，所以她必须尽快学会冷静面对。当然，她也在成长。杰姆长大了，她现在也能跟着学学样子。她只是在某些时候需要有人推一把。”
@@ -1333,10 +1322,10 @@ Java 语言既具有编译型语言的特征，也具有解释型语言的特征
     
     <item>
       <title>《论持久战》文摘</title>
-      <link>https://akynazh.site/posts/2022/04/abstract-of-on-protracted-war/</link>
+      <link>http://akynazh.site/posts/2022/04/abstract-of-on-protracted-war/</link>
       <pubDate>Thu, 28 Apr 2022 20:27:08 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/04/abstract-of-on-protracted-war/</guid>
+      <guid>http://akynazh.site/posts/2022/04/abstract-of-on-protracted-war/</guid>
       <description>作者：毛泽东
 战争问题中的唯心论和机械论的倾向，是一切错误观点的认识论上的根源。他们看问题的方法是主观的和片面的。或者是毫无根据地纯主观地说一顿；或者是只根据问题的一侧面、一时候的表现，也同样主观地把它夸大起来，当作全体看。
 革命战争是一种抗毒素，它不但将排除敌人的毒焰，也将清洗自己的污浊。凡属正义的革命的战争，其力量是很大的，它能改造很多事物，或为改造事物开辟道路。
@@ -1350,10 +1339,10 @@ Java 语言既具有编译型语言的特征，也具有解释型语言的特征
     
     <item>
       <title>《挪威的森林》文摘四</title>
-      <link>https://akynazh.site/posts/2022/04/norwegian-forest-digest-4/</link>
+      <link>http://akynazh.site/posts/2022/04/norwegian-forest-digest-4/</link>
       <pubDate>Mon, 25 Apr 2022 20:39:14 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/04/norwegian-forest-digest-4/</guid>
+      <guid>http://akynazh.site/posts/2022/04/norwegian-forest-digest-4/</guid>
       <description>第十一章 在辗转反侧的不眠之夜，我想起直子的种种音容笑貌，不容我不想起。因为我心里关于直子的记忆堆积如山，只要稍稍开启一点缝隙，它们便争先恐后，鼓涌而出，而我根本无法遏止其突发的攻势。
 就是这样，直子的形象如同汹涌而来的潮水向我联翩袭来，将我的身体冲往奇妙的地带。在这奇妙地带里，我同死者共同生活。直子也在这里活着，同我交谈，同我拥抱。在这个地方，所谓死，并非是使生完结的决定性因素，而仅仅是构成生的众多因素之一。直子在这里仍在含有死的前提下继续生存，并且对我这样说：“不要紧，渡边君，那不过是一死罢了，别介意。”
 木月死时，我从他的死中学到一个道理，并将其作为大彻大悟的人生真谛铭刻或力图铭刻在心。那便是：“死并非生的对立面，死潜伏在我们的生之中。”
@@ -1369,10 +1358,10 @@ Java 语言既具有编译型语言的特征，也具有解释型语言的特征
     
     <item>
       <title>Window 实用命令记录之进程与网络控制</title>
-      <link>https://akynazh.site/posts/2022/04/process-and-network-control-of-window-practical-command-recording/</link>
+      <link>http://akynazh.site/posts/2022/04/process-and-network-control-of-window-practical-command-recording/</link>
       <pubDate>Mon, 18 Apr 2022 23:10:39 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/04/process-and-network-control-of-window-practical-command-recording/</guid>
+      <guid>http://akynazh.site/posts/2022/04/process-and-network-control-of-window-practical-command-recording/</guid>
       <description>进程相关 tasklist tasklist用于查看运行的进程 findstr相当于linux的grep 1PS C:\Users\akyna&amp;gt; Tasklist | findstr Code 2Code.exe 19184 Console 1 94,012 K 3Code.exe 19300 Console 1 26,324 K 4...... taskkill 使用该工具按照进程 ID (PID) 或映像名称终止任务。
 参数列表:
 /PID processid 指定要终止的进程的 PID。 /IM imagename 指定要终止的进程的映像名称。 /T 终止指定的进程和由它启用的子进程。 /F 指定强制终止进程。 /? 显示帮助消息。 e.g.
@@ -1382,10 +1371,10 @@ Java 语言既具有编译型语言的特征，也具有解释型语言的特征
     
     <item>
       <title>《挪威的森林》文摘三</title>
-      <link>https://akynazh.site/posts/2022/04/norwegian-forest-digest-iii/</link>
+      <link>http://akynazh.site/posts/2022/04/norwegian-forest-digest-iii/</link>
       <pubDate>Mon, 18 Apr 2022 20:31:46 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/04/norwegian-forest-digest-iii/</guid>
+      <guid>http://akynazh.site/posts/2022/04/norwegian-forest-digest-iii/</guid>
       <description>第十章 一九六九年这一年，总是令我想起进退两难的泥沼——每迈一步都几乎把整只鞋陷掉那般的滞重而深沉的泥沼。而我就在这片泥沼中气喘吁吁地挪动脚步，前方一无所见，后面渺无来者，只有昏暗的泥沼无边无际地延展开去。甚至时光都随着我的步调而流淌得十分吃力。身边的人早已经遥遥领先，惟独我和我的时间在泥沼中艰难地往来爬行。
 我四周的世界则面临一切沧桑巨变。约翰·科尔特兰死了，还有很多人死了。人们在呼喊变革，仿佛变革正在席卷每个角落。然而这些无一不是虚构的毫无意义的背景画面而已。我则几乎没有抬头，日复一日地打发时光。在我眼里，只有漫无边际的泥沼。往前落下右脚，拔起左脚，再拔起右脚。我判断不出我位于何处，也不具有自己是在朝正确方向前进的信心。我之所以一步步挪动步履，只是因为我必须挪动，而无论去哪里。
 下午过去，黄昏来临，继而隐隐泛青的夜色笼罩了院落。“海鸥”早已不见踪影。我又开始观看樱花。在我眼里，春夜里的樱花，宛如从开裂的皮肤中鼓胀出来的烂肉，整个院子都充满烂肉那甜腻而沉闷的腐臭气味。我转而想起直子的裸体。直子娇美的裸体横陈在夜色之中，无数植物的嫩芽从其肌肤中争相萌出，在天外来风的吹拂下，鲜绿的幼芽轻轻摇颤不止。我想，那般巧夺天工的肢体为什么非生病不可呢？他们为什么不肯放直子一条生路呢？
@@ -1401,10 +1390,10 @@ Java 语言既具有编译型语言的特征，也具有解释型语言的特征
     
     <item>
       <title>《斜阳》文摘</title>
-      <link>https://akynazh.site/posts/2022/04/setting-sun-abstract/</link>
+      <link>http://akynazh.site/posts/2022/04/setting-sun-abstract/</link>
       <pubDate>Sun, 17 Apr 2022 23:13:28 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/04/setting-sun-abstract/</guid>
+      <guid>http://akynazh.site/posts/2022/04/setting-sun-abstract/</guid>
       <description>作者：太宰治
 第三章 心里没着没落，感觉好像无所凭依，似乎怎么也活不下去了——这就是所谓的不安心情吧。胸口仿佛一阵阵痛苦的浪潮在拍打、涌来，就好像黄昏时分骤雨初歇，而后天空匆匆掠过一片片白云似的，使我心脏忽而收紧，忽而松弛，脉搏失常无规律，呼吸也变得困难，眼前发黑，全身的力气仿佛从十指尖上溜掉了一样，毛线都打不下去。
 第四章 我在第一封信里曾经提到过我心中飘过的彩虹，这道彩虹并不像萤光或者星光那样高尚和美丽，假如是那样淡淡而幽远的话，我就不会这样痛苦，甚至能够逐渐将您忘掉了。我心中的彩虹是一座火焰之桥，我的思念几乎要将我的心都烧焦了。
@@ -1413,10 +1402,10 @@ Java 语言既具有编译型语言的特征，也具有解释型语言的特征
     
     <item>
       <title>《挪威的森林》文摘二</title>
-      <link>https://akynazh.site/posts/2022/04/norwegian-forest-digest-ii/</link>
+      <link>http://akynazh.site/posts/2022/04/norwegian-forest-digest-ii/</link>
       <pubDate>Sat, 16 Apr 2022 18:03:53 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/04/norwegian-forest-digest-ii/</guid>
+      <guid>http://akynazh.site/posts/2022/04/norwegian-forest-digest-ii/</guid>
       <description>作者：村上春树
 第七章 “见不到你固然是痛苦的，但倘若没有你，我在东京的生活将更不堪忍受。正因为一清早我就在床上想你，我才下决心拧紧发条，自强不息地生活下去。如同你在那边自强不息一样，我在这里也必须自强不息。”
 嘈杂的周日街头使我的心头舒展开来。我在通勤电车一般拥挤不堪的纪伊国屋书店里买了一本福克纳的《八月之光》，然后挑一家听起来声音开到尽可能大的爵士酒吧走进去，一边听奥内特·科尔曼和巴顿·帕维尔洛的唱片，一边喝又热又不好喝的咖啡，翻看刚买的书。五点半时，合上书，出门吃了简单的晚饭。我不由心想：这样的星期日以后将重复几十次、几百次吧？“安静的、平和的、孤独的星期日”——我出声说道。星期日我是不上发条的。
@@ -1433,10 +1422,10 @@ Java 语言既具有编译型语言的特征，也具有解释型语言的特征
     
     <item>
       <title>《消失的十三级台阶》摘录</title>
-      <link>https://akynazh.site/posts/2022/04/excerpt-from-the-lost-thirteen-steps/</link>
+      <link>http://akynazh.site/posts/2022/04/excerpt-from-the-lost-thirteen-steps/</link>
       <pubDate>Fri, 15 Apr 2022 13:02:21 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/04/excerpt-from-the-lost-thirteen-steps/</guid>
+      <guid>http://akynazh.site/posts/2022/04/excerpt-from-the-lost-thirteen-steps/</guid>
       <description>作者：高野和明
 第三章 调查 人在正义的名义下审判另一个人的时候，所谓的正义并不存在普遍的标准。
 犯罪所破坏的并不仅仅是眼睛看得到的东西，而是深深地侵入人们心中，破坏了人们心中最根本的东西。 而且，人们将被这个根本性的伤害长久地困扰。
@@ -1446,10 +1435,10 @@ Java 语言既具有编译型语言的特征，也具有解释型语言的特征
     
     <item>
       <title>《挪威的森林》文摘一</title>
-      <link>https://akynazh.site/posts/2022/04/norwegian-forest-digest-1/</link>
+      <link>http://akynazh.site/posts/2022/04/norwegian-forest-digest-1/</link>
       <pubDate>Thu, 14 Apr 2022 23:11:22 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/04/norwegian-forest-digest-1/</guid>
+      <guid>http://akynazh.site/posts/2022/04/norwegian-forest-digest-1/</guid>
       <description>作者：村上春树
 第一章 即使在经历过十八度春秋的今天，我仍可真切地记起那片草地的风景。连日温馨的霏霏细雨，将夏日的尘埃冲洗无余。片片山坡叠青泻翠，抽穗的芒草在十月金风的吹拂下蜿蜒起伏，逶迤的薄云紧贴着仿佛冻僵的湛蓝的天穹。凝眸望去，长空寥廓，但觉双目隐隐作痛。清风抚过草地，微微拂动她满头秀发，旋即向杂木林吹去。树梢上的叶片簌簌低语，狗的吠声由远而近，若有若无，细微得如同从另一世界的入口处传来。此外便万籁俱寂了。耳畔不闻任何声响，身边没有任何人擦过。只见两只火团样的小鸟，受惊似的从草丛中腾起，朝杂木林方向飞去。
 当然，只要有时间，我总会忆起她的面容。那冷冰冰的小手，那流线型泻下的手感爽适的秀发，那圆圆的软软的耳垂以及紧靠其底端的小小黑痣，那冬日常穿的格调高雅的驼绒大衣，那总是定定地注视对方眼睛发问的惯常动作，那不时奇妙地发出的微微颤抖的语声（就像在强风中的山冈上说话一样）随着这些印象的叠涌，她的面庞突然而自然地浮现出来。最先现出的是她的侧脸。大概因为我总是同她并肩走路的缘故，最先想起来的每每是她的侧影。随之，她朝我转过脸，甜甜地一笑，微微地歪头，轻轻地启齿，定定地看着我的双眼，仿佛在一泓清澈的泉水里寻觅稍纵即逝的小鱼的行踪。
@@ -1462,10 +1451,10 @@ Java 语言既具有编译型语言的特征，也具有解释型语言的特征
     
     <item>
       <title>《强风吹拂》文摘</title>
-      <link>https://akynazh.site/posts/2022/04/strong-wind-blowing-abstract/</link>
+      <link>http://akynazh.site/posts/2022/04/strong-wind-blowing-abstract/</link>
       <pubDate>Sun, 03 Apr 2022 23:44:25 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/04/strong-wind-blowing-abstract/</guid>
+      <guid>http://akynazh.site/posts/2022/04/strong-wind-blowing-abstract/</guid>
       <description>作者：三浦紫苑
 第四章. 纪录赛登场 “看了你这三个月来的表现，我越来越相信自己没看错人，”
 清濑接着说，“你很有天分，也很有潜力。所以呢，阿走，你一定要更相信自己，不要急着想一飞冲天。变强需要时间，也可以说它永远没有终点。长跑是值得一生投入的竞赛，有些人即使老了，仍然没有放弃慢跑或马拉松运动。”
@@ -1480,10 +1469,10 @@ Java 语言既具有编译型语言的特征，也具有解释型语言的特征
     
     <item>
       <title>《解忧杂货店》文摘</title>
-      <link>https://akynazh.site/posts/2022/04/jieyou-grocery-store-abstract/</link>
+      <link>http://akynazh.site/posts/2022/04/jieyou-grocery-store-abstract/</link>
       <pubDate>Sun, 03 Apr 2022 23:41:50 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/04/jieyou-grocery-store-abstract/</guid>
+      <guid>http://akynazh.site/posts/2022/04/jieyou-grocery-store-abstract/</guid>
       <description>作者：东野圭吾
 第四章. 听着披头士默祷 人与人之间的关系往往不是因为某些具体的原因而断绝。 不，即使表面上有种原因，其实是因为彼此的心已经不在一起，事后才牵强附会地找这些借口。 因为，如果彼此的心没有分开，当发生可能会导致彼此关系断绝的事态时，某一方就会主动修复。 之所以没有人主动修复，就是因为彼此的心已经不在一起了。
 第五章. 来自天上的祈祷 你的地图是一张白纸，所以，即使想决定目的地，也不知道路在哪里。 地图是白纸当然很伤脑筋，任何人都会不知所措。 但是，不妨换一个角度思考，正因为是白纸，所以可以画任何地图，一切都掌握在你自己手上。你很自由，充满了无限可能。这是很棒的事。 我衷心祈祷你可以相信自己，无悔地燃烧自己的人生。 这可能是我最后一次针对烦恼谘商进行回答，谢谢你在最后提供了我这么出色的难题。</description>
@@ -1491,10 +1480,10 @@ Java 语言既具有编译型语言的特征，也具有解释型语言的特征
     
     <item>
       <title>山脉游览录（一）</title>
-      <link>https://akynazh.site/posts/2022/03/mountain-tour-1/</link>
+      <link>http://akynazh.site/posts/2022/03/mountain-tour-1/</link>
       <pubDate>Mon, 21 Mar 2022 18:02:04 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/03/mountain-tour-1/</guid>
+      <guid>http://akynazh.site/posts/2022/03/mountain-tour-1/</guid>
       <description>山的记忆 每一座山都有独特的感觉，每一座山都有自己的故事。
 我和踏过的每一座山都有一段故事。
 我的山脉游览录，记录那些年那些山。
@@ -1521,10 +1510,10 @@ Java 语言既具有编译型语言的特征，也具有解释型语言的特征
     
     <item>
       <title>配置网络以实现主机和虚拟机系统互通</title>
-      <link>https://akynazh.site/posts/2022/02/configure-the-network-to-realize-the-interworking-between-host-and-virtual-machine-system/</link>
+      <link>http://akynazh.site/posts/2022/02/configure-the-network-to-realize-the-interworking-between-host-and-virtual-machine-system/</link>
       <pubDate>Sun, 13 Feb 2022 21:20:01 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/02/configure-the-network-to-realize-the-interworking-between-host-and-virtual-machine-system/</guid>
+      <guid>http://akynazh.site/posts/2022/02/configure-the-network-to-realize-the-interworking-between-host-and-virtual-machine-system/</guid>
       <description>主机配置防火墙入站规则 主机如果没开启防火墙则可以跳过这一步。
 进入防火墙管理界面，新建入站规则放通目标虚拟机系统IP即可。
 选择桥接模式 默认好像是NAT模式，改为桥接模式，指定网卡为当前主机网络的网卡，我的是“Realtek PCIe.GBE Family Controller”。
@@ -1538,10 +1527,10 @@ CentOS配置静态IP 找到当前网络下网卡名，然后编辑/etc/sysconfig
     
     <item>
       <title>在前后端不分离的情况下进行交互性数据展示的实现方法</title>
-      <link>https://akynazh.site/posts/2022/02/implementation-method-of-interactive-data-display-without-separation-of-front-and-back-ends/</link>
+      <link>http://akynazh.site/posts/2022/02/implementation-method-of-interactive-data-display-without-separation-of-front-and-back-ends/</link>
       <pubDate>Fri, 11 Feb 2022 00:05:25 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/02/implementation-method-of-interactive-data-display-without-separation-of-front-and-back-ends/</guid>
+      <guid>http://akynazh.site/posts/2022/02/implementation-method-of-interactive-data-display-without-separation-of-front-and-back-ends/</guid>
       <description>前言 开发web项目时，常常需要在前端展示一些交互性的数据，比如表单填写错误的提示，操作成功与否的提示等。
 本文主要讲述在使用Thymeleaf作为模板引擎开发前端时，即在前后端不分离的情况下，前后端进行交互性数据展示的实现方法。
 使用cookie传递数据：不推荐 一、步骤 后端通过addCookie方法设置值 前端在页面加载时读取cookie值并进行展示 前端删除该cookie值 二、缺陷 这个方法我使用过，但是效果并不好，原因如下：
@@ -1557,10 +1546,10 @@ addFlashAttribute是把数据临时放在session中并在刷新页面后自动�
     
     <item>
       <title>简洁之美</title>
-      <link>https://akynazh.site/posts/2022/02/the-beauty-of-simplicity/</link>
+      <link>http://akynazh.site/posts/2022/02/the-beauty-of-simplicity/</link>
       <pubDate>Sun, 06 Feb 2022 21:42:50 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/02/the-beauty-of-simplicity/</guid>
+      <guid>http://akynazh.site/posts/2022/02/the-beauty-of-simplicity/</guid>
       <description>身处繁杂的社会生活 现代社会，是一个信息爆炸的时代，是一个充满无尽焦虑的时代，是一个繁杂的时代。
 在离不开网络的世界里，我们难以摆脱网络上各种信息的侵扰，参差不齐的信息爬满了我们的心房。
 在竞争相当激烈的当代社会，我们变得更加焦虑，思绪更加杂乱。
@@ -1594,10 +1583,10 @@ addFlashAttribute是把数据临时放在session中并在刷新页面后自动�
     
     <item>
       <title>Java 开发中遇到的 bug 记录</title>
-      <link>https://akynazh.site/posts/2022/01/record-of-bugs-encountered-in-java-development/</link>
+      <link>http://akynazh.site/posts/2022/01/record-of-bugs-encountered-in-java-development/</link>
       <pubDate>Thu, 06 Jan 2022 17:23:00 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/01/record-of-bugs-encountered-in-java-development/</guid>
+      <guid>http://akynazh.site/posts/2022/01/record-of-bugs-encountered-in-java-development/</guid>
       <description>持续更新中。
 BufferedWriter 无法正确写出问题 这是一段客户端代码，向服务器端发送消息，然后接收服务器端的回复：
 1try ( 2 BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream())); 3 BufferedWriter out = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream())) 4) { 5 String message; 6 while((message = stdIn.readLine()) != null) { 7 out.write(message); 8 out.flush(); 9 System.out.println(&amp;#34;Receive from server: &amp;#34; + in.readLine()); 10 } 11} catch (Exception e) { 12 System.out.println(e.getMessage()); 13} 这是服务端代码的一部分，接收客户端消息，并向客户端回复：
@@ -1606,10 +1595,10 @@ BufferedWriter 无法正确写出问题 这是一段客户端代码，向服务�
     
     <item>
       <title>Linux 实用操作之权限管理</title>
-      <link>https://akynazh.site/posts/2021/12/permission-management-of-linux-practical-operation/</link>
+      <link>http://akynazh.site/posts/2021/12/permission-management-of-linux-practical-operation/</link>
       <pubDate>Mon, 20 Dec 2021 10:15:34 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2021/12/permission-management-of-linux-practical-operation/</guid>
+      <guid>http://akynazh.site/posts/2021/12/permission-management-of-linux-practical-operation/</guid>
       <description>添加用户 1[root@VM-0-11-centos ~]# useradd jzh 2 3[root@VM-0-11-centos /]# id jzh 4uid=1000(jzh) gid=1000(jzh) groups=1000(jzh) 5 6[root@VM-0-11-centos /]# grep jzh /etc/passwd /etc/shadow /etc/group 7/etc/passwd:jzh:x:1000:1000::/home/jzh:/bin/bash 8/etc/shadow:jzh:!!:18980:0:99999:7::: 9/etc/group:jzh:x:1000: x指代密码，对应到shadow中，未设定即为“!!”
 设置密码 在进行useradd后密码还未设定。
 1[root@VM-0-11-centos /]# passwd jzh 2Changing password for user jzh. 3New password: 4BAD PASSWORD: The password is shorter than 8 characters 5Retype new password: 6passwd: all authentication tokens updated successfully. 若要让用户第一次能通过默认密码登录得上，并提示用户必须修改密码：
@@ -1618,19 +1607,19 @@ BufferedWriter 无法正确写出问题 这是一段客户端代码，向服务�
     
     <item>
       <title>Redis 学习记录二</title>
-      <link>https://akynazh.site/posts/2021/12/redis-learning-record-ii/</link>
+      <link>http://akynazh.site/posts/2021/12/redis-learning-record-ii/</link>
       <pubDate>Mon, 20 Dec 2021 10:15:05 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2021/12/redis-learning-record-ii/</guid>
+      <guid>http://akynazh.site/posts/2021/12/redis-learning-record-ii/</guid>
       <description>事务 1127.0.0.1:6379&amp;gt; multi # 开启事务 2OK 3127.0.0.1:6379&amp;gt; set book java 4QUEUED 5127.0.0.1:6379&amp;gt; get book 6QUEUED 7127.0.0.1:6379&amp;gt; exec # 执行事务 81) OK 92) &amp;#34;java&amp;#34; 10127.0.0.1:6379&amp;gt; get book 11&amp;#34;java&amp;#34; 12127.0.0.1:6379&amp;gt; multi 13OK 14127.0.0.1:6379&amp;gt; set name peter 15QUEUED 16127.0.0.1:6379&amp;gt; discard # 取消事务 17OK 18127.0.0.1:6379&amp;gt; exec 19(error) ERR EXEC without MULTI 20127.0.0.1:6379&amp;gt; get name 21(nil) 获取key 获取指定key 1keys * # 获取所有key 1keys pattern # 根据pattern获取key 1- * 代表匹配任意字符 2- ? 代表匹配一个字符 3- [] 代表匹配部分字符，例如[1,3]代表匹配1和3，而[1-10]代表匹配1到10的任意数字。 4- x 转移字符，例如要匹配星号，问号需要转义的字符 e.</description>
     </item>
     
     <item>
       <title>Redis 学习记录一</title>
-      <link>https://akynazh.site/posts/2021/12/redis-learning-record-i/</link>
+      <link>http://akynazh.site/posts/2021/12/redis-learning-record-i/</link>
       <pubDate>Tue, 14 Dec 2021 23:40:44 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2021/12/redis-learning-record-i/</guid>
+      <guid>http://akynazh.site/posts/2021/12/redis-learning-record-i/</guid>
       <description>Open, Connect And Config open redis: 1redis-server connect to redis: 1redis-cli disconnect: 1redis-cli shutdown show chinese: 1redis-cli --raw connect to remote redis: 1redis-cli -h host -p port -a password get redis config: 1config get {config_name} Data Type list:
 1lpush clist redis 2lpush clist mysql 3lrange clist 0 100 key:
 1127.0.0.1:6379&amp;gt; set mkey sos 2OK 3127.0.0.1:6379&amp;gt; get mkey 4&amp;#34;sos&amp;#34; 5127.0.0.1:6379&amp;gt; del mkey 6(integer) 1 7127.0.0.1:6379&amp;gt; get mkey 8(nil) keys: 接偶数个参数，一一对应。
@@ -1639,10 +1628,10 @@ BufferedWriter 无法正确写出问题 这是一段客户端代码，向服务�
     
     <item>
       <title>Git 快速初始化操作</title>
-      <link>https://akynazh.site/posts/2021/12/git-quick-initialization-operation/</link>
+      <link>http://akynazh.site/posts/2021/12/git-quick-initialization-operation/</link>
       <pubDate>Fri, 10 Dec 2021 18:10:07 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2021/12/git-quick-initialization-operation/</guid>
+      <guid>http://akynazh.site/posts/2021/12/git-quick-initialization-operation/</guid>
       <description>git初次拉取远程仓库 首先从github建立一个仓库，获取仓库地址url，然后进入项目所在文件夹，运行以下代码：
 1&amp;gt; git init # 初始化仓库，生成.git文件 2 3&amp;gt; git add . # 将项目文件的修改信息添加到.git内的一个暂存区（index） 4 5&amp;gt; git commit -m “init” # 将暂存区的修改信息提交到分支 6 7&amp;gt; git remote add origin ${url} # 添加远程仓库 8 9&amp;gt; git push origin master # 将本地分支推送到远程仓库 这里执行完 git commit -m &amp;quot;init&amp;quot; 后，我们查看一下本地分支信息：
 1&amp;gt; git branch 2* master 可见git自动为我们本地创建了一个master分支。
@@ -1652,10 +1641,10 @@ BufferedWriter 无法正确写出问题 这是一段客户端代码，向服务�
     
     <item>
       <title>关于 char*, char[], string 的理解</title>
-      <link>https://akynazh.site/posts/2021/12/understanding-of-char-char-string/</link>
+      <link>http://akynazh.site/posts/2021/12/understanding-of-char-char-string/</link>
       <pubDate>Sun, 05 Dec 2021 12:37:32 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2021/12/understanding-of-char-char-string/</guid>
+      <guid>http://akynazh.site/posts/2021/12/understanding-of-char-char-string/</guid>
       <description>关于char[]与char*的区别 1char s1[] = &amp;#34;abc&amp;#34;; 2cout &amp;lt;&amp;lt; s1 &amp;lt;&amp;lt; endl; // abc 3s1[1] = &amp;#39;d&amp;#39;; // 改变值 4cout &amp;lt;&amp;lt; s1 &amp;lt;&amp;lt; endl; // adc &amp;ldquo;abc&amp;quot;为字符串常量，s1为指针常量，即指针是一个常量，所以指向地址不能改变，指向地址的值可变
 1const char* s2 = &amp;#34;abc&amp;#34;; // const是默认存在的 2cout &amp;lt;&amp;lt; s2 &amp;lt;&amp;lt; endl; // abc 3s2 = &amp;#34;dfs&amp;#34;; // 改变地址 4cout &amp;lt;&amp;lt; s2 &amp;lt;&amp;lt; endl; // dfs &amp;ldquo;abc&amp;quot;为字符串常量，s2为常量指针，指向地址可变，但指向的地址的值不能变
 以上两者皆可用于函数传值
@@ -1664,10 +1653,10 @@ BufferedWriter 无法正确写出问题 这是一段客户端代码，向服务�
     
     <item>
       <title>Linux 实用操作之文本操作</title>
-      <link>https://akynazh.site/posts/2021/12/text-operation-of-linux-practical-operation/</link>
+      <link>http://akynazh.site/posts/2021/12/text-operation-of-linux-practical-operation/</link>
       <pubDate>Sun, 05 Dec 2021 00:20:09 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2021/12/text-operation-of-linux-practical-operation/</guid>
+      <guid>http://akynazh.site/posts/2021/12/text-operation-of-linux-practical-operation/</guid>
       <description>使用grep抓取期望的结果 在过去登录主机的人中截取登录信息含root的行信息
 1last | grep &amp;#39;root&amp;#39; 比较重要，记忆：
 grep [-acinv] [&amp;ndash;color=auto] &amp;lsquo;搜寻字串&amp;rsquo; filename
@@ -1689,10 +1678,10 @@ awk命令操作文本 格式化输出：以tab隔开打印前五行中每行的�
     
     <item>
       <title>Java 重写 equals 方法的同时为什么要重写 hashcode 方法</title>
-      <link>https://akynazh.site/posts/2021/11/why-should-java-rewrite-the-hashcode-method-when-rewriting-the-equals-method/</link>
+      <link>http://akynazh.site/posts/2021/11/why-should-java-rewrite-the-hashcode-method-when-rewriting-the-equals-method/</link>
       <pubDate>Fri, 26 Nov 2021 09:23:27 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2021/11/why-should-java-rewrite-the-hashcode-method-when-rewriting-the-equals-method/</guid>
+      <guid>http://akynazh.site/posts/2021/11/why-should-java-rewrite-the-hashcode-method-when-rewriting-the-equals-method/</guid>
       <description>提出问题 先看一个例子：
 当两个人年龄相同时，我们认为这两个对象相同：
 1class Person { 2 private int age; 3 private String name; 4 5 public Person(int age, String name) { 6 this.age = age; 7 this.name = name; 8 } 9 10 @Override 11 public String toString() { 12 return &amp;#34;Person{&amp;#34; + 13 &amp;#34;age=&amp;#34; + age + 14 &amp;#34;, name=&amp;#39;&amp;#34; + name + &amp;#39;\&amp;#39;&amp;#39; + 15 &amp;#39;}&amp;#39;; 16 } 17 18 @Override 19 public boolean equals(Object o) { 20 if (this == o) return true; 21 if (o == null || getClass() !</description>
@@ -1700,10 +1689,10 @@ awk命令操作文本 格式化输出：以tab隔开打印前五行中每行的�
     
     <item>
       <title>跑步记忆</title>
-      <link>https://akynazh.site/posts/2021/11/running-memory/</link>
+      <link>http://akynazh.site/posts/2021/11/running-memory/</link>
       <pubDate>Tue, 23 Nov 2021 18:20:39 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2021/11/running-memory/</guid>
+      <guid>http://akynazh.site/posts/2021/11/running-memory/</guid>
       <description>跑步的记忆，旧日的时光，思念的味道，生活的无常。
 一. 跑步的挚友 念起中学生活，就会想起那位挚友。
 一同骑行，跑步的挚友。
@@ -1755,10 +1744,10 @@ awk命令操作文本 格式化输出：以tab隔开打印前五行中每行的�
     
     <item>
       <title>Window 增加右键打开选项</title>
-      <link>https://akynazh.site/posts/2021/11/add-right-click-open-option-in-window/</link>
+      <link>http://akynazh.site/posts/2021/11/add-right-click-open-option-in-window/</link>
       <pubDate>Sat, 20 Nov 2021 18:10:30 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2021/11/add-right-click-open-option-in-window/</guid>
+      <guid>http://akynazh.site/posts/2021/11/add-right-click-open-option-in-window/</guid>
       <description>加入注册表界面 win+R
 regedit
 增加右键操作文件选项 以vscode作为编辑文件实例 注册表页面下进入：
@@ -1782,10 +1771,10 @@ regedit
     
     <item>
       <title>Linux 上部署 JAR 包项目后的文件上传问题</title>
-      <link>https://akynazh.site/posts/2021/11/file-upload-problem-after-deploying-jar-package-project-on-linux/</link>
+      <link>http://akynazh.site/posts/2021/11/file-upload-problem-after-deploying-jar-package-project-on-linux/</link>
       <pubDate>Wed, 03 Nov 2021 00:38:12 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2021/11/file-upload-problem-after-deploying-jar-package-project-on-linux/</guid>
+      <guid>http://akynazh.site/posts/2021/11/file-upload-problem-after-deploying-jar-package-project-on-linux/</guid>
       <description>在进行上传文件时，一般会先获取项目类路径：
 1File relativePathFile = new File(URLDecoder.decode(ResourceUtils.getURL(&amp;#34;classpath:&amp;#34;).getPath(), &amp;#34;utf-8&amp;#34;)); 2String absolutePath = relativePathFile.getAbsoluteFile().getPath(); 首先取得相对路径，再进一步取得绝对路径，结果如下：
 如果单纯运行一个java项目： 获得路径为：
@@ -1809,10 +1798,10 @@ e.g. ${project}/target/classes/static/avatar/test.jpg
     
     <item>
       <title>Linux 主机部署 springboot 项目全过程</title>
-      <link>https://akynazh.site/posts/2021/11/the-whole-process-of-linux-host-deployment-springboot-project/</link>
+      <link>http://akynazh.site/posts/2021/11/the-whole-process-of-linux-host-deployment-springboot-project/</link>
       <pubDate>Wed, 03 Nov 2021 00:30:25 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2021/11/the-whole-process-of-linux-host-deployment-springboot-project/</guid>
+      <guid>http://akynazh.site/posts/2021/11/the-whole-process-of-linux-host-deployment-springboot-project/</guid>
       <description>注：部署环境为centos7.9版本
 配置环境 配好mysql，redis，java开发环境。
 上传JAR包项目 1mvn clean 2mvn package 即可把项目打包为JAR包，再通过WINSP上传到服务器。
@@ -1825,10 +1814,10 @@ e.g. ${project}/target/classes/static/avatar/test.jpg
     
     <item>
       <title>春物文摘四</title>
-      <link>https://akynazh.site/posts/2021/06/spring-abstracts-iv/</link>
+      <link>http://akynazh.site/posts/2021/06/spring-abstracts-iv/</link>
       <pubDate>Wed, 23 Jun 2021 23:27:20 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2021/06/spring-abstracts-iv/</guid>
+      <guid>http://akynazh.site/posts/2021/06/spring-abstracts-iv/</guid>
       <description>作者：渡航
 卷十三 第八章. 祈祷至少不要再出错。 「我过得很愉快。这还是第一次。觉得跟别人一起度过的时间是自在舒适的，我很高兴……」
 她带着泫然欲泣的表情，看起来真的很幸福。我再也无法否定，制止她。
@@ -1894,19 +1883,19 @@ e.g. ${project}/target/classes/static/avatar/test.jpg
     
     <item>
       <title>Docker 简单使用记录</title>
-      <link>https://akynazh.site/posts/2021/05/docker-simple-use-process-record/</link>
+      <link>http://akynazh.site/posts/2021/05/docker-simple-use-process-record/</link>
       <pubDate>Wed, 19 May 2021 22:52:52 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2021/05/docker-simple-use-process-record/</guid>
+      <guid>http://akynazh.site/posts/2021/05/docker-simple-use-process-record/</guid>
       <description>下载并运行ubuntu镜像 1[root@VM-0-11-centos ~]# docker run ubuntu:15.10 /bin/echo &amp;#34;crazy thursday&amp;#34; 2crazy thursday 运行ubuntu并开启bash交互 1[root@VM-0-11-centos ~]# docker run -i -t ubuntu:15.10 /bin/bash 2root@fda3220ed59f:/# echo hello 3hello 4root@fda3220ed59f:/# cat /proc/version 5Linux version 3.10.0-1160.45.1.el7.x86_64 (mockbuild@kbuilder.bsys.centos.org) (gcc version 4.8.5 20150623 (Red Hat 4.8.5-44) (GCC) ) #1 SMP Wed Oct 13 17:20:51 UTC 2021 6root@fda3220ed59f:/# ls 7bin dev home lib64 mnt proc run srv tmp var 8boot etc lib media opt root sbin sys usr 9root@fda3220ed59f:/# exit 10exit 运行进程并观察 1[root@VM-0-11-centos ~]# docker run -d ubuntu:15.</description>
     </item>
     
     <item>
       <title>Synchronized 到底锁了谁</title>
-      <link>https://akynazh.site/posts/2021/05/who-the-hell-is-synchronized-locking/</link>
+      <link>http://akynazh.site/posts/2021/05/who-the-hell-is-synchronized-locking/</link>
       <pubDate>Wed, 19 May 2021 22:43:45 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2021/05/who-the-hell-is-synchronized-locking/</guid>
+      <guid>http://akynazh.site/posts/2021/05/who-the-hell-is-synchronized-locking/</guid>
       <description>Synchronized方法 静态方法上的锁
 静态方法是属于“类”，不属于某个实例，是所有对象实例所共享的方法。也就是说如果在静态方法上加入synchronized，那么它获取的就是这个类的锁，锁住的就是这个类。
 普通方法上的锁
@@ -1921,10 +1910,10 @@ synchronized(obj){...} synchronized同步代码块对对象内部的实例加锁
     
     <item>
       <title>春物文摘三</title>
-      <link>https://akynazh.site/posts/2021/05/spring-article-excerpt-3/</link>
+      <link>http://akynazh.site/posts/2021/05/spring-article-excerpt-3/</link>
       <pubDate>Thu, 13 May 2021 23:19:00 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2021/05/spring-article-excerpt-3/</guid>
+      <guid>http://akynazh.site/posts/2021/05/spring-article-excerpt-3/</guid>
       <description>作者：渡航
 卷十 第七章. 不论何时，叶山隼人总是迎合众人期待 她满意地舒一口气，把脸抬起。我们之间的距离，瞬间拉近到脸颊快碰在一起。
 「……」
@@ -1958,10 +1947,10 @@ synchronized(obj){...} synchronized同步代码块对对象内部的实例加锁
     
     <item>
       <title>春物文摘二</title>
-      <link>https://akynazh.site/posts/2021/05/spring-abstracts-ii/</link>
+      <link>http://akynazh.site/posts/2021/05/spring-abstracts-ii/</link>
       <pubDate>Tue, 11 May 2021 16:44:36 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2021/05/spring-abstracts-ii/</guid>
+      <guid>http://akynazh.site/posts/2021/05/spring-abstracts-ii/</guid>
       <description>作者：渡航
 卷八 第一章. 不用说也知道，这正是比企谷小町的逆鳞所在 我们终将失去拥有的一切。此乃不变的真理。
 尽管如此——
@@ -2022,10 +2011,10 @@ synchronized(obj){...} synchronized同步代码块对对象内部的实例加锁
     
     <item>
       <title>Java 与 C&#43;&#43; 中的值传递和引用传递解析</title>
-      <link>https://akynazh.site/posts/2021/05/value-passing-and-reference-passing-parsing-in-java-and-c/</link>
+      <link>http://akynazh.site/posts/2021/05/value-passing-and-reference-passing-parsing-in-java-and-c/</link>
       <pubDate>Sat, 01 May 2021 20:16:39 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2021/05/value-passing-and-reference-passing-parsing-in-java-and-c/</guid>
+      <guid>http://akynazh.site/posts/2021/05/value-passing-and-reference-passing-parsing-in-java-and-c/</guid>
       <description>先说结论：Java只有值传递，而C++既有值传递又有引用传递。
 Java的参数传递 先定义3个方法如下：
 1public static void change1(String str, int num) { 2 str = &amp;#34;world&amp;#34;; // 这里就相当与新new了一个对象! 3 num = 100; 4} 5public static void change2(User user) { 6 user.age = 1; 7 user.name = &amp;#34;mary&amp;#34;; 8} 9public static void change3(User user) { 10 user = new User(1, &amp;#34;mary&amp;#34;); 11} 进行测试：
@@ -2034,10 +2023,10 @@ Java的参数传递 先定义3个方法如下：
     
     <item>
       <title>Window 实用命令记录之文件操作</title>
-      <link>https://akynazh.site/posts/2021/04/file-operation-recorded-by-window-utility-command/</link>
+      <link>http://akynazh.site/posts/2021/04/file-operation-recorded-by-window-utility-command/</link>
       <pubDate>Mon, 19 Apr 2021 13:48:19 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2021/04/file-operation-recorded-by-window-utility-command/</guid>
+      <guid>http://akynazh.site/posts/2021/04/file-operation-recorded-by-window-utility-command/</guid>
       <description>创建文件或文件夹 cmd下创建文件 1type nul &amp;gt; test.jpg powershell下创建文件 1new-item test.jpg 创建文件夹 1mkdir test 重命名文件 注意不能指定到新的路径。
 1PS D:\a\tmp\test&amp;gt; ren test.txt my.txt 移动文件 该命令也可用于重命名。
 1PS D:\a\tmp\test&amp;gt; move test.jpg mydir 复制文件和文件夹 copy无法递归复制，而xcopy可以。
@@ -2046,10 +2035,10 @@ Java的参数传递 先定义3个方法如下：
     
     <item>
       <title>《人间失格》文摘</title>
-      <link>https://akynazh.site/posts/2021/04/human-disqualification-abstract/</link>
+      <link>http://akynazh.site/posts/2021/04/human-disqualification-abstract/</link>
       <pubDate>Sun, 11 Apr 2021 23:13:01 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2021/04/human-disqualification-abstract/</guid>
+      <guid>http://akynazh.site/posts/2021/04/human-disqualification-abstract/</guid>
       <description>作者：太宰治
 手记之二 新学年伊始，山樱树在强韧的褐色嫩叶烘托和蔚蓝的大海映衬下，绽放绚烂的花朵，待到落英缤纷时节，如飞雪般坠下的樱花飘飘洒洒散向大海，装点着海面，随波荡漾，被浪花复又拍打回岸边。
 真孤单……比起她冗长的身世来，仅就这一句叹息便足以唤起我的共鸣。我一直期待着，可是，我从未从这世上的女人口中听到过这句话，这使我感到奇怪和难以理解。不过，虽然她没有用语言说出“孤单”两字，但似乎她身上就散发着这般无言的孤寂，好似有股一寸来宽的气流带包裹着她，在她身旁，我好像也被那股气流包裹，与我特有的带刺的阴郁气流相互交融，犹如落入水底附着在岩石上的枯叶，使我得以从恐惧和不安中抽离。
@@ -2058,10 +2047,10 @@ Java的参数传递 先定义3个方法如下：
     
     <item>
       <title>春物文摘一</title>
-      <link>https://akynazh.site/posts/2021/04/spring-abstracts-i/</link>
+      <link>http://akynazh.site/posts/2021/04/spring-abstracts-i/</link>
       <pubDate>Sun, 11 Apr 2021 11:51:03 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2021/04/spring-abstracts-i/</guid>
+      <guid>http://akynazh.site/posts/2021/04/spring-abstracts-i/</guid>
       <description>作者：渡航
 卷二 第五章. 比企谷八幡再一次回归原来的道路 「才不是那样子……根本不是那样……」
 她说得很小声。由比滨总是那么温柔，所以直到最后仍旧温柔。
@@ -2082,19 +2071,19 @@ Java的参数传递 先定义3个方法如下：
     
     <item>
       <title>IDEA 配置使用记录</title>
-      <link>https://akynazh.site/posts/2021/01/idea-configuration-usage-record/</link>
+      <link>http://akynazh.site/posts/2021/01/idea-configuration-usage-record/</link>
       <pubDate>Sun, 17 Jan 2021 21:46:42 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2021/01/idea-configuration-usage-record/</guid>
+      <guid>http://akynazh.site/posts/2021/01/idea-configuration-usage-record/</guid>
       <description>控制台中文乱码解决 菜单栏HELP-&amp;gt;Edit Custom VM OPtions中加 -Dfile.encoding=utf-8 重启idea IDEA开启RunDashboard 1# .idea/workspace.xml 2 3&amp;lt;component name=&amp;#34;RunDashboard&amp;#34;&amp;gt; 4 &amp;lt;option name=&amp;#34;configurationTypes&amp;#34;&amp;gt; 5 &amp;lt;set&amp;gt; 6 &amp;lt;option value=&amp;#34;SpringBootApplicationConfigurationType&amp;#34; /&amp;gt; 7 &amp;lt;/set&amp;gt; 8 &amp;lt;/option&amp;gt; 9&amp;lt;/component&amp;gt; IDEA关闭拼写 1Settings -&amp;gt; Editor -&amp;gt; Inspection -&amp;gt; Proofreading -&amp;gt; 关闭Typo IDEA配置快捷输入 1editor -&amp;gt; live template IDEA常用快捷键 1alt + ctrl + L : 格式化 2 3ctrl + shift + r : 替换字符 4 5ctrl + r : 在当前文件中替换字符 6 7ctrl + shift + n : 搜索项目文件 8 9ctrl + f : 在当前文件下搜索字符 10 11ctrl + shift + t : 进行快捷抛异常 12 13alt + 上下键 : 光标移到下或上一层 禁用 double shift 对于2021.</description>
     </item>
     
     <item>
       <title>实现 SSH 免 IP 免密登录</title>
-      <link>https://akynazh.site/posts/2021/01/realize-ssh-ipfree-and-secret-free-login/</link>
+      <link>http://akynazh.site/posts/2021/01/realize-ssh-ipfree-and-secret-free-login/</link>
       <pubDate>Wed, 13 Jan 2021 21:53:43 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2021/01/realize-ssh-ipfree-and-secret-free-login/</guid>
+      <guid>http://akynazh.site/posts/2021/01/realize-ssh-ipfree-and-secret-free-login/</guid>
       <description>编辑 ~/.ssh/config 1Host 输入代替名 2 HostName 输入IP 3 Port 输入端口号 4 User 输入用户名 5 # ProxyCommand &amp;#34;C:\Program Files\Git\mingw64\bin\connect.exe&amp;#34; -S 127.0.0.1:7890 -a none %h %p 6 7# 定时发送心跳确保不断开连接 8ServerAliveInterval 30 # 每隔30秒发送一次 9ServerAliveCountMax 60 # 连续60次服务端无响应断开连接 生成并发送密钥 1ssh-keygen -t rsa 然后将公钥 ~/.ssh/id_rsa.pub 复制到目标主机 ~/.ssh/authorized_keys 文件中。
 可能出现的问题：密钥算法不匹配 如果出现以下错误：
 no matching key exchange method found. Their offer: diffie-hellman-group1-sha1
@@ -2105,10 +2094,10 @@ no matching key exchange method found. Their offer: diffie-hellman-group1-sha1
     
     <item>
       <title>Linux 实用操作之网络管理</title>
-      <link>https://akynazh.site/posts/2021/01/network-management-of-linux-practical-operation/</link>
+      <link>http://akynazh.site/posts/2021/01/network-management-of-linux-practical-operation/</link>
       <pubDate>Sun, 03 Jan 2021 00:27:58 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2021/01/network-management-of-linux-practical-operation/</guid>
+      <guid>http://akynazh.site/posts/2021/01/network-management-of-linux-practical-operation/</guid>
       <description>查看内网IP grep抓取inet行，sed删除inet字串和netmask.*字串
 1alias myip=&amp;#34; ifconfig eth0 | grep &amp;#39;inet &amp;#39; | sed &amp;#39;s/inet//g&amp;#39; | sed &amp;#39;s/netmask.*$//g&amp;#39;&amp;#34; test:
 1[root@VM-0-11-centos ~]# myip 2 172.17.0.11 查看外网IP 1curl cip.cc show:
@@ -2121,21 +2110,32 @@ URL : http://www.cip.cc/${my_ip}
     
     <item>
       <title>图的着色问题汇总</title>
-      <link>https://akynazh.site/posts/2020/12/summary-of-coloring-problems-of-graphs/</link>
+      <link>http://akynazh.site/posts/2020/12/summary-of-coloring-problems-of-graphs/</link>
       <pubDate>Sat, 05 Dec 2020 12:34:05 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2020/12/summary-of-coloring-problems-of-graphs/</guid>
+      <guid>http://akynazh.site/posts/2020/12/summary-of-coloring-problems-of-graphs/</guid>
       <description>二分图问题 能否只用2种颜色对一个图上色，并且使得共边顶点不同色？
 代码解决：
 1vector&amp;lt;int&amp;gt; G[MAX_V]; 2int vertexes; 3int edges; 4int color[MAX_V]; //二分图，颜色为1或-1 5bool dfs(int v, int c) { 6 color[v] = c; 7 for (int i = 0; i &amp;lt; G[v].size(); i++) { 8 if (color[G[v][i]] == c) return false; 9 if (color[G[v][i]] == 0 &amp;amp;&amp;amp; !dfs(G[v][i], -c)) return false; 10 } 11 return true; 12} 13void solve() { 14 for (int i = 0; i &amp;lt; vertexes; i++) { 15 if (color[i] == 0) { 16 if (!</description>
     </item>
     
     <item>
+      <title>求解有向图和无向图中是否存在环的方法</title>
+      <link>http://akynazh.site/posts/2020/12/a-method-to-solve-whether-there-are-rings-in-directed-graphs-and-undirected-graphs/</link>
+      <pubDate>Wed, 02 Dec 2020 23:50:44 +0800</pubDate>
+      
+      <guid>http://akynazh.site/posts/2020/12/a-method-to-solve-whether-there-are-rings-in-directed-graphs-and-undirected-graphs/</guid>
+      <description>求解无向图中是否存在环 无向图中是否存在环，可以通过DFS来实现。
+由于他是无向图，所以每次开始一次新的递归即进入一个新的连通子图，在该次dfs中可以通过判断新纳入的结点是否与所在连通子图中其他已经访问过的结点存在边，如果存在则证明存在环。
+1int mat[maxn][maxn], vis[maxn]; 2int dfs(int v) { 3 vis[v] = 1; 4 for (int i = 0; i &amp;lt; num; i++) if (mat[v][i]) { 5 if (vis[i] || dfs(i)) return 1; // 该连通子图新纳入的结点与原连通子图中的某一结点有边，即产生了环 6 } 7 return 0; 8} 9 10memset(vis, 0, sizeof(vis)); 11int flag = 0; // 无环标志 12for (int j = 0; j &amp;lt; num; j++) { 13 if (!vis[j]) flag = dfs(j); 14 // 因为是无向图，所以每开始一次新的递归即进入一个新的连通子图，一定不会访问到其他连通子图的结点 15 if (flag) break; // 如果在该连通子图中找到环则直接结束递归 16} 求解有向图中是否存在环 这里我也尝试过使用如上DFS的解法，但似乎行不通。</description>
+    </item>
+    
+    <item>
       <title>二次元随想</title>
-      <link>https://akynazh.site/posts/2020/11/two-dimensional-capriccio/</link>
+      <link>http://akynazh.site/posts/2020/11/two-dimensional-capriccio/</link>
       <pubDate>Sat, 28 Nov 2020 18:24:12 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2020/11/two-dimensional-capriccio/</guid>
+      <guid>http://akynazh.site/posts/2020/11/two-dimensional-capriccio/</guid>
       <description>之前看完冰菓之后，内心有一丝莫名的伤感。最近终于也把春物小说读完了，同样的感觉又涌上心头，这是一种难以言说的情愫。
 也许是对一段故事谢幕的不舍。欣赏一部优秀的作品，走进另一个世界，见证一段故事。在故事尾声，我总希望剧情能不断延长下去。可就像一段青春时光，一段故事总要落幕。结束了的就只能成为回忆&amp;hellip;&amp;hellip;虚拟世界里的东西，往往是现实中难以企及的。
 也许是对二次元世界的那种向往。 二次元世界有着独特的美感，每一个画面都扣人心弦，那种干净的，美好的画面，都是现实中难以遇见的。尤其是京阿尼的冰菓，每一帧画面都是精品。所以在经历了一段时间的美感洗礼之后又回到现实，我也许因此莫名的迷惘，失落吧。
@@ -2147,10 +2147,10 @@ URL : http://www.cip.cc/${my_ip}
     
     <item>
       <title>equals 方法和 == 运算符的作用区别</title>
-      <link>https://akynazh.site/posts/2020/11/the-difference-between-the-equals-method-and-the---operator/</link>
+      <link>http://akynazh.site/posts/2020/11/the-difference-between-the-equals-method-and-the---operator/</link>
       <pubDate>Wed, 25 Nov 2020 00:21:05 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2020/11/the-difference-between-the-equals-method-and-the---operator/</guid>
+      <guid>http://akynazh.site/posts/2020/11/the-difference-between-the-equals-method-and-the---operator/</guid>
       <description>equals方法与&amp;quot;==&amp;ldquo;的比较与分析 首先提出一个重要的点:
 == 比较时进行地址的比较
 equals 比较时进行值的比较
@@ -2162,10 +2162,10 @@ equals 比较时进行值的比较
     
     <item>
       <title>Cmd 重要且实用的一些命令</title>
-      <link>https://akynazh.site/posts/2020/11/cmd-some-important-and-practical-commands/</link>
+      <link>http://akynazh.site/posts/2020/11/cmd-some-important-and-practical-commands/</link>
       <pubDate>Fri, 20 Nov 2020 18:17:33 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2020/11/cmd-some-important-and-practical-commands/</guid>
+      <guid>http://akynazh.site/posts/2020/11/cmd-some-important-and-practical-commands/</guid>
       <description>写入文件 写入hello字符串（同时新建了a.txt） 1echo hello &amp;gt; a.txt 追加写入hello字符串 1echo hello &amp;gt;&amp;gt; a.txt 将a.txt内容追加写入b.txt 1type a.txt &amp;gt;&amp;gt; b.txt 新建文件 新建空文件a.txt 1type null &amp;gt; a.txt 换行（分号换行输出） 1echo hello; echo peter 关于程序编译 test.cpp: 一个含cin输入的程序
 编译cpp
 1g++ test.cpp -o test 以1.in作为标准输入，2.out作为标准输出执行test
@@ -2181,10 +2181,10 @@ equals 比较时进行值的比较
     
     <item>
       <title>矩阵快速幂的介绍及其应用</title>
-      <link>https://akynazh.site/posts/2020/11/introduction-and-application-of-matrix-fast-power/</link>
+      <link>http://akynazh.site/posts/2020/11/introduction-and-application-of-matrix-fast-power/</link>
       <pubDate>Wed, 18 Nov 2020 23:47:15 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2020/11/introduction-and-application-of-matrix-fast-power/</guid>
+      <guid>http://akynazh.site/posts/2020/11/introduction-and-application-of-matrix-fast-power/</guid>
       <description>矩阵快速幂介绍 题目描述
 给定n×n的矩阵A，求 A^k。
 输入格式
@@ -2202,20 +2202,20 @@ equals 比较时进行值的比较
     
     <item>
       <title>最短路问题汇总</title>
-      <link>https://akynazh.site/posts/2020/11/summary-of-shortest-path-problems/</link>
+      <link>http://akynazh.site/posts/2020/11/summary-of-shortest-path-problems/</link>
       <pubDate>Tue, 17 Nov 2020 17:55:32 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2020/11/summary-of-shortest-path-problems/</guid>
+      <guid>http://akynazh.site/posts/2020/11/summary-of-shortest-path-problems/</guid>
       <description>注意，这里为了方便描述算法，所以都用了最易理解的邻接矩阵来写，比赛中为了追求效率，一般将邻接矩阵改为链式前向星或者邻接表。
 迪杰斯特拉算法 O(V^2) 1const int MAXN = 100; 2const int INF = 0x3f3f3f3f; 3// 有向无环图 DAG 4int V, E; // 顶点数和边数 5int graph[MAXN][MAXN]; // DAG邻接矩阵，初始值为INF，不可达为INF，否则为cost值 6int d[MAXN]; // 从某点s出发到其它任意结点的最短路径长度，初始值为INF 7int visited[MAXN]; // 某点是否访问过，访问过则为1否则为0 8 9// 初始化图 10void init() { 11	memset(graph, 0x3f, sizeof(graph)); 12	cin &amp;gt;&amp;gt; V &amp;gt;&amp;gt; E; 13	int from, to, cost; 14	for (int i = 0 ; i &amp;lt; E; i++) { 15	cin &amp;gt;&amp;gt; from &amp;gt;&amp;gt; to &amp;gt;&amp;gt; cost; 16	graph[from][to] = cost; 17	} 18} 19// 迪杰斯特拉算法求解最短路，针对点展开 20void Dijkstra(int s) { 21	memset(d, 0x3f, sizeof(d)); 22	memset(visited, 0, sizeof(visited)); 23	visited[s] = 1; 24	for(int i = 0; i &amp;lt; V; i++) d[i] = graph[s][i]; 25	d[s] = 0; 26	int k, min_cost; 27	// 无负边时最多更新n-1(其他结点数)次 28	for(int i = 0; i &amp;lt; V - 1; i++){ 29	min_cost = INF; 30	// 寻找最未被访问的且权值最小的路径，需要优化的地方 31	for(int j = 0; j &amp;lt; V; j++){ 32	if(!</description>
     </item>
     
     <item>
       <title>关于辗转相除法和扩展欧几里得算法</title>
-      <link>https://akynazh.site/posts/2020/07/on-rolling-division-and-extended-euclidean-algorithm/</link>
+      <link>http://akynazh.site/posts/2020/07/on-rolling-division-and-extended-euclidean-algorithm/</link>
       <pubDate>Tue, 21 Jul 2020 20:48:53 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2020/07/on-rolling-division-and-extended-euclidean-algorithm/</guid>
+      <guid>http://akynazh.site/posts/2020/07/on-rolling-division-and-extended-euclidean-algorithm/</guid>
       <description>gcd辗转相除法求最大公约数 思路：反复交换取余，直到小的数为0。
 1int gcd(int a, int b){ 2	if(b == 0) return a; 3	return gcd(b, a % b); 4} exgcd扩展欧几里得算法 先介绍贝祖定理：
 若a,b为整数，则一定存在整数x,y，使得$ax + by = gcd(a,b)$。
@@ -2232,10 +2232,10 @@ $ay_1 + b \times (x_1 -(a \div b) \times y_1) == gcd(a,b) $(2)</description>
     
     <item>
       <title>有关素数的一些算法</title>
-      <link>https://akynazh.site/posts/2020/07/some-algorithms-about-prime-numbers/</link>
+      <link>http://akynazh.site/posts/2020/07/some-algorithms-about-prime-numbers/</link>
       <pubDate>Tue, 21 Jul 2020 20:43:04 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2020/07/some-algorithms-about-prime-numbers/</guid>
+      <guid>http://akynazh.site/posts/2020/07/some-algorithms-about-prime-numbers/</guid>
       <description>埃氏筛法 问1000000000000以内有多少个素数？
 运用朴素算法必TLE，这时考虑埃氏筛法。
 算法思路：
@@ -2245,10 +2245,10 @@ $ay_1 + b \times (x_1 -(a \div b) \times y_1) == gcd(a,b) $(2)</description>
     
     <item>
       <title>Python 自动爬取花瓣网任意面板中所有图片</title>
-      <link>https://akynazh.site/posts/2020/02/python-automatically-crawls-all-pictures-in-any-panel-of-petal-net/</link>
+      <link>http://akynazh.site/posts/2020/02/python-automatically-crawls-all-pictures-in-any-panel-of-petal-net/</link>
       <pubDate>Thu, 13 Feb 2020 00:14:23 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2020/02/python-automatically-crawls-all-pictures-in-any-panel-of-petal-net/</guid>
+      <guid>http://akynazh.site/posts/2020/02/python-automatically-crawls-all-pictures-in-any-panel-of-petal-net/</guid>
       <description>注：该项目只适用于旧版花瓣，但其中的思路值得领会。对于新版花瓣编写的代码，逻辑差别不大。
 需要安装的库 urllib easygui selenium webdriver_manager 获取过程 进入面板内 复制当前面板url 启动该脚本按提示进行即可 代码编写流程 分析pin图特点 查看面板源码，可以在对应的script中找到面板中图片的json数据。
 在app.page[&amp;ldquo;board&amp;rdquo;]下可以找到&amp;quot;pins&amp;quot;:[{&amp;hellip;}]，主要图片ID(pin)位于这里面。
@@ -2264,10 +2264,10 @@ $ay_1 + b \times (x_1 -(a \div b) \times y_1) == gcd(a,b) $(2)</description>
     
     <item>
       <title>Matlab 基本用法整理</title>
-      <link>https://akynazh.site/posts/2020/02/basic-usage-sorting-of-matlab/</link>
+      <link>http://akynazh.site/posts/2020/02/basic-usage-sorting-of-matlab/</link>
       <pubDate>Thu, 06 Feb 2020 20:41:12 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2020/02/basic-usage-sorting-of-matlab/</guid>
+      <guid>http://akynazh.site/posts/2020/02/basic-usage-sorting-of-matlab/</guid>
       <description>基本语法方面 提取矩阵某行或某列 1A(:, [2 3]) 返回第2和第3列 获取随机数 1randi(100); % 1 到 100 之间的随机整数 初始化数组 1zeros(1, 30); % 1行30列的全0数组 控制语句 1for i = 0 : 100 2 for j = 1 : 10 3 if (...) 4 ... 5 else 6 ... 7 end 8 end 9 ... 10end 格式化输出 1fprintf(&amp;#34;若选手选择改变，则成功次数为：%d, 成功率为：%f\n&amp;#34;, count, count / SUM); 初等数学方面 求解方程组 注：solve已经改版，不可传入字符串
 实例：求解二元一次方程
 1syms x y; 2s = x - 6 * y == 2; 3t = 5 * x + 4 * y == 3; 4result = solve(s, t); 求平均值，中值与标准差 1A = [12 13 7 18 16 21 9 10 2 18]; 2A = sort(A); 3ave = mean(A); 4md = median(A); 5sigma = std(A); 解一阶导数方程 1syms x y; 2y = -0.</description>
@@ -2275,20 +2275,20 @@ $ay_1 + b \times (x_1 -(a \div b) \times y_1) == gcd(a,b) $(2)</description>
     
     <item>
       <title>About</title>
-      <link>https://akynazh.site/about/</link>
+      <link>http://akynazh.site/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://akynazh.site/about/</guid>
+      <guid>http://akynazh.site/about/</guid>
       <description>The name of this site comes from a song call Norwegian Wood, composed by The Beatles from their 1965 album Rubber Soul. The song&amp;rsquo;s special feeling attracts me and I love its subtle sense of sadness. By the way, Julia and And I love her are also my favorites of The Beatles.
 Norwegian Wood (ノルウェイの森) is also a 1987 novel by Haruki Murakami. I read this novel in 2020 and I also start to write blogs in 2020.</description>
     </item>
     
     <item>
       <title>Location</title>
-      <link>https://akynazh.site/location/</link>
+      <link>http://akynazh.site/location/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://akynazh.site/location/</guid>
+      <guid>http://akynazh.site/location/</guid>
       <description></description>
     </item>
     

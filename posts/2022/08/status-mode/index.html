@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title> 状态模式 | Norwegian Wood</title>
-  <link rel='canonical' href='https://akynazh.site/posts/2022/08/status-mode/'>
+  <link rel='canonical' href='http://akynazh.site/posts/2022/08/status-mode/'>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
@@ -15,7 +15,7 @@
 从接口开始 编写状态接口：
 1public interface State { 2 3	public void insertQuarter(); 4	public void ejectQuarter(); 5	public void turnCrank(); 6	public void dispense(); 7	8	public void refill(); 9} 创建机器类 1package headfirst.designpatterns.state.gumballstate; 2 3public class GumballMachine { 4 // 各种机器状态 5	State soldOutState; 6	State noQuarterState; 7	State hasQuarterState; 8	State soldState; 9 // 当前状态 10	State state; 11	int count = 0; 12 13	public GumballMachine(int numberGumballs) { 14	soldOutState = new SoldOutState(this); 15	noQuarterState = new NoQuarterState(this); 16	hasQuarterState = new HasQuarterState(this); 17	soldState = new SoldState(this); 18 19	this." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://akynazh.site/posts/2022/08/status-mode/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="http://akynazh.site/posts/2022/08/status-mode/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-08-25T22:54:26+08:00" />
 <meta property="article:modified_time" content="2022-08-25T22:54:26+08:00" /><meta property="og:site_name" content="Norwegian Wood" />
 
@@ -32,7 +32,7 @@
   
   
   
-  <link rel="stylesheet" href="https://akynazh.site/css/styles.43c5f4c45b6248e071aa0f9eae2d299f06dc6e7d91ae3c1a2e4bcde6252688b0db6d6f3722b74f3c851c6e1b5ea207cff6868c78a11f7c137fd8cc01748ba457.css" integrity="sha512-Q8X0xFtiSOBxqg&#43;eri0pnwbcbn2RrjwaLkvN5iUmiLDbbW83IrdPPIUcbhteogfP9oaMeKEffBN/2MwBdIukVw==">
+  <link rel="stylesheet" href="http://akynazh.site/css/styles.43c5f4c45b6248e071aa0f9eae2d299f06dc6e7d91ae3c1a2e4bcde6252688b0db6d6f3722b74f3c851c6e1b5ea207cff6868c78a11f7c137fd8cc01748ba457.css" integrity="sha512-Q8X0xFtiSOBxqg&#43;eri0pnwbcbn2RrjwaLkvN5iUmiLDbbW83IrdPPIUcbhteogfP9oaMeKEffBN/2MwBdIukVw==">
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
@@ -70,14 +70,14 @@
       <ul>
         
         <li>
-          <a class="icon" href="https://akynazh.site/posts/2022/08/combination-mode/" aria-label="Previous">
+          <a class="icon" href="http://akynazh.site/posts/2022/08/combination-mode/" aria-label="Previous">
             <i class="fas fa-chevron-left" aria-hidden="true"></i>
           </a>
         </li>
         
         
         <li>
-          <a class="icon" href="https://akynazh.site/posts/2022/08/proxy-pattern/" aria-label="Next">
+          <a class="icon" href="http://akynazh.site/posts/2022/08/proxy-pattern/" aria-label="Next">
             <i class="fas fa-chevron-right" aria-hidden="true"></i>
           </a>
         </li>
@@ -114,47 +114,47 @@
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fstatus-mode%2f" aria-label="Facebook">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=http%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fstatus-mode%2f" aria-label="Facebook">
       <i class="fab fa-facebook " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fstatus-mode%2f&text=%e7%8a%b6%e6%80%81%e6%a8%a1%e5%bc%8f" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=http%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fstatus-mode%2f&text=%e7%8a%b6%e6%80%81%e6%a8%a1%e5%bc%8f" aria-label="Twitter">
       <i class="fab fa-twitter " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fstatus-mode%2f&title=%e7%8a%b6%e6%80%81%e6%a8%a1%e5%bc%8f" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=http%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fstatus-mode%2f&title=%e7%8a%b6%e6%80%81%e6%a8%a1%e5%bc%8f" aria-label="Linkedin">
       <i class="fab fa-linkedin " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fstatus-mode%2f&is_video=false&description=%e7%8a%b6%e6%80%81%e6%a8%a1%e5%bc%8f" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fstatus-mode%2f&is_video=false&description=%e7%8a%b6%e6%80%81%e6%a8%a1%e5%bc%8f" aria-label="Pinterest">
       <i class="fab fa-pinterest " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=%e7%8a%b6%e6%80%81%e6%a8%a1%e5%bc%8f&body=Check out this article: https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fstatus-mode%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=%e7%8a%b6%e6%80%81%e6%a8%a1%e5%bc%8f&body=Check out this article: http%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fstatus-mode%2f" aria-label="Email">
       <i class="fas fa-envelope " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fstatus-mode%2f&title=%e7%8a%b6%e6%80%81%e6%a8%a1%e5%bc%8f" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=http%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fstatus-mode%2f&title=%e7%8a%b6%e6%80%81%e6%a8%a1%e5%bc%8f" aria-label="Pocket">
       <i class="fab fa-get-pocket " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fstatus-mode%2f&title=%e7%8a%b6%e6%80%81%e6%a8%a1%e5%bc%8f" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=http%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fstatus-mode%2f&title=%e7%8a%b6%e6%80%81%e6%a8%a1%e5%bc%8f" aria-label="reddit">
       <i class="fab fa-reddit " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fstatus-mode%2f&name=%e7%8a%b6%e6%80%81%e6%a8%a1%e5%bc%8f&description=%e5%ae%9a%e4%b9%89%20%e7%8a%b6%e6%80%81%e6%a8%a1%e5%bc%8f%e5%85%81%e8%ae%b8%e5%af%b9%e8%b1%a1%e5%9c%a8%e5%86%85%e9%83%a8%e7%8a%b6%e6%80%81%e6%94%b9%e5%8f%98%e6%97%b6%e6%94%b9%e5%8f%98%e5%ae%83%e7%9a%84%e8%a1%8c%e4%b8%ba%ef%bc%8c%e5%af%b9%e8%b1%a1%e7%9c%8b%e8%b5%b7%e6%9d%a5%e5%a5%bd%e5%83%8f%e4%bf%ae%e6%94%b9%e4%ba%86%e5%ae%83%e7%9a%84%e7%b1%bb%e3%80%82%0a%e6%af%94%e5%a6%82%e6%9f%90%e4%b8%aa%e6%9c%ba%e5%99%a8%e6%9c%89%e5%90%84%e7%a7%8d%e5%a4%8d%e6%9d%82%e7%9a%84%e7%8a%b6%e6%80%81%ef%bc%8c%e6%af%8f%e4%b8%aa%e7%8a%b6%e6%80%81%e9%83%bd%e7%9d%80%e5%85%b1%e5%90%8c%e7%9a%84%e5%8f%82%e6%95%b0%ef%bc%8c%e8%80%8c%e8%bf%99%e4%ba%9b%e5%8f%82%e6%95%b0%e5%80%bc%e6%9c%89%e5%8c%ba%e5%88%ab%e3%80%82%e7%94%a8%e6%88%b7%e9%80%9a%e8%bf%87%e6%9f%90%e4%ba%9b%e6%93%8d%e4%bd%9c%e4%bc%9a%e6%94%b9%e5%8f%98%e6%9c%ba%e5%99%a8%e7%9a%84%e7%8a%b6%e6%80%81%ef%bc%8c%e6%9c%ba%e5%99%a8%e8%bd%ac%e5%8f%98%e7%8a%b6%e6%80%81%e5%90%8e%ef%bc%8c%e4%bb%a5%e5%bd%93%e5%89%8d%e7%8a%b6%e6%80%81%e7%9a%84%e6%96%b9%e6%b3%95%e7%bb%99%e7%94%a8%e6%88%b7%e5%8f%8d%e9%a6%88%e3%80%82%0a%e4%bb%a3%e7%a0%81%e5%b1%95%e7%a4%ba%20%e4%bb%a5%e6%9c%ba%e5%99%a8%e7%9a%84%e4%be%8b%e5%ad%90%e8%af%b4%e6%98%8e%e3%80%82%0a%e4%bb%8e%e6%8e%a5%e5%8f%a3%e5%bc%80%e5%a7%8b%20%e7%bc%96%e5%86%99%e7%8a%b6%e6%80%81%e6%8e%a5%e5%8f%a3%ef%bc%9a%0a1public%20interface%20State%20%7b%202%203%09public%20void%20insertQuarter%28%29%3b%204%09public%20void%20ejectQuarter%28%29%3b%205%09public%20void%20turnCrank%28%29%3b%206%09public%20void%20dispense%28%29%3b%207%098%09public%20void%20refill%28%29%3b%209%7d%20%e5%88%9b%e5%bb%ba%e6%9c%ba%e5%99%a8%e7%b1%bb%201package%20headfirst.designpatterns.state.gumballstate%3b%202%203public%20class%20GumballMachine%20%7b%204%20%2f%2f%20%e5%90%84%e7%a7%8d%e6%9c%ba%e5%99%a8%e7%8a%b6%e6%80%81%205%09State%20soldOutState%3b%206%09State%20noQuarterState%3b%207%09State%20hasQuarterState%3b%208%09State%20soldState%3b%209%20%2f%2f%20%e5%bd%93%e5%89%8d%e7%8a%b6%e6%80%81%2010%09State%20state%3b%2011%09int%20count%20%3d%200%3b%2012%2013%09public%20GumballMachine%28int%20numberGumballs%29%20%7b%2014%09soldOutState%20%3d%20new%20SoldOutState%28this%29%3b%2015%09noQuarterState%20%3d%20new%20NoQuarterState%28this%29%3b%2016%09hasQuarterState%20%3d%20new%20HasQuarterState%28this%29%3b%2017%09soldState%20%3d%20new%20SoldState%28this%29%3b%2018%2019%09this." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=http%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fstatus-mode%2f&name=%e7%8a%b6%e6%80%81%e6%a8%a1%e5%bc%8f&description=%e5%ae%9a%e4%b9%89%20%e7%8a%b6%e6%80%81%e6%a8%a1%e5%bc%8f%e5%85%81%e8%ae%b8%e5%af%b9%e8%b1%a1%e5%9c%a8%e5%86%85%e9%83%a8%e7%8a%b6%e6%80%81%e6%94%b9%e5%8f%98%e6%97%b6%e6%94%b9%e5%8f%98%e5%ae%83%e7%9a%84%e8%a1%8c%e4%b8%ba%ef%bc%8c%e5%af%b9%e8%b1%a1%e7%9c%8b%e8%b5%b7%e6%9d%a5%e5%a5%bd%e5%83%8f%e4%bf%ae%e6%94%b9%e4%ba%86%e5%ae%83%e7%9a%84%e7%b1%bb%e3%80%82%0a%e6%af%94%e5%a6%82%e6%9f%90%e4%b8%aa%e6%9c%ba%e5%99%a8%e6%9c%89%e5%90%84%e7%a7%8d%e5%a4%8d%e6%9d%82%e7%9a%84%e7%8a%b6%e6%80%81%ef%bc%8c%e6%af%8f%e4%b8%aa%e7%8a%b6%e6%80%81%e9%83%bd%e7%9d%80%e5%85%b1%e5%90%8c%e7%9a%84%e5%8f%82%e6%95%b0%ef%bc%8c%e8%80%8c%e8%bf%99%e4%ba%9b%e5%8f%82%e6%95%b0%e5%80%bc%e6%9c%89%e5%8c%ba%e5%88%ab%e3%80%82%e7%94%a8%e6%88%b7%e9%80%9a%e8%bf%87%e6%9f%90%e4%ba%9b%e6%93%8d%e4%bd%9c%e4%bc%9a%e6%94%b9%e5%8f%98%e6%9c%ba%e5%99%a8%e7%9a%84%e7%8a%b6%e6%80%81%ef%bc%8c%e6%9c%ba%e5%99%a8%e8%bd%ac%e5%8f%98%e7%8a%b6%e6%80%81%e5%90%8e%ef%bc%8c%e4%bb%a5%e5%bd%93%e5%89%8d%e7%8a%b6%e6%80%81%e7%9a%84%e6%96%b9%e6%b3%95%e7%bb%99%e7%94%a8%e6%88%b7%e5%8f%8d%e9%a6%88%e3%80%82%0a%e4%bb%a3%e7%a0%81%e5%b1%95%e7%a4%ba%20%e4%bb%a5%e6%9c%ba%e5%99%a8%e7%9a%84%e4%be%8b%e5%ad%90%e8%af%b4%e6%98%8e%e3%80%82%0a%e4%bb%8e%e6%8e%a5%e5%8f%a3%e5%bc%80%e5%a7%8b%20%e7%bc%96%e5%86%99%e7%8a%b6%e6%80%81%e6%8e%a5%e5%8f%a3%ef%bc%9a%0a1public%20interface%20State%20%7b%202%203%09public%20void%20insertQuarter%28%29%3b%204%09public%20void%20ejectQuarter%28%29%3b%205%09public%20void%20turnCrank%28%29%3b%206%09public%20void%20dispense%28%29%3b%207%098%09public%20void%20refill%28%29%3b%209%7d%20%e5%88%9b%e5%bb%ba%e6%9c%ba%e5%99%a8%e7%b1%bb%201package%20headfirst.designpatterns.state.gumballstate%3b%202%203public%20class%20GumballMachine%20%7b%204%20%2f%2f%20%e5%90%84%e7%a7%8d%e6%9c%ba%e5%99%a8%e7%8a%b6%e6%80%81%205%09State%20soldOutState%3b%206%09State%20noQuarterState%3b%207%09State%20hasQuarterState%3b%208%09State%20soldState%3b%209%20%2f%2f%20%e5%bd%93%e5%89%8d%e7%8a%b6%e6%80%81%2010%09State%20state%3b%2011%09int%20count%20%3d%200%3b%2012%2013%09public%20GumballMachine%28int%20numberGumballs%29%20%7b%2014%09soldOutState%20%3d%20new%20SoldOutState%28this%29%3b%2015%09noQuarterState%20%3d%20new%20NoQuarterState%28this%29%3b%2016%09hasQuarterState%20%3d%20new%20HasQuarterState%28this%29%3b%2017%09soldState%20%3d%20new%20SoldState%28this%29%3b%2018%2019%09this." aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fstatus-mode%2f&t=%e7%8a%b6%e6%80%81%e6%a8%a1%e5%bc%8f" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=http%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fstatus-mode%2f&t=%e7%8a%b6%e6%80%81%e6%a8%a1%e5%bc%8f" aria-label="Hacker News">
       <i class="fab fa-hacker-news " aria-hidden="true"></i>
     </a>
   </li>
@@ -452,47 +452,47 @@
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fstatus-mode%2f" aria-label="Facebook">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=http%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fstatus-mode%2f" aria-label="Facebook">
       <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fstatus-mode%2f&text=%e7%8a%b6%e6%80%81%e6%a8%a1%e5%bc%8f" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=http%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fstatus-mode%2f&text=%e7%8a%b6%e6%80%81%e6%a8%a1%e5%bc%8f" aria-label="Twitter">
       <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fstatus-mode%2f&title=%e7%8a%b6%e6%80%81%e6%a8%a1%e5%bc%8f" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=http%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fstatus-mode%2f&title=%e7%8a%b6%e6%80%81%e6%a8%a1%e5%bc%8f" aria-label="Linkedin">
       <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fstatus-mode%2f&is_video=false&description=%e7%8a%b6%e6%80%81%e6%a8%a1%e5%bc%8f" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fstatus-mode%2f&is_video=false&description=%e7%8a%b6%e6%80%81%e6%a8%a1%e5%bc%8f" aria-label="Pinterest">
       <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=%e7%8a%b6%e6%80%81%e6%a8%a1%e5%bc%8f&body=Check out this article: https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fstatus-mode%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=%e7%8a%b6%e6%80%81%e6%a8%a1%e5%bc%8f&body=Check out this article: http%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fstatus-mode%2f" aria-label="Email">
       <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fstatus-mode%2f&title=%e7%8a%b6%e6%80%81%e6%a8%a1%e5%bc%8f" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=http%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fstatus-mode%2f&title=%e7%8a%b6%e6%80%81%e6%a8%a1%e5%bc%8f" aria-label="Pocket">
       <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fstatus-mode%2f&title=%e7%8a%b6%e6%80%81%e6%a8%a1%e5%bc%8f" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=http%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fstatus-mode%2f&title=%e7%8a%b6%e6%80%81%e6%a8%a1%e5%bc%8f" aria-label="reddit">
       <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fstatus-mode%2f&name=%e7%8a%b6%e6%80%81%e6%a8%a1%e5%bc%8f&description=%e5%ae%9a%e4%b9%89%20%e7%8a%b6%e6%80%81%e6%a8%a1%e5%bc%8f%e5%85%81%e8%ae%b8%e5%af%b9%e8%b1%a1%e5%9c%a8%e5%86%85%e9%83%a8%e7%8a%b6%e6%80%81%e6%94%b9%e5%8f%98%e6%97%b6%e6%94%b9%e5%8f%98%e5%ae%83%e7%9a%84%e8%a1%8c%e4%b8%ba%ef%bc%8c%e5%af%b9%e8%b1%a1%e7%9c%8b%e8%b5%b7%e6%9d%a5%e5%a5%bd%e5%83%8f%e4%bf%ae%e6%94%b9%e4%ba%86%e5%ae%83%e7%9a%84%e7%b1%bb%e3%80%82%0a%e6%af%94%e5%a6%82%e6%9f%90%e4%b8%aa%e6%9c%ba%e5%99%a8%e6%9c%89%e5%90%84%e7%a7%8d%e5%a4%8d%e6%9d%82%e7%9a%84%e7%8a%b6%e6%80%81%ef%bc%8c%e6%af%8f%e4%b8%aa%e7%8a%b6%e6%80%81%e9%83%bd%e7%9d%80%e5%85%b1%e5%90%8c%e7%9a%84%e5%8f%82%e6%95%b0%ef%bc%8c%e8%80%8c%e8%bf%99%e4%ba%9b%e5%8f%82%e6%95%b0%e5%80%bc%e6%9c%89%e5%8c%ba%e5%88%ab%e3%80%82%e7%94%a8%e6%88%b7%e9%80%9a%e8%bf%87%e6%9f%90%e4%ba%9b%e6%93%8d%e4%bd%9c%e4%bc%9a%e6%94%b9%e5%8f%98%e6%9c%ba%e5%99%a8%e7%9a%84%e7%8a%b6%e6%80%81%ef%bc%8c%e6%9c%ba%e5%99%a8%e8%bd%ac%e5%8f%98%e7%8a%b6%e6%80%81%e5%90%8e%ef%bc%8c%e4%bb%a5%e5%bd%93%e5%89%8d%e7%8a%b6%e6%80%81%e7%9a%84%e6%96%b9%e6%b3%95%e7%bb%99%e7%94%a8%e6%88%b7%e5%8f%8d%e9%a6%88%e3%80%82%0a%e4%bb%a3%e7%a0%81%e5%b1%95%e7%a4%ba%20%e4%bb%a5%e6%9c%ba%e5%99%a8%e7%9a%84%e4%be%8b%e5%ad%90%e8%af%b4%e6%98%8e%e3%80%82%0a%e4%bb%8e%e6%8e%a5%e5%8f%a3%e5%bc%80%e5%a7%8b%20%e7%bc%96%e5%86%99%e7%8a%b6%e6%80%81%e6%8e%a5%e5%8f%a3%ef%bc%9a%0a1public%20interface%20State%20%7b%202%203%09public%20void%20insertQuarter%28%29%3b%204%09public%20void%20ejectQuarter%28%29%3b%205%09public%20void%20turnCrank%28%29%3b%206%09public%20void%20dispense%28%29%3b%207%098%09public%20void%20refill%28%29%3b%209%7d%20%e5%88%9b%e5%bb%ba%e6%9c%ba%e5%99%a8%e7%b1%bb%201package%20headfirst.designpatterns.state.gumballstate%3b%202%203public%20class%20GumballMachine%20%7b%204%20%2f%2f%20%e5%90%84%e7%a7%8d%e6%9c%ba%e5%99%a8%e7%8a%b6%e6%80%81%205%09State%20soldOutState%3b%206%09State%20noQuarterState%3b%207%09State%20hasQuarterState%3b%208%09State%20soldState%3b%209%20%2f%2f%20%e5%bd%93%e5%89%8d%e7%8a%b6%e6%80%81%2010%09State%20state%3b%2011%09int%20count%20%3d%200%3b%2012%2013%09public%20GumballMachine%28int%20numberGumballs%29%20%7b%2014%09soldOutState%20%3d%20new%20SoldOutState%28this%29%3b%2015%09noQuarterState%20%3d%20new%20NoQuarterState%28this%29%3b%2016%09hasQuarterState%20%3d%20new%20HasQuarterState%28this%29%3b%2017%09soldState%20%3d%20new%20SoldState%28this%29%3b%2018%2019%09this." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=http%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fstatus-mode%2f&name=%e7%8a%b6%e6%80%81%e6%a8%a1%e5%bc%8f&description=%e5%ae%9a%e4%b9%89%20%e7%8a%b6%e6%80%81%e6%a8%a1%e5%bc%8f%e5%85%81%e8%ae%b8%e5%af%b9%e8%b1%a1%e5%9c%a8%e5%86%85%e9%83%a8%e7%8a%b6%e6%80%81%e6%94%b9%e5%8f%98%e6%97%b6%e6%94%b9%e5%8f%98%e5%ae%83%e7%9a%84%e8%a1%8c%e4%b8%ba%ef%bc%8c%e5%af%b9%e8%b1%a1%e7%9c%8b%e8%b5%b7%e6%9d%a5%e5%a5%bd%e5%83%8f%e4%bf%ae%e6%94%b9%e4%ba%86%e5%ae%83%e7%9a%84%e7%b1%bb%e3%80%82%0a%e6%af%94%e5%a6%82%e6%9f%90%e4%b8%aa%e6%9c%ba%e5%99%a8%e6%9c%89%e5%90%84%e7%a7%8d%e5%a4%8d%e6%9d%82%e7%9a%84%e7%8a%b6%e6%80%81%ef%bc%8c%e6%af%8f%e4%b8%aa%e7%8a%b6%e6%80%81%e9%83%bd%e7%9d%80%e5%85%b1%e5%90%8c%e7%9a%84%e5%8f%82%e6%95%b0%ef%bc%8c%e8%80%8c%e8%bf%99%e4%ba%9b%e5%8f%82%e6%95%b0%e5%80%bc%e6%9c%89%e5%8c%ba%e5%88%ab%e3%80%82%e7%94%a8%e6%88%b7%e9%80%9a%e8%bf%87%e6%9f%90%e4%ba%9b%e6%93%8d%e4%bd%9c%e4%bc%9a%e6%94%b9%e5%8f%98%e6%9c%ba%e5%99%a8%e7%9a%84%e7%8a%b6%e6%80%81%ef%bc%8c%e6%9c%ba%e5%99%a8%e8%bd%ac%e5%8f%98%e7%8a%b6%e6%80%81%e5%90%8e%ef%bc%8c%e4%bb%a5%e5%bd%93%e5%89%8d%e7%8a%b6%e6%80%81%e7%9a%84%e6%96%b9%e6%b3%95%e7%bb%99%e7%94%a8%e6%88%b7%e5%8f%8d%e9%a6%88%e3%80%82%0a%e4%bb%a3%e7%a0%81%e5%b1%95%e7%a4%ba%20%e4%bb%a5%e6%9c%ba%e5%99%a8%e7%9a%84%e4%be%8b%e5%ad%90%e8%af%b4%e6%98%8e%e3%80%82%0a%e4%bb%8e%e6%8e%a5%e5%8f%a3%e5%bc%80%e5%a7%8b%20%e7%bc%96%e5%86%99%e7%8a%b6%e6%80%81%e6%8e%a5%e5%8f%a3%ef%bc%9a%0a1public%20interface%20State%20%7b%202%203%09public%20void%20insertQuarter%28%29%3b%204%09public%20void%20ejectQuarter%28%29%3b%205%09public%20void%20turnCrank%28%29%3b%206%09public%20void%20dispense%28%29%3b%207%098%09public%20void%20refill%28%29%3b%209%7d%20%e5%88%9b%e5%bb%ba%e6%9c%ba%e5%99%a8%e7%b1%bb%201package%20headfirst.designpatterns.state.gumballstate%3b%202%203public%20class%20GumballMachine%20%7b%204%20%2f%2f%20%e5%90%84%e7%a7%8d%e6%9c%ba%e5%99%a8%e7%8a%b6%e6%80%81%205%09State%20soldOutState%3b%206%09State%20noQuarterState%3b%207%09State%20hasQuarterState%3b%208%09State%20soldState%3b%209%20%2f%2f%20%e5%bd%93%e5%89%8d%e7%8a%b6%e6%80%81%2010%09State%20state%3b%2011%09int%20count%20%3d%200%3b%2012%2013%09public%20GumballMachine%28int%20numberGumballs%29%20%7b%2014%09soldOutState%20%3d%20new%20SoldOutState%28this%29%3b%2015%09noQuarterState%20%3d%20new%20NoQuarterState%28this%29%3b%2016%09hasQuarterState%20%3d%20new%20HasQuarterState%28this%29%3b%2017%09soldState%20%3d%20new%20SoldState%28this%29%3b%2018%2019%09this." aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fstatus-mode%2f&t=%e7%8a%b6%e6%80%81%e6%a8%a1%e5%bc%8f" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=http%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fstatus-mode%2f&t=%e7%8a%b6%e6%80%81%e6%a8%a1%e5%bc%8f" aria-label="Hacker News">
       <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
     </a>
   </li>

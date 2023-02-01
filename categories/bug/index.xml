@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Bug on Norwegian Wood</title>
-    <link>https://akynazh.site/categories/bug/</link>
+    <link>http://akynazh.site/categories/bug/</link>
     <description>Recent content in Bug on Norwegian Wood</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Jzh</copyright>
-    <lastBuildDate>Fri, 04 Nov 2022 22:53:34 +0800</lastBuildDate><atom:link href="https://akynazh.site/categories/bug/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 04 Nov 2022 22:53:34 +0800</lastBuildDate><atom:link href="http://akynazh.site/categories/bug/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Python 开发中遇到的 bug 记录</title>
-      <link>https://akynazh.site/posts/2022/11/record-of-bugs-encountered-in-python-development/</link>
+      <link>http://akynazh.site/posts/2022/11/record-of-bugs-encountered-in-python-development/</link>
       <pubDate>Fri, 04 Nov 2022 22:53:34 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/11/record-of-bugs-encountered-in-python-development/</guid>
+      <guid>http://akynazh.site/posts/2022/11/record-of-bugs-encountered-in-python-development/</guid>
       <description>持续更新中。
 pipenv 无法正常 install 1PS C:\Users\akyna\Codes\test\test_py&amp;gt; pipenv install 2Usage: pipenv install [OPTIONS] [PACKAGES]... 3 4ERROR:: --system is intended to be used for pre-existing Pipfile installation, not installation of specific packages. Aborting. 解决方法：
 因为pipenv检测到之前在该目录下创建过了环境，需要先删除之前的环境才可以：

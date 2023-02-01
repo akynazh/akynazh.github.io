@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>bug on Norwegian Wood</title>
-    <link>https://akynazh.site/tags/bug/</link>
+    <link>http://akynazh.site/tags/bug/</link>
     <description>Recent content in bug on Norwegian Wood</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Jzh</copyright>
-    <lastBuildDate>Fri, 04 Nov 2022 22:53:34 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/bug/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 04 Nov 2022 22:53:34 +0800</lastBuildDate><atom:link href="http://akynazh.site/tags/bug/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Python 开发中遇到的 bug 记录</title>
-      <link>https://akynazh.site/posts/2022/11/record-of-bugs-encountered-in-python-development/</link>
+      <link>http://akynazh.site/posts/2022/11/record-of-bugs-encountered-in-python-development/</link>
       <pubDate>Fri, 04 Nov 2022 22:53:34 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/11/record-of-bugs-encountered-in-python-development/</guid>
+      <guid>http://akynazh.site/posts/2022/11/record-of-bugs-encountered-in-python-development/</guid>
       <description>持续更新中。
 pipenv 无法正常 install 1PS C:\Users\akyna\Codes\test\test_py&amp;gt; pipenv install 2Usage: pipenv install [OPTIONS] [PACKAGES]... 3 4ERROR:: --system is intended to be used for pre-existing Pipfile installation, not installation of specific packages. Aborting. 解决方法：
 因为pipenv检测到之前在该目录下创建过了环境，需要先删除之前的环境才可以：
@@ -24,10 +24,10 @@ pipenv 无法正常 install 1PS C:\Users\akyna\Codes\test\test_py&amp;gt; pipenv
     
     <item>
       <title>Java 开发中遇到的 bug 记录</title>
-      <link>https://akynazh.site/posts/2022/01/record-of-bugs-encountered-in-java-development/</link>
+      <link>http://akynazh.site/posts/2022/01/record-of-bugs-encountered-in-java-development/</link>
       <pubDate>Thu, 06 Jan 2022 17:23:00 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/01/record-of-bugs-encountered-in-java-development/</guid>
+      <guid>http://akynazh.site/posts/2022/01/record-of-bugs-encountered-in-java-development/</guid>
       <description>持续更新中。
 BufferedWriter 无法正确写出问题 这是一段客户端代码，向服务器端发送消息，然后接收服务器端的回复：
 1try ( 2 BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream())); 3 BufferedWriter out = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream())) 4) { 5 String message; 6 while((message = stdIn.readLine()) != null) { 7 out.write(message); 8 out.flush(); 9 System.out.println(&amp;#34;Receive from server: &amp;#34; + in.readLine()); 10 } 11} catch (Exception e) { 12 System.out.println(e.getMessage()); 13} 这是服务端代码的一部分，接收客户端消息，并向客户端回复：

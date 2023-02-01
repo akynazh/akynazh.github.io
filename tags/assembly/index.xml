@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>assembly on Norwegian Wood</title>
-    <link>https://akynazh.site/tags/assembly/</link>
+    <link>http://akynazh.site/tags/assembly/</link>
     <description>Recent content in assembly on Norwegian Wood</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Jzh</copyright>
-    <lastBuildDate>Tue, 04 Oct 2022 23:18:24 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/assembly/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 04 Oct 2022 23:18:24 +0800</lastBuildDate><atom:link href="http://akynazh.site/tags/assembly/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>8086 汇编学习记录</title>
-      <link>https://akynazh.site/posts/2022/10/8086-assembly-learning-record/</link>
+      <link>http://akynazh.site/posts/2022/10/8086-assembly-learning-record/</link>
       <pubDate>Tue, 04 Oct 2022 23:18:24 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/10/8086-assembly-learning-record/</guid>
+      <guid>http://akynazh.site/posts/2022/10/8086-assembly-learning-record/</guid>
       <description>8086 PC 机内存地址空间分配 00000~9FFFF: 主存储器地址空间（RAM） A0000~BFFFF: 显存地址空间 C0000~FFFFF: 各类ROM地址空间 段寄存器 8086CPU不支持将数据直接送入段寄存器的操作，ds 是一个段寄存器，所以mov ds，1000H这条指令是非法的。
 要将1000H送入ds，只好用一个寄存器来进行中转，即先将1000H送入一个一般的寄存器，如bx，再将bx中的内容送入ds。
 为什么8086CPU不支持将数据直接送入段寄存器的操作?
@@ -37,10 +37,10 @@
     
     <item>
       <title>使用 x86_64 汇编写一个自旋锁</title>
-      <link>https://akynazh.site/posts/2022/06/use-x86-64-assemble-and-write-a-spin-lock/</link>
+      <link>http://akynazh.site/posts/2022/06/use-x86-64-assemble-and-write-a-spin-lock/</link>
       <pubDate>Thu, 09 Jun 2022 23:37:51 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/06/use-x86-64-assemble-and-write-a-spin-lock/</guid>
+      <guid>http://akynazh.site/posts/2022/06/use-x86-64-assemble-and-write-a-spin-lock/</guid>
       <description>一、理论分析 自旋锁，顾名思义，即自己不断旋转重复进行的锁，当多个线程访问同一资源时，为实现互斥访问，必须给目标资源加锁，此时只允许一个线程访问，此时其他线程无法访问，并且一直重复请求访问，直到该锁被释放。访问完资源的线程及时释放锁以供其他资源访问。
 自旋锁可以通过比较替换算法实现：设锁为1时被占用，为0时空闲。当一个线程请求锁时，即进入请求锁循环“spinlock”，设预期值为0，修改值为1，让锁值与预期值比较，若锁值等于预期值，则锁空闲，将锁值置为修改值，退出spinlock循环；若锁值不等于预期值，则证明锁被占用，继续spinlock循环。
 为验证是否成功实现自旋，开启一个释放锁线程，请求锁线程自旋一段时间后，释放锁线程进行锁的释放，即把锁值置为预期值0。此时，请求锁线程成功获得锁并退出spinlock循环。

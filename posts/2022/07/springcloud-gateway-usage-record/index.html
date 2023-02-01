@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title> SpringCloud-Gateway 使用记录 | Norwegian Wood</title>
-  <link rel='canonical' href='https://akynazh.site/posts/2022/07/springcloud-gateway-usage-record/'>
+  <link rel='canonical' href='http://akynazh.site/posts/2022/07/springcloud-gateway-usage-record/'>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
@@ -16,7 +16,7 @@
 1server: 2port: 9669 3cloud: 4 gateway: 5 discovery: 6 locator: 7 enabled: true # 开启从注册中心动态创建路由的功能，利用微服务名进行路由 8 routes: 9 - id: path_route 10 uri: lb://CLOUD-PAYMENT-SERVICE # lb：负载均衡 11 predicates: 12 - Path=/payment/** 13 - After=2022-07-26T17:33:52.449&#43;08:00[Asia/Shanghai] # ZonedDateTime.now() 14 - Cookie=username,jzh 注意点如下：
 9669端口作为网关端口； uri中http改为了lb，用于负载均衡； predicates，即断言，上述断言是： 匹配路径：/payment/**； 开始允许访问时间：ZonedDateTime.now()（Java函数获取该格式时间） 携带cookie：key=username, value=jzh 过滤器配置 实现GlobalFilter, Ordered，重写方法即可：" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://akynazh.site/posts/2022/07/springcloud-gateway-usage-record/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="http://akynazh.site/posts/2022/07/springcloud-gateway-usage-record/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-07-26T18:33:44+08:00" />
 <meta property="article:modified_time" content="2022-07-26T18:33:44+08:00" /><meta property="og:site_name" content="Norwegian Wood" />
 
@@ -34,7 +34,7 @@
   
   
   
-  <link rel="stylesheet" href="https://akynazh.site/css/styles.43c5f4c45b6248e071aa0f9eae2d299f06dc6e7d91ae3c1a2e4bcde6252688b0db6d6f3722b74f3c851c6e1b5ea207cff6868c78a11f7c137fd8cc01748ba457.css" integrity="sha512-Q8X0xFtiSOBxqg&#43;eri0pnwbcbn2RrjwaLkvN5iUmiLDbbW83IrdPPIUcbhteogfP9oaMeKEffBN/2MwBdIukVw==">
+  <link rel="stylesheet" href="http://akynazh.site/css/styles.43c5f4c45b6248e071aa0f9eae2d299f06dc6e7d91ae3c1a2e4bcde6252688b0db6d6f3722b74f3c851c6e1b5ea207cff6868c78a11f7c137fd8cc01748ba457.css" integrity="sha512-Q8X0xFtiSOBxqg&#43;eri0pnwbcbn2RrjwaLkvN5iUmiLDbbW83IrdPPIUcbhteogfP9oaMeKEffBN/2MwBdIukVw==">
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
@@ -72,14 +72,14 @@
       <ul>
         
         <li>
-          <a class="icon" href="https://akynazh.site/posts/2022/07/hytrix-realizes-service-fusing-and-monitoring/" aria-label="Previous">
+          <a class="icon" href="http://akynazh.site/posts/2022/07/hytrix-realizes-service-fusing-and-monitoring/" aria-label="Previous">
             <i class="fas fa-chevron-left" aria-hidden="true"></i>
           </a>
         </li>
         
         
         <li>
-          <a class="icon" href="https://akynazh.site/posts/2022/07/config-combined-with-bus-usage-record/" aria-label="Next">
+          <a class="icon" href="http://akynazh.site/posts/2022/07/config-combined-with-bus-usage-record/" aria-label="Next">
             <i class="fas fa-chevron-right" aria-hidden="true"></i>
           </a>
         </li>
@@ -116,47 +116,47 @@
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f07%2fspringcloud-gateway-usage-record%2f" aria-label="Facebook">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=http%3a%2f%2fakynazh.site%2fposts%2f2022%2f07%2fspringcloud-gateway-usage-record%2f" aria-label="Facebook">
       <i class="fab fa-facebook " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f07%2fspringcloud-gateway-usage-record%2f&text=SpringCloud-Gateway%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=http%3a%2f%2fakynazh.site%2fposts%2f2022%2f07%2fspringcloud-gateway-usage-record%2f&text=SpringCloud-Gateway%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95" aria-label="Twitter">
       <i class="fab fa-twitter " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f07%2fspringcloud-gateway-usage-record%2f&title=SpringCloud-Gateway%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=http%3a%2f%2fakynazh.site%2fposts%2f2022%2f07%2fspringcloud-gateway-usage-record%2f&title=SpringCloud-Gateway%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95" aria-label="Linkedin">
       <i class="fab fa-linkedin " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f07%2fspringcloud-gateway-usage-record%2f&is_video=false&description=SpringCloud-Gateway%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http%3a%2f%2fakynazh.site%2fposts%2f2022%2f07%2fspringcloud-gateway-usage-record%2f&is_video=false&description=SpringCloud-Gateway%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95" aria-label="Pinterest">
       <i class="fab fa-pinterest " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=SpringCloud-Gateway%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95&body=Check out this article: https%3a%2f%2fakynazh.site%2fposts%2f2022%2f07%2fspringcloud-gateway-usage-record%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=SpringCloud-Gateway%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95&body=Check out this article: http%3a%2f%2fakynazh.site%2fposts%2f2022%2f07%2fspringcloud-gateway-usage-record%2f" aria-label="Email">
       <i class="fas fa-envelope " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f07%2fspringcloud-gateway-usage-record%2f&title=SpringCloud-Gateway%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=http%3a%2f%2fakynazh.site%2fposts%2f2022%2f07%2fspringcloud-gateway-usage-record%2f&title=SpringCloud-Gateway%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95" aria-label="Pocket">
       <i class="fab fa-get-pocket " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f07%2fspringcloud-gateway-usage-record%2f&title=SpringCloud-Gateway%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=http%3a%2f%2fakynazh.site%2fposts%2f2022%2f07%2fspringcloud-gateway-usage-record%2f&title=SpringCloud-Gateway%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95" aria-label="reddit">
       <i class="fab fa-reddit " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f07%2fspringcloud-gateway-usage-record%2f&name=SpringCloud-Gateway%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95&description=%e7%bd%91%e5%85%b3%e7%9a%84%e4%bd%9c%e7%94%a8%20%e5%a6%82%e5%9b%be%e6%89%80%e7%a4%ba%ef%bc%8c%e7%bd%91%e5%85%b3%e4%bb%8b%e4%ba%8e%e5%a4%96%e9%83%a8%e8%af%b7%e6%b1%82%e5%92%8c%e5%85%b7%e4%bd%93%e5%be%ae%e6%9c%8d%e5%8a%a1%e4%b9%8b%e9%97%b4%ef%bc%8c%e5%9c%a8%e4%b8%8d%e6%9a%b4%e9%9c%b2%e5%86%85%e9%83%a8%e5%be%ae%e6%9c%8d%e5%8a%a1%e7%ab%af%e5%8f%a3%e7%9a%84%e6%83%85%e5%86%b5%e4%b8%8b%ef%bc%8c%e9%80%9a%e8%bf%87%e4%b8%80%e4%b8%aa%e6%88%96%e8%80%85%e5%a4%9a%e4%b8%aa%e6%8c%87%e5%ae%9a%e7%9a%84%e7%bd%91%e5%85%b3%e7%ab%af%e5%8f%a3%e7%bb%9f%e4%b8%80%e5%9c%b0%e5%a4%84%e7%90%86%e5%a4%96%e9%83%a8%e5%90%84%e7%a7%8d%e8%af%b7%e6%b1%82%e3%80%82%0a%e4%bd%bf%e7%94%a8SpringCloud%20Gateway%20%e4%be%9d%e8%b5%96%e5%bc%95%e5%85%a5%20%e9%99%a4%e4%ba%86%e5%9f%ba%e6%9c%ac%e4%be%9d%e8%b5%96%e4%bb%a5%e5%a4%96%ef%bc%8c%e5%bc%95%e5%85%a5%e4%b8%8b%e5%88%97%e4%be%9d%e8%b5%96%ef%bc%9a%0a1%26lt%3b%21--%20others%20--%26gt%3b%202%26lt%3bdependency%26gt%3b%203%20%26lt%3bgroupId%26gt%3borg.springframework.cloud%26lt%3b%2fgroupId%26gt%3b%204%20%26lt%3bartifactId%26gt%3bspring-cloud-starter-netflix-eureka-client%26lt%3b%2fartifactId%26gt%3b%205%26lt%3b%2fdependency%26gt%3b%206%26lt%3bdependency%26gt%3b%207%20%26lt%3bgroupId%26gt%3borg.springframework.cloud%26lt%3b%2fgroupId%26gt%3b%208%20%26lt%3bartifactId%26gt%3bspring-cloud-starter-gateway%26lt%3b%2fartifactId%26gt%3b%209%26lt%3b%2fdependency%26gt%3b%20%e6%b3%a8%e6%84%8f%e4%b8%8d%e8%83%bd%e5%bc%95%e5%85%a5web%e7%9b%b8%e5%85%b3%e4%be%9d%e8%b5%96%ef%bc%8c%e5%9b%a0%e4%b8%baGateway%e6%98%af%e5%9f%ba%e4%ba%8eWebFlux%e7%9a%84%e3%80%82%0a%e6%96%87%e4%bb%b6%e9%85%8d%e7%bd%ae%20%e5%88%97%e5%87%ba%e9%83%a8%e5%88%86%e9%87%8d%e8%a6%81%e9%85%8d%e7%bd%ae%ef%bc%9a%0a1server%3a%202port%3a%209669%203cloud%3a%204%20gateway%3a%205%20discovery%3a%206%20locator%3a%207%20enabled%3a%20true%20%23%20%e5%bc%80%e5%90%af%e4%bb%8e%e6%b3%a8%e5%86%8c%e4%b8%ad%e5%bf%83%e5%8a%a8%e6%80%81%e5%88%9b%e5%bb%ba%e8%b7%af%e7%94%b1%e7%9a%84%e5%8a%9f%e8%83%bd%ef%bc%8c%e5%88%a9%e7%94%a8%e5%be%ae%e6%9c%8d%e5%8a%a1%e5%90%8d%e8%bf%9b%e8%a1%8c%e8%b7%af%e7%94%b1%208%20routes%3a%209%20-%20id%3a%20path_route%2010%20uri%3a%20lb%3a%2f%2fCLOUD-PAYMENT-SERVICE%20%23%20lb%ef%bc%9a%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1%2011%20predicates%3a%2012%20-%20Path%3d%2fpayment%2f%2a%2a%2013%20-%20After%3d2022-07-26T17%3a33%3a52.449%2b08%3a00%5bAsia%2fShanghai%5d%20%23%20ZonedDateTime.now%28%29%2014%20-%20Cookie%3dusername%2cjzh%20%e6%b3%a8%e6%84%8f%e7%82%b9%e5%a6%82%e4%b8%8b%ef%bc%9a%0a9669%e7%ab%af%e5%8f%a3%e4%bd%9c%e4%b8%ba%e7%bd%91%e5%85%b3%e7%ab%af%e5%8f%a3%ef%bc%9b%20uri%e4%b8%adhttp%e6%94%b9%e4%b8%ba%e4%ba%86lb%ef%bc%8c%e7%94%a8%e4%ba%8e%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1%ef%bc%9b%20predicates%ef%bc%8c%e5%8d%b3%e6%96%ad%e8%a8%80%ef%bc%8c%e4%b8%8a%e8%bf%b0%e6%96%ad%e8%a8%80%e6%98%af%ef%bc%9a%20%e5%8c%b9%e9%85%8d%e8%b7%af%e5%be%84%ef%bc%9a%2fpayment%2f%2a%2a%ef%bc%9b%20%e5%bc%80%e5%a7%8b%e5%85%81%e8%ae%b8%e8%ae%bf%e9%97%ae%e6%97%b6%e9%97%b4%ef%bc%9aZonedDateTime.now%28%29%ef%bc%88Java%e5%87%bd%e6%95%b0%e8%8e%b7%e5%8f%96%e8%af%a5%e6%a0%bc%e5%bc%8f%e6%97%b6%e9%97%b4%ef%bc%89%20%e6%90%ba%e5%b8%a6cookie%ef%bc%9akey%3dusername%2c%20value%3djzh%20%e8%bf%87%e6%bb%a4%e5%99%a8%e9%85%8d%e7%bd%ae%20%e5%ae%9e%e7%8e%b0GlobalFilter%2c%20Ordered%ef%bc%8c%e9%87%8d%e5%86%99%e6%96%b9%e6%b3%95%e5%8d%b3%e5%8f%af%ef%bc%9a" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=http%3a%2f%2fakynazh.site%2fposts%2f2022%2f07%2fspringcloud-gateway-usage-record%2f&name=SpringCloud-Gateway%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95&description=%e7%bd%91%e5%85%b3%e7%9a%84%e4%bd%9c%e7%94%a8%20%e5%a6%82%e5%9b%be%e6%89%80%e7%a4%ba%ef%bc%8c%e7%bd%91%e5%85%b3%e4%bb%8b%e4%ba%8e%e5%a4%96%e9%83%a8%e8%af%b7%e6%b1%82%e5%92%8c%e5%85%b7%e4%bd%93%e5%be%ae%e6%9c%8d%e5%8a%a1%e4%b9%8b%e9%97%b4%ef%bc%8c%e5%9c%a8%e4%b8%8d%e6%9a%b4%e9%9c%b2%e5%86%85%e9%83%a8%e5%be%ae%e6%9c%8d%e5%8a%a1%e7%ab%af%e5%8f%a3%e7%9a%84%e6%83%85%e5%86%b5%e4%b8%8b%ef%bc%8c%e9%80%9a%e8%bf%87%e4%b8%80%e4%b8%aa%e6%88%96%e8%80%85%e5%a4%9a%e4%b8%aa%e6%8c%87%e5%ae%9a%e7%9a%84%e7%bd%91%e5%85%b3%e7%ab%af%e5%8f%a3%e7%bb%9f%e4%b8%80%e5%9c%b0%e5%a4%84%e7%90%86%e5%a4%96%e9%83%a8%e5%90%84%e7%a7%8d%e8%af%b7%e6%b1%82%e3%80%82%0a%e4%bd%bf%e7%94%a8SpringCloud%20Gateway%20%e4%be%9d%e8%b5%96%e5%bc%95%e5%85%a5%20%e9%99%a4%e4%ba%86%e5%9f%ba%e6%9c%ac%e4%be%9d%e8%b5%96%e4%bb%a5%e5%a4%96%ef%bc%8c%e5%bc%95%e5%85%a5%e4%b8%8b%e5%88%97%e4%be%9d%e8%b5%96%ef%bc%9a%0a1%26lt%3b%21--%20others%20--%26gt%3b%202%26lt%3bdependency%26gt%3b%203%20%26lt%3bgroupId%26gt%3borg.springframework.cloud%26lt%3b%2fgroupId%26gt%3b%204%20%26lt%3bartifactId%26gt%3bspring-cloud-starter-netflix-eureka-client%26lt%3b%2fartifactId%26gt%3b%205%26lt%3b%2fdependency%26gt%3b%206%26lt%3bdependency%26gt%3b%207%20%26lt%3bgroupId%26gt%3borg.springframework.cloud%26lt%3b%2fgroupId%26gt%3b%208%20%26lt%3bartifactId%26gt%3bspring-cloud-starter-gateway%26lt%3b%2fartifactId%26gt%3b%209%26lt%3b%2fdependency%26gt%3b%20%e6%b3%a8%e6%84%8f%e4%b8%8d%e8%83%bd%e5%bc%95%e5%85%a5web%e7%9b%b8%e5%85%b3%e4%be%9d%e8%b5%96%ef%bc%8c%e5%9b%a0%e4%b8%baGateway%e6%98%af%e5%9f%ba%e4%ba%8eWebFlux%e7%9a%84%e3%80%82%0a%e6%96%87%e4%bb%b6%e9%85%8d%e7%bd%ae%20%e5%88%97%e5%87%ba%e9%83%a8%e5%88%86%e9%87%8d%e8%a6%81%e9%85%8d%e7%bd%ae%ef%bc%9a%0a1server%3a%202port%3a%209669%203cloud%3a%204%20gateway%3a%205%20discovery%3a%206%20locator%3a%207%20enabled%3a%20true%20%23%20%e5%bc%80%e5%90%af%e4%bb%8e%e6%b3%a8%e5%86%8c%e4%b8%ad%e5%bf%83%e5%8a%a8%e6%80%81%e5%88%9b%e5%bb%ba%e8%b7%af%e7%94%b1%e7%9a%84%e5%8a%9f%e8%83%bd%ef%bc%8c%e5%88%a9%e7%94%a8%e5%be%ae%e6%9c%8d%e5%8a%a1%e5%90%8d%e8%bf%9b%e8%a1%8c%e8%b7%af%e7%94%b1%208%20routes%3a%209%20-%20id%3a%20path_route%2010%20uri%3a%20lb%3a%2f%2fCLOUD-PAYMENT-SERVICE%20%23%20lb%ef%bc%9a%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1%2011%20predicates%3a%2012%20-%20Path%3d%2fpayment%2f%2a%2a%2013%20-%20After%3d2022-07-26T17%3a33%3a52.449%2b08%3a00%5bAsia%2fShanghai%5d%20%23%20ZonedDateTime.now%28%29%2014%20-%20Cookie%3dusername%2cjzh%20%e6%b3%a8%e6%84%8f%e7%82%b9%e5%a6%82%e4%b8%8b%ef%bc%9a%0a9669%e7%ab%af%e5%8f%a3%e4%bd%9c%e4%b8%ba%e7%bd%91%e5%85%b3%e7%ab%af%e5%8f%a3%ef%bc%9b%20uri%e4%b8%adhttp%e6%94%b9%e4%b8%ba%e4%ba%86lb%ef%bc%8c%e7%94%a8%e4%ba%8e%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1%ef%bc%9b%20predicates%ef%bc%8c%e5%8d%b3%e6%96%ad%e8%a8%80%ef%bc%8c%e4%b8%8a%e8%bf%b0%e6%96%ad%e8%a8%80%e6%98%af%ef%bc%9a%20%e5%8c%b9%e9%85%8d%e8%b7%af%e5%be%84%ef%bc%9a%2fpayment%2f%2a%2a%ef%bc%9b%20%e5%bc%80%e5%a7%8b%e5%85%81%e8%ae%b8%e8%ae%bf%e9%97%ae%e6%97%b6%e9%97%b4%ef%bc%9aZonedDateTime.now%28%29%ef%bc%88Java%e5%87%bd%e6%95%b0%e8%8e%b7%e5%8f%96%e8%af%a5%e6%a0%bc%e5%bc%8f%e6%97%b6%e9%97%b4%ef%bc%89%20%e6%90%ba%e5%b8%a6cookie%ef%bc%9akey%3dusername%2c%20value%3djzh%20%e8%bf%87%e6%bb%a4%e5%99%a8%e9%85%8d%e7%bd%ae%20%e5%ae%9e%e7%8e%b0GlobalFilter%2c%20Ordered%ef%bc%8c%e9%87%8d%e5%86%99%e6%96%b9%e6%b3%95%e5%8d%b3%e5%8f%af%ef%bc%9a" aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f07%2fspringcloud-gateway-usage-record%2f&t=SpringCloud-Gateway%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=http%3a%2f%2fakynazh.site%2fposts%2f2022%2f07%2fspringcloud-gateway-usage-record%2f&t=SpringCloud-Gateway%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95" aria-label="Hacker News">
       <i class="fab fa-hacker-news " aria-hidden="true"></i>
     </a>
   </li>
@@ -373,47 +373,47 @@
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f07%2fspringcloud-gateway-usage-record%2f" aria-label="Facebook">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=http%3a%2f%2fakynazh.site%2fposts%2f2022%2f07%2fspringcloud-gateway-usage-record%2f" aria-label="Facebook">
       <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f07%2fspringcloud-gateway-usage-record%2f&text=SpringCloud-Gateway%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=http%3a%2f%2fakynazh.site%2fposts%2f2022%2f07%2fspringcloud-gateway-usage-record%2f&text=SpringCloud-Gateway%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95" aria-label="Twitter">
       <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f07%2fspringcloud-gateway-usage-record%2f&title=SpringCloud-Gateway%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=http%3a%2f%2fakynazh.site%2fposts%2f2022%2f07%2fspringcloud-gateway-usage-record%2f&title=SpringCloud-Gateway%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95" aria-label="Linkedin">
       <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f07%2fspringcloud-gateway-usage-record%2f&is_video=false&description=SpringCloud-Gateway%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http%3a%2f%2fakynazh.site%2fposts%2f2022%2f07%2fspringcloud-gateway-usage-record%2f&is_video=false&description=SpringCloud-Gateway%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95" aria-label="Pinterest">
       <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=SpringCloud-Gateway%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95&body=Check out this article: https%3a%2f%2fakynazh.site%2fposts%2f2022%2f07%2fspringcloud-gateway-usage-record%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=SpringCloud-Gateway%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95&body=Check out this article: http%3a%2f%2fakynazh.site%2fposts%2f2022%2f07%2fspringcloud-gateway-usage-record%2f" aria-label="Email">
       <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f07%2fspringcloud-gateway-usage-record%2f&title=SpringCloud-Gateway%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=http%3a%2f%2fakynazh.site%2fposts%2f2022%2f07%2fspringcloud-gateway-usage-record%2f&title=SpringCloud-Gateway%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95" aria-label="Pocket">
       <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f07%2fspringcloud-gateway-usage-record%2f&title=SpringCloud-Gateway%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=http%3a%2f%2fakynazh.site%2fposts%2f2022%2f07%2fspringcloud-gateway-usage-record%2f&title=SpringCloud-Gateway%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95" aria-label="reddit">
       <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f07%2fspringcloud-gateway-usage-record%2f&name=SpringCloud-Gateway%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95&description=%e7%bd%91%e5%85%b3%e7%9a%84%e4%bd%9c%e7%94%a8%20%e5%a6%82%e5%9b%be%e6%89%80%e7%a4%ba%ef%bc%8c%e7%bd%91%e5%85%b3%e4%bb%8b%e4%ba%8e%e5%a4%96%e9%83%a8%e8%af%b7%e6%b1%82%e5%92%8c%e5%85%b7%e4%bd%93%e5%be%ae%e6%9c%8d%e5%8a%a1%e4%b9%8b%e9%97%b4%ef%bc%8c%e5%9c%a8%e4%b8%8d%e6%9a%b4%e9%9c%b2%e5%86%85%e9%83%a8%e5%be%ae%e6%9c%8d%e5%8a%a1%e7%ab%af%e5%8f%a3%e7%9a%84%e6%83%85%e5%86%b5%e4%b8%8b%ef%bc%8c%e9%80%9a%e8%bf%87%e4%b8%80%e4%b8%aa%e6%88%96%e8%80%85%e5%a4%9a%e4%b8%aa%e6%8c%87%e5%ae%9a%e7%9a%84%e7%bd%91%e5%85%b3%e7%ab%af%e5%8f%a3%e7%bb%9f%e4%b8%80%e5%9c%b0%e5%a4%84%e7%90%86%e5%a4%96%e9%83%a8%e5%90%84%e7%a7%8d%e8%af%b7%e6%b1%82%e3%80%82%0a%e4%bd%bf%e7%94%a8SpringCloud%20Gateway%20%e4%be%9d%e8%b5%96%e5%bc%95%e5%85%a5%20%e9%99%a4%e4%ba%86%e5%9f%ba%e6%9c%ac%e4%be%9d%e8%b5%96%e4%bb%a5%e5%a4%96%ef%bc%8c%e5%bc%95%e5%85%a5%e4%b8%8b%e5%88%97%e4%be%9d%e8%b5%96%ef%bc%9a%0a1%26lt%3b%21--%20others%20--%26gt%3b%202%26lt%3bdependency%26gt%3b%203%20%26lt%3bgroupId%26gt%3borg.springframework.cloud%26lt%3b%2fgroupId%26gt%3b%204%20%26lt%3bartifactId%26gt%3bspring-cloud-starter-netflix-eureka-client%26lt%3b%2fartifactId%26gt%3b%205%26lt%3b%2fdependency%26gt%3b%206%26lt%3bdependency%26gt%3b%207%20%26lt%3bgroupId%26gt%3borg.springframework.cloud%26lt%3b%2fgroupId%26gt%3b%208%20%26lt%3bartifactId%26gt%3bspring-cloud-starter-gateway%26lt%3b%2fartifactId%26gt%3b%209%26lt%3b%2fdependency%26gt%3b%20%e6%b3%a8%e6%84%8f%e4%b8%8d%e8%83%bd%e5%bc%95%e5%85%a5web%e7%9b%b8%e5%85%b3%e4%be%9d%e8%b5%96%ef%bc%8c%e5%9b%a0%e4%b8%baGateway%e6%98%af%e5%9f%ba%e4%ba%8eWebFlux%e7%9a%84%e3%80%82%0a%e6%96%87%e4%bb%b6%e9%85%8d%e7%bd%ae%20%e5%88%97%e5%87%ba%e9%83%a8%e5%88%86%e9%87%8d%e8%a6%81%e9%85%8d%e7%bd%ae%ef%bc%9a%0a1server%3a%202port%3a%209669%203cloud%3a%204%20gateway%3a%205%20discovery%3a%206%20locator%3a%207%20enabled%3a%20true%20%23%20%e5%bc%80%e5%90%af%e4%bb%8e%e6%b3%a8%e5%86%8c%e4%b8%ad%e5%bf%83%e5%8a%a8%e6%80%81%e5%88%9b%e5%bb%ba%e8%b7%af%e7%94%b1%e7%9a%84%e5%8a%9f%e8%83%bd%ef%bc%8c%e5%88%a9%e7%94%a8%e5%be%ae%e6%9c%8d%e5%8a%a1%e5%90%8d%e8%bf%9b%e8%a1%8c%e8%b7%af%e7%94%b1%208%20routes%3a%209%20-%20id%3a%20path_route%2010%20uri%3a%20lb%3a%2f%2fCLOUD-PAYMENT-SERVICE%20%23%20lb%ef%bc%9a%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1%2011%20predicates%3a%2012%20-%20Path%3d%2fpayment%2f%2a%2a%2013%20-%20After%3d2022-07-26T17%3a33%3a52.449%2b08%3a00%5bAsia%2fShanghai%5d%20%23%20ZonedDateTime.now%28%29%2014%20-%20Cookie%3dusername%2cjzh%20%e6%b3%a8%e6%84%8f%e7%82%b9%e5%a6%82%e4%b8%8b%ef%bc%9a%0a9669%e7%ab%af%e5%8f%a3%e4%bd%9c%e4%b8%ba%e7%bd%91%e5%85%b3%e7%ab%af%e5%8f%a3%ef%bc%9b%20uri%e4%b8%adhttp%e6%94%b9%e4%b8%ba%e4%ba%86lb%ef%bc%8c%e7%94%a8%e4%ba%8e%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1%ef%bc%9b%20predicates%ef%bc%8c%e5%8d%b3%e6%96%ad%e8%a8%80%ef%bc%8c%e4%b8%8a%e8%bf%b0%e6%96%ad%e8%a8%80%e6%98%af%ef%bc%9a%20%e5%8c%b9%e9%85%8d%e8%b7%af%e5%be%84%ef%bc%9a%2fpayment%2f%2a%2a%ef%bc%9b%20%e5%bc%80%e5%a7%8b%e5%85%81%e8%ae%b8%e8%ae%bf%e9%97%ae%e6%97%b6%e9%97%b4%ef%bc%9aZonedDateTime.now%28%29%ef%bc%88Java%e5%87%bd%e6%95%b0%e8%8e%b7%e5%8f%96%e8%af%a5%e6%a0%bc%e5%bc%8f%e6%97%b6%e9%97%b4%ef%bc%89%20%e6%90%ba%e5%b8%a6cookie%ef%bc%9akey%3dusername%2c%20value%3djzh%20%e8%bf%87%e6%bb%a4%e5%99%a8%e9%85%8d%e7%bd%ae%20%e5%ae%9e%e7%8e%b0GlobalFilter%2c%20Ordered%ef%bc%8c%e9%87%8d%e5%86%99%e6%96%b9%e6%b3%95%e5%8d%b3%e5%8f%af%ef%bc%9a" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=http%3a%2f%2fakynazh.site%2fposts%2f2022%2f07%2fspringcloud-gateway-usage-record%2f&name=SpringCloud-Gateway%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95&description=%e7%bd%91%e5%85%b3%e7%9a%84%e4%bd%9c%e7%94%a8%20%e5%a6%82%e5%9b%be%e6%89%80%e7%a4%ba%ef%bc%8c%e7%bd%91%e5%85%b3%e4%bb%8b%e4%ba%8e%e5%a4%96%e9%83%a8%e8%af%b7%e6%b1%82%e5%92%8c%e5%85%b7%e4%bd%93%e5%be%ae%e6%9c%8d%e5%8a%a1%e4%b9%8b%e9%97%b4%ef%bc%8c%e5%9c%a8%e4%b8%8d%e6%9a%b4%e9%9c%b2%e5%86%85%e9%83%a8%e5%be%ae%e6%9c%8d%e5%8a%a1%e7%ab%af%e5%8f%a3%e7%9a%84%e6%83%85%e5%86%b5%e4%b8%8b%ef%bc%8c%e9%80%9a%e8%bf%87%e4%b8%80%e4%b8%aa%e6%88%96%e8%80%85%e5%a4%9a%e4%b8%aa%e6%8c%87%e5%ae%9a%e7%9a%84%e7%bd%91%e5%85%b3%e7%ab%af%e5%8f%a3%e7%bb%9f%e4%b8%80%e5%9c%b0%e5%a4%84%e7%90%86%e5%a4%96%e9%83%a8%e5%90%84%e7%a7%8d%e8%af%b7%e6%b1%82%e3%80%82%0a%e4%bd%bf%e7%94%a8SpringCloud%20Gateway%20%e4%be%9d%e8%b5%96%e5%bc%95%e5%85%a5%20%e9%99%a4%e4%ba%86%e5%9f%ba%e6%9c%ac%e4%be%9d%e8%b5%96%e4%bb%a5%e5%a4%96%ef%bc%8c%e5%bc%95%e5%85%a5%e4%b8%8b%e5%88%97%e4%be%9d%e8%b5%96%ef%bc%9a%0a1%26lt%3b%21--%20others%20--%26gt%3b%202%26lt%3bdependency%26gt%3b%203%20%26lt%3bgroupId%26gt%3borg.springframework.cloud%26lt%3b%2fgroupId%26gt%3b%204%20%26lt%3bartifactId%26gt%3bspring-cloud-starter-netflix-eureka-client%26lt%3b%2fartifactId%26gt%3b%205%26lt%3b%2fdependency%26gt%3b%206%26lt%3bdependency%26gt%3b%207%20%26lt%3bgroupId%26gt%3borg.springframework.cloud%26lt%3b%2fgroupId%26gt%3b%208%20%26lt%3bartifactId%26gt%3bspring-cloud-starter-gateway%26lt%3b%2fartifactId%26gt%3b%209%26lt%3b%2fdependency%26gt%3b%20%e6%b3%a8%e6%84%8f%e4%b8%8d%e8%83%bd%e5%bc%95%e5%85%a5web%e7%9b%b8%e5%85%b3%e4%be%9d%e8%b5%96%ef%bc%8c%e5%9b%a0%e4%b8%baGateway%e6%98%af%e5%9f%ba%e4%ba%8eWebFlux%e7%9a%84%e3%80%82%0a%e6%96%87%e4%bb%b6%e9%85%8d%e7%bd%ae%20%e5%88%97%e5%87%ba%e9%83%a8%e5%88%86%e9%87%8d%e8%a6%81%e9%85%8d%e7%bd%ae%ef%bc%9a%0a1server%3a%202port%3a%209669%203cloud%3a%204%20gateway%3a%205%20discovery%3a%206%20locator%3a%207%20enabled%3a%20true%20%23%20%e5%bc%80%e5%90%af%e4%bb%8e%e6%b3%a8%e5%86%8c%e4%b8%ad%e5%bf%83%e5%8a%a8%e6%80%81%e5%88%9b%e5%bb%ba%e8%b7%af%e7%94%b1%e7%9a%84%e5%8a%9f%e8%83%bd%ef%bc%8c%e5%88%a9%e7%94%a8%e5%be%ae%e6%9c%8d%e5%8a%a1%e5%90%8d%e8%bf%9b%e8%a1%8c%e8%b7%af%e7%94%b1%208%20routes%3a%209%20-%20id%3a%20path_route%2010%20uri%3a%20lb%3a%2f%2fCLOUD-PAYMENT-SERVICE%20%23%20lb%ef%bc%9a%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1%2011%20predicates%3a%2012%20-%20Path%3d%2fpayment%2f%2a%2a%2013%20-%20After%3d2022-07-26T17%3a33%3a52.449%2b08%3a00%5bAsia%2fShanghai%5d%20%23%20ZonedDateTime.now%28%29%2014%20-%20Cookie%3dusername%2cjzh%20%e6%b3%a8%e6%84%8f%e7%82%b9%e5%a6%82%e4%b8%8b%ef%bc%9a%0a9669%e7%ab%af%e5%8f%a3%e4%bd%9c%e4%b8%ba%e7%bd%91%e5%85%b3%e7%ab%af%e5%8f%a3%ef%bc%9b%20uri%e4%b8%adhttp%e6%94%b9%e4%b8%ba%e4%ba%86lb%ef%bc%8c%e7%94%a8%e4%ba%8e%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1%ef%bc%9b%20predicates%ef%bc%8c%e5%8d%b3%e6%96%ad%e8%a8%80%ef%bc%8c%e4%b8%8a%e8%bf%b0%e6%96%ad%e8%a8%80%e6%98%af%ef%bc%9a%20%e5%8c%b9%e9%85%8d%e8%b7%af%e5%be%84%ef%bc%9a%2fpayment%2f%2a%2a%ef%bc%9b%20%e5%bc%80%e5%a7%8b%e5%85%81%e8%ae%b8%e8%ae%bf%e9%97%ae%e6%97%b6%e9%97%b4%ef%bc%9aZonedDateTime.now%28%29%ef%bc%88Java%e5%87%bd%e6%95%b0%e8%8e%b7%e5%8f%96%e8%af%a5%e6%a0%bc%e5%bc%8f%e6%97%b6%e9%97%b4%ef%bc%89%20%e6%90%ba%e5%b8%a6cookie%ef%bc%9akey%3dusername%2c%20value%3djzh%20%e8%bf%87%e6%bb%a4%e5%99%a8%e9%85%8d%e7%bd%ae%20%e5%ae%9e%e7%8e%b0GlobalFilter%2c%20Ordered%ef%bc%8c%e9%87%8d%e5%86%99%e6%96%b9%e6%b3%95%e5%8d%b3%e5%8f%af%ef%bc%9a" aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f07%2fspringcloud-gateway-usage-record%2f&t=SpringCloud-Gateway%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=http%3a%2f%2fakynazh.site%2fposts%2f2022%2f07%2fspringcloud-gateway-usage-record%2f&t=SpringCloud-Gateway%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95" aria-label="Hacker News">
       <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
     </a>
   </li>

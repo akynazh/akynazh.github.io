@@ -2,28 +2,28 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>springboot on Norwegian Wood</title>
-    <link>https://akynazh.site/tags/springboot/</link>
+    <link>http://akynazh.site/tags/springboot/</link>
     <description>Recent content in springboot on Norwegian Wood</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Jzh</copyright>
-    <lastBuildDate>Sat, 25 Jun 2022 21:20:38 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/springboot/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 25 Jun 2022 21:20:38 +0800</lastBuildDate><atom:link href="http://akynazh.site/tags/springboot/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Swagger 使用记录</title>
-      <link>https://akynazh.site/posts/2022/06/swagger-usage-record/</link>
+      <link>http://akynazh.site/posts/2022/06/swagger-usage-record/</link>
       <pubDate>Sat, 25 Jun 2022 21:20:38 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/06/swagger-usage-record/</guid>
+      <guid>http://akynazh.site/posts/2022/06/swagger-usage-record/</guid>
       <description>依赖导入： 1&amp;lt;!-- swagger所需依赖 --&amp;gt; 2&amp;lt;dependency&amp;gt; 3 &amp;lt;groupId&amp;gt;io.springfox&amp;lt;/groupId&amp;gt; 4 &amp;lt;artifactId&amp;gt;springfox-swagger2&amp;lt;/artifactId&amp;gt; 5 &amp;lt;version&amp;gt;2.6.1&amp;lt;/version&amp;gt; 6&amp;lt;/dependency&amp;gt; 7&amp;lt;dependency&amp;gt; 8 &amp;lt;groupId&amp;gt;io.springfox&amp;lt;/groupId&amp;gt; 9 &amp;lt;artifactId&amp;gt;springfox-swagger-ui&amp;lt;/artifactId&amp;gt; 10 &amp;lt;version&amp;gt;2.6.1&amp;lt;/version&amp;gt; 11&amp;lt;/dependency&amp;gt; 配置Swagger /config/SwaggerConfig.java
 1@Configuration 2@EnableSwagger2 3public class SwaggerConfig { 4 @Bean 5 public Docket createRestApi() { 6 return new Docket(DocumentationType.SWAGGER_2) 7 .apiInfo(apiInfo()) 8 .select() 9 .apis(RequestHandlerSelectors.withClassAnnotation(Api.class)) 10 .paths(PathSelectors.any()) 11 .build(); 12 } 13 14 // 基本信息的配置，信息会在api文档上显示 15 private ApiInfo apiInfo() { 16 return new ApiInfoBuilder() 17 .title(&amp;#34;jzh测试的接口文档&amp;#34;) 18 .description(&amp;#34;xx相关接口的文档&amp;#34;) 19 .termsOfServiceUrl(&amp;#34;http://localhost:7777&amp;#34;) 20 .</description>
     </item>
     
     <item>
       <title>SpringBoot 邮箱服务</title>
-      <link>https://akynazh.site/posts/2022/06/springboot-mailbox-service/</link>
+      <link>http://akynazh.site/posts/2022/06/springboot-mailbox-service/</link>
       <pubDate>Thu, 16 Jun 2022 21:13:15 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/06/springboot-mailbox-service/</guid>
+      <guid>http://akynazh.site/posts/2022/06/springboot-mailbox-service/</guid>
       <description>一、导入依赖： 1&amp;lt;!--发送邮件--&amp;gt; 2&amp;lt;dependency&amp;gt; 3 &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt; 4 &amp;lt;artifactId&amp;gt;spring-boot-starter-mail&amp;lt;/artifactId&amp;gt; 5&amp;lt;/dependency&amp;gt; 二、配置文件： QQ邮箱需要先开通好邮箱SMTP服务。
 1spring: 2 # 邮件服务 3 mail: 4 password: xxxxxx 5 username: xxx@qq.com 6 host: smtp.QQ.com 7 properties: 8 mail: 9 smtp: 10 auth: true 11 starttls: 12 enable: true 13 required: true 14 default-encoding: UTF-8 三、编写邮件服务 sendSimpleMailMessage()实现只含普通文本信息的邮件发送 sendMimeMessage()可以发送带附件的邮件 MailService.java
 1@Service 2public class MailService { 3 private final JavaMailSender mailSender; 4 @Value(&amp;#34;${spring.mail.username}&amp;#34;) 5 private String SENDER; 6 7 public MailService(JavaMailSender mailSender) { 8 this.</description>
@@ -31,10 +31,10 @@
     
     <item>
       <title>在前后端不分离的情况下进行交互性数据展示的实现方法</title>
-      <link>https://akynazh.site/posts/2022/02/implementation-method-of-interactive-data-display-without-separation-of-front-and-back-ends/</link>
+      <link>http://akynazh.site/posts/2022/02/implementation-method-of-interactive-data-display-without-separation-of-front-and-back-ends/</link>
       <pubDate>Fri, 11 Feb 2022 00:05:25 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2022/02/implementation-method-of-interactive-data-display-without-separation-of-front-and-back-ends/</guid>
+      <guid>http://akynazh.site/posts/2022/02/implementation-method-of-interactive-data-display-without-separation-of-front-and-back-ends/</guid>
       <description>前言 开发web项目时，常常需要在前端展示一些交互性的数据，比如表单填写错误的提示，操作成功与否的提示等。
 本文主要讲述在使用Thymeleaf作为模板引擎开发前端时，即在前后端不分离的情况下，前后端进行交互性数据展示的实现方法。
 使用cookie传递数据：不推荐 一、步骤 后端通过addCookie方法设置值 前端在页面加载时读取cookie值并进行展示 前端删除该cookie值 二、缺陷 这个方法我使用过，但是效果并不好，原因如下：
@@ -50,10 +50,10 @@ addFlashAttribute是把数据临时放在session中并在刷新页面后自动�
     
     <item>
       <title>Linux 主机部署 springboot 项目全过程</title>
-      <link>https://akynazh.site/posts/2021/11/the-whole-process-of-linux-host-deployment-springboot-project/</link>
+      <link>http://akynazh.site/posts/2021/11/the-whole-process-of-linux-host-deployment-springboot-project/</link>
       <pubDate>Wed, 03 Nov 2021 00:30:25 +0800</pubDate>
       
-      <guid>https://akynazh.site/posts/2021/11/the-whole-process-of-linux-host-deployment-springboot-project/</guid>
+      <guid>http://akynazh.site/posts/2021/11/the-whole-process-of-linux-host-deployment-springboot-project/</guid>
       <description>注：部署环境为centos7.9版本
 配置环境 配好mysql，redis，java开发环境。
 上传JAR包项目 1mvn clean 2mvn package 即可把项目打包为JAR包，再通过WINSP上传到服务器。

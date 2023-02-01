@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title> 迭代器模式 | Norwegian Wood</title>
-  <link rel='canonical' href='https://akynazh.site/posts/2022/08/iterators-mode/'>
+  <link rel='canonical' href='http://akynazh.site/posts/2022/08/iterators-mode/'>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
@@ -18,7 +18,7 @@
 创建Diner菜单 该菜单用String[]创建内容，需要编写自己的迭代器。
 1public class DinerMenu implements Menu { 2	static final int MAX_ITEMS = 6; 3	int numberOfItems = 0; 4	String[] menuItems; 5 6	public DinerMenu() { 7	menuItems = new String[MAX_ITEMS]; 8 9	addItem(&#34;Vegetarian BLT&#34;); 10	addItem(&#34;BLT&#34;); 11	addItem(&#34;Soup of the day&#34;); 12	addItem(&#34;Hotdog&#34;); 13	addItem(&#34;Steamed Veggies and Brown Rice&#34;); 14	addItem(&#34;Pasta&#34;); 15	} 16 17	public void addItem(String name) 18	{ 19	if (numberOfItems &gt;= MAX_ITEMS) { 20	System." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://akynazh.site/posts/2022/08/iterators-mode/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="http://akynazh.site/posts/2022/08/iterators-mode/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-08-25T11:26:17+08:00" />
 <meta property="article:modified_time" content="2022-08-25T11:26:17+08:00" /><meta property="og:site_name" content="Norwegian Wood" />
 
@@ -38,7 +38,7 @@
   
   
   
-  <link rel="stylesheet" href="https://akynazh.site/css/styles.43c5f4c45b6248e071aa0f9eae2d299f06dc6e7d91ae3c1a2e4bcde6252688b0db6d6f3722b74f3c851c6e1b5ea207cff6868c78a11f7c137fd8cc01748ba457.css" integrity="sha512-Q8X0xFtiSOBxqg&#43;eri0pnwbcbn2RrjwaLkvN5iUmiLDbbW83IrdPPIUcbhteogfP9oaMeKEffBN/2MwBdIukVw==">
+  <link rel="stylesheet" href="http://akynazh.site/css/styles.43c5f4c45b6248e071aa0f9eae2d299f06dc6e7d91ae3c1a2e4bcde6252688b0db6d6f3722b74f3c851c6e1b5ea207cff6868c78a11f7c137fd8cc01748ba457.css" integrity="sha512-Q8X0xFtiSOBxqg&#43;eri0pnwbcbn2RrjwaLkvN5iUmiLDbbW83IrdPPIUcbhteogfP9oaMeKEffBN/2MwBdIukVw==">
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
@@ -76,14 +76,14 @@
       <ul>
         
         <li>
-          <a class="icon" href="https://akynazh.site/posts/2022/08/template-method-mode/" aria-label="Previous">
+          <a class="icon" href="http://akynazh.site/posts/2022/08/template-method-mode/" aria-label="Previous">
             <i class="fas fa-chevron-left" aria-hidden="true"></i>
           </a>
         </li>
         
         
         <li>
-          <a class="icon" href="https://akynazh.site/posts/2022/08/combination-mode/" aria-label="Next">
+          <a class="icon" href="http://akynazh.site/posts/2022/08/combination-mode/" aria-label="Next">
             <i class="fas fa-chevron-right" aria-hidden="true"></i>
           </a>
         </li>
@@ -120,47 +120,47 @@
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fiterators-mode%2f" aria-label="Facebook">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=http%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fiterators-mode%2f" aria-label="Facebook">
       <i class="fab fa-facebook " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fiterators-mode%2f&text=%e8%bf%ad%e4%bb%a3%e5%99%a8%e6%a8%a1%e5%bc%8f" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=http%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fiterators-mode%2f&text=%e8%bf%ad%e4%bb%a3%e5%99%a8%e6%a8%a1%e5%bc%8f" aria-label="Twitter">
       <i class="fab fa-twitter " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fiterators-mode%2f&title=%e8%bf%ad%e4%bb%a3%e5%99%a8%e6%a8%a1%e5%bc%8f" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=http%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fiterators-mode%2f&title=%e8%bf%ad%e4%bb%a3%e5%99%a8%e6%a8%a1%e5%bc%8f" aria-label="Linkedin">
       <i class="fab fa-linkedin " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fiterators-mode%2f&is_video=false&description=%e8%bf%ad%e4%bb%a3%e5%99%a8%e6%a8%a1%e5%bc%8f" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fiterators-mode%2f&is_video=false&description=%e8%bf%ad%e4%bb%a3%e5%99%a8%e6%a8%a1%e5%bc%8f" aria-label="Pinterest">
       <i class="fab fa-pinterest " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=%e8%bf%ad%e4%bb%a3%e5%99%a8%e6%a8%a1%e5%bc%8f&body=Check out this article: https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fiterators-mode%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=%e8%bf%ad%e4%bb%a3%e5%99%a8%e6%a8%a1%e5%bc%8f&body=Check out this article: http%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fiterators-mode%2f" aria-label="Email">
       <i class="fas fa-envelope " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fiterators-mode%2f&title=%e8%bf%ad%e4%bb%a3%e5%99%a8%e6%a8%a1%e5%bc%8f" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=http%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fiterators-mode%2f&title=%e8%bf%ad%e4%bb%a3%e5%99%a8%e6%a8%a1%e5%bc%8f" aria-label="Pocket">
       <i class="fab fa-get-pocket " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fiterators-mode%2f&title=%e8%bf%ad%e4%bb%a3%e5%99%a8%e6%a8%a1%e5%bc%8f" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=http%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fiterators-mode%2f&title=%e8%bf%ad%e4%bb%a3%e5%99%a8%e6%a8%a1%e5%bc%8f" aria-label="reddit">
       <i class="fab fa-reddit " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fiterators-mode%2f&name=%e8%bf%ad%e4%bb%a3%e5%99%a8%e6%a8%a1%e5%bc%8f&description=%e5%ae%9a%e4%b9%89%20%e8%bf%ad%e4%bb%a3%e5%99%a8%e6%a8%a1%e5%bc%8f%e6%8f%90%e4%be%9b%e4%b8%80%e7%a7%8d%e6%96%b9%e6%b3%95%e9%a1%ba%e5%ba%8f%e8%ae%bf%e9%97%ae%e4%b8%80%e4%b8%aa%e8%81%9a%e5%90%88%e5%af%b9%e8%b1%a1%e4%b8%ad%e7%9a%84%e5%90%84%e4%b8%aa%e5%85%83%e7%b4%a0%ef%bc%8c%e8%80%8c%e5%8f%88%e4%b8%8d%e6%9a%b4%e9%9c%b2%e5%85%b6%e5%86%85%e9%83%a8%e7%9a%84%e8%a1%a8%e7%a4%ba%e3%80%82%0a%e9%80%9a%e8%bf%87%e4%b8%80%e4%b8%aaIterator%ef%bc%8c%e5%8f%af%e4%bb%a5%e6%96%b9%e4%be%bf%e5%9c%b0%e9%81%8d%e5%8e%86%e5%90%84%e7%a7%8d%e7%b1%bb%e5%9e%8b%ef%bc%8c%e5%a6%82HashMap%ef%bc%8cArrayList%e7%ad%89%e3%80%82%0a%e4%bb%a3%e7%a0%81%e5%b1%95%e7%a4%ba%20%e4%b8%8b%e9%9d%a2%e9%80%9a%e8%bf%87%e8%8f%9c%e5%8d%95%e7%9a%84%e4%be%8b%e5%ad%90%e8%bf%9b%e8%a1%8c%e8%af%b4%e6%98%8e%e3%80%82%0a%e5%88%86%e5%88%ab%e7%94%a8%e7%ae%80%e5%8d%95%e6%95%b0%e7%bb%84String%5b%5d%e5%92%8cArrayList%26lt%3bString%26gt%3b%e7%b1%bb%e5%88%9b%e5%bb%ba%e8%8f%9c%e5%8d%95%e5%86%85%e5%ae%b9%e3%80%82%0a%e4%bb%8e%e6%8e%a5%e5%8f%a3%e5%bc%80%e5%a7%8b%20%e5%88%9b%e5%bb%ba%e8%8f%9c%e5%8d%95%e6%8e%a5%e5%8f%a3%ef%bc%9a%0a1public%20interface%20Menu%20%7b%202%09public%20Iterator%26lt%3bString%26gt%3b%20createIterator%28%29%3b%203%7d%20%e6%af%8f%e4%b8%aa%e8%8f%9c%e5%8d%95%e9%83%bd%e5%8f%af%e4%bb%a5%e8%bf%94%e5%9b%9e%e4%b8%80%e4%b8%aa%e8%bf%ad%e4%bb%a3%e5%99%a8%e3%80%82%0a%e5%88%9b%e5%bb%baDiner%e8%8f%9c%e5%8d%95%20%e8%af%a5%e8%8f%9c%e5%8d%95%e7%94%a8String%5b%5d%e5%88%9b%e5%bb%ba%e5%86%85%e5%ae%b9%ef%bc%8c%e9%9c%80%e8%a6%81%e7%bc%96%e5%86%99%e8%87%aa%e5%b7%b1%e7%9a%84%e8%bf%ad%e4%bb%a3%e5%99%a8%e3%80%82%0a1public%20class%20DinerMenu%20implements%20Menu%20%7b%202%09static%20final%20int%20MAX_ITEMS%20%3d%206%3b%203%09int%20numberOfItems%20%3d%200%3b%204%09String%5b%5d%20menuItems%3b%205%206%09public%20DinerMenu%28%29%20%7b%207%09menuItems%20%3d%20new%20String%5bMAX_ITEMS%5d%3b%208%209%09addItem%28%26%2334%3bVegetarian%20BLT%26%2334%3b%29%3b%2010%09addItem%28%26%2334%3bBLT%26%2334%3b%29%3b%2011%09addItem%28%26%2334%3bSoup%20of%20the%20day%26%2334%3b%29%3b%2012%09addItem%28%26%2334%3bHotdog%26%2334%3b%29%3b%2013%09addItem%28%26%2334%3bSteamed%20Veggies%20and%20Brown%20Rice%26%2334%3b%29%3b%2014%09addItem%28%26%2334%3bPasta%26%2334%3b%29%3b%2015%09%7d%2016%2017%09public%20void%20addItem%28String%20name%29%2018%09%7b%2019%09if%20%28numberOfItems%20%26gt%3b%3d%20MAX_ITEMS%29%20%7b%2020%09System." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=http%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fiterators-mode%2f&name=%e8%bf%ad%e4%bb%a3%e5%99%a8%e6%a8%a1%e5%bc%8f&description=%e5%ae%9a%e4%b9%89%20%e8%bf%ad%e4%bb%a3%e5%99%a8%e6%a8%a1%e5%bc%8f%e6%8f%90%e4%be%9b%e4%b8%80%e7%a7%8d%e6%96%b9%e6%b3%95%e9%a1%ba%e5%ba%8f%e8%ae%bf%e9%97%ae%e4%b8%80%e4%b8%aa%e8%81%9a%e5%90%88%e5%af%b9%e8%b1%a1%e4%b8%ad%e7%9a%84%e5%90%84%e4%b8%aa%e5%85%83%e7%b4%a0%ef%bc%8c%e8%80%8c%e5%8f%88%e4%b8%8d%e6%9a%b4%e9%9c%b2%e5%85%b6%e5%86%85%e9%83%a8%e7%9a%84%e8%a1%a8%e7%a4%ba%e3%80%82%0a%e9%80%9a%e8%bf%87%e4%b8%80%e4%b8%aaIterator%ef%bc%8c%e5%8f%af%e4%bb%a5%e6%96%b9%e4%be%bf%e5%9c%b0%e9%81%8d%e5%8e%86%e5%90%84%e7%a7%8d%e7%b1%bb%e5%9e%8b%ef%bc%8c%e5%a6%82HashMap%ef%bc%8cArrayList%e7%ad%89%e3%80%82%0a%e4%bb%a3%e7%a0%81%e5%b1%95%e7%a4%ba%20%e4%b8%8b%e9%9d%a2%e9%80%9a%e8%bf%87%e8%8f%9c%e5%8d%95%e7%9a%84%e4%be%8b%e5%ad%90%e8%bf%9b%e8%a1%8c%e8%af%b4%e6%98%8e%e3%80%82%0a%e5%88%86%e5%88%ab%e7%94%a8%e7%ae%80%e5%8d%95%e6%95%b0%e7%bb%84String%5b%5d%e5%92%8cArrayList%26lt%3bString%26gt%3b%e7%b1%bb%e5%88%9b%e5%bb%ba%e8%8f%9c%e5%8d%95%e5%86%85%e5%ae%b9%e3%80%82%0a%e4%bb%8e%e6%8e%a5%e5%8f%a3%e5%bc%80%e5%a7%8b%20%e5%88%9b%e5%bb%ba%e8%8f%9c%e5%8d%95%e6%8e%a5%e5%8f%a3%ef%bc%9a%0a1public%20interface%20Menu%20%7b%202%09public%20Iterator%26lt%3bString%26gt%3b%20createIterator%28%29%3b%203%7d%20%e6%af%8f%e4%b8%aa%e8%8f%9c%e5%8d%95%e9%83%bd%e5%8f%af%e4%bb%a5%e8%bf%94%e5%9b%9e%e4%b8%80%e4%b8%aa%e8%bf%ad%e4%bb%a3%e5%99%a8%e3%80%82%0a%e5%88%9b%e5%bb%baDiner%e8%8f%9c%e5%8d%95%20%e8%af%a5%e8%8f%9c%e5%8d%95%e7%94%a8String%5b%5d%e5%88%9b%e5%bb%ba%e5%86%85%e5%ae%b9%ef%bc%8c%e9%9c%80%e8%a6%81%e7%bc%96%e5%86%99%e8%87%aa%e5%b7%b1%e7%9a%84%e8%bf%ad%e4%bb%a3%e5%99%a8%e3%80%82%0a1public%20class%20DinerMenu%20implements%20Menu%20%7b%202%09static%20final%20int%20MAX_ITEMS%20%3d%206%3b%203%09int%20numberOfItems%20%3d%200%3b%204%09String%5b%5d%20menuItems%3b%205%206%09public%20DinerMenu%28%29%20%7b%207%09menuItems%20%3d%20new%20String%5bMAX_ITEMS%5d%3b%208%209%09addItem%28%26%2334%3bVegetarian%20BLT%26%2334%3b%29%3b%2010%09addItem%28%26%2334%3bBLT%26%2334%3b%29%3b%2011%09addItem%28%26%2334%3bSoup%20of%20the%20day%26%2334%3b%29%3b%2012%09addItem%28%26%2334%3bHotdog%26%2334%3b%29%3b%2013%09addItem%28%26%2334%3bSteamed%20Veggies%20and%20Brown%20Rice%26%2334%3b%29%3b%2014%09addItem%28%26%2334%3bPasta%26%2334%3b%29%3b%2015%09%7d%2016%2017%09public%20void%20addItem%28String%20name%29%2018%09%7b%2019%09if%20%28numberOfItems%20%26gt%3b%3d%20MAX_ITEMS%29%20%7b%2020%09System." aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fiterators-mode%2f&t=%e8%bf%ad%e4%bb%a3%e5%99%a8%e6%a8%a1%e5%bc%8f" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=http%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fiterators-mode%2f&t=%e8%bf%ad%e4%bb%a3%e5%99%a8%e6%a8%a1%e5%bc%8f" aria-label="Hacker News">
       <i class="fab fa-hacker-news " aria-hidden="true"></i>
     </a>
   </li>
@@ -455,47 +455,47 @@
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fiterators-mode%2f" aria-label="Facebook">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=http%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fiterators-mode%2f" aria-label="Facebook">
       <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fiterators-mode%2f&text=%e8%bf%ad%e4%bb%a3%e5%99%a8%e6%a8%a1%e5%bc%8f" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=http%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fiterators-mode%2f&text=%e8%bf%ad%e4%bb%a3%e5%99%a8%e6%a8%a1%e5%bc%8f" aria-label="Twitter">
       <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fiterators-mode%2f&title=%e8%bf%ad%e4%bb%a3%e5%99%a8%e6%a8%a1%e5%bc%8f" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=http%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fiterators-mode%2f&title=%e8%bf%ad%e4%bb%a3%e5%99%a8%e6%a8%a1%e5%bc%8f" aria-label="Linkedin">
       <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fiterators-mode%2f&is_video=false&description=%e8%bf%ad%e4%bb%a3%e5%99%a8%e6%a8%a1%e5%bc%8f" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fiterators-mode%2f&is_video=false&description=%e8%bf%ad%e4%bb%a3%e5%99%a8%e6%a8%a1%e5%bc%8f" aria-label="Pinterest">
       <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=%e8%bf%ad%e4%bb%a3%e5%99%a8%e6%a8%a1%e5%bc%8f&body=Check out this article: https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fiterators-mode%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=%e8%bf%ad%e4%bb%a3%e5%99%a8%e6%a8%a1%e5%bc%8f&body=Check out this article: http%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fiterators-mode%2f" aria-label="Email">
       <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fiterators-mode%2f&title=%e8%bf%ad%e4%bb%a3%e5%99%a8%e6%a8%a1%e5%bc%8f" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=http%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fiterators-mode%2f&title=%e8%bf%ad%e4%bb%a3%e5%99%a8%e6%a8%a1%e5%bc%8f" aria-label="Pocket">
       <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fiterators-mode%2f&title=%e8%bf%ad%e4%bb%a3%e5%99%a8%e6%a8%a1%e5%bc%8f" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=http%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fiterators-mode%2f&title=%e8%bf%ad%e4%bb%a3%e5%99%a8%e6%a8%a1%e5%bc%8f" aria-label="reddit">
       <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fiterators-mode%2f&name=%e8%bf%ad%e4%bb%a3%e5%99%a8%e6%a8%a1%e5%bc%8f&description=%e5%ae%9a%e4%b9%89%20%e8%bf%ad%e4%bb%a3%e5%99%a8%e6%a8%a1%e5%bc%8f%e6%8f%90%e4%be%9b%e4%b8%80%e7%a7%8d%e6%96%b9%e6%b3%95%e9%a1%ba%e5%ba%8f%e8%ae%bf%e9%97%ae%e4%b8%80%e4%b8%aa%e8%81%9a%e5%90%88%e5%af%b9%e8%b1%a1%e4%b8%ad%e7%9a%84%e5%90%84%e4%b8%aa%e5%85%83%e7%b4%a0%ef%bc%8c%e8%80%8c%e5%8f%88%e4%b8%8d%e6%9a%b4%e9%9c%b2%e5%85%b6%e5%86%85%e9%83%a8%e7%9a%84%e8%a1%a8%e7%a4%ba%e3%80%82%0a%e9%80%9a%e8%bf%87%e4%b8%80%e4%b8%aaIterator%ef%bc%8c%e5%8f%af%e4%bb%a5%e6%96%b9%e4%be%bf%e5%9c%b0%e9%81%8d%e5%8e%86%e5%90%84%e7%a7%8d%e7%b1%bb%e5%9e%8b%ef%bc%8c%e5%a6%82HashMap%ef%bc%8cArrayList%e7%ad%89%e3%80%82%0a%e4%bb%a3%e7%a0%81%e5%b1%95%e7%a4%ba%20%e4%b8%8b%e9%9d%a2%e9%80%9a%e8%bf%87%e8%8f%9c%e5%8d%95%e7%9a%84%e4%be%8b%e5%ad%90%e8%bf%9b%e8%a1%8c%e8%af%b4%e6%98%8e%e3%80%82%0a%e5%88%86%e5%88%ab%e7%94%a8%e7%ae%80%e5%8d%95%e6%95%b0%e7%bb%84String%5b%5d%e5%92%8cArrayList%26lt%3bString%26gt%3b%e7%b1%bb%e5%88%9b%e5%bb%ba%e8%8f%9c%e5%8d%95%e5%86%85%e5%ae%b9%e3%80%82%0a%e4%bb%8e%e6%8e%a5%e5%8f%a3%e5%bc%80%e5%a7%8b%20%e5%88%9b%e5%bb%ba%e8%8f%9c%e5%8d%95%e6%8e%a5%e5%8f%a3%ef%bc%9a%0a1public%20interface%20Menu%20%7b%202%09public%20Iterator%26lt%3bString%26gt%3b%20createIterator%28%29%3b%203%7d%20%e6%af%8f%e4%b8%aa%e8%8f%9c%e5%8d%95%e9%83%bd%e5%8f%af%e4%bb%a5%e8%bf%94%e5%9b%9e%e4%b8%80%e4%b8%aa%e8%bf%ad%e4%bb%a3%e5%99%a8%e3%80%82%0a%e5%88%9b%e5%bb%baDiner%e8%8f%9c%e5%8d%95%20%e8%af%a5%e8%8f%9c%e5%8d%95%e7%94%a8String%5b%5d%e5%88%9b%e5%bb%ba%e5%86%85%e5%ae%b9%ef%bc%8c%e9%9c%80%e8%a6%81%e7%bc%96%e5%86%99%e8%87%aa%e5%b7%b1%e7%9a%84%e8%bf%ad%e4%bb%a3%e5%99%a8%e3%80%82%0a1public%20class%20DinerMenu%20implements%20Menu%20%7b%202%09static%20final%20int%20MAX_ITEMS%20%3d%206%3b%203%09int%20numberOfItems%20%3d%200%3b%204%09String%5b%5d%20menuItems%3b%205%206%09public%20DinerMenu%28%29%20%7b%207%09menuItems%20%3d%20new%20String%5bMAX_ITEMS%5d%3b%208%209%09addItem%28%26%2334%3bVegetarian%20BLT%26%2334%3b%29%3b%2010%09addItem%28%26%2334%3bBLT%26%2334%3b%29%3b%2011%09addItem%28%26%2334%3bSoup%20of%20the%20day%26%2334%3b%29%3b%2012%09addItem%28%26%2334%3bHotdog%26%2334%3b%29%3b%2013%09addItem%28%26%2334%3bSteamed%20Veggies%20and%20Brown%20Rice%26%2334%3b%29%3b%2014%09addItem%28%26%2334%3bPasta%26%2334%3b%29%3b%2015%09%7d%2016%2017%09public%20void%20addItem%28String%20name%29%2018%09%7b%2019%09if%20%28numberOfItems%20%26gt%3b%3d%20MAX_ITEMS%29%20%7b%2020%09System." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=http%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fiterators-mode%2f&name=%e8%bf%ad%e4%bb%a3%e5%99%a8%e6%a8%a1%e5%bc%8f&description=%e5%ae%9a%e4%b9%89%20%e8%bf%ad%e4%bb%a3%e5%99%a8%e6%a8%a1%e5%bc%8f%e6%8f%90%e4%be%9b%e4%b8%80%e7%a7%8d%e6%96%b9%e6%b3%95%e9%a1%ba%e5%ba%8f%e8%ae%bf%e9%97%ae%e4%b8%80%e4%b8%aa%e8%81%9a%e5%90%88%e5%af%b9%e8%b1%a1%e4%b8%ad%e7%9a%84%e5%90%84%e4%b8%aa%e5%85%83%e7%b4%a0%ef%bc%8c%e8%80%8c%e5%8f%88%e4%b8%8d%e6%9a%b4%e9%9c%b2%e5%85%b6%e5%86%85%e9%83%a8%e7%9a%84%e8%a1%a8%e7%a4%ba%e3%80%82%0a%e9%80%9a%e8%bf%87%e4%b8%80%e4%b8%aaIterator%ef%bc%8c%e5%8f%af%e4%bb%a5%e6%96%b9%e4%be%bf%e5%9c%b0%e9%81%8d%e5%8e%86%e5%90%84%e7%a7%8d%e7%b1%bb%e5%9e%8b%ef%bc%8c%e5%a6%82HashMap%ef%bc%8cArrayList%e7%ad%89%e3%80%82%0a%e4%bb%a3%e7%a0%81%e5%b1%95%e7%a4%ba%20%e4%b8%8b%e9%9d%a2%e9%80%9a%e8%bf%87%e8%8f%9c%e5%8d%95%e7%9a%84%e4%be%8b%e5%ad%90%e8%bf%9b%e8%a1%8c%e8%af%b4%e6%98%8e%e3%80%82%0a%e5%88%86%e5%88%ab%e7%94%a8%e7%ae%80%e5%8d%95%e6%95%b0%e7%bb%84String%5b%5d%e5%92%8cArrayList%26lt%3bString%26gt%3b%e7%b1%bb%e5%88%9b%e5%bb%ba%e8%8f%9c%e5%8d%95%e5%86%85%e5%ae%b9%e3%80%82%0a%e4%bb%8e%e6%8e%a5%e5%8f%a3%e5%bc%80%e5%a7%8b%20%e5%88%9b%e5%bb%ba%e8%8f%9c%e5%8d%95%e6%8e%a5%e5%8f%a3%ef%bc%9a%0a1public%20interface%20Menu%20%7b%202%09public%20Iterator%26lt%3bString%26gt%3b%20createIterator%28%29%3b%203%7d%20%e6%af%8f%e4%b8%aa%e8%8f%9c%e5%8d%95%e9%83%bd%e5%8f%af%e4%bb%a5%e8%bf%94%e5%9b%9e%e4%b8%80%e4%b8%aa%e8%bf%ad%e4%bb%a3%e5%99%a8%e3%80%82%0a%e5%88%9b%e5%bb%baDiner%e8%8f%9c%e5%8d%95%20%e8%af%a5%e8%8f%9c%e5%8d%95%e7%94%a8String%5b%5d%e5%88%9b%e5%bb%ba%e5%86%85%e5%ae%b9%ef%bc%8c%e9%9c%80%e8%a6%81%e7%bc%96%e5%86%99%e8%87%aa%e5%b7%b1%e7%9a%84%e8%bf%ad%e4%bb%a3%e5%99%a8%e3%80%82%0a1public%20class%20DinerMenu%20implements%20Menu%20%7b%202%09static%20final%20int%20MAX_ITEMS%20%3d%206%3b%203%09int%20numberOfItems%20%3d%200%3b%204%09String%5b%5d%20menuItems%3b%205%206%09public%20DinerMenu%28%29%20%7b%207%09menuItems%20%3d%20new%20String%5bMAX_ITEMS%5d%3b%208%209%09addItem%28%26%2334%3bVegetarian%20BLT%26%2334%3b%29%3b%2010%09addItem%28%26%2334%3bBLT%26%2334%3b%29%3b%2011%09addItem%28%26%2334%3bSoup%20of%20the%20day%26%2334%3b%29%3b%2012%09addItem%28%26%2334%3bHotdog%26%2334%3b%29%3b%2013%09addItem%28%26%2334%3bSteamed%20Veggies%20and%20Brown%20Rice%26%2334%3b%29%3b%2014%09addItem%28%26%2334%3bPasta%26%2334%3b%29%3b%2015%09%7d%2016%2017%09public%20void%20addItem%28String%20name%29%2018%09%7b%2019%09if%20%28numberOfItems%20%26gt%3b%3d%20MAX_ITEMS%29%20%7b%2020%09System." aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fiterators-mode%2f&t=%e8%bf%ad%e4%bb%a3%e5%99%a8%e6%a8%a1%e5%bc%8f" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=http%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fiterators-mode%2f&t=%e8%bf%ad%e4%bb%a3%e5%99%a8%e6%a8%a1%e5%bc%8f" aria-label="Hacker News">
       <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
     </a>
   </li>

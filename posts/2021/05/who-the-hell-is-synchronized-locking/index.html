@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title> Synchronized 到底锁了谁 | Norwegian Wood</title>
-  <link rel='canonical' href='https://akynazh.site/posts/2021/05/who-the-hell-is-synchronized-locking/'>
+  <link rel='canonical' href='http://akynazh.site/posts/2021/05/who-the-hell-is-synchronized-locking/'>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
@@ -20,7 +20,7 @@ synchronized(obj){...} synchronized同步代码块对对象内部的实例加锁
 代码如下：
 1public class Demo { 2 private Object lock1 = new Object(); 3 private Object lock2 = new Object(); 4 5 public void demo1() { 6 synchronized (lock1) { 7 while (true) { //死循环目的是为了让线程一直持有该锁 8 System.out.println(Thread.currentThread()); 9 } 10 } 11 } 12 13 public void demo2() { 14 synchronized (lock2) { 15 while (true) { 16 System." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://akynazh.site/posts/2021/05/who-the-hell-is-synchronized-locking/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="http://akynazh.site/posts/2021/05/who-the-hell-is-synchronized-locking/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-05-19T22:43:45+08:00" />
 <meta property="article:modified_time" content="2021-05-19T22:43:45+08:00" /><meta property="og:site_name" content="Norwegian Wood" />
 
@@ -42,7 +42,7 @@ synchronized(obj){...} synchronized同步代码块对对象内部的实例加锁
   
   
   
-  <link rel="stylesheet" href="https://akynazh.site/css/styles.43c5f4c45b6248e071aa0f9eae2d299f06dc6e7d91ae3c1a2e4bcde6252688b0db6d6f3722b74f3c851c6e1b5ea207cff6868c78a11f7c137fd8cc01748ba457.css" integrity="sha512-Q8X0xFtiSOBxqg&#43;eri0pnwbcbn2RrjwaLkvN5iUmiLDbbW83IrdPPIUcbhteogfP9oaMeKEffBN/2MwBdIukVw==">
+  <link rel="stylesheet" href="http://akynazh.site/css/styles.43c5f4c45b6248e071aa0f9eae2d299f06dc6e7d91ae3c1a2e4bcde6252688b0db6d6f3722b74f3c851c6e1b5ea207cff6868c78a11f7c137fd8cc01748ba457.css" integrity="sha512-Q8X0xFtiSOBxqg&#43;eri0pnwbcbn2RrjwaLkvN5iUmiLDbbW83IrdPPIUcbhteogfP9oaMeKEffBN/2MwBdIukVw==">
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
@@ -80,14 +80,14 @@ synchronized(obj){...} synchronized同步代码块对对象内部的实例加锁
       <ul>
         
         <li>
-          <a class="icon" href="https://akynazh.site/posts/2021/05/spring-article-excerpt-3/" aria-label="Previous">
+          <a class="icon" href="http://akynazh.site/posts/2021/05/spring-article-excerpt-3/" aria-label="Previous">
             <i class="fas fa-chevron-left" aria-hidden="true"></i>
           </a>
         </li>
         
         
         <li>
-          <a class="icon" href="https://akynazh.site/posts/2021/05/docker-simple-use-process-record/" aria-label="Next">
+          <a class="icon" href="http://akynazh.site/posts/2021/05/docker-simple-use-process-record/" aria-label="Next">
             <i class="fas fa-chevron-right" aria-hidden="true"></i>
           </a>
         </li>
@@ -124,47 +124,47 @@ synchronized(obj){...} synchronized同步代码块对对象内部的实例加锁
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fakynazh.site%2fposts%2f2021%2f05%2fwho-the-hell-is-synchronized-locking%2f" aria-label="Facebook">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=http%3a%2f%2fakynazh.site%2fposts%2f2021%2f05%2fwho-the-hell-is-synchronized-locking%2f" aria-label="Facebook">
       <i class="fab fa-facebook " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fakynazh.site%2fposts%2f2021%2f05%2fwho-the-hell-is-synchronized-locking%2f&text=Synchronized%20%e5%88%b0%e5%ba%95%e9%94%81%e4%ba%86%e8%b0%81" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=http%3a%2f%2fakynazh.site%2fposts%2f2021%2f05%2fwho-the-hell-is-synchronized-locking%2f&text=Synchronized%20%e5%88%b0%e5%ba%95%e9%94%81%e4%ba%86%e8%b0%81" aria-label="Twitter">
       <i class="fab fa-twitter " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fakynazh.site%2fposts%2f2021%2f05%2fwho-the-hell-is-synchronized-locking%2f&title=Synchronized%20%e5%88%b0%e5%ba%95%e9%94%81%e4%ba%86%e8%b0%81" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=http%3a%2f%2fakynazh.site%2fposts%2f2021%2f05%2fwho-the-hell-is-synchronized-locking%2f&title=Synchronized%20%e5%88%b0%e5%ba%95%e9%94%81%e4%ba%86%e8%b0%81" aria-label="Linkedin">
       <i class="fab fa-linkedin " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fakynazh.site%2fposts%2f2021%2f05%2fwho-the-hell-is-synchronized-locking%2f&is_video=false&description=Synchronized%20%e5%88%b0%e5%ba%95%e9%94%81%e4%ba%86%e8%b0%81" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http%3a%2f%2fakynazh.site%2fposts%2f2021%2f05%2fwho-the-hell-is-synchronized-locking%2f&is_video=false&description=Synchronized%20%e5%88%b0%e5%ba%95%e9%94%81%e4%ba%86%e8%b0%81" aria-label="Pinterest">
       <i class="fab fa-pinterest " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=Synchronized%20%e5%88%b0%e5%ba%95%e9%94%81%e4%ba%86%e8%b0%81&body=Check out this article: https%3a%2f%2fakynazh.site%2fposts%2f2021%2f05%2fwho-the-hell-is-synchronized-locking%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=Synchronized%20%e5%88%b0%e5%ba%95%e9%94%81%e4%ba%86%e8%b0%81&body=Check out this article: http%3a%2f%2fakynazh.site%2fposts%2f2021%2f05%2fwho-the-hell-is-synchronized-locking%2f" aria-label="Email">
       <i class="fas fa-envelope " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fakynazh.site%2fposts%2f2021%2f05%2fwho-the-hell-is-synchronized-locking%2f&title=Synchronized%20%e5%88%b0%e5%ba%95%e9%94%81%e4%ba%86%e8%b0%81" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=http%3a%2f%2fakynazh.site%2fposts%2f2021%2f05%2fwho-the-hell-is-synchronized-locking%2f&title=Synchronized%20%e5%88%b0%e5%ba%95%e9%94%81%e4%ba%86%e8%b0%81" aria-label="Pocket">
       <i class="fab fa-get-pocket " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fakynazh.site%2fposts%2f2021%2f05%2fwho-the-hell-is-synchronized-locking%2f&title=Synchronized%20%e5%88%b0%e5%ba%95%e9%94%81%e4%ba%86%e8%b0%81" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=http%3a%2f%2fakynazh.site%2fposts%2f2021%2f05%2fwho-the-hell-is-synchronized-locking%2f&title=Synchronized%20%e5%88%b0%e5%ba%95%e9%94%81%e4%ba%86%e8%b0%81" aria-label="reddit">
       <i class="fab fa-reddit " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f2021%2f05%2fwho-the-hell-is-synchronized-locking%2f&name=Synchronized%20%e5%88%b0%e5%ba%95%e9%94%81%e4%ba%86%e8%b0%81&description=Synchronized%e6%96%b9%e6%b3%95%20%e9%9d%99%e6%80%81%e6%96%b9%e6%b3%95%e4%b8%8a%e7%9a%84%e9%94%81%0a%e9%9d%99%e6%80%81%e6%96%b9%e6%b3%95%e6%98%af%e5%b1%9e%e4%ba%8e%e2%80%9c%e7%b1%bb%e2%80%9d%ef%bc%8c%e4%b8%8d%e5%b1%9e%e4%ba%8e%e6%9f%90%e4%b8%aa%e5%ae%9e%e4%be%8b%ef%bc%8c%e6%98%af%e6%89%80%e6%9c%89%e5%af%b9%e8%b1%a1%e5%ae%9e%e4%be%8b%e6%89%80%e5%85%b1%e4%ba%ab%e7%9a%84%e6%96%b9%e6%b3%95%e3%80%82%e4%b9%9f%e5%b0%b1%e6%98%af%e8%af%b4%e5%a6%82%e6%9e%9c%e5%9c%a8%e9%9d%99%e6%80%81%e6%96%b9%e6%b3%95%e4%b8%8a%e5%8a%a0%e5%85%a5synchronized%ef%bc%8c%e9%82%a3%e4%b9%88%e5%ae%83%e8%8e%b7%e5%8f%96%e7%9a%84%e5%b0%b1%e6%98%af%e8%bf%99%e4%b8%aa%e7%b1%bb%e7%9a%84%e9%94%81%ef%bc%8c%e9%94%81%e4%bd%8f%e7%9a%84%e5%b0%b1%e6%98%af%e8%bf%99%e4%b8%aa%e7%b1%bb%e3%80%82%0a%e6%99%ae%e9%80%9a%e6%96%b9%e6%b3%95%e4%b8%8a%e7%9a%84%e9%94%81%0a%e5%ae%9e%e4%be%8b%e6%96%b9%e6%b3%95%e5%b9%b6%e4%b8%8d%e6%98%af%e7%b1%bb%e6%89%80%e7%8b%ac%e6%9c%89%e7%9a%84%ef%bc%8c%e6%af%8f%e4%b8%aa%e5%af%b9%e8%b1%a1%e5%ae%9e%e4%be%8b%e7%8b%ac%e7%ab%8b%e6%8b%a5%e6%9c%89%e5%ae%83%ef%bc%8c%e5%ae%83%e5%b9%b6%e4%b8%8d%e8%a2%ab%e5%af%b9%e8%b1%a1%e5%ae%9e%e4%be%8b%e6%89%80%e5%85%b1%e4%ba%ab%e3%80%82%e5%9c%a8%e5%ae%9e%e4%be%8b%e6%96%b9%e6%b3%95%e4%b8%8a%e5%8a%a0%e5%85%a5synchronized%ef%bc%8c%e9%82%a3%e4%b9%88%e5%ae%83%e8%8e%b7%e5%8f%96%e7%9a%84%e5%b0%b1%e6%98%af%e8%bf%99%e4%b8%aa%e7%b1%bb%e7%9a%84%e9%94%81%ef%bc%8c%e9%94%81%e4%bd%8f%e7%9a%84%e5%b0%b1%e6%98%af%e8%bf%99%e4%b8%aa%e5%af%b9%e8%b1%a1%e5%ae%9e%e4%be%8b%e3%80%82%0aSynchronized%e4%bb%a3%e7%a0%81%e5%9d%97%20synchronized%28this%29%7b...%7d%20this%e5%85%b3%e9%94%ae%e5%ad%97%e6%89%80%e4%bb%a3%e8%a1%a8%e7%9a%84%e6%84%8f%e6%80%9d%e6%98%af%e8%af%a5%e5%af%b9%e8%b1%a1%e5%ae%9e%e4%be%8b%ef%bc%8c%e8%bf%99%e7%a7%8d%e7%94%a8%e6%b3%95synchronized%e9%94%81%e4%bd%8f%e7%9a%84%e6%98%af%e5%af%b9%e8%b1%a1%e5%ae%9e%e4%be%8b%e3%80%82%0asynchronized%28Demo.class%29%7b...%7d%20%e9%94%81%e7%9a%84%e6%98%af%e8%af%a5%e7%b1%bb%e3%80%82%0asynchronized%28obj%29%7b...%7d%20synchronized%e5%90%8c%e6%ad%a5%e4%bb%a3%e7%a0%81%e5%9d%97%e5%af%b9%e5%af%b9%e8%b1%a1%e5%86%85%e9%83%a8%e7%9a%84%e5%ae%9e%e4%be%8b%e5%8a%a0%e9%94%81%e3%80%82%0a%e5%81%87%e8%ae%bedemo1%e4%b8%8edemo2%e6%96%b9%e6%b3%95%e4%b8%8d%e7%9b%b8%e5%85%b3%ef%bc%8c%e6%ad%a4%e6%97%b6%e4%b8%a4%e4%b8%aa%e7%ba%bf%e7%a8%8b%e5%af%b9%e5%90%8c%e4%b8%80%e4%b8%aa%e5%af%b9%e8%b1%a1%e5%ae%9e%e4%be%8b%e5%88%86%e5%88%ab%e8%b0%83%e7%94%a8demo1%e4%b8%8edemo2%ef%bc%8c%e5%9d%87%e8%83%bd%e8%8e%b7%e5%8f%96%e5%90%84%e8%87%aa%e7%9a%84%e9%94%81%e3%80%82%0a%e4%bb%a3%e7%a0%81%e5%a6%82%e4%b8%8b%ef%bc%9a%0a1public%20class%20Demo%20%7b%202%20private%20Object%20lock1%20%3d%20new%20Object%28%29%3b%203%20private%20Object%20lock2%20%3d%20new%20Object%28%29%3b%204%205%20public%20void%20demo1%28%29%20%7b%206%20synchronized%20%28lock1%29%20%7b%207%20while%20%28true%29%20%7b%20%2f%2f%e6%ad%bb%e5%be%aa%e7%8e%af%e7%9b%ae%e7%9a%84%e6%98%af%e4%b8%ba%e4%ba%86%e8%ae%a9%e7%ba%bf%e7%a8%8b%e4%b8%80%e7%9b%b4%e6%8c%81%e6%9c%89%e8%af%a5%e9%94%81%208%20System.out.println%28Thread.currentThread%28%29%29%3b%209%20%7d%2010%20%7d%2011%20%7d%2012%2013%20public%20void%20demo2%28%29%20%7b%2014%20synchronized%20%28lock2%29%20%7b%2015%20while%20%28true%29%20%7b%2016%20System." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=http%3a%2f%2fakynazh.site%2fposts%2f2021%2f05%2fwho-the-hell-is-synchronized-locking%2f&name=Synchronized%20%e5%88%b0%e5%ba%95%e9%94%81%e4%ba%86%e8%b0%81&description=Synchronized%e6%96%b9%e6%b3%95%20%e9%9d%99%e6%80%81%e6%96%b9%e6%b3%95%e4%b8%8a%e7%9a%84%e9%94%81%0a%e9%9d%99%e6%80%81%e6%96%b9%e6%b3%95%e6%98%af%e5%b1%9e%e4%ba%8e%e2%80%9c%e7%b1%bb%e2%80%9d%ef%bc%8c%e4%b8%8d%e5%b1%9e%e4%ba%8e%e6%9f%90%e4%b8%aa%e5%ae%9e%e4%be%8b%ef%bc%8c%e6%98%af%e6%89%80%e6%9c%89%e5%af%b9%e8%b1%a1%e5%ae%9e%e4%be%8b%e6%89%80%e5%85%b1%e4%ba%ab%e7%9a%84%e6%96%b9%e6%b3%95%e3%80%82%e4%b9%9f%e5%b0%b1%e6%98%af%e8%af%b4%e5%a6%82%e6%9e%9c%e5%9c%a8%e9%9d%99%e6%80%81%e6%96%b9%e6%b3%95%e4%b8%8a%e5%8a%a0%e5%85%a5synchronized%ef%bc%8c%e9%82%a3%e4%b9%88%e5%ae%83%e8%8e%b7%e5%8f%96%e7%9a%84%e5%b0%b1%e6%98%af%e8%bf%99%e4%b8%aa%e7%b1%bb%e7%9a%84%e9%94%81%ef%bc%8c%e9%94%81%e4%bd%8f%e7%9a%84%e5%b0%b1%e6%98%af%e8%bf%99%e4%b8%aa%e7%b1%bb%e3%80%82%0a%e6%99%ae%e9%80%9a%e6%96%b9%e6%b3%95%e4%b8%8a%e7%9a%84%e9%94%81%0a%e5%ae%9e%e4%be%8b%e6%96%b9%e6%b3%95%e5%b9%b6%e4%b8%8d%e6%98%af%e7%b1%bb%e6%89%80%e7%8b%ac%e6%9c%89%e7%9a%84%ef%bc%8c%e6%af%8f%e4%b8%aa%e5%af%b9%e8%b1%a1%e5%ae%9e%e4%be%8b%e7%8b%ac%e7%ab%8b%e6%8b%a5%e6%9c%89%e5%ae%83%ef%bc%8c%e5%ae%83%e5%b9%b6%e4%b8%8d%e8%a2%ab%e5%af%b9%e8%b1%a1%e5%ae%9e%e4%be%8b%e6%89%80%e5%85%b1%e4%ba%ab%e3%80%82%e5%9c%a8%e5%ae%9e%e4%be%8b%e6%96%b9%e6%b3%95%e4%b8%8a%e5%8a%a0%e5%85%a5synchronized%ef%bc%8c%e9%82%a3%e4%b9%88%e5%ae%83%e8%8e%b7%e5%8f%96%e7%9a%84%e5%b0%b1%e6%98%af%e8%bf%99%e4%b8%aa%e7%b1%bb%e7%9a%84%e9%94%81%ef%bc%8c%e9%94%81%e4%bd%8f%e7%9a%84%e5%b0%b1%e6%98%af%e8%bf%99%e4%b8%aa%e5%af%b9%e8%b1%a1%e5%ae%9e%e4%be%8b%e3%80%82%0aSynchronized%e4%bb%a3%e7%a0%81%e5%9d%97%20synchronized%28this%29%7b...%7d%20this%e5%85%b3%e9%94%ae%e5%ad%97%e6%89%80%e4%bb%a3%e8%a1%a8%e7%9a%84%e6%84%8f%e6%80%9d%e6%98%af%e8%af%a5%e5%af%b9%e8%b1%a1%e5%ae%9e%e4%be%8b%ef%bc%8c%e8%bf%99%e7%a7%8d%e7%94%a8%e6%b3%95synchronized%e9%94%81%e4%bd%8f%e7%9a%84%e6%98%af%e5%af%b9%e8%b1%a1%e5%ae%9e%e4%be%8b%e3%80%82%0asynchronized%28Demo.class%29%7b...%7d%20%e9%94%81%e7%9a%84%e6%98%af%e8%af%a5%e7%b1%bb%e3%80%82%0asynchronized%28obj%29%7b...%7d%20synchronized%e5%90%8c%e6%ad%a5%e4%bb%a3%e7%a0%81%e5%9d%97%e5%af%b9%e5%af%b9%e8%b1%a1%e5%86%85%e9%83%a8%e7%9a%84%e5%ae%9e%e4%be%8b%e5%8a%a0%e9%94%81%e3%80%82%0a%e5%81%87%e8%ae%bedemo1%e4%b8%8edemo2%e6%96%b9%e6%b3%95%e4%b8%8d%e7%9b%b8%e5%85%b3%ef%bc%8c%e6%ad%a4%e6%97%b6%e4%b8%a4%e4%b8%aa%e7%ba%bf%e7%a8%8b%e5%af%b9%e5%90%8c%e4%b8%80%e4%b8%aa%e5%af%b9%e8%b1%a1%e5%ae%9e%e4%be%8b%e5%88%86%e5%88%ab%e8%b0%83%e7%94%a8demo1%e4%b8%8edemo2%ef%bc%8c%e5%9d%87%e8%83%bd%e8%8e%b7%e5%8f%96%e5%90%84%e8%87%aa%e7%9a%84%e9%94%81%e3%80%82%0a%e4%bb%a3%e7%a0%81%e5%a6%82%e4%b8%8b%ef%bc%9a%0a1public%20class%20Demo%20%7b%202%20private%20Object%20lock1%20%3d%20new%20Object%28%29%3b%203%20private%20Object%20lock2%20%3d%20new%20Object%28%29%3b%204%205%20public%20void%20demo1%28%29%20%7b%206%20synchronized%20%28lock1%29%20%7b%207%20while%20%28true%29%20%7b%20%2f%2f%e6%ad%bb%e5%be%aa%e7%8e%af%e7%9b%ae%e7%9a%84%e6%98%af%e4%b8%ba%e4%ba%86%e8%ae%a9%e7%ba%bf%e7%a8%8b%e4%b8%80%e7%9b%b4%e6%8c%81%e6%9c%89%e8%af%a5%e9%94%81%208%20System.out.println%28Thread.currentThread%28%29%29%3b%209%20%7d%2010%20%7d%2011%20%7d%2012%2013%20public%20void%20demo2%28%29%20%7b%2014%20synchronized%20%28lock2%29%20%7b%2015%20while%20%28true%29%20%7b%2016%20System." aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fakynazh.site%2fposts%2f2021%2f05%2fwho-the-hell-is-synchronized-locking%2f&t=Synchronized%20%e5%88%b0%e5%ba%95%e9%94%81%e4%ba%86%e8%b0%81" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=http%3a%2f%2fakynazh.site%2fposts%2f2021%2f05%2fwho-the-hell-is-synchronized-locking%2f&t=Synchronized%20%e5%88%b0%e5%ba%95%e9%94%81%e4%ba%86%e8%b0%81" aria-label="Hacker News">
       <i class="fab fa-hacker-news " aria-hidden="true"></i>
     </a>
   </li>
@@ -338,47 +338,47 @@ synchronized(obj){...} synchronized同步代码块对对象内部的实例加锁
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fakynazh.site%2fposts%2f2021%2f05%2fwho-the-hell-is-synchronized-locking%2f" aria-label="Facebook">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=http%3a%2f%2fakynazh.site%2fposts%2f2021%2f05%2fwho-the-hell-is-synchronized-locking%2f" aria-label="Facebook">
       <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fakynazh.site%2fposts%2f2021%2f05%2fwho-the-hell-is-synchronized-locking%2f&text=Synchronized%20%e5%88%b0%e5%ba%95%e9%94%81%e4%ba%86%e8%b0%81" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=http%3a%2f%2fakynazh.site%2fposts%2f2021%2f05%2fwho-the-hell-is-synchronized-locking%2f&text=Synchronized%20%e5%88%b0%e5%ba%95%e9%94%81%e4%ba%86%e8%b0%81" aria-label="Twitter">
       <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fakynazh.site%2fposts%2f2021%2f05%2fwho-the-hell-is-synchronized-locking%2f&title=Synchronized%20%e5%88%b0%e5%ba%95%e9%94%81%e4%ba%86%e8%b0%81" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=http%3a%2f%2fakynazh.site%2fposts%2f2021%2f05%2fwho-the-hell-is-synchronized-locking%2f&title=Synchronized%20%e5%88%b0%e5%ba%95%e9%94%81%e4%ba%86%e8%b0%81" aria-label="Linkedin">
       <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fakynazh.site%2fposts%2f2021%2f05%2fwho-the-hell-is-synchronized-locking%2f&is_video=false&description=Synchronized%20%e5%88%b0%e5%ba%95%e9%94%81%e4%ba%86%e8%b0%81" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http%3a%2f%2fakynazh.site%2fposts%2f2021%2f05%2fwho-the-hell-is-synchronized-locking%2f&is_video=false&description=Synchronized%20%e5%88%b0%e5%ba%95%e9%94%81%e4%ba%86%e8%b0%81" aria-label="Pinterest">
       <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=Synchronized%20%e5%88%b0%e5%ba%95%e9%94%81%e4%ba%86%e8%b0%81&body=Check out this article: https%3a%2f%2fakynazh.site%2fposts%2f2021%2f05%2fwho-the-hell-is-synchronized-locking%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=Synchronized%20%e5%88%b0%e5%ba%95%e9%94%81%e4%ba%86%e8%b0%81&body=Check out this article: http%3a%2f%2fakynazh.site%2fposts%2f2021%2f05%2fwho-the-hell-is-synchronized-locking%2f" aria-label="Email">
       <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fakynazh.site%2fposts%2f2021%2f05%2fwho-the-hell-is-synchronized-locking%2f&title=Synchronized%20%e5%88%b0%e5%ba%95%e9%94%81%e4%ba%86%e8%b0%81" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=http%3a%2f%2fakynazh.site%2fposts%2f2021%2f05%2fwho-the-hell-is-synchronized-locking%2f&title=Synchronized%20%e5%88%b0%e5%ba%95%e9%94%81%e4%ba%86%e8%b0%81" aria-label="Pocket">
       <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fakynazh.site%2fposts%2f2021%2f05%2fwho-the-hell-is-synchronized-locking%2f&title=Synchronized%20%e5%88%b0%e5%ba%95%e9%94%81%e4%ba%86%e8%b0%81" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=http%3a%2f%2fakynazh.site%2fposts%2f2021%2f05%2fwho-the-hell-is-synchronized-locking%2f&title=Synchronized%20%e5%88%b0%e5%ba%95%e9%94%81%e4%ba%86%e8%b0%81" aria-label="reddit">
       <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f2021%2f05%2fwho-the-hell-is-synchronized-locking%2f&name=Synchronized%20%e5%88%b0%e5%ba%95%e9%94%81%e4%ba%86%e8%b0%81&description=Synchronized%e6%96%b9%e6%b3%95%20%e9%9d%99%e6%80%81%e6%96%b9%e6%b3%95%e4%b8%8a%e7%9a%84%e9%94%81%0a%e9%9d%99%e6%80%81%e6%96%b9%e6%b3%95%e6%98%af%e5%b1%9e%e4%ba%8e%e2%80%9c%e7%b1%bb%e2%80%9d%ef%bc%8c%e4%b8%8d%e5%b1%9e%e4%ba%8e%e6%9f%90%e4%b8%aa%e5%ae%9e%e4%be%8b%ef%bc%8c%e6%98%af%e6%89%80%e6%9c%89%e5%af%b9%e8%b1%a1%e5%ae%9e%e4%be%8b%e6%89%80%e5%85%b1%e4%ba%ab%e7%9a%84%e6%96%b9%e6%b3%95%e3%80%82%e4%b9%9f%e5%b0%b1%e6%98%af%e8%af%b4%e5%a6%82%e6%9e%9c%e5%9c%a8%e9%9d%99%e6%80%81%e6%96%b9%e6%b3%95%e4%b8%8a%e5%8a%a0%e5%85%a5synchronized%ef%bc%8c%e9%82%a3%e4%b9%88%e5%ae%83%e8%8e%b7%e5%8f%96%e7%9a%84%e5%b0%b1%e6%98%af%e8%bf%99%e4%b8%aa%e7%b1%bb%e7%9a%84%e9%94%81%ef%bc%8c%e9%94%81%e4%bd%8f%e7%9a%84%e5%b0%b1%e6%98%af%e8%bf%99%e4%b8%aa%e7%b1%bb%e3%80%82%0a%e6%99%ae%e9%80%9a%e6%96%b9%e6%b3%95%e4%b8%8a%e7%9a%84%e9%94%81%0a%e5%ae%9e%e4%be%8b%e6%96%b9%e6%b3%95%e5%b9%b6%e4%b8%8d%e6%98%af%e7%b1%bb%e6%89%80%e7%8b%ac%e6%9c%89%e7%9a%84%ef%bc%8c%e6%af%8f%e4%b8%aa%e5%af%b9%e8%b1%a1%e5%ae%9e%e4%be%8b%e7%8b%ac%e7%ab%8b%e6%8b%a5%e6%9c%89%e5%ae%83%ef%bc%8c%e5%ae%83%e5%b9%b6%e4%b8%8d%e8%a2%ab%e5%af%b9%e8%b1%a1%e5%ae%9e%e4%be%8b%e6%89%80%e5%85%b1%e4%ba%ab%e3%80%82%e5%9c%a8%e5%ae%9e%e4%be%8b%e6%96%b9%e6%b3%95%e4%b8%8a%e5%8a%a0%e5%85%a5synchronized%ef%bc%8c%e9%82%a3%e4%b9%88%e5%ae%83%e8%8e%b7%e5%8f%96%e7%9a%84%e5%b0%b1%e6%98%af%e8%bf%99%e4%b8%aa%e7%b1%bb%e7%9a%84%e9%94%81%ef%bc%8c%e9%94%81%e4%bd%8f%e7%9a%84%e5%b0%b1%e6%98%af%e8%bf%99%e4%b8%aa%e5%af%b9%e8%b1%a1%e5%ae%9e%e4%be%8b%e3%80%82%0aSynchronized%e4%bb%a3%e7%a0%81%e5%9d%97%20synchronized%28this%29%7b...%7d%20this%e5%85%b3%e9%94%ae%e5%ad%97%e6%89%80%e4%bb%a3%e8%a1%a8%e7%9a%84%e6%84%8f%e6%80%9d%e6%98%af%e8%af%a5%e5%af%b9%e8%b1%a1%e5%ae%9e%e4%be%8b%ef%bc%8c%e8%bf%99%e7%a7%8d%e7%94%a8%e6%b3%95synchronized%e9%94%81%e4%bd%8f%e7%9a%84%e6%98%af%e5%af%b9%e8%b1%a1%e5%ae%9e%e4%be%8b%e3%80%82%0asynchronized%28Demo.class%29%7b...%7d%20%e9%94%81%e7%9a%84%e6%98%af%e8%af%a5%e7%b1%bb%e3%80%82%0asynchronized%28obj%29%7b...%7d%20synchronized%e5%90%8c%e6%ad%a5%e4%bb%a3%e7%a0%81%e5%9d%97%e5%af%b9%e5%af%b9%e8%b1%a1%e5%86%85%e9%83%a8%e7%9a%84%e5%ae%9e%e4%be%8b%e5%8a%a0%e9%94%81%e3%80%82%0a%e5%81%87%e8%ae%bedemo1%e4%b8%8edemo2%e6%96%b9%e6%b3%95%e4%b8%8d%e7%9b%b8%e5%85%b3%ef%bc%8c%e6%ad%a4%e6%97%b6%e4%b8%a4%e4%b8%aa%e7%ba%bf%e7%a8%8b%e5%af%b9%e5%90%8c%e4%b8%80%e4%b8%aa%e5%af%b9%e8%b1%a1%e5%ae%9e%e4%be%8b%e5%88%86%e5%88%ab%e8%b0%83%e7%94%a8demo1%e4%b8%8edemo2%ef%bc%8c%e5%9d%87%e8%83%bd%e8%8e%b7%e5%8f%96%e5%90%84%e8%87%aa%e7%9a%84%e9%94%81%e3%80%82%0a%e4%bb%a3%e7%a0%81%e5%a6%82%e4%b8%8b%ef%bc%9a%0a1public%20class%20Demo%20%7b%202%20private%20Object%20lock1%20%3d%20new%20Object%28%29%3b%203%20private%20Object%20lock2%20%3d%20new%20Object%28%29%3b%204%205%20public%20void%20demo1%28%29%20%7b%206%20synchronized%20%28lock1%29%20%7b%207%20while%20%28true%29%20%7b%20%2f%2f%e6%ad%bb%e5%be%aa%e7%8e%af%e7%9b%ae%e7%9a%84%e6%98%af%e4%b8%ba%e4%ba%86%e8%ae%a9%e7%ba%bf%e7%a8%8b%e4%b8%80%e7%9b%b4%e6%8c%81%e6%9c%89%e8%af%a5%e9%94%81%208%20System.out.println%28Thread.currentThread%28%29%29%3b%209%20%7d%2010%20%7d%2011%20%7d%2012%2013%20public%20void%20demo2%28%29%20%7b%2014%20synchronized%20%28lock2%29%20%7b%2015%20while%20%28true%29%20%7b%2016%20System." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=http%3a%2f%2fakynazh.site%2fposts%2f2021%2f05%2fwho-the-hell-is-synchronized-locking%2f&name=Synchronized%20%e5%88%b0%e5%ba%95%e9%94%81%e4%ba%86%e8%b0%81&description=Synchronized%e6%96%b9%e6%b3%95%20%e9%9d%99%e6%80%81%e6%96%b9%e6%b3%95%e4%b8%8a%e7%9a%84%e9%94%81%0a%e9%9d%99%e6%80%81%e6%96%b9%e6%b3%95%e6%98%af%e5%b1%9e%e4%ba%8e%e2%80%9c%e7%b1%bb%e2%80%9d%ef%bc%8c%e4%b8%8d%e5%b1%9e%e4%ba%8e%e6%9f%90%e4%b8%aa%e5%ae%9e%e4%be%8b%ef%bc%8c%e6%98%af%e6%89%80%e6%9c%89%e5%af%b9%e8%b1%a1%e5%ae%9e%e4%be%8b%e6%89%80%e5%85%b1%e4%ba%ab%e7%9a%84%e6%96%b9%e6%b3%95%e3%80%82%e4%b9%9f%e5%b0%b1%e6%98%af%e8%af%b4%e5%a6%82%e6%9e%9c%e5%9c%a8%e9%9d%99%e6%80%81%e6%96%b9%e6%b3%95%e4%b8%8a%e5%8a%a0%e5%85%a5synchronized%ef%bc%8c%e9%82%a3%e4%b9%88%e5%ae%83%e8%8e%b7%e5%8f%96%e7%9a%84%e5%b0%b1%e6%98%af%e8%bf%99%e4%b8%aa%e7%b1%bb%e7%9a%84%e9%94%81%ef%bc%8c%e9%94%81%e4%bd%8f%e7%9a%84%e5%b0%b1%e6%98%af%e8%bf%99%e4%b8%aa%e7%b1%bb%e3%80%82%0a%e6%99%ae%e9%80%9a%e6%96%b9%e6%b3%95%e4%b8%8a%e7%9a%84%e9%94%81%0a%e5%ae%9e%e4%be%8b%e6%96%b9%e6%b3%95%e5%b9%b6%e4%b8%8d%e6%98%af%e7%b1%bb%e6%89%80%e7%8b%ac%e6%9c%89%e7%9a%84%ef%bc%8c%e6%af%8f%e4%b8%aa%e5%af%b9%e8%b1%a1%e5%ae%9e%e4%be%8b%e7%8b%ac%e7%ab%8b%e6%8b%a5%e6%9c%89%e5%ae%83%ef%bc%8c%e5%ae%83%e5%b9%b6%e4%b8%8d%e8%a2%ab%e5%af%b9%e8%b1%a1%e5%ae%9e%e4%be%8b%e6%89%80%e5%85%b1%e4%ba%ab%e3%80%82%e5%9c%a8%e5%ae%9e%e4%be%8b%e6%96%b9%e6%b3%95%e4%b8%8a%e5%8a%a0%e5%85%a5synchronized%ef%bc%8c%e9%82%a3%e4%b9%88%e5%ae%83%e8%8e%b7%e5%8f%96%e7%9a%84%e5%b0%b1%e6%98%af%e8%bf%99%e4%b8%aa%e7%b1%bb%e7%9a%84%e9%94%81%ef%bc%8c%e9%94%81%e4%bd%8f%e7%9a%84%e5%b0%b1%e6%98%af%e8%bf%99%e4%b8%aa%e5%af%b9%e8%b1%a1%e5%ae%9e%e4%be%8b%e3%80%82%0aSynchronized%e4%bb%a3%e7%a0%81%e5%9d%97%20synchronized%28this%29%7b...%7d%20this%e5%85%b3%e9%94%ae%e5%ad%97%e6%89%80%e4%bb%a3%e8%a1%a8%e7%9a%84%e6%84%8f%e6%80%9d%e6%98%af%e8%af%a5%e5%af%b9%e8%b1%a1%e5%ae%9e%e4%be%8b%ef%bc%8c%e8%bf%99%e7%a7%8d%e7%94%a8%e6%b3%95synchronized%e9%94%81%e4%bd%8f%e7%9a%84%e6%98%af%e5%af%b9%e8%b1%a1%e5%ae%9e%e4%be%8b%e3%80%82%0asynchronized%28Demo.class%29%7b...%7d%20%e9%94%81%e7%9a%84%e6%98%af%e8%af%a5%e7%b1%bb%e3%80%82%0asynchronized%28obj%29%7b...%7d%20synchronized%e5%90%8c%e6%ad%a5%e4%bb%a3%e7%a0%81%e5%9d%97%e5%af%b9%e5%af%b9%e8%b1%a1%e5%86%85%e9%83%a8%e7%9a%84%e5%ae%9e%e4%be%8b%e5%8a%a0%e9%94%81%e3%80%82%0a%e5%81%87%e8%ae%bedemo1%e4%b8%8edemo2%e6%96%b9%e6%b3%95%e4%b8%8d%e7%9b%b8%e5%85%b3%ef%bc%8c%e6%ad%a4%e6%97%b6%e4%b8%a4%e4%b8%aa%e7%ba%bf%e7%a8%8b%e5%af%b9%e5%90%8c%e4%b8%80%e4%b8%aa%e5%af%b9%e8%b1%a1%e5%ae%9e%e4%be%8b%e5%88%86%e5%88%ab%e8%b0%83%e7%94%a8demo1%e4%b8%8edemo2%ef%bc%8c%e5%9d%87%e8%83%bd%e8%8e%b7%e5%8f%96%e5%90%84%e8%87%aa%e7%9a%84%e9%94%81%e3%80%82%0a%e4%bb%a3%e7%a0%81%e5%a6%82%e4%b8%8b%ef%bc%9a%0a1public%20class%20Demo%20%7b%202%20private%20Object%20lock1%20%3d%20new%20Object%28%29%3b%203%20private%20Object%20lock2%20%3d%20new%20Object%28%29%3b%204%205%20public%20void%20demo1%28%29%20%7b%206%20synchronized%20%28lock1%29%20%7b%207%20while%20%28true%29%20%7b%20%2f%2f%e6%ad%bb%e5%be%aa%e7%8e%af%e7%9b%ae%e7%9a%84%e6%98%af%e4%b8%ba%e4%ba%86%e8%ae%a9%e7%ba%bf%e7%a8%8b%e4%b8%80%e7%9b%b4%e6%8c%81%e6%9c%89%e8%af%a5%e9%94%81%208%20System.out.println%28Thread.currentThread%28%29%29%3b%209%20%7d%2010%20%7d%2011%20%7d%2012%2013%20public%20void%20demo2%28%29%20%7b%2014%20synchronized%20%28lock2%29%20%7b%2015%20while%20%28true%29%20%7b%2016%20System." aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fakynazh.site%2fposts%2f2021%2f05%2fwho-the-hell-is-synchronized-locking%2f&t=Synchronized%20%e5%88%b0%e5%ba%95%e9%94%81%e4%ba%86%e8%b0%81" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=http%3a%2f%2fakynazh.site%2fposts%2f2021%2f05%2fwho-the-hell-is-synchronized-locking%2f&t=Synchronized%20%e5%88%b0%e5%ba%95%e9%94%81%e4%ba%86%e8%b0%81" aria-label="Hacker News">
       <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
     </a>
   </li>
