@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Web on Norwegian Wood</title>
-    <link>/categories/web/</link>
+    <link>akynazh.site/categories/web/</link>
     <description>Recent content in Web on Norwegian Wood</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Jzh</copyright>
-    <lastBuildDate>Thu, 08 Dec 2022 16:35:54 +0800</lastBuildDate><atom:link href="/categories/web/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 08 Dec 2022 16:35:54 +0800</lastBuildDate><atom:link href="akynazh.site/categories/web/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>对于 Rest 风格的理解</title>
-      <link>/posts/2022/12/understanding-of-rest-style/</link>
+      <link>akynazh.site/posts/2022/12/understanding-of-rest-style/</link>
       <pubDate>Thu, 08 Dec 2022 16:35:54 +0800</pubDate>
       
-      <guid>/posts/2022/12/understanding-of-rest-style/</guid>
+      <guid>akynazh.site/posts/2022/12/understanding-of-rest-style/</guid>
       <description>REST，全称 Representational State Transfer，即表现层状态转移。
 符合REST规范的写法：
 1POST http://www.test.com/lemon // 创建 2Get http://www.test.com/lemon // 查询 3PUT http://www.test.com/lemon // 修改 4DELETE http://www.test.com/lemon //删除 不符合REST规范的写法：
@@ -25,10 +25,10 @@
     
     <item>
       <title>使用 Seata 处理分布式事务</title>
-      <link>/posts/2022/08/using-seata-to-process-distributed-transactions/</link>
+      <link>akynazh.site/posts/2022/08/using-seata-to-process-distributed-transactions/</link>
       <pubDate>Tue, 09 Aug 2022 21:41:53 +0800</pubDate>
       
-      <guid>/posts/2022/08/using-seata-to-process-distributed-transactions/</guid>
+      <guid>akynazh.site/posts/2022/08/using-seata-to-process-distributed-transactions/</guid>
       <description>关于分布式事务 ​分布式系统会把一个应用系统拆分为可独立部署的多个服务，因此需要服务与服务之间远程协作才能完成事务操作。
 这种分布式系统环境下由不同的服务之间通过网络远程协作完成事务称之为分布式事务。
 例如用户下一个订单，需要首先创建订单，然后删减库存，接着扣除用户的金钱，最后完成订单。这个过程中，每个操作都可以作为一个微服务，每个微服务操作对应的数据库，而各个数据库可能分布在不同机器上，那么分布式事务就产生了，我们要确保一个事务被正确地处理，必须解决好分布式事务的数据提交与回滚。
@@ -52,10 +52,10 @@ type修改为nacos
     
     <item>
       <title>Sentinel 使用记录</title>
-      <link>/posts/2022/08/sentinel-usage-record/</link>
+      <link>akynazh.site/posts/2022/08/sentinel-usage-record/</link>
       <pubDate>Mon, 08 Aug 2022 17:46:49 +0800</pubDate>
       
-      <guid>/posts/2022/08/sentinel-usage-record/</guid>
+      <guid>akynazh.site/posts/2022/08/sentinel-usage-record/</guid>
       <description>Sentinel是什么 Sentinel 是面向分布式、多语言异构化服务架构的流量治理组件，主要以流量为切入点，从流量路由、流量控制、流量整形、熔断降级、系统自适应过载保护、热点流量防护等多个维度来帮助开发者保障微服务的稳定性。（来源于官方文档）
 个人使用感觉：类似于Hystrix，使用上感觉比Hystrix更容易，功能也更强大。
 架构说明 两个生产者服务运行在9001和9002端口，一个消费者服务运行在80端口，均注册到nacos，消费者调用两个生产者的服务。
@@ -72,10 +72,10 @@ service下的方法指定好关于生产者的服务限流，降级或熔断等�
     
     <item>
       <title>Docker-compose 快速配置 nacos 集群环境</title>
-      <link>/posts/2022/08/docker-compose-quickly-configures-nacos-cluster-environment/</link>
+      <link>akynazh.site/posts/2022/08/docker-compose-quickly-configures-nacos-cluster-environment/</link>
       <pubDate>Sun, 07 Aug 2022 16:02:27 +0800</pubDate>
       
-      <guid>/posts/2022/08/docker-compose-quickly-configures-nacos-cluster-environment/</guid>
+      <guid>akynazh.site/posts/2022/08/docker-compose-quickly-configures-nacos-cluster-environment/</guid>
       <description>前言 总体架构说明 在一台CentOS主机上部署，版本为7.9，IP为192.168.1.127。
 通过docker创建三台nacos环境的机器，端口均运行在8848，分别映射到主机的8848，8858，8868端口上，名称（hostname）分别为nacos-server1，nacos-server2，nacos-server3。
 主机通过nginx监听8080端口，通过负载均衡将请求转发到三台nacos机器上。
@@ -88,10 +88,10 @@ service下的方法指定好关于生产者的服务限流，降级或熔断等�
     
     <item>
       <title>Zipkin 使用记录</title>
-      <link>/posts/2022/07/zipkin-usage-record/</link>
+      <link>akynazh.site/posts/2022/07/zipkin-usage-record/</link>
       <pubDate>Fri, 29 Jul 2022 18:26:44 +0800</pubDate>
       
-      <guid>/posts/2022/07/zipkin-usage-record/</guid>
+      <guid>akynazh.site/posts/2022/07/zipkin-usage-record/</guid>
       <description>Zipkin的作用 查看微服务调用过程； 分析微服务依赖关系； 方便地找到调用过程错误发生位置。 Zipkin使用记录 一、下载Zipkin并运行：
 1java -jar zipkin.jar 这样成功运行后，默认在端口9411可以查看图形管理界面。
 二、依赖引入
@@ -104,10 +104,10 @@ Over.</description>
     
     <item>
       <title>SpringCloud-Stream 使用记录</title>
-      <link>/posts/2022/07/springcloud-stream-usage-record/</link>
+      <link>akynazh.site/posts/2022/07/springcloud-stream-usage-record/</link>
       <pubDate>Fri, 29 Jul 2022 17:26:05 +0800</pubDate>
       
-      <guid>/posts/2022/07/springcloud-stream-usage-record/</guid>
+      <guid>akynazh.site/posts/2022/07/springcloud-stream-usage-record/</guid>
       <description>为何使用Stream？ 实现消息的收发可以用许多种方式来实现，如Kafka，RabbitMQ等，而通过Stream可以方便地通过一个Binder对象与这些不同的实现工具对接，应用程序通过Inputs和Outputs来与Binder交互即可实现消息的收发，这样我们就只需要知道如何与Stream交互即可方便地使用消息驱动。
 下图即Stream工作原理：
 Stream使用记录 一、依赖导入 除去一些基本依赖之外，发布端和订阅端均导入：
@@ -118,10 +118,10 @@ Stream使用记录 一、依赖导入 除去一些基本依赖之外，发布端
     
     <item>
       <title>Config 结合 Bus 使用记录</title>
-      <link>/posts/2022/07/config-combined-with-bus-usage-record/</link>
+      <link>akynazh.site/posts/2022/07/config-combined-with-bus-usage-record/</link>
       <pubDate>Wed, 27 Jul 2022 22:00:55 +0800</pubDate>
       
-      <guid>/posts/2022/07/config-combined-with-bus-usage-record/</guid>
+      <guid>akynazh.site/posts/2022/07/config-combined-with-bus-usage-record/</guid>
       <description>为何要使用Config和Bus Config可以进行多个微服务下的全局配置，更加方便，易于管理。
 当全局配置修改时，需要通知各个微服务，一个一个地通知是非常耗时的，如果可以通过广播的方式快速将消息传递出去就轻松多了，而通过Bus即可实现这一点。
 测试方法 一、在6996端口通过git拉取全局配置，相当于一个ConfigServer，6886和6776端口作为ConfigClient；
@@ -136,10 +136,10 @@ Stream使用记录 一、依赖导入 除去一些基本依赖之外，发布端
     
     <item>
       <title>SpringCloud-Gateway 使用记录</title>
-      <link>/posts/2022/07/springcloud-gateway-usage-record/</link>
+      <link>akynazh.site/posts/2022/07/springcloud-gateway-usage-record/</link>
       <pubDate>Tue, 26 Jul 2022 18:33:44 +0800</pubDate>
       
-      <guid>/posts/2022/07/springcloud-gateway-usage-record/</guid>
+      <guid>akynazh.site/posts/2022/07/springcloud-gateway-usage-record/</guid>
       <description>网关的作用 如图所示，网关介于外部请求和具体微服务之间，在不暴露内部微服务端口的情况下，通过一个或者多个指定的网关端口统一地处理外部各种请求。
 使用SpringCloud Gateway 依赖引入 除了基本依赖以外，引入下列依赖：
 1&amp;lt;!-- others --&amp;gt; 2&amp;lt;dependency&amp;gt; 3 &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; 4 &amp;lt;artifactId&amp;gt;spring-cloud-starter-netflix-eureka-client&amp;lt;/artifactId&amp;gt; 5&amp;lt;/dependency&amp;gt; 6&amp;lt;dependency&amp;gt; 7 &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; 8 &amp;lt;artifactId&amp;gt;spring-cloud-starter-gateway&amp;lt;/artifactId&amp;gt; 9&amp;lt;/dependency&amp;gt; 注意不能引入web相关依赖，因为Gateway是基于WebFlux的。
@@ -150,10 +150,10 @@ Stream使用记录 一、依赖导入 除去一些基本依赖之外，发布端
     
     <item>
       <title>Hystrix 实现服务熔断与监控</title>
-      <link>/posts/2022/07/hytrix-realizes-service-fusing-and-monitoring/</link>
+      <link>akynazh.site/posts/2022/07/hytrix-realizes-service-fusing-and-monitoring/</link>
       <pubDate>Tue, 26 Jul 2022 11:39:11 +0800</pubDate>
       
-      <guid>/posts/2022/07/hytrix-realizes-service-fusing-and-monitoring/</guid>
+      <guid>akynazh.site/posts/2022/07/hytrix-realizes-service-fusing-and-monitoring/</guid>
       <description>什么是服务熔断 概念 应对微服务雪崩效应的一种链路保护机制，类似保险丝。
 关于雪崩效应 微服务之间的数据交互是通过远程调用来完成的。服务A调用服务，服务B调用服务C，某一时间链路上对服务C的调用响应时间过长或者服务C不可用，随着时间的增长，对服务C的调用也越来越多，然后服务C崩溃了，但是链路调用还在，对服务B的调用也在持续增多，然后服务B崩溃，随之A也崩溃，导致雪崩效应。
 实现机制 当某服务出现不可用或响应超时的情况时，为了防止整个系统出现雪崩，暂时停止对该服务的调用。
@@ -170,10 +170,10 @@ Hystrix实现服务熔断 环境搭建 1. 关于pom.xml 1&amp;lt;dependency&amp;
     
     <item>
       <title>Hystrix 实现服务降级</title>
-      <link>/posts/2022/07/hytrix-enables-service-degradation/</link>
+      <link>akynazh.site/posts/2022/07/hytrix-enables-service-degradation/</link>
       <pubDate>Tue, 26 Jul 2022 10:59:08 +0800</pubDate>
       
-      <guid>/posts/2022/07/hytrix-enables-service-degradation/</guid>
+      <guid>akynazh.site/posts/2022/07/hytrix-enables-service-degradation/</guid>
       <description>什么是服务降级 概念 一般指在服务器压力剧增的时候，根据实际业务使用情况以及流量，对一些服务和页面有策略的不处理或者用一种简单的方式进行处理，从而释放服务器资源的资源以保证核心业务的正常高效运行。
 应用场景 多用于微服务架构中，一般当整个微服务架构整体的负载超出了预设的上限阈值（和服务器的配置性能有关系），或者即将到来的流量预计会超过预设的阈值时。
 大致实现过程 为了预防某些功能出现负荷过载或者响应慢的情况，在其内部暂时舍弃对一些非核心的接口和数据的请求，而直接返回一个提前准备好的fallback（退路）错误处理信息。这样，虽然提供的是一个有损的服务，但却保证了整个系统的稳定性和可用性。
@@ -190,10 +190,10 @@ Hystrix实现服务熔断 环境搭建 1. 关于pom.xml 1&amp;lt;dependency&amp;
     
     <item>
       <title>OpenFeign 使用记录</title>
-      <link>/posts/2022/07/openfeign-usage-record/</link>
+      <link>akynazh.site/posts/2022/07/openfeign-usage-record/</link>
       <pubDate>Fri, 22 Jul 2022 17:39:24 +0800</pubDate>
       
-      <guid>/posts/2022/07/openfeign-usage-record/</guid>
+      <guid>akynazh.site/posts/2022/07/openfeign-usage-record/</guid>
       <description>为什么要使用OpenFeign 之前在消费端使用RestTemplate时，每次请求都要进行诸如
 1restTemplate.postForObject(PAYMENT_URL + &amp;#34;/payment/create&amp;#34;, payment, CommonResult.class); 这样的调用，需要指定较多参数，当一个接口调用中需要非常多这样的请求时，会比较繁琐，而且这种方式不够抽象。
 OpenFegin利用面向接口编程的思想，抽象化，简化了上述操作。
@@ -204,10 +204,10 @@ OpenFegin利用面向接口编程的思想，抽象化，简化了上述操作�
     
     <item>
       <title>理解 Ribbon 并自己实现负载均衡</title>
-      <link>/posts/2022/07/understand-ribbon-and-realize-load-balancing-by-yourself/</link>
+      <link>akynazh.site/posts/2022/07/understand-ribbon-and-realize-load-balancing-by-yourself/</link>
       <pubDate>Wed, 20 Jul 2022 17:07:35 +0800</pubDate>
       
-      <guid>/posts/2022/07/understand-ribbon-and-realize-load-balancing-by-yourself/</guid>
+      <guid>akynazh.site/posts/2022/07/understand-ribbon-and-realize-load-balancing-by-yourself/</guid>
       <description>负载均衡（LB）是什么 对于用户的某个请求，将有多个相同功能的服务点服务该请求，某个服务点挂了，其他服务点还是可以进行服务，这样就实现了系统的高可用。
 关于集中式LB和进程内LB 集中式LB 在服务的消费方和提供方之间使用独立的LB设施，（软硬件均可，软件如Nginx，硬件如F5），由该设施负责把访问请求通过某种策略（可自行指定）转发至服务的提供方。
 进程内LB 将LB逻辑集成到消费方，消费方从服务注册中心获知有哪些地址可用，然后自己再从这些地址中选择出一个合适的服务点进行服务。
@@ -222,10 +222,10 @@ Ribbon属于进程内LB，它只是一个类库，集成于消费方进程，消
     
     <item>
       <title>Consul 配置过程及测试</title>
-      <link>/posts/2022/07/consul-configuration-process-and-test/</link>
+      <link>akynazh.site/posts/2022/07/consul-configuration-process-and-test/</link>
       <pubDate>Tue, 19 Jul 2022 16:34:39 +0800</pubDate>
       
-      <guid>/posts/2022/07/consul-configuration-process-and-test/</guid>
+      <guid>akynazh.site/posts/2022/07/consul-configuration-process-and-test/</guid>
       <description>前言 类似于zookeeper和eureka，也起到微服务注册中心的作用, 满足分布式系统中的CP原则，是弱可用性的。
 不同于zookeeper和eureka这两种主要由Java编写的语言，它主要由Go语言编写。
 配置Consul环境 下载consul，配置环境变量。 运行consul agent -dev开启服务。 默认端口为8500，访问localhost:8500进入管理界面。 编写springcloud服务代码 一、关于pom.xml
@@ -239,10 +239,10 @@ Over.</description>
     
     <item>
       <title>Zookeeper 配置过程与测试</title>
-      <link>/posts/2022/07/zookeeper-configuration-process-and-test/</link>
+      <link>akynazh.site/posts/2022/07/zookeeper-configuration-process-and-test/</link>
       <pubDate>Tue, 19 Jul 2022 12:00:37 +0800</pubDate>
       
-      <guid>/posts/2022/07/zookeeper-configuration-process-and-test/</guid>
+      <guid>akynazh.site/posts/2022/07/zookeeper-configuration-process-and-test/</guid>
       <description>前言 Zookeeper类似于Eureka，起到微服务注册中心的作用，满足分布式系统中的CP原则，是弱可用性的。
 配置zookeeper环境 安装zookeeper 下载并解压zookeeper包为zookeeper3.7.1（假设下载的是3.7.1版本）。
 然后将zookeeper解压缩到/usr/local/zookeeper3.7.1。
@@ -263,10 +263,10 @@ Over.</description>
     
     <item>
       <title>Eureka 配置过程与理解</title>
-      <link>/posts/2022/07/eureka-configuration-process-and-understanding/</link>
+      <link>akynazh.site/posts/2022/07/eureka-configuration-process-and-understanding/</link>
       <pubDate>Sun, 17 Jul 2022 11:39:35 +0800</pubDate>
       
-      <guid>/posts/2022/07/eureka-configuration-process-and-understanding/</guid>
+      <guid>akynazh.site/posts/2022/07/eureka-configuration-process-and-understanding/</guid>
       <description>前言 起到微服务注册中心的作用，满足分布式系统中的AP原则，是弱一致性的。
 Eureka微服务架构图 服务接口采用集群模式，8001和8002端口都实现支付接口服务。 用户接口在运行在80端口，调用8001和8002的服务。 注册中心内部也采用集群模式，7001和7002端口都实现注册服务。 引入Eureka依赖说明 client端：
 1&amp;lt;dependency&amp;gt; 2 &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; 3 &amp;lt;artifactId&amp;gt;spring-cloud-starter-netflix-eureka-client&amp;lt;/artifactId&amp;gt; 4&amp;lt;/dependency&amp;gt; server端：
@@ -278,20 +278,20 @@ Eureka微服务架构图 服务接口采用集群模式，8001和8002端口都�
     
     <item>
       <title>Swagger 使用记录</title>
-      <link>/posts/2022/06/swagger-usage-record/</link>
+      <link>akynazh.site/posts/2022/06/swagger-usage-record/</link>
       <pubDate>Sat, 25 Jun 2022 21:20:38 +0800</pubDate>
       
-      <guid>/posts/2022/06/swagger-usage-record/</guid>
+      <guid>akynazh.site/posts/2022/06/swagger-usage-record/</guid>
       <description>依赖导入： 1&amp;lt;!-- swagger所需依赖 --&amp;gt; 2&amp;lt;dependency&amp;gt; 3 &amp;lt;groupId&amp;gt;io.springfox&amp;lt;/groupId&amp;gt; 4 &amp;lt;artifactId&amp;gt;springfox-swagger2&amp;lt;/artifactId&amp;gt; 5 &amp;lt;version&amp;gt;2.6.1&amp;lt;/version&amp;gt; 6&amp;lt;/dependency&amp;gt; 7&amp;lt;dependency&amp;gt; 8 &amp;lt;groupId&amp;gt;io.springfox&amp;lt;/groupId&amp;gt; 9 &amp;lt;artifactId&amp;gt;springfox-swagger-ui&amp;lt;/artifactId&amp;gt; 10 &amp;lt;version&amp;gt;2.6.1&amp;lt;/version&amp;gt; 11&amp;lt;/dependency&amp;gt; 配置Swagger /config/SwaggerConfig.java
 1@Configuration 2@EnableSwagger2 3public class SwaggerConfig { 4 @Bean 5 public Docket createRestApi() { 6 return new Docket(DocumentationType.SWAGGER_2) 7 .apiInfo(apiInfo()) 8 .select() 9 .apis(RequestHandlerSelectors.withClassAnnotation(Api.class)) 10 .paths(PathSelectors.any()) 11 .build(); 12 } 13 14 // 基本信息的配置，信息会在api文档上显示 15 private ApiInfo apiInfo() { 16 return new ApiInfoBuilder() 17 .title(&amp;#34;jzh测试的接口文档&amp;#34;) 18 .description(&amp;#34;xx相关接口的文档&amp;#34;) 19 .termsOfServiceUrl(&amp;#34;http://localhost:7777&amp;#34;) 20 .</description>
     </item>
     
     <item>
       <title>SpringBoot 邮箱服务</title>
-      <link>/posts/2022/06/springboot-mailbox-service/</link>
+      <link>akynazh.site/posts/2022/06/springboot-mailbox-service/</link>
       <pubDate>Thu, 16 Jun 2022 21:13:15 +0800</pubDate>
       
-      <guid>/posts/2022/06/springboot-mailbox-service/</guid>
+      <guid>akynazh.site/posts/2022/06/springboot-mailbox-service/</guid>
       <description>一、导入依赖： 1&amp;lt;!--发送邮件--&amp;gt; 2&amp;lt;dependency&amp;gt; 3 &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt; 4 &amp;lt;artifactId&amp;gt;spring-boot-starter-mail&amp;lt;/artifactId&amp;gt; 5&amp;lt;/dependency&amp;gt; 二、配置文件： QQ邮箱需要先开通好邮箱SMTP服务。
 1spring: 2 # 邮件服务 3 mail: 4 password: xxxxxx 5 username: xxx@qq.com 6 host: smtp.QQ.com 7 properties: 8 mail: 9 smtp: 10 auth: true 11 starttls: 12 enable: true 13 required: true 14 default-encoding: UTF-8 三、编写邮件服务 sendSimpleMailMessage()实现只含普通文本信息的邮件发送 sendMimeMessage()可以发送带附件的邮件 MailService.java
 1@Service 2public class MailService { 3 private final JavaMailSender mailSender; 4 @Value(&amp;#34;${spring.mail.username}&amp;#34;) 5 private String SENDER; 6 7 public MailService(JavaMailSender mailSender) { 8 this.</description>
@@ -299,10 +299,10 @@ Eureka微服务架构图 服务接口采用集群模式，8001和8002端口都�
     
     <item>
       <title>在前后端不分离的情况下进行交互性数据展示的实现方法</title>
-      <link>/posts/2022/02/implementation-method-of-interactive-data-display-without-separation-of-front-and-back-ends/</link>
+      <link>akynazh.site/posts/2022/02/implementation-method-of-interactive-data-display-without-separation-of-front-and-back-ends/</link>
       <pubDate>Fri, 11 Feb 2022 00:05:25 +0800</pubDate>
       
-      <guid>/posts/2022/02/implementation-method-of-interactive-data-display-without-separation-of-front-and-back-ends/</guid>
+      <guid>akynazh.site/posts/2022/02/implementation-method-of-interactive-data-display-without-separation-of-front-and-back-ends/</guid>
       <description>前言 开发web项目时，常常需要在前端展示一些交互性的数据，比如表单填写错误的提示，操作成功与否的提示等。
 本文主要讲述在使用Thymeleaf作为模板引擎开发前端时，即在前后端不分离的情况下，前后端进行交互性数据展示的实现方法。
 使用cookie传递数据：不推荐 一、步骤 后端通过addCookie方法设置值 前端在页面加载时读取cookie值并进行展示 前端删除该cookie值 二、缺陷 这个方法我使用过，但是效果并不好，原因如下：
@@ -318,19 +318,19 @@ addFlashAttribute是把数据临时放在session中并在刷新页面后自动�
     
     <item>
       <title>Redis 学习记录二</title>
-      <link>/posts/2021/12/redis-learning-record-ii/</link>
+      <link>akynazh.site/posts/2021/12/redis-learning-record-ii/</link>
       <pubDate>Mon, 20 Dec 2021 10:15:05 +0800</pubDate>
       
-      <guid>/posts/2021/12/redis-learning-record-ii/</guid>
+      <guid>akynazh.site/posts/2021/12/redis-learning-record-ii/</guid>
       <description>事务 1127.0.0.1:6379&amp;gt; multi # 开启事务 2OK 3127.0.0.1:6379&amp;gt; set book java 4QUEUED 5127.0.0.1:6379&amp;gt; get book 6QUEUED 7127.0.0.1:6379&amp;gt; exec # 执行事务 81) OK 92) &amp;#34;java&amp;#34; 10127.0.0.1:6379&amp;gt; get book 11&amp;#34;java&amp;#34; 12127.0.0.1:6379&amp;gt; multi 13OK 14127.0.0.1:6379&amp;gt; set name peter 15QUEUED 16127.0.0.1:6379&amp;gt; discard # 取消事务 17OK 18127.0.0.1:6379&amp;gt; exec 19(error) ERR EXEC without MULTI 20127.0.0.1:6379&amp;gt; get name 21(nil) 获取key 获取指定key 1keys * # 获取所有key 1keys pattern # 根据pattern获取key 1- * 代表匹配任意字符 2- ? 代表匹配一个字符 3- [] 代表匹配部分字符，例如[1,3]代表匹配1和3，而[1-10]代表匹配1到10的任意数字。 4- x 转移字符，例如要匹配星号，问号需要转义的字符 e.</description>
     </item>
     
     <item>
       <title>Redis 学习记录一</title>
-      <link>/posts/2021/12/redis-learning-record-i/</link>
+      <link>akynazh.site/posts/2021/12/redis-learning-record-i/</link>
       <pubDate>Tue, 14 Dec 2021 23:40:44 +0800</pubDate>
       
-      <guid>/posts/2021/12/redis-learning-record-i/</guid>
+      <guid>akynazh.site/posts/2021/12/redis-learning-record-i/</guid>
       <description>Open, Connect And Config open redis: 1redis-server connect to redis: 1redis-cli disconnect: 1redis-cli shutdown show chinese: 1redis-cli --raw connect to remote redis: 1redis-cli -h host -p port -a password get redis config: 1config get {config_name} Data Type list:
 1lpush clist redis 2lpush clist mysql 3lrange clist 0 100 key:
 1127.0.0.1:6379&amp;gt; set mkey sos 2OK 3127.0.0.1:6379&amp;gt; get mkey 4&amp;#34;sos&amp;#34; 5127.0.0.1:6379&amp;gt; del mkey 6(integer) 1 7127.0.0.1:6379&amp;gt; get mkey 8(nil) keys: 接偶数个参数，一一对应。
@@ -339,10 +339,10 @@ addFlashAttribute是把数据临时放在session中并在刷新页面后自动�
     
     <item>
       <title>Python 自动爬取花瓣网任意面板中所有图片</title>
-      <link>/posts/2020/02/python-automatically-crawls-all-pictures-in-any-panel-of-petal-net/</link>
+      <link>akynazh.site/posts/2020/02/python-automatically-crawls-all-pictures-in-any-panel-of-petal-net/</link>
       <pubDate>Thu, 13 Feb 2020 00:14:23 +0800</pubDate>
       
-      <guid>/posts/2020/02/python-automatically-crawls-all-pictures-in-any-panel-of-petal-net/</guid>
+      <guid>akynazh.site/posts/2020/02/python-automatically-crawls-all-pictures-in-any-panel-of-petal-net/</guid>
       <description>注：该项目只适用于旧版花瓣，但其中的思路值得领会。对于新版花瓣编写的代码，逻辑差别不大。
 需要安装的库 urllib easygui selenium webdriver_manager 获取过程 进入面板内 复制当前面板url 启动该脚本按提示进行即可 代码编写流程 分析pin图特点 查看面板源码，可以在对应的script中找到面板中图片的json数据。
 在app.page[&amp;ldquo;board&amp;rdquo;]下可以找到&amp;quot;pins&amp;quot;:[{&amp;hellip;}]，主要图片ID(pin)位于这里面。

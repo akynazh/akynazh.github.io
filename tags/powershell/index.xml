@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>powershell on Norwegian Wood</title>
-    <link>/tags/powershell/</link>
+    <link>akynazh.site/tags/powershell/</link>
     <description>Recent content in powershell on Norwegian Wood</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Jzh</copyright>
-    <lastBuildDate>Fri, 24 Jun 2022 22:52:59 +0800</lastBuildDate><atom:link href="/tags/powershell/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 24 Jun 2022 22:52:59 +0800</lastBuildDate><atom:link href="akynazh.site/tags/powershell/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Window 添加命令别名的方法</title>
-      <link>/posts/2022/06/how-to-add-command-alias-in-window/</link>
+      <link>akynazh.site/posts/2022/06/how-to-add-command-alias-in-window/</link>
       <pubDate>Fri, 24 Jun 2022 22:52:59 +0800</pubDate>
       
-      <guid>/posts/2022/06/how-to-add-command-alias-in-window/</guid>
+      <guid>akynazh.site/posts/2022/06/how-to-add-command-alias-in-window/</guid>
       <description>前言 下面将介绍3种方法：
 CMD添加别名的方法 PowerShell添加别名的方法 通过添加环境变量的方式设置别名 CMD添加别名的方法 设置临时的别名 可以通过doskey命令实现。
 1doskey ls=echo ====== ^&amp;amp;^&amp;amp; dir /b $* ^&amp;amp;^&amp;amp; echo ====== $*表示还可能有其他命令参数，^&amp;amp;^&amp;amp;用于分开多条命令。
@@ -28,10 +28,10 @@ PowerShell添加别名的方法 为PowerShell设置临时的别名 1PS C:\Users\
     
     <item>
       <title>Window 实用命令记录之进程与网络控制</title>
-      <link>/posts/2022/04/process-and-network-control-of-window-practical-command-recording/</link>
+      <link>akynazh.site/posts/2022/04/process-and-network-control-of-window-practical-command-recording/</link>
       <pubDate>Mon, 18 Apr 2022 23:10:39 +0800</pubDate>
       
-      <guid>/posts/2022/04/process-and-network-control-of-window-practical-command-recording/</guid>
+      <guid>akynazh.site/posts/2022/04/process-and-network-control-of-window-practical-command-recording/</guid>
       <description>进程相关 tasklist tasklist用于查看运行的进程 findstr相当于linux的grep 1PS C:\Users\akyna&amp;gt; Tasklist | findstr Code 2Code.exe 19184 Console 1 94,012 K 3Code.exe 19300 Console 1 26,324 K 4...... taskkill 使用该工具按照进程 ID (PID) 或映像名称终止任务。
 参数列表:
 /PID processid 指定要终止的进程的 PID。 /IM imagename 指定要终止的进程的映像名称。 /T 终止指定的进程和由它启用的子进程。 /F 指定强制终止进程。 /? 显示帮助消息。 e.g.
@@ -41,10 +41,10 @@ PowerShell添加别名的方法 为PowerShell设置临时的别名 1PS C:\Users\
     
     <item>
       <title>Window 实用命令记录之文件操作</title>
-      <link>/posts/2021/04/file-operation-recorded-by-window-utility-command/</link>
+      <link>akynazh.site/posts/2021/04/file-operation-recorded-by-window-utility-command/</link>
       <pubDate>Mon, 19 Apr 2021 13:48:19 +0800</pubDate>
       
-      <guid>/posts/2021/04/file-operation-recorded-by-window-utility-command/</guid>
+      <guid>akynazh.site/posts/2021/04/file-operation-recorded-by-window-utility-command/</guid>
       <description>创建文件或文件夹 cmd下创建文件 1type nul &amp;gt; test.jpg powershell下创建文件 1new-item test.jpg 创建文件夹 1mkdir test 重命名文件 注意不能指定到新的路径。
 1PS D:\a\tmp\test&amp;gt; ren test.txt my.txt 移动文件 该命令也可用于重命名。
 1PS D:\a\tmp\test&amp;gt; move test.jpg mydir 复制文件和文件夹 copy无法递归复制，而xcopy可以。

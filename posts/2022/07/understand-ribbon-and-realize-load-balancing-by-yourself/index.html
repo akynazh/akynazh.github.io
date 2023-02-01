@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title> 理解 Ribbon 并自己实现负载均衡 | Norwegian Wood</title>
-  <link rel='canonical' href='/posts/2022/07/understand-ribbon-and-realize-load-balancing-by-yourself/'>
+  <link rel='canonical' href='akynazh.site/posts/2022/07/understand-ribbon-and-realize-load-balancing-by-yourself/'>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
@@ -20,7 +20,7 @@ Ribbon属于进程内LB，它只是一个类库，集成于消费方进程，消
 下面修改为RandomRule（随机）这一规则：
 在启动类扫描不到的包下创建规则： 1@Configuration 2public class MyRibbonRule { 3 @Bean 4 public IRule myRule() { 5 return new RandomRule(); 6 } 7} 在启动类指定规则： 1@SpringBootApplication 2@EnableEurekaClient 3@RibbonClient(name=&#34;CLOUD-PAYMENT-SERVICE&#34;, configuration = MyRibbonRule." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/posts/2022/07/understand-ribbon-and-realize-load-balancing-by-yourself/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="akynazh.site/posts/2022/07/understand-ribbon-and-realize-load-balancing-by-yourself/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-07-20T17:07:35+08:00" />
 <meta property="article:modified_time" content="2022-07-20T17:07:35+08:00" /><meta property="og:site_name" content="Norwegian Wood" />
 
@@ -42,7 +42,7 @@ Ribbon属于进程内LB，它只是一个类库，集成于消费方进程，消
   
   
   
-  <link rel="stylesheet" href="/css/styles.43c5f4c45b6248e071aa0f9eae2d299f06dc6e7d91ae3c1a2e4bcde6252688b0db6d6f3722b74f3c851c6e1b5ea207cff6868c78a11f7c137fd8cc01748ba457.css" integrity="sha512-Q8X0xFtiSOBxqg&#43;eri0pnwbcbn2RrjwaLkvN5iUmiLDbbW83IrdPPIUcbhteogfP9oaMeKEffBN/2MwBdIukVw==">
+  <link rel="stylesheet" href="/akynazh.site/css/styles.43c5f4c45b6248e071aa0f9eae2d299f06dc6e7d91ae3c1a2e4bcde6252688b0db6d6f3722b74f3c851c6e1b5ea207cff6868c78a11f7c137fd8cc01748ba457.css" integrity="sha512-Q8X0xFtiSOBxqg&#43;eri0pnwbcbn2RrjwaLkvN5iUmiLDbbW83IrdPPIUcbhteogfP9oaMeKEffBN/2MwBdIukVw==">
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
@@ -67,11 +67,11 @@ Ribbon属于进程内LB，它只是一个类库，集成于消费方进程，消
     <span id="nav">
       <ul>
          
-        <li><a href="/">Home</a></li>
+        <li><a href="akynazh.site/">Home</a></li>
          
-        <li><a href="/posts">Archives</a></li>
+        <li><a href="akynazh.site/posts">Archives</a></li>
          
-        <li><a href="/about">About</a></li>
+        <li><a href="akynazh.site/about">About</a></li>
         
       </ul>
     </span>
@@ -80,14 +80,14 @@ Ribbon属于进程内LB，它只是一个类库，集成于消费方进程，消
       <ul>
         
         <li>
-          <a class="icon" href="/posts/2022/07/consul-configuration-process-and-test/" aria-label="Previous">
+          <a class="icon" href="akynazh.site/posts/2022/07/consul-configuration-process-and-test/" aria-label="Previous">
             <i class="fas fa-chevron-left" aria-hidden="true"></i>
           </a>
         </li>
         
         
         <li>
-          <a class="icon" href="/posts/2022/07/hugo-adds-onsite-search-function-through-algolia/" aria-label="Next">
+          <a class="icon" href="akynazh.site/posts/2022/07/hugo-adds-onsite-search-function-through-algolia/" aria-label="Next">
             <i class="fas fa-chevron-right" aria-hidden="true"></i>
           </a>
         </li>
@@ -124,47 +124,47 @@ Ribbon属于进程内LB，它只是一个类库，集成于消费方进程，消
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=%2fposts%2f2022%2f07%2funderstand-ribbon-and-realize-load-balancing-by-yourself%2f" aria-label="Facebook">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=akynazh.site%2fposts%2f2022%2f07%2funderstand-ribbon-and-realize-load-balancing-by-yourself%2f" aria-label="Facebook">
       <i class="fab fa-facebook " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=%2fposts%2f2022%2f07%2funderstand-ribbon-and-realize-load-balancing-by-yourself%2f&text=%e7%90%86%e8%a7%a3%20Ribbon%20%e5%b9%b6%e8%87%aa%e5%b7%b1%e5%ae%9e%e7%8e%b0%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=akynazh.site%2fposts%2f2022%2f07%2funderstand-ribbon-and-realize-load-balancing-by-yourself%2f&text=%e7%90%86%e8%a7%a3%20Ribbon%20%e5%b9%b6%e8%87%aa%e5%b7%b1%e5%ae%9e%e7%8e%b0%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1" aria-label="Twitter">
       <i class="fab fa-twitter " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fposts%2f2022%2f07%2funderstand-ribbon-and-realize-load-balancing-by-yourself%2f&title=%e7%90%86%e8%a7%a3%20Ribbon%20%e5%b9%b6%e8%87%aa%e5%b7%b1%e5%ae%9e%e7%8e%b0%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=akynazh.site%2fposts%2f2022%2f07%2funderstand-ribbon-and-realize-load-balancing-by-yourself%2f&title=%e7%90%86%e8%a7%a3%20Ribbon%20%e5%b9%b6%e8%87%aa%e5%b7%b1%e5%ae%9e%e7%8e%b0%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1" aria-label="Linkedin">
       <i class="fab fa-linkedin " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fposts%2f2022%2f07%2funderstand-ribbon-and-realize-load-balancing-by-yourself%2f&is_video=false&description=%e7%90%86%e8%a7%a3%20Ribbon%20%e5%b9%b6%e8%87%aa%e5%b7%b1%e5%ae%9e%e7%8e%b0%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=akynazh.site%2fposts%2f2022%2f07%2funderstand-ribbon-and-realize-load-balancing-by-yourself%2f&is_video=false&description=%e7%90%86%e8%a7%a3%20Ribbon%20%e5%b9%b6%e8%87%aa%e5%b7%b1%e5%ae%9e%e7%8e%b0%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1" aria-label="Pinterest">
       <i class="fab fa-pinterest " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=%e7%90%86%e8%a7%a3%20Ribbon%20%e5%b9%b6%e8%87%aa%e5%b7%b1%e5%ae%9e%e7%8e%b0%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1&body=Check out this article: %2fposts%2f2022%2f07%2funderstand-ribbon-and-realize-load-balancing-by-yourself%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=%e7%90%86%e8%a7%a3%20Ribbon%20%e5%b9%b6%e8%87%aa%e5%b7%b1%e5%ae%9e%e7%8e%b0%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1&body=Check out this article: akynazh.site%2fposts%2f2022%2f07%2funderstand-ribbon-and-realize-load-balancing-by-yourself%2f" aria-label="Email">
       <i class="fas fa-envelope " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=%2fposts%2f2022%2f07%2funderstand-ribbon-and-realize-load-balancing-by-yourself%2f&title=%e7%90%86%e8%a7%a3%20Ribbon%20%e5%b9%b6%e8%87%aa%e5%b7%b1%e5%ae%9e%e7%8e%b0%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=akynazh.site%2fposts%2f2022%2f07%2funderstand-ribbon-and-realize-load-balancing-by-yourself%2f&title=%e7%90%86%e8%a7%a3%20Ribbon%20%e5%b9%b6%e8%87%aa%e5%b7%b1%e5%ae%9e%e7%8e%b0%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1" aria-label="Pocket">
       <i class="fab fa-get-pocket " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=%2fposts%2f2022%2f07%2funderstand-ribbon-and-realize-load-balancing-by-yourself%2f&title=%e7%90%86%e8%a7%a3%20Ribbon%20%e5%b9%b6%e8%87%aa%e5%b7%b1%e5%ae%9e%e7%8e%b0%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=akynazh.site%2fposts%2f2022%2f07%2funderstand-ribbon-and-realize-load-balancing-by-yourself%2f&title=%e7%90%86%e8%a7%a3%20Ribbon%20%e5%b9%b6%e8%87%aa%e5%b7%b1%e5%ae%9e%e7%8e%b0%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1" aria-label="reddit">
       <i class="fab fa-reddit " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f07%2funderstand-ribbon-and-realize-load-balancing-by-yourself%2f&name=%e7%90%86%e8%a7%a3%20Ribbon%20%e5%b9%b6%e8%87%aa%e5%b7%b1%e5%ae%9e%e7%8e%b0%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1&description=%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1%ef%bc%88LB%ef%bc%89%e6%98%af%e4%bb%80%e4%b9%88%20%e5%af%b9%e4%ba%8e%e7%94%a8%e6%88%b7%e7%9a%84%e6%9f%90%e4%b8%aa%e8%af%b7%e6%b1%82%ef%bc%8c%e5%b0%86%e6%9c%89%e5%a4%9a%e4%b8%aa%e7%9b%b8%e5%90%8c%e5%8a%9f%e8%83%bd%e7%9a%84%e6%9c%8d%e5%8a%a1%e7%82%b9%e6%9c%8d%e5%8a%a1%e8%af%a5%e8%af%b7%e6%b1%82%ef%bc%8c%e6%9f%90%e4%b8%aa%e6%9c%8d%e5%8a%a1%e7%82%b9%e6%8c%82%e4%ba%86%ef%bc%8c%e5%85%b6%e4%bb%96%e6%9c%8d%e5%8a%a1%e7%82%b9%e8%bf%98%e6%98%af%e5%8f%af%e4%bb%a5%e8%bf%9b%e8%a1%8c%e6%9c%8d%e5%8a%a1%ef%bc%8c%e8%bf%99%e6%a0%b7%e5%b0%b1%e5%ae%9e%e7%8e%b0%e4%ba%86%e7%b3%bb%e7%bb%9f%e7%9a%84%e9%ab%98%e5%8f%af%e7%94%a8%e3%80%82%0a%e5%85%b3%e4%ba%8e%e9%9b%86%e4%b8%ad%e5%bc%8fLB%e5%92%8c%e8%bf%9b%e7%a8%8b%e5%86%85LB%20%e9%9b%86%e4%b8%ad%e5%bc%8fLB%20%e5%9c%a8%e6%9c%8d%e5%8a%a1%e7%9a%84%e6%b6%88%e8%b4%b9%e6%96%b9%e5%92%8c%e6%8f%90%e4%be%9b%e6%96%b9%e4%b9%8b%e9%97%b4%e4%bd%bf%e7%94%a8%e7%8b%ac%e7%ab%8b%e7%9a%84LB%e8%ae%be%e6%96%bd%ef%bc%8c%ef%bc%88%e8%bd%af%e7%a1%ac%e4%bb%b6%e5%9d%87%e5%8f%af%ef%bc%8c%e8%bd%af%e4%bb%b6%e5%a6%82Nginx%ef%bc%8c%e7%a1%ac%e4%bb%b6%e5%a6%82F5%ef%bc%89%ef%bc%8c%e7%94%b1%e8%af%a5%e8%ae%be%e6%96%bd%e8%b4%9f%e8%b4%a3%e6%8a%8a%e8%ae%bf%e9%97%ae%e8%af%b7%e6%b1%82%e9%80%9a%e8%bf%87%e6%9f%90%e7%a7%8d%e7%ad%96%e7%95%a5%ef%bc%88%e5%8f%af%e8%87%aa%e8%a1%8c%e6%8c%87%e5%ae%9a%ef%bc%89%e8%bd%ac%e5%8f%91%e8%87%b3%e6%9c%8d%e5%8a%a1%e7%9a%84%e6%8f%90%e4%be%9b%e6%96%b9%e3%80%82%0a%e8%bf%9b%e7%a8%8b%e5%86%85LB%20%e5%b0%86LB%e9%80%bb%e8%be%91%e9%9b%86%e6%88%90%e5%88%b0%e6%b6%88%e8%b4%b9%e6%96%b9%ef%bc%8c%e6%b6%88%e8%b4%b9%e6%96%b9%e4%bb%8e%e6%9c%8d%e5%8a%a1%e6%b3%a8%e5%86%8c%e4%b8%ad%e5%bf%83%e8%8e%b7%e7%9f%a5%e6%9c%89%e5%93%aa%e4%ba%9b%e5%9c%b0%e5%9d%80%e5%8f%af%e7%94%a8%ef%bc%8c%e7%84%b6%e5%90%8e%e8%87%aa%e5%b7%b1%e5%86%8d%e4%bb%8e%e8%bf%99%e4%ba%9b%e5%9c%b0%e5%9d%80%e4%b8%ad%e9%80%89%e6%8b%a9%e5%87%ba%e4%b8%80%e4%b8%aa%e5%90%88%e9%80%82%e7%9a%84%e6%9c%8d%e5%8a%a1%e7%82%b9%e8%bf%9b%e8%a1%8c%e6%9c%8d%e5%8a%a1%e3%80%82%0aRibbon%e5%b1%9e%e4%ba%8e%e8%bf%9b%e7%a8%8b%e5%86%85LB%ef%bc%8c%e5%ae%83%e5%8f%aa%e6%98%af%e4%b8%80%e4%b8%aa%e7%b1%bb%e5%ba%93%ef%bc%8c%e9%9b%86%e6%88%90%e4%ba%8e%e6%b6%88%e8%b4%b9%e6%96%b9%e8%bf%9b%e7%a8%8b%ef%bc%8c%e6%b6%88%e8%b4%b9%e6%96%b9%e9%80%9a%e8%bf%87%e5%ae%83%e8%8e%b7%e5%8f%96%e6%9c%8d%e5%8a%a1%e6%8f%90%e4%be%9b%e6%96%b9%e7%9a%84%e5%9c%b0%e5%9d%80%e3%80%82%0a%e4%bd%bf%e7%94%a8Ribbon%e5%ae%9e%e7%8e%b0%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1%20%e5%85%b3%e4%ba%8e%e5%af%bc%e5%8c%85%201%26lt%3bdependency%26gt%3b%202%20%26lt%3bgroupId%26gt%3borg.springframework.cloud%26lt%3b%2fgroupId%26gt%3b%203%20%26lt%3bartifactId%26gt%3bspring-cloud-starter-netflix-eureka-client%26lt%3b%2fartifactId%26gt%3b%20%26lt%3b%21--%20%e5%b7%b2%e7%bb%8f%e5%8c%85%e5%90%ab%e4%ba%86ribbon%20--%26gt%3b%204%26lt%3b%2fdependency%26gt%3b%20%e6%b3%a8%e6%84%8feureka%e5%86%85%e7%bd%ae%e4%ba%86ribbon%e3%80%82%0a%e5%bc%80%e5%90%af%e6%b3%a8%e8%a7%a3%201%40Configuration%202public%20class%20ApplicationContextConfig%20%7b%203%20%40Bean%204%20%40LoadBalanced%20%2f%2f%20%e8%b5%8b%e4%ba%88%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1%e8%83%bd%e5%8a%9b%205%20public%20RestTemplate%20getRestTemplate%28%29%20%7b%206%20return%20new%20RestTemplate%28%29%3b%207%20%7d%208%7d%20%e8%ae%bf%e9%97%ae%e7%9b%b8%e5%90%8c%e6%9c%8d%e5%8a%a1%e5%90%8d%e5%9c%b0%e5%9d%80%e5%8d%b3%e5%8f%af%e3%80%82%0a%e4%bf%ae%e6%94%b9Ribbon%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1%e8%a7%84%e5%88%99%20%e6%89%80%e6%9c%89%e8%a7%84%e5%88%99%e5%9d%87%e5%ae%9e%e7%8e%b0%e4%ba%86IRule%e6%8e%a5%e5%8f%a3%ef%bc%8c%e9%80%9a%e8%bf%87%e6%9f%a5%e7%9c%8b%e6%8e%a5%e5%8f%a3%e5%ae%9e%e7%8e%b0%e7%b1%bb%e5%8d%b3%e5%8f%af%e7%9f%a5%e9%81%93%e8%a7%84%e5%88%99%e7%9a%84%e7%a7%8d%e7%b1%bb%e3%80%82%0a%e9%bb%98%e8%ae%a4%e6%98%afRoundRobinRule%ef%bc%88%e8%bd%ae%e8%af%a2%ef%bc%89%e8%bf%99%e4%b8%80%e8%a7%84%e5%88%99%e3%80%82%0a%e4%b8%8b%e9%9d%a2%e4%bf%ae%e6%94%b9%e4%b8%baRandomRule%ef%bc%88%e9%9a%8f%e6%9c%ba%ef%bc%89%e8%bf%99%e4%b8%80%e8%a7%84%e5%88%99%ef%bc%9a%0a%e5%9c%a8%e5%90%af%e5%8a%a8%e7%b1%bb%e6%89%ab%e6%8f%8f%e4%b8%8d%e5%88%b0%e7%9a%84%e5%8c%85%e4%b8%8b%e5%88%9b%e5%bb%ba%e8%a7%84%e5%88%99%ef%bc%9a%201%40Configuration%202public%20class%20MyRibbonRule%20%7b%203%20%40Bean%204%20public%20IRule%20myRule%28%29%20%7b%205%20return%20new%20RandomRule%28%29%3b%206%20%7d%207%7d%20%e5%9c%a8%e5%90%af%e5%8a%a8%e7%b1%bb%e6%8c%87%e5%ae%9a%e8%a7%84%e5%88%99%ef%bc%9a%201%40SpringBootApplication%202%40EnableEurekaClient%203%40RibbonClient%28name%3d%26%2334%3bCLOUD-PAYMENT-SERVICE%26%2334%3b%2c%20configuration%20%3d%20MyRibbonRule." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=akynazh.site%2fposts%2f2022%2f07%2funderstand-ribbon-and-realize-load-balancing-by-yourself%2f&name=%e7%90%86%e8%a7%a3%20Ribbon%20%e5%b9%b6%e8%87%aa%e5%b7%b1%e5%ae%9e%e7%8e%b0%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1&description=%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1%ef%bc%88LB%ef%bc%89%e6%98%af%e4%bb%80%e4%b9%88%20%e5%af%b9%e4%ba%8e%e7%94%a8%e6%88%b7%e7%9a%84%e6%9f%90%e4%b8%aa%e8%af%b7%e6%b1%82%ef%bc%8c%e5%b0%86%e6%9c%89%e5%a4%9a%e4%b8%aa%e7%9b%b8%e5%90%8c%e5%8a%9f%e8%83%bd%e7%9a%84%e6%9c%8d%e5%8a%a1%e7%82%b9%e6%9c%8d%e5%8a%a1%e8%af%a5%e8%af%b7%e6%b1%82%ef%bc%8c%e6%9f%90%e4%b8%aa%e6%9c%8d%e5%8a%a1%e7%82%b9%e6%8c%82%e4%ba%86%ef%bc%8c%e5%85%b6%e4%bb%96%e6%9c%8d%e5%8a%a1%e7%82%b9%e8%bf%98%e6%98%af%e5%8f%af%e4%bb%a5%e8%bf%9b%e8%a1%8c%e6%9c%8d%e5%8a%a1%ef%bc%8c%e8%bf%99%e6%a0%b7%e5%b0%b1%e5%ae%9e%e7%8e%b0%e4%ba%86%e7%b3%bb%e7%bb%9f%e7%9a%84%e9%ab%98%e5%8f%af%e7%94%a8%e3%80%82%0a%e5%85%b3%e4%ba%8e%e9%9b%86%e4%b8%ad%e5%bc%8fLB%e5%92%8c%e8%bf%9b%e7%a8%8b%e5%86%85LB%20%e9%9b%86%e4%b8%ad%e5%bc%8fLB%20%e5%9c%a8%e6%9c%8d%e5%8a%a1%e7%9a%84%e6%b6%88%e8%b4%b9%e6%96%b9%e5%92%8c%e6%8f%90%e4%be%9b%e6%96%b9%e4%b9%8b%e9%97%b4%e4%bd%bf%e7%94%a8%e7%8b%ac%e7%ab%8b%e7%9a%84LB%e8%ae%be%e6%96%bd%ef%bc%8c%ef%bc%88%e8%bd%af%e7%a1%ac%e4%bb%b6%e5%9d%87%e5%8f%af%ef%bc%8c%e8%bd%af%e4%bb%b6%e5%a6%82Nginx%ef%bc%8c%e7%a1%ac%e4%bb%b6%e5%a6%82F5%ef%bc%89%ef%bc%8c%e7%94%b1%e8%af%a5%e8%ae%be%e6%96%bd%e8%b4%9f%e8%b4%a3%e6%8a%8a%e8%ae%bf%e9%97%ae%e8%af%b7%e6%b1%82%e9%80%9a%e8%bf%87%e6%9f%90%e7%a7%8d%e7%ad%96%e7%95%a5%ef%bc%88%e5%8f%af%e8%87%aa%e8%a1%8c%e6%8c%87%e5%ae%9a%ef%bc%89%e8%bd%ac%e5%8f%91%e8%87%b3%e6%9c%8d%e5%8a%a1%e7%9a%84%e6%8f%90%e4%be%9b%e6%96%b9%e3%80%82%0a%e8%bf%9b%e7%a8%8b%e5%86%85LB%20%e5%b0%86LB%e9%80%bb%e8%be%91%e9%9b%86%e6%88%90%e5%88%b0%e6%b6%88%e8%b4%b9%e6%96%b9%ef%bc%8c%e6%b6%88%e8%b4%b9%e6%96%b9%e4%bb%8e%e6%9c%8d%e5%8a%a1%e6%b3%a8%e5%86%8c%e4%b8%ad%e5%bf%83%e8%8e%b7%e7%9f%a5%e6%9c%89%e5%93%aa%e4%ba%9b%e5%9c%b0%e5%9d%80%e5%8f%af%e7%94%a8%ef%bc%8c%e7%84%b6%e5%90%8e%e8%87%aa%e5%b7%b1%e5%86%8d%e4%bb%8e%e8%bf%99%e4%ba%9b%e5%9c%b0%e5%9d%80%e4%b8%ad%e9%80%89%e6%8b%a9%e5%87%ba%e4%b8%80%e4%b8%aa%e5%90%88%e9%80%82%e7%9a%84%e6%9c%8d%e5%8a%a1%e7%82%b9%e8%bf%9b%e8%a1%8c%e6%9c%8d%e5%8a%a1%e3%80%82%0aRibbon%e5%b1%9e%e4%ba%8e%e8%bf%9b%e7%a8%8b%e5%86%85LB%ef%bc%8c%e5%ae%83%e5%8f%aa%e6%98%af%e4%b8%80%e4%b8%aa%e7%b1%bb%e5%ba%93%ef%bc%8c%e9%9b%86%e6%88%90%e4%ba%8e%e6%b6%88%e8%b4%b9%e6%96%b9%e8%bf%9b%e7%a8%8b%ef%bc%8c%e6%b6%88%e8%b4%b9%e6%96%b9%e9%80%9a%e8%bf%87%e5%ae%83%e8%8e%b7%e5%8f%96%e6%9c%8d%e5%8a%a1%e6%8f%90%e4%be%9b%e6%96%b9%e7%9a%84%e5%9c%b0%e5%9d%80%e3%80%82%0a%e4%bd%bf%e7%94%a8Ribbon%e5%ae%9e%e7%8e%b0%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1%20%e5%85%b3%e4%ba%8e%e5%af%bc%e5%8c%85%201%26lt%3bdependency%26gt%3b%202%20%26lt%3bgroupId%26gt%3borg.springframework.cloud%26lt%3b%2fgroupId%26gt%3b%203%20%26lt%3bartifactId%26gt%3bspring-cloud-starter-netflix-eureka-client%26lt%3b%2fartifactId%26gt%3b%20%26lt%3b%21--%20%e5%b7%b2%e7%bb%8f%e5%8c%85%e5%90%ab%e4%ba%86ribbon%20--%26gt%3b%204%26lt%3b%2fdependency%26gt%3b%20%e6%b3%a8%e6%84%8feureka%e5%86%85%e7%bd%ae%e4%ba%86ribbon%e3%80%82%0a%e5%bc%80%e5%90%af%e6%b3%a8%e8%a7%a3%201%40Configuration%202public%20class%20ApplicationContextConfig%20%7b%203%20%40Bean%204%20%40LoadBalanced%20%2f%2f%20%e8%b5%8b%e4%ba%88%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1%e8%83%bd%e5%8a%9b%205%20public%20RestTemplate%20getRestTemplate%28%29%20%7b%206%20return%20new%20RestTemplate%28%29%3b%207%20%7d%208%7d%20%e8%ae%bf%e9%97%ae%e7%9b%b8%e5%90%8c%e6%9c%8d%e5%8a%a1%e5%90%8d%e5%9c%b0%e5%9d%80%e5%8d%b3%e5%8f%af%e3%80%82%0a%e4%bf%ae%e6%94%b9Ribbon%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1%e8%a7%84%e5%88%99%20%e6%89%80%e6%9c%89%e8%a7%84%e5%88%99%e5%9d%87%e5%ae%9e%e7%8e%b0%e4%ba%86IRule%e6%8e%a5%e5%8f%a3%ef%bc%8c%e9%80%9a%e8%bf%87%e6%9f%a5%e7%9c%8b%e6%8e%a5%e5%8f%a3%e5%ae%9e%e7%8e%b0%e7%b1%bb%e5%8d%b3%e5%8f%af%e7%9f%a5%e9%81%93%e8%a7%84%e5%88%99%e7%9a%84%e7%a7%8d%e7%b1%bb%e3%80%82%0a%e9%bb%98%e8%ae%a4%e6%98%afRoundRobinRule%ef%bc%88%e8%bd%ae%e8%af%a2%ef%bc%89%e8%bf%99%e4%b8%80%e8%a7%84%e5%88%99%e3%80%82%0a%e4%b8%8b%e9%9d%a2%e4%bf%ae%e6%94%b9%e4%b8%baRandomRule%ef%bc%88%e9%9a%8f%e6%9c%ba%ef%bc%89%e8%bf%99%e4%b8%80%e8%a7%84%e5%88%99%ef%bc%9a%0a%e5%9c%a8%e5%90%af%e5%8a%a8%e7%b1%bb%e6%89%ab%e6%8f%8f%e4%b8%8d%e5%88%b0%e7%9a%84%e5%8c%85%e4%b8%8b%e5%88%9b%e5%bb%ba%e8%a7%84%e5%88%99%ef%bc%9a%201%40Configuration%202public%20class%20MyRibbonRule%20%7b%203%20%40Bean%204%20public%20IRule%20myRule%28%29%20%7b%205%20return%20new%20RandomRule%28%29%3b%206%20%7d%207%7d%20%e5%9c%a8%e5%90%af%e5%8a%a8%e7%b1%bb%e6%8c%87%e5%ae%9a%e8%a7%84%e5%88%99%ef%bc%9a%201%40SpringBootApplication%202%40EnableEurekaClient%203%40RibbonClient%28name%3d%26%2334%3bCLOUD-PAYMENT-SERVICE%26%2334%3b%2c%20configuration%20%3d%20MyRibbonRule." aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fposts%2f2022%2f07%2funderstand-ribbon-and-realize-load-balancing-by-yourself%2f&t=%e7%90%86%e8%a7%a3%20Ribbon%20%e5%b9%b6%e8%87%aa%e5%b7%b1%e5%ae%9e%e7%8e%b0%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=akynazh.site%2fposts%2f2022%2f07%2funderstand-ribbon-and-realize-load-balancing-by-yourself%2f&t=%e7%90%86%e8%a7%a3%20Ribbon%20%e5%b9%b6%e8%87%aa%e5%b7%b1%e5%ae%9e%e7%8e%b0%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1" aria-label="Hacker News">
       <i class="fab fa-hacker-news " aria-hidden="true"></i>
     </a>
   </li>
@@ -411,11 +411,11 @@ Ribbon属于进程内LB，它只是一个类库，集成于消费方进程，消
     
     <div id="nav-footer" style="display: none">
       
-      <ul style="display:inline;"><li><a href="/">Home</a></li></ul>
+      <ul style="display:inline;"><li><a href="akynazh.site/">Home</a></li></ul>
       
-      <ul style="display:inline;"><li><a href="/posts">Archives</a></li></ul>
+      <ul style="display:inline;"><li><a href="akynazh.site/posts">Archives</a></li></ul>
       
-      <ul style="display:inline;"><li><a href="/about">About</a></li></ul>
+      <ul style="display:inline;"><li><a href="akynazh.site/about">About</a></li></ul>
       
     </div>
 
@@ -428,47 +428,47 @@ Ribbon属于进程内LB，它只是一个类库，集成于消费方进程，消
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=%2fposts%2f2022%2f07%2funderstand-ribbon-and-realize-load-balancing-by-yourself%2f" aria-label="Facebook">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=akynazh.site%2fposts%2f2022%2f07%2funderstand-ribbon-and-realize-load-balancing-by-yourself%2f" aria-label="Facebook">
       <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=%2fposts%2f2022%2f07%2funderstand-ribbon-and-realize-load-balancing-by-yourself%2f&text=%e7%90%86%e8%a7%a3%20Ribbon%20%e5%b9%b6%e8%87%aa%e5%b7%b1%e5%ae%9e%e7%8e%b0%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=akynazh.site%2fposts%2f2022%2f07%2funderstand-ribbon-and-realize-load-balancing-by-yourself%2f&text=%e7%90%86%e8%a7%a3%20Ribbon%20%e5%b9%b6%e8%87%aa%e5%b7%b1%e5%ae%9e%e7%8e%b0%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1" aria-label="Twitter">
       <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fposts%2f2022%2f07%2funderstand-ribbon-and-realize-load-balancing-by-yourself%2f&title=%e7%90%86%e8%a7%a3%20Ribbon%20%e5%b9%b6%e8%87%aa%e5%b7%b1%e5%ae%9e%e7%8e%b0%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=akynazh.site%2fposts%2f2022%2f07%2funderstand-ribbon-and-realize-load-balancing-by-yourself%2f&title=%e7%90%86%e8%a7%a3%20Ribbon%20%e5%b9%b6%e8%87%aa%e5%b7%b1%e5%ae%9e%e7%8e%b0%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1" aria-label="Linkedin">
       <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fposts%2f2022%2f07%2funderstand-ribbon-and-realize-load-balancing-by-yourself%2f&is_video=false&description=%e7%90%86%e8%a7%a3%20Ribbon%20%e5%b9%b6%e8%87%aa%e5%b7%b1%e5%ae%9e%e7%8e%b0%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=akynazh.site%2fposts%2f2022%2f07%2funderstand-ribbon-and-realize-load-balancing-by-yourself%2f&is_video=false&description=%e7%90%86%e8%a7%a3%20Ribbon%20%e5%b9%b6%e8%87%aa%e5%b7%b1%e5%ae%9e%e7%8e%b0%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1" aria-label="Pinterest">
       <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=%e7%90%86%e8%a7%a3%20Ribbon%20%e5%b9%b6%e8%87%aa%e5%b7%b1%e5%ae%9e%e7%8e%b0%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1&body=Check out this article: %2fposts%2f2022%2f07%2funderstand-ribbon-and-realize-load-balancing-by-yourself%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=%e7%90%86%e8%a7%a3%20Ribbon%20%e5%b9%b6%e8%87%aa%e5%b7%b1%e5%ae%9e%e7%8e%b0%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1&body=Check out this article: akynazh.site%2fposts%2f2022%2f07%2funderstand-ribbon-and-realize-load-balancing-by-yourself%2f" aria-label="Email">
       <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=%2fposts%2f2022%2f07%2funderstand-ribbon-and-realize-load-balancing-by-yourself%2f&title=%e7%90%86%e8%a7%a3%20Ribbon%20%e5%b9%b6%e8%87%aa%e5%b7%b1%e5%ae%9e%e7%8e%b0%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=akynazh.site%2fposts%2f2022%2f07%2funderstand-ribbon-and-realize-load-balancing-by-yourself%2f&title=%e7%90%86%e8%a7%a3%20Ribbon%20%e5%b9%b6%e8%87%aa%e5%b7%b1%e5%ae%9e%e7%8e%b0%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1" aria-label="Pocket">
       <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=%2fposts%2f2022%2f07%2funderstand-ribbon-and-realize-load-balancing-by-yourself%2f&title=%e7%90%86%e8%a7%a3%20Ribbon%20%e5%b9%b6%e8%87%aa%e5%b7%b1%e5%ae%9e%e7%8e%b0%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=akynazh.site%2fposts%2f2022%2f07%2funderstand-ribbon-and-realize-load-balancing-by-yourself%2f&title=%e7%90%86%e8%a7%a3%20Ribbon%20%e5%b9%b6%e8%87%aa%e5%b7%b1%e5%ae%9e%e7%8e%b0%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1" aria-label="reddit">
       <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f07%2funderstand-ribbon-and-realize-load-balancing-by-yourself%2f&name=%e7%90%86%e8%a7%a3%20Ribbon%20%e5%b9%b6%e8%87%aa%e5%b7%b1%e5%ae%9e%e7%8e%b0%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1&description=%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1%ef%bc%88LB%ef%bc%89%e6%98%af%e4%bb%80%e4%b9%88%20%e5%af%b9%e4%ba%8e%e7%94%a8%e6%88%b7%e7%9a%84%e6%9f%90%e4%b8%aa%e8%af%b7%e6%b1%82%ef%bc%8c%e5%b0%86%e6%9c%89%e5%a4%9a%e4%b8%aa%e7%9b%b8%e5%90%8c%e5%8a%9f%e8%83%bd%e7%9a%84%e6%9c%8d%e5%8a%a1%e7%82%b9%e6%9c%8d%e5%8a%a1%e8%af%a5%e8%af%b7%e6%b1%82%ef%bc%8c%e6%9f%90%e4%b8%aa%e6%9c%8d%e5%8a%a1%e7%82%b9%e6%8c%82%e4%ba%86%ef%bc%8c%e5%85%b6%e4%bb%96%e6%9c%8d%e5%8a%a1%e7%82%b9%e8%bf%98%e6%98%af%e5%8f%af%e4%bb%a5%e8%bf%9b%e8%a1%8c%e6%9c%8d%e5%8a%a1%ef%bc%8c%e8%bf%99%e6%a0%b7%e5%b0%b1%e5%ae%9e%e7%8e%b0%e4%ba%86%e7%b3%bb%e7%bb%9f%e7%9a%84%e9%ab%98%e5%8f%af%e7%94%a8%e3%80%82%0a%e5%85%b3%e4%ba%8e%e9%9b%86%e4%b8%ad%e5%bc%8fLB%e5%92%8c%e8%bf%9b%e7%a8%8b%e5%86%85LB%20%e9%9b%86%e4%b8%ad%e5%bc%8fLB%20%e5%9c%a8%e6%9c%8d%e5%8a%a1%e7%9a%84%e6%b6%88%e8%b4%b9%e6%96%b9%e5%92%8c%e6%8f%90%e4%be%9b%e6%96%b9%e4%b9%8b%e9%97%b4%e4%bd%bf%e7%94%a8%e7%8b%ac%e7%ab%8b%e7%9a%84LB%e8%ae%be%e6%96%bd%ef%bc%8c%ef%bc%88%e8%bd%af%e7%a1%ac%e4%bb%b6%e5%9d%87%e5%8f%af%ef%bc%8c%e8%bd%af%e4%bb%b6%e5%a6%82Nginx%ef%bc%8c%e7%a1%ac%e4%bb%b6%e5%a6%82F5%ef%bc%89%ef%bc%8c%e7%94%b1%e8%af%a5%e8%ae%be%e6%96%bd%e8%b4%9f%e8%b4%a3%e6%8a%8a%e8%ae%bf%e9%97%ae%e8%af%b7%e6%b1%82%e9%80%9a%e8%bf%87%e6%9f%90%e7%a7%8d%e7%ad%96%e7%95%a5%ef%bc%88%e5%8f%af%e8%87%aa%e8%a1%8c%e6%8c%87%e5%ae%9a%ef%bc%89%e8%bd%ac%e5%8f%91%e8%87%b3%e6%9c%8d%e5%8a%a1%e7%9a%84%e6%8f%90%e4%be%9b%e6%96%b9%e3%80%82%0a%e8%bf%9b%e7%a8%8b%e5%86%85LB%20%e5%b0%86LB%e9%80%bb%e8%be%91%e9%9b%86%e6%88%90%e5%88%b0%e6%b6%88%e8%b4%b9%e6%96%b9%ef%bc%8c%e6%b6%88%e8%b4%b9%e6%96%b9%e4%bb%8e%e6%9c%8d%e5%8a%a1%e6%b3%a8%e5%86%8c%e4%b8%ad%e5%bf%83%e8%8e%b7%e7%9f%a5%e6%9c%89%e5%93%aa%e4%ba%9b%e5%9c%b0%e5%9d%80%e5%8f%af%e7%94%a8%ef%bc%8c%e7%84%b6%e5%90%8e%e8%87%aa%e5%b7%b1%e5%86%8d%e4%bb%8e%e8%bf%99%e4%ba%9b%e5%9c%b0%e5%9d%80%e4%b8%ad%e9%80%89%e6%8b%a9%e5%87%ba%e4%b8%80%e4%b8%aa%e5%90%88%e9%80%82%e7%9a%84%e6%9c%8d%e5%8a%a1%e7%82%b9%e8%bf%9b%e8%a1%8c%e6%9c%8d%e5%8a%a1%e3%80%82%0aRibbon%e5%b1%9e%e4%ba%8e%e8%bf%9b%e7%a8%8b%e5%86%85LB%ef%bc%8c%e5%ae%83%e5%8f%aa%e6%98%af%e4%b8%80%e4%b8%aa%e7%b1%bb%e5%ba%93%ef%bc%8c%e9%9b%86%e6%88%90%e4%ba%8e%e6%b6%88%e8%b4%b9%e6%96%b9%e8%bf%9b%e7%a8%8b%ef%bc%8c%e6%b6%88%e8%b4%b9%e6%96%b9%e9%80%9a%e8%bf%87%e5%ae%83%e8%8e%b7%e5%8f%96%e6%9c%8d%e5%8a%a1%e6%8f%90%e4%be%9b%e6%96%b9%e7%9a%84%e5%9c%b0%e5%9d%80%e3%80%82%0a%e4%bd%bf%e7%94%a8Ribbon%e5%ae%9e%e7%8e%b0%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1%20%e5%85%b3%e4%ba%8e%e5%af%bc%e5%8c%85%201%26lt%3bdependency%26gt%3b%202%20%26lt%3bgroupId%26gt%3borg.springframework.cloud%26lt%3b%2fgroupId%26gt%3b%203%20%26lt%3bartifactId%26gt%3bspring-cloud-starter-netflix-eureka-client%26lt%3b%2fartifactId%26gt%3b%20%26lt%3b%21--%20%e5%b7%b2%e7%bb%8f%e5%8c%85%e5%90%ab%e4%ba%86ribbon%20--%26gt%3b%204%26lt%3b%2fdependency%26gt%3b%20%e6%b3%a8%e6%84%8feureka%e5%86%85%e7%bd%ae%e4%ba%86ribbon%e3%80%82%0a%e5%bc%80%e5%90%af%e6%b3%a8%e8%a7%a3%201%40Configuration%202public%20class%20ApplicationContextConfig%20%7b%203%20%40Bean%204%20%40LoadBalanced%20%2f%2f%20%e8%b5%8b%e4%ba%88%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1%e8%83%bd%e5%8a%9b%205%20public%20RestTemplate%20getRestTemplate%28%29%20%7b%206%20return%20new%20RestTemplate%28%29%3b%207%20%7d%208%7d%20%e8%ae%bf%e9%97%ae%e7%9b%b8%e5%90%8c%e6%9c%8d%e5%8a%a1%e5%90%8d%e5%9c%b0%e5%9d%80%e5%8d%b3%e5%8f%af%e3%80%82%0a%e4%bf%ae%e6%94%b9Ribbon%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1%e8%a7%84%e5%88%99%20%e6%89%80%e6%9c%89%e8%a7%84%e5%88%99%e5%9d%87%e5%ae%9e%e7%8e%b0%e4%ba%86IRule%e6%8e%a5%e5%8f%a3%ef%bc%8c%e9%80%9a%e8%bf%87%e6%9f%a5%e7%9c%8b%e6%8e%a5%e5%8f%a3%e5%ae%9e%e7%8e%b0%e7%b1%bb%e5%8d%b3%e5%8f%af%e7%9f%a5%e9%81%93%e8%a7%84%e5%88%99%e7%9a%84%e7%a7%8d%e7%b1%bb%e3%80%82%0a%e9%bb%98%e8%ae%a4%e6%98%afRoundRobinRule%ef%bc%88%e8%bd%ae%e8%af%a2%ef%bc%89%e8%bf%99%e4%b8%80%e8%a7%84%e5%88%99%e3%80%82%0a%e4%b8%8b%e9%9d%a2%e4%bf%ae%e6%94%b9%e4%b8%baRandomRule%ef%bc%88%e9%9a%8f%e6%9c%ba%ef%bc%89%e8%bf%99%e4%b8%80%e8%a7%84%e5%88%99%ef%bc%9a%0a%e5%9c%a8%e5%90%af%e5%8a%a8%e7%b1%bb%e6%89%ab%e6%8f%8f%e4%b8%8d%e5%88%b0%e7%9a%84%e5%8c%85%e4%b8%8b%e5%88%9b%e5%bb%ba%e8%a7%84%e5%88%99%ef%bc%9a%201%40Configuration%202public%20class%20MyRibbonRule%20%7b%203%20%40Bean%204%20public%20IRule%20myRule%28%29%20%7b%205%20return%20new%20RandomRule%28%29%3b%206%20%7d%207%7d%20%e5%9c%a8%e5%90%af%e5%8a%a8%e7%b1%bb%e6%8c%87%e5%ae%9a%e8%a7%84%e5%88%99%ef%bc%9a%201%40SpringBootApplication%202%40EnableEurekaClient%203%40RibbonClient%28name%3d%26%2334%3bCLOUD-PAYMENT-SERVICE%26%2334%3b%2c%20configuration%20%3d%20MyRibbonRule." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=akynazh.site%2fposts%2f2022%2f07%2funderstand-ribbon-and-realize-load-balancing-by-yourself%2f&name=%e7%90%86%e8%a7%a3%20Ribbon%20%e5%b9%b6%e8%87%aa%e5%b7%b1%e5%ae%9e%e7%8e%b0%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1&description=%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1%ef%bc%88LB%ef%bc%89%e6%98%af%e4%bb%80%e4%b9%88%20%e5%af%b9%e4%ba%8e%e7%94%a8%e6%88%b7%e7%9a%84%e6%9f%90%e4%b8%aa%e8%af%b7%e6%b1%82%ef%bc%8c%e5%b0%86%e6%9c%89%e5%a4%9a%e4%b8%aa%e7%9b%b8%e5%90%8c%e5%8a%9f%e8%83%bd%e7%9a%84%e6%9c%8d%e5%8a%a1%e7%82%b9%e6%9c%8d%e5%8a%a1%e8%af%a5%e8%af%b7%e6%b1%82%ef%bc%8c%e6%9f%90%e4%b8%aa%e6%9c%8d%e5%8a%a1%e7%82%b9%e6%8c%82%e4%ba%86%ef%bc%8c%e5%85%b6%e4%bb%96%e6%9c%8d%e5%8a%a1%e7%82%b9%e8%bf%98%e6%98%af%e5%8f%af%e4%bb%a5%e8%bf%9b%e8%a1%8c%e6%9c%8d%e5%8a%a1%ef%bc%8c%e8%bf%99%e6%a0%b7%e5%b0%b1%e5%ae%9e%e7%8e%b0%e4%ba%86%e7%b3%bb%e7%bb%9f%e7%9a%84%e9%ab%98%e5%8f%af%e7%94%a8%e3%80%82%0a%e5%85%b3%e4%ba%8e%e9%9b%86%e4%b8%ad%e5%bc%8fLB%e5%92%8c%e8%bf%9b%e7%a8%8b%e5%86%85LB%20%e9%9b%86%e4%b8%ad%e5%bc%8fLB%20%e5%9c%a8%e6%9c%8d%e5%8a%a1%e7%9a%84%e6%b6%88%e8%b4%b9%e6%96%b9%e5%92%8c%e6%8f%90%e4%be%9b%e6%96%b9%e4%b9%8b%e9%97%b4%e4%bd%bf%e7%94%a8%e7%8b%ac%e7%ab%8b%e7%9a%84LB%e8%ae%be%e6%96%bd%ef%bc%8c%ef%bc%88%e8%bd%af%e7%a1%ac%e4%bb%b6%e5%9d%87%e5%8f%af%ef%bc%8c%e8%bd%af%e4%bb%b6%e5%a6%82Nginx%ef%bc%8c%e7%a1%ac%e4%bb%b6%e5%a6%82F5%ef%bc%89%ef%bc%8c%e7%94%b1%e8%af%a5%e8%ae%be%e6%96%bd%e8%b4%9f%e8%b4%a3%e6%8a%8a%e8%ae%bf%e9%97%ae%e8%af%b7%e6%b1%82%e9%80%9a%e8%bf%87%e6%9f%90%e7%a7%8d%e7%ad%96%e7%95%a5%ef%bc%88%e5%8f%af%e8%87%aa%e8%a1%8c%e6%8c%87%e5%ae%9a%ef%bc%89%e8%bd%ac%e5%8f%91%e8%87%b3%e6%9c%8d%e5%8a%a1%e7%9a%84%e6%8f%90%e4%be%9b%e6%96%b9%e3%80%82%0a%e8%bf%9b%e7%a8%8b%e5%86%85LB%20%e5%b0%86LB%e9%80%bb%e8%be%91%e9%9b%86%e6%88%90%e5%88%b0%e6%b6%88%e8%b4%b9%e6%96%b9%ef%bc%8c%e6%b6%88%e8%b4%b9%e6%96%b9%e4%bb%8e%e6%9c%8d%e5%8a%a1%e6%b3%a8%e5%86%8c%e4%b8%ad%e5%bf%83%e8%8e%b7%e7%9f%a5%e6%9c%89%e5%93%aa%e4%ba%9b%e5%9c%b0%e5%9d%80%e5%8f%af%e7%94%a8%ef%bc%8c%e7%84%b6%e5%90%8e%e8%87%aa%e5%b7%b1%e5%86%8d%e4%bb%8e%e8%bf%99%e4%ba%9b%e5%9c%b0%e5%9d%80%e4%b8%ad%e9%80%89%e6%8b%a9%e5%87%ba%e4%b8%80%e4%b8%aa%e5%90%88%e9%80%82%e7%9a%84%e6%9c%8d%e5%8a%a1%e7%82%b9%e8%bf%9b%e8%a1%8c%e6%9c%8d%e5%8a%a1%e3%80%82%0aRibbon%e5%b1%9e%e4%ba%8e%e8%bf%9b%e7%a8%8b%e5%86%85LB%ef%bc%8c%e5%ae%83%e5%8f%aa%e6%98%af%e4%b8%80%e4%b8%aa%e7%b1%bb%e5%ba%93%ef%bc%8c%e9%9b%86%e6%88%90%e4%ba%8e%e6%b6%88%e8%b4%b9%e6%96%b9%e8%bf%9b%e7%a8%8b%ef%bc%8c%e6%b6%88%e8%b4%b9%e6%96%b9%e9%80%9a%e8%bf%87%e5%ae%83%e8%8e%b7%e5%8f%96%e6%9c%8d%e5%8a%a1%e6%8f%90%e4%be%9b%e6%96%b9%e7%9a%84%e5%9c%b0%e5%9d%80%e3%80%82%0a%e4%bd%bf%e7%94%a8Ribbon%e5%ae%9e%e7%8e%b0%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1%20%e5%85%b3%e4%ba%8e%e5%af%bc%e5%8c%85%201%26lt%3bdependency%26gt%3b%202%20%26lt%3bgroupId%26gt%3borg.springframework.cloud%26lt%3b%2fgroupId%26gt%3b%203%20%26lt%3bartifactId%26gt%3bspring-cloud-starter-netflix-eureka-client%26lt%3b%2fartifactId%26gt%3b%20%26lt%3b%21--%20%e5%b7%b2%e7%bb%8f%e5%8c%85%e5%90%ab%e4%ba%86ribbon%20--%26gt%3b%204%26lt%3b%2fdependency%26gt%3b%20%e6%b3%a8%e6%84%8feureka%e5%86%85%e7%bd%ae%e4%ba%86ribbon%e3%80%82%0a%e5%bc%80%e5%90%af%e6%b3%a8%e8%a7%a3%201%40Configuration%202public%20class%20ApplicationContextConfig%20%7b%203%20%40Bean%204%20%40LoadBalanced%20%2f%2f%20%e8%b5%8b%e4%ba%88%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1%e8%83%bd%e5%8a%9b%205%20public%20RestTemplate%20getRestTemplate%28%29%20%7b%206%20return%20new%20RestTemplate%28%29%3b%207%20%7d%208%7d%20%e8%ae%bf%e9%97%ae%e7%9b%b8%e5%90%8c%e6%9c%8d%e5%8a%a1%e5%90%8d%e5%9c%b0%e5%9d%80%e5%8d%b3%e5%8f%af%e3%80%82%0a%e4%bf%ae%e6%94%b9Ribbon%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1%e8%a7%84%e5%88%99%20%e6%89%80%e6%9c%89%e8%a7%84%e5%88%99%e5%9d%87%e5%ae%9e%e7%8e%b0%e4%ba%86IRule%e6%8e%a5%e5%8f%a3%ef%bc%8c%e9%80%9a%e8%bf%87%e6%9f%a5%e7%9c%8b%e6%8e%a5%e5%8f%a3%e5%ae%9e%e7%8e%b0%e7%b1%bb%e5%8d%b3%e5%8f%af%e7%9f%a5%e9%81%93%e8%a7%84%e5%88%99%e7%9a%84%e7%a7%8d%e7%b1%bb%e3%80%82%0a%e9%bb%98%e8%ae%a4%e6%98%afRoundRobinRule%ef%bc%88%e8%bd%ae%e8%af%a2%ef%bc%89%e8%bf%99%e4%b8%80%e8%a7%84%e5%88%99%e3%80%82%0a%e4%b8%8b%e9%9d%a2%e4%bf%ae%e6%94%b9%e4%b8%baRandomRule%ef%bc%88%e9%9a%8f%e6%9c%ba%ef%bc%89%e8%bf%99%e4%b8%80%e8%a7%84%e5%88%99%ef%bc%9a%0a%e5%9c%a8%e5%90%af%e5%8a%a8%e7%b1%bb%e6%89%ab%e6%8f%8f%e4%b8%8d%e5%88%b0%e7%9a%84%e5%8c%85%e4%b8%8b%e5%88%9b%e5%bb%ba%e8%a7%84%e5%88%99%ef%bc%9a%201%40Configuration%202public%20class%20MyRibbonRule%20%7b%203%20%40Bean%204%20public%20IRule%20myRule%28%29%20%7b%205%20return%20new%20RandomRule%28%29%3b%206%20%7d%207%7d%20%e5%9c%a8%e5%90%af%e5%8a%a8%e7%b1%bb%e6%8c%87%e5%ae%9a%e8%a7%84%e5%88%99%ef%bc%9a%201%40SpringBootApplication%202%40EnableEurekaClient%203%40RibbonClient%28name%3d%26%2334%3bCLOUD-PAYMENT-SERVICE%26%2334%3b%2c%20configuration%20%3d%20MyRibbonRule." aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fposts%2f2022%2f07%2funderstand-ribbon-and-realize-load-balancing-by-yourself%2f&t=%e7%90%86%e8%a7%a3%20Ribbon%20%e5%b9%b6%e8%87%aa%e5%b7%b1%e5%ae%9e%e7%8e%b0%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=akynazh.site%2fposts%2f2022%2f07%2funderstand-ribbon-and-realize-load-balancing-by-yourself%2f&t=%e7%90%86%e8%a7%a3%20Ribbon%20%e5%b9%b6%e8%87%aa%e5%b7%b1%e5%ae%9e%e7%8e%b0%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1" aria-label="Hacker News">
       <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
     </a>
   </li>
@@ -503,11 +503,11 @@ Ribbon属于进程内LB，它只是一个类库，集成于消费方进程，消
     <nav>
       <ul>
          
-        <li><a href="/">Home</a></li>
+        <li><a href="akynazh.site/">Home</a></li>
          
-        <li><a href="/posts">Archives</a></li>
+        <li><a href="akynazh.site/posts">Archives</a></li>
          
-        <li><a href="/about">About</a></li>
+        <li><a href="akynazh.site/about">About</a></li>
         
       </ul>
     </nav>

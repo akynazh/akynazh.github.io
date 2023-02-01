@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title> 适配器模式 | Norwegian Wood</title>
-  <link rel='canonical' href='/posts/2022/08/adapter-mode/'>
+  <link rel='canonical' href='akynazh.site/posts/2022/08/adapter-mode/'>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
@@ -13,7 +13,7 @@
 代码展示 鸭子和火鸡叫声不一样，通过编写适配器让火鸡适配鸭的方法。
 从接口开始 1public interface Duck { 2	public void quack(); 3	public void fly(); 4} 1public interface Turkey { 2	public void gobble(); 3	public void fly(); 4} 编写适配器 1public class TurkeyAdapter implements Duck { 2	Turkey turkey; 3 4	public TurkeyAdapter(Turkey turkey) { 5	this.turkey = turkey; 6	} 7 8	public void quack() { 9	turkey.gobble(); 10	} 11 12	public void fly() { 13	for(int i=0; i &lt; 5; i&#43;&#43;) { 14	turkey." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/posts/2022/08/adapter-mode/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="akynazh.site/posts/2022/08/adapter-mode/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-08-23T16:00:04+08:00" />
 <meta property="article:modified_time" content="2022-08-23T16:00:04+08:00" /><meta property="og:site_name" content="Norwegian Wood" />
 
@@ -28,7 +28,7 @@
   
   
   
-  <link rel="stylesheet" href="/css/styles.43c5f4c45b6248e071aa0f9eae2d299f06dc6e7d91ae3c1a2e4bcde6252688b0db6d6f3722b74f3c851c6e1b5ea207cff6868c78a11f7c137fd8cc01748ba457.css" integrity="sha512-Q8X0xFtiSOBxqg&#43;eri0pnwbcbn2RrjwaLkvN5iUmiLDbbW83IrdPPIUcbhteogfP9oaMeKEffBN/2MwBdIukVw==">
+  <link rel="stylesheet" href="/akynazh.site/css/styles.43c5f4c45b6248e071aa0f9eae2d299f06dc6e7d91ae3c1a2e4bcde6252688b0db6d6f3722b74f3c851c6e1b5ea207cff6868c78a11f7c137fd8cc01748ba457.css" integrity="sha512-Q8X0xFtiSOBxqg&#43;eri0pnwbcbn2RrjwaLkvN5iUmiLDbbW83IrdPPIUcbhteogfP9oaMeKEffBN/2MwBdIukVw==">
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
@@ -53,11 +53,11 @@
     <span id="nav">
       <ul>
          
-        <li><a href="/">Home</a></li>
+        <li><a href="akynazh.site/">Home</a></li>
          
-        <li><a href="/posts">Archives</a></li>
+        <li><a href="akynazh.site/posts">Archives</a></li>
          
-        <li><a href="/about">About</a></li>
+        <li><a href="akynazh.site/about">About</a></li>
         
       </ul>
     </span>
@@ -66,14 +66,14 @@
       <ul>
         
         <li>
-          <a class="icon" href="/posts/2022/08/chrysanthemum-and-knife-abstract/" aria-label="Previous">
+          <a class="icon" href="akynazh.site/posts/2022/08/chrysanthemum-and-knife-abstract/" aria-label="Previous">
             <i class="fas fa-chevron-left" aria-hidden="true"></i>
           </a>
         </li>
         
         
         <li>
-          <a class="icon" href="/posts/2022/08/appearance-mode/" aria-label="Next">
+          <a class="icon" href="akynazh.site/posts/2022/08/appearance-mode/" aria-label="Next">
             <i class="fas fa-chevron-right" aria-hidden="true"></i>
           </a>
         </li>
@@ -110,47 +110,47 @@
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=%2fposts%2f2022%2f08%2fadapter-mode%2f" aria-label="Facebook">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=akynazh.site%2fposts%2f2022%2f08%2fadapter-mode%2f" aria-label="Facebook">
       <i class="fab fa-facebook " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=%2fposts%2f2022%2f08%2fadapter-mode%2f&text=%e9%80%82%e9%85%8d%e5%99%a8%e6%a8%a1%e5%bc%8f" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=akynazh.site%2fposts%2f2022%2f08%2fadapter-mode%2f&text=%e9%80%82%e9%85%8d%e5%99%a8%e6%a8%a1%e5%bc%8f" aria-label="Twitter">
       <i class="fab fa-twitter " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fposts%2f2022%2f08%2fadapter-mode%2f&title=%e9%80%82%e9%85%8d%e5%99%a8%e6%a8%a1%e5%bc%8f" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=akynazh.site%2fposts%2f2022%2f08%2fadapter-mode%2f&title=%e9%80%82%e9%85%8d%e5%99%a8%e6%a8%a1%e5%bc%8f" aria-label="Linkedin">
       <i class="fab fa-linkedin " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fposts%2f2022%2f08%2fadapter-mode%2f&is_video=false&description=%e9%80%82%e9%85%8d%e5%99%a8%e6%a8%a1%e5%bc%8f" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=akynazh.site%2fposts%2f2022%2f08%2fadapter-mode%2f&is_video=false&description=%e9%80%82%e9%85%8d%e5%99%a8%e6%a8%a1%e5%bc%8f" aria-label="Pinterest">
       <i class="fab fa-pinterest " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=%e9%80%82%e9%85%8d%e5%99%a8%e6%a8%a1%e5%bc%8f&body=Check out this article: %2fposts%2f2022%2f08%2fadapter-mode%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=%e9%80%82%e9%85%8d%e5%99%a8%e6%a8%a1%e5%bc%8f&body=Check out this article: akynazh.site%2fposts%2f2022%2f08%2fadapter-mode%2f" aria-label="Email">
       <i class="fas fa-envelope " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=%2fposts%2f2022%2f08%2fadapter-mode%2f&title=%e9%80%82%e9%85%8d%e5%99%a8%e6%a8%a1%e5%bc%8f" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=akynazh.site%2fposts%2f2022%2f08%2fadapter-mode%2f&title=%e9%80%82%e9%85%8d%e5%99%a8%e6%a8%a1%e5%bc%8f" aria-label="Pocket">
       <i class="fab fa-get-pocket " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=%2fposts%2f2022%2f08%2fadapter-mode%2f&title=%e9%80%82%e9%85%8d%e5%99%a8%e6%a8%a1%e5%bc%8f" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=akynazh.site%2fposts%2f2022%2f08%2fadapter-mode%2f&title=%e9%80%82%e9%85%8d%e5%99%a8%e6%a8%a1%e5%bc%8f" aria-label="reddit">
       <i class="fab fa-reddit " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f08%2fadapter-mode%2f&name=%e9%80%82%e9%85%8d%e5%99%a8%e6%a8%a1%e5%bc%8f&description=%e9%80%82%e9%85%8d%e5%99%a8%e6%a8%a1%e5%bc%8f%20%e5%ae%9a%e4%b9%89%20%e9%80%82%e9%85%8d%e5%99%a8%e6%a8%a1%e5%bc%8f%e5%b0%86%e4%b8%80%e4%b8%aa%e7%b1%bb%e7%9a%84%e6%8e%a5%e5%8f%a3%ef%bc%8c%e8%bd%ac%e6%8d%a2%e6%88%90%e5%ae%a2%e6%88%b7%e6%9c%9f%e6%9c%9b%e7%9a%84%e5%8f%a6%e4%b8%80%e4%b8%aa%e6%8e%a5%e5%8f%a3%ef%bc%8c%e9%80%82%e9%85%8d%e5%99%a8%e8%ae%a9%e5%8e%9f%e6%9c%ac%e6%8e%a5%e5%8f%a3%e4%b8%8d%e5%85%bc%e5%ae%b9%e7%9a%84%e7%b1%bb%e5%8f%af%e4%bb%a5%e5%90%88%e4%bd%9c%e6%97%a0%e9%97%b4%e3%80%82%0a%e4%bb%a3%e7%a0%81%e5%b1%95%e7%a4%ba%20%e9%b8%ad%e5%ad%90%e5%92%8c%e7%81%ab%e9%b8%a1%e5%8f%ab%e5%a3%b0%e4%b8%8d%e4%b8%80%e6%a0%b7%ef%bc%8c%e9%80%9a%e8%bf%87%e7%bc%96%e5%86%99%e9%80%82%e9%85%8d%e5%99%a8%e8%ae%a9%e7%81%ab%e9%b8%a1%e9%80%82%e9%85%8d%e9%b8%ad%e7%9a%84%e6%96%b9%e6%b3%95%e3%80%82%0a%e4%bb%8e%e6%8e%a5%e5%8f%a3%e5%bc%80%e5%a7%8b%201public%20interface%20Duck%20%7b%202%09public%20void%20quack%28%29%3b%203%09public%20void%20fly%28%29%3b%204%7d%201public%20interface%20Turkey%20%7b%202%09public%20void%20gobble%28%29%3b%203%09public%20void%20fly%28%29%3b%204%7d%20%e7%bc%96%e5%86%99%e9%80%82%e9%85%8d%e5%99%a8%201public%20class%20TurkeyAdapter%20implements%20Duck%20%7b%202%09Turkey%20turkey%3b%203%204%09public%20TurkeyAdapter%28Turkey%20turkey%29%20%7b%205%09this.turkey%20%3d%20turkey%3b%206%09%7d%207%208%09public%20void%20quack%28%29%20%7b%209%09turkey.gobble%28%29%3b%2010%09%7d%2011%2012%09public%20void%20fly%28%29%20%7b%2013%09for%28int%20i%3d0%3b%20i%20%26lt%3b%205%3b%20i%2b%2b%29%20%7b%2014%09turkey." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=akynazh.site%2fposts%2f2022%2f08%2fadapter-mode%2f&name=%e9%80%82%e9%85%8d%e5%99%a8%e6%a8%a1%e5%bc%8f&description=%e9%80%82%e9%85%8d%e5%99%a8%e6%a8%a1%e5%bc%8f%20%e5%ae%9a%e4%b9%89%20%e9%80%82%e9%85%8d%e5%99%a8%e6%a8%a1%e5%bc%8f%e5%b0%86%e4%b8%80%e4%b8%aa%e7%b1%bb%e7%9a%84%e6%8e%a5%e5%8f%a3%ef%bc%8c%e8%bd%ac%e6%8d%a2%e6%88%90%e5%ae%a2%e6%88%b7%e6%9c%9f%e6%9c%9b%e7%9a%84%e5%8f%a6%e4%b8%80%e4%b8%aa%e6%8e%a5%e5%8f%a3%ef%bc%8c%e9%80%82%e9%85%8d%e5%99%a8%e8%ae%a9%e5%8e%9f%e6%9c%ac%e6%8e%a5%e5%8f%a3%e4%b8%8d%e5%85%bc%e5%ae%b9%e7%9a%84%e7%b1%bb%e5%8f%af%e4%bb%a5%e5%90%88%e4%bd%9c%e6%97%a0%e9%97%b4%e3%80%82%0a%e4%bb%a3%e7%a0%81%e5%b1%95%e7%a4%ba%20%e9%b8%ad%e5%ad%90%e5%92%8c%e7%81%ab%e9%b8%a1%e5%8f%ab%e5%a3%b0%e4%b8%8d%e4%b8%80%e6%a0%b7%ef%bc%8c%e9%80%9a%e8%bf%87%e7%bc%96%e5%86%99%e9%80%82%e9%85%8d%e5%99%a8%e8%ae%a9%e7%81%ab%e9%b8%a1%e9%80%82%e9%85%8d%e9%b8%ad%e7%9a%84%e6%96%b9%e6%b3%95%e3%80%82%0a%e4%bb%8e%e6%8e%a5%e5%8f%a3%e5%bc%80%e5%a7%8b%201public%20interface%20Duck%20%7b%202%09public%20void%20quack%28%29%3b%203%09public%20void%20fly%28%29%3b%204%7d%201public%20interface%20Turkey%20%7b%202%09public%20void%20gobble%28%29%3b%203%09public%20void%20fly%28%29%3b%204%7d%20%e7%bc%96%e5%86%99%e9%80%82%e9%85%8d%e5%99%a8%201public%20class%20TurkeyAdapter%20implements%20Duck%20%7b%202%09Turkey%20turkey%3b%203%204%09public%20TurkeyAdapter%28Turkey%20turkey%29%20%7b%205%09this.turkey%20%3d%20turkey%3b%206%09%7d%207%208%09public%20void%20quack%28%29%20%7b%209%09turkey.gobble%28%29%3b%2010%09%7d%2011%2012%09public%20void%20fly%28%29%20%7b%2013%09for%28int%20i%3d0%3b%20i%20%26lt%3b%205%3b%20i%2b%2b%29%20%7b%2014%09turkey." aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fposts%2f2022%2f08%2fadapter-mode%2f&t=%e9%80%82%e9%85%8d%e5%99%a8%e6%a8%a1%e5%bc%8f" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=akynazh.site%2fposts%2f2022%2f08%2fadapter-mode%2f&t=%e9%80%82%e9%85%8d%e5%99%a8%e6%a8%a1%e5%bc%8f" aria-label="Hacker News">
       <i class="fab fa-hacker-news " aria-hidden="true"></i>
     </a>
   </li>
@@ -356,11 +356,11 @@
     
     <div id="nav-footer" style="display: none">
       
-      <ul style="display:inline;"><li><a href="/">Home</a></li></ul>
+      <ul style="display:inline;"><li><a href="akynazh.site/">Home</a></li></ul>
       
-      <ul style="display:inline;"><li><a href="/posts">Archives</a></li></ul>
+      <ul style="display:inline;"><li><a href="akynazh.site/posts">Archives</a></li></ul>
       
-      <ul style="display:inline;"><li><a href="/about">About</a></li></ul>
+      <ul style="display:inline;"><li><a href="akynazh.site/about">About</a></li></ul>
       
     </div>
 
@@ -373,47 +373,47 @@
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=%2fposts%2f2022%2f08%2fadapter-mode%2f" aria-label="Facebook">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=akynazh.site%2fposts%2f2022%2f08%2fadapter-mode%2f" aria-label="Facebook">
       <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=%2fposts%2f2022%2f08%2fadapter-mode%2f&text=%e9%80%82%e9%85%8d%e5%99%a8%e6%a8%a1%e5%bc%8f" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=akynazh.site%2fposts%2f2022%2f08%2fadapter-mode%2f&text=%e9%80%82%e9%85%8d%e5%99%a8%e6%a8%a1%e5%bc%8f" aria-label="Twitter">
       <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fposts%2f2022%2f08%2fadapter-mode%2f&title=%e9%80%82%e9%85%8d%e5%99%a8%e6%a8%a1%e5%bc%8f" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=akynazh.site%2fposts%2f2022%2f08%2fadapter-mode%2f&title=%e9%80%82%e9%85%8d%e5%99%a8%e6%a8%a1%e5%bc%8f" aria-label="Linkedin">
       <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fposts%2f2022%2f08%2fadapter-mode%2f&is_video=false&description=%e9%80%82%e9%85%8d%e5%99%a8%e6%a8%a1%e5%bc%8f" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=akynazh.site%2fposts%2f2022%2f08%2fadapter-mode%2f&is_video=false&description=%e9%80%82%e9%85%8d%e5%99%a8%e6%a8%a1%e5%bc%8f" aria-label="Pinterest">
       <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=%e9%80%82%e9%85%8d%e5%99%a8%e6%a8%a1%e5%bc%8f&body=Check out this article: %2fposts%2f2022%2f08%2fadapter-mode%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=%e9%80%82%e9%85%8d%e5%99%a8%e6%a8%a1%e5%bc%8f&body=Check out this article: akynazh.site%2fposts%2f2022%2f08%2fadapter-mode%2f" aria-label="Email">
       <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=%2fposts%2f2022%2f08%2fadapter-mode%2f&title=%e9%80%82%e9%85%8d%e5%99%a8%e6%a8%a1%e5%bc%8f" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=akynazh.site%2fposts%2f2022%2f08%2fadapter-mode%2f&title=%e9%80%82%e9%85%8d%e5%99%a8%e6%a8%a1%e5%bc%8f" aria-label="Pocket">
       <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=%2fposts%2f2022%2f08%2fadapter-mode%2f&title=%e9%80%82%e9%85%8d%e5%99%a8%e6%a8%a1%e5%bc%8f" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=akynazh.site%2fposts%2f2022%2f08%2fadapter-mode%2f&title=%e9%80%82%e9%85%8d%e5%99%a8%e6%a8%a1%e5%bc%8f" aria-label="reddit">
       <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f08%2fadapter-mode%2f&name=%e9%80%82%e9%85%8d%e5%99%a8%e6%a8%a1%e5%bc%8f&description=%e9%80%82%e9%85%8d%e5%99%a8%e6%a8%a1%e5%bc%8f%20%e5%ae%9a%e4%b9%89%20%e9%80%82%e9%85%8d%e5%99%a8%e6%a8%a1%e5%bc%8f%e5%b0%86%e4%b8%80%e4%b8%aa%e7%b1%bb%e7%9a%84%e6%8e%a5%e5%8f%a3%ef%bc%8c%e8%bd%ac%e6%8d%a2%e6%88%90%e5%ae%a2%e6%88%b7%e6%9c%9f%e6%9c%9b%e7%9a%84%e5%8f%a6%e4%b8%80%e4%b8%aa%e6%8e%a5%e5%8f%a3%ef%bc%8c%e9%80%82%e9%85%8d%e5%99%a8%e8%ae%a9%e5%8e%9f%e6%9c%ac%e6%8e%a5%e5%8f%a3%e4%b8%8d%e5%85%bc%e5%ae%b9%e7%9a%84%e7%b1%bb%e5%8f%af%e4%bb%a5%e5%90%88%e4%bd%9c%e6%97%a0%e9%97%b4%e3%80%82%0a%e4%bb%a3%e7%a0%81%e5%b1%95%e7%a4%ba%20%e9%b8%ad%e5%ad%90%e5%92%8c%e7%81%ab%e9%b8%a1%e5%8f%ab%e5%a3%b0%e4%b8%8d%e4%b8%80%e6%a0%b7%ef%bc%8c%e9%80%9a%e8%bf%87%e7%bc%96%e5%86%99%e9%80%82%e9%85%8d%e5%99%a8%e8%ae%a9%e7%81%ab%e9%b8%a1%e9%80%82%e9%85%8d%e9%b8%ad%e7%9a%84%e6%96%b9%e6%b3%95%e3%80%82%0a%e4%bb%8e%e6%8e%a5%e5%8f%a3%e5%bc%80%e5%a7%8b%201public%20interface%20Duck%20%7b%202%09public%20void%20quack%28%29%3b%203%09public%20void%20fly%28%29%3b%204%7d%201public%20interface%20Turkey%20%7b%202%09public%20void%20gobble%28%29%3b%203%09public%20void%20fly%28%29%3b%204%7d%20%e7%bc%96%e5%86%99%e9%80%82%e9%85%8d%e5%99%a8%201public%20class%20TurkeyAdapter%20implements%20Duck%20%7b%202%09Turkey%20turkey%3b%203%204%09public%20TurkeyAdapter%28Turkey%20turkey%29%20%7b%205%09this.turkey%20%3d%20turkey%3b%206%09%7d%207%208%09public%20void%20quack%28%29%20%7b%209%09turkey.gobble%28%29%3b%2010%09%7d%2011%2012%09public%20void%20fly%28%29%20%7b%2013%09for%28int%20i%3d0%3b%20i%20%26lt%3b%205%3b%20i%2b%2b%29%20%7b%2014%09turkey." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=akynazh.site%2fposts%2f2022%2f08%2fadapter-mode%2f&name=%e9%80%82%e9%85%8d%e5%99%a8%e6%a8%a1%e5%bc%8f&description=%e9%80%82%e9%85%8d%e5%99%a8%e6%a8%a1%e5%bc%8f%20%e5%ae%9a%e4%b9%89%20%e9%80%82%e9%85%8d%e5%99%a8%e6%a8%a1%e5%bc%8f%e5%b0%86%e4%b8%80%e4%b8%aa%e7%b1%bb%e7%9a%84%e6%8e%a5%e5%8f%a3%ef%bc%8c%e8%bd%ac%e6%8d%a2%e6%88%90%e5%ae%a2%e6%88%b7%e6%9c%9f%e6%9c%9b%e7%9a%84%e5%8f%a6%e4%b8%80%e4%b8%aa%e6%8e%a5%e5%8f%a3%ef%bc%8c%e9%80%82%e9%85%8d%e5%99%a8%e8%ae%a9%e5%8e%9f%e6%9c%ac%e6%8e%a5%e5%8f%a3%e4%b8%8d%e5%85%bc%e5%ae%b9%e7%9a%84%e7%b1%bb%e5%8f%af%e4%bb%a5%e5%90%88%e4%bd%9c%e6%97%a0%e9%97%b4%e3%80%82%0a%e4%bb%a3%e7%a0%81%e5%b1%95%e7%a4%ba%20%e9%b8%ad%e5%ad%90%e5%92%8c%e7%81%ab%e9%b8%a1%e5%8f%ab%e5%a3%b0%e4%b8%8d%e4%b8%80%e6%a0%b7%ef%bc%8c%e9%80%9a%e8%bf%87%e7%bc%96%e5%86%99%e9%80%82%e9%85%8d%e5%99%a8%e8%ae%a9%e7%81%ab%e9%b8%a1%e9%80%82%e9%85%8d%e9%b8%ad%e7%9a%84%e6%96%b9%e6%b3%95%e3%80%82%0a%e4%bb%8e%e6%8e%a5%e5%8f%a3%e5%bc%80%e5%a7%8b%201public%20interface%20Duck%20%7b%202%09public%20void%20quack%28%29%3b%203%09public%20void%20fly%28%29%3b%204%7d%201public%20interface%20Turkey%20%7b%202%09public%20void%20gobble%28%29%3b%203%09public%20void%20fly%28%29%3b%204%7d%20%e7%bc%96%e5%86%99%e9%80%82%e9%85%8d%e5%99%a8%201public%20class%20TurkeyAdapter%20implements%20Duck%20%7b%202%09Turkey%20turkey%3b%203%204%09public%20TurkeyAdapter%28Turkey%20turkey%29%20%7b%205%09this.turkey%20%3d%20turkey%3b%206%09%7d%207%208%09public%20void%20quack%28%29%20%7b%209%09turkey.gobble%28%29%3b%2010%09%7d%2011%2012%09public%20void%20fly%28%29%20%7b%2013%09for%28int%20i%3d0%3b%20i%20%26lt%3b%205%3b%20i%2b%2b%29%20%7b%2014%09turkey." aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fposts%2f2022%2f08%2fadapter-mode%2f&t=%e9%80%82%e9%85%8d%e5%99%a8%e6%a8%a1%e5%bc%8f" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=akynazh.site%2fposts%2f2022%2f08%2fadapter-mode%2f&t=%e9%80%82%e9%85%8d%e5%99%a8%e6%a8%a1%e5%bc%8f" aria-label="Hacker News">
       <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
     </a>
   </li>
@@ -448,11 +448,11 @@
     <nav>
       <ul>
          
-        <li><a href="/">Home</a></li>
+        <li><a href="akynazh.site/">Home</a></li>
          
-        <li><a href="/posts">Archives</a></li>
+        <li><a href="akynazh.site/posts">Archives</a></li>
          
-        <li><a href="/about">About</a></li>
+        <li><a href="akynazh.site/about">About</a></li>
         
       </ul>
     </nav>

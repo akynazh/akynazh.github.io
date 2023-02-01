@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title> Swagger 使用记录 | Norwegian Wood</title>
-  <link rel='canonical' href='/posts/2022/06/swagger-usage-record/'>
+  <link rel='canonical' href='akynazh.site/posts/2022/06/swagger-usage-record/'>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
@@ -12,7 +12,7 @@
 <meta property="og:description" content="依赖导入： 1&lt;!-- swagger所需依赖 --&gt; 2&lt;dependency&gt; 3 &lt;groupId&gt;io.springfox&lt;/groupId&gt; 4 &lt;artifactId&gt;springfox-swagger2&lt;/artifactId&gt; 5 &lt;version&gt;2.6.1&lt;/version&gt; 6&lt;/dependency&gt; 7&lt;dependency&gt; 8 &lt;groupId&gt;io.springfox&lt;/groupId&gt; 9 &lt;artifactId&gt;springfox-swagger-ui&lt;/artifactId&gt; 10 &lt;version&gt;2.6.1&lt;/version&gt; 11&lt;/dependency&gt; 配置Swagger /config/SwaggerConfig.java
 1@Configuration 2@EnableSwagger2 3public class SwaggerConfig { 4 @Bean 5 public Docket createRestApi() { 6 return new Docket(DocumentationType.SWAGGER_2) 7 .apiInfo(apiInfo()) 8 .select() 9 .apis(RequestHandlerSelectors.withClassAnnotation(Api.class)) 10 .paths(PathSelectors.any()) 11 .build(); 12 } 13 14 // 基本信息的配置，信息会在api文档上显示 15 private ApiInfo apiInfo() { 16 return new ApiInfoBuilder() 17 .title(&#34;jzh测试的接口文档&#34;) 18 .description(&#34;xx相关接口的文档&#34;) 19 .termsOfServiceUrl(&#34;http://localhost:7777&#34;) 20 ." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/posts/2022/06/swagger-usage-record/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="akynazh.site/posts/2022/06/swagger-usage-record/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-06-25T21:20:38+08:00" />
 <meta property="article:modified_time" content="2022-06-25T21:20:38+08:00" /><meta property="og:site_name" content="Norwegian Wood" />
 
@@ -26,7 +26,7 @@
   
   
   
-  <link rel="stylesheet" href="/css/styles.43c5f4c45b6248e071aa0f9eae2d299f06dc6e7d91ae3c1a2e4bcde6252688b0db6d6f3722b74f3c851c6e1b5ea207cff6868c78a11f7c137fd8cc01748ba457.css" integrity="sha512-Q8X0xFtiSOBxqg&#43;eri0pnwbcbn2RrjwaLkvN5iUmiLDbbW83IrdPPIUcbhteogfP9oaMeKEffBN/2MwBdIukVw==">
+  <link rel="stylesheet" href="/akynazh.site/css/styles.43c5f4c45b6248e071aa0f9eae2d299f06dc6e7d91ae3c1a2e4bcde6252688b0db6d6f3722b74f3c851c6e1b5ea207cff6868c78a11f7c137fd8cc01748ba457.css" integrity="sha512-Q8X0xFtiSOBxqg&#43;eri0pnwbcbn2RrjwaLkvN5iUmiLDbbW83IrdPPIUcbhteogfP9oaMeKEffBN/2MwBdIukVw==">
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
@@ -51,11 +51,11 @@
     <span id="nav">
       <ul>
          
-        <li><a href="/">Home</a></li>
+        <li><a href="akynazh.site/">Home</a></li>
          
-        <li><a href="/posts">Archives</a></li>
+        <li><a href="akynazh.site/posts">Archives</a></li>
          
-        <li><a href="/about">About</a></li>
+        <li><a href="akynazh.site/about">About</a></li>
         
       </ul>
     </span>
@@ -64,14 +64,14 @@
       <ul>
         
         <li>
-          <a class="icon" href="/posts/2022/06/how-to-add-command-alias-in-window/" aria-label="Previous">
+          <a class="icon" href="akynazh.site/posts/2022/06/how-to-add-command-alias-in-window/" aria-label="Previous">
             <i class="fas fa-chevron-left" aria-hidden="true"></i>
           </a>
         </li>
         
         
         <li>
-          <a class="icon" href="/posts/2022/07/snow-country-abstract/" aria-label="Next">
+          <a class="icon" href="akynazh.site/posts/2022/07/snow-country-abstract/" aria-label="Next">
             <i class="fas fa-chevron-right" aria-hidden="true"></i>
           </a>
         </li>
@@ -108,47 +108,47 @@
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=%2fposts%2f2022%2f06%2fswagger-usage-record%2f" aria-label="Facebook">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=akynazh.site%2fposts%2f2022%2f06%2fswagger-usage-record%2f" aria-label="Facebook">
       <i class="fab fa-facebook " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=%2fposts%2f2022%2f06%2fswagger-usage-record%2f&text=Swagger%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=akynazh.site%2fposts%2f2022%2f06%2fswagger-usage-record%2f&text=Swagger%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95" aria-label="Twitter">
       <i class="fab fa-twitter " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fposts%2f2022%2f06%2fswagger-usage-record%2f&title=Swagger%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=akynazh.site%2fposts%2f2022%2f06%2fswagger-usage-record%2f&title=Swagger%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95" aria-label="Linkedin">
       <i class="fab fa-linkedin " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fposts%2f2022%2f06%2fswagger-usage-record%2f&is_video=false&description=Swagger%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=akynazh.site%2fposts%2f2022%2f06%2fswagger-usage-record%2f&is_video=false&description=Swagger%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95" aria-label="Pinterest">
       <i class="fab fa-pinterest " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=Swagger%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95&body=Check out this article: %2fposts%2f2022%2f06%2fswagger-usage-record%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=Swagger%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95&body=Check out this article: akynazh.site%2fposts%2f2022%2f06%2fswagger-usage-record%2f" aria-label="Email">
       <i class="fas fa-envelope " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=%2fposts%2f2022%2f06%2fswagger-usage-record%2f&title=Swagger%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=akynazh.site%2fposts%2f2022%2f06%2fswagger-usage-record%2f&title=Swagger%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95" aria-label="Pocket">
       <i class="fab fa-get-pocket " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=%2fposts%2f2022%2f06%2fswagger-usage-record%2f&title=Swagger%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=akynazh.site%2fposts%2f2022%2f06%2fswagger-usage-record%2f&title=Swagger%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95" aria-label="reddit">
       <i class="fab fa-reddit " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f06%2fswagger-usage-record%2f&name=Swagger%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95&description=%e4%be%9d%e8%b5%96%e5%af%bc%e5%85%a5%ef%bc%9a%201%26lt%3b%21--%20swagger%e6%89%80%e9%9c%80%e4%be%9d%e8%b5%96%20--%26gt%3b%202%26lt%3bdependency%26gt%3b%203%20%26lt%3bgroupId%26gt%3bio.springfox%26lt%3b%2fgroupId%26gt%3b%204%20%26lt%3bartifactId%26gt%3bspringfox-swagger2%26lt%3b%2fartifactId%26gt%3b%205%20%26lt%3bversion%26gt%3b2.6.1%26lt%3b%2fversion%26gt%3b%206%26lt%3b%2fdependency%26gt%3b%207%26lt%3bdependency%26gt%3b%208%20%26lt%3bgroupId%26gt%3bio.springfox%26lt%3b%2fgroupId%26gt%3b%209%20%26lt%3bartifactId%26gt%3bspringfox-swagger-ui%26lt%3b%2fartifactId%26gt%3b%2010%20%26lt%3bversion%26gt%3b2.6.1%26lt%3b%2fversion%26gt%3b%2011%26lt%3b%2fdependency%26gt%3b%20%e9%85%8d%e7%bd%aeSwagger%20%2fconfig%2fSwaggerConfig.java%0a1%40Configuration%202%40EnableSwagger2%203public%20class%20SwaggerConfig%20%7b%204%20%40Bean%205%20public%20Docket%20createRestApi%28%29%20%7b%206%20return%20new%20Docket%28DocumentationType.SWAGGER_2%29%207%20.apiInfo%28apiInfo%28%29%29%208%20.select%28%29%209%20.apis%28RequestHandlerSelectors.withClassAnnotation%28Api.class%29%29%2010%20.paths%28PathSelectors.any%28%29%29%2011%20.build%28%29%3b%2012%20%7d%2013%2014%20%2f%2f%20%e5%9f%ba%e6%9c%ac%e4%bf%a1%e6%81%af%e7%9a%84%e9%85%8d%e7%bd%ae%ef%bc%8c%e4%bf%a1%e6%81%af%e4%bc%9a%e5%9c%a8api%e6%96%87%e6%a1%a3%e4%b8%8a%e6%98%be%e7%a4%ba%2015%20private%20ApiInfo%20apiInfo%28%29%20%7b%2016%20return%20new%20ApiInfoBuilder%28%29%2017%20.title%28%26%2334%3bjzh%e6%b5%8b%e8%af%95%e7%9a%84%e6%8e%a5%e5%8f%a3%e6%96%87%e6%a1%a3%26%2334%3b%29%2018%20.description%28%26%2334%3bxx%e7%9b%b8%e5%85%b3%e6%8e%a5%e5%8f%a3%e7%9a%84%e6%96%87%e6%a1%a3%26%2334%3b%29%2019%20.termsOfServiceUrl%28%26%2334%3bhttp%3a%2f%2flocalhost%3a7777%26%2334%3b%29%2020%20." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=akynazh.site%2fposts%2f2022%2f06%2fswagger-usage-record%2f&name=Swagger%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95&description=%e4%be%9d%e8%b5%96%e5%af%bc%e5%85%a5%ef%bc%9a%201%26lt%3b%21--%20swagger%e6%89%80%e9%9c%80%e4%be%9d%e8%b5%96%20--%26gt%3b%202%26lt%3bdependency%26gt%3b%203%20%26lt%3bgroupId%26gt%3bio.springfox%26lt%3b%2fgroupId%26gt%3b%204%20%26lt%3bartifactId%26gt%3bspringfox-swagger2%26lt%3b%2fartifactId%26gt%3b%205%20%26lt%3bversion%26gt%3b2.6.1%26lt%3b%2fversion%26gt%3b%206%26lt%3b%2fdependency%26gt%3b%207%26lt%3bdependency%26gt%3b%208%20%26lt%3bgroupId%26gt%3bio.springfox%26lt%3b%2fgroupId%26gt%3b%209%20%26lt%3bartifactId%26gt%3bspringfox-swagger-ui%26lt%3b%2fartifactId%26gt%3b%2010%20%26lt%3bversion%26gt%3b2.6.1%26lt%3b%2fversion%26gt%3b%2011%26lt%3b%2fdependency%26gt%3b%20%e9%85%8d%e7%bd%aeSwagger%20%2fconfig%2fSwaggerConfig.java%0a1%40Configuration%202%40EnableSwagger2%203public%20class%20SwaggerConfig%20%7b%204%20%40Bean%205%20public%20Docket%20createRestApi%28%29%20%7b%206%20return%20new%20Docket%28DocumentationType.SWAGGER_2%29%207%20.apiInfo%28apiInfo%28%29%29%208%20.select%28%29%209%20.apis%28RequestHandlerSelectors.withClassAnnotation%28Api.class%29%29%2010%20.paths%28PathSelectors.any%28%29%29%2011%20.build%28%29%3b%2012%20%7d%2013%2014%20%2f%2f%20%e5%9f%ba%e6%9c%ac%e4%bf%a1%e6%81%af%e7%9a%84%e9%85%8d%e7%bd%ae%ef%bc%8c%e4%bf%a1%e6%81%af%e4%bc%9a%e5%9c%a8api%e6%96%87%e6%a1%a3%e4%b8%8a%e6%98%be%e7%a4%ba%2015%20private%20ApiInfo%20apiInfo%28%29%20%7b%2016%20return%20new%20ApiInfoBuilder%28%29%2017%20.title%28%26%2334%3bjzh%e6%b5%8b%e8%af%95%e7%9a%84%e6%8e%a5%e5%8f%a3%e6%96%87%e6%a1%a3%26%2334%3b%29%2018%20.description%28%26%2334%3bxx%e7%9b%b8%e5%85%b3%e6%8e%a5%e5%8f%a3%e7%9a%84%e6%96%87%e6%a1%a3%26%2334%3b%29%2019%20.termsOfServiceUrl%28%26%2334%3bhttp%3a%2f%2flocalhost%3a7777%26%2334%3b%29%2020%20." aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fposts%2f2022%2f06%2fswagger-usage-record%2f&t=Swagger%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=akynazh.site%2fposts%2f2022%2f06%2fswagger-usage-record%2f&t=Swagger%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95" aria-label="Hacker News">
       <i class="fab fa-hacker-news " aria-hidden="true"></i>
     </a>
   </li>
@@ -377,11 +377,11 @@
     
     <div id="nav-footer" style="display: none">
       
-      <ul style="display:inline;"><li><a href="/">Home</a></li></ul>
+      <ul style="display:inline;"><li><a href="akynazh.site/">Home</a></li></ul>
       
-      <ul style="display:inline;"><li><a href="/posts">Archives</a></li></ul>
+      <ul style="display:inline;"><li><a href="akynazh.site/posts">Archives</a></li></ul>
       
-      <ul style="display:inline;"><li><a href="/about">About</a></li></ul>
+      <ul style="display:inline;"><li><a href="akynazh.site/about">About</a></li></ul>
       
     </div>
 
@@ -394,47 +394,47 @@
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=%2fposts%2f2022%2f06%2fswagger-usage-record%2f" aria-label="Facebook">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=akynazh.site%2fposts%2f2022%2f06%2fswagger-usage-record%2f" aria-label="Facebook">
       <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=%2fposts%2f2022%2f06%2fswagger-usage-record%2f&text=Swagger%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=akynazh.site%2fposts%2f2022%2f06%2fswagger-usage-record%2f&text=Swagger%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95" aria-label="Twitter">
       <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fposts%2f2022%2f06%2fswagger-usage-record%2f&title=Swagger%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=akynazh.site%2fposts%2f2022%2f06%2fswagger-usage-record%2f&title=Swagger%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95" aria-label="Linkedin">
       <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fposts%2f2022%2f06%2fswagger-usage-record%2f&is_video=false&description=Swagger%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=akynazh.site%2fposts%2f2022%2f06%2fswagger-usage-record%2f&is_video=false&description=Swagger%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95" aria-label="Pinterest">
       <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=Swagger%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95&body=Check out this article: %2fposts%2f2022%2f06%2fswagger-usage-record%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=Swagger%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95&body=Check out this article: akynazh.site%2fposts%2f2022%2f06%2fswagger-usage-record%2f" aria-label="Email">
       <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=%2fposts%2f2022%2f06%2fswagger-usage-record%2f&title=Swagger%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=akynazh.site%2fposts%2f2022%2f06%2fswagger-usage-record%2f&title=Swagger%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95" aria-label="Pocket">
       <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=%2fposts%2f2022%2f06%2fswagger-usage-record%2f&title=Swagger%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=akynazh.site%2fposts%2f2022%2f06%2fswagger-usage-record%2f&title=Swagger%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95" aria-label="reddit">
       <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f06%2fswagger-usage-record%2f&name=Swagger%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95&description=%e4%be%9d%e8%b5%96%e5%af%bc%e5%85%a5%ef%bc%9a%201%26lt%3b%21--%20swagger%e6%89%80%e9%9c%80%e4%be%9d%e8%b5%96%20--%26gt%3b%202%26lt%3bdependency%26gt%3b%203%20%26lt%3bgroupId%26gt%3bio.springfox%26lt%3b%2fgroupId%26gt%3b%204%20%26lt%3bartifactId%26gt%3bspringfox-swagger2%26lt%3b%2fartifactId%26gt%3b%205%20%26lt%3bversion%26gt%3b2.6.1%26lt%3b%2fversion%26gt%3b%206%26lt%3b%2fdependency%26gt%3b%207%26lt%3bdependency%26gt%3b%208%20%26lt%3bgroupId%26gt%3bio.springfox%26lt%3b%2fgroupId%26gt%3b%209%20%26lt%3bartifactId%26gt%3bspringfox-swagger-ui%26lt%3b%2fartifactId%26gt%3b%2010%20%26lt%3bversion%26gt%3b2.6.1%26lt%3b%2fversion%26gt%3b%2011%26lt%3b%2fdependency%26gt%3b%20%e9%85%8d%e7%bd%aeSwagger%20%2fconfig%2fSwaggerConfig.java%0a1%40Configuration%202%40EnableSwagger2%203public%20class%20SwaggerConfig%20%7b%204%20%40Bean%205%20public%20Docket%20createRestApi%28%29%20%7b%206%20return%20new%20Docket%28DocumentationType.SWAGGER_2%29%207%20.apiInfo%28apiInfo%28%29%29%208%20.select%28%29%209%20.apis%28RequestHandlerSelectors.withClassAnnotation%28Api.class%29%29%2010%20.paths%28PathSelectors.any%28%29%29%2011%20.build%28%29%3b%2012%20%7d%2013%2014%20%2f%2f%20%e5%9f%ba%e6%9c%ac%e4%bf%a1%e6%81%af%e7%9a%84%e9%85%8d%e7%bd%ae%ef%bc%8c%e4%bf%a1%e6%81%af%e4%bc%9a%e5%9c%a8api%e6%96%87%e6%a1%a3%e4%b8%8a%e6%98%be%e7%a4%ba%2015%20private%20ApiInfo%20apiInfo%28%29%20%7b%2016%20return%20new%20ApiInfoBuilder%28%29%2017%20.title%28%26%2334%3bjzh%e6%b5%8b%e8%af%95%e7%9a%84%e6%8e%a5%e5%8f%a3%e6%96%87%e6%a1%a3%26%2334%3b%29%2018%20.description%28%26%2334%3bxx%e7%9b%b8%e5%85%b3%e6%8e%a5%e5%8f%a3%e7%9a%84%e6%96%87%e6%a1%a3%26%2334%3b%29%2019%20.termsOfServiceUrl%28%26%2334%3bhttp%3a%2f%2flocalhost%3a7777%26%2334%3b%29%2020%20." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=akynazh.site%2fposts%2f2022%2f06%2fswagger-usage-record%2f&name=Swagger%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95&description=%e4%be%9d%e8%b5%96%e5%af%bc%e5%85%a5%ef%bc%9a%201%26lt%3b%21--%20swagger%e6%89%80%e9%9c%80%e4%be%9d%e8%b5%96%20--%26gt%3b%202%26lt%3bdependency%26gt%3b%203%20%26lt%3bgroupId%26gt%3bio.springfox%26lt%3b%2fgroupId%26gt%3b%204%20%26lt%3bartifactId%26gt%3bspringfox-swagger2%26lt%3b%2fartifactId%26gt%3b%205%20%26lt%3bversion%26gt%3b2.6.1%26lt%3b%2fversion%26gt%3b%206%26lt%3b%2fdependency%26gt%3b%207%26lt%3bdependency%26gt%3b%208%20%26lt%3bgroupId%26gt%3bio.springfox%26lt%3b%2fgroupId%26gt%3b%209%20%26lt%3bartifactId%26gt%3bspringfox-swagger-ui%26lt%3b%2fartifactId%26gt%3b%2010%20%26lt%3bversion%26gt%3b2.6.1%26lt%3b%2fversion%26gt%3b%2011%26lt%3b%2fdependency%26gt%3b%20%e9%85%8d%e7%bd%aeSwagger%20%2fconfig%2fSwaggerConfig.java%0a1%40Configuration%202%40EnableSwagger2%203public%20class%20SwaggerConfig%20%7b%204%20%40Bean%205%20public%20Docket%20createRestApi%28%29%20%7b%206%20return%20new%20Docket%28DocumentationType.SWAGGER_2%29%207%20.apiInfo%28apiInfo%28%29%29%208%20.select%28%29%209%20.apis%28RequestHandlerSelectors.withClassAnnotation%28Api.class%29%29%2010%20.paths%28PathSelectors.any%28%29%29%2011%20.build%28%29%3b%2012%20%7d%2013%2014%20%2f%2f%20%e5%9f%ba%e6%9c%ac%e4%bf%a1%e6%81%af%e7%9a%84%e9%85%8d%e7%bd%ae%ef%bc%8c%e4%bf%a1%e6%81%af%e4%bc%9a%e5%9c%a8api%e6%96%87%e6%a1%a3%e4%b8%8a%e6%98%be%e7%a4%ba%2015%20private%20ApiInfo%20apiInfo%28%29%20%7b%2016%20return%20new%20ApiInfoBuilder%28%29%2017%20.title%28%26%2334%3bjzh%e6%b5%8b%e8%af%95%e7%9a%84%e6%8e%a5%e5%8f%a3%e6%96%87%e6%a1%a3%26%2334%3b%29%2018%20.description%28%26%2334%3bxx%e7%9b%b8%e5%85%b3%e6%8e%a5%e5%8f%a3%e7%9a%84%e6%96%87%e6%a1%a3%26%2334%3b%29%2019%20.termsOfServiceUrl%28%26%2334%3bhttp%3a%2f%2flocalhost%3a7777%26%2334%3b%29%2020%20." aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fposts%2f2022%2f06%2fswagger-usage-record%2f&t=Swagger%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=akynazh.site%2fposts%2f2022%2f06%2fswagger-usage-record%2f&t=Swagger%20%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95" aria-label="Hacker News">
       <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
     </a>
   </li>
@@ -469,11 +469,11 @@
     <nav>
       <ul>
          
-        <li><a href="/">Home</a></li>
+        <li><a href="akynazh.site/">Home</a></li>
          
-        <li><a href="/posts">Archives</a></li>
+        <li><a href="akynazh.site/posts">Archives</a></li>
          
-        <li><a href="/about">About</a></li>
+        <li><a href="akynazh.site/about">About</a></li>
         
       </ul>
     </nav>
