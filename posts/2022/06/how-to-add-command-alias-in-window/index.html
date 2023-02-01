@@ -42,7 +42,7 @@ PowerShell添加别名的方法 为PowerShell设置临时的别名 1PS C:\Users\
   
   
   
-  <link rel="stylesheet" href="https://akynazh.site/css/styles.54a004dcb18c41cec44945b800598274d93a311a692d3cedfc239acce63bcfcbc22c2f254f565108dde035bfbe20d307ea6f0c0772a7f4c302c9d85751358ebb.css" integrity="sha512-VKAE3LGMQc7ESUW4AFmCdNk6MRppLTzt/COazOY7z8vCLC8lT1ZRCN3gNb&#43;&#43;INMH6m8MB3Kn9MMCydhXUTWOuw==">
+  <link rel="stylesheet" href="https://akynazh.site/css/styles.cf664dcdab2592de34c9616ed348faf371290312b6ccb44b0b4bf803a889cf471456a5c2f39241b0a705d7ba99e55abfd1013666698f6009375e952ada4d2750.css" integrity="sha512-z2ZNzaslkt40yWFu00j683EpAxK2zLRLC0v4A6iJz0cUVqXC85JBsKcF17qZ5Vq/0QE2ZmmPYAk3XpUq2k0nUA==">
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
@@ -259,7 +259,7 @@ PowerShell添加别名的方法 为PowerShell设置临时的别名 1PS C:\Users\
 <h2 id="cmd添加别名的方法">CMD添加别名的方法</h2>
 <h3 id="设置临时的别名">设置临时的别名</h3>
 <p>可以通过doskey命令实现。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bat" data-lang="bat"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>doskey ls=echo ====== <span style="color:#f1fa8c">^&amp;^&amp;</span> dir /b $* <span style="color:#f1fa8c">^&amp;^&amp;</span> echo ======
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bat" data-lang="bat"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>doskey ls=echo ====== <span style="color:#b62;font-weight:bold">^&amp;^&amp;</span> dir /b $* <span style="color:#b62;font-weight:bold">^&amp;^&amp;</span> echo ======
 </span></span></code></pre></div><p><code>$*</code>表示还可能有其他命令参数，<code>^&amp;^&amp;</code>用于分开多条命令。</p>
 <p>单纯在一个cmd窗口中使用doskey设置别名，别名只能在该窗口中使用。</p>
 <h3 id="设置永久的别名">设置永久的别名</h3>
@@ -267,9 +267,9 @@ PowerShell添加别名的方法 为PowerShell设置临时的别名 1PS C:\Users\
 <ol>
 <li>编写脚本：</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bat" data-lang="bat"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>@<span style="color:#ff79c6">echo</span> off
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bat" data-lang="bat"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>@<span style="color:#a2f;font-weight:bold">echo</span> off
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>doskey ls=dir /b $*
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>doskey lss=echo ====== <span style="color:#f1fa8c">^&amp;^&amp;</span> dir /b $* <span style="color:#f1fa8c">^&amp;^&amp;</span> echo ======
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>doskey lss=echo ====== <span style="color:#b62;font-weight:bold">^&amp;^&amp;</span> dir /b $* <span style="color:#b62;font-weight:bold">^&amp;^&amp;</span> echo ======
 </span></span></code></pre></div><ol start="2">
 <li>添加路径到注册表</li>
 </ol>
@@ -279,38 +279,38 @@ PowerShell添加别名的方法 为PowerShell设置临时的别名 1PS C:\Users\
 <p>通过doskey的方式，挺方便的，但是在命令非常多的情况下不是很方便，同时，设置的命令还不可以在powershell下运行。</p>
 <h2 id="powershell添加别名的方法">PowerShell添加别名的方法</h2>
 <h3 id="为powershell设置临时的别名">为PowerShell设置临时的别名</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ps1" data-lang="ps1"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#8be9fd;font-style:italic">PS </span>C:\Users\akyna&gt; <span style="color:#8be9fd;font-style:italic">set-alias</span> escc esc
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#8be9fd;font-style:italic">PS </span>C:\Users\akyna&gt; escc
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ps1" data-lang="ps1"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#a2f">PS </span>C:\Users\akyna&gt; <span style="color:#a2f">set-alias</span> escc esc
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#a2f">PS </span>C:\Users\akyna&gt; escc
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>......
 </span></span></code></pre></div><p>如果带参数，则可以通过function进行：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ps1" data-lang="ps1"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#8be9fd;font-style:italic">PS </span>C:\Users\akyna&gt; <span style="color:#8be9fd;font-style:italic">function</span> <span style="color:#8be9fd;font-style:italic">func{nircmd</span> emptybin}
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#8be9fd;font-style:italic">PS </span>C:\Users\akyna&gt; <span style="color:#8be9fd;font-style:italic">set-alias</span> ctrash func
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#8be9fd;font-style:italic">PS </span>C:\Users\akyna&gt; ctrash
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ps1" data-lang="ps1"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#a2f">PS </span>C:\Users\akyna&gt; <span style="color:#a2f;font-weight:bold">function</span><span style="color:#bbb"> </span><span style="color:#a2f">func{nircmd</span> emptybin}
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#a2f">PS </span>C:\Users\akyna&gt; <span style="color:#a2f">set-alias</span> ctrash func
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#a2f">PS </span>C:\Users\akyna&gt; ctrash
 </span></span></code></pre></div><p>这样的别名只是在当前会话下有效，开启另一个shell就失效了。</p>
 <p>可以通过<code>export-alias my-alias.txt</code>导出当前会话下的alias，在其他shell中，通过<code>import-alias my-alias.txt</code>即可使用。</p>
 <h3 id="删除pwershell临时别名">删除PwerShell临时别名</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ps1" data-lang="ps1"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#8be9fd;font-style:italic">PS </span>C:\Users\akyna&gt; <span style="color:#8be9fd;font-style:italic">remove-item</span> <span style="color:#8be9fd;font-style:italic">alias</span>:escc
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#8be9fd;font-style:italic">PS </span>C:\Users\akyna&gt; escc
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>escc: The term <span style="color:#f1fa8c">&#39;escc&#39;</span> is not recognized as a name of a cmdlet, function, script file, or executable program.
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ps1" data-lang="ps1"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#a2f">PS </span>C:\Users\akyna&gt; <span style="color:#a2f">remove-item</span> <span style="color:#a2f">alias</span><span style="">:</span>escc
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#a2f">PS </span>C:\Users\akyna&gt; escc
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>escc<span style="">:</span> The term <span style="color:#b44">&#39;escc&#39;</span> is not recognized as a name of a cmdlet, function, script file, or executable program.
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>...
 </span></span></code></pre></div><h3 id="为powershell设置永久的命令别名">为PowerShell设置永久的命令别名</h3>
 <ol>
 <li>打开 PowerShell ，运行 echo $profile，会输出一个powershell配置文件的路径。</li>
 <li>打开文件，按以下格式可以设置多条别名：</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ps1" data-lang="ps1"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>function 别名 { 需要替代的命令，可以包含空格 }
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ps1" data-lang="ps1"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>function <span style="">别名</span> { <span style="">需要替代的命令，可以包含空格</span> }
 </span></span></code></pre></div><p><strong>e.g.</strong></p>
 <p>一个升级vscode的命令：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ps1" data-lang="ps1"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#6272a4"># 升级vscode</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#8be9fd;font-style:italic">function</span> <span style="color:#8be9fd;font-style:italic">updatevs</span> {
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ps1" data-lang="ps1"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#080;font-style:italic"># 升级vscode</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#a2f;font-weight:bold">function</span><span style="color:#bbb"> </span><span style="color:#a2f">updatevs</span> {
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>    taskkill /f /t /im code.exe
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>    <span style="color:#8be9fd;font-style:italic">move </span>D:\a\VSCode* D:\a\vs.zip
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>    Bandizip.exe x -o:<span style="color:#f1fa8c">&#34;D:\tools3\vscode\Microsoft VS Code&#34;</span> -aoa <span style="color:#f1fa8c">&#34;D:\a\vs.zip&#34;</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>    <span style="color:#8be9fd;font-style:italic">del </span>D:\a\vs.zip
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>    <span style="color:#a2f">move </span>D:\a\VSCode* D:\a\vs.zip
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>    Bandizip.exe x -o:<span style="color:#b44">&#34;D:\tools3\vscode\Microsoft VS Code&#34;</span> -aoa <span style="color:#b44">&#34;D:\a\vs.zip&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>    <span style="color:#a2f">del </span>D:\a\vs.zip
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>    code
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>    pause
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>}
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span><span style="color:#6272a4">#其他别名</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span><span style="color:#080;font-style:italic">#其他别名</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>...
 </span></span></code></pre></div><p>以后，新的别名都可以继续添加在该文件中，非常方便。</p>
 <ol start="3">
@@ -361,7 +361,7 @@ PowerShell添加别名的方法 为PowerShell设置临时的别名 1PS C:\Users\
     repo="akynazh/hugo-comment"
     issue-term="pathname"
     label="akynazh"
-    theme="github-dark"
+    theme="github-light"
     crossorigin="anonymous"
     async>
   </script>
