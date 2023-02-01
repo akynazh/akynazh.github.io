@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Jzh</copyright>
-    <lastBuildDate>Tue, 31 Jan 2023 17:22:29 +0800</lastBuildDate><atom:link href="https://akynazh.site/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 01 Feb 2023 13:50:44 +0800</lastBuildDate><atom:link href="https://akynazh.site/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Algorithm</title>
+      <link>https://akynazh.site/categories/algorithm/</link>
+      <pubDate>Wed, 01 Feb 2023 13:50:44 +0800</pubDate>
+      
+      <guid>https://akynazh.site/categories/algorithm/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>OS</title>
       <link>https://akynazh.site/categories/os/</link>
@@ -68,15 +77,6 @@
       <pubDate>Tue, 06 Sep 2022 17:16:05 +0800</pubDate>
       
       <guid>https://akynazh.site/categories/book/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Algorithm</title>
-      <link>https://akynazh.site/categories/algorithm/</link>
-      <pubDate>Thu, 21 Jul 2022 20:44:54 +0800</pubDate>
-      
-      <guid>https://akynazh.site/categories/algorithm/</guid>
       <description></description>
     </item>
     

@@ -7,7 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Jzh</copyright>
-    <lastBuildDate>Thu, 21 Jul 2022 20:44:54 +0800</lastBuildDate><atom:link href="https://akynazh.site/categories/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 01 Feb 2023 13:50:44 +0800</lastBuildDate><atom:link href="https://akynazh.site/categories/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>求解有向图和无向图中是否存在环的方法</title>
+      <link>https://akynazh.site/posts/2023/02/a-method-to-solve-whether-there-are-rings-in-directed-graphs-and-undirected-graphs/</link>
+      <pubDate>Wed, 01 Feb 2023 13:50:44 +0800</pubDate>
+      
+      <guid>https://akynazh.site/posts/2023/02/a-method-to-solve-whether-there-are-rings-in-directed-graphs-and-undirected-graphs/</guid>
+      <description>求解无向图中是否存在环 无向图中是否存在环，可以通过DFS来实现。
+由于他是无向图，所以每次开始一次新的递归即进入一个新的连通子图，在该次dfs中可以通过判断新纳入的结点是否与所在连通子图中其他已经访问过的结点存在边，如果存在则证明存在环。
+1int mat[maxn][maxn], vis[maxn]; 2int dfs(int v) { 3 vis[v] = 1; 4 for (int i = 0; i &amp;lt; num; i++) if (mat[v][i]) { 5 if (vis[i] || dfs(i)) return 1; // 该连通子图新纳入的结点与原连通子图中的某一结点有边，即产生了环 6 } 7 return 0; 8} 9 10memset(vis, 0, sizeof(vis)); 11int flag = 0; // 无环标志 12for (int j = 0; j &amp;lt; num; j++) { 13 if (!vis[j]) flag = dfs(j); 14 // 因为是无向图，所以每开始一次新的递归即进入一个新的连通子图，一定不会访问到其他连通子图的结点 15 if (flag) break; // 如果在该连通子图中找到环则直接结束递归 16} 求解有向图中是否存在环 这里我也尝试过使用如上DFS的解法，但似乎行不通。</description>
+    </item>
+    
     <item>
       <title>理解快速幂运算并进行应用</title>
       <link>https://akynazh.site/posts/2022/07/understand-and-apply-fast-power-operation/</link>
@@ -37,17 +48,6 @@ $result = 3 \times 9 \times 6561 = 3^{2^0} \times 3^{2^1} \times 3^{2^3}$
       <description>二分图问题 能否只用2种颜色对一个图上色，并且使得共边顶点不同色？
 代码解决：
 1vector&amp;lt;int&amp;gt; G[MAX_V]; 2int vertexes; 3int edges; 4int color[MAX_V]; //二分图，颜色为1或-1 5bool dfs(int v, int c) { 6 color[v] = c; 7 for (int i = 0; i &amp;lt; G[v].size(); i++) { 8 if (color[G[v][i]] == c) return false; 9 if (color[G[v][i]] == 0 &amp;amp;&amp;amp; !dfs(G[v][i], -c)) return false; 10 } 11 return true; 12} 13void solve() { 14 for (int i = 0; i &amp;lt; vertexes; i++) { 15 if (color[i] == 0) { 16 if (!</description>
-    </item>
-    
-    <item>
-      <title>求解有向图和无向图中是否存在环的方法</title>
-      <link>https://akynazh.site/posts/2020/12/a-method-to-solve-whether-there-are-rings-in-directed-graphs-and-undirected-graphs/</link>
-      <pubDate>Wed, 02 Dec 2020 23:50:44 +0800</pubDate>
-      
-      <guid>https://akynazh.site/posts/2020/12/a-method-to-solve-whether-there-are-rings-in-directed-graphs-and-undirected-graphs/</guid>
-      <description>求解无向图中是否存在环 无向图中是否存在环，可以通过DFS来实现。
-由于他是无向图，所以每次开始一次新的递归即进入一个新的连通子图，在该次dfs中可以通过判断新纳入的结点是否与所在连通子图中其他已经访问过的结点存在边，如果存在则证明存在环。
-1int mat[maxn][maxn], vis[maxn]; 2int dfs(int v) { 3 vis[v] = 1; 4 for (int i = 0; i &amp;lt; num; i++) if (mat[v][i]) { 5 if (vis[i] || dfs(i)) return 1; // 该连通子图新纳入的结点与原连通子图中的某一结点有边，即产生了环 6 } 7 return 0; 8} 9 10memset(vis, 0, sizeof(vis)); 11int flag = 0; // 无环标志 12for (int j = 0; j &amp;lt; num; j++) { 13 if (!vis[j]) flag = dfs(j); 14 // 因为是无向图，所以每开始一次新的递归即进入一个新的连通子图，一定不会访问到其他连通子图的结点 15 if (flag) break; // 如果在该连通子图中找到环则直接结束递归 16} 求解有向图中是否存在环 这里我也尝试过使用如上DFS的解法，但似乎行不通。</description>
     </item>
     
     <item>

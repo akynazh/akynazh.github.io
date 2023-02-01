@@ -2,25 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://akynazh.site/categories/</loc>
-    <lastmod>2023-01-31T17:22:29+08:00</lastmod>
+    <loc>https://akynazh.site/tags/algorithm/</loc>
+    <lastmod>2023-02-01T13:50:44+08:00</lastmod>
   </url><url>
-    <loc>https://akynazh.site/tags/crontab/</loc>
-    <lastmod>2023-01-31T17:22:29+08:00</lastmod>
+    <loc>https://akynazh.site/categories/algorithm/</loc>
+    <lastmod>2023-02-01T13:50:44+08:00</lastmod>
+  </url><url>
+    <loc>https://akynazh.site/categories/</loc>
+    <lastmod>2023-02-01T13:50:44+08:00</lastmod>
   </url><url>
     <loc>https://akynazh.site/</loc>
+    <lastmod>2023-02-01T13:50:44+08:00</lastmod>
+  </url><url>
+    <loc>https://akynazh.site/posts/</loc>
+    <lastmod>2023-02-01T13:50:44+08:00</lastmod>
+  </url><url>
+    <loc>https://akynazh.site/tags/</loc>
+    <lastmod>2023-02-01T13:50:44+08:00</lastmod>
+  </url><url>
+    <loc>https://akynazh.site/posts/2023/02/a-method-to-solve-whether-there-are-rings-in-directed-graphs-and-undirected-graphs/</loc>
+    <lastmod>2023-02-01T13:50:44+08:00</lastmod>
+  </url><url>
+    <loc>https://akynazh.site/tags/crontab/</loc>
     <lastmod>2023-01-31T17:22:29+08:00</lastmod>
   </url><url>
     <loc>https://akynazh.site/categories/os/</loc>
     <lastmod>2023-01-31T17:22:29+08:00</lastmod>
   </url><url>
-    <loc>https://akynazh.site/posts/</loc>
-    <lastmod>2023-01-31T17:22:29+08:00</lastmod>
-  </url><url>
     <loc>https://akynazh.site/tags/schtasks/</loc>
-    <lastmod>2023-01-31T17:22:29+08:00</lastmod>
-  </url><url>
-    <loc>https://akynazh.site/tags/</loc>
     <lastmod>2023-01-31T17:22:29+08:00</lastmod>
   </url><url>
     <loc>https://akynazh.site/posts/2023/01/summary-of-timed-tasks/</loc>
@@ -263,12 +272,6 @@
     <loc>https://akynazh.site/posts/2022/07/openfeign-usage-record/</loc>
     <lastmod>2022-07-22T17:39:24+08:00</lastmod>
   </url><url>
-    <loc>https://akynazh.site/tags/algorithm/</loc>
-    <lastmod>2022-07-21T20:44:54+08:00</lastmod>
-  </url><url>
-    <loc>https://akynazh.site/categories/algorithm/</loc>
-    <lastmod>2022-07-21T20:44:54+08:00</lastmod>
-  </url><url>
     <loc>https://akynazh.site/tags/math/</loc>
     <lastmod>2022-07-21T20:44:54+08:00</lastmod>
   </url><url>
@@ -502,9 +505,6 @@
   </url><url>
     <loc>https://akynazh.site/posts/2020/12/summary-of-coloring-problems-of-graphs/</loc>
     <lastmod>2020-12-05T12:34:05+08:00</lastmod>
-  </url><url>
-    <loc>https://akynazh.site/posts/2020/12/a-method-to-solve-whether-there-are-rings-in-directed-graphs-and-undirected-graphs/</loc>
-    <lastmod>2020-12-02T23:50:44+08:00</lastmod>
   </url><url>
     <loc>https://akynazh.site/tags/acgn/</loc>
     <lastmod>2020-11-28T18:24:12+08:00</lastmod>
