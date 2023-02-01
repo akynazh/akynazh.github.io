@@ -6,18 +6,20 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Norwegian Wood</title>
-  <link rel='canonical' href='/tags/tcp/'>
+  <title> Location | Norwegian Wood</title>
+  <link rel='canonical' href='/location/'>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
-  <meta property="og:title" content="tcp" />
+  <meta property="og:title" content="Location" />
 <meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="/tags/tcp/" /><meta property="og:site_name" content="Norwegian Wood" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/location/" /><meta property="article:section" content="" />
+
+<meta property="og:site_name" content="Norwegian Wood" />
 
   <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="tcp"/>
+<meta name="twitter:title" content="Location"/>
 <meta name="twitter:description" content=""/>
 
   
@@ -66,38 +68,64 @@
 </header>
     
     
-<div id="archive">
-  
-  
-  
-
-  <ul class="post-list">
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="content" itemprop="articleBody">
     
-    
-    
-    
-    
-    
-    
-    
-    <li class="post-item ellipsis-line">
-      <nobr><time class="meta" datetime="2022-06-09 23:18:55 &#43;0800 CST" itemprop="datePublished">2022-06-09</time>
-        ··········&nbsp&nbsp
-        <a href="/posts/2022/06/analyze-tcp-principle-through-wireshark/"> 通过 Wireshark 分析 TCP 原理 </a>
-      </nobr>
-    </li>
-    
-  </ul>
-  
-  
-
-
-  
-</div>
+  </div>
+</article>
 
 
     
     
+    
+    <h2>Geo_Api_Info</h2>
+<h3>未格式化数据</h3>
+<code id="geo_info" style="white-space:nowrap; overflow-x: scroll">
+    获取定位中...
+</code>
+<h3>格式化数据</h3>
+<code id="geo_info_read">
+    ...
+</code>
+<script type="text/javascript">
+    window._AMapSecurityConfig = {
+        securityJsCode:'17f9e897e62e3ce272b2e7c14c5d1726',
+    }
+</script>
+<script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.15&key=afd26a2a0a138ba7510c246214324ee0&plugin=AMap.Driving"></script>
+<script type="text/javascript">
+    function onSuccess(res) {
+        geo_info = document.getElementById("geo_info");
+        geo_info_read = document.getElementById("geo_info_read");
+        geo_info.innerText = JSON.stringify(res)
+        geo_info_read.innerText = JSON.stringify(res, null, '    ');
+    }
+    function onFailure() {
+        geo_info = document.getElementById("geo_info");
+        geo_info.innerText = "定位失败，请刷新重试";
+    }
+    function getLocation() {
+        mapObj = new AMap.Map('iCenter');
+        mapObj.plugin('AMap.Geolocation', function () {
+            geolocation = new AMap.Geolocation({
+                enableHighAccuracy: true,
+                timeout: 10000,          
+                maximumAge: 0,           
+                convert: true,           
+                showButton: true,        
+                buttonPosition: 'LB',    
+                buttonOffset: new AMap.Pixel(10, 20),
+                panToLocation: false,     
+                zoomToAccuracy: false      
+            });
+            mapObj.addControl(geolocation);
+            geolocation.getCurrentPosition();
+            AMap.event.addListener(geolocation, 'complete', onSuccess);
+            AMap.event.addListener(geolocation, 'error', onFailure);      
+        });
+    }
+    getLocation();
+</script>
     
     
     <div id="fastSearch">

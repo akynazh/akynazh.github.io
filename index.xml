@@ -2279,8 +2279,17 @@ $ay_1 + b \times (x_1 -(a \div b) \times y_1) == gcd(a,b) $(2)</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/about/</guid>
-      <description>The name of this site comes from a song call Norwegian Wood, by The Beatles from their 1965 album Rubber Soul. The song&amp;rsquo;s special feeling attracts me and I love its subtle sense of sadness. By the way, Julia and And I love her are also my favorites.
+      <description>The name of this site comes from a song call Norwegian Wood, composed by The Beatles from their 1965 album Rubber Soul. The song&amp;rsquo;s special feeling attracts me and I love its subtle sense of sadness. By the way, Julia and And I love her are also my favorites of The Beatles.
 Norwegian Wood (ノルウェイの森) is also a 1987 novel by Haruki Murakami. I read this novel in 2020 and I also start to write blogs in 2020.</description>
+    </item>
+    
+    <item>
+      <title>Location</title>
+      <link>/location/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/location/</guid>
+      <description></description>
     </item>
     
   </channel>

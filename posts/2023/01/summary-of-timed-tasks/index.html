@@ -169,7 +169,7 @@
         <li><a href="#例子">例子</a></li>
         <li><a href="#crontab-环境变量问题">crontab 环境变量问题</a></li>
         <li><a href="#crontab-配置文件">crontab 配置文件</a></li>
-        <li><a href="#crontab日志位置">crontab日志位置：</a></li>
+        <li><a href="#crontab-日志位置">crontab 日志位置</a></li>
         <li><a href="#crontab-邮件位置">crontab 邮件位置</a></li>
       </ul>
     </li>
@@ -248,13 +248,14 @@
 <p>crontab 不会使用在 <code>.bashrc</code> 之类的文件中定义的变量和函数。</p>
 <p>解决方法是在 crontab 中通过 <code>bash -lc &quot;{your_cmd}&quot;</code> 调用脚本或命令。</p>
 <p>如果脚本还使用了 <code>os.system()</code> 之类的命令，则在 <code>os.system()</code> 也要通过 <code>bash -lc &quot;{your_cmd}&quot;</code> 调用脚本或命令。</p>
+<p>同时，在 crontab 中需要使用绝对路径。</p>
 <p>关于 <code>lc</code>:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>-c        If  the  -c  option is present, then commands are read from the first non-option argument command_string. ...
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>-l        Make bash act as if it had been invoked as a login shell (see INVOCATION below).
 </span></span></code></pre></div><h3 id="crontab-配置文件">crontab 配置文件</h3>
 <p>配置文件在：<code>/var/spool/cron/{用户名}</code></p>
 <p>每个用户对应一个 crontab 配置，所以在 crontab 语句中使用 ~ 是可以的。</p>
-<h3 id="crontab日志位置">crontab日志位置：</h3>
+<h3 id="crontab-日志位置">crontab 日志位置</h3>
 <p>Centos: <code>/var/log/cron</code></p>
 <p>Ubuntu / Debian:</p>
 <p>On a default installation the cron jobs get logged to <code>/var/log/syslog</code>.</p>
@@ -379,7 +380,7 @@
         <li><a href="#例子">例子</a></li>
         <li><a href="#crontab-环境变量问题">crontab 环境变量问题</a></li>
         <li><a href="#crontab-配置文件">crontab 配置文件</a></li>
-        <li><a href="#crontab日志位置">crontab日志位置：</a></li>
+        <li><a href="#crontab-日志位置">crontab 日志位置</a></li>
         <li><a href="#crontab-邮件位置">crontab 邮件位置</a></li>
       </ul>
     </li>
