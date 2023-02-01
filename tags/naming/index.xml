@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>naming on Norwegian Wood</title>
-    <link>http://akynazh.site/tags/naming/</link>
+    <link>https://akynazh.site</link>
     <description>Recent content in naming on Norwegian Wood</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Jzh</copyright>
-    <lastBuildDate>Thu, 08 Dec 2022 15:40:09 +0800</lastBuildDate><atom:link href="http://akynazh.site/tags/naming/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 08 Dec 2022 15:40:09 +0800</lastBuildDate><atom:link href="/tags/naming/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>开发中遇到的命名规范问题</title>
-      <link>http://akynazh.site/posts/2022/12/naming-standard-problems-encountered-in-development/</link>
+      <link>https://akynazh.site</link>
       <pubDate>Thu, 08 Dec 2022 15:40:09 +0800</pubDate>
       
-      <guid>http://akynazh.site/posts/2022/12/naming-standard-problems-encountered-in-development/</guid>
+      <guid>https://akynazh.site</guid>
       <description>后端中与数据库交互时 数据库一般采用下划线命名，而对于 java 而言，实体类的命名应当是驼峰式的命名，所以在与数据库交互时需要注意进行转换。
 对于采用了 Mybatis-plus 框架的应用，无需考虑此问题，因为它已经帮我们做好转换了，对应的配置如下：
 1mybatis-plus: 2 configuration: 3 map-underscore-to-camel-case: true 如果你数据库命名已经采用了驼峰式命名，需要将该配置置为 false。（默认为 true）

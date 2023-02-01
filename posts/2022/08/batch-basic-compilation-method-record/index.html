@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title> Batch 基本编写方法记录 | Norwegian Wood</title>
-  <link rel='canonical' href='http://akynazh.site/posts/2022/08/batch-basic-compilation-method-record/'>
+  <link rel='canonical' href='/posts/2022/08/batch-basic-compilation-method-record/'>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
@@ -13,7 +13,7 @@
 1@echo off 2 3set money=100 4echo 初始金额： %money% 5 6set /a money=%money%*2 7set /a money=%money%&#43;100 8echo 现在的金额：%money% 选择并跳转 :{point} 用于指定一个跳转点。
 1@echo off 2 3set /p ch=&#34;y/n:&#34; 4if &#34;%ch%&#34;==&#34;&#34; ( 5 goto end 6) else if &#34;%ch%&#34;==&#34;n&#34; ( 7 goto no 8) else if &#34;%ch%&#34;==&#34;y&#34; ( 9 goto yes 10) else ( 11 goto end 12) 13 14:no 15echo NO 16goto end 17 18:yes 19echo YES 20goto end 21 22:end 循环语句 通过%%x设置和访问循环值； 通过(start, steps, end)设置循环； /l 将通过比较start和end来执行迭代。 1@echo off 2 3for /l %%x in (1, 5, 100) do ( 4 echo hello, jzh-%%x 5) 变量动态变化 setlocal enabledelayedexpansion开启变量延迟，使得变量可以动态变化; 需通过!" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://akynazh.site/posts/2022/08/batch-basic-compilation-method-record/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="/posts/2022/08/batch-basic-compilation-method-record/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-08-03T23:34:36+08:00" />
 <meta property="article:modified_time" content="2022-08-03T23:34:36+08:00" /><meta property="og:site_name" content="Norwegian Wood" />
 
@@ -28,7 +28,7 @@
   
   
   
-  <link rel="stylesheet" href="http://akynazh.site/css/styles.43c5f4c45b6248e071aa0f9eae2d299f06dc6e7d91ae3c1a2e4bcde6252688b0db6d6f3722b74f3c851c6e1b5ea207cff6868c78a11f7c137fd8cc01748ba457.css" integrity="sha512-Q8X0xFtiSOBxqg&#43;eri0pnwbcbn2RrjwaLkvN5iUmiLDbbW83IrdPPIUcbhteogfP9oaMeKEffBN/2MwBdIukVw==">
+  <link rel="stylesheet" href="/css/styles.43c5f4c45b6248e071aa0f9eae2d299f06dc6e7d91ae3c1a2e4bcde6252688b0db6d6f3722b74f3c851c6e1b5ea207cff6868c78a11f7c137fd8cc01748ba457.css" integrity="sha512-Q8X0xFtiSOBxqg&#43;eri0pnwbcbn2RrjwaLkvN5iUmiLDbbW83IrdPPIUcbhteogfP9oaMeKEffBN/2MwBdIukVw==">
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
@@ -66,14 +66,14 @@
       <ul>
         
         <li>
-          <a class="icon" href="http://akynazh.site/posts/2022/07/zipkin-usage-record/" aria-label="Previous">
+          <a class="icon" href="/posts/2022/07/zipkin-usage-record/" aria-label="Previous">
             <i class="fas fa-chevron-left" aria-hidden="true"></i>
           </a>
         </li>
         
         
         <li>
-          <a class="icon" href="http://akynazh.site/posts/2022/08/docker-compose-quickly-configures-nacos-cluster-environment/" aria-label="Next">
+          <a class="icon" href="/posts/2022/08/docker-compose-quickly-configures-nacos-cluster-environment/" aria-label="Next">
             <i class="fas fa-chevron-right" aria-hidden="true"></i>
           </a>
         </li>
@@ -110,47 +110,47 @@
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=http%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fbatch-basic-compilation-method-record%2f" aria-label="Facebook">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=%2fposts%2f2022%2f08%2fbatch-basic-compilation-method-record%2f" aria-label="Facebook">
       <i class="fab fa-facebook " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=http%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fbatch-basic-compilation-method-record%2f&text=Batch%20%e5%9f%ba%e6%9c%ac%e7%bc%96%e5%86%99%e6%96%b9%e6%b3%95%e8%ae%b0%e5%bd%95" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=%2fposts%2f2022%2f08%2fbatch-basic-compilation-method-record%2f&text=Batch%20%e5%9f%ba%e6%9c%ac%e7%bc%96%e5%86%99%e6%96%b9%e6%b3%95%e8%ae%b0%e5%bd%95" aria-label="Twitter">
       <i class="fab fa-twitter " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=http%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fbatch-basic-compilation-method-record%2f&title=Batch%20%e5%9f%ba%e6%9c%ac%e7%bc%96%e5%86%99%e6%96%b9%e6%b3%95%e8%ae%b0%e5%bd%95" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fposts%2f2022%2f08%2fbatch-basic-compilation-method-record%2f&title=Batch%20%e5%9f%ba%e6%9c%ac%e7%bc%96%e5%86%99%e6%96%b9%e6%b3%95%e8%ae%b0%e5%bd%95" aria-label="Linkedin">
       <i class="fab fa-linkedin " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fbatch-basic-compilation-method-record%2f&is_video=false&description=Batch%20%e5%9f%ba%e6%9c%ac%e7%bc%96%e5%86%99%e6%96%b9%e6%b3%95%e8%ae%b0%e5%bd%95" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fposts%2f2022%2f08%2fbatch-basic-compilation-method-record%2f&is_video=false&description=Batch%20%e5%9f%ba%e6%9c%ac%e7%bc%96%e5%86%99%e6%96%b9%e6%b3%95%e8%ae%b0%e5%bd%95" aria-label="Pinterest">
       <i class="fab fa-pinterest " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=Batch%20%e5%9f%ba%e6%9c%ac%e7%bc%96%e5%86%99%e6%96%b9%e6%b3%95%e8%ae%b0%e5%bd%95&body=Check out this article: http%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fbatch-basic-compilation-method-record%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=Batch%20%e5%9f%ba%e6%9c%ac%e7%bc%96%e5%86%99%e6%96%b9%e6%b3%95%e8%ae%b0%e5%bd%95&body=Check out this article: %2fposts%2f2022%2f08%2fbatch-basic-compilation-method-record%2f" aria-label="Email">
       <i class="fas fa-envelope " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=http%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fbatch-basic-compilation-method-record%2f&title=Batch%20%e5%9f%ba%e6%9c%ac%e7%bc%96%e5%86%99%e6%96%b9%e6%b3%95%e8%ae%b0%e5%bd%95" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=%2fposts%2f2022%2f08%2fbatch-basic-compilation-method-record%2f&title=Batch%20%e5%9f%ba%e6%9c%ac%e7%bc%96%e5%86%99%e6%96%b9%e6%b3%95%e8%ae%b0%e5%bd%95" aria-label="Pocket">
       <i class="fab fa-get-pocket " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=http%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fbatch-basic-compilation-method-record%2f&title=Batch%20%e5%9f%ba%e6%9c%ac%e7%bc%96%e5%86%99%e6%96%b9%e6%b3%95%e8%ae%b0%e5%bd%95" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=%2fposts%2f2022%2f08%2fbatch-basic-compilation-method-record%2f&title=Batch%20%e5%9f%ba%e6%9c%ac%e7%bc%96%e5%86%99%e6%96%b9%e6%b3%95%e8%ae%b0%e5%bd%95" aria-label="reddit">
       <i class="fab fa-reddit " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=http%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fbatch-basic-compilation-method-record%2f&name=Batch%20%e5%9f%ba%e6%9c%ac%e7%bc%96%e5%86%99%e6%96%b9%e6%b3%95%e8%ae%b0%e5%bd%95&description=%e8%af%bb%e5%8f%96%e8%be%93%e5%85%a5%201set%20%2fp%20ch%3d%26%2334%3by%2fn%3a%26%2334%3b%202echo%20%25ch%25%20%e5%8f%98%e9%87%8f%e8%bf%90%e7%ae%97%20%e9%80%9a%e8%bf%87%25%7bvar%7d%25%e8%ae%bf%e9%97%ae%e5%8f%98%e9%87%8f%ef%bc%8c%e9%80%9a%e8%bf%87%2fa%e8%bf%9b%e8%a1%8c%e8%a1%a8%e8%be%be%e5%bc%8f%e8%ae%a1%e7%ae%97%e8%ae%be%e7%bd%ae%e5%80%bc%e3%80%82%0a1%40echo%20off%202%203set%20money%3d100%204echo%20%e5%88%9d%e5%a7%8b%e9%87%91%e9%a2%9d%ef%bc%9a%20%25money%25%205%206set%20%2fa%20money%3d%25money%25%2a2%207set%20%2fa%20money%3d%25money%25%2b100%208echo%20%e7%8e%b0%e5%9c%a8%e7%9a%84%e9%87%91%e9%a2%9d%ef%bc%9a%25money%25%20%e9%80%89%e6%8b%a9%e5%b9%b6%e8%b7%b3%e8%bd%ac%20%3a%7bpoint%7d%20%e7%94%a8%e4%ba%8e%e6%8c%87%e5%ae%9a%e4%b8%80%e4%b8%aa%e8%b7%b3%e8%bd%ac%e7%82%b9%e3%80%82%0a1%40echo%20off%202%203set%20%2fp%20ch%3d%26%2334%3by%2fn%3a%26%2334%3b%204if%20%26%2334%3b%25ch%25%26%2334%3b%3d%3d%26%2334%3b%26%2334%3b%20%28%205%20goto%20end%206%29%20else%20if%20%26%2334%3b%25ch%25%26%2334%3b%3d%3d%26%2334%3bn%26%2334%3b%20%28%207%20goto%20no%208%29%20else%20if%20%26%2334%3b%25ch%25%26%2334%3b%3d%3d%26%2334%3by%26%2334%3b%20%28%209%20goto%20yes%2010%29%20else%20%28%2011%20goto%20end%2012%29%2013%2014%3ano%2015echo%20NO%2016goto%20end%2017%2018%3ayes%2019echo%20YES%2020goto%20end%2021%2022%3aend%20%e5%be%aa%e7%8e%af%e8%af%ad%e5%8f%a5%20%e9%80%9a%e8%bf%87%25%25x%e8%ae%be%e7%bd%ae%e5%92%8c%e8%ae%bf%e9%97%ae%e5%be%aa%e7%8e%af%e5%80%bc%ef%bc%9b%20%e9%80%9a%e8%bf%87%28start%2c%20steps%2c%20end%29%e8%ae%be%e7%bd%ae%e5%be%aa%e7%8e%af%ef%bc%9b%20%2fl%20%e5%b0%86%e9%80%9a%e8%bf%87%e6%af%94%e8%be%83start%e5%92%8cend%e6%9d%a5%e6%89%a7%e8%a1%8c%e8%bf%ad%e4%bb%a3%e3%80%82%201%40echo%20off%202%203for%20%2fl%20%25%25x%20in%20%281%2c%205%2c%20100%29%20do%20%28%204%20echo%20hello%2c%20jzh-%25%25x%205%29%20%e5%8f%98%e9%87%8f%e5%8a%a8%e6%80%81%e5%8f%98%e5%8c%96%20setlocal%20enabledelayedexpansion%e5%bc%80%e5%90%af%e5%8f%98%e9%87%8f%e5%bb%b6%e8%bf%9f%ef%bc%8c%e4%bd%bf%e5%be%97%e5%8f%98%e9%87%8f%e5%8f%af%e4%bb%a5%e5%8a%a8%e6%80%81%e5%8f%98%e5%8c%96%3b%20%e9%9c%80%e9%80%9a%e8%bf%87%21" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f08%2fbatch-basic-compilation-method-record%2f&name=Batch%20%e5%9f%ba%e6%9c%ac%e7%bc%96%e5%86%99%e6%96%b9%e6%b3%95%e8%ae%b0%e5%bd%95&description=%e8%af%bb%e5%8f%96%e8%be%93%e5%85%a5%201set%20%2fp%20ch%3d%26%2334%3by%2fn%3a%26%2334%3b%202echo%20%25ch%25%20%e5%8f%98%e9%87%8f%e8%bf%90%e7%ae%97%20%e9%80%9a%e8%bf%87%25%7bvar%7d%25%e8%ae%bf%e9%97%ae%e5%8f%98%e9%87%8f%ef%bc%8c%e9%80%9a%e8%bf%87%2fa%e8%bf%9b%e8%a1%8c%e8%a1%a8%e8%be%be%e5%bc%8f%e8%ae%a1%e7%ae%97%e8%ae%be%e7%bd%ae%e5%80%bc%e3%80%82%0a1%40echo%20off%202%203set%20money%3d100%204echo%20%e5%88%9d%e5%a7%8b%e9%87%91%e9%a2%9d%ef%bc%9a%20%25money%25%205%206set%20%2fa%20money%3d%25money%25%2a2%207set%20%2fa%20money%3d%25money%25%2b100%208echo%20%e7%8e%b0%e5%9c%a8%e7%9a%84%e9%87%91%e9%a2%9d%ef%bc%9a%25money%25%20%e9%80%89%e6%8b%a9%e5%b9%b6%e8%b7%b3%e8%bd%ac%20%3a%7bpoint%7d%20%e7%94%a8%e4%ba%8e%e6%8c%87%e5%ae%9a%e4%b8%80%e4%b8%aa%e8%b7%b3%e8%bd%ac%e7%82%b9%e3%80%82%0a1%40echo%20off%202%203set%20%2fp%20ch%3d%26%2334%3by%2fn%3a%26%2334%3b%204if%20%26%2334%3b%25ch%25%26%2334%3b%3d%3d%26%2334%3b%26%2334%3b%20%28%205%20goto%20end%206%29%20else%20if%20%26%2334%3b%25ch%25%26%2334%3b%3d%3d%26%2334%3bn%26%2334%3b%20%28%207%20goto%20no%208%29%20else%20if%20%26%2334%3b%25ch%25%26%2334%3b%3d%3d%26%2334%3by%26%2334%3b%20%28%209%20goto%20yes%2010%29%20else%20%28%2011%20goto%20end%2012%29%2013%2014%3ano%2015echo%20NO%2016goto%20end%2017%2018%3ayes%2019echo%20YES%2020goto%20end%2021%2022%3aend%20%e5%be%aa%e7%8e%af%e8%af%ad%e5%8f%a5%20%e9%80%9a%e8%bf%87%25%25x%e8%ae%be%e7%bd%ae%e5%92%8c%e8%ae%bf%e9%97%ae%e5%be%aa%e7%8e%af%e5%80%bc%ef%bc%9b%20%e9%80%9a%e8%bf%87%28start%2c%20steps%2c%20end%29%e8%ae%be%e7%bd%ae%e5%be%aa%e7%8e%af%ef%bc%9b%20%2fl%20%e5%b0%86%e9%80%9a%e8%bf%87%e6%af%94%e8%be%83start%e5%92%8cend%e6%9d%a5%e6%89%a7%e8%a1%8c%e8%bf%ad%e4%bb%a3%e3%80%82%201%40echo%20off%202%203for%20%2fl%20%25%25x%20in%20%281%2c%205%2c%20100%29%20do%20%28%204%20echo%20hello%2c%20jzh-%25%25x%205%29%20%e5%8f%98%e9%87%8f%e5%8a%a8%e6%80%81%e5%8f%98%e5%8c%96%20setlocal%20enabledelayedexpansion%e5%bc%80%e5%90%af%e5%8f%98%e9%87%8f%e5%bb%b6%e8%bf%9f%ef%bc%8c%e4%bd%bf%e5%be%97%e5%8f%98%e9%87%8f%e5%8f%af%e4%bb%a5%e5%8a%a8%e6%80%81%e5%8f%98%e5%8c%96%3b%20%e9%9c%80%e9%80%9a%e8%bf%87%21" aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=http%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fbatch-basic-compilation-method-record%2f&t=Batch%20%e5%9f%ba%e6%9c%ac%e7%bc%96%e5%86%99%e6%96%b9%e6%b3%95%e8%ae%b0%e5%bd%95" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fposts%2f2022%2f08%2fbatch-basic-compilation-method-record%2f&t=Batch%20%e5%9f%ba%e6%9c%ac%e7%bc%96%e5%86%99%e6%96%b9%e6%b3%95%e8%ae%b0%e5%bd%95" aria-label="Hacker News">
       <i class="fab fa-hacker-news " aria-hidden="true"></i>
     </a>
   </li>
@@ -358,47 +358,47 @@
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=http%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fbatch-basic-compilation-method-record%2f" aria-label="Facebook">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=%2fposts%2f2022%2f08%2fbatch-basic-compilation-method-record%2f" aria-label="Facebook">
       <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=http%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fbatch-basic-compilation-method-record%2f&text=Batch%20%e5%9f%ba%e6%9c%ac%e7%bc%96%e5%86%99%e6%96%b9%e6%b3%95%e8%ae%b0%e5%bd%95" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=%2fposts%2f2022%2f08%2fbatch-basic-compilation-method-record%2f&text=Batch%20%e5%9f%ba%e6%9c%ac%e7%bc%96%e5%86%99%e6%96%b9%e6%b3%95%e8%ae%b0%e5%bd%95" aria-label="Twitter">
       <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=http%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fbatch-basic-compilation-method-record%2f&title=Batch%20%e5%9f%ba%e6%9c%ac%e7%bc%96%e5%86%99%e6%96%b9%e6%b3%95%e8%ae%b0%e5%bd%95" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fposts%2f2022%2f08%2fbatch-basic-compilation-method-record%2f&title=Batch%20%e5%9f%ba%e6%9c%ac%e7%bc%96%e5%86%99%e6%96%b9%e6%b3%95%e8%ae%b0%e5%bd%95" aria-label="Linkedin">
       <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fbatch-basic-compilation-method-record%2f&is_video=false&description=Batch%20%e5%9f%ba%e6%9c%ac%e7%bc%96%e5%86%99%e6%96%b9%e6%b3%95%e8%ae%b0%e5%bd%95" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fposts%2f2022%2f08%2fbatch-basic-compilation-method-record%2f&is_video=false&description=Batch%20%e5%9f%ba%e6%9c%ac%e7%bc%96%e5%86%99%e6%96%b9%e6%b3%95%e8%ae%b0%e5%bd%95" aria-label="Pinterest">
       <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=Batch%20%e5%9f%ba%e6%9c%ac%e7%bc%96%e5%86%99%e6%96%b9%e6%b3%95%e8%ae%b0%e5%bd%95&body=Check out this article: http%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fbatch-basic-compilation-method-record%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=Batch%20%e5%9f%ba%e6%9c%ac%e7%bc%96%e5%86%99%e6%96%b9%e6%b3%95%e8%ae%b0%e5%bd%95&body=Check out this article: %2fposts%2f2022%2f08%2fbatch-basic-compilation-method-record%2f" aria-label="Email">
       <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=http%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fbatch-basic-compilation-method-record%2f&title=Batch%20%e5%9f%ba%e6%9c%ac%e7%bc%96%e5%86%99%e6%96%b9%e6%b3%95%e8%ae%b0%e5%bd%95" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=%2fposts%2f2022%2f08%2fbatch-basic-compilation-method-record%2f&title=Batch%20%e5%9f%ba%e6%9c%ac%e7%bc%96%e5%86%99%e6%96%b9%e6%b3%95%e8%ae%b0%e5%bd%95" aria-label="Pocket">
       <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=http%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fbatch-basic-compilation-method-record%2f&title=Batch%20%e5%9f%ba%e6%9c%ac%e7%bc%96%e5%86%99%e6%96%b9%e6%b3%95%e8%ae%b0%e5%bd%95" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=%2fposts%2f2022%2f08%2fbatch-basic-compilation-method-record%2f&title=Batch%20%e5%9f%ba%e6%9c%ac%e7%bc%96%e5%86%99%e6%96%b9%e6%b3%95%e8%ae%b0%e5%bd%95" aria-label="reddit">
       <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=http%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fbatch-basic-compilation-method-record%2f&name=Batch%20%e5%9f%ba%e6%9c%ac%e7%bc%96%e5%86%99%e6%96%b9%e6%b3%95%e8%ae%b0%e5%bd%95&description=%e8%af%bb%e5%8f%96%e8%be%93%e5%85%a5%201set%20%2fp%20ch%3d%26%2334%3by%2fn%3a%26%2334%3b%202echo%20%25ch%25%20%e5%8f%98%e9%87%8f%e8%bf%90%e7%ae%97%20%e9%80%9a%e8%bf%87%25%7bvar%7d%25%e8%ae%bf%e9%97%ae%e5%8f%98%e9%87%8f%ef%bc%8c%e9%80%9a%e8%bf%87%2fa%e8%bf%9b%e8%a1%8c%e8%a1%a8%e8%be%be%e5%bc%8f%e8%ae%a1%e7%ae%97%e8%ae%be%e7%bd%ae%e5%80%bc%e3%80%82%0a1%40echo%20off%202%203set%20money%3d100%204echo%20%e5%88%9d%e5%a7%8b%e9%87%91%e9%a2%9d%ef%bc%9a%20%25money%25%205%206set%20%2fa%20money%3d%25money%25%2a2%207set%20%2fa%20money%3d%25money%25%2b100%208echo%20%e7%8e%b0%e5%9c%a8%e7%9a%84%e9%87%91%e9%a2%9d%ef%bc%9a%25money%25%20%e9%80%89%e6%8b%a9%e5%b9%b6%e8%b7%b3%e8%bd%ac%20%3a%7bpoint%7d%20%e7%94%a8%e4%ba%8e%e6%8c%87%e5%ae%9a%e4%b8%80%e4%b8%aa%e8%b7%b3%e8%bd%ac%e7%82%b9%e3%80%82%0a1%40echo%20off%202%203set%20%2fp%20ch%3d%26%2334%3by%2fn%3a%26%2334%3b%204if%20%26%2334%3b%25ch%25%26%2334%3b%3d%3d%26%2334%3b%26%2334%3b%20%28%205%20goto%20end%206%29%20else%20if%20%26%2334%3b%25ch%25%26%2334%3b%3d%3d%26%2334%3bn%26%2334%3b%20%28%207%20goto%20no%208%29%20else%20if%20%26%2334%3b%25ch%25%26%2334%3b%3d%3d%26%2334%3by%26%2334%3b%20%28%209%20goto%20yes%2010%29%20else%20%28%2011%20goto%20end%2012%29%2013%2014%3ano%2015echo%20NO%2016goto%20end%2017%2018%3ayes%2019echo%20YES%2020goto%20end%2021%2022%3aend%20%e5%be%aa%e7%8e%af%e8%af%ad%e5%8f%a5%20%e9%80%9a%e8%bf%87%25%25x%e8%ae%be%e7%bd%ae%e5%92%8c%e8%ae%bf%e9%97%ae%e5%be%aa%e7%8e%af%e5%80%bc%ef%bc%9b%20%e9%80%9a%e8%bf%87%28start%2c%20steps%2c%20end%29%e8%ae%be%e7%bd%ae%e5%be%aa%e7%8e%af%ef%bc%9b%20%2fl%20%e5%b0%86%e9%80%9a%e8%bf%87%e6%af%94%e8%be%83start%e5%92%8cend%e6%9d%a5%e6%89%a7%e8%a1%8c%e8%bf%ad%e4%bb%a3%e3%80%82%201%40echo%20off%202%203for%20%2fl%20%25%25x%20in%20%281%2c%205%2c%20100%29%20do%20%28%204%20echo%20hello%2c%20jzh-%25%25x%205%29%20%e5%8f%98%e9%87%8f%e5%8a%a8%e6%80%81%e5%8f%98%e5%8c%96%20setlocal%20enabledelayedexpansion%e5%bc%80%e5%90%af%e5%8f%98%e9%87%8f%e5%bb%b6%e8%bf%9f%ef%bc%8c%e4%bd%bf%e5%be%97%e5%8f%98%e9%87%8f%e5%8f%af%e4%bb%a5%e5%8a%a8%e6%80%81%e5%8f%98%e5%8c%96%3b%20%e9%9c%80%e9%80%9a%e8%bf%87%21" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%2f08%2fbatch-basic-compilation-method-record%2f&name=Batch%20%e5%9f%ba%e6%9c%ac%e7%bc%96%e5%86%99%e6%96%b9%e6%b3%95%e8%ae%b0%e5%bd%95&description=%e8%af%bb%e5%8f%96%e8%be%93%e5%85%a5%201set%20%2fp%20ch%3d%26%2334%3by%2fn%3a%26%2334%3b%202echo%20%25ch%25%20%e5%8f%98%e9%87%8f%e8%bf%90%e7%ae%97%20%e9%80%9a%e8%bf%87%25%7bvar%7d%25%e8%ae%bf%e9%97%ae%e5%8f%98%e9%87%8f%ef%bc%8c%e9%80%9a%e8%bf%87%2fa%e8%bf%9b%e8%a1%8c%e8%a1%a8%e8%be%be%e5%bc%8f%e8%ae%a1%e7%ae%97%e8%ae%be%e7%bd%ae%e5%80%bc%e3%80%82%0a1%40echo%20off%202%203set%20money%3d100%204echo%20%e5%88%9d%e5%a7%8b%e9%87%91%e9%a2%9d%ef%bc%9a%20%25money%25%205%206set%20%2fa%20money%3d%25money%25%2a2%207set%20%2fa%20money%3d%25money%25%2b100%208echo%20%e7%8e%b0%e5%9c%a8%e7%9a%84%e9%87%91%e9%a2%9d%ef%bc%9a%25money%25%20%e9%80%89%e6%8b%a9%e5%b9%b6%e8%b7%b3%e8%bd%ac%20%3a%7bpoint%7d%20%e7%94%a8%e4%ba%8e%e6%8c%87%e5%ae%9a%e4%b8%80%e4%b8%aa%e8%b7%b3%e8%bd%ac%e7%82%b9%e3%80%82%0a1%40echo%20off%202%203set%20%2fp%20ch%3d%26%2334%3by%2fn%3a%26%2334%3b%204if%20%26%2334%3b%25ch%25%26%2334%3b%3d%3d%26%2334%3b%26%2334%3b%20%28%205%20goto%20end%206%29%20else%20if%20%26%2334%3b%25ch%25%26%2334%3b%3d%3d%26%2334%3bn%26%2334%3b%20%28%207%20goto%20no%208%29%20else%20if%20%26%2334%3b%25ch%25%26%2334%3b%3d%3d%26%2334%3by%26%2334%3b%20%28%209%20goto%20yes%2010%29%20else%20%28%2011%20goto%20end%2012%29%2013%2014%3ano%2015echo%20NO%2016goto%20end%2017%2018%3ayes%2019echo%20YES%2020goto%20end%2021%2022%3aend%20%e5%be%aa%e7%8e%af%e8%af%ad%e5%8f%a5%20%e9%80%9a%e8%bf%87%25%25x%e8%ae%be%e7%bd%ae%e5%92%8c%e8%ae%bf%e9%97%ae%e5%be%aa%e7%8e%af%e5%80%bc%ef%bc%9b%20%e9%80%9a%e8%bf%87%28start%2c%20steps%2c%20end%29%e8%ae%be%e7%bd%ae%e5%be%aa%e7%8e%af%ef%bc%9b%20%2fl%20%e5%b0%86%e9%80%9a%e8%bf%87%e6%af%94%e8%be%83start%e5%92%8cend%e6%9d%a5%e6%89%a7%e8%a1%8c%e8%bf%ad%e4%bb%a3%e3%80%82%201%40echo%20off%202%203for%20%2fl%20%25%25x%20in%20%281%2c%205%2c%20100%29%20do%20%28%204%20echo%20hello%2c%20jzh-%25%25x%205%29%20%e5%8f%98%e9%87%8f%e5%8a%a8%e6%80%81%e5%8f%98%e5%8c%96%20setlocal%20enabledelayedexpansion%e5%bc%80%e5%90%af%e5%8f%98%e9%87%8f%e5%bb%b6%e8%bf%9f%ef%bc%8c%e4%bd%bf%e5%be%97%e5%8f%98%e9%87%8f%e5%8f%af%e4%bb%a5%e5%8a%a8%e6%80%81%e5%8f%98%e5%8c%96%3b%20%e9%9c%80%e9%80%9a%e8%bf%87%21" aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=http%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fbatch-basic-compilation-method-record%2f&t=Batch%20%e5%9f%ba%e6%9c%ac%e7%bc%96%e5%86%99%e6%96%b9%e6%b3%95%e8%ae%b0%e5%bd%95" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fposts%2f2022%2f08%2fbatch-basic-compilation-method-record%2f&t=Batch%20%e5%9f%ba%e6%9c%ac%e7%bc%96%e5%86%99%e6%96%b9%e6%b3%95%e8%ae%b0%e5%bd%95" aria-label="Hacker News">
       <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
     </a>
   </li>

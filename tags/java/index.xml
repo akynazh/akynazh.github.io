@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>java on Norwegian Wood</title>
-    <link>http://akynazh.site/tags/java/</link>
+    <link>https://akynazh.site</link>
     <description>Recent content in java on Norwegian Wood</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Jzh</copyright>
-    <lastBuildDate>Fri, 26 Aug 2022 16:04:19 +0800</lastBuildDate><atom:link href="http://akynazh.site/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 26 Aug 2022 16:04:19 +0800</lastBuildDate><atom:link href="/tags/java/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>策略模式</title>
-      <link>http://akynazh.site/posts/2022/08/policy-mode/</link>
+      <link>https://akynazh.site</link>
       <pubDate>Fri, 26 Aug 2022 16:04:19 +0800</pubDate>
       
-      <guid>http://akynazh.site/posts/2022/08/policy-mode/</guid>
+      <guid>https://akynazh.site</guid>
       <description>定义 策略模式定义了算法族，分别封装起来，让它们之间可以互相替换，此模式让算法的变化独立于使用算法的客户。
 比如对于鸭子而言，不同鸭子的叫声方式可能不一样也可能一样，我们可以定义一个叫声行为接口，然后通过创建不同的叫声行为实现这个接口，在实例化鸭子时设定叫声行为即可。
 这样相比于直接继承抽象鸭子后重写叫声行为方法，好处是减少了重复代码，而坏处是增加了类的数量。
@@ -26,10 +26,10 @@
     
     <item>
       <title>代理模式</title>
-      <link>http://akynazh.site/posts/2022/08/proxy-pattern/</link>
+      <link>https://akynazh.site</link>
       <pubDate>Fri, 26 Aug 2022 10:41:19 +0800</pubDate>
       
-      <guid>http://akynazh.site/posts/2022/08/proxy-pattern/</guid>
+      <guid>https://akynazh.site</guid>
       <description>定义 代理模式为另一个对象提供一个替身或占位符以控制对这个对象的访问。
 我们对一个对象的使用或者一个对象中方法的调用，可以通过这个对象的代理人进行访问，这个代理人可以方便地控制这个对象，让对象的功能更为强大或更易于使用。
 常见的代理有：远程代理，虚拟代理，动态代理。
@@ -46,10 +46,10 @@
     
     <item>
       <title>状态模式</title>
-      <link>http://akynazh.site/posts/2022/08/status-mode/</link>
+      <link>https://akynazh.site</link>
       <pubDate>Thu, 25 Aug 2022 22:54:26 +0800</pubDate>
       
-      <guid>http://akynazh.site/posts/2022/08/status-mode/</guid>
+      <guid>https://akynazh.site</guid>
       <description>定义 状态模式允许对象在内部状态改变时改变它的行为，对象看起来好像修改了它的类。
 比如某个机器有各种复杂的状态，每个状态都着共同的参数，而这些参数值有区别。用户通过某些操作会改变机器的状态，机器转变状态后，以当前状态的方法给用户反馈。
 代码展示 以机器的例子说明。
@@ -59,10 +59,10 @@
     
     <item>
       <title>组合模式</title>
-      <link>http://akynazh.site/posts/2022/08/combination-mode/</link>
+      <link>https://akynazh.site</link>
       <pubDate>Thu, 25 Aug 2022 21:58:13 +0800</pubDate>
       
-      <guid>http://akynazh.site/posts/2022/08/combination-mode/</guid>
+      <guid>https://akynazh.site</guid>
       <description>定义 组合模式允许你将对象组合成树形结构来表现“整体/部分”层次结构。组合能让客户以一致的方式处理个别对象以及对象组合。
 对于菜单内容而言，假如只有简单的菜品项，那么通过迭代器可以轻松地遍历，但是如果菜单内容中含有子菜单，那么就需要组合模式了。
 代码展示 下面就以菜单为例子展示组合模式。
@@ -72,10 +72,10 @@
     
     <item>
       <title>迭代器模式</title>
-      <link>http://akynazh.site/posts/2022/08/iterators-mode/</link>
+      <link>https://akynazh.site</link>
       <pubDate>Thu, 25 Aug 2022 11:26:17 +0800</pubDate>
       
-      <guid>http://akynazh.site/posts/2022/08/iterators-mode/</guid>
+      <guid>https://akynazh.site</guid>
       <description>定义 迭代器模式提供一种方法顺序访问一个聚合对象中的各个元素，而又不暴露其内部的表示。
 通过一个Iterator，可以方便地遍历各种类型，如HashMap，ArrayList等。
 代码展示 下面通过菜单的例子进行说明。
@@ -88,10 +88,10 @@
     
     <item>
       <title>模板方法模式</title>
-      <link>http://akynazh.site/posts/2022/08/template-method-mode/</link>
+      <link>https://akynazh.site</link>
       <pubDate>Wed, 24 Aug 2022 17:14:16 +0800</pubDate>
       
-      <guid>http://akynazh.site/posts/2022/08/template-method-mode/</guid>
+      <guid>https://akynazh.site</guid>
       <description>定义 模板方法模式在一个方法中定义一个算法的骨架，而将一些步骤延迟到子类中。模板方法使得子类可以在不改变算法结构的情况下，重新定义算法中的某些步骤。
 “好莱坞”原则 别调用我们，我们会调用你。
 其实就是防止“依赖腐败”，也就是要避免高层组件和低层组件相互依赖。一般由高层组件依赖低层组件。
@@ -103,10 +103,10 @@
     
     <item>
       <title>外观模式</title>
-      <link>http://akynazh.site/posts/2022/08/appearance-mode/</link>
+      <link>https://akynazh.site</link>
       <pubDate>Tue, 23 Aug 2022 16:20:06 +0800</pubDate>
       
-      <guid>http://akynazh.site/posts/2022/08/appearance-mode/</guid>
+      <guid>https://akynazh.site</guid>
       <description>外观模式 定义 外观模式提供了一个统一的接口，用来访问子系统中的一群接口，外观定义了一个高层接口，让子系统更容易使用。
 “最少知识”原则 减少对象之间的交互，只和“密友”谈话，也就是减少一个类所交互的类的数量。
 代码展示 执行一些复杂操作需要一步步执行许多小操作，那么可以将复杂操作封装为一个高层类中的方法，将所有复杂操作需要用到的类作为高层类的成员，在复杂操作的方法中可以方便的调用各个类执行各自的功能。
@@ -116,10 +116,10 @@
     
     <item>
       <title>适配器模式</title>
-      <link>http://akynazh.site/posts/2022/08/adapter-mode/</link>
+      <link>https://akynazh.site</link>
       <pubDate>Tue, 23 Aug 2022 16:00:04 +0800</pubDate>
       
-      <guid>http://akynazh.site/posts/2022/08/adapter-mode/</guid>
+      <guid>https://akynazh.site</guid>
       <description>适配器模式 定义 适配器模式将一个类的接口，转换成客户期望的另一个接口，适配器让原本接口不兼容的类可以合作无间。
 代码展示 鸭子和火鸡叫声不一样，通过编写适配器让火鸡适配鸭的方法。
 从接口开始 1public interface Duck { 2	public void quack(); 3	public void fly(); 4} 1public interface Turkey { 2	public void gobble(); 3	public void fly(); 4} 编写适配器 1public class TurkeyAdapter implements Duck { 2	Turkey turkey; 3 4	public TurkeyAdapter(Turkey turkey) { 5	this.turkey = turkey; 6	} 7 8	public void quack() { 9	turkey.gobble(); 10	} 11 12	public void fly() { 13	for(int i=0; i &amp;lt; 5; i++) { 14	turkey.</description>
@@ -127,10 +127,10 @@
     
     <item>
       <title>命令模式</title>
-      <link>http://akynazh.site/posts/2022/08/command-mode/</link>
+      <link>https://akynazh.site</link>
       <pubDate>Mon, 22 Aug 2022 11:41:33 +0800</pubDate>
       
-      <guid>http://akynazh.site/posts/2022/08/command-mode/</guid>
+      <guid>https://akynazh.site</guid>
       <description>定义 命令模式将“请求”封装成对象，以便使用不同的请求、队列或者日志来参数化其他对象。命令模式也支持可撤销的操作。
 比如对于遥控器而已，我们会将操作封装为一个按钮（命令）对象，通过按下按钮执行操作。
 代码展示 下面以遥控器作为例子：
@@ -141,10 +141,10 @@
     
     <item>
       <title>单件模式</title>
-      <link>http://akynazh.site/posts/2022/08/singleton-pattern/</link>
+      <link>https://akynazh.site</link>
       <pubDate>Mon, 22 Aug 2022 11:14:23 +0800</pubDate>
       
-      <guid>http://akynazh.site/posts/2022/08/singleton-pattern/</guid>
+      <guid>https://akynazh.site</guid>
       <description>我的思考 单件模式，容易知道需要某个对象是独一无二的，那么它首先应该是静态的，不能在程序动态运行期间被再次创建。
 当在多个线程中用到它时，在创建时需要考虑线程安全问题，可通过加锁等方式解决。
 代码实现 传统的单件 定义一个私有实例化的对象，把单件对象作为一个私有的静态成员变量，通过静态方法Singleton.getInstance()获取，若获取为null则创建对象。
@@ -154,10 +154,10 @@
     
     <item>
       <title>工厂模式</title>
-      <link>http://akynazh.site/posts/2022/08/factory-mode/</link>
+      <link>https://akynazh.site</link>
       <pubDate>Sun, 21 Aug 2022 23:31:45 +0800</pubDate>
       
-      <guid>http://akynazh.site/posts/2022/08/factory-mode/</guid>
+      <guid>https://akynazh.site</guid>
       <description>我的思考 工厂模式，包括工厂方法模式和抽象工厂模式。
 对于工厂方法模式，工厂是一个抽象类，提供了一些默认实现方法和一些抽象方法，具体工厂继承于它，实现对应抽象方法。
 假设有多家比萨店，他们提供不同口味的比萨，而都有相同的订购比萨的方法，那么可以定义一个抽象类，提供订购比萨的具体方法和创建比萨的抽象方法。
@@ -171,10 +171,10 @@
     
     <item>
       <title>装饰者模式</title>
-      <link>http://akynazh.site/posts/2022/08/decorator-mode/</link>
+      <link>https://akynazh.site</link>
       <pubDate>Sun, 21 Aug 2022 23:17:27 +0800</pubDate>
       
-      <guid>http://akynazh.site/posts/2022/08/decorator-mode/</guid>
+      <guid>https://akynazh.site</guid>
       <description>我的思考 装饰，如其名，就是对一个对象进行加工，包装，修饰。
 假设一杯“普通的咖啡，价格10”，我们可以选择添加自己喜欢的配料。
 首先我们添加牛奶，那么就变成了一杯“含牛奶配料的咖啡，价格2 +（价格12）”；
@@ -190,10 +190,10 @@
     
     <item>
       <title>观察者模式</title>
-      <link>http://akynazh.site/posts/2022/08/observer-mode/</link>
+      <link>https://akynazh.site</link>
       <pubDate>Sun, 21 Aug 2022 22:59:33 +0800</pubDate>
       
-      <guid>http://akynazh.site/posts/2022/08/observer-mode/</guid>
+      <guid>https://akynazh.site</guid>
       <description>我的思考 对于观察者模式，既然有观察者，那么就首先有被观察者。
 观察者可以通过订阅，监听等方式实现“观察”，被观察者需要通过通知，发消息之类的方式通知观察者接收信息。
 假设有一个气象观测站，天气数据对象作为被观察者，各个气象观测站作为观察者订阅天气数据，而天气数据记录各个订阅了自己的观测站，以便于通知。具体代码实现如下文。
@@ -205,10 +205,10 @@
     
     <item>
       <title>Quartz 实现定时任务</title>
-      <link>http://akynazh.site/posts/2022/06/quartz-implements-timed-tasks/</link>
+      <link>https://akynazh.site</link>
       <pubDate>Wed, 15 Jun 2022 21:11:27 +0800</pubDate>
       
-      <guid>http://akynazh.site/posts/2022/06/quartz-implements-timed-tasks/</guid>
+      <guid>https://akynazh.site</guid>
       <description>一、添加注解 主启动类添加@EnableScheduling注解；
 二、添加依赖： 1&amp;lt;!--定时任务 --&amp;gt; 2&amp;lt;dependency&amp;gt; 3 &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt; 4 &amp;lt;artifactId&amp;gt;spring-boot-starter-quartz&amp;lt;/artifactId&amp;gt; 5&amp;lt;/dependency&amp;gt; 三、创建任务 /TestTask1.java
 1public class TestTask1 extends QuartzJobBean { 2 @Override 3 protected void executeInternal(JobExecutionContext context) { 4 SimpleDateFormat sdf = new SimpleDateFormat(&amp;#34;yyyy-MM-dd HH:mm:ss&amp;#34;); 5 System.out.println(&amp;#34;Test1---&amp;#34; + sdf.format(new Date())); 6 } 7} /TestTask2.java
@@ -217,10 +217,10 @@
     
     <item>
       <title>Java 复习记录（一）</title>
-      <link>http://akynazh.site/posts/2022/05/java-review-1/</link>
+      <link>https://akynazh.site</link>
       <pubDate>Sun, 15 May 2022 15:15:51 +0800</pubDate>
       
-      <guid>http://akynazh.site/posts/2022/05/java-review-1/</guid>
+      <guid>https://akynazh.site</guid>
       <description>JDK JRE JVM 关系 为什么说 Java 语言“编译与解释并存”？ 高级编程语言按照程序的执行方式分为编译型和解释型两种。
 编译型语言是指编译器针对特定的操作系统将源代码一次性翻译成可被该平台执行的机器码，不能跨平台。
 解释型语言是指解释器对源程序逐行解释成特定平台的机器码并立即执行，一次编写，到处执行。
@@ -245,10 +245,10 @@ Java 语言既具有编译型语言的特征，也具有解释型语言的特征
     
     <item>
       <title>Java 开发中遇到的 bug 记录</title>
-      <link>http://akynazh.site/posts/2022/01/record-of-bugs-encountered-in-java-development/</link>
+      <link>https://akynazh.site</link>
       <pubDate>Thu, 06 Jan 2022 17:23:00 +0800</pubDate>
       
-      <guid>http://akynazh.site/posts/2022/01/record-of-bugs-encountered-in-java-development/</guid>
+      <guid>https://akynazh.site</guid>
       <description>持续更新中。
 BufferedWriter 无法正确写出问题 这是一段客户端代码，向服务器端发送消息，然后接收服务器端的回复：
 1try ( 2 BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream())); 3 BufferedWriter out = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream())) 4) { 5 String message; 6 while((message = stdIn.readLine()) != null) { 7 out.write(message); 8 out.flush(); 9 System.out.println(&amp;#34;Receive from server: &amp;#34; + in.readLine()); 10 } 11} catch (Exception e) { 12 System.out.println(e.getMessage()); 13} 这是服务端代码的一部分，接收客户端消息，并向客户端回复：
@@ -257,10 +257,10 @@ BufferedWriter 无法正确写出问题 这是一段客户端代码，向服务�
     
     <item>
       <title>Java 重写 equals 方法的同时为什么要重写 hashcode 方法</title>
-      <link>http://akynazh.site/posts/2021/11/why-should-java-rewrite-the-hashcode-method-when-rewriting-the-equals-method/</link>
+      <link>https://akynazh.site</link>
       <pubDate>Fri, 26 Nov 2021 09:23:27 +0800</pubDate>
       
-      <guid>http://akynazh.site/posts/2021/11/why-should-java-rewrite-the-hashcode-method-when-rewriting-the-equals-method/</guid>
+      <guid>https://akynazh.site</guid>
       <description>提出问题 先看一个例子：
 当两个人年龄相同时，我们认为这两个对象相同：
 1class Person { 2 private int age; 3 private String name; 4 5 public Person(int age, String name) { 6 this.age = age; 7 this.name = name; 8 } 9 10 @Override 11 public String toString() { 12 return &amp;#34;Person{&amp;#34; + 13 &amp;#34;age=&amp;#34; + age + 14 &amp;#34;, name=&amp;#39;&amp;#34; + name + &amp;#39;\&amp;#39;&amp;#39; + 15 &amp;#39;}&amp;#39;; 16 } 17 18 @Override 19 public boolean equals(Object o) { 20 if (this == o) return true; 21 if (o == null || getClass() !</description>
@@ -268,10 +268,10 @@ BufferedWriter 无法正确写出问题 这是一段客户端代码，向服务�
     
     <item>
       <title>Linux 上部署 JAR 包项目后的文件上传问题</title>
-      <link>http://akynazh.site/posts/2021/11/file-upload-problem-after-deploying-jar-package-project-on-linux/</link>
+      <link>https://akynazh.site</link>
       <pubDate>Wed, 03 Nov 2021 00:38:12 +0800</pubDate>
       
-      <guid>http://akynazh.site/posts/2021/11/file-upload-problem-after-deploying-jar-package-project-on-linux/</guid>
+      <guid>https://akynazh.site</guid>
       <description>在进行上传文件时，一般会先获取项目类路径：
 1File relativePathFile = new File(URLDecoder.decode(ResourceUtils.getURL(&amp;#34;classpath:&amp;#34;).getPath(), &amp;#34;utf-8&amp;#34;)); 2String absolutePath = relativePathFile.getAbsoluteFile().getPath(); 首先取得相对路径，再进一步取得绝对路径，结果如下：
 如果单纯运行一个java项目： 获得路径为：
@@ -295,10 +295,10 @@ e.g. ${project}/target/classes/static/avatar/test.jpg
     
     <item>
       <title>Linux 主机部署 springboot 项目全过程</title>
-      <link>http://akynazh.site/posts/2021/11/the-whole-process-of-linux-host-deployment-springboot-project/</link>
+      <link>https://akynazh.site</link>
       <pubDate>Wed, 03 Nov 2021 00:30:25 +0800</pubDate>
       
-      <guid>http://akynazh.site/posts/2021/11/the-whole-process-of-linux-host-deployment-springboot-project/</guid>
+      <guid>https://akynazh.site</guid>
       <description>注：部署环境为centos7.9版本
 配置环境 配好mysql，redis，java开发环境。
 上传JAR包项目 1mvn clean 2mvn package 即可把项目打包为JAR包，再通过WINSP上传到服务器。
@@ -311,10 +311,10 @@ e.g. ${project}/target/classes/static/avatar/test.jpg
     
     <item>
       <title>Synchronized 到底锁了谁</title>
-      <link>http://akynazh.site/posts/2021/05/who-the-hell-is-synchronized-locking/</link>
+      <link>https://akynazh.site</link>
       <pubDate>Wed, 19 May 2021 22:43:45 +0800</pubDate>
       
-      <guid>http://akynazh.site/posts/2021/05/who-the-hell-is-synchronized-locking/</guid>
+      <guid>https://akynazh.site</guid>
       <description>Synchronized方法 静态方法上的锁
 静态方法是属于“类”，不属于某个实例，是所有对象实例所共享的方法。也就是说如果在静态方法上加入synchronized，那么它获取的就是这个类的锁，锁住的就是这个类。
 普通方法上的锁
@@ -329,10 +329,10 @@ synchronized(obj){...} synchronized同步代码块对对象内部的实例加锁
     
     <item>
       <title>Java 与 C&#43;&#43; 中的值传递和引用传递解析</title>
-      <link>http://akynazh.site/posts/2021/05/value-passing-and-reference-passing-parsing-in-java-and-c/</link>
+      <link>https://akynazh.site</link>
       <pubDate>Sat, 01 May 2021 20:16:39 +0800</pubDate>
       
-      <guid>http://akynazh.site/posts/2021/05/value-passing-and-reference-passing-parsing-in-java-and-c/</guid>
+      <guid>https://akynazh.site</guid>
       <description>先说结论：Java只有值传递，而C++既有值传递又有引用传递。
 Java的参数传递 先定义3个方法如下：
 1public static void change1(String str, int num) { 2 str = &amp;#34;world&amp;#34;; // 这里就相当与新new了一个对象! 3 num = 100; 4} 5public static void change2(User user) { 6 user.age = 1; 7 user.name = &amp;#34;mary&amp;#34;; 8} 9public static void change3(User user) { 10 user = new User(1, &amp;#34;mary&amp;#34;); 11} 进行测试：
@@ -341,10 +341,10 @@ Java的参数传递 先定义3个方法如下：
     
     <item>
       <title>equals 方法和 == 运算符的作用区别</title>
-      <link>http://akynazh.site/posts/2020/11/the-difference-between-the-equals-method-and-the---operator/</link>
+      <link>https://akynazh.site</link>
       <pubDate>Wed, 25 Nov 2020 00:21:05 +0800</pubDate>
       
-      <guid>http://akynazh.site/posts/2020/11/the-difference-between-the-equals-method-and-the---operator/</guid>
+      <guid>https://akynazh.site</guid>
       <description>equals方法与&amp;quot;==&amp;ldquo;的比较与分析 首先提出一个重要的点:
 == 比较时进行地址的比较
 equals 比较时进行值的比较

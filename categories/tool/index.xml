@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tool on Norwegian Wood</title>
-    <link>http://akynazh.site/categories/tool/</link>
+    <link>https://akynazh.site</link>
     <description>Recent content in Tool on Norwegian Wood</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Jzh</copyright>
-    <lastBuildDate>Fri, 13 Jan 2023 21:43:06 +0800</lastBuildDate><atom:link href="http://akynazh.site/categories/tool/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 13 Jan 2023 21:43:06 +0800</lastBuildDate><atom:link href="/categories/tool/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Clash-Linux 配置使用记录</title>
-      <link>http://akynazh.site/posts/2023/01/clash-linux-configuration-usage-record/</link>
+      <link>https://akynazh.site</link>
       <pubDate>Fri, 13 Jan 2023 21:43:06 +0800</pubDate>
       
-      <guid>http://akynazh.site/posts/2023/01/clash-linux-configuration-usage-record/</guid>
+      <guid>https://akynazh.site</guid>
       <description>安装 1wget https://github.com/Dreamacro/clash/releases/download/v1.11.8/clash-linux-amd64-v1.11.8.gz 2gzip -d clash-linux-amd64-v1.11.8.gz 3sudo mv clash-linux-amd64-v1.11.8 /usr/bin/clash 4chmod +x /usr/bin/clash 获取订阅链接并配置 在自己使用的机场中获取clash订阅链接，然后下载配置文件到 ~/.config/clash/config.yaml:
 1mkdir -p ~/.config/clash 2cd ~/.config/clash 3wget -O config.yaml {link} 4 5vim config.yaml 6 7# 不允许局域网中其它电脑使用该代理 8allow-lan: false 9# 设置 clash 管理界面密码 10secret: your password 11# 允许从外部访问 clash 管理界面，其中端口 9090 可自行配置 12external-controller: &amp;#39;0.0.0.0:9090&amp;#39; 运行代理并选择节点 1# 第一次需要下载Country.mmdb，可考虑先运行以下命令 2# clash -f ~/.config/clash/config.yaml 3 4nohup clash -f ~/.config/clash/config.yaml &amp;gt;/dev/null 2&amp;gt;&amp;amp;1 &amp;amp; 登录clash管理界面进行网速的测试和节点的切换：
 访问clash.razord.top，设置Host为主机IP，端口默认为9090，密钥为刚刚配置的密码。
@@ -24,10 +24,10 @@
     
     <item>
       <title>Git 版本与提交管理</title>
-      <link>http://akynazh.site/posts/2022/12/git-version-and-submission-management/</link>
+      <link>https://akynazh.site</link>
       <pubDate>Tue, 06 Dec 2022 11:42:39 +0800</pubDate>
       
-      <guid>http://akynazh.site/posts/2022/12/git-version-and-submission-management/</guid>
+      <guid>https://akynazh.site</guid>
       <description>关于HEAD HEAD 代表当前分支的最新提交名称，它可以由一些修饰符进行修饰进而产生不同的含义。
 关于 HEAD~{n}
 ~ 是用来在当前提交路径上回溯的修饰符。
@@ -42,37 +42,37 @@ HEAD^ = HEAD^1 第一个父级提交 HEAD^2~1 第二个父级提交的上一次�
     
     <item>
       <title>Linux 软件安装和配置记录</title>
-      <link>http://akynazh.site/posts/2022/11/linux-software-installation-and-configuration-records/</link>
+      <link>https://akynazh.site</link>
       <pubDate>Sun, 13 Nov 2022 21:15:53 +0800</pubDate>
       
-      <guid>http://akynazh.site/posts/2022/11/linux-software-installation-and-configuration-records/</guid>
+      <guid>https://akynazh.site</guid>
       <description>BASE 1apt update -y 2apt install curl wget vim net-tools git nginx -y 3# apt install openssh* 4 5-------------------------------------------- 6 7yum update -y 8yum install curl wget vim net-tools git nginx -y 9yum install openssh* yum镜像 1mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.bak 2wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo # centos7 3 4yum makecache 5yum -y update apt镜像 1cp /etc/apt/sources.list /etc/apt/sources.list.bak 2vim /etc/apt/sources.list 3 4lsb_release -c 查看版本代码 5 6如要用于其他版本，把 focal 换成其他版本代号即可: 22.04：jammy；20.04：focal；18.04：bionic；16.04：xenial；14.04：trusty。 7 8# 默认注释了源码仓库，如有需要可自行取消注释 9deb https://mirrors.</description>
     </item>
     
     <item>
       <title>Git 配置记录</title>
-      <link>http://akynazh.site/posts/2022/10/git-configuration-record/</link>
+      <link>https://akynazh.site</link>
       <pubDate>Thu, 13 Oct 2022 21:40:46 +0800</pubDate>
       
-      <guid>http://akynazh.site/posts/2022/10/git-configuration-record/</guid>
+      <guid>https://akynazh.site</guid>
       <description>Git 初始化 1git config --global user.name &amp;#34;akynazh&amp;#34; 2git config --global user.email &amp;#34;akynazh@qq.com&amp;#34; 3# git config pull.rebase false 配置 Http 代理 1git config --global http.https://github.com.proxy socks5://127.0.0.1:7890 配置 SSH 代理 1# ~/.ssh/config 2 3Host github.com 4 User git 5 Port 22 6 Hostname github.com 7 IdentityFile ~/.ssh/id_rsa 8 ProxyCommand connect -S 127.0.0.1:7890 -a none %h %p 9 10Host ssh.github.com 11 User git 12 Port 443 13 Hostname ssh.github.com 14 IdentityFile ~/.ssh/id_rsa 15 ProxyCommand connect -S 127.</description>
     </item>
     
     <item>
       <title>Docker 软件安装记录</title>
-      <link>http://akynazh.site/posts/2022/10/docker-software-installation-record/</link>
+      <link>https://akynazh.site</link>
       <pubDate>Thu, 13 Oct 2022 21:28:37 +0800</pubDate>
       
-      <guid>http://akynazh.site/posts/2022/10/docker-software-installation-record/</guid>
+      <guid>https://akynazh.site</guid>
       <description>Docker 1curl -fsSL https://get.docker.com | bash -s docker 2# curl -sSL https://get.daocloud.io/docker | sh Mirror 1vim /etc/docker/daemon.json 2 3{ 4 &amp;#34;registry-mirrors&amp;#34;: [ 5 &amp;#34;https://docker.mirrors.ustc.edu.cn&amp;#34;, 6 &amp;#34;http://hub-mirror.c.163.com&amp;#34;, 7 &amp;#34;https://registry.docker-cn.com&amp;#34; 8 ] 9} 10 11---------------------------------------------- 12 13systemctl restart docker Docker-compose 1curl -L &amp;#34;https://github.com/docker/compose/releases/download/v2.2.2/docker-compose-$(uname -s)-$(uname -m)&amp;#34; -o /usr/local/bin/docker-compose 2# curl -L https://get.daocloud.io/docker/compose/releases/download/v2.4.1/docker-compose-`uname -s`-`uname -m` &amp;gt; /usr/local/bin/docker-compose 3 4chmod +x /usr/local/bin/docker-compose 5ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose 6# ln -s /usr/local/bin/docker-compose /usr/bin/dockerc 运行权限问题 1sudo usermod -aG docker $USER 2sudo reboot MySQL 1docker pull mysql:5.</description>
     </item>
     
     <item>
       <title>关于 hwbk 文件问题的解决和思考</title>
-      <link>http://akynazh.site/posts/2022/10/solution-and-thinking-about-hwbk/</link>
+      <link>https://akynazh.site</link>
       <pubDate>Mon, 03 Oct 2022 20:52:12 +0800</pubDate>
       
-      <guid>http://akynazh.site/posts/2022/10/solution-and-thinking-about-hwbk/</guid>
+      <guid>https://akynazh.site</guid>
       <description>hwbk文件问题 假如你知道hwbk是什么，那么你肯定为它的存在而烦恼过。
 在华为系的机子上，任何第三方工具想要删除相册的一张图片，系统都会做出保护，你使用的第三方工具并没有真的删除那张图片，系统拦截了删除操作并再对文件添加后缀名.hwbk。
 更新：现在只要不卸载系统图库，系统会拦截第三方软件的删除操作，并将删除的照片送进图库的回收站，并不会生成hwbk文件。如果卸载了系统自带图库，则可以参考本文。
@@ -100,10 +100,10 @@ kill_hwbk.js
     
     <item>
       <title>Wsl 自定义安装位置</title>
-      <link>http://akynazh.site/posts/2022/07/wsl-custom-installation-location/</link>
+      <link>https://akynazh.site</link>
       <pubDate>Sat, 23 Jul 2022 17:27:31 +0800</pubDate>
       
-      <guid>http://akynazh.site/posts/2022/07/wsl-custom-installation-location/</guid>
+      <guid>https://akynazh.site</guid>
       <description>自定义wsl安装位置 下载wsl-ubuntu： 20.04版本：https://aka.ms/wslubuntu2004 18.04版本：https://aka.ms/wsl-ubuntu-1804 其他版本自行前往官网查找。
 修改后缀名 下载后得到AppxBundle文件，将后缀名改为zip，然后解压。
 解压后得到如下内容：
@@ -120,10 +120,10 @@ Over.</description>
     
     <item>
       <title>Hugo 通过 Algolia 添加站内搜索功能</title>
-      <link>http://akynazh.site/posts/2022/07/hugo-adds-onsite-search-function-through-algolia/</link>
+      <link>https://akynazh.site</link>
       <pubDate>Wed, 20 Jul 2022 23:46:01 +0800</pubDate>
       
-      <guid>http://akynazh.site/posts/2022/07/hugo-adds-onsite-search-function-through-algolia/</guid>
+      <guid>https://akynazh.site</guid>
       <description>注册账号并创建Index 官网链接：Algolia，注册完成后保存好ApiID和ApiKey。
 接着，创建一个Index，保存好Index的名称。
 数据生成以及上传Algolia 方法一：通过hugo-algolia插件的方式 一、下载hugo-algolia： npm install -g hugo-algolia
@@ -141,10 +141,10 @@ Over.</description>
     
     <item>
       <title>Linux 展示性内容配置记录</title>
-      <link>http://akynazh.site/posts/2022/07/linux-display-content-configuration-record/</link>
+      <link>https://akynazh.site</link>
       <pubDate>Wed, 13 Jul 2022 21:21:50 +0800</pubDate>
       
-      <guid>http://akynazh.site/posts/2022/07/linux-display-content-configuration-record/</guid>
+      <guid>https://akynazh.site</guid>
       <description>Vim 1vim /etc/vimrc 2# vim /etc/vim/vimrc 3 4set tabstop=4 # 修改vim中tab长度 5set shiftwidth=4 # 修改vim自动缩进长度 6set noeb vb t_vb= # 禁用vim蜂鸣声 1vim /etc/inputrc 2 3set bell-style none # 禁用bash蜂鸣声 主机名称 1hostnamectl 2 3hostnamectl set-hostname xxx 登录欢迎信息配置 1vim /etc/update-motd.d 自行修改基本欢迎信息。
 1vim /etc/ssh/sshd_config 2 3PrintLastLog no 不打印上次登录信息。
 命令提示符 1vim ~/.bashrc 2 3export PS1=&amp;#34;[\u =&amp;gt; \w]\$ &amp;#34; 1\a	铃声字符 2\d	格式为“日 月 年”的日期 3\e	ASCII 转义字符 4\h	本地主机名 5\H	完全合格的限定域主机名 6\j	shell 当前管理的作业数 7\1	shell 终端设备名的基本名称 8\n	ASCII 换行字符 9\r	ASCII 回车 10\s	shell 的名称 11\t	格式为“小时:分钟:秒”的24小时制的当前时间 12\T	格式为“小时:分钟:秒”的12小时制的当前时间 13\A	格式为“小时:分钟”的24小时制的当前时间 14@	格式为 am/pm 的12小时制的当前时间 15\s	shell的名字 16\u	当前用户的用户名 17\v	bash shell 的版本 18\V	bash shell 的发布级别 19\w	当前工作目录 20\W	当前工作目录的基本名称 21!</description>
@@ -152,10 +152,10 @@ Over.</description>
     
     <item>
       <title>通过 Wireshark 分析 TCP 原理</title>
-      <link>http://akynazh.site/posts/2022/06/analyze-tcp-principle-through-wireshark/</link>
+      <link>https://akynazh.site</link>
       <pubDate>Thu, 09 Jun 2022 23:18:55 +0800</pubDate>
       
-      <guid>http://akynazh.site/posts/2022/06/analyze-tcp-principle-through-wireshark/</guid>
+      <guid>https://akynazh.site</guid>
       <description>使用Wireshark作为抓包工具，通过ftp文件上传过程分析tcp原理，主要分析过程包括三次握手建立连接的过程，文件传输的过程，四次挥手断开连接的过程。
 设备信息 主机：安装了ftp的window11（ip:172.23.224.1） 虚拟机：安装了vsftpd的wsl2（ubuntu18）(ip:172.23.234.65) 操作与分析过程 打开Wireshark进行捕获 选择**vEthernet(WSL)**连接进行捕获。 使用过滤表达式ip.addr==172.23.234.65&amp;amp;&amp;amp;tcp进行捕获。 通过ftp上传文件 1PS C:\Users\akyna&amp;gt; ftp 172.23.234.65 2连接到 172.23.234.65。 3220 (vsFTPd 3.0.3) 4200 Always in UTF8 mode. 5用户(172.23.234.65:(none)): akyna 6331 Please specify the password. 7密码: 8230 Login successful. 9 10ftp&amp;gt; put a.txt 11200 PORT command successful. Consider using PASV. 12150 Ok to send data. 13226 Transfer complete. 14ftp: 发送 42 字节，用时 0.00秒 42000.00千字节/秒。 可见已经传输成功。
 对捕获的数据进行分析 回到Wireshark，分析捕获的数据：
@@ -171,10 +171,10 @@ Over.</description>
     
     <item>
       <title>配置网络以实现主机和虚拟机系统互通</title>
-      <link>http://akynazh.site/posts/2022/02/configure-the-network-to-realize-the-interworking-between-host-and-virtual-machine-system/</link>
+      <link>https://akynazh.site</link>
       <pubDate>Sun, 13 Feb 2022 21:20:01 +0800</pubDate>
       
-      <guid>http://akynazh.site/posts/2022/02/configure-the-network-to-realize-the-interworking-between-host-and-virtual-machine-system/</guid>
+      <guid>https://akynazh.site</guid>
       <description>主机配置防火墙入站规则 主机如果没开启防火墙则可以跳过这一步。
 进入防火墙管理界面，新建入站规则放通目标虚拟机系统IP即可。
 选择桥接模式 默认好像是NAT模式，改为桥接模式，指定网卡为当前主机网络的网卡，我的是“Realtek PCIe.GBE Family Controller”。
@@ -188,10 +188,10 @@ CentOS配置静态IP 找到当前网络下网卡名，然后编辑/etc/sysconfig
     
     <item>
       <title>Git 快速初始化操作</title>
-      <link>http://akynazh.site/posts/2021/12/git-quick-initialization-operation/</link>
+      <link>https://akynazh.site</link>
       <pubDate>Fri, 10 Dec 2021 18:10:07 +0800</pubDate>
       
-      <guid>http://akynazh.site/posts/2021/12/git-quick-initialization-operation/</guid>
+      <guid>https://akynazh.site</guid>
       <description>git初次拉取远程仓库 首先从github建立一个仓库，获取仓库地址url，然后进入项目所在文件夹，运行以下代码：
 1&amp;gt; git init # 初始化仓库，生成.git文件 2 3&amp;gt; git add . # 将项目文件的修改信息添加到.git内的一个暂存区（index） 4 5&amp;gt; git commit -m “init” # 将暂存区的修改信息提交到分支 6 7&amp;gt; git remote add origin ${url} # 添加远程仓库 8 9&amp;gt; git push origin master # 将本地分支推送到远程仓库 这里执行完 git commit -m &amp;quot;init&amp;quot; 后，我们查看一下本地分支信息：
 1&amp;gt; git branch 2* master 可见git自动为我们本地创建了一个master分支。
@@ -201,10 +201,10 @@ CentOS配置静态IP 找到当前网络下网卡名，然后编辑/etc/sysconfig
     
     <item>
       <title>Window 增加右键打开选项</title>
-      <link>http://akynazh.site/posts/2021/11/add-right-click-open-option-in-window/</link>
+      <link>https://akynazh.site</link>
       <pubDate>Sat, 20 Nov 2021 18:10:30 +0800</pubDate>
       
-      <guid>http://akynazh.site/posts/2021/11/add-right-click-open-option-in-window/</guid>
+      <guid>https://akynazh.site</guid>
       <description>加入注册表界面 win+R
 regedit
 增加右键操作文件选项 以vscode作为编辑文件实例 注册表页面下进入：
@@ -228,28 +228,28 @@ regedit
     
     <item>
       <title>Docker 简单使用记录</title>
-      <link>http://akynazh.site/posts/2021/05/docker-simple-use-process-record/</link>
+      <link>https://akynazh.site</link>
       <pubDate>Wed, 19 May 2021 22:52:52 +0800</pubDate>
       
-      <guid>http://akynazh.site/posts/2021/05/docker-simple-use-process-record/</guid>
+      <guid>https://akynazh.site</guid>
       <description>下载并运行ubuntu镜像 1[root@VM-0-11-centos ~]# docker run ubuntu:15.10 /bin/echo &amp;#34;crazy thursday&amp;#34; 2crazy thursday 运行ubuntu并开启bash交互 1[root@VM-0-11-centos ~]# docker run -i -t ubuntu:15.10 /bin/bash 2root@fda3220ed59f:/# echo hello 3hello 4root@fda3220ed59f:/# cat /proc/version 5Linux version 3.10.0-1160.45.1.el7.x86_64 (mockbuild@kbuilder.bsys.centos.org) (gcc version 4.8.5 20150623 (Red Hat 4.8.5-44) (GCC) ) #1 SMP Wed Oct 13 17:20:51 UTC 2021 6root@fda3220ed59f:/# ls 7bin dev home lib64 mnt proc run srv tmp var 8boot etc lib media opt root sbin sys usr 9root@fda3220ed59f:/# exit 10exit 运行进程并观察 1[root@VM-0-11-centos ~]# docker run -d ubuntu:15.</description>
     </item>
     
     <item>
       <title>IDEA 配置使用记录</title>
-      <link>http://akynazh.site/posts/2021/01/idea-configuration-usage-record/</link>
+      <link>https://akynazh.site</link>
       <pubDate>Sun, 17 Jan 2021 21:46:42 +0800</pubDate>
       
-      <guid>http://akynazh.site/posts/2021/01/idea-configuration-usage-record/</guid>
+      <guid>https://akynazh.site</guid>
       <description>控制台中文乱码解决 菜单栏HELP-&amp;gt;Edit Custom VM OPtions中加 -Dfile.encoding=utf-8 重启idea IDEA开启RunDashboard 1# .idea/workspace.xml 2 3&amp;lt;component name=&amp;#34;RunDashboard&amp;#34;&amp;gt; 4 &amp;lt;option name=&amp;#34;configurationTypes&amp;#34;&amp;gt; 5 &amp;lt;set&amp;gt; 6 &amp;lt;option value=&amp;#34;SpringBootApplicationConfigurationType&amp;#34; /&amp;gt; 7 &amp;lt;/set&amp;gt; 8 &amp;lt;/option&amp;gt; 9&amp;lt;/component&amp;gt; IDEA关闭拼写 1Settings -&amp;gt; Editor -&amp;gt; Inspection -&amp;gt; Proofreading -&amp;gt; 关闭Typo IDEA配置快捷输入 1editor -&amp;gt; live template IDEA常用快捷键 1alt + ctrl + L : 格式化 2 3ctrl + shift + r : 替换字符 4 5ctrl + r : 在当前文件中替换字符 6 7ctrl + shift + n : 搜索项目文件 8 9ctrl + f : 在当前文件下搜索字符 10 11ctrl + shift + t : 进行快捷抛异常 12 13alt + 上下键 : 光标移到下或上一层 禁用 double shift 对于2021.</description>
     </item>
     
     <item>
       <title>实现 SSH 免 IP 免密登录</title>
-      <link>http://akynazh.site/posts/2021/01/realize-ssh-ipfree-and-secret-free-login/</link>
+      <link>https://akynazh.site</link>
       <pubDate>Wed, 13 Jan 2021 21:53:43 +0800</pubDate>
       
-      <guid>http://akynazh.site/posts/2021/01/realize-ssh-ipfree-and-secret-free-login/</guid>
+      <guid>https://akynazh.site</guid>
       <description>编辑 ~/.ssh/config 1Host 输入代替名 2 HostName 输入IP 3 Port 输入端口号 4 User 输入用户名 5 # ProxyCommand &amp;#34;C:\Program Files\Git\mingw64\bin\connect.exe&amp;#34; -S 127.0.0.1:7890 -a none %h %p 6 7# 定时发送心跳确保不断开连接 8ServerAliveInterval 30 # 每隔30秒发送一次 9ServerAliveCountMax 60 # 连续60次服务端无响应断开连接 生成并发送密钥 1ssh-keygen -t rsa 然后将公钥 ~/.ssh/id_rsa.pub 复制到目标主机 ~/.ssh/authorized_keys 文件中。
 可能出现的问题：密钥算法不匹配 如果出现以下错误：
 no matching key exchange method found. Their offer: diffie-hellman-group1-sha1

@@ -2,81 +2,81 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Norwegian Wood</title>
-    <link>http://akynazh.site/categories/</link>
+    <link>https://akynazh.site</link>
     <description>Recent content in Categories on Norwegian Wood</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Jzh</copyright>
-    <lastBuildDate>Tue, 31 Jan 2023 17:22:29 +0800</lastBuildDate><atom:link href="http://akynazh.site/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 31 Jan 2023 17:22:29 +0800</lastBuildDate><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>OS</title>
-      <link>http://akynazh.site/categories/os/</link>
+      <link>https://akynazh.site</link>
       <pubDate>Tue, 31 Jan 2023 17:22:29 +0800</pubDate>
       
-      <guid>http://akynazh.site/categories/os/</guid>
+      <guid>https://akynazh.site</guid>
       <description></description>
     </item>
     
     <item>
       <title>Tool</title>
-      <link>http://akynazh.site/categories/tool/</link>
+      <link>https://akynazh.site</link>
       <pubDate>Fri, 13 Jan 2023 21:43:06 +0800</pubDate>
       
-      <guid>http://akynazh.site/categories/tool/</guid>
+      <guid>https://akynazh.site</guid>
       <description></description>
     </item>
     
     <item>
       <title>Life</title>
-      <link>http://akynazh.site/categories/life/</link>
+      <link>https://akynazh.site</link>
       <pubDate>Fri, 06 Jan 2023 17:22:27 +0800</pubDate>
       
-      <guid>http://akynazh.site/categories/life/</guid>
+      <guid>https://akynazh.site</guid>
       <description></description>
     </item>
     
     <item>
       <title>Language</title>
-      <link>http://akynazh.site/categories/language/</link>
+      <link>https://akynazh.site</link>
       <pubDate>Wed, 04 Jan 2023 22:55:27 +0800</pubDate>
       
-      <guid>http://akynazh.site/categories/language/</guid>
+      <guid>https://akynazh.site</guid>
       <description></description>
     </item>
     
     <item>
       <title>Web</title>
-      <link>http://akynazh.site/categories/web/</link>
+      <link>https://akynazh.site</link>
       <pubDate>Thu, 08 Dec 2022 16:35:54 +0800</pubDate>
       
-      <guid>http://akynazh.site/categories/web/</guid>
+      <guid>https://akynazh.site</guid>
       <description></description>
     </item>
     
     <item>
       <title>Bug</title>
-      <link>http://akynazh.site/categories/bug/</link>
+      <link>https://akynazh.site</link>
       <pubDate>Fri, 04 Nov 2022 22:53:34 +0800</pubDate>
       
-      <guid>http://akynazh.site/categories/bug/</guid>
+      <guid>https://akynazh.site</guid>
       <description></description>
     </item>
     
     <item>
       <title>Book</title>
-      <link>http://akynazh.site/categories/book/</link>
+      <link>https://akynazh.site</link>
       <pubDate>Tue, 06 Sep 2022 17:16:05 +0800</pubDate>
       
-      <guid>http://akynazh.site/categories/book/</guid>
+      <guid>https://akynazh.site</guid>
       <description></description>
     </item>
     
     <item>
       <title>Algorithm</title>
-      <link>http://akynazh.site/categories/algorithm/</link>
+      <link>https://akynazh.site</link>
       <pubDate>Thu, 21 Jul 2022 20:44:54 +0800</pubDate>
       
-      <guid>http://akynazh.site/categories/algorithm/</guid>
+      <guid>https://akynazh.site</guid>
       <description></description>
     </item>
     

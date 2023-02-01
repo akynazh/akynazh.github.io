@@ -2,27 +2,27 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>software on Norwegian Wood</title>
-    <link>http://akynazh.site/tags/software/</link>
+    <link>https://akynazh.site</link>
     <description>Recent content in software on Norwegian Wood</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Jzh</copyright>
-    <lastBuildDate>Sun, 13 Nov 2022 21:15:53 +0800</lastBuildDate><atom:link href="http://akynazh.site/tags/software/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 13 Nov 2022 21:15:53 +0800</lastBuildDate><atom:link href="/tags/software/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Linux 软件安装和配置记录</title>
-      <link>http://akynazh.site/posts/2022/11/linux-software-installation-and-configuration-records/</link>
+      <link>https://akynazh.site</link>
       <pubDate>Sun, 13 Nov 2022 21:15:53 +0800</pubDate>
       
-      <guid>http://akynazh.site/posts/2022/11/linux-software-installation-and-configuration-records/</guid>
+      <guid>https://akynazh.site</guid>
       <description>BASE 1apt update -y 2apt install curl wget vim net-tools git nginx -y 3# apt install openssh* 4 5-------------------------------------------- 6 7yum update -y 8yum install curl wget vim net-tools git nginx -y 9yum install openssh* yum镜像 1mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.bak 2wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo # centos7 3 4yum makecache 5yum -y update apt镜像 1cp /etc/apt/sources.list /etc/apt/sources.list.bak 2vim /etc/apt/sources.list 3 4lsb_release -c 查看版本代码 5 6如要用于其他版本，把 focal 换成其他版本代号即可: 22.04：jammy；20.04：focal；18.04：bionic；16.04：xenial；14.04：trusty。 7 8# 默认注释了源码仓库，如有需要可自行取消注释 9deb https://mirrors.</description>
     </item>
     
     <item>
       <title>IDEA 配置使用记录</title>
-      <link>http://akynazh.site/posts/2021/01/idea-configuration-usage-record/</link>
+      <link>https://akynazh.site</link>
       <pubDate>Sun, 17 Jan 2021 21:46:42 +0800</pubDate>
       
-      <guid>http://akynazh.site/posts/2021/01/idea-configuration-usage-record/</guid>
+      <guid>https://akynazh.site</guid>
       <description>控制台中文乱码解决 菜单栏HELP-&amp;gt;Edit Custom VM OPtions中加 -Dfile.encoding=utf-8 重启idea IDEA开启RunDashboard 1# .idea/workspace.xml 2 3&amp;lt;component name=&amp;#34;RunDashboard&amp;#34;&amp;gt; 4 &amp;lt;option name=&amp;#34;configurationTypes&amp;#34;&amp;gt; 5 &amp;lt;set&amp;gt; 6 &amp;lt;option value=&amp;#34;SpringBootApplicationConfigurationType&amp;#34; /&amp;gt; 7 &amp;lt;/set&amp;gt; 8 &amp;lt;/option&amp;gt; 9&amp;lt;/component&amp;gt; IDEA关闭拼写 1Settings -&amp;gt; Editor -&amp;gt; Inspection -&amp;gt; Proofreading -&amp;gt; 关闭Typo IDEA配置快捷输入 1editor -&amp;gt; live template IDEA常用快捷键 1alt + ctrl + L : 格式化 2 3ctrl + shift + r : 替换字符 4 5ctrl + r : 在当前文件中替换字符 6 7ctrl + shift + n : 搜索项目文件 8 9ctrl + f : 在当前文件下搜索字符 10 11ctrl + shift + t : 进行快捷抛异常 12 13alt + 上下键 : 光标移到下或上一层 禁用 double shift 对于2021.</description>
     </item>
     

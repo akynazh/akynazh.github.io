@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>batch on Norwegian Wood</title>
-    <link>http://akynazh.site/tags/batch/</link>
+    <link>https://akynazh.site</link>
     <description>Recent content in batch on Norwegian Wood</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Jzh</copyright>
-    <lastBuildDate>Wed, 03 Aug 2022 23:34:36 +0800</lastBuildDate><atom:link href="http://akynazh.site/tags/batch/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 03 Aug 2022 23:34:36 +0800</lastBuildDate><atom:link href="/tags/batch/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Batch 基本编写方法记录</title>
-      <link>http://akynazh.site/posts/2022/08/batch-basic-compilation-method-record/</link>
+      <link>https://akynazh.site</link>
       <pubDate>Wed, 03 Aug 2022 23:34:36 +0800</pubDate>
       
-      <guid>http://akynazh.site/posts/2022/08/batch-basic-compilation-method-record/</guid>
+      <guid>https://akynazh.site</guid>
       <description>读取输入 1set /p ch=&amp;#34;y/n:&amp;#34; 2echo %ch% 变量运算 通过%{var}%访问变量，通过/a进行表达式计算设置值。
 1@echo off 2 3set money=100 4echo 初始金额： %money% 5 6set /a money=%money%*2 7set /a money=%money%+100 8echo 现在的金额：%money% 选择并跳转 :{point} 用于指定一个跳转点。
 1@echo off 2 3set /p ch=&amp;#34;y/n:&amp;#34; 4if &amp;#34;%ch%&amp;#34;==&amp;#34;&amp;#34; ( 5 goto end 6) else if &amp;#34;%ch%&amp;#34;==&amp;#34;n&amp;#34; ( 7 goto no 8) else if &amp;#34;%ch%&amp;#34;==&amp;#34;y&amp;#34; ( 9 goto yes 10) else ( 11 goto end 12) 13 14:no 15echo NO 16goto end 17 18:yes 19echo YES 20goto end 21 22:end 循环语句 通过%%x设置和访问循环值； 通过(start, steps, end)设置循环； /l 将通过比较start和end来执行迭代。 1@echo off 2 3for /l %%x in (1, 5, 100) do ( 4 echo hello, jzh-%%x 5) 变量动态变化 setlocal enabledelayedexpansion开启变量延迟，使得变量可以动态变化; 需通过!</description>

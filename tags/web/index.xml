@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>web on Norwegian Wood</title>
-    <link>http://akynazh.site/tags/web/</link>
+    <link>https://akynazh.site</link>
     <description>Recent content in web on Norwegian Wood</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Jzh</copyright>
-    <lastBuildDate>Thu, 08 Dec 2022 16:35:54 +0800</lastBuildDate><atom:link href="http://akynazh.site/tags/web/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 08 Dec 2022 16:35:54 +0800</lastBuildDate><atom:link href="/tags/web/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>对于 Rest 风格的理解</title>
-      <link>http://akynazh.site/posts/2022/12/understanding-of-rest-style/</link>
+      <link>https://akynazh.site</link>
       <pubDate>Thu, 08 Dec 2022 16:35:54 +0800</pubDate>
       
-      <guid>http://akynazh.site/posts/2022/12/understanding-of-rest-style/</guid>
+      <guid>https://akynazh.site</guid>
       <description>REST，全称 Representational State Transfer，即表现层状态转移。
 符合REST规范的写法：
 1POST http://www.test.com/lemon // 创建 2Get http://www.test.com/lemon // 查询 3PUT http://www.test.com/lemon // 修改 4DELETE http://www.test.com/lemon //删除 不符合REST规范的写法：
@@ -25,20 +25,20 @@
     
     <item>
       <title>Swagger 使用记录</title>
-      <link>http://akynazh.site/posts/2022/06/swagger-usage-record/</link>
+      <link>https://akynazh.site</link>
       <pubDate>Sat, 25 Jun 2022 21:20:38 +0800</pubDate>
       
-      <guid>http://akynazh.site/posts/2022/06/swagger-usage-record/</guid>
+      <guid>https://akynazh.site</guid>
       <description>依赖导入： 1&amp;lt;!-- swagger所需依赖 --&amp;gt; 2&amp;lt;dependency&amp;gt; 3 &amp;lt;groupId&amp;gt;io.springfox&amp;lt;/groupId&amp;gt; 4 &amp;lt;artifactId&amp;gt;springfox-swagger2&amp;lt;/artifactId&amp;gt; 5 &amp;lt;version&amp;gt;2.6.1&amp;lt;/version&amp;gt; 6&amp;lt;/dependency&amp;gt; 7&amp;lt;dependency&amp;gt; 8 &amp;lt;groupId&amp;gt;io.springfox&amp;lt;/groupId&amp;gt; 9 &amp;lt;artifactId&amp;gt;springfox-swagger-ui&amp;lt;/artifactId&amp;gt; 10 &amp;lt;version&amp;gt;2.6.1&amp;lt;/version&amp;gt; 11&amp;lt;/dependency&amp;gt; 配置Swagger /config/SwaggerConfig.java
 1@Configuration 2@EnableSwagger2 3public class SwaggerConfig { 4 @Bean 5 public Docket createRestApi() { 6 return new Docket(DocumentationType.SWAGGER_2) 7 .apiInfo(apiInfo()) 8 .select() 9 .apis(RequestHandlerSelectors.withClassAnnotation(Api.class)) 10 .paths(PathSelectors.any()) 11 .build(); 12 } 13 14 // 基本信息的配置，信息会在api文档上显示 15 private ApiInfo apiInfo() { 16 return new ApiInfoBuilder() 17 .title(&amp;#34;jzh测试的接口文档&amp;#34;) 18 .description(&amp;#34;xx相关接口的文档&amp;#34;) 19 .termsOfServiceUrl(&amp;#34;http://localhost:7777&amp;#34;) 20 .</description>
     </item>
     
     <item>
       <title>在前后端不分离的情况下进行交互性数据展示的实现方法</title>
-      <link>http://akynazh.site/posts/2022/02/implementation-method-of-interactive-data-display-without-separation-of-front-and-back-ends/</link>
+      <link>https://akynazh.site</link>
       <pubDate>Fri, 11 Feb 2022 00:05:25 +0800</pubDate>
       
-      <guid>http://akynazh.site/posts/2022/02/implementation-method-of-interactive-data-display-without-separation-of-front-and-back-ends/</guid>
+      <guid>https://akynazh.site</guid>
       <description>前言 开发web项目时，常常需要在前端展示一些交互性的数据，比如表单填写错误的提示，操作成功与否的提示等。
 本文主要讲述在使用Thymeleaf作为模板引擎开发前端时，即在前后端不分离的情况下，前后端进行交互性数据展示的实现方法。
 使用cookie传递数据：不推荐 一、步骤 后端通过addCookie方法设置值 前端在页面加载时读取cookie值并进行展示 前端删除该cookie值 二、缺陷 这个方法我使用过，但是效果并不好，原因如下：
@@ -54,10 +54,10 @@ addFlashAttribute是把数据临时放在session中并在刷新页面后自动�
     
     <item>
       <title>Python 自动爬取花瓣网任意面板中所有图片</title>
-      <link>http://akynazh.site/posts/2020/02/python-automatically-crawls-all-pictures-in-any-panel-of-petal-net/</link>
+      <link>https://akynazh.site</link>
       <pubDate>Thu, 13 Feb 2020 00:14:23 +0800</pubDate>
       
-      <guid>http://akynazh.site/posts/2020/02/python-automatically-crawls-all-pictures-in-any-panel-of-petal-net/</guid>
+      <guid>https://akynazh.site</guid>
       <description>注：该项目只适用于旧版花瓣，但其中的思路值得领会。对于新版花瓣编写的代码，逻辑差别不大。
 需要安装的库 urllib easygui selenium webdriver_manager 获取过程 进入面板内 复制当前面板url 启动该脚本按提示进行即可 代码编写流程 分析pin图特点 查看面板源码，可以在对应的script中找到面板中图片的json数据。
 在app.page[&amp;ldquo;board&amp;rdquo;]下可以找到&amp;quot;pins&amp;quot;:[{&amp;hellip;}]，主要图片ID(pin)位于这里面。
