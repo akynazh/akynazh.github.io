@@ -55,12 +55,22 @@
 因为运行在 CPU 实模式下的 DOS，没有能力对硬件系统进行全面、严格的管理。
 但在Windows 2000、Unix 这些运行于CPU保护模式下的操作系统中，不理会操作系统，用汇编语言去操作真实的硬件，是根本不可能的。硬件已被这些操作系统利用 CPU 保护模式所提供的功能全面而严格地管理了。"/>
 
+
   
   
   
   
   
-  <link rel="stylesheet" href="https://akynazh.site/css/styles.cf664dcdab2592de34c9616ed348faf371290312b6ccb44b0b4bf803a889cf471456a5c2f39241b0a705d7ba99e55abfd1013666698f6009375e952ada4d2750.css" integrity="sha512-z2ZNzaslkt40yWFu00j683EpAxK2zLRLC0v4A6iJz0cUVqXC85JBsKcF17qZ5Vq/0QE2ZmmPYAk3XpUq2k0nUA==">
+
+  
+  
+  
+    <input value="dark" id="theme-current" style="display: none;">
+    <link id="theme" rel="stylesheet" href="https://akynazh.site/css/styles_dark.css">
+  
+  <input value="https://akynazh.site/css/styles_dark.css" id="styles-dark" style="display: none;">
+  <input value="https://akynazh.site/css/styles_light.css" id="styles-light" style="display: none;">
+
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
@@ -121,11 +131,15 @@
           </a>
         </li>
         <li>
+          <a class="icon" id="theme-change"><i class="fas fa-adjust"></i></a>
+        </li>
+        <li>
           <a class="icon" href="#" aria-label="Share" onclick="$('#share').toggle();return false;">
             <i class="fas fa-share-alt" aria-hidden="true"></i>
           </a>
         </li>
       </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
       <span id="i-prev" class="info" style="display:none;">Previous post</span>
       <span id="i-next" class="info" style="display:none;">Next post</span>
       <span id="i-top" class="info" style="display:none;">Back to top</span>
@@ -302,7 +316,7 @@
 <h2 id="问题">问题</h2>
 <p><strong>向内存0:200~0:23F依次传送0~63(3FH)：</strong></p>
 <p>注意0:200~0:23F等同于0020:0~0020:3f，它们描述的是同一内存单元。</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>assume cs:code
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>assume cs:code
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>code segment
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>    
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>    mov  bx,20h
@@ -320,7 +334,7 @@
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>end
 </span></span></code></pre></div><p>将<code>mov ax,4c00h</code>之前的指令复制到内存0:200处：</p>
 <p>CX寄存器在debug调试一个可执行程序时，初始值为该程序的字节尺寸大小，要复制<code>mov ax,4c00h</code>之前的指令，需要减去<code>mov ax,4c00h</code> 和 <code>int 21h</code> 包含的5个字节。而由于程序指令的起始地址由CS:IP指定，所以将ds赋值为cs。</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>assume cs:code
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>assume cs:code
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>code segment
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>    mov ax,cs ; 程序指令的起始地址由CS:IP指定
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>    mov ds,ax
@@ -343,8 +357,6 @@
 <li>维基百科</li>
 <li>王爽《汇编语言》</li>
 </ul>
-<p><strong>From My Blog: <a href="https://akynazh.site">akynazh</a></strong>.</p>
-<p><strong>Over.</strong></p>
 
     </div>
   </article>
@@ -361,7 +373,7 @@
     repo="akynazh/hugo-comment"
     issue-term="pathname"
     label="akynazh"
-    theme="github-light"
+    theme="github-dark"
     crossorigin="anonymous"
     async>
   </script>
@@ -462,18 +474,24 @@
     </div>
 
     <div id="actions-footer">
-        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').show();$('#toc-footer').hide();$('#share-footer').hide();return false;" aria-label="Menu">
-          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="menu-toggle" class="icon-mobile-nav" href="#" onclick="$('#nav-footer').show();$('#toc-footer').hide();$('#share-footer').hide();return false;" aria-label="Menu">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i></a>
+
         
-        <a id="toc-toggle" class="icon" href="#" onclick="$('#toc-footer').show();$('#nav-footer').hide();$('#share-footer').hide();return false;" aria-label="TOC">
-          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="toc-toggle"class="icon-mobile-nav"  href="#" onclick="$('#toc-footer').show();$('#nav-footer').hide();$('#share-footer').hide();return false;" aria-label="TOC">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i></a>
         
-        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
-          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
-        <a id="searchBtn1" class="icon" href="#" aria-label="Search">
-          <i class="fa fa-search" aria-hidden="true"></i> Search</a>
-        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').show();$('#toc-footer').hide();$('#nav-footer').hide();return false;" aria-label="Share">
-          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+
+        <a id="top" class="icon-mobile-nav" style="display:none" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i></a>
+
+        <a id="searchBtn1" class="icon-mobile-nav"  href="#" aria-label="Search">
+          <i class="fa fa-search fa-lg" aria-hidden="true"></i></a>
+
+        <a id="theme-change" class="icon-mobile-nav"><i class="fas fa-adjust fa-lg"></i></a>
+
+        <a id="share-toggle" class="icon-mobile-nav"  href="#" onclick="$('#share-footer').show();$('#toc-footer').hide();$('#nav-footer').hide();return false;" aria-label="Share">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i></a>
     </div>
 
   </div>

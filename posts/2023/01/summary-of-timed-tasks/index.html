@@ -31,12 +31,22 @@
 10 */2 * * * cmd 在 1 月 1 日早上 4 点执行一次：
 10 4 1 1 * cmd crontab 环境变量问题 crontab 不会使用在 .bashrc 之类的文件中定义的变量和函数。"/>
 
+
   
   
   
   
   
-  <link rel="stylesheet" href="https://akynazh.site/css/styles.cf664dcdab2592de34c9616ed348faf371290312b6ccb44b0b4bf803a889cf471456a5c2f39241b0a705d7ba99e55abfd1013666698f6009375e952ada4d2750.css" integrity="sha512-z2ZNzaslkt40yWFu00j683EpAxK2zLRLC0v4A6iJz0cUVqXC85JBsKcF17qZ5Vq/0QE2ZmmPYAk3XpUq2k0nUA==">
+
+  
+  
+  
+    <input value="dark" id="theme-current" style="display: none;">
+    <link id="theme" rel="stylesheet" href="https://akynazh.site/css/styles_dark.css">
+  
+  <input value="https://akynazh.site/css/styles_dark.css" id="styles-dark" style="display: none;">
+  <input value="https://akynazh.site/css/styles_light.css" id="styles-light" style="display: none;">
+
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
@@ -91,11 +101,15 @@
           </a>
         </li>
         <li>
+          <a class="icon" id="theme-change"><i class="fas fa-adjust"></i></a>
+        </li>
+        <li>
           <a class="icon" href="#" aria-label="Share" onclick="$('#share').toggle();return false;">
             <i class="fas fa-share-alt" aria-hidden="true"></i>
           </a>
         </li>
       </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
       <span id="i-prev" class="info" style="display:none;">Previous post</span>
       <span id="i-next" class="info" style="display:none;">Next post</span>
       <span id="i-top" class="info" style="display:none;">Back to top</span>
@@ -232,25 +246,25 @@
     <div class="content" itemprop="articleBody">
       <h2 id="linux-下的定时任务">Linux 下的定时任务</h2>
 <h3 id="规则">规则</h3>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>*/1 * * * * cmd
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>*/1 * * * * cmd
 </span></span></code></pre></div><p>5个单元：</p>
 <p>分钟（0-59） 小时（0-23  日期（1-31） 月份（1-12） 星期几（0-6，其中 0 代表星期日）</p>
 <h3 id="例子">例子</h3>
 <p>每分钟执行一次：</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>* * * * * cmd # or: */1 * * * * cmd
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>* * * * * cmd # or: */1 * * * * cmd
 </span></span></code></pre></div><p>每天早上 6 点 10 分执行一次：</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>10 6 * * * cmd
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>10 6 * * * cmd
 </span></span></code></pre></div><p>每两个小时执行一次：</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>0 */2 * * * cmd
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>0 */2 * * * cmd
 </span></span></code></pre></div><p>在 1 月 1 日早上 4 点执行一次：</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>0 4 1 1 * cmd
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>0 4 1 1 * cmd
 </span></span></code></pre></div><h3 id="crontab-环境变量问题">crontab 环境变量问题</h3>
 <p>crontab 不会使用在 <code>.bashrc</code> 之类的文件中定义的变量和函数。</p>
 <p>解决方法是在 crontab 中通过 <code>bash -lc &quot;{your_cmd}&quot;</code> 调用脚本或命令。</p>
 <p>如果脚本还使用了 <code>os.system()</code> 之类的命令，则在 <code>os.system()</code> 也要通过 <code>bash -lc &quot;{your_cmd}&quot;</code> 调用脚本或命令。</p>
 <p>同时，在 crontab 中需要使用绝对路径。</p>
 <p>关于 <code>lc</code>:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>-c        If  the  -c  option is present, then commands are read from the first non-option argument command_string. ...
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>-c        If  the  -c  option is present, then commands are read from the first non-option argument command_string. ...
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>-l        Make bash act as if it had been invoked as a login shell (see INVOCATION below).
 </span></span></code></pre></div><h3 id="crontab-配置文件">crontab 配置文件</h3>
 <p>配置文件在：<code>/var/spool/cron/{用户名}</code></p>
@@ -260,16 +274,16 @@
 <p>Ubuntu / Debian:</p>
 <p>On a default installation the cron jobs get logged to <code>/var/log/syslog</code>.</p>
 <p>You can see just cron jobs in that logfile by running:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>grep CRON /var/log/syslog
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>grep CRON /var/log/syslog
 </span></span></code></pre></div><h3 id="crontab-邮件位置">crontab 邮件位置</h3>
 <p>每个 crontab 任务执行之后都会发送一封邮件给用户，位置在 <code>/var/mail/{用户名}</code></p>
 <p>通过该邮件可以方便地进行 debug。</p>
 <p>如果没有该服务，可以通过如下命令解决：</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>sudo apt install postfix -y
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>sudo apt install postfix -y
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>systemctl start postfix
 </span></span></code></pre></div><h2 id="windows-下的定时任务">Windows 下的定时任务</h2>
 <h3 id="规则-1">规则</h3>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>SCHTASKS /parameter [arguments]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>SCHTASKS /parameter [arguments]
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>Parameter List:
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>    /Create         Creates a new scheduled task.
@@ -288,7 +302,7 @@
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>    /?              Displays this help message.
 </span></span></code></pre></div><p>查询某个操作的具体用法：</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>schtasks /create /?
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>schtasks /create /?
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>SCHTASKS /Create [/S system [/U username [/P [password]]]]
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>    [/RU username [/RP password]] /SC schedule [/MO modifier] [/D day]
@@ -299,14 +313,14 @@
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9</span><span>    ...
 </span></span></code></pre></div><h3 id="例子-1">例子</h3>
 <p><strong>一、每 30 分钟运行一次：</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>schtasks /create /sc minute /mo 30 /tn &#34;{task_name}&#34; /tr &#34;{task}&#34;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>schtasks /create /sc minute /mo 30 /tn &#34;{task_name}&#34; /tr &#34;{task}&#34;
 </span></span></code></pre></div><p>阅读可知：</p>
 <p><code>/sc</code>，指定频率的单位：</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>/SC   schedule     Specifies the schedule frequency.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>/SC   schedule     Specifies the schedule frequency.
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>                    Valid schedule types: MINUTE, HOURLY, DAILY, WEEKLY,
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>                    MONTHLY, ONCE, ONSTART, ONLOGON, ONIDLE, ONEVENT.
 </span></span></code></pre></div><p><code>/mo</code>，在 <code>/sc</code> 的基础上，指定大小（可以的情况下使用，如 MINUTE 可以，而 ONSTART 不可以）：</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>Modifiers: Valid values for the /MO switch per schedule type:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>Modifiers: Valid values for the /MO switch per schedule type:
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>    MINUTE:  1 - 1439 minutes.
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>    HOURLY:  1 - 23 hours.
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>    DAILY:   1 - 365 days.
@@ -323,21 +337,18 @@
 <p><code>/tr</code>，即“task run”，指定任务，即一个可执行的程序，如 exe，bat。</p>
 <p><strong>二、开机启动程序</strong></p>
 <p>需要通过<strong>管理员模式</strong>运行以下命令：</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>schtasks /create /tn &#34;{task_name}&#34; /sc onlogon /tr &#34;{task}&#34;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>schtasks /create /tn &#34;{task_name}&#34; /sc onlogon /tr &#34;{task}&#34;
 </span></span></code></pre></div><p><strong>三、每天 22:00:00 执行一次</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>schtasks /create /tn &#34;{task_name}&#34; /sc daily /st 22:00:00 /tr &#34;{task}&#34;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>schtasks /create /tn &#34;{task_name}&#34; /sc daily /st 22:00:00 /tr &#34;{task}&#34;
 </span></span></code></pre></div><p>阅读可知：</p>
 <p>/st，用于指定执行的具体时刻：</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>/ST   starttime    Specifies the start time to run the task. The time
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>/ST   starttime    Specifies the start time to run the task. The time
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>                    format is HH:mm (24 hour time) for example, 14:30 for
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>                    2:30 PM. Defaults to current time if /ST is not
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>                    specified.  This option is required with /SC ONCE.
 </span></span></code></pre></div><p><strong>四、删除定时任务</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>schtasks /delete /tn &#34;{task_name}&#34;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>schtasks /delete /tn &#34;{task_name}&#34;
 </span></span></code></pre></div><p>由于任务名是唯一的，所以通过 /tn 指定任务名即可删除任务。</p>
-<hr>
-<p>From My Blog: <a href="https://akynazh.site">akynazh</a>.</p>
-<p>Over.</p>
 
     </div>
   </article>
@@ -354,7 +365,7 @@
     repo="akynazh/hugo-comment"
     issue-term="pathname"
     label="akynazh"
-    theme="github-light"
+    theme="github-dark"
     crossorigin="anonymous"
     async>
   </script>
@@ -463,18 +474,24 @@
     </div>
 
     <div id="actions-footer">
-        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').show();$('#toc-footer').hide();$('#share-footer').hide();return false;" aria-label="Menu">
-          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="menu-toggle" class="icon-mobile-nav" href="#" onclick="$('#nav-footer').show();$('#toc-footer').hide();$('#share-footer').hide();return false;" aria-label="Menu">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i></a>
+
         
-        <a id="toc-toggle" class="icon" href="#" onclick="$('#toc-footer').show();$('#nav-footer').hide();$('#share-footer').hide();return false;" aria-label="TOC">
-          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="toc-toggle"class="icon-mobile-nav"  href="#" onclick="$('#toc-footer').show();$('#nav-footer').hide();$('#share-footer').hide();return false;" aria-label="TOC">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i></a>
         
-        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
-          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
-        <a id="searchBtn1" class="icon" href="#" aria-label="Search">
-          <i class="fa fa-search" aria-hidden="true"></i> Search</a>
-        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').show();$('#toc-footer').hide();$('#nav-footer').hide();return false;" aria-label="Share">
-          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+
+        <a id="top" class="icon-mobile-nav" style="display:none" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i></a>
+
+        <a id="searchBtn1" class="icon-mobile-nav"  href="#" aria-label="Search">
+          <i class="fa fa-search fa-lg" aria-hidden="true"></i></a>
+
+        <a id="theme-change" class="icon-mobile-nav"><i class="fas fa-adjust fa-lg"></i></a>
+
+        <a id="share-toggle" class="icon-mobile-nav"  href="#" onclick="$('#share-footer').show();$('#toc-footer').hide();$('#nav-footer').hide();return false;" aria-label="Share">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i></a>
     </div>
 
   </div>

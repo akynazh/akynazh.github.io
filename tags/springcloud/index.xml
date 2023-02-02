@@ -84,9 +84,7 @@ service下的方法指定好关于生产者的服务限流，降级或熔断等�
 二、依赖引入
 在所有调用到的微服务中引入：
 1&amp;lt;dependency&amp;gt; 2 &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; 3 &amp;lt;artifactId&amp;gt;spring-cloud-starter-zipkin&amp;lt;/artifactId&amp;gt; 4&amp;lt;/dependency&amp;gt; 三、配置文件
-1spring: 2 zipkin: 3 base-url: http://localhost:9411 4 sleuth: 5 sampler: 6 probability: 1 # 采样率介于0和1之间，1表示全部采集 测试 通过service-name标签搜索自己的微服务名称，即可检索到与该微服务有依赖的所有微服务，可查看调用过程，依赖关系等。
-From My Blog: akynazh.
-Over.</description>
+1spring: 2 zipkin: 3 base-url: http://localhost:9411 4 sleuth: 5 sampler: 6 probability: 1 # 采样率介于0和1之间，1表示全部采集 测试 通过service-name标签搜索自己的微服务名称，即可检索到与该微服务有依赖的所有微服务，可查看调用过程，依赖关系等。</description>
     </item>
     
     <item>
@@ -219,9 +217,7 @@ Ribbon属于进程内LB，它只是一个类库，集成于消费方进程，消
 除了一些基本包的导入之外，关于consul包的导入：
 1&amp;lt;dependency&amp;gt; 2 &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; 3 &amp;lt;artifactId&amp;gt;spring-cloud-starter-consul-discovery&amp;lt;/artifactId&amp;gt; 4&amp;lt;/dependency&amp;gt; 二、关于application.yml
 1spring: 2 application: 3 name: cloud-consumer-order 4 5 cloud: 6 consul: 7 host: localhost 8 port: 8500 9 discovery: 10 service-name: ${spring.application.name} 三、启动类添加@EnableDiscoveryClient注解。
-consul测试 较为简单，访问localhost:8500查看即可。
-From My Blog: akynazh.
-Over.</description>
+consul测试 较为简单，访问localhost:8500查看即可。</description>
     </item>
     
     <item>

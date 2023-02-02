@@ -26,7 +26,7 @@
 1notepad 1.py 记事本不好用呀，还是vscode香，如下~
 使用vscode打开编辑1.py，首先需配置环境变量
 (${vscodepath}\bin)
-1code 1.py over</description>
+1code 1.py </description>
     </item>
     
   </channel>

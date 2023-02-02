@@ -41,12 +41,22 @@ $ay_1 &#43; b \times (x_1 -(a \div b) \times y_1) == gcd(a,b) $(2)" />
 由$a \mod b = a - (a \div b) \times b$带入得:
 $ay_1 &#43; b \times (x_1 -(a \div b) \times y_1) == gcd(a,b) $(2)"/>
 
+
   
   
   
   
   
-  <link rel="stylesheet" href="https://akynazh.site/css/styles.cf664dcdab2592de34c9616ed348faf371290312b6ccb44b0b4bf803a889cf471456a5c2f39241b0a705d7ba99e55abfd1013666698f6009375e952ada4d2750.css" integrity="sha512-z2ZNzaslkt40yWFu00j683EpAxK2zLRLC0v4A6iJz0cUVqXC85JBsKcF17qZ5Vq/0QE2ZmmPYAk3XpUq2k0nUA==">
+
+  
+  
+  
+    <input value="dark" id="theme-current" style="display: none;">
+    <link id="theme" rel="stylesheet" href="https://akynazh.site/css/styles_dark.css">
+  
+  <input value="https://akynazh.site/css/styles_dark.css" id="styles-dark" style="display: none;">
+  <input value="https://akynazh.site/css/styles_light.css" id="styles-light" style="display: none;">
+
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
@@ -107,11 +117,15 @@ $ay_1 &#43; b \times (x_1 -(a \div b) \times y_1) == gcd(a,b) $(2)"/>
           </a>
         </li>
         <li>
+          <a class="icon" id="theme-change"><i class="fas fa-adjust"></i></a>
+        </li>
+        <li>
           <a class="icon" href="#" aria-label="Share" onclick="$('#share').toggle();return false;">
             <i class="fas fa-share-alt" aria-hidden="true"></i>
           </a>
         </li>
       </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
       <span id="i-prev" class="info" style="display:none;">Previous post</span>
       <span id="i-next" class="info" style="display:none;">Next post</span>
       <span id="i-top" class="info" style="display:none;">Back to top</span>
@@ -234,9 +248,9 @@ $ay_1 &#43; b \times (x_1 -(a \div b) \times y_1) == gcd(a,b) $(2)"/>
     <div class="content" itemprop="articleBody">
       <h2 id="gcd辗转相除法求最大公约数">gcd辗转相除法求最大公约数</h2>
 <p>思路：反复交换取余，直到小的数为0。</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#0b0;font-weight:bold">int</span> <span style="color:#00a000">gcd</span>(<span style="color:#0b0;font-weight:bold">int</span> a, <span style="color:#0b0;font-weight:bold">int</span> b){
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>	<span style="color:#a2f;font-weight:bold">if</span>(b <span style="color:#666">==</span> <span style="color:#666">0</span>) <span style="color:#a2f;font-weight:bold">return</span> a;
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>	<span style="color:#a2f;font-weight:bold">return</span> gcd(b, a <span style="color:#666">%</span> b);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#8be9fd">int</span> <span style="color:#50fa7b">gcd</span>(<span style="color:#8be9fd">int</span> a, <span style="color:#8be9fd">int</span> b){
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>	<span style="color:#ff79c6">if</span>(b <span style="color:#ff79c6">==</span> <span style="color:#bd93f9">0</span>) <span style="color:#ff79c6">return</span> a;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>	<span style="color:#ff79c6">return</span> gcd(b, a <span style="color:#ff79c6">%</span> b);
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>}
 </span></span></code></pre></div><h2 id="exgcd扩展欧几里得算法">exgcd扩展欧几里得算法</h2>
 <p>先介绍<strong>贝祖定理</strong>：</p>
@@ -256,21 +270,19 @@ $ay_1 &#43; b \times (x_1 -(a \div b) \times y_1) == gcd(a,b) $(2)"/>
 <p>由等式可知上层的x,y可以由下层的x1,y1来求,则可以通过递归来实现。</p>
 <p>又由（1），当$b = 0, a \times 1 + b \times 0 = a = gcd(a,b)$</p>
 <p>则此时$x = 1, y = 0$, 一定会出现在递归末尾。</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#0b0;font-weight:bold">int</span> <span style="color:#00a000">exgcd</span>(<span style="color:#0b0;font-weight:bold">int</span> a, <span style="color:#0b0;font-weight:bold">int</span> b, <span style="color:#0b0;font-weight:bold">int</span> <span style="color:#666">&amp;</span>x, <span style="color:#0b0;font-weight:bold">int</span> <span style="color:#666">&amp;</span>y) {
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>	<span style="color:#0b0;font-weight:bold">int</span> d <span style="color:#666">=</span> a;
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>	<span style="color:#a2f;font-weight:bold">if</span> (b <span style="color:#666">!=</span> <span style="color:#666">0</span>) {
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>		d <span style="color:#666">=</span> exgcd(b, a<span style="color:#666">%</span>b, x, y);
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>		<span style="color:#0b0;font-weight:bold">int</span> temp <span style="color:#666">=</span> y;
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>		y <span style="color:#666">=</span> x <span style="color:#666">-</span> (a <span style="color:#666">/</span> b) <span style="color:#666">*</span> y; <span style="color:#080;font-style:italic">//上一层的y
-</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span><span style="color:#080;font-style:italic"></span>		x <span style="color:#666">=</span> temp; <span style="color:#080;font-style:italic">//上一层的x
-</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span><span style="color:#080;font-style:italic"></span>	} <span style="color:#a2f;font-weight:bold">else</span> {
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>		x <span style="color:#666">=</span> <span style="color:#666">1</span>; y <span style="color:#666">=</span> <span style="color:#666">0</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#8be9fd">int</span> <span style="color:#50fa7b">exgcd</span>(<span style="color:#8be9fd">int</span> a, <span style="color:#8be9fd">int</span> b, <span style="color:#8be9fd">int</span> <span style="color:#ff79c6">&amp;</span>x, <span style="color:#8be9fd">int</span> <span style="color:#ff79c6">&amp;</span>y) {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>	<span style="color:#8be9fd">int</span> d <span style="color:#ff79c6">=</span> a;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>	<span style="color:#ff79c6">if</span> (b <span style="color:#ff79c6">!=</span> <span style="color:#bd93f9">0</span>) {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>		d <span style="color:#ff79c6">=</span> exgcd(b, a<span style="color:#ff79c6">%</span>b, x, y);
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>		<span style="color:#8be9fd">int</span> temp <span style="color:#ff79c6">=</span> y;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>		y <span style="color:#ff79c6">=</span> x <span style="color:#ff79c6">-</span> (a <span style="color:#ff79c6">/</span> b) <span style="color:#ff79c6">*</span> y; <span style="color:#6272a4">//上一层的y
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span><span style="color:#6272a4"></span>		x <span style="color:#ff79c6">=</span> temp; <span style="color:#6272a4">//上一层的x
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span><span style="color:#6272a4"></span>	} <span style="color:#ff79c6">else</span> {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>		x <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">1</span>; y <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>;
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>	}
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>	<span style="color:#a2f;font-weight:bold">return</span> d;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>	<span style="color:#ff79c6">return</span> d;
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>}
-</span></span></code></pre></div><p><strong>From My Blog: <a href="https://akynazh.site">akynazh</a></strong>.</p>
-<p><strong>Over.</strong></p>
-
+</span></span></code></pre></div>
     </div>
   </article>
   
@@ -286,7 +298,7 @@ $ay_1 &#43; b \times (x_1 -(a \div b) \times y_1) == gcd(a,b) $(2)"/>
     repo="akynazh/hugo-comment"
     issue-term="pathname"
     label="akynazh"
-    theme="github-light"
+    theme="github-dark"
     crossorigin="anonymous"
     async>
   </script>
@@ -381,18 +393,24 @@ $ay_1 &#43; b \times (x_1 -(a \div b) \times y_1) == gcd(a,b) $(2)"/>
     </div>
 
     <div id="actions-footer">
-        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').show();$('#toc-footer').hide();$('#share-footer').hide();return false;" aria-label="Menu">
-          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="menu-toggle" class="icon-mobile-nav" href="#" onclick="$('#nav-footer').show();$('#toc-footer').hide();$('#share-footer').hide();return false;" aria-label="Menu">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i></a>
+
         
-        <a id="toc-toggle" class="icon" href="#" onclick="$('#toc-footer').show();$('#nav-footer').hide();$('#share-footer').hide();return false;" aria-label="TOC">
-          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="toc-toggle"class="icon-mobile-nav"  href="#" onclick="$('#toc-footer').show();$('#nav-footer').hide();$('#share-footer').hide();return false;" aria-label="TOC">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i></a>
         
-        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
-          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
-        <a id="searchBtn1" class="icon" href="#" aria-label="Search">
-          <i class="fa fa-search" aria-hidden="true"></i> Search</a>
-        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').show();$('#toc-footer').hide();$('#nav-footer').hide();return false;" aria-label="Share">
-          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+
+        <a id="top" class="icon-mobile-nav" style="display:none" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i></a>
+
+        <a id="searchBtn1" class="icon-mobile-nav"  href="#" aria-label="Search">
+          <i class="fa fa-search fa-lg" aria-hidden="true"></i></a>
+
+        <a id="theme-change" class="icon-mobile-nav"><i class="fas fa-adjust fa-lg"></i></a>
+
+        <a id="share-toggle" class="icon-mobile-nav"  href="#" onclick="$('#share-footer').show();$('#toc-footer').hide();$('#nav-footer').hide();return false;" aria-label="Share">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i></a>
     </div>
 
   </div>

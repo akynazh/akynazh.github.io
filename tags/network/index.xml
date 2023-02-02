@@ -24,7 +24,7 @@ Ubuntu配置静态IP 通过netplan的方法进行，编辑 /etc/netplan/00-insta
 1network: 2 ethernets: 3 enp0s3: 4 dhcp4: no 5 optional: no 6 nameservers: 7 addresses: [114.114.114.114, 8.8.8.8] 8 gateway4: 192.168.1.1 9 addresses: [192.168.1.128/24] 10 version: 2 然后执行 sudo netplan apply即可。
 CentOS配置静态IP 找到当前网络下网卡名，然后编辑/etc/sysconfig/network-scripts下的ifcfg-{网卡名}文件如下：
 1BOOTPROTO=&amp;#34;static&amp;#34; # 静态IP 2IPADDR=192.168.1.127 # IP 3NETMASK=255.255.255.0 # 子网掩码 4GATEWAY=192.168.1.1 # 网关 5DNS1=114.114.114.114 6DNS2=8.8.8.8 7ONBOOT=yes 之后再重启网络服务即可：
-1systemctl restart network From my blog: akynazh.</description>
+1systemctl restart network </description>
     </item>
     
     <item>

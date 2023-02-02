@@ -25,12 +25,22 @@
 1public class TestTask1 extends QuartzJobBean { 2 @Override 3 protected void executeInternal(JobExecutionContext context) { 4 SimpleDateFormat sdf = new SimpleDateFormat(&#34;yyyy-MM-dd HH:mm:ss&#34;); 5 System.out.println(&#34;Test1---&#34; &#43; sdf.format(new Date())); 6 } 7} /TestTask2.java
 1public class TestTask2 extends QuartzJobBean { 2 @Override 3 protected void executeInternal(JobExecutionContext context) { 4 SimpleDateFormat sdf = new SimpleDateFormat(&#34;yyyy-MM-dd HH:mm:ss&#34;); 5 System.out.println(&#34;Test2---&#34; &#43; sdf.format(new Date())); 6 } 7} 四、配置任务 /QuartzConfig."/>
 
+
   
   
   
   
   
-  <link rel="stylesheet" href="https://akynazh.site/css/styles.cf664dcdab2592de34c9616ed348faf371290312b6ccb44b0b4bf803a889cf471456a5c2f39241b0a705d7ba99e55abfd1013666698f6009375e952ada4d2750.css" integrity="sha512-z2ZNzaslkt40yWFu00j683EpAxK2zLRLC0v4A6iJz0cUVqXC85JBsKcF17qZ5Vq/0QE2ZmmPYAk3XpUq2k0nUA==">
+
+  
+  
+  
+    <input value="dark" id="theme-current" style="display: none;">
+    <link id="theme" rel="stylesheet" href="https://akynazh.site/css/styles_dark.css">
+  
+  <input value="https://akynazh.site/css/styles_dark.css" id="styles-dark" style="display: none;">
+  <input value="https://akynazh.site/css/styles_light.css" id="styles-light" style="display: none;">
+
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
@@ -91,11 +101,15 @@
           </a>
         </li>
         <li>
+          <a class="icon" id="theme-change"><i class="fas fa-adjust"></i></a>
+        </li>
+        <li>
           <a class="icon" href="#" aria-label="Share" onclick="$('#share').toggle();return false;">
             <i class="fas fa-share-alt" aria-hidden="true"></i>
           </a>
         </li>
       </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
       <span id="i-prev" class="info" style="display:none;">Previous post</span>
       <span id="i-next" class="info" style="display:none;">Next post</span>
       <span id="i-top" class="info" style="display:none;">Back to top</span>
@@ -218,28 +232,28 @@
       <h2 id="一添加注解">一、添加注解</h2>
 <p>主启动类添加<code>@EnableScheduling</code>注解；</p>
 <h2 id="二添加依赖">二、添加依赖：</h2>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#080;font-style:italic">&lt;!--定时任务 --&gt;</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#008000;font-weight:bold">&lt;dependency&gt;</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>    <span style="color:#008000;font-weight:bold">&lt;groupId&gt;</span>org.springframework.boot<span style="color:#008000;font-weight:bold">&lt;/groupId&gt;</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>    <span style="color:#008000;font-weight:bold">&lt;artifactId&gt;</span>spring-boot-starter-quartz<span style="color:#008000;font-weight:bold">&lt;/artifactId&gt;</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span><span style="color:#008000;font-weight:bold">&lt;/dependency&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#6272a4">&lt;!--定时任务 --&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#ff79c6">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>    <span style="color:#ff79c6">&lt;groupId&gt;</span>org.springframework.boot<span style="color:#ff79c6">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>    <span style="color:#ff79c6">&lt;artifactId&gt;</span>spring-boot-starter-quartz<span style="color:#ff79c6">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span><span style="color:#ff79c6">&lt;/dependency&gt;</span>
 </span></span></code></pre></div><h2 id="三创建任务">三、创建任务</h2>
 <p>/TestTask1.java</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#a2f;font-weight:bold">public</span> <span style="color:#a2f;font-weight:bold">class</span> <span style="color:#00f">TestTask1</span> <span style="color:#a2f;font-weight:bold">extends</span> QuartzJobBean <span style="color:#666">{</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>    <span style="color:#a2f">@Override</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>    <span style="color:#a2f;font-weight:bold">protected</span> <span style="color:#0b0;font-weight:bold">void</span> <span style="color:#00a000">executeInternal</span><span style="color:#666">(</span>JobExecutionContext context<span style="color:#666">)</span> <span style="color:#666">{</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>        SimpleDateFormat sdf <span style="color:#666">=</span> <span style="color:#a2f;font-weight:bold">new</span> SimpleDateFormat<span style="color:#666">(</span><span style="color:#b44">&#34;yyyy-MM-dd HH:mm:ss&#34;</span><span style="color:#666">);</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>        System<span style="color:#666">.</span><span style="color:#b44">out</span><span style="color:#666">.</span><span style="color:#b44">println</span><span style="color:#666">(</span><span style="color:#b44">&#34;Test1---&#34;</span> <span style="color:#666">+</span> sdf<span style="color:#666">.</span><span style="color:#b44">format</span><span style="color:#666">(</span><span style="color:#a2f;font-weight:bold">new</span> Date<span style="color:#666">()));</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>    <span style="color:#666">}</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span><span style="color:#666">}</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">TestTask1</span> <span style="color:#8be9fd;font-style:italic">extends</span> QuartzJobBean <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>    @Override
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>    <span style="color:#8be9fd;font-style:italic">protected</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">executeInternal</span><span style="color:#ff79c6">(</span>JobExecutionContext context<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>        SimpleDateFormat sdf <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> SimpleDateFormat<span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;yyyy-MM-dd HH:mm:ss&#34;</span><span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>        System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;Test1---&#34;</span> <span style="color:#ff79c6">+</span> sdf<span style="color:#ff79c6">.</span><span style="color:#50fa7b">format</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">new</span> Date<span style="color:#ff79c6">()));</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>    <span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span><span style="color:#ff79c6">}</span>
 </span></span></code></pre></div><p>/TestTask2.java</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#a2f;font-weight:bold">public</span> <span style="color:#a2f;font-weight:bold">class</span> <span style="color:#00f">TestTask2</span> <span style="color:#a2f;font-weight:bold">extends</span> QuartzJobBean <span style="color:#666">{</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>    <span style="color:#a2f">@Override</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>    <span style="color:#a2f;font-weight:bold">protected</span> <span style="color:#0b0;font-weight:bold">void</span> <span style="color:#00a000">executeInternal</span><span style="color:#666">(</span>JobExecutionContext context<span style="color:#666">)</span> <span style="color:#666">{</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>        SimpleDateFormat sdf <span style="color:#666">=</span> <span style="color:#a2f;font-weight:bold">new</span> SimpleDateFormat<span style="color:#666">(</span><span style="color:#b44">&#34;yyyy-MM-dd HH:mm:ss&#34;</span><span style="color:#666">);</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>        System<span style="color:#666">.</span><span style="color:#b44">out</span><span style="color:#666">.</span><span style="color:#b44">println</span><span style="color:#666">(</span><span style="color:#b44">&#34;Test2---&#34;</span> <span style="color:#666">+</span> sdf<span style="color:#666">.</span><span style="color:#b44">format</span><span style="color:#666">(</span><span style="color:#a2f;font-weight:bold">new</span> Date<span style="color:#666">()));</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>    <span style="color:#666">}</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span><span style="color:#666">}</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">TestTask2</span> <span style="color:#8be9fd;font-style:italic">extends</span> QuartzJobBean <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>    @Override
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>    <span style="color:#8be9fd;font-style:italic">protected</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">executeInternal</span><span style="color:#ff79c6">(</span>JobExecutionContext context<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>        SimpleDateFormat sdf <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> SimpleDateFormat<span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;yyyy-MM-dd HH:mm:ss&#34;</span><span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>        System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;Test2---&#34;</span> <span style="color:#ff79c6">+</span> sdf<span style="color:#ff79c6">.</span><span style="color:#50fa7b">format</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">new</span> Date<span style="color:#ff79c6">()));</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>    <span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span><span style="color:#ff79c6">}</span>
 </span></span></code></pre></div><h2 id="四配置任务">四、配置任务</h2>
 <p>/QuartzConfig.java</p>
 <p>注意同组下同名任务不会重复执行。</p>
@@ -247,38 +261,35 @@
 <li>JobDetail：配置任务信息，生成任务</li>
 <li>Trigger：配置触发器信息，设置时间</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#a2f">@Configuration</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#a2f;font-weight:bold">public</span> <span style="color:#a2f;font-weight:bold">class</span> <span style="color:#00f">QuartzConfig</span> <span style="color:#666">{</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>    <span style="color:#a2f">@Bean</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>    <span style="color:#a2f;font-weight:bold">public</span> JobDetail <span style="color:#00a000">testJ1</span><span style="color:#666">()</span> <span style="color:#666">{</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>        <span style="color:#a2f;font-weight:bold">return</span> JobBuilder<span style="color:#666">.</span><span style="color:#b44">newJob</span><span style="color:#666">(</span>TestTask1<span style="color:#666">.</span><span style="color:#b44">class</span><span style="color:#666">).</span><span style="color:#b44">withIdentity</span><span style="color:#666">(</span><span style="color:#b44">&#34;job1&#34;</span><span style="color:#666">,</span> <span style="color:#b44">&#34;group&#34;</span><span style="color:#666">).</span><span style="color:#b44">storeDurably</span><span style="color:#666">().</span><span style="color:#b44">build</span><span style="color:#666">();</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>    <span style="color:#666">}</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>    <span style="color:#a2f">@Bean</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>    <span style="color:#a2f;font-weight:bold">public</span> JobDetail <span style="color:#00a000">testJ2</span><span style="color:#666">()</span> <span style="color:#666">{</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>        <span style="color:#a2f;font-weight:bold">return</span> JobBuilder<span style="color:#666">.</span><span style="color:#b44">newJob</span><span style="color:#666">(</span>TestTask2<span style="color:#666">.</span><span style="color:#b44">class</span><span style="color:#666">).</span><span style="color:#b44">withIdentity</span><span style="color:#666">(</span><span style="color:#b44">&#34;job2&#34;</span><span style="color:#666">,</span> <span style="color:#b44">&#34;group&#34;</span><span style="color:#666">).</span><span style="color:#b44">storeDurably</span><span style="color:#666">().</span><span style="color:#b44">build</span><span style="color:#666">();</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>    <span style="color:#666">}</span> <span style="color:#080;font-style:italic">// &#34;job2&#34;如果为&#34;job1&#34;，则不会执行TestTask2而是执行TestTask1
-</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span><span style="color:#080;font-style:italic"></span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>    <span style="color:#a2f">@Bean</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>    <span style="color:#a2f;font-weight:bold">public</span> Trigger <span style="color:#00a000">test1</span><span style="color:#666">()</span> <span style="color:#666">{</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>        SimpleScheduleBuilder ssb <span style="color:#666">=</span> SimpleScheduleBuilder<span style="color:#666">.</span><span style="color:#b44">simpleSchedule</span><span style="color:#666">().</span><span style="color:#b44">withIntervalInSeconds</span><span style="color:#666">(</span><span style="color:#666">59</span><span style="color:#666">).</span><span style="color:#b44">repeatForever</span><span style="color:#666">();</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>        <span style="color:#a2f;font-weight:bold">return</span> TriggerBuilder<span style="color:#666">.</span><span style="color:#b44">newTrigger</span><span style="color:#666">().</span><span style="color:#b44">forJob</span><span style="color:#666">(</span>testJ1<span style="color:#666">())</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>                <span style="color:#666">.</span><span style="color:#b44">withIdentity</span><span style="color:#666">(</span><span style="color:#b44">&#34;trigger1&#34;</span><span style="color:#666">,</span> <span style="color:#b44">&#34;group&#34;</span><span style="color:#666">)</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>                <span style="color:#666">.</span><span style="color:#b44">withSchedule</span><span style="color:#666">(</span>ssb<span style="color:#666">)</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>                <span style="color:#666">.</span><span style="color:#b44">build</span><span style="color:#666">();</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>    <span style="color:#666">}</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>@Configuration
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">QuartzConfig</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>    @Bean
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>    <span style="color:#8be9fd;font-style:italic">public</span> JobDetail <span style="color:#50fa7b">testJ1</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>        <span style="color:#ff79c6">return</span> JobBuilder<span style="color:#ff79c6">.</span><span style="color:#50fa7b">newJob</span><span style="color:#ff79c6">(</span>TestTask1<span style="color:#ff79c6">.</span><span style="color:#50fa7b">class</span><span style="color:#ff79c6">).</span><span style="color:#50fa7b">withIdentity</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;job1&#34;</span><span style="color:#ff79c6">,</span> <span style="color:#f1fa8c">&#34;group&#34;</span><span style="color:#ff79c6">).</span><span style="color:#50fa7b">storeDurably</span><span style="color:#ff79c6">().</span><span style="color:#50fa7b">build</span><span style="color:#ff79c6">();</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>    <span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>    @Bean
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>    <span style="color:#8be9fd;font-style:italic">public</span> JobDetail <span style="color:#50fa7b">testJ2</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>        <span style="color:#ff79c6">return</span> JobBuilder<span style="color:#ff79c6">.</span><span style="color:#50fa7b">newJob</span><span style="color:#ff79c6">(</span>TestTask2<span style="color:#ff79c6">.</span><span style="color:#50fa7b">class</span><span style="color:#ff79c6">).</span><span style="color:#50fa7b">withIdentity</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;job2&#34;</span><span style="color:#ff79c6">,</span> <span style="color:#f1fa8c">&#34;group&#34;</span><span style="color:#ff79c6">).</span><span style="color:#50fa7b">storeDurably</span><span style="color:#ff79c6">().</span><span style="color:#50fa7b">build</span><span style="color:#ff79c6">();</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>    <span style="color:#ff79c6">}</span> <span style="color:#6272a4">// &#34;job2&#34;如果为&#34;job1&#34;，则不会执行TestTask2而是执行TestTask1
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span><span style="color:#6272a4"></span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>    @Bean
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>    <span style="color:#8be9fd;font-style:italic">public</span> Trigger <span style="color:#50fa7b">test1</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>        SimpleScheduleBuilder ssb <span style="color:#ff79c6">=</span> SimpleScheduleBuilder<span style="color:#ff79c6">.</span><span style="color:#50fa7b">simpleSchedule</span><span style="color:#ff79c6">().</span><span style="color:#50fa7b">withIntervalInSeconds</span><span style="color:#ff79c6">(</span><span style="color:#bd93f9">59</span><span style="color:#ff79c6">).</span><span style="color:#50fa7b">repeatForever</span><span style="color:#ff79c6">();</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>        <span style="color:#ff79c6">return</span> TriggerBuilder<span style="color:#ff79c6">.</span><span style="color:#50fa7b">newTrigger</span><span style="color:#ff79c6">().</span><span style="color:#50fa7b">forJob</span><span style="color:#ff79c6">(</span>testJ1<span style="color:#ff79c6">())</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>                <span style="color:#ff79c6">.</span><span style="color:#50fa7b">withIdentity</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;trigger1&#34;</span><span style="color:#ff79c6">,</span> <span style="color:#f1fa8c">&#34;group&#34;</span><span style="color:#ff79c6">)</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>                <span style="color:#ff79c6">.</span><span style="color:#50fa7b">withSchedule</span><span style="color:#ff79c6">(</span>ssb<span style="color:#ff79c6">)</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>                <span style="color:#ff79c6">.</span><span style="color:#50fa7b">build</span><span style="color:#ff79c6">();</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>    <span style="color:#ff79c6">}</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>    <span style="color:#a2f">@Bean</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>    <span style="color:#a2f;font-weight:bold">public</span> Trigger <span style="color:#00a000">test2</span><span style="color:#666">()</span> <span style="color:#666">{</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span>        <span style="color:#a2f;font-weight:bold">return</span> TriggerBuilder<span style="color:#666">.</span><span style="color:#b44">newTrigger</span><span style="color:#666">().</span><span style="color:#b44">forJob</span><span style="color:#666">(</span>testJ2<span style="color:#666">())</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span>                <span style="color:#666">.</span><span style="color:#b44">withIdentity</span><span style="color:#666">(</span><span style="color:#b44">&#34;trigger2&#34;</span><span style="color:#666">,</span> <span style="color:#b44">&#34;group&#34;</span><span style="color:#666">)</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span>                <span style="color:#666">.</span><span style="color:#b44">withSchedule</span><span style="color:#666">(</span>CronScheduleBuilder<span style="color:#666">.</span><span style="color:#b44">cronSchedule</span><span style="color:#666">(</span><span style="color:#b44">&#34;0/59 * * * * ?&#34;</span><span style="color:#666">))</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span>                <span style="color:#666">.</span><span style="color:#b44">build</span><span style="color:#666">();</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span>    <span style="color:#666">}</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span><span style="color:#666">}</span>
-</span></span></code></pre></div><hr>
-<p><strong>From My Blog: <a href="https://akynazh.site">akynazh</a></strong>.</p>
-<p><strong>Over.</strong></p>
-
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>    @Bean
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>    <span style="color:#8be9fd;font-style:italic">public</span> Trigger <span style="color:#50fa7b">test2</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span>        <span style="color:#ff79c6">return</span> TriggerBuilder<span style="color:#ff79c6">.</span><span style="color:#50fa7b">newTrigger</span><span style="color:#ff79c6">().</span><span style="color:#50fa7b">forJob</span><span style="color:#ff79c6">(</span>testJ2<span style="color:#ff79c6">())</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span>                <span style="color:#ff79c6">.</span><span style="color:#50fa7b">withIdentity</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;trigger2&#34;</span><span style="color:#ff79c6">,</span> <span style="color:#f1fa8c">&#34;group&#34;</span><span style="color:#ff79c6">)</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span>                <span style="color:#ff79c6">.</span><span style="color:#50fa7b">withSchedule</span><span style="color:#ff79c6">(</span>CronScheduleBuilder<span style="color:#ff79c6">.</span><span style="color:#50fa7b">cronSchedule</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;0/59 * * * * ?&#34;</span><span style="color:#ff79c6">))</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span>                <span style="color:#ff79c6">.</span><span style="color:#50fa7b">build</span><span style="color:#ff79c6">();</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span>    <span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span><span style="color:#ff79c6">}</span>
+</span></span></code></pre></div>
     </div>
   </article>
   
@@ -294,7 +305,7 @@
     repo="akynazh/hugo-comment"
     issue-term="pathname"
     label="akynazh"
-    theme="github-light"
+    theme="github-dark"
     crossorigin="anonymous"
     async>
   </script>
@@ -391,18 +402,24 @@
     </div>
 
     <div id="actions-footer">
-        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').show();$('#toc-footer').hide();$('#share-footer').hide();return false;" aria-label="Menu">
-          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="menu-toggle" class="icon-mobile-nav" href="#" onclick="$('#nav-footer').show();$('#toc-footer').hide();$('#share-footer').hide();return false;" aria-label="Menu">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i></a>
+
         
-        <a id="toc-toggle" class="icon" href="#" onclick="$('#toc-footer').show();$('#nav-footer').hide();$('#share-footer').hide();return false;" aria-label="TOC">
-          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="toc-toggle"class="icon-mobile-nav"  href="#" onclick="$('#toc-footer').show();$('#nav-footer').hide();$('#share-footer').hide();return false;" aria-label="TOC">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i></a>
         
-        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
-          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
-        <a id="searchBtn1" class="icon" href="#" aria-label="Search">
-          <i class="fa fa-search" aria-hidden="true"></i> Search</a>
-        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').show();$('#toc-footer').hide();$('#nav-footer').hide();return false;" aria-label="Share">
-          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+
+        <a id="top" class="icon-mobile-nav" style="display:none" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i></a>
+
+        <a id="searchBtn1" class="icon-mobile-nav"  href="#" aria-label="Search">
+          <i class="fa fa-search fa-lg" aria-hidden="true"></i></a>
+
+        <a id="theme-change" class="icon-mobile-nav"><i class="fas fa-adjust fa-lg"></i></a>
+
+        <a id="share-toggle" class="icon-mobile-nav"  href="#" onclick="$('#share-footer').show();$('#toc-footer').hide();$('#nav-footer').hide();return false;" aria-label="Share">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i></a>
     </div>
 
   </div>

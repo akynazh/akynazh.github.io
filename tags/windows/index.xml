@@ -53,9 +53,7 @@ wsl一些常用命令 wsl ~ -u jzh: 以jzh用户登录并进入用户文件夹 w
 安装完成后在该目录下得到虚拟盘：
 注：虚拟盘也可能变成rootfs文件。
 登录wsl 安装时会让你指定用户名和密码，这个用户是默认添加到sudoers里的。
-如果想用root登录，通过sudo passwd root可以设置root密码（root刚开始没有密码），接着通过su即可登录root。
-From My Blog: akynazh.
-Over.</description>
+如果想用root登录，通过sudo passwd root可以设置root密码（root刚开始没有密码），接着通过su即可登录root。</description>
     </item>
     
     <item>
@@ -113,7 +111,7 @@ regedit
 编辑右键显示名称：默认值改为Open in terminal （不编辑则为新建项的名称）
 编辑右键显示图标：新建字符串值icon 添加：${terminalicon}
 编辑window terminal的json配置文件
-对应位置修改如下，&amp;quot;.&amp;ldquo;即表示当前目录。 1 &amp;#34;profiles&amp;#34;: 2 { 3 &amp;#34;defaults&amp;#34;: 4 { 5 &amp;#34;startingDirectory&amp;#34; : &amp;#34;.&amp;#34; 6 }, 7 ... 8 } over</description>
+对应位置修改如下，&amp;quot;.&amp;ldquo;即表示当前目录。 1 &amp;#34;profiles&amp;#34;: 2 { 3 &amp;#34;defaults&amp;#34;: 4 { 5 &amp;#34;startingDirectory&amp;#34; : &amp;#34;.&amp;#34; 6 }, 7 ... 8 } </description>
     </item>
     
     <item>

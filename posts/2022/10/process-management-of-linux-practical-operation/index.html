@@ -21,12 +21,22 @@ PPID 父进程ID C 占用CPU百分比 STIME 就是&quot;start time&quot; TTY 进
 <meta name="twitter:description" content="查看所有进程 ps -ef -e : all processes (-A) -f : full-format, including command lines 1[root@VM-0-11-centos ~]# ps -ef | head -n 1 2UID PID PPID C STIME TTY TIME CMD 解释如下：
 PPID 父进程ID C 占用CPU百分比 STIME 就是&quot;start time&quot; TTY 进程在哪个终端显示 CMD 命令的名称和参数 ps aux a: all with tty, including other users (和-a是不同的) u: user-oriented format x: processes without controlling ttys 1[root@VM-0-11-centos ~]# ps -aux | head -n 1 2USER PID %CPU %MEM VSZ RSS TTY STAT START TIME COMMAND 解释如下："/>
 
+
   
   
   
   
   
-  <link rel="stylesheet" href="https://akynazh.site/css/styles.cf664dcdab2592de34c9616ed348faf371290312b6ccb44b0b4bf803a889cf471456a5c2f39241b0a705d7ba99e55abfd1013666698f6009375e952ada4d2750.css" integrity="sha512-z2ZNzaslkt40yWFu00j683EpAxK2zLRLC0v4A6iJz0cUVqXC85JBsKcF17qZ5Vq/0QE2ZmmPYAk3XpUq2k0nUA==">
+
+  
+  
+  
+    <input value="dark" id="theme-current" style="display: none;">
+    <link id="theme" rel="stylesheet" href="https://akynazh.site/css/styles_dark.css">
+  
+  <input value="https://akynazh.site/css/styles_dark.css" id="styles-dark" style="display: none;">
+  <input value="https://akynazh.site/css/styles_light.css" id="styles-light" style="display: none;">
+
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
@@ -87,11 +97,15 @@ PPID 父进程ID C 占用CPU百分比 STIME 就是&quot;start time&quot; TTY 进
           </a>
         </li>
         <li>
+          <a class="icon" id="theme-change"><i class="fas fa-adjust"></i></a>
+        </li>
+        <li>
           <a class="icon" href="#" aria-label="Share" onclick="$('#share').toggle();return false;">
             <i class="fas fa-share-alt" aria-hidden="true"></i>
           </a>
         </li>
       </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
       <span id="i-prev" class="info" style="display:none;">Previous post</span>
       <span id="i-next" class="info" style="display:none;">Next post</span>
       <span id="i-top" class="info" style="display:none;">Back to top</span>
@@ -230,7 +244,7 @@ PPID 父进程ID C 占用CPU百分比 STIME 就是&quot;start time&quot; TTY 进
 <li>-e : all processes (-A)</li>
 <li>-f : full-format, including command lines</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#666">[</span>root@VM-0-11-centos ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># ps -ef | head -n 1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#ff79c6">[</span>root@VM-0-11-centos ~<span style="color:#ff79c6">]</span><span style="color:#6272a4"># ps -ef | head -n 1</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>UID PID PPID C STIME TTY TIME CMD
 </span></span></code></pre></div><p>解释如下：</p>
 <ul>
@@ -246,7 +260,7 @@ PPID 父进程ID C 占用CPU百分比 STIME 就是&quot;start time&quot; TTY 进
 <li>u: user-oriented format</li>
 <li>x: processes without controlling ttys</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#666">[</span>root@VM-0-11-centos ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># ps -aux | head -n 1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#ff79c6">[</span>root@VM-0-11-centos ~<span style="color:#ff79c6">]</span><span style="color:#6272a4"># ps -aux | head -n 1</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>USER PID %CPU %MEM VSZ RSS TTY STAT START TIME COMMAND
 </span></span></code></pre></div><p>解释如下：</p>
 <ul>
@@ -256,7 +270,7 @@ PPID 父进程ID C 占用CPU百分比 STIME 就是&quot;start time&quot; TTY 进
 <li>STAT 进程状态</li>
 </ul>
 <p>STAT状态位常见的状态字符有:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>D      //无法中断的休眠状态（通常 IO 的进程）； 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>D      //无法中断的休眠状态（通常 IO 的进程）； 
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>R      //正在运行可中在队列中可过行的； 
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>S      //处于休眠状态； 
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>T      //停止或被追踪； 
@@ -268,16 +282,16 @@ PPID 父进程ID C 占用CPU百分比 STIME 就是&quot;start time&quot; TTY 进
 <p>仅查阅自己的bash相关程序</p>
 <p>&hellip;</p>
 <h2 id="查看相关进程">查看相关进程</h2>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#666">[</span>root@VM-0-11-centos ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># ps -ef | head -n 1; ps -ef | grep java</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#ff79c6">[</span>root@VM-0-11-centos ~<span style="color:#ff79c6">]</span><span style="color:#6272a4"># ps -ef | head -n 1; ps -ef | grep java</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>UID        PID  PPID  C STIME TTY          TIME CMD
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>root     <span style="color:#666">25889</span> <span style="color:#666">24972</span>  <span style="color:#666">4</span> 17:46 pts/1    00:00:11 java -jar LonersHub-0.0.1-SNAPSHOT.jar
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>root     <span style="color:#666">26558</span> <span style="color:#666">24972</span>  <span style="color:#666">0</span> 17:51 pts/1    00:00:00 grep --color<span style="color:#666">=</span>auto java
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>root     <span style="color:#bd93f9">25889</span> <span style="color:#bd93f9">24972</span>  <span style="color:#bd93f9">4</span> 17:46 pts/1    00:00:11 java -jar LonersHub-0.0.1-SNAPSHOT.jar
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>root     <span style="color:#bd93f9">26558</span> <span style="color:#bd93f9">24972</span>  <span style="color:#bd93f9">0</span> 17:51 pts/1    00:00:00 grep --color<span style="color:#ff79c6">=</span>auto java
 </span></span></code></pre></div><h2 id="终止或重启进程">终止或重启进程</h2>
 <h3 id="关于kill命令">关于kill命令</h3>
 <p>kill用于想某个进程发送信号。</p>
 <p>列出所有序号代表的信号含义：</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#666">[</span>root@VM-0-11-centos ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># kill -l</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span> 1<span style="color:#666">)</span> SIGHUP       2<span style="color:#666">)</span> SIGINT       3<span style="color:#666">)</span> SIGQUIT      4<span style="color:#666">)</span> SIGILL       5<span style="color:#666">)</span> SIGTRAP      6<span style="color:#666">)</span> SIGABRT      7<span style="color:#666">)</span> SIGBUS       8<span style="color:#666">)</span> SIGFPE       9<span style="color:#666">)</span> SIGKILL ......
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#ff79c6">[</span>root@VM-0-11-centos ~<span style="color:#ff79c6">]</span><span style="color:#6272a4"># kill -l</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span> 1<span style="color:#ff79c6">)</span> SIGHUP       2<span style="color:#ff79c6">)</span> SIGINT       3<span style="color:#ff79c6">)</span> SIGQUIT      4<span style="color:#ff79c6">)</span> SIGILL       5<span style="color:#ff79c6">)</span> SIGTRAP      6<span style="color:#ff79c6">)</span> SIGABRT      7<span style="color:#ff79c6">)</span> SIGBUS       8<span style="color:#ff79c6">)</span> SIGFPE       9<span style="color:#ff79c6">)</span> SIGKILL ......
 </span></span></code></pre></div><p>最常用的信号是：</p>
 <ul>
 <li>
@@ -299,14 +313,14 @@ PPID 父进程ID C 占用CPU百分比 STIME 就是&quot;start time&quot; TTY 进
 <ol>
 <li>获取相关进程PID，再通过kill终止占用该端口的程序：</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#a2f">kill</span> -9 PID
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#8be9fd;font-style:italic">kill</span> -9 PID
 </span></span></code></pre></div><p>更快捷的方式：（根据某个名称进行操作，可能导致错误，因为多个进程可能含有相同名称，慎用。）</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#a2f">kill</span> -9 <span style="color:#b44">`</span>ps -ef | grep ins | grep -v color | awk <span style="color:#b44">&#39;{print $2}&#39;</span><span style="color:#b44">`</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#8be9fd;font-style:italic">kill</span> -9 <span style="color:#f1fa8c">`</span>ps -ef | grep ins | grep -v color | awk <span style="color:#f1fa8c">&#39;{print $2}&#39;</span><span style="color:#f1fa8c">`</span>
 </span></span></code></pre></div><ol start="2">
 <li>通过相关名称kill</li>
 </ol>
 <p>e.g. 依次询问每个htppd相关程序是否需要被终止</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>killall -i -9 httpd
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>killall -i -9 httpd
 </span></span></code></pre></div><h2 id="背景工作切换">背景工作切换</h2>
 <ol>
 <li>观察当前工作状态： jobs</li>
@@ -324,9 +338,9 @@ PPID 父进程ID C 占用CPU百分比 STIME 就是&quot;start time&quot; TTY 进
 <p>当按下ctrl-z将vim工作放到背景后，默认情况下，vim工作将处于&quot;Stpped&quot;状态，使用bg开始运行。</p>
 <p>plus: &amp; 将工作放到背景“执行”。</p>
 <h2 id="离线管理">离线管理</h2>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>nohub <span style="color:#666">{</span>cmd<span style="color:#666">}</span> &amp;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>nohub <span style="color:#ff79c6">{</span>cmd<span style="color:#ff79c6">}</span> &amp;
 </span></span></code></pre></div><p>不打印日志：</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>nohup <span style="color:#666">{</span>cmd<span style="color:#666">}</span> &gt;/dev/null 2&gt;&amp;<span style="color:#666">1</span> &amp;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>nohup <span style="color:#ff79c6">{</span>cmd<span style="color:#ff79c6">}</span> &gt;/dev/null 2&gt;&amp;<span style="color:#bd93f9">1</span> &amp;
 </span></span></code></pre></div><p><code>/dev/null</code>类似于回收站，只是无法像window的回收站一样恢复。</p>
 <p><code>&gt;/dev/null</code>，就是把标准输出（1）写到<code>/dev/null</code>。</p>
 <p>对于<code>2&gt;&amp;1</code>：</p>
@@ -347,7 +361,7 @@ PPID 父进程ID C 占用CPU百分比 STIME 就是&quot;start time&quot; TTY 进
     repo="akynazh/hugo-comment"
     issue-term="pathname"
     label="akynazh"
-    theme="github-light"
+    theme="github-dark"
     crossorigin="anonymous"
     async>
   </script>
@@ -457,18 +471,24 @@ PPID 父进程ID C 占用CPU百分比 STIME 就是&quot;start time&quot; TTY 进
     </div>
 
     <div id="actions-footer">
-        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').show();$('#toc-footer').hide();$('#share-footer').hide();return false;" aria-label="Menu">
-          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="menu-toggle" class="icon-mobile-nav" href="#" onclick="$('#nav-footer').show();$('#toc-footer').hide();$('#share-footer').hide();return false;" aria-label="Menu">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i></a>
+
         
-        <a id="toc-toggle" class="icon" href="#" onclick="$('#toc-footer').show();$('#nav-footer').hide();$('#share-footer').hide();return false;" aria-label="TOC">
-          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="toc-toggle"class="icon-mobile-nav"  href="#" onclick="$('#toc-footer').show();$('#nav-footer').hide();$('#share-footer').hide();return false;" aria-label="TOC">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i></a>
         
-        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
-          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
-        <a id="searchBtn1" class="icon" href="#" aria-label="Search">
-          <i class="fa fa-search" aria-hidden="true"></i> Search</a>
-        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').show();$('#toc-footer').hide();$('#nav-footer').hide();return false;" aria-label="Share">
-          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+
+        <a id="top" class="icon-mobile-nav" style="display:none" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i></a>
+
+        <a id="searchBtn1" class="icon-mobile-nav"  href="#" aria-label="Search">
+          <i class="fa fa-search fa-lg" aria-hidden="true"></i></a>
+
+        <a id="theme-change" class="icon-mobile-nav"><i class="fas fa-adjust fa-lg"></i></a>
+
+        <a id="share-toggle" class="icon-mobile-nav"  href="#" onclick="$('#share-footer').show();$('#toc-footer').hide();$('#nav-footer').hide();return false;" aria-label="Share">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i></a>
     </div>
 
   </div>

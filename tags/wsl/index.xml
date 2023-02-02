@@ -42,9 +42,7 @@ wsl一些常用命令 wsl ~ -u jzh: 以jzh用户登录并进入用户文件夹 w
 安装完成后在该目录下得到虚拟盘：
 注：虚拟盘也可能变成rootfs文件。
 登录wsl 安装时会让你指定用户名和密码，这个用户是默认添加到sudoers里的。
-如果想用root登录，通过sudo passwd root可以设置root密码（root刚开始没有密码），接着通过su即可登录root。
-From My Blog: akynazh.
-Over.</description>
+如果想用root登录，通过sudo passwd root可以设置root密码（root刚开始没有密码），接着通过su即可登录root。</description>
     </item>
     
   </channel>

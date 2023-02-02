@@ -21,7 +21,7 @@
 no matching key exchange method found. Their offer: diffie-hellman-group1-sha1
 则是本地密钥算法与远程主机密钥算法不匹配造成的！
 可以在ssh_config或config文件中添加密钥算法配置：
-1Host 输入代替名 2	HostName 输入IP 3	Port 输入端口号 4	User 输入用户 5	KexAlgorithms +diffie-hellman-group1-sha1 From my blog: akynazh.</description>
+1Host 输入代替名 2	HostName 输入IP 3	Port 输入端口号 4	User 输入用户 5	KexAlgorithms +diffie-hellman-group1-sha1 </description>
     </item>
     
   </channel>

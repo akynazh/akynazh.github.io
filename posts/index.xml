@@ -110,9 +110,7 @@ C C#/Db D D#/Eb E F F#/Gb G G#/Ab A A#/Bb B 261.6 277.2 293.7 311.1 329.6 349.2 
 要敢于去改变，就像当时debug许久无果，要敢于重新开始，不要害怕失败。
 最后就是，在接近于成功的边缘时，不要以为自己已经成功了，永远要沉得住气，不到最后一刻不要掉以轻心。
 2022-12-11：面包板日。
-感谢自己，以及给予我许多帮助的老师。
-From my blog: akynazh.
-Over.</description>
+感谢自己，以及给予我许多帮助的老师。</description>
     </item>
     
     <item>
@@ -187,11 +185,11 @@ HEAD^ = HEAD^1 第一个父级提交 HEAD^2~1 第二个父级提交的上一次�
       <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/posts/2022/11/record-of-bugs-encountered-in-python-development/</guid>
       <description>持续更新中。
-pipenv 无法正常 install 1PS C:\Users\akyna\Codes\test\test_py&amp;gt; pipenv install 2Usage: pipenv install [OPTIONS] [PACKAGES]... 3 4ERROR:: --system is intended to be used for pre-existing Pipfile installation, not installation of specific packages. Aborting. 解决方法：
-因为pipenv检测到之前在该目录下创建过了环境，需要先删除之前的环境才可以：
-1PS C:\Users\akyna\Codes\test\test_py&amp;gt; pipenv --rm 2Removing virtualenv (C:\Users\akyna\.virtualenvs\test_py-_qApXuy4)... requests 库 headers 字段编码错误 1UnicodeEncodeError: &amp;#39;latin-1&amp;#39; codec can&amp;#39;t encode characters in position 30-34: ordinal not in range(256) 解决方法：
-加上.encode(&amp;lsquo;utf-8&amp;rsquo;)：
-1return { 2 &amp;#39;User-Agent&amp;#39;: 3 &amp;#39;Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.</description>
+SSLError(SSLCertVerificationError) 使用 requests 库时出现 bug:
+1(Caused by SSLError(SSLCertVerificationError(1, &amp;#39;[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:997)&amp;#39;))) 解决方法：python-requests-throwing-sslerror
+From requests documentation on SSL verification:
+Requests can verify SSL certificates for HTTPS requests, just like a web browser. To check a host’s SSL certificate, you can use the verify argument:
+1requests.get(&amp;#39;https://kennethreitz.com&amp;#39;, verify=True) pipenv 无法正常 install 1PS C:\Users\akyna\Codes\test\test_py&amp;gt; pipenv install 2Usage: pipenv install [OPTIONS] [PACKAGES]... 3 4ERROR:: --system is intended to be used for pre-existing Pipfile installation, not installation of specific packages.</description>
     </item>
     
     <item>
@@ -330,9 +328,7 @@ PPID 父进程ID C 占用CPU百分比 STIME 就是&amp;quot;start time&amp;quot;
 那一次，钱一维凌晨酒醒了，觉得握在被子里的手湿湿的，蹑手蹑脚不要吵醒伊纹，拍打脸颊，走进浴室，开灯看见脸上是血手印。此时的一维像希腊悲剧里的一幕，主人公不可思议地看着自己捧势却成空的双手，浴室灯光如舞台灯光如一束倒挂的郁金香包裹住他。他马上洗了脸，跑回房，开了灯，掀被子，发现睡在右手的伊纹下身全是血。一维突然想起昨天半夜回家，他用皮鞋尖勐踢伊纹。窄皮鞋头如一窝尖头毒蛇疯窜出去。伊纹抱紧双腿，他只能踢她的背。他想起伊纹一直说不要不要，不要不要。原来，伊纹说的是宝宝，宝宝。
 窗外有鸟啼春，伊纹的表情像从一个前所未有的好梦中醒过来，从此才明白好梦比噩梦更令人恐怖。她发出从前那对万物好奇的声音：宝宝呢？她白得像一片被误报了花讯的樱花林，人人提着丰盛的野餐篮，但樱花早已全部被雨水打烂在地上，一瓣一瓣的樱花在脚下，花瓣是爱心形状，爱心的双尖比任何时候看起来都像是被爽约的缺口，而不是本来的形状。宝宝呢？对不起，伊纹，我的亲亲，我们可以再生一个。伊纹看着他，就像他是由她所不懂的语言所写成。伊纹宝贝？你没事最重要，不是吗？一维看着伊纹全身颤抖，隆隆的马达，催到极限，眼看要发动的时候，又整个人熄灭了。
 伊纹听见思琪在啜泣，她在电话另一头，也可以看见思琪把手机拿远了小肩膀一耸一耸的样子。思琪说话了：「为什么这个世界是这个样子？为什么所谓教养就是受苦的人该闭嘴？为什么打人的人上电视上广告看板？姊姊，我好失望，但我不是对你失望，这个世界，或是生活，命运，或叫它神，或无论叫它什么，它好差劲，我现在读小说，如果读到赏善罚恶的好结局，我就会哭，我宁愿大家承认人间有一些痛苦是不能和解的，我最讨厌人说经过痛苦才成为更好的人，我好希望大家承认有些痛苦是毁灭的，我讨厌大团圆的抒情传统，讨厌王子跟公主在一起，正面思考是多么媚俗！可是姊姊，你知道我更恨什么吗？我宁愿我是一个媚俗的人，我宁愿无知，也不想要看过世界的背面。」思琪哭得字跟字都连在一起，伊纹也可以看见她涕泪满脸，五官都连在一起。
-原来，人对他者的痛苦是毫无想像力的，一个恶俗的语境──有钱有势的男人，年轻貌美的小三，泪涟涟的老婆──把一切看成一个庸钝语境，一齣八点档，因为人不愿意承认世界上确实存在非人的痛苦，人在隐约明白的当下就会加以否认，否则人小小的和平就显得坏心了。在这个人人争著称自己为输家的年代，没有人要承认世界上有一群女孩才是真正的输家。那种小调的痛苦其实与幸福是一体两面：人人坐享小小的幸福，嘴里嚷着小小的痛苦──当赤裸裸的痛苦端到他面前，他的安乐遂显得丑陋，痛苦显得轻浮。
-From My Blog: akynazh.
-Over.</description>
+原来，人对他者的痛苦是毫无想像力的，一个恶俗的语境──有钱有势的男人，年轻貌美的小三，泪涟涟的老婆──把一切看成一个庸钝语境，一齣八点档，因为人不愿意承认世界上确实存在非人的痛苦，人在隐约明白的当下就会加以否认，否则人小小的和平就显得坏心了。在这个人人争著称自己为输家的年代，没有人要承认世界上有一群女孩才是真正的输家。那种小调的痛苦其实与幸福是一体两面：人人坐享小小的幸福，嘴里嚷着小小的痛苦──当赤裸裸的痛苦端到他面前，他的安乐遂显得丑陋，痛苦显得轻浮。</description>
     </item>
     
     <item>
@@ -351,9 +347,7 @@ Q是question mark的Q。背负着疑问的东两。
 后来深绘里不知从哪儿赶来，握住他的左手。于是天吾停止了变形，风也骤然停下，乐谱不再飘散。这下好啦。天吾心想。但同时，规定时间也将结束。“到此结束。”深绘里小声宣告。依旧只有一个句子。时间戛然而止，世界在此终结。地球缓缓地停止转动，所有的声音和光芒都消失殆尽。
 翌日睁开眼时，世界安然无恙，还在继续。并且事物已经向前运转起来。就像印度神话中把前方所有生物统统碾杀的转轮一般。
 第22章 天吾 时间能以扭曲的形态前进 时间能以扭曲的形态前进，这一点天吾知道。时间自身固然是成分均一的东西，然而它一旦被消耗，就会变得形态扭曲。有的时间非常重而长，有的时间则轻而短。前后秩序有时还会颠来倒去，严重时甚至消失得无影无踪。而本来不应存在的东西又会被添加进来。人类大概就是这样随意地对时间进行调整，从而调整自己的存在意义。换个说法，就是通过这样的操作，人类才能保持神经正常。假如对自己经历过的时间，一定得严守顺序、依照原样均等地接受，只怕人类的神经注定忍受不了。那样的人生恐怕等于拷问。天吾浮想联翩。
-天吾一如往日，每周三天去补习学校讲课，其余的日子便继续伏案写作长篇小说，星期五和前来幽会的女朋友进行浓郁的午后做爱。但不论他做什么，都无法做到集中注意力。仿佛一个错把厚重云团的碎片吞进肚子里的人，郁塞滞重、心绪不宁地度日，食欲也慢慢减退。在半夜莫名其妙的时刻醒来，便再也无法入睡。在这样的不眠之夜思念着深绘里。她此刻在哪里？在做什么？和谁在一起？遭遇了什么？他在脑海中想象着种种状况，每一种尽管多少有差异，却都是带着悲观色彩的想象。而且在他的想象中，她总是身穿紧身夏季薄毛衣，胸脯呈现出美丽的形状。这个形象让天吾透不过气来，在他心中制造出更为剧烈的躁动。
-From My Blog: akynazh.
-Over.</description>
+天吾一如往日，每周三天去补习学校讲课，其余的日子便继续伏案写作长篇小说，星期五和前来幽会的女朋友进行浓郁的午后做爱。但不论他做什么，都无法做到集中注意力。仿佛一个错把厚重云团的碎片吞进肚子里的人，郁塞滞重、心绪不宁地度日，食欲也慢慢减退。在半夜莫名其妙的时刻醒来，便再也无法入睡。在这样的不眠之夜思念着深绘里。她此刻在哪里？在做什么？和谁在一起？遭遇了什么？他在脑海中想象着种种状况，每一种尽管多少有差异，却都是带着悲观色彩的想象。而且在他的想象中，她总是身穿紧身夏季薄毛衣，胸脯呈现出美丽的形状。这个形象让天吾透不过气来，在他心中制造出更为剧烈的躁动。</description>
     </item>
     
     <item>
@@ -530,9 +524,7 @@ Over.</description>
 第五部 轻与重 追逐众多女性的男人很容易被归为两类。一类人在所有女人身上寻找他们自己的梦，他们对于女性的主观意念。另一类人则被欲念所驱使，想占有客观女性世界的无尽的多样性。
 前者的迷恋是浪漫型的迷恋：他们在女人身上寻找的是他们自己，是他们的理想。他们总是不断地失望，因为，正如我们所知，理想从来都是不可能找到的。失望把他们从一个女人推向另一个女人，赋予他们的善变一种感伤的借口，因此，许多多愁善感的女人为他们顽强的纠缠所感动。
 后者的迷恋是放荡型的迷恋，女人在其中看不到丝毫感人之处：由于男人没有在女性身上寄托一个主观的理想，他们对所有女人都感兴趣，没有谁会令他们失望。的确，就是这从不失望本身带有某种可耻的成分。在世人眼中，放浪之徒的迷恋是不可宽恕的（因为从不为失望而补赎）。
-他想起了柏拉图《会饮篇》中那个著名传说：以前人类是两性同体的，上帝把他们分成了两半，从那时起，这两半就开始在世界上游荡，相互寻找。爱情，是对我们自己失去的另一半的渴望。
-From My Blog: akynazh.
-Over.</description>
+他想起了柏拉图《会饮篇》中那个著名传说：以前人类是两性同体的，上帝把他们分成了两半，从那时起，这两半就开始在世界上游荡，相互寻找。爱情，是对我们自己失去的另一半的渴望。</description>
     </item>
     
     <item>
@@ -664,9 +656,7 @@ Over.</description>
 于火光中结束一切&amp;hellip;&amp;hellip;
 个人最满意的结局，也是官方指定结局，龙之还乡：
 狼和皇子都活了下来，和神子一道前往西方，送还樱龙，断绝不死之诅咒，走向新的征程：
-到此结束。感谢fs社给我带来的这一段珍贵的经历！
-From My Blog: akynazh.
-Over.</description>
+到此结束。感谢fs社给我带来的这一段珍贵的经历！</description>
     </item>
     
     <item>
@@ -754,9 +744,7 @@ service下的方法指定好关于生产者的服务限流，降级或熔断等�
 二、依赖引入
 在所有调用到的微服务中引入：
 1&amp;lt;dependency&amp;gt; 2 &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; 3 &amp;lt;artifactId&amp;gt;spring-cloud-starter-zipkin&amp;lt;/artifactId&amp;gt; 4&amp;lt;/dependency&amp;gt; 三、配置文件
-1spring: 2 zipkin: 3 base-url: http://localhost:9411 4 sleuth: 5 sampler: 6 probability: 1 # 采样率介于0和1之间，1表示全部采集 测试 通过service-name标签搜索自己的微服务名称，即可检索到与该微服务有依赖的所有微服务，可查看调用过程，依赖关系等。
-From My Blog: akynazh.
-Over.</description>
+1spring: 2 zipkin: 3 base-url: http://localhost:9411 4 sleuth: 5 sampler: 6 probability: 1 # 采样率介于0和1之间，1表示全部采集 测试 通过service-name标签搜索自己的微服务名称，即可检索到与该微服务有依赖的所有微服务，可查看调用过程，依赖关系等。</description>
     </item>
     
     <item>
@@ -886,9 +874,7 @@ wsl一些常用命令 wsl ~ -u jzh: 以jzh用户登录并进入用户文件夹 w
 安装完成后在该目录下得到虚拟盘：
 注：虚拟盘也可能变成rootfs文件。
 登录wsl 安装时会让你指定用户名和密码，这个用户是默认添加到sudoers里的。
-如果想用root登录，通过sudo passwd root可以设置root密码（root刚开始没有密码），接着通过su即可登录root。
-From My Blog: akynazh.
-Over.</description>
+如果想用root登录，通过sudo passwd root可以设置root密码（root刚开始没有密码），接着通过su即可登录root。</description>
     </item>
     
     <item>
@@ -976,9 +962,7 @@ Ribbon属于进程内LB，它只是一个类库，集成于消费方进程，消
 除了一些基本包的导入之外，关于consul包的导入：
 1&amp;lt;dependency&amp;gt; 2 &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; 3 &amp;lt;artifactId&amp;gt;spring-cloud-starter-consul-discovery&amp;lt;/artifactId&amp;gt; 4&amp;lt;/dependency&amp;gt; 二、关于application.yml
 1spring: 2 application: 3 name: cloud-consumer-order 4 5 cloud: 6 consul: 7 host: localhost 8 port: 8500 9 discovery: 10 service-name: ${spring.application.name} 三、启动类添加@EnableDiscoveryClient注解。
-consul测试 较为简单，访问localhost:8500查看即可。
-From My Blog: akynazh.
-Over.</description>
+consul测试 较为简单，访问localhost:8500查看即可。</description>
     </item>
     
     <item>
@@ -1524,7 +1508,7 @@ Ubuntu配置静态IP 通过netplan的方法进行，编辑 /etc/netplan/00-insta
 1network: 2 ethernets: 3 enp0s3: 4 dhcp4: no 5 optional: no 6 nameservers: 7 addresses: [114.114.114.114, 8.8.8.8] 8 gateway4: 192.168.1.1 9 addresses: [192.168.1.128/24] 10 version: 2 然后执行 sudo netplan apply即可。
 CentOS配置静态IP 找到当前网络下网卡名，然后编辑/etc/sysconfig/network-scripts下的ifcfg-{网卡名}文件如下：
 1BOOTPROTO=&amp;#34;static&amp;#34; # 静态IP 2IPADDR=192.168.1.127 # IP 3NETMASK=255.255.255.0 # 子网掩码 4GATEWAY=192.168.1.1 # 网关 5DNS1=114.114.114.114 6DNS2=8.8.8.8 7ONBOOT=yes 之后再重启网络服务即可：
-1systemctl restart network From my blog: akynazh.</description>
+1systemctl restart network </description>
     </item>
     
     <item>
@@ -1768,7 +1752,7 @@ regedit
 编辑右键显示名称：默认值改为Open in terminal （不编辑则为新建项的名称）
 编辑右键显示图标：新建字符串值icon 添加：${terminalicon}
 编辑window terminal的json配置文件
-对应位置修改如下，&amp;quot;.&amp;ldquo;即表示当前目录。 1 &amp;#34;profiles&amp;#34;: 2 { 3 &amp;#34;defaults&amp;#34;: 4 { 5 &amp;#34;startingDirectory&amp;#34; : &amp;#34;.&amp;#34; 6 }, 7 ... 8 } over</description>
+对应位置修改如下，&amp;quot;.&amp;ldquo;即表示当前目录。 1 &amp;#34;profiles&amp;#34;: 2 { 3 &amp;#34;defaults&amp;#34;: 4 { 5 &amp;#34;startingDirectory&amp;#34; : &amp;#34;.&amp;#34; 6 }, 7 ... 8 } </description>
     </item>
     
     <item>
@@ -2091,7 +2075,7 @@ Java的参数传递 先定义3个方法如下：
 no matching key exchange method found. Their offer: diffie-hellman-group1-sha1
 则是本地密钥算法与远程主机密钥算法不匹配造成的！
 可以在ssh_config或config文件中添加密钥算法配置：
-1Host 输入代替名 2	HostName 输入IP 3	Port 输入端口号 4	User 输入用户 5	KexAlgorithms +diffie-hellman-group1-sha1 From my blog: akynazh.</description>
+1Host 输入代替名 2	HostName 输入IP 3	Port 输入端口号 4	User 输入用户 5	KexAlgorithms +diffie-hellman-group1-sha1 </description>
     </item>
     
     <item>
@@ -2178,7 +2162,7 @@ equals 比较时进行值的比较
 1notepad 1.py 记事本不好用呀，还是vscode香，如下~
 使用vscode打开编辑1.py，首先需配置环境变量
 (${vscodepath}\bin)
-1code 1.py over</description>
+1code 1.py </description>
     </item>
     
     <item>

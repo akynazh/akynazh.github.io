@@ -25,12 +25,22 @@ BufferedWriter 无法正确写出问题 这是一段客户端代码，向服务�
 1try ( 2 BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream())); 3 BufferedWriter out = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream())) 4) { 5 String message; 6 while((message = stdIn.readLine()) != null) { 7 out.write(message); 8 out.flush(); 9 System.out.println(&#34;Receive from server: &#34; &#43; in.readLine()); 10 } 11} catch (Exception e) { 12 System.out.println(e.getMessage()); 13} 这是服务端代码的一部分，接收客户端消息，并向客户端回复：
 1try ( 2 BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream())); 3 BufferedWriter out = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream())) 4) { 5 String message; 6 while((message = in."/>
 
+
   
   
   
   
   
-  <link rel="stylesheet" href="https://akynazh.site/css/styles.cf664dcdab2592de34c9616ed348faf371290312b6ccb44b0b4bf803a889cf471456a5c2f39241b0a705d7ba99e55abfd1013666698f6009375e952ada4d2750.css" integrity="sha512-z2ZNzaslkt40yWFu00j683EpAxK2zLRLC0v4A6iJz0cUVqXC85JBsKcF17qZ5Vq/0QE2ZmmPYAk3XpUq2k0nUA==">
+
+  
+  
+  
+    <input value="dark" id="theme-current" style="display: none;">
+    <link id="theme" rel="stylesheet" href="https://akynazh.site/css/styles_dark.css">
+  
+  <input value="https://akynazh.site/css/styles_dark.css" id="styles-dark" style="display: none;">
+  <input value="https://akynazh.site/css/styles_light.css" id="styles-light" style="display: none;">
+
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
@@ -91,11 +101,15 @@ BufferedWriter 无法正确写出问题 这是一段客户端代码，向服务�
           </a>
         </li>
         <li>
+          <a class="icon" id="theme-change"><i class="fas fa-adjust"></i></a>
+        </li>
+        <li>
           <a class="icon" href="#" aria-label="Share" onclick="$('#share').toggle();return false;">
             <i class="fas fa-share-alt" aria-hidden="true"></i>
           </a>
         </li>
       </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
       <span id="i-prev" class="info" style="display:none;">Previous post</span>
       <span id="i-next" class="info" style="display:none;">Next post</span>
       <span id="i-top" class="info" style="display:none;">Back to top</span>
@@ -218,43 +232,40 @@ BufferedWriter 无法正确写出问题 这是一段客户端代码，向服务�
       <p>持续更新中。</p>
 <h2 id="bufferedwriter-无法正确写出问题">BufferedWriter 无法正确写出问题</h2>
 <p>这是一段客户端代码，向服务器端发送消息，然后接收服务器端的回复：</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#a2f;font-weight:bold">try</span> <span style="color:#666">(</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>        BufferedReader in <span style="color:#666">=</span> <span style="color:#a2f;font-weight:bold">new</span> BufferedReader<span style="color:#666">(</span><span style="color:#a2f;font-weight:bold">new</span> InputStreamReader<span style="color:#666">(</span>socket<span style="color:#666">.</span><span style="color:#b44">getInputStream</span><span style="color:#666">()));</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>        BufferedWriter out <span style="color:#666">=</span> <span style="color:#a2f;font-weight:bold">new</span> BufferedWriter<span style="color:#666">(</span><span style="color:#a2f;font-weight:bold">new</span> OutputStreamWriter<span style="color:#666">(</span>socket<span style="color:#666">.</span><span style="color:#b44">getOutputStream</span><span style="color:#666">()))</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span><span style="color:#666">)</span> <span style="color:#666">{</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>    String message<span style="color:#666">;</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>    <span style="color:#a2f;font-weight:bold">while</span><span style="color:#666">((</span>message <span style="color:#666">=</span> stdIn<span style="color:#666">.</span><span style="color:#b44">readLine</span><span style="color:#666">())</span> <span style="color:#666">!=</span> <span style="color:#a2f;font-weight:bold">null</span><span style="color:#666">)</span> <span style="color:#666">{</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>        out<span style="color:#666">.</span><span style="color:#b44">write</span><span style="color:#666">(</span>message<span style="color:#666">);</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>        out<span style="color:#666">.</span><span style="color:#b44">flush</span><span style="color:#666">();</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>        System<span style="color:#666">.</span><span style="color:#b44">out</span><span style="color:#666">.</span><span style="color:#b44">println</span><span style="color:#666">(</span><span style="color:#b44">&#34;Receive from server: &#34;</span> <span style="color:#666">+</span> in<span style="color:#666">.</span><span style="color:#b44">readLine</span><span style="color:#666">());</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>    <span style="color:#666">}</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span><span style="color:#666">}</span> <span style="color:#a2f;font-weight:bold">catch</span> <span style="color:#666">(</span>Exception e<span style="color:#666">)</span> <span style="color:#666">{</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>    System<span style="color:#666">.</span><span style="color:#b44">out</span><span style="color:#666">.</span><span style="color:#b44">println</span><span style="color:#666">(</span>e<span style="color:#666">.</span><span style="color:#b44">getMessage</span><span style="color:#666">());</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span><span style="color:#666">}</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#ff79c6">try</span> <span style="color:#ff79c6">(</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>        BufferedReader in <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> BufferedReader<span style="color:#ff79c6">(</span><span style="color:#ff79c6">new</span> InputStreamReader<span style="color:#ff79c6">(</span>socket<span style="color:#ff79c6">.</span><span style="color:#50fa7b">getInputStream</span><span style="color:#ff79c6">()));</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>        BufferedWriter out <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> BufferedWriter<span style="color:#ff79c6">(</span><span style="color:#ff79c6">new</span> OutputStreamWriter<span style="color:#ff79c6">(</span>socket<span style="color:#ff79c6">.</span><span style="color:#50fa7b">getOutputStream</span><span style="color:#ff79c6">()))</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>    String message<span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>    <span style="color:#ff79c6">while</span><span style="color:#ff79c6">((</span>message <span style="color:#ff79c6">=</span> stdIn<span style="color:#ff79c6">.</span><span style="color:#50fa7b">readLine</span><span style="color:#ff79c6">())</span> <span style="color:#ff79c6">!=</span> <span style="color:#ff79c6">null</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>        out<span style="color:#ff79c6">.</span><span style="color:#50fa7b">write</span><span style="color:#ff79c6">(</span>message<span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>        out<span style="color:#ff79c6">.</span><span style="color:#50fa7b">flush</span><span style="color:#ff79c6">();</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>        System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;Receive from server: &#34;</span> <span style="color:#ff79c6">+</span> in<span style="color:#ff79c6">.</span><span style="color:#50fa7b">readLine</span><span style="color:#ff79c6">());</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>    <span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span><span style="color:#ff79c6">}</span> <span style="color:#ff79c6">catch</span> <span style="color:#ff79c6">(</span>Exception e<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>    System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span>e<span style="color:#ff79c6">.</span><span style="color:#50fa7b">getMessage</span><span style="color:#ff79c6">());</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span><span style="color:#ff79c6">}</span>
 </span></span></code></pre></div><p>这是服务端代码的一部分，接收客户端消息，并向客户端回复：</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#a2f;font-weight:bold">try</span> <span style="color:#666">(</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>        BufferedReader in <span style="color:#666">=</span> <span style="color:#a2f;font-weight:bold">new</span> BufferedReader<span style="color:#666">(</span><span style="color:#a2f;font-weight:bold">new</span> InputStreamReader<span style="color:#666">(</span>socket<span style="color:#666">.</span><span style="color:#b44">getInputStream</span><span style="color:#666">()));</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>        BufferedWriter out <span style="color:#666">=</span> <span style="color:#a2f;font-weight:bold">new</span> BufferedWriter<span style="color:#666">(</span><span style="color:#a2f;font-weight:bold">new</span> OutputStreamWriter<span style="color:#666">(</span>socket<span style="color:#666">.</span><span style="color:#b44">getOutputStream</span><span style="color:#666">()))</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span><span style="color:#666">)</span> <span style="color:#666">{</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>    String message<span style="color:#666">;</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>    <span style="color:#a2f;font-weight:bold">while</span><span style="color:#666">((</span>message <span style="color:#666">=</span> in<span style="color:#666">.</span><span style="color:#b44">readLine</span><span style="color:#666">())</span> <span style="color:#666">!=</span> <span style="color:#a2f;font-weight:bold">null</span><span style="color:#666">)</span> <span style="color:#666">{</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>        System<span style="color:#666">.</span><span style="color:#b44">out</span><span style="color:#666">.</span><span style="color:#b44">println</span><span style="color:#666">(</span>Thread<span style="color:#666">.</span><span style="color:#b44">currentThread</span><span style="color:#666">().</span><span style="color:#b44">getName</span><span style="color:#666">()</span> <span style="color:#666">+</span> <span style="color:#b44">&#34;: receive from port &#34;</span> <span style="color:#666">+</span> socket<span style="color:#666">.</span><span style="color:#b44">getPort</span><span style="color:#666">()</span> <span style="color:#666">+</span> <span style="color:#b44">&#34;: &#34;</span> <span style="color:#666">+</span> message<span style="color:#666">);</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>        out<span style="color:#666">.</span><span style="color:#b44">write</span><span style="color:#666">(</span>message<span style="color:#666">);</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>        out<span style="color:#666">.</span><span style="color:#b44">flush</span><span style="color:#666">();</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>    <span style="color:#666">}</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span><span style="color:#666">}</span> <span style="color:#a2f;font-weight:bold">catch</span> <span style="color:#666">(</span>Exception e<span style="color:#666">)</span> <span style="color:#666">{</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>    System<span style="color:#666">.</span><span style="color:#b44">out</span><span style="color:#666">.</span><span style="color:#b44">println</span><span style="color:#666">(</span>e<span style="color:#666">.</span><span style="color:#b44">getMessage</span><span style="color:#666">());</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span><span style="color:#666">}</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#ff79c6">try</span> <span style="color:#ff79c6">(</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>        BufferedReader in <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> BufferedReader<span style="color:#ff79c6">(</span><span style="color:#ff79c6">new</span> InputStreamReader<span style="color:#ff79c6">(</span>socket<span style="color:#ff79c6">.</span><span style="color:#50fa7b">getInputStream</span><span style="color:#ff79c6">()));</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>        BufferedWriter out <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> BufferedWriter<span style="color:#ff79c6">(</span><span style="color:#ff79c6">new</span> OutputStreamWriter<span style="color:#ff79c6">(</span>socket<span style="color:#ff79c6">.</span><span style="color:#50fa7b">getOutputStream</span><span style="color:#ff79c6">()))</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>    String message<span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>    <span style="color:#ff79c6">while</span><span style="color:#ff79c6">((</span>message <span style="color:#ff79c6">=</span> in<span style="color:#ff79c6">.</span><span style="color:#50fa7b">readLine</span><span style="color:#ff79c6">())</span> <span style="color:#ff79c6">!=</span> <span style="color:#ff79c6">null</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>        System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span>Thread<span style="color:#ff79c6">.</span><span style="color:#50fa7b">currentThread</span><span style="color:#ff79c6">().</span><span style="color:#50fa7b">getName</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#34;: receive from port &#34;</span> <span style="color:#ff79c6">+</span> socket<span style="color:#ff79c6">.</span><span style="color:#50fa7b">getPort</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#34;: &#34;</span> <span style="color:#ff79c6">+</span> message<span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>        out<span style="color:#ff79c6">.</span><span style="color:#50fa7b">write</span><span style="color:#ff79c6">(</span>message<span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>        out<span style="color:#ff79c6">.</span><span style="color:#50fa7b">flush</span><span style="color:#ff79c6">();</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>    <span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span><span style="color:#ff79c6">}</span> <span style="color:#ff79c6">catch</span> <span style="color:#ff79c6">(</span>Exception e<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>    System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span>e<span style="color:#ff79c6">.</span><span style="color:#50fa7b">getMessage</span><span style="color:#ff79c6">());</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span><span style="color:#ff79c6">}</span>
 </span></span></code></pre></div><p>这里两端都使用了 <code>BufferedReader</code> 和 <code>BufferedWriter</code> 作为消息的传输工具。</p>
 <p>经过测试发现，消息传输是失败的。</p>
 <p>问题出现在 <code>out.write(message);</code> 和 <code>message = in.readLine()</code> 这两个地方，因为 <code>in.readLine()</code> 读取的是一行数据，即数据必须要存在换行符，如果不存在的话将无法读完，一直处于阻塞状态。</p>
 <p>所以，解决方法就是将写出的数据通过 <code>newLine</code> 操作加上换行符：</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>out<span style="color:#666">.</span><span style="color:#b44">write</span><span style="color:#666">(</span>message<span style="color:#666">);</span> <span style="color:#080;font-style:italic">// 如果使用BufferedWriter，则需要添加换行符
-</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#080;font-style:italic"></span>out<span style="color:#666">.</span><span style="color:#b44">newLine</span><span style="color:#666">();</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>out<span style="color:#ff79c6">.</span><span style="color:#50fa7b">write</span><span style="color:#ff79c6">(</span>message<span style="color:#ff79c6">);</span> <span style="color:#6272a4">// 如果使用BufferedWriter，则需要添加换行符
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#6272a4"></span>out<span style="color:#ff79c6">.</span><span style="color:#50fa7b">newLine</span><span style="color:#ff79c6">();</span>
 </span></span></code></pre></div><p>另一种更好的方法是使用 <code>PrintWriter</code>，使用它的写出操作 <code>println</code> 进行消息的输出。</p>
-<hr>
-<p><strong>From my blog: <a href="https://akynazh.site">akynazh</a></strong>.</p>
-<p><strong>Over.</strong></p>
 
     </div>
   </article>
@@ -271,7 +282,7 @@ BufferedWriter 无法正确写出问题 这是一段客户端代码，向服务�
     repo="akynazh/hugo-comment"
     issue-term="pathname"
     label="akynazh"
-    theme="github-light"
+    theme="github-dark"
     crossorigin="anonymous"
     async>
   </script>
@@ -365,18 +376,24 @@ BufferedWriter 无法正确写出问题 这是一段客户端代码，向服务�
     </div>
 
     <div id="actions-footer">
-        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').show();$('#toc-footer').hide();$('#share-footer').hide();return false;" aria-label="Menu">
-          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="menu-toggle" class="icon-mobile-nav" href="#" onclick="$('#nav-footer').show();$('#toc-footer').hide();$('#share-footer').hide();return false;" aria-label="Menu">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i></a>
+
         
-        <a id="toc-toggle" class="icon" href="#" onclick="$('#toc-footer').show();$('#nav-footer').hide();$('#share-footer').hide();return false;" aria-label="TOC">
-          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="toc-toggle"class="icon-mobile-nav"  href="#" onclick="$('#toc-footer').show();$('#nav-footer').hide();$('#share-footer').hide();return false;" aria-label="TOC">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i></a>
         
-        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
-          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
-        <a id="searchBtn1" class="icon" href="#" aria-label="Search">
-          <i class="fa fa-search" aria-hidden="true"></i> Search</a>
-        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').show();$('#toc-footer').hide();$('#nav-footer').hide();return false;" aria-label="Share">
-          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+
+        <a id="top" class="icon-mobile-nav" style="display:none" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i></a>
+
+        <a id="searchBtn1" class="icon-mobile-nav"  href="#" aria-label="Search">
+          <i class="fa fa-search fa-lg" aria-hidden="true"></i></a>
+
+        <a id="theme-change" class="icon-mobile-nav"><i class="fas fa-adjust fa-lg"></i></a>
+
+        <a id="share-toggle" class="icon-mobile-nav"  href="#" onclick="$('#share-footer').show();$('#toc-footer').hide();$('#nav-footer').hide();return false;" aria-label="Share">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i></a>
     </div>
 
   </div>
