@@ -17,12 +17,12 @@ function setTheme(theme) {
   }
 }
 function setUtterancesTheme(theme) {
-  if (document.querySelector(".utterances-frame")) {
+  let iframe = document.querySelector(".utterances-frame");
+  if (iframe !== undefined && iframe !== null) {
     const message = {
       type: "set-theme",
       theme: theme,
     };
-    const iframe = document.querySelector(".utterances-frame");
     iframe.contentWindow.postMessage(message, "https://utteranc.es");
   }
 }

@@ -49,6 +49,8 @@ URL : http://www.cip.cc/${my_ip}
   <input value="https://akynazh.site/css/styles_dark.css" id="styles-dark" style="display: none;">
   <input value="https://akynazh.site/css/styles_light.css" id="styles-light" style="display: none;">
 
+  <input value="0" id="start-snow" style="display: none;">
+
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
@@ -58,8 +60,11 @@ URL : http://www.cip.cc/${my_ip}
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   
-  <link rel="icon" type="image/png" href="/image/base/favicon.ico" />
 
+  <link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+
+  
   
   
 </head>
@@ -299,15 +304,31 @@ URL : http://www.cip.cc/${my_ip}
   <div class="blog-post-comments">
     
       <div id="disquss_thread">
-  <script src="https://utteranc.es/client.js"
-    repo="akynazh/hugo-comment"
-    issue-term="pathname"
-    label="akynazh"
-    theme="github-light"
-    crossorigin="anonymous"
-    async>
+  <script type="text/javascript">
+    window.onload = function () {
+      let theme = document.getElementById("theme-current").value;
+      let utterancesTheme = theme == "light" ? "github-light" : "github-dark";
+      let script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src = "https://utteranc.es/client.js";
+      script.setAttribute(
+        "repo",
+        "akynazh\/hugo-comment"
+      );
+      script.setAttribute("issue-term", "pathname");
+      script.setAttribute(
+        "label",
+        "akynazh"
+      );
+      script.setAttribute("theme", utterancesTheme);
+      script.setAttribute("crossOrigin", "anonymous");
+      script.setAttribute("async", true);
+      comments = document.getElementById("disquss_thread")
+      comments.appendChild(script);
+    };
   </script>
 </div>
+
     
   </div>
 
