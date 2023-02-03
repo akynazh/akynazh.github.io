@@ -31,12 +31,24 @@
   
   
     <input value="light" id="theme-current" style="display: none;">
-    <link id="theme" rel="stylesheet" href="https://akynazh.site/css/styles_light.css">
   
   <input value="https://akynazh.site/css/styles_dark.css" id="styles-dark" style="display: none;">
   <input value="https://akynazh.site/css/styles_light.css" id="styles-light" style="display: none;">
 
-  <input value="0" id="start-snow" style="display: none;">
+  <input value="1" id="set-snow" style="display: none;">
+
+  <link id="theme" rel="stylesheet" href="">
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/snow.js"></script>
+  <script src="/js/theme.js"></script>
+  <script>
+    theme = getCurrentTheme();
+    setTheme(theme);
+    setSnow = document.getElementById("set-snow").value;
+    if (theme === "dark" && setSnow === "1") {
+      startSnow()
+    }
+  </script>
 
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -48,8 +60,8 @@
     <![endif]-->
   
 
-  <link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
-<link rel="icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="shortcut icon" href="/favicon.png" type="image/png" />
+<link rel="icon" href="/favicon.png" type="image/png" />
 
   
   
@@ -277,138 +289,108 @@
     
     
     <li class="post-item ellipsis-line">
-      <nobr><time class="meta" datetime="2022-04-17 23:13:28 &#43;0800 CST" itemprop="datePublished">2022-04-17</time>
+      <nobr><time class="meta" datetime="2022-06-16 21:13:15 &#43;0800 CST" itemprop="datePublished">2022-06-16</time>
         ··········&nbsp&nbsp
-        <a href="https://akynazh.site/posts/2022/04/setting-sun-abstract/"> 《斜阳》文摘 </a>
+        <a href="https://akynazh.site/posts/2022/06/springboot-mailbox-service/"> SpringBoot 邮箱服务 </a>
       </nobr>
     </li>
     
     
     
     <li class="post-item ellipsis-line">
-      <nobr><time class="meta" datetime="2022-04-16 18:03:53 &#43;0800 CST" itemprop="datePublished">2022-04-16</time>
+      <nobr><time class="meta" datetime="2022-06-15 21:11:27 &#43;0800 CST" itemprop="datePublished">2022-06-15</time>
         ··········&nbsp&nbsp
-        <a href="https://akynazh.site/posts/2022/04/norwegian-forest-digest-ii/"> 《挪威的森林》文摘二 </a>
+        <a href="https://akynazh.site/posts/2022/06/quartz-implements-timed-tasks/"> Quartz 实现定时任务 </a>
       </nobr>
     </li>
     
     
     
     <li class="post-item ellipsis-line">
-      <nobr><time class="meta" datetime="2022-04-15 13:02:21 &#43;0800 CST" itemprop="datePublished">2022-04-15</time>
+      <nobr><time class="meta" datetime="2022-06-09 23:37:51 &#43;0800 CST" itemprop="datePublished">2022-06-09</time>
         ··········&nbsp&nbsp
-        <a href="https://akynazh.site/posts/2022/04/excerpt-from-the-lost-thirteen-steps/"> 《消失的十三级台阶》摘录 </a>
+        <a href="https://akynazh.site/posts/2022/06/use-x86-64-assemble-and-write-a-spin-lock/"> 使用 x86_64 汇编写一个自旋锁 </a>
       </nobr>
     </li>
     
     
     
     <li class="post-item ellipsis-line">
-      <nobr><time class="meta" datetime="2022-04-14 23:11:22 &#43;0800 CST" itemprop="datePublished">2022-04-14</time>
+      <nobr><time class="meta" datetime="2022-06-09 23:18:55 &#43;0800 CST" itemprop="datePublished">2022-06-09</time>
         ··········&nbsp&nbsp
-        <a href="https://akynazh.site/posts/2022/04/norwegian-forest-digest-1/"> 《挪威的森林》文摘一 </a>
+        <a href="https://akynazh.site/posts/2022/06/analyze-tcp-principle-through-wireshark/"> 通过 Wireshark 分析 TCP 原理 </a>
       </nobr>
     </li>
     
     
     
     <li class="post-item ellipsis-line">
-      <nobr><time class="meta" datetime="2022-04-03 23:44:25 &#43;0800 CST" itemprop="datePublished">2022-04-03</time>
+      <nobr><time class="meta" datetime="2022-06-06 22:00:13 &#43;0800 CST" itemprop="datePublished">2022-06-06</time>
         ··········&nbsp&nbsp
-        <a href="https://akynazh.site/posts/2022/04/strong-wind-blowing-abstract/"> 《强风吹拂》文摘 </a>
+        <a href="https://akynazh.site/posts/2022/06/yi-short-excerpt/"> 乙一短篇摘录 </a>
       </nobr>
     </li>
     
     
     
     <li class="post-item ellipsis-line">
-      <nobr><time class="meta" datetime="2022-04-03 23:41:50 &#43;0800 CST" itemprop="datePublished">2022-04-03</time>
+      <nobr><time class="meta" datetime="2022-05-30 20:11:37 &#43;0800 CST" itemprop="datePublished">2022-05-30</time>
         ··········&nbsp&nbsp
-        <a href="https://akynazh.site/posts/2022/04/jieyou-grocery-store-abstract/"> 《解忧杂货店》文摘 </a>
+        <a href="https://akynazh.site/posts/2022/05/haizis-poems/"> 海子的诗 </a>
       </nobr>
     </li>
     
     
     
     <li class="post-item ellipsis-line">
-      <nobr><time class="meta" datetime="2022-03-21 18:02:04 &#43;0800 CST" itemprop="datePublished">2022-03-21</time>
+      <nobr><time class="meta" datetime="2022-05-19 20:22:22 &#43;0800 CST" itemprop="datePublished">2022-05-19</time>
         ··········&nbsp&nbsp
-        <a href="https://akynazh.site/posts/2022/03/mountain-tour-1/"> 山脉游览录（一） </a>
+        <a href="https://akynazh.site/posts/2022/05/1984-abstracts/"> 《1984》文摘 </a>
       </nobr>
     </li>
     
     
     
     <li class="post-item ellipsis-line">
-      <nobr><time class="meta" datetime="2022-02-13 21:20:01 &#43;0800 CST" itemprop="datePublished">2022-02-13</time>
+      <nobr><time class="meta" datetime="2022-05-15 15:15:51 &#43;0800 CST" itemprop="datePublished">2022-05-15</time>
         ··········&nbsp&nbsp
-        <a href="https://akynazh.site/posts/2022/02/configure-the-network-to-realize-the-interworking-between-host-and-virtual-machine-system/"> 配置网络以实现主机和虚拟机系统互通 </a>
+        <a href="https://akynazh.site/posts/2022/05/java-review-1/"> Java 复习记录（一） </a>
       </nobr>
     </li>
     
     
     
     <li class="post-item ellipsis-line">
-      <nobr><time class="meta" datetime="2022-02-11 00:05:25 &#43;0800 CST" itemprop="datePublished">2022-02-11</time>
+      <nobr><time class="meta" datetime="2022-05-14 11:47:43 &#43;0800 CST" itemprop="datePublished">2022-05-14</time>
         ··········&nbsp&nbsp
-        <a href="https://akynazh.site/posts/2022/02/implementation-method-of-interactive-data-display-without-separation-of-front-and-back-ends/"> 在前后端不分离的情况下进行交互性数据展示的实现方法 </a>
+        <a href="https://akynazh.site/posts/2022/05/the-beatles-in-norwegian-forest/"> 《挪威的森林》中的披头士 </a>
       </nobr>
     </li>
     
     
     
     <li class="post-item ellipsis-line">
-      <nobr><time class="meta" datetime="2022-02-06 21:42:50 &#43;0800 CST" itemprop="datePublished">2022-02-06</time>
+      <nobr><time class="meta" datetime="2022-05-09 11:34:32 &#43;0800 CST" itemprop="datePublished">2022-05-09</time>
         ··········&nbsp&nbsp
-        <a href="https://akynazh.site/posts/2022/02/the-beauty-of-simplicity/"> 简洁之美 </a>
+        <a href="https://akynazh.site/posts/2022/05/kill-a-mockingbird-digest-ii/"> 《杀死一只知更鸟》文摘二 </a>
       </nobr>
     </li>
     
     
     
     <li class="post-item ellipsis-line">
-      <nobr><time class="meta" datetime="2022-01-06 17:23:00 &#43;0800 CST" itemprop="datePublished">2022-01-06</time>
+      <nobr><time class="meta" datetime="2022-05-09 11:25:47 &#43;0800 CST" itemprop="datePublished">2022-05-09</time>
         ··········&nbsp&nbsp
-        <a href="https://akynazh.site/posts/2022/01/record-of-bugs-encountered-in-java-development/"> Java 开发中遇到的 bug 记录 </a>
-      </nobr>
-    </li>
-    
-    
-    
-    
-    
-    
-    <li class="post-item ellipsis-line">
-      <nobr><time class="meta" datetime="2021-12-20 10:15:34 &#43;0800 CST" itemprop="datePublished">2021-12-20</time>
-        ··········&nbsp&nbsp
-        <a href="https://akynazh.site/posts/2021/12/permission-management-of-linux-practical-operation/"> Linux 实用操作之权限管理 </a>
+        <a href="https://akynazh.site/posts/2022/05/kill-a-mockingbird-digest-1/"> 《杀死一只知更鸟》文摘一 </a>
       </nobr>
     </li>
     
     
     
     <li class="post-item ellipsis-line">
-      <nobr><time class="meta" datetime="2021-12-20 10:15:05 &#43;0800 CST" itemprop="datePublished">2021-12-20</time>
+      <nobr><time class="meta" datetime="2022-04-28 20:27:08 &#43;0800 CST" itemprop="datePublished">2022-04-28</time>
         ··········&nbsp&nbsp
-        <a href="https://akynazh.site/posts/2021/12/redis-learning-record-ii/"> Redis 学习记录二 </a>
-      </nobr>
-    </li>
-    
-    
-    
-    <li class="post-item ellipsis-line">
-      <nobr><time class="meta" datetime="2021-12-14 23:40:44 &#43;0800 CST" itemprop="datePublished">2021-12-14</time>
-        ··········&nbsp&nbsp
-        <a href="https://akynazh.site/posts/2021/12/redis-learning-record-i/"> Redis 学习记录一 </a>
-      </nobr>
-    </li>
-    
-    
-    
-    <li class="post-item ellipsis-line">
-      <nobr><time class="meta" datetime="2021-12-10 18:10:07 &#43;0800 CST" itemprop="datePublished">2021-12-10</time>
-        ··········&nbsp&nbsp
-        <a href="https://akynazh.site/posts/2021/12/git-quick-initialization-operation/"> Git 快速初始化操作 </a>
+        <a href="https://akynazh.site/posts/2022/04/abstract-of-on-protracted-war/"> 《论持久战》文摘 </a>
       </nobr>
     </li>
     
@@ -420,7 +402,7 @@
         
             <a href="/posts/page/5/"><i class="fas fa-angle-left"></i></a>
         
-        <span class="page-number">Page 6 of 8</span>
+        <span class="page-number">Page 6 of 10</span>
         
             <a href="/posts/page/7/"><i class="fas fa-angle-right"></i>
             </a>
@@ -462,9 +444,7 @@
 </footer>
   </div>
 </body>
-<script src="/js/jquery.min.js"></script>
 <script src="/js/main.js"></script>
-<script src="/js/snow.js"></script>
 <script src="/js/fuse.min.js"></script>
 <script src="/js/fastsearch.js"></script>
 </html>

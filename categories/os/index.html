@@ -31,12 +31,24 @@
   
   
     <input value="light" id="theme-current" style="display: none;">
-    <link id="theme" rel="stylesheet" href="https://akynazh.site/css/styles_light.css">
   
   <input value="https://akynazh.site/css/styles_dark.css" id="styles-dark" style="display: none;">
   <input value="https://akynazh.site/css/styles_light.css" id="styles-light" style="display: none;">
 
-  <input value="0" id="start-snow" style="display: none;">
+  <input value="1" id="set-snow" style="display: none;">
+
+  <link id="theme" rel="stylesheet" href="">
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/snow.js"></script>
+  <script src="/js/theme.js"></script>
+  <script>
+    theme = getCurrentTheme();
+    setTheme(theme);
+    setSnow = document.getElementById("set-snow").value;
+    if (theme === "dark" && setSnow === "1") {
+      startSnow()
+    }
+  </script>
 
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -48,8 +60,8 @@
     <![endif]-->
   
 
-  <link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
-<link rel="icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="shortcut icon" href="/favicon.png" type="image/png" />
+<link rel="icon" href="/favicon.png" type="image/png" />
 
   
   
@@ -242,9 +254,7 @@
 </footer>
   </div>
 </body>
-<script src="/js/jquery.min.js"></script>
 <script src="/js/main.js"></script>
-<script src="/js/snow.js"></script>
 <script src="/js/fuse.min.js"></script>
 <script src="/js/fastsearch.js"></script>
 </html>

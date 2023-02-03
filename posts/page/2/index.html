@@ -31,12 +31,24 @@
   
   
     <input value="light" id="theme-current" style="display: none;">
-    <link id="theme" rel="stylesheet" href="https://akynazh.site/css/styles_light.css">
   
   <input value="https://akynazh.site/css/styles_dark.css" id="styles-dark" style="display: none;">
   <input value="https://akynazh.site/css/styles_light.css" id="styles-light" style="display: none;">
 
-  <input value="0" id="start-snow" style="display: none;">
+  <input value="1" id="set-snow" style="display: none;">
+
+  <link id="theme" rel="stylesheet" href="">
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/snow.js"></script>
+  <script src="/js/theme.js"></script>
+  <script>
+    theme = getCurrentTheme();
+    setTheme(theme);
+    setSnow = document.getElementById("set-snow").value;
+    if (theme === "dark" && setSnow === "1") {
+      startSnow()
+    }
+  </script>
 
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -48,8 +60,8 @@
     <![endif]-->
   
 
-  <link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
-<link rel="icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="shortcut icon" href="/favicon.png" type="image/png" />
+<link rel="icon" href="/favicon.png" type="image/png" />
 
   
   
@@ -277,6 +289,33 @@
     
     
     <li class="post-item ellipsis-line">
+      <nobr><time class="meta" datetime="2022-10-13 21:40:46 &#43;0800 CST" itemprop="datePublished">2022-10-13</time>
+        ··········&nbsp&nbsp
+        <a href="https://akynazh.site/posts/2022/10/git-configuration-record/"> Git 配置记录 </a>
+      </nobr>
+    </li>
+    
+    
+    
+    <li class="post-item ellipsis-line">
+      <nobr><time class="meta" datetime="2022-10-13 21:28:37 &#43;0800 CST" itemprop="datePublished">2022-10-13</time>
+        ··········&nbsp&nbsp
+        <a href="https://akynazh.site/posts/2022/10/docker-software-installation-record/"> Docker 软件安装记录 </a>
+      </nobr>
+    </li>
+    
+    
+    
+    <li class="post-item ellipsis-line">
+      <nobr><time class="meta" datetime="2022-10-04 23:18:24 &#43;0800 CST" itemprop="datePublished">2022-10-04</time>
+        ··········&nbsp&nbsp
+        <a href="https://akynazh.site/posts/2022/10/8086-assembly-learning-record/"> 8086 汇编学习记录 </a>
+      </nobr>
+    </li>
+    
+    
+    
+    <li class="post-item ellipsis-line">
       <nobr><time class="meta" datetime="2022-10-03 20:52:12 &#43;0800 CST" itemprop="datePublished">2022-10-03</time>
         ··········&nbsp&nbsp
         <a href="https://akynazh.site/posts/2022/10/solution-and-thinking-about-hwbk/"> 关于 hwbk 文件问题的解决和思考 </a>
@@ -355,60 +394,6 @@
       </nobr>
     </li>
     
-    
-    
-    <li class="post-item ellipsis-line">
-      <nobr><time class="meta" datetime="2022-08-24 17:14:16 &#43;0800 CST" itemprop="datePublished">2022-08-24</time>
-        ··········&nbsp&nbsp
-        <a href="https://akynazh.site/posts/2022/08/template-method-mode/"> 模板方法模式 </a>
-      </nobr>
-    </li>
-    
-    
-    
-    <li class="post-item ellipsis-line">
-      <nobr><time class="meta" datetime="2022-08-23 16:20:06 &#43;0800 CST" itemprop="datePublished">2022-08-23</time>
-        ··········&nbsp&nbsp
-        <a href="https://akynazh.site/posts/2022/08/appearance-mode/"> 外观模式 </a>
-      </nobr>
-    </li>
-    
-    
-    
-    <li class="post-item ellipsis-line">
-      <nobr><time class="meta" datetime="2022-08-23 16:00:04 &#43;0800 CST" itemprop="datePublished">2022-08-23</time>
-        ··········&nbsp&nbsp
-        <a href="https://akynazh.site/posts/2022/08/adapter-mode/"> 适配器模式 </a>
-      </nobr>
-    </li>
-    
-    
-    
-    <li class="post-item ellipsis-line">
-      <nobr><time class="meta" datetime="2022-08-23 15:14:43 &#43;0800 CST" itemprop="datePublished">2022-08-23</time>
-        ··········&nbsp&nbsp
-        <a href="https://akynazh.site/posts/2022/08/chrysanthemum-and-knife-abstract/"> 《菊与刀》文摘 </a>
-      </nobr>
-    </li>
-    
-    
-    
-    <li class="post-item ellipsis-line">
-      <nobr><time class="meta" datetime="2022-08-23 14:52:39 &#43;0800 CST" itemprop="datePublished">2022-08-23</time>
-        ··········&nbsp&nbsp
-        <a href="https://akynazh.site/posts/2022/08/abstract-of-unbearable-lightness-of-life/"> 《不能承受的生命之轻》文摘 </a>
-      </nobr>
-    </li>
-    
-    
-    
-    <li class="post-item ellipsis-line">
-      <nobr><time class="meta" datetime="2022-08-22 11:41:33 &#43;0800 CST" itemprop="datePublished">2022-08-22</time>
-        ··········&nbsp&nbsp
-        <a href="https://akynazh.site/posts/2022/08/command-mode/"> 命令模式 </a>
-      </nobr>
-    </li>
-    
   </ul>
   
   
@@ -417,7 +402,7 @@
         
             <a href="/posts/"><i class="fas fa-angle-left"></i></a>
         
-        <span class="page-number">Page 2 of 8</span>
+        <span class="page-number">Page 2 of 10</span>
         
             <a href="/posts/page/3/"><i class="fas fa-angle-right"></i>
             </a>
@@ -459,9 +444,7 @@
 </footer>
   </div>
 </body>
-<script src="/js/jquery.min.js"></script>
 <script src="/js/main.js"></script>
-<script src="/js/snow.js"></script>
 <script src="/js/fuse.min.js"></script>
 <script src="/js/fastsearch.js"></script>
 </html>

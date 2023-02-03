@@ -31,12 +31,24 @@
   
   
     <input value="light" id="theme-current" style="display: none;">
-    <link id="theme" rel="stylesheet" href="https://akynazh.site/css/styles_light.css">
   
   <input value="https://akynazh.site/css/styles_dark.css" id="styles-dark" style="display: none;">
   <input value="https://akynazh.site/css/styles_light.css" id="styles-light" style="display: none;">
 
-  <input value="0" id="start-snow" style="display: none;">
+  <input value="1" id="set-snow" style="display: none;">
+
+  <link id="theme" rel="stylesheet" href="">
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/snow.js"></script>
+  <script src="/js/theme.js"></script>
+  <script>
+    theme = getCurrentTheme();
+    setTheme(theme);
+    setSnow = document.getElementById("set-snow").value;
+    if (theme === "dark" && setSnow === "1") {
+      startSnow()
+    }
+  </script>
 
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -48,8 +60,8 @@
     <![endif]-->
   
 
-  <link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
-<link rel="icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="shortcut icon" href="/favicon.png" type="image/png" />
+<link rel="icon" href="/favicon.png" type="image/png" />
 
   
   
@@ -85,6 +97,33 @@
   <ul class="post-list">
     
     
+    
+    
+    
+    <li class="post-item ellipsis-line">
+      <nobr><time class="meta" datetime="2022-08-22 11:41:33 &#43;0800 CST" itemprop="datePublished">2022-08-22</time>
+        ··········&nbsp&nbsp
+        <a href="https://akynazh.site/posts/2022/08/command-mode/"> 命令模式 </a>
+      </nobr>
+    </li>
+    
+    
+    
+    <li class="post-item ellipsis-line">
+      <nobr><time class="meta" datetime="2022-08-22 11:14:23 &#43;0800 CST" itemprop="datePublished">2022-08-22</time>
+        ··········&nbsp&nbsp
+        <a href="https://akynazh.site/posts/2022/08/singleton-pattern/"> 单件模式 </a>
+      </nobr>
+    </li>
+    
+    
+    
+    <li class="post-item ellipsis-line">
+      <nobr><time class="meta" datetime="2022-08-21 23:31:45 &#43;0800 CST" itemprop="datePublished">2022-08-21</time>
+        ··········&nbsp&nbsp
+        <a href="https://akynazh.site/posts/2022/08/factory-mode/"> 工厂模式 </a>
+      </nobr>
+    </li>
     
     
     
@@ -170,63 +209,6 @@
       </nobr>
     </li>
     
-    
-    
-    <li class="post-item ellipsis-line">
-      <nobr><time class="meta" datetime="2021-11-26 09:23:27 &#43;0800 CST" itemprop="datePublished">2021-11-26</time>
-        ··········&nbsp&nbsp
-        <a href="https://akynazh.site/posts/2021/11/why-should-java-rewrite-the-hashcode-method-when-rewriting-the-equals-method/"> Java 重写 equals 方法的同时为什么要重写 hashcode 方法 </a>
-      </nobr>
-    </li>
-    
-    
-    
-    <li class="post-item ellipsis-line">
-      <nobr><time class="meta" datetime="2021-05-19 22:43:45 &#43;0800 CST" itemprop="datePublished">2021-05-19</time>
-        ··········&nbsp&nbsp
-        <a href="https://akynazh.site/posts/2021/05/who-the-hell-is-synchronized-locking/"> Synchronized 到底锁了谁 </a>
-      </nobr>
-    </li>
-    
-    
-    
-    <li class="post-item ellipsis-line">
-      <nobr><time class="meta" datetime="2021-05-01 20:16:39 &#43;0800 CST" itemprop="datePublished">2021-05-01</time>
-        ··········&nbsp&nbsp
-        <a href="https://akynazh.site/posts/2021/05/value-passing-and-reference-passing-parsing-in-java-and-c/"> Java 与 C&#43;&#43; 中的值传递和引用传递解析 </a>
-      </nobr>
-    </li>
-    
-    
-    
-    <li class="post-item ellipsis-line">
-      <nobr><time class="meta" datetime="2021-04-19 13:48:19 &#43;0800 CST" itemprop="datePublished">2021-04-19</time>
-        ··········&nbsp&nbsp
-        <a href="https://akynazh.site/posts/2021/04/file-operation-recorded-by-window-utility-command/"> Window 实用命令记录之文件操作 </a>
-      </nobr>
-    </li>
-    
-    
-    
-    
-    
-    
-    <li class="post-item ellipsis-line">
-      <nobr><time class="meta" datetime="2020-11-25 00:21:05 &#43;0800 CST" itemprop="datePublished">2020-11-25</time>
-        ··········&nbsp&nbsp
-        <a href="https://akynazh.site/posts/2020/11/the-difference-between-the-equals-method-and-the---operator/"> equals 方法和 == 运算符的作用区别 </a>
-      </nobr>
-    </li>
-    
-    
-    
-    <li class="post-item ellipsis-line">
-      <nobr><time class="meta" datetime="2020-11-20 18:17:33 &#43;0800 CST" itemprop="datePublished">2020-11-20</time>
-        ··········&nbsp&nbsp
-        <a href="https://akynazh.site/posts/2020/11/cmd-some-important-and-practical-commands/"> Cmd 重要且实用的一些命令 </a>
-      </nobr>
-    </li>
-    
   </ul>
   
   
@@ -277,9 +259,7 @@
 </footer>
   </div>
 </body>
-<script src="/js/jquery.min.js"></script>
 <script src="/js/main.js"></script>
-<script src="/js/snow.js"></script>
 <script src="/js/fuse.min.js"></script>
 <script src="/js/fastsearch.js"></script>
 </html>

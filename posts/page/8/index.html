@@ -31,12 +31,24 @@
   
   
     <input value="light" id="theme-current" style="display: none;">
-    <link id="theme" rel="stylesheet" href="https://akynazh.site/css/styles_light.css">
   
   <input value="https://akynazh.site/css/styles_dark.css" id="styles-dark" style="display: none;">
   <input value="https://akynazh.site/css/styles_light.css" id="styles-light" style="display: none;">
 
-  <input value="0" id="start-snow" style="display: none;">
+  <input value="1" id="set-snow" style="display: none;">
+
+  <link id="theme" rel="stylesheet" href="">
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/snow.js"></script>
+  <script src="/js/theme.js"></script>
+  <script>
+    theme = getCurrentTheme();
+    setTheme(theme);
+    setSnow = document.getElementById("set-snow").value;
+    if (theme === "dark" && setSnow === "1") {
+      startSnow()
+    }
+  </script>
 
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -48,8 +60,8 @@
     <![endif]-->
   
 
-  <link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
-<link rel="icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="shortcut icon" href="/favicon.png" type="image/png" />
+<link rel="icon" href="/favicon.png" type="image/png" />
 
   
   
@@ -277,36 +289,18 @@
     
     
     <li class="post-item ellipsis-line">
-      <nobr><time class="meta" datetime="2021-04-11 11:51:03 &#43;0800 CST" itemprop="datePublished">2021-04-11</time>
+      <nobr><time class="meta" datetime="2022-02-06 21:42:50 &#43;0800 CST" itemprop="datePublished">2022-02-06</time>
         ··········&nbsp&nbsp
-        <a href="https://akynazh.site/posts/2021/04/spring-abstracts-i/"> 春物文摘一 </a>
+        <a href="https://akynazh.site/posts/2022/02/the-beauty-of-simplicity/"> 简洁之美 </a>
       </nobr>
     </li>
     
     
     
     <li class="post-item ellipsis-line">
-      <nobr><time class="meta" datetime="2021-01-17 21:46:42 &#43;0800 CST" itemprop="datePublished">2021-01-17</time>
+      <nobr><time class="meta" datetime="2022-01-06 17:23:00 &#43;0800 CST" itemprop="datePublished">2022-01-06</time>
         ··········&nbsp&nbsp
-        <a href="https://akynazh.site/posts/2021/01/idea-configuration-usage-record/"> IDEA 配置使用记录 </a>
-      </nobr>
-    </li>
-    
-    
-    
-    <li class="post-item ellipsis-line">
-      <nobr><time class="meta" datetime="2021-01-13 21:53:43 &#43;0800 CST" itemprop="datePublished">2021-01-13</time>
-        ··········&nbsp&nbsp
-        <a href="https://akynazh.site/posts/2021/01/realize-ssh-ipfree-and-secret-free-login/"> 实现 SSH 免 IP 免密登录 </a>
-      </nobr>
-    </li>
-    
-    
-    
-    <li class="post-item ellipsis-line">
-      <nobr><time class="meta" datetime="2021-01-03 00:27:58 &#43;0800 CST" itemprop="datePublished">2021-01-03</time>
-        ··········&nbsp&nbsp
-        <a href="https://akynazh.site/posts/2021/01/network-management-of-linux-practical-operation/"> Linux 实用操作之网络管理 </a>
+        <a href="https://akynazh.site/posts/2022/01/record-of-bugs-encountered-in-java-development/"> Java 开发中遇到的 bug 记录 </a>
       </nobr>
     </li>
     
@@ -316,99 +310,90 @@
     
     
     <li class="post-item ellipsis-line">
-      <nobr><time class="meta" datetime="2020-12-05 12:34:05 &#43;0800 CST" itemprop="datePublished">2020-12-05</time>
+      <nobr><time class="meta" datetime="2021-12-20 10:15:34 &#43;0800 CST" itemprop="datePublished">2021-12-20</time>
         ··········&nbsp&nbsp
-        <a href="https://akynazh.site/posts/2020/12/summary-of-coloring-problems-of-graphs/"> 图的着色问题汇总 </a>
+        <a href="https://akynazh.site/posts/2021/12/permission-management-of-linux-practical-operation/"> Linux 实用操作之权限管理 </a>
       </nobr>
     </li>
     
     
     
     <li class="post-item ellipsis-line">
-      <nobr><time class="meta" datetime="2020-12-02 23:50:44 &#43;0800 CST" itemprop="datePublished">2020-12-02</time>
+      <nobr><time class="meta" datetime="2021-12-20 10:15:05 &#43;0800 CST" itemprop="datePublished">2021-12-20</time>
         ··········&nbsp&nbsp
-        <a href="https://akynazh.site/posts/2020/12/a-method-to-solve-whether-there-are-rings-in-directed-graphs-and-undirected-graphs/"> 求解有向图和无向图中是否存在环的方法 </a>
+        <a href="https://akynazh.site/posts/2021/12/redis-learning-record-ii/"> Redis 学习记录二 </a>
       </nobr>
     </li>
     
     
     
     <li class="post-item ellipsis-line">
-      <nobr><time class="meta" datetime="2020-11-28 18:24:12 &#43;0800 CST" itemprop="datePublished">2020-11-28</time>
+      <nobr><time class="meta" datetime="2021-12-14 23:40:44 &#43;0800 CST" itemprop="datePublished">2021-12-14</time>
         ··········&nbsp&nbsp
-        <a href="https://akynazh.site/posts/2020/11/two-dimensional-capriccio/"> 二次元随想 </a>
+        <a href="https://akynazh.site/posts/2021/12/redis-learning-record-i/"> Redis 学习记录一 </a>
       </nobr>
     </li>
     
     
     
     <li class="post-item ellipsis-line">
-      <nobr><time class="meta" datetime="2020-11-25 00:21:05 &#43;0800 CST" itemprop="datePublished">2020-11-25</time>
+      <nobr><time class="meta" datetime="2021-12-10 18:10:07 &#43;0800 CST" itemprop="datePublished">2021-12-10</time>
         ··········&nbsp&nbsp
-        <a href="https://akynazh.site/posts/2020/11/the-difference-between-the-equals-method-and-the---operator/"> equals 方法和 == 运算符的作用区别 </a>
+        <a href="https://akynazh.site/posts/2021/12/git-quick-initialization-operation/"> Git 快速初始化操作 </a>
       </nobr>
     </li>
     
     
     
     <li class="post-item ellipsis-line">
-      <nobr><time class="meta" datetime="2020-11-20 18:17:33 &#43;0800 CST" itemprop="datePublished">2020-11-20</time>
+      <nobr><time class="meta" datetime="2021-12-05 12:37:32 &#43;0800 CST" itemprop="datePublished">2021-12-05</time>
         ··········&nbsp&nbsp
-        <a href="https://akynazh.site/posts/2020/11/cmd-some-important-and-practical-commands/"> Cmd 重要且实用的一些命令 </a>
+        <a href="https://akynazh.site/posts/2021/12/understanding-of-char-char-string/"> 关于 char*, char[], string 的理解 </a>
       </nobr>
     </li>
     
     
     
     <li class="post-item ellipsis-line">
-      <nobr><time class="meta" datetime="2020-11-18 23:47:15 &#43;0800 CST" itemprop="datePublished">2020-11-18</time>
+      <nobr><time class="meta" datetime="2021-12-05 00:20:09 &#43;0800 CST" itemprop="datePublished">2021-12-05</time>
         ··········&nbsp&nbsp
-        <a href="https://akynazh.site/posts/2020/11/introduction-and-application-of-matrix-fast-power/"> 矩阵快速幂的介绍及其应用 </a>
+        <a href="https://akynazh.site/posts/2021/12/text-operation-of-linux-practical-operation/"> Linux 实用操作之文本操作 </a>
       </nobr>
     </li>
     
     
     
     <li class="post-item ellipsis-line">
-      <nobr><time class="meta" datetime="2020-11-17 17:55:32 &#43;0800 CST" itemprop="datePublished">2020-11-17</time>
+      <nobr><time class="meta" datetime="2021-11-26 09:23:27 &#43;0800 CST" itemprop="datePublished">2021-11-26</time>
         ··········&nbsp&nbsp
-        <a href="https://akynazh.site/posts/2020/11/summary-of-shortest-path-problems/"> 最短路问题汇总 </a>
+        <a href="https://akynazh.site/posts/2021/11/why-should-java-rewrite-the-hashcode-method-when-rewriting-the-equals-method/"> Java 重写 equals 方法的同时为什么要重写 hashcode 方法 </a>
       </nobr>
     </li>
     
     
     
     <li class="post-item ellipsis-line">
-      <nobr><time class="meta" datetime="2020-07-21 20:48:53 &#43;0800 CST" itemprop="datePublished">2020-07-21</time>
+      <nobr><time class="meta" datetime="2021-11-23 18:20:39 &#43;0800 CST" itemprop="datePublished">2021-11-23</time>
         ··········&nbsp&nbsp
-        <a href="https://akynazh.site/posts/2020/07/on-rolling-division-and-extended-euclidean-algorithm/"> 关于辗转相除法和扩展欧几里得算法 </a>
+        <a href="https://akynazh.site/posts/2021/11/running-memory/"> 跑步记忆 </a>
       </nobr>
     </li>
     
     
     
     <li class="post-item ellipsis-line">
-      <nobr><time class="meta" datetime="2020-07-21 20:43:04 &#43;0800 CST" itemprop="datePublished">2020-07-21</time>
+      <nobr><time class="meta" datetime="2021-11-20 18:10:30 &#43;0800 CST" itemprop="datePublished">2021-11-20</time>
         ··········&nbsp&nbsp
-        <a href="https://akynazh.site/posts/2020/07/some-algorithms-about-prime-numbers/"> 有关素数的一些算法 </a>
+        <a href="https://akynazh.site/posts/2021/11/add-right-click-open-option-in-window/"> Window 增加右键打开选项 </a>
       </nobr>
     </li>
     
     
     
     <li class="post-item ellipsis-line">
-      <nobr><time class="meta" datetime="2020-02-13 00:14:23 &#43;0800 CST" itemprop="datePublished">2020-02-13</time>
+      <nobr><time class="meta" datetime="2021-11-03 00:38:12 &#43;0800 CST" itemprop="datePublished">2021-11-03</time>
         ··········&nbsp&nbsp
-        <a href="https://akynazh.site/posts/2020/02/python-automatically-crawls-all-pictures-in-any-panel-of-petal-net/"> Python 自动爬取花瓣网任意面板中所有图片 </a>
-      </nobr>
-    </li>
-    
-    
-    
-    <li class="post-item ellipsis-line">
-      <nobr><time class="meta" datetime="2020-02-06 20:41:12 &#43;0800 CST" itemprop="datePublished">2020-02-06</time>
-        ··········&nbsp&nbsp
-        <a href="https://akynazh.site/posts/2020/02/basic-usage-sorting-of-matlab/"> Matlab 基本用法整理 </a>
+        <a href="https://akynazh.site/posts/2021/11/file-upload-problem-after-deploying-jar-package-project-on-linux/"> Linux 上部署 JAR 包项目后的文件上传问题 </a>
       </nobr>
     </li>
     
@@ -420,7 +405,10 @@
         
             <a href="/posts/page/7/"><i class="fas fa-angle-left"></i></a>
         
-        <span class="page-number">Page 8 of 8</span>
+        <span class="page-number">Page 8 of 10</span>
+        
+            <a href="/posts/page/9/"><i class="fas fa-angle-right"></i>
+            </a>
         
     </div>
 
@@ -459,9 +447,7 @@
 </footer>
   </div>
 </body>
-<script src="/js/jquery.min.js"></script>
 <script src="/js/main.js"></script>
-<script src="/js/snow.js"></script>
 <script src="/js/fuse.min.js"></script>
 <script src="/js/fastsearch.js"></script>
 </html>

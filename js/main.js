@@ -1,60 +1,13 @@
-function setTheme(theme) {
-  let stylesDark = $("#styles-dark").attr("value");
-  let stylesLight = $("#styles-light").attr("value");
-  if (theme === "dark") {
-    // base
-    $("#logo").attr("class", "logo-dark");
-    $("#theme-current").attr("value", "dark");
-    $("#theme").attr("href", stylesDark);
-    // utterances
-    setUtterancesTheme("github-dark");
-  } else if (theme === "light") {
-    $("#logo").attr("class", "logo-light");
-    $("#theme-current").attr("value", "light");
-    $("#theme").attr("href", stylesLight);
-    // utterances
-    setUtterancesTheme("github-light");
-  }
-}
-function setUtterancesTheme(theme) {
-  let iframe = document.querySelector(".utterances-frame");
-  if (iframe !== undefined && iframe !== null) {
-    const message = {
-      type: "set-theme",
-      theme: theme,
-    };
-    iframe.contentWindow.postMessage(message, "https://utteranc.es");
-  }
-}
 $(document).ready(function () {
-  // get user theme
-  let userTheme = localStorage.getItem("userTheme");
-  let userThemeExpire = localStorage.getItem("userThemeExpire");
-  if (
-    userTheme !== null &&
-    userTheme != "" &&
-    userThemeExpire !== null &&
-    userThemeExpire > new Date().getTime()
-  ) {
-    $("#theme-current").attr("value", userTheme);
-  }
-  // set theme
-  let themeCurrent = $("#theme-current").attr("value");
-  setTheme(themeCurrent);
   // button: change theme
   $("#logo, #theme-change").click(function () {
-    let themeCurrent = $("#theme-current").attr("value");
     let newTheme;
-    if (themeCurrent === "light") {
+    if (getCurrentTheme() === "light") {
       newTheme = "dark";
     } else {
       newTheme = "light";
     }
-    setTheme(newTheme);
-    localStorage.setItem("userTheme", newTheme);
-    // 设置超时时间： 24 小时
-    let expire = new Date().getTime() + 1000 * 3600 * 24;
-    localStorage.setItem("userThemeExpire", expire);
+    changeTheme(newTheme)
   });
   /**
    * Shows the responsive navigation menu on mobile.

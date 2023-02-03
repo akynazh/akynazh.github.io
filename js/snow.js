@@ -413,15 +413,16 @@
   return Snow;
 });
 
-theme = document.getElementById("theme").value;
-startSnow = document.getElementById("start-snow").value;
-if (theme === "dark" && startSnow === "1") {
-  console.log(startSnow)
+function startSnow() {
+  let pathName = window.location.pathname;
+  if (pathName.indexOf("/posts/") != -1 && pathName.length > 7) {
+    return
+  }
   // 生成雪类型一
-  var snow1 = new $Snow();
+  window.snow1 = new $Snow();
 
   // 生成雪类型二
-  var snow2 = new $Snow({
+  window.snow2 = new $Snow({
     img: true,
     imgurl: "/image/snow/wsnow1.png",
     num: 2,
@@ -435,7 +436,7 @@ if (theme === "dark" && startSnow === "1") {
   });
 
   // 生成雪类型三
-  var snow3 = new $Snow({
+  window.snow3 = new $Snow({
     img: true,
     imgurl: "/image/snow/bsnow2.png",
     num: 2,
@@ -447,14 +448,19 @@ if (theme === "dark" && startSnow === "1") {
       animationPlayState: "paused",
     },
   });
+}
 
-  // 下雪一段时间后停止
-  // setTimeout(function() {
-  //     snow1.stop();
-  //     snow1 = null;
-  //     snow2.stop();
-  //     snow2 = null;
-  //     snow3.stop();
-  //     snow3 = null;
-  // }, 30000)
+function stopSnow() {
+  if (window.snow1 !== undefined && window.snow1 !== null) {
+    window.snow1.stop();
+    window.snow1 = null;
+  }
+  if (window.snow2 !== undefined && window.snow2 !== null) {
+    window.snow2.stop();
+    window.snow2 = null;
+  }
+  if (window.snow3 !== undefined && window.snow3 !== null) {
+    window.snow3.stop();
+    window.snow3 = null;
+  }
 }
