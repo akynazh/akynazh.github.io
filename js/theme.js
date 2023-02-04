@@ -1,18 +1,19 @@
 function setTheme(theme) {
   let stylesDark = document.getElementById("styles-dark").value;
   let stylesLight = document.getElementById("styles-light").value;
-  if (theme === "dark") {
-    document.getElementById("theme").setAttribute("href", stylesDark);
-    document.getElementById("logo").setAttribute("class", "logo-dark");
-  } else if (theme === "light") {
-    document.getElementById("theme").setAttribute("href", stylesLight);
-    document.getElementById("logo").setAttribute("class", "logo-light");
+  let themeCss = document.getElementById("theme-css");
+  let logo = document.getElementById("logo");
+  let setLogoClass = theme === "dark" ? "logo-dark" : "logo-light";
+  let setThemeStyle = theme === "dark" ? stylesDark : stylesLight;
+  themeCss.setAttribute("href", setThemeStyle);
+  if (logo) {
+    logo.setAttribute("class", setLogoClass);
   }
 }
 
 function changeTheme(theme) {
   setTheme(theme);
-  setSnow = document.getElementById("set-snow").value;
+  let setSnow = document.getElementById("set-snow").value;
   if (theme === "dark") {
     setUtterancesTheme("github-dark");
     if (setSnow === "1") {
@@ -39,7 +40,7 @@ async function setUtterancesTheme(theme) {
     type: "set-theme",
     theme: theme,
   };
-  if (iframe !== undefined && iframe !== null) {
+  if (iframe) {
     while (true) {
       if (iframe.contentDocument === null) {
         iframe.contentWindow.postMessage(message, "https://utteranc.es");

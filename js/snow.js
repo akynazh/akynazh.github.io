@@ -447,15 +447,15 @@ function startSnow() {
 }
 
 function stopSnow() {
-  if (window.snow1 !== undefined && window.snow1 !== null) {
+  if (window.snow1) {
     window.snow1.stop();
     window.snow1 = null;
   }
-  if (window.snow2 !== undefined && window.snow2 !== null) {
+  if (window.snow2) {
     window.snow2.stop();
     window.snow2 = null;
   }
-  if (window.snow3 !== undefined && window.snow3 !== null) {
+  if (window.snow3) {
     window.snow3.stop();
     window.snow3 = null;
   }
