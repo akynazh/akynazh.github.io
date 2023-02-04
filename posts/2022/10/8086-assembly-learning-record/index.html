@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title> 8086 汇编学习记录 | Norwegian Wood</title>
-  <link rel='canonical' href='https://akynazh.site/posts/2022/10/8086-assembly-learning-record/'>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="all,follow">
-  <meta name="googlebot" content="index,follow,snippet,archive">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>8086 汇编学习记录 |Norwegian Wood</title>
+  <link rel="canonical" href="https://akynazh.site/posts/2022/10/8086-assembly-learning-record/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="all,follow" />
+  <meta name="googlebot" content="index,follow,snippet,archive" />
   <meta property="og:title" content="8086 汇编学习记录" />
 <meta property="og:description" content="8086 PC 机内存地址空间分配 00000~9FFFF: 主存储器地址空间（RAM） A0000~BFFFF: 显存地址空间 C0000~FFFFF: 各类ROM地址空间 段寄存器 8086CPU不支持将数据直接送入段寄存器的操作，ds 是一个段寄存器，所以mov ds，1000H这条指令是非法的。
 要将1000H送入ds，只好用一个寄存器来进行中转，即先将1000H送入一个一般的寄存器，如bx，再将bx中的内容送入ds。
@@ -58,112 +58,126 @@
 
   
   
-  
+
   
   
 
   
   
   
-    <input value="light" id="theme-current" style="display: none;">
+    <input value="light" id="theme-current" style="display: none;" />
+    <link id="theme" rel="stylesheet" href="https://akynazh.site/css/styles_light.css" />
   
-  <input value="https://akynazh.site/css/styles_dark.css" id="styles-dark" style="display: none;">
-  <input value="https://akynazh.site/css/styles_light.css" id="styles-light" style="display: none;">
+  <input value="https://akynazh.site/css/styles_dark.css" id="styles-dark" style="display: none;" />
+  <input value="https://akynazh.site/css/styles_light.css" id="styles-light" style="display: none;" />
 
-  <input value="1" id="set-snow" style="display: none;">
-
-  <link id="theme" rel="stylesheet" href="">
-  <script src="/js/jquery.min.js"></script>
+  <input value="1" id="set-snow" style="display: none;" />
+  
   <script src="/js/snow.js"></script>
   <script src="/js/theme.js"></script>
-  <script>
-    theme = getCurrentTheme();
-    setTheme(theme);
-    setSnow = document.getElementById("set-snow").value;
-    if (theme === "dark" && setSnow === "1") {
-      startSnow()
-    }
-  </script>
+  <script src="/js/jquery.min.js"></script>
 
   
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  />
 
   
-  <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+
+
   
 
-  <link rel="shortcut icon" href="/favicon.png" type="image/png" />
-<link rel="icon" href="/favicon.png" type="image/png" />
-
-  
-  
   
 </head>
-<body class="max-width-blog mx-auto px3 ltr">
-  <div class="content index py4">
-  <div id="header-post">
+
+  <body class="max-width-blog mx-auto px3 ltr">
+    <div class="content index py4">
+      <div id="header-post">
   <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
-  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <a
+    id="top-icon-tablet"
+    href="#"
+    onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"
+    style="display:none;"
+    aria-label="Top of Page"
+    ><i class="fas fa-chevron-up fa-lg"></i
+  ></a>
   <span id="menu">
     <span id="nav">
       <ul>
-         
-        <li><a href="/">Home</a></li>
-         
-        <li><a href="/posts">Archives</a></li>
-         
-        <li><a href="/about">About</a></li>
+        
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/posts">Posts</a></li>
+        
+          <li><a href="/about">About</a></li>
         
       </ul>
     </span>
-    <br/>
+    <br />
     <span id="actions">
       <ul>
         
-        <li>
-          <a class="icon" href="https://akynazh.site/posts/2022/10/solution-and-thinking-about-hwbk/" aria-label="Previous">
-            <i class="fas fa-chevron-left" aria-hidden="true"></i>
-          </a>
-        </li>
+        
+          <li>
+            <a class="icon" href="https://akynazh.site/posts/2022/10/solution-and-thinking-about-hwbk/" aria-label="Previous">
+              <i class="fas fa-chevron-left" aria-hidden="true"></i>
+            </a>
+          </li>
+        
+        
+        
+          <li>
+            <a class="icon" href="https://akynazh.site/posts/2022/10/docker-software-installation-record/" aria-label="Next">
+              <i class="fas fa-chevron-right" aria-hidden="true"></i>
+            </a>
+          </li>
         
         
         <li>
-          <a class="icon" href="https://akynazh.site/posts/2022/10/docker-software-installation-record/" aria-label="Next">
-            <i class="fas fa-chevron-right" aria-hidden="true"></i>
-          </a>
-        </li>
-        
-        <li>
-          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <a
+            class="icon"
+            href="#"
+            onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"
+            aria-label="Top of Page"
+          >
             <i class="fas fa-chevron-up" aria-hidden="true"></i>
           </a>
         </li>
+        
         <li>
           <a class="icon" href="#" aria-label="Search" id="searchBtn">
             <i class="fa fa-search" aria-hidden="true"></i>
           </a>
         </li>
+        
         <li>
           <a class="icon" id="theme-change"><i class="fas fa-adjust"></i></a>
         </li>
+        
         <li>
-          <a class="icon" href="#" aria-label="Share" onclick="$('#share').toggle();return false;">
+          <a
+            class="icon"
+            href="#"
+            aria-label="Share"
+            onclick="$('#share').toggle();return false;"
+          >
             <i class="fas fa-share-alt" aria-hidden="true"></i>
           </a>
         </li>
       </ul>
-      <span id="i-prev" class="info" style="display:none;">Previous post</span>
-      <span id="i-prev" class="info" style="display:none;">Previous post</span>
-      <span id="i-next" class="info" style="display:none;">Next post</span>
-      <span id="i-top" class="info" style="display:none;">Back to top</span>
-      <span id="i-search" class="info" style="display:none;">Search</span>
-      <span id="i-share" class="info" style="display:none;">Share post</span>
     </span>
-    <br/>
+    <br />
     <div id="share" style="display: none">
       
       <ul>
@@ -173,56 +187,65 @@
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f10%2f8086-assembly-learning-record%2f" aria-label="Facebook">
+    <a
+      class="icon"
+      href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f10%2f8086-assembly-learning-record%2f"
+      aria-label="Facebook"
+    >
       <i class="fab fa-facebook " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f10%2f8086-assembly-learning-record%2f&text=8086%20%e6%b1%87%e7%bc%96%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95" aria-label="Twitter">
+    <a
+      class="icon"
+      href="https://twitter.com/share?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f10%2f8086-assembly-learning-record%2f&text=8086%20%e6%b1%87%e7%bc%96%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95"
+      aria-label="Twitter"
+    >
       <i class="fab fa-twitter " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f10%2f8086-assembly-learning-record%2f&title=8086%20%e6%b1%87%e7%bc%96%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95" aria-label="Linkedin">
+    <a
+      class="icon"
+      href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f10%2f8086-assembly-learning-record%2f&title=8086%20%e6%b1%87%e7%bc%96%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95"
+      aria-label="Linkedin"
+    >
       <i class="fab fa-linkedin " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f10%2f8086-assembly-learning-record%2f&is_video=false&description=8086%20%e6%b1%87%e7%bc%96%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95" aria-label="Pinterest">
-      <i class="fab fa-pinterest " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="mailto:?subject=8086%20%e6%b1%87%e7%bc%96%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95&body=Check out this article: https%3a%2f%2fakynazh.site%2fposts%2f2022%2f10%2f8086-assembly-learning-record%2f" aria-label="Email">
+    <a
+      class="icon"
+      href="mailto:?subject=8086%20%e6%b1%87%e7%bc%96%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95&body=Check out this article: https%3a%2f%2fakynazh.site%2fposts%2f2022%2f10%2f8086-assembly-learning-record%2f"
+      aria-label="Email"
+    >
       <i class="fas fa-envelope " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f10%2f8086-assembly-learning-record%2f&title=8086%20%e6%b1%87%e7%bc%96%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95" aria-label="Pocket">
-      <i class="fab fa-get-pocket " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f10%2f8086-assembly-learning-record%2f&title=8086%20%e6%b1%87%e7%bc%96%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95" aria-label="reddit">
+    <a
+      class="icon"
+      href="http://reddit.com/submit?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f10%2f8086-assembly-learning-record%2f&title=8086%20%e6%b1%87%e7%bc%96%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95"
+      aria-label="reddit"
+    >
       <i class="fab fa-reddit " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f10%2f8086-assembly-learning-record%2f&name=8086%20%e6%b1%87%e7%bc%96%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95&description=8086%20PC%20%e6%9c%ba%e5%86%85%e5%ad%98%e5%9c%b0%e5%9d%80%e7%a9%ba%e9%97%b4%e5%88%86%e9%85%8d%2000000~9FFFF%3a%20%e4%b8%bb%e5%ad%98%e5%82%a8%e5%99%a8%e5%9c%b0%e5%9d%80%e7%a9%ba%e9%97%b4%ef%bc%88RAM%ef%bc%89%20A0000~BFFFF%3a%20%e6%98%be%e5%ad%98%e5%9c%b0%e5%9d%80%e7%a9%ba%e9%97%b4%20C0000~FFFFF%3a%20%e5%90%84%e7%b1%bbROM%e5%9c%b0%e5%9d%80%e7%a9%ba%e9%97%b4%20%e6%ae%b5%e5%af%84%e5%ad%98%e5%99%a8%208086CPU%e4%b8%8d%e6%94%af%e6%8c%81%e5%b0%86%e6%95%b0%e6%8d%ae%e7%9b%b4%e6%8e%a5%e9%80%81%e5%85%a5%e6%ae%b5%e5%af%84%e5%ad%98%e5%99%a8%e7%9a%84%e6%93%8d%e4%bd%9c%ef%bc%8cds%20%e6%98%af%e4%b8%80%e4%b8%aa%e6%ae%b5%e5%af%84%e5%ad%98%e5%99%a8%ef%bc%8c%e6%89%80%e4%bb%a5mov%20ds%ef%bc%8c1000H%e8%bf%99%e6%9d%a1%e6%8c%87%e4%bb%a4%e6%98%af%e9%9d%9e%e6%b3%95%e7%9a%84%e3%80%82%0a%e8%a6%81%e5%b0%861000H%e9%80%81%e5%85%a5ds%ef%bc%8c%e5%8f%aa%e5%a5%bd%e7%94%a8%e4%b8%80%e4%b8%aa%e5%af%84%e5%ad%98%e5%99%a8%e6%9d%a5%e8%bf%9b%e8%a1%8c%e4%b8%ad%e8%bd%ac%ef%bc%8c%e5%8d%b3%e5%85%88%e5%b0%861000H%e9%80%81%e5%85%a5%e4%b8%80%e4%b8%aa%e4%b8%80%e8%88%ac%e7%9a%84%e5%af%84%e5%ad%98%e5%99%a8%ef%bc%8c%e5%a6%82bx%ef%bc%8c%e5%86%8d%e5%b0%86bx%e4%b8%ad%e7%9a%84%e5%86%85%e5%ae%b9%e9%80%81%e5%85%a5ds%e3%80%82%0a%e4%b8%ba%e4%bb%80%e4%b9%888086CPU%e4%b8%8d%e6%94%af%e6%8c%81%e5%b0%86%e6%95%b0%e6%8d%ae%e7%9b%b4%e6%8e%a5%e9%80%81%e5%85%a5%e6%ae%b5%e5%af%84%e5%ad%98%e5%99%a8%e7%9a%84%e6%93%8d%e4%bd%9c%3f%0a%e8%bf%99%e5%b1%9e%e4%ba%8e8086CPU%e7%a1%ac%e4%bb%b6%e8%ae%be%e8%ae%a1%e7%9a%84%e9%97%ae%e9%a2%98%e3%80%82%0a%e5%85%b3%e4%ba%8e%20SS%ef%bc%8cSP%208086CPU%e4%b8%ad%ef%bc%8c%e6%9c%89%e4%b8%a4%e4%b8%aa%e5%af%84%e5%ad%98%e5%99%a8%ef%bc%8c%e6%ae%b5%e5%af%84%e5%ad%98%e5%99%a8%20SS%20%e5%92%8c%e5%af%84%e5%ad%98%e5%99%a8%20SP%ef%bc%8c%e6%a0%88%e9%a1%b6%e7%9a%84%e6%ae%b5%e5%9c%b0%e5%9d%80%e5%ad%98%e6%94%be%e5%9c%a8SS%e4%b8%ad%ef%bc%8c%e5%81%8f%e7%a7%bb%e5%9c%b0%e5%9d%80%e5%ad%98%e6%94%be%e5%9c%a8SP%e4%b8%ad%e3%80%82%0a%e4%bb%bb%e6%84%8f%e6%97%b6%e5%88%bb%ef%bc%8cSS%e2%88%b6SP%e6%8c%87%e5%90%91%e6%a0%88%e9%a1%b6%e5%85%83%e7%b4%a0%e3%80%82push%e6%8c%87%e4%bb%a4%e5%92%8cpop%e6%8c%87%e4%bb%a4%e6%89%a7%e8%a1%8c%e6%97%b6%ef%bc%8cCPU%e4%bb%8eSS%e5%92%8cSP%e4%b8%ad%e5%be%97%e5%88%b0%e6%a0%88%e9%a1%b6%e7%9a%84%e5%9c%b0%e5%9d%80%e3%80%82%0a%e4%bc%aa%e6%8c%87%e4%bb%a4%20%e5%9c%a8%e6%b1%87%e7%bc%96%e8%af%ad%e8%a8%80%e6%ba%90%e7%a8%8b%e5%ba%8f%e4%b8%ad%ef%bc%8c%e5%8c%85%e5%90%ab%e4%b8%a4%e7%a7%8d%e6%8c%87%e4%bb%a4%ef%bc%8c%e4%b8%80%e7%a7%8d%e6%98%af%e6%b1%87%e7%bc%96%e6%8c%87%e4%bb%a4%ef%bc%8c%e4%b8%80%e7%a7%8d%e6%98%af%e4%bc%aa%e6%8c%87%e4%bb%a4%e3%80%82%0a%e6%b1%87%e7%bc%96%e6%8c%87%e4%bb%a4%e6%98%af%e6%9c%89%e5%af%b9%e5%ba%94%e7%9a%84%e6%9c%ba%e5%99%a8%e7%a0%81%e7%9a%84%e6%8c%87%e4%bb%a4%ef%bc%8c%e5%8f%af%e4%bb%a5%e8%a2%ab%e7%bc%96%e8%af%91%e4%b8%ba%e6%9c%ba%e5%99%a8%e6%8c%87%e4%bb%a4%ef%bc%8c%e6%9c%80%e7%bb%88%e4%b8%baCPU%e6%89%80%e6%89%a7%e8%a1%8c%e3%80%82%0a%e8%80%8c%e4%bc%aa%e6%8c%87%e4%bb%a4%e6%b2%a1%e6%9c%89%e5%af%b9%e5%ba%94%e7%9a%84%e6%9c%ba%e5%99%a8%e6%8c%87%e4%bb%a4%ef%bc%8c%e6%9c%80%e7%bb%88%e4%b8%8d%e8%a2%ab%20CPU%20%e6%89%80%e6%89%a7%e8%a1%8c%e3%80%82%e9%82%a3%e4%b9%88%e8%b0%81%e6%9d%a5%e6%89%a7%e8%a1%8c%e4%bc%aa%e6%8c%87%e4%bb%a4%e5%91%a2%3f%0a%e4%bc%aa%e6%8c%87%e4%bb%a4%e6%98%af%e7%94%b1%e7%bc%96%e8%af%91%e5%99%a8%e6%9d%a5%e6%89%a7%e8%a1%8c%e7%9a%84%e6%8c%87%e4%bb%a4%ef%bc%8c%e7%bc%96%e8%af%91%e5%99%a8%e6%a0%b9%e6%8d%ae%e4%bc%aa%e6%8c%87%e4%bb%a4%e6%9d%a5%e8%bf%9b%e8%a1%8c%e7%9b%b8%e5%85%b3%e7%9a%84%e7%bc%96%e8%af%91%e5%b7%a5%e4%bd%9c%e3%80%82%0a%e6%b1%87%e7%bc%96%e7%a8%8b%e5%ba%8f%20%e5%9c%a8%e6%b1%87%e7%bc%96%e6%ba%90%e7%a8%8b%e5%ba%8f%e4%b8%ad%ef%bc%8c%e6%95%b0%e6%8d%ae%e4%b8%8d%e8%83%bd%e4%bb%a5%e5%ad%97%e6%af%8d%e5%bc%80%e5%a4%b4%ef%bc%8c%e6%89%80%e4%bb%a5%e8%a6%81%e5%9c%a8%e5%89%8d%e9%9d%a2%e5%8a%a00%e3%80%82%e6%af%94%e5%a6%82%ef%bc%8c9138h%e5%9c%a8%e6%b1%87%e7%bc%96%e6%ba%90%e7%a8%8b%e5%ba%8f%e4%b8%ad%e5%8f%af%e4%bb%a5%e7%9b%b4%e6%8e%a5%e5%86%99%e4%b8%ba%e2%80%9c9138h%e2%80%9d%ef%bc%8c%e8%80%8cA000h%e5%9c%a8%e6%b1%87%e7%bc%96%e6%ba%90%e7%a8%8b%e5%ba%8f%e4%b8%ad%e8%a6%81%e5%86%99%e4%b8%ba%e2%80%9c0A000h%e2%80%9d%e3%80%82%0a%e5%af%b9%e4%ba%8emov%20al%2c%5b0%5d%ef%bc%8c%e6%98%af%e5%b0%86%e5%b8%b8%e9%87%8f0%e9%80%81%e5%85%a5al%e4%b8%ad%ef%bc%8c%e7%ad%89%e5%90%8c%e4%ba%8emov%20al%2c0%ef%bc%9b%20%e5%af%b9%e4%ba%8emov%20al%2cds%3a%5b0%5d%ef%bc%8c%e5%90%ab%e4%b9%89%e6%98%af%28al%29%3d%28%28ds%29%2a16%2b0%29%ef%bc%9b%20%e5%af%b9%e4%ba%8emov%20al%2c%5bbx%5d%ef%bc%8c%e5%90%ab%e4%b9%89%e6%98%af%28al%29%3d%28%28ds%29%2a16%2b%28bx%29%29%ef%bc%9b%20%e5%af%b9%e4%ba%8emov%20al%2cds%3a%5bbx%5d%ef%bc%8c%e5%90%ab%e4%b9%89%e7%ad%89%e5%90%8c%e4%ba%8e%e4%b8%8a%e8%80%85%e3%80%82%20Debug%20R%e5%91%bd%e4%bb%a4%ef%bc%9a%e6%9f%a5%e7%9c%8b%e3%80%81%e6%94%b9%e5%8f%98%20CPU%20%e5%af%84%e5%ad%98%e5%99%a8%e7%9a%84%e5%86%85%e5%ae%b9%ef%bc%9b%20D%e5%91%bd%e4%bb%a4%ef%bc%9a%e6%9f%a5%e7%9c%8b%e5%86%85%e5%ad%98%e4%b8%ad%e7%9a%84%e5%86%85%e5%ae%b9%ef%bc%9b%20E%e5%91%bd%e4%bb%a4%ef%bc%9a%e6%94%b9%e5%86%99%e5%86%85%e5%ad%98%e4%b8%ad%e7%9a%84%e5%86%85%e5%ae%b9%ef%bc%9b%20U%e5%91%bd%e4%bb%a4%ef%bc%9a%e5%b0%86%e5%86%85%e5%ad%98%e4%b8%ad%e7%9a%84%e6%9c%ba%e5%99%a8%e6%8c%87%e4%bb%a4%e7%bf%bb%e8%af%91%e6%88%90%e6%b1%87%e7%bc%96%e6%8c%87%e4%bb%a4%ef%bc%9b%20T%e5%91%bd%e4%bb%a4%ef%bc%9a%e6%89%a7%e8%a1%8c%e4%b8%80%e6%9d%a1%e6%9c%ba%e5%99%a8%e6%8c%87%e4%bb%a4%ef%bc%9b%20A%e5%91%bd%e4%bb%a4%ef%bc%9a%e4%bb%a5%e6%b1%87%e7%bc%96%e6%8c%87%e4%bb%a4%e7%9a%84%e6%a0%bc%e5%bc%8f%e5%9c%a8%e5%86%85%e5%ad%98%e4%b8%ad%e5%86%99%e5%85%a5%e4%b8%80%e6%9d%a1%e6%9c%ba%e5%99%a8%e6%8c%87%e4%bb%a4%ef%bc%9b%20P%e5%91%bd%e4%bb%a4%ef%bc%9a%e5%8f%af%e7%94%a8%e4%ba%8e%e5%bf%ab%e9%80%9f%e7%bb%93%e6%9d%9f%e4%b8%80%e6%ae%b5LOOP%ef%bc%8c%e9%81%87%e5%88%b0loop%e6%97%b6%e4%bd%bf%e7%94%a8%ef%bc%9b%20G%e5%91%bd%e4%bb%a4%ef%bc%9a%e5%8f%af%e4%bb%a5%e8%ae%a9%e6%8c%87%e4%bb%a4%e7%9b%b4%e6%8e%a5%e6%89%a7%e8%a1%8c%e5%88%b0%e6%9f%90%e4%b8%aa%e5%9c%b0%e5%9d%80%e5%a4%84%ef%bc%8c%e5%a6%82-g%200016%e6%89%a7%e8%a1%8c%e5%88%b00016%e5%a4%84%e4%bb%a3%e7%a0%81%e3%80%82%20%e5%ae%9e%e6%a8%a1%e5%bc%8f%e5%92%8c%e4%bf%9d%e6%8a%a4%e6%a8%a1%e5%bc%8f%20%e5%ae%9e%e6%a8%a1%e5%bc%8f%e6%98%afIntel%2080286%e5%92%8c%e4%b9%8b%e5%90%8e%e7%9a%84x86%e5%85%bc%e5%ae%b9CPU%e7%9a%84%e6%93%8d%e4%bd%9c%e6%a8%a1%e5%bc%8f%e3%80%82%0a%e5%ae%9e%e6%a8%a1%e5%bc%8f%e7%9a%84%e7%89%b9%e6%80%a7%e6%98%af%e4%b8%80%e4%b8%aa20%e4%bd%8d%e5%85%83%e7%9a%84%e5%8c%ba%e6%ae%b5%e5%ad%98%e5%82%a8%e5%99%a8%e5%9c%b0%e5%9d%80%e7%a9%ba%e9%97%b4%ef%bc%88%e6%84%8f%e6%80%9d%e4%b8%ba%e5%8f%aa%e6%9c%891MB%e7%9a%84%e5%ad%98%e5%82%a8%e5%99%a8%e5%8f%af%e4%bb%a5%e8%a2%ab%e5%af%bb%e5%9d%80%ef%bc%89%ef%bc%8c%e8%bd%af%e4%bb%b6%e5%8f%af%e4%bb%a5%e7%9b%b4%e6%8e%a5%e8%ae%bf%e9%97%aeBIOS%e4%be%8b%e7%a8%8b%e4%bb%a5%e5%8f%8a%e5%91%a8%e8%be%b9%e7%a1%ac%e4%bb%b6%ef%bc%8c%e6%b2%a1%e6%9c%89%e4%bb%bb%e4%bd%95%e7%a1%ac%e4%bb%b6%e7%ad%89%e7%ba%a7%e7%9a%84%e5%ad%98%e5%82%a8%e5%99%a8%e4%bf%9d%e6%8a%a4%e8%a7%82%e5%bf%b5%e6%88%96%e5%a4%9a%e4%bb%bb%e5%8a%a1%e3%80%82%0a%e4%bf%9d%e6%8a%a4%e6%a8%a1%e5%bc%8f%e6%98%af%e4%b8%80%e7%a7%8d80286%e7%b3%bb%e5%88%97%e5%92%8c%e4%b9%8b%e5%90%8e%e7%9a%84x86%e5%85%bc%e5%ae%b9CPU%e7%9a%84%e8%bf%90%e8%a1%8c%e6%a8%a1%e5%bc%8f%e3%80%82%0a%e4%bf%9d%e6%8a%a4%e6%a8%a1%e5%bc%8f%e6%9c%89%e4%b8%80%e4%ba%9b%e6%96%b0%e7%9a%84%e7%89%b9%e6%80%a7%ef%bc%8c%e5%a6%82%e5%ad%98%e5%82%a8%e5%99%a8%e4%bf%9d%e6%8a%a4%ef%bc%8c%e6%a0%87%e7%ad%be%e9%a1%b5%e7%b3%bb%e7%bb%9f%e4%bb%a5%e5%8f%8a%e7%a1%ac%e4%bb%b6%e6%94%af%e6%8c%81%e7%9a%84%e8%99%9a%e6%8b%9f%e5%86%85%e5%ad%98%ef%bc%8c%e8%83%bd%e5%a4%9f%e5%a2%9e%e5%bc%ba%e5%a4%9a%e4%bb%bb%e5%8a%a1%e5%a4%84%e7%90%86%e5%92%8c%e7%b3%bb%e7%bb%9f%e7%a8%b3%e5%ae%9a%e5%ba%a6%e3%80%82%0a%e7%8e%b0%e4%bb%8a%e5%a4%a7%e9%83%a8%e5%88%86%e7%9a%84x86%e6%93%8d%e4%bd%9c%e7%b3%bb%e7%bb%9f%e9%83%bd%e5%9c%a8%e4%bf%9d%e6%8a%a4%e6%a8%a1%e5%bc%8f%e4%b8%8b%e8%bf%90%e8%a1%8c%ef%bc%8c%e5%8c%85%e5%90%abLinux%e3%80%81FreeBSD%e3%80%81%e4%bb%a5%e5%8f%8a%e5%be%ae%e8%bd%afWindows%202.0%e5%92%8c%e4%b9%8b%e5%90%8e%e7%89%88%e6%9c%ac%e3%80%82%0a%e5%9c%a8%e7%ba%af%20DOS%20%e6%96%b9%e5%bc%8f%ef%bc%88%e5%ae%9e%e6%a8%a1%e5%bc%8f%ef%bc%89%e4%b8%8b%ef%bc%8c%e5%8f%af%e4%bb%a5%e4%b8%8d%e7%90%86%e4%bc%9a%20DOS%ef%bc%8c%e7%9b%b4%e6%8e%a5%e7%94%a8%e6%b1%87%e7%bc%96%e8%af%ad%e8%a8%80%e5%8e%bb%e6%93%8d%e4%bd%9c%e7%9c%9f%e5%ae%9e%e7%9a%84%e7%a1%ac%e4%bb%b6%e3%80%82%0a%e5%9b%a0%e4%b8%ba%e8%bf%90%e8%a1%8c%e5%9c%a8%20CPU%20%e5%ae%9e%e6%a8%a1%e5%bc%8f%e4%b8%8b%e7%9a%84%20DOS%ef%bc%8c%e6%b2%a1%e6%9c%89%e8%83%bd%e5%8a%9b%e5%af%b9%e7%a1%ac%e4%bb%b6%e7%b3%bb%e7%bb%9f%e8%bf%9b%e8%a1%8c%e5%85%a8%e9%9d%a2%e3%80%81%e4%b8%a5%e6%a0%bc%e7%9a%84%e7%ae%a1%e7%90%86%e3%80%82%0a%e4%bd%86%e5%9c%a8Windows%202000%e3%80%81Unix%20%e8%bf%99%e4%ba%9b%e8%bf%90%e8%a1%8c%e4%ba%8eCPU%e4%bf%9d%e6%8a%a4%e6%a8%a1%e5%bc%8f%e4%b8%8b%e7%9a%84%e6%93%8d%e4%bd%9c%e7%b3%bb%e7%bb%9f%e4%b8%ad%ef%bc%8c%e4%b8%8d%e7%90%86%e4%bc%9a%e6%93%8d%e4%bd%9c%e7%b3%bb%e7%bb%9f%ef%bc%8c%e7%94%a8%e6%b1%87%e7%bc%96%e8%af%ad%e8%a8%80%e5%8e%bb%e6%93%8d%e4%bd%9c%e7%9c%9f%e5%ae%9e%e7%9a%84%e7%a1%ac%e4%bb%b6%ef%bc%8c%e6%98%af%e6%a0%b9%e6%9c%ac%e4%b8%8d%e5%8f%af%e8%83%bd%e7%9a%84%e3%80%82%e7%a1%ac%e4%bb%b6%e5%b7%b2%e8%a2%ab%e8%bf%99%e4%ba%9b%e6%93%8d%e4%bd%9c%e7%b3%bb%e7%bb%9f%e5%88%a9%e7%94%a8%20CPU%20%e4%bf%9d%e6%8a%a4%e6%a8%a1%e5%bc%8f%e6%89%80%e6%8f%90%e4%be%9b%e7%9a%84%e5%8a%9f%e8%83%bd%e5%85%a8%e9%9d%a2%e8%80%8c%e4%b8%a5%e6%a0%bc%e5%9c%b0%e7%ae%a1%e7%90%86%e4%ba%86%e3%80%82" aria-label="Tumblr">
+    <a
+      class="icon"
+      href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f10%2f8086-assembly-learning-record%2f&name=8086%20%e6%b1%87%e7%bc%96%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95&description=8086%20PC%20%e6%9c%ba%e5%86%85%e5%ad%98%e5%9c%b0%e5%9d%80%e7%a9%ba%e9%97%b4%e5%88%86%e9%85%8d%2000000~9FFFF%3a%20%e4%b8%bb%e5%ad%98%e5%82%a8%e5%99%a8%e5%9c%b0%e5%9d%80%e7%a9%ba%e9%97%b4%ef%bc%88RAM%ef%bc%89%20A0000~BFFFF%3a%20%e6%98%be%e5%ad%98%e5%9c%b0%e5%9d%80%e7%a9%ba%e9%97%b4%20C0000~FFFFF%3a%20%e5%90%84%e7%b1%bbROM%e5%9c%b0%e5%9d%80%e7%a9%ba%e9%97%b4%20%e6%ae%b5%e5%af%84%e5%ad%98%e5%99%a8%208086CPU%e4%b8%8d%e6%94%af%e6%8c%81%e5%b0%86%e6%95%b0%e6%8d%ae%e7%9b%b4%e6%8e%a5%e9%80%81%e5%85%a5%e6%ae%b5%e5%af%84%e5%ad%98%e5%99%a8%e7%9a%84%e6%93%8d%e4%bd%9c%ef%bc%8cds%20%e6%98%af%e4%b8%80%e4%b8%aa%e6%ae%b5%e5%af%84%e5%ad%98%e5%99%a8%ef%bc%8c%e6%89%80%e4%bb%a5mov%20ds%ef%bc%8c1000H%e8%bf%99%e6%9d%a1%e6%8c%87%e4%bb%a4%e6%98%af%e9%9d%9e%e6%b3%95%e7%9a%84%e3%80%82%0a%e8%a6%81%e5%b0%861000H%e9%80%81%e5%85%a5ds%ef%bc%8c%e5%8f%aa%e5%a5%bd%e7%94%a8%e4%b8%80%e4%b8%aa%e5%af%84%e5%ad%98%e5%99%a8%e6%9d%a5%e8%bf%9b%e8%a1%8c%e4%b8%ad%e8%bd%ac%ef%bc%8c%e5%8d%b3%e5%85%88%e5%b0%861000H%e9%80%81%e5%85%a5%e4%b8%80%e4%b8%aa%e4%b8%80%e8%88%ac%e7%9a%84%e5%af%84%e5%ad%98%e5%99%a8%ef%bc%8c%e5%a6%82bx%ef%bc%8c%e5%86%8d%e5%b0%86bx%e4%b8%ad%e7%9a%84%e5%86%85%e5%ae%b9%e9%80%81%e5%85%a5ds%e3%80%82%0a%e4%b8%ba%e4%bb%80%e4%b9%888086CPU%e4%b8%8d%e6%94%af%e6%8c%81%e5%b0%86%e6%95%b0%e6%8d%ae%e7%9b%b4%e6%8e%a5%e9%80%81%e5%85%a5%e6%ae%b5%e5%af%84%e5%ad%98%e5%99%a8%e7%9a%84%e6%93%8d%e4%bd%9c%3f%0a%e8%bf%99%e5%b1%9e%e4%ba%8e8086CPU%e7%a1%ac%e4%bb%b6%e8%ae%be%e8%ae%a1%e7%9a%84%e9%97%ae%e9%a2%98%e3%80%82%0a%e5%85%b3%e4%ba%8e%20SS%ef%bc%8cSP%208086CPU%e4%b8%ad%ef%bc%8c%e6%9c%89%e4%b8%a4%e4%b8%aa%e5%af%84%e5%ad%98%e5%99%a8%ef%bc%8c%e6%ae%b5%e5%af%84%e5%ad%98%e5%99%a8%20SS%20%e5%92%8c%e5%af%84%e5%ad%98%e5%99%a8%20SP%ef%bc%8c%e6%a0%88%e9%a1%b6%e7%9a%84%e6%ae%b5%e5%9c%b0%e5%9d%80%e5%ad%98%e6%94%be%e5%9c%a8SS%e4%b8%ad%ef%bc%8c%e5%81%8f%e7%a7%bb%e5%9c%b0%e5%9d%80%e5%ad%98%e6%94%be%e5%9c%a8SP%e4%b8%ad%e3%80%82%0a%e4%bb%bb%e6%84%8f%e6%97%b6%e5%88%bb%ef%bc%8cSS%e2%88%b6SP%e6%8c%87%e5%90%91%e6%a0%88%e9%a1%b6%e5%85%83%e7%b4%a0%e3%80%82push%e6%8c%87%e4%bb%a4%e5%92%8cpop%e6%8c%87%e4%bb%a4%e6%89%a7%e8%a1%8c%e6%97%b6%ef%bc%8cCPU%e4%bb%8eSS%e5%92%8cSP%e4%b8%ad%e5%be%97%e5%88%b0%e6%a0%88%e9%a1%b6%e7%9a%84%e5%9c%b0%e5%9d%80%e3%80%82%0a%e4%bc%aa%e6%8c%87%e4%bb%a4%20%e5%9c%a8%e6%b1%87%e7%bc%96%e8%af%ad%e8%a8%80%e6%ba%90%e7%a8%8b%e5%ba%8f%e4%b8%ad%ef%bc%8c%e5%8c%85%e5%90%ab%e4%b8%a4%e7%a7%8d%e6%8c%87%e4%bb%a4%ef%bc%8c%e4%b8%80%e7%a7%8d%e6%98%af%e6%b1%87%e7%bc%96%e6%8c%87%e4%bb%a4%ef%bc%8c%e4%b8%80%e7%a7%8d%e6%98%af%e4%bc%aa%e6%8c%87%e4%bb%a4%e3%80%82%0a%e6%b1%87%e7%bc%96%e6%8c%87%e4%bb%a4%e6%98%af%e6%9c%89%e5%af%b9%e5%ba%94%e7%9a%84%e6%9c%ba%e5%99%a8%e7%a0%81%e7%9a%84%e6%8c%87%e4%bb%a4%ef%bc%8c%e5%8f%af%e4%bb%a5%e8%a2%ab%e7%bc%96%e8%af%91%e4%b8%ba%e6%9c%ba%e5%99%a8%e6%8c%87%e4%bb%a4%ef%bc%8c%e6%9c%80%e7%bb%88%e4%b8%baCPU%e6%89%80%e6%89%a7%e8%a1%8c%e3%80%82%0a%e8%80%8c%e4%bc%aa%e6%8c%87%e4%bb%a4%e6%b2%a1%e6%9c%89%e5%af%b9%e5%ba%94%e7%9a%84%e6%9c%ba%e5%99%a8%e6%8c%87%e4%bb%a4%ef%bc%8c%e6%9c%80%e7%bb%88%e4%b8%8d%e8%a2%ab%20CPU%20%e6%89%80%e6%89%a7%e8%a1%8c%e3%80%82%e9%82%a3%e4%b9%88%e8%b0%81%e6%9d%a5%e6%89%a7%e8%a1%8c%e4%bc%aa%e6%8c%87%e4%bb%a4%e5%91%a2%3f%0a%e4%bc%aa%e6%8c%87%e4%bb%a4%e6%98%af%e7%94%b1%e7%bc%96%e8%af%91%e5%99%a8%e6%9d%a5%e6%89%a7%e8%a1%8c%e7%9a%84%e6%8c%87%e4%bb%a4%ef%bc%8c%e7%bc%96%e8%af%91%e5%99%a8%e6%a0%b9%e6%8d%ae%e4%bc%aa%e6%8c%87%e4%bb%a4%e6%9d%a5%e8%bf%9b%e8%a1%8c%e7%9b%b8%e5%85%b3%e7%9a%84%e7%bc%96%e8%af%91%e5%b7%a5%e4%bd%9c%e3%80%82%0a%e6%b1%87%e7%bc%96%e7%a8%8b%e5%ba%8f%20%e5%9c%a8%e6%b1%87%e7%bc%96%e6%ba%90%e7%a8%8b%e5%ba%8f%e4%b8%ad%ef%bc%8c%e6%95%b0%e6%8d%ae%e4%b8%8d%e8%83%bd%e4%bb%a5%e5%ad%97%e6%af%8d%e5%bc%80%e5%a4%b4%ef%bc%8c%e6%89%80%e4%bb%a5%e8%a6%81%e5%9c%a8%e5%89%8d%e9%9d%a2%e5%8a%a00%e3%80%82%e6%af%94%e5%a6%82%ef%bc%8c9138h%e5%9c%a8%e6%b1%87%e7%bc%96%e6%ba%90%e7%a8%8b%e5%ba%8f%e4%b8%ad%e5%8f%af%e4%bb%a5%e7%9b%b4%e6%8e%a5%e5%86%99%e4%b8%ba%e2%80%9c9138h%e2%80%9d%ef%bc%8c%e8%80%8cA000h%e5%9c%a8%e6%b1%87%e7%bc%96%e6%ba%90%e7%a8%8b%e5%ba%8f%e4%b8%ad%e8%a6%81%e5%86%99%e4%b8%ba%e2%80%9c0A000h%e2%80%9d%e3%80%82%0a%e5%af%b9%e4%ba%8emov%20al%2c%5b0%5d%ef%bc%8c%e6%98%af%e5%b0%86%e5%b8%b8%e9%87%8f0%e9%80%81%e5%85%a5al%e4%b8%ad%ef%bc%8c%e7%ad%89%e5%90%8c%e4%ba%8emov%20al%2c0%ef%bc%9b%20%e5%af%b9%e4%ba%8emov%20al%2cds%3a%5b0%5d%ef%bc%8c%e5%90%ab%e4%b9%89%e6%98%af%28al%29%3d%28%28ds%29%2a16%2b0%29%ef%bc%9b%20%e5%af%b9%e4%ba%8emov%20al%2c%5bbx%5d%ef%bc%8c%e5%90%ab%e4%b9%89%e6%98%af%28al%29%3d%28%28ds%29%2a16%2b%28bx%29%29%ef%bc%9b%20%e5%af%b9%e4%ba%8emov%20al%2cds%3a%5bbx%5d%ef%bc%8c%e5%90%ab%e4%b9%89%e7%ad%89%e5%90%8c%e4%ba%8e%e4%b8%8a%e8%80%85%e3%80%82%20Debug%20R%e5%91%bd%e4%bb%a4%ef%bc%9a%e6%9f%a5%e7%9c%8b%e3%80%81%e6%94%b9%e5%8f%98%20CPU%20%e5%af%84%e5%ad%98%e5%99%a8%e7%9a%84%e5%86%85%e5%ae%b9%ef%bc%9b%20D%e5%91%bd%e4%bb%a4%ef%bc%9a%e6%9f%a5%e7%9c%8b%e5%86%85%e5%ad%98%e4%b8%ad%e7%9a%84%e5%86%85%e5%ae%b9%ef%bc%9b%20E%e5%91%bd%e4%bb%a4%ef%bc%9a%e6%94%b9%e5%86%99%e5%86%85%e5%ad%98%e4%b8%ad%e7%9a%84%e5%86%85%e5%ae%b9%ef%bc%9b%20U%e5%91%bd%e4%bb%a4%ef%bc%9a%e5%b0%86%e5%86%85%e5%ad%98%e4%b8%ad%e7%9a%84%e6%9c%ba%e5%99%a8%e6%8c%87%e4%bb%a4%e7%bf%bb%e8%af%91%e6%88%90%e6%b1%87%e7%bc%96%e6%8c%87%e4%bb%a4%ef%bc%9b%20T%e5%91%bd%e4%bb%a4%ef%bc%9a%e6%89%a7%e8%a1%8c%e4%b8%80%e6%9d%a1%e6%9c%ba%e5%99%a8%e6%8c%87%e4%bb%a4%ef%bc%9b%20A%e5%91%bd%e4%bb%a4%ef%bc%9a%e4%bb%a5%e6%b1%87%e7%bc%96%e6%8c%87%e4%bb%a4%e7%9a%84%e6%a0%bc%e5%bc%8f%e5%9c%a8%e5%86%85%e5%ad%98%e4%b8%ad%e5%86%99%e5%85%a5%e4%b8%80%e6%9d%a1%e6%9c%ba%e5%99%a8%e6%8c%87%e4%bb%a4%ef%bc%9b%20P%e5%91%bd%e4%bb%a4%ef%bc%9a%e5%8f%af%e7%94%a8%e4%ba%8e%e5%bf%ab%e9%80%9f%e7%bb%93%e6%9d%9f%e4%b8%80%e6%ae%b5LOOP%ef%bc%8c%e9%81%87%e5%88%b0loop%e6%97%b6%e4%bd%bf%e7%94%a8%ef%bc%9b%20G%e5%91%bd%e4%bb%a4%ef%bc%9a%e5%8f%af%e4%bb%a5%e8%ae%a9%e6%8c%87%e4%bb%a4%e7%9b%b4%e6%8e%a5%e6%89%a7%e8%a1%8c%e5%88%b0%e6%9f%90%e4%b8%aa%e5%9c%b0%e5%9d%80%e5%a4%84%ef%bc%8c%e5%a6%82-g%200016%e6%89%a7%e8%a1%8c%e5%88%b00016%e5%a4%84%e4%bb%a3%e7%a0%81%e3%80%82%20%e5%ae%9e%e6%a8%a1%e5%bc%8f%e5%92%8c%e4%bf%9d%e6%8a%a4%e6%a8%a1%e5%bc%8f%20%e5%ae%9e%e6%a8%a1%e5%bc%8f%e6%98%afIntel%2080286%e5%92%8c%e4%b9%8b%e5%90%8e%e7%9a%84x86%e5%85%bc%e5%ae%b9CPU%e7%9a%84%e6%93%8d%e4%bd%9c%e6%a8%a1%e5%bc%8f%e3%80%82%0a%e5%ae%9e%e6%a8%a1%e5%bc%8f%e7%9a%84%e7%89%b9%e6%80%a7%e6%98%af%e4%b8%80%e4%b8%aa20%e4%bd%8d%e5%85%83%e7%9a%84%e5%8c%ba%e6%ae%b5%e5%ad%98%e5%82%a8%e5%99%a8%e5%9c%b0%e5%9d%80%e7%a9%ba%e9%97%b4%ef%bc%88%e6%84%8f%e6%80%9d%e4%b8%ba%e5%8f%aa%e6%9c%891MB%e7%9a%84%e5%ad%98%e5%82%a8%e5%99%a8%e5%8f%af%e4%bb%a5%e8%a2%ab%e5%af%bb%e5%9d%80%ef%bc%89%ef%bc%8c%e8%bd%af%e4%bb%b6%e5%8f%af%e4%bb%a5%e7%9b%b4%e6%8e%a5%e8%ae%bf%e9%97%aeBIOS%e4%be%8b%e7%a8%8b%e4%bb%a5%e5%8f%8a%e5%91%a8%e8%be%b9%e7%a1%ac%e4%bb%b6%ef%bc%8c%e6%b2%a1%e6%9c%89%e4%bb%bb%e4%bd%95%e7%a1%ac%e4%bb%b6%e7%ad%89%e7%ba%a7%e7%9a%84%e5%ad%98%e5%82%a8%e5%99%a8%e4%bf%9d%e6%8a%a4%e8%a7%82%e5%bf%b5%e6%88%96%e5%a4%9a%e4%bb%bb%e5%8a%a1%e3%80%82%0a%e4%bf%9d%e6%8a%a4%e6%a8%a1%e5%bc%8f%e6%98%af%e4%b8%80%e7%a7%8d80286%e7%b3%bb%e5%88%97%e5%92%8c%e4%b9%8b%e5%90%8e%e7%9a%84x86%e5%85%bc%e5%ae%b9CPU%e7%9a%84%e8%bf%90%e8%a1%8c%e6%a8%a1%e5%bc%8f%e3%80%82%0a%e4%bf%9d%e6%8a%a4%e6%a8%a1%e5%bc%8f%e6%9c%89%e4%b8%80%e4%ba%9b%e6%96%b0%e7%9a%84%e7%89%b9%e6%80%a7%ef%bc%8c%e5%a6%82%e5%ad%98%e5%82%a8%e5%99%a8%e4%bf%9d%e6%8a%a4%ef%bc%8c%e6%a0%87%e7%ad%be%e9%a1%b5%e7%b3%bb%e7%bb%9f%e4%bb%a5%e5%8f%8a%e7%a1%ac%e4%bb%b6%e6%94%af%e6%8c%81%e7%9a%84%e8%99%9a%e6%8b%9f%e5%86%85%e5%ad%98%ef%bc%8c%e8%83%bd%e5%a4%9f%e5%a2%9e%e5%bc%ba%e5%a4%9a%e4%bb%bb%e5%8a%a1%e5%a4%84%e7%90%86%e5%92%8c%e7%b3%bb%e7%bb%9f%e7%a8%b3%e5%ae%9a%e5%ba%a6%e3%80%82%0a%e7%8e%b0%e4%bb%8a%e5%a4%a7%e9%83%a8%e5%88%86%e7%9a%84x86%e6%93%8d%e4%bd%9c%e7%b3%bb%e7%bb%9f%e9%83%bd%e5%9c%a8%e4%bf%9d%e6%8a%a4%e6%a8%a1%e5%bc%8f%e4%b8%8b%e8%bf%90%e8%a1%8c%ef%bc%8c%e5%8c%85%e5%90%abLinux%e3%80%81FreeBSD%e3%80%81%e4%bb%a5%e5%8f%8a%e5%be%ae%e8%bd%afWindows%202.0%e5%92%8c%e4%b9%8b%e5%90%8e%e7%89%88%e6%9c%ac%e3%80%82%0a%e5%9c%a8%e7%ba%af%20DOS%20%e6%96%b9%e5%bc%8f%ef%bc%88%e5%ae%9e%e6%a8%a1%e5%bc%8f%ef%bc%89%e4%b8%8b%ef%bc%8c%e5%8f%af%e4%bb%a5%e4%b8%8d%e7%90%86%e4%bc%9a%20DOS%ef%bc%8c%e7%9b%b4%e6%8e%a5%e7%94%a8%e6%b1%87%e7%bc%96%e8%af%ad%e8%a8%80%e5%8e%bb%e6%93%8d%e4%bd%9c%e7%9c%9f%e5%ae%9e%e7%9a%84%e7%a1%ac%e4%bb%b6%e3%80%82%0a%e5%9b%a0%e4%b8%ba%e8%bf%90%e8%a1%8c%e5%9c%a8%20CPU%20%e5%ae%9e%e6%a8%a1%e5%bc%8f%e4%b8%8b%e7%9a%84%20DOS%ef%bc%8c%e6%b2%a1%e6%9c%89%e8%83%bd%e5%8a%9b%e5%af%b9%e7%a1%ac%e4%bb%b6%e7%b3%bb%e7%bb%9f%e8%bf%9b%e8%a1%8c%e5%85%a8%e9%9d%a2%e3%80%81%e4%b8%a5%e6%a0%bc%e7%9a%84%e7%ae%a1%e7%90%86%e3%80%82%0a%e4%bd%86%e5%9c%a8Windows%202000%e3%80%81Unix%20%e8%bf%99%e4%ba%9b%e8%bf%90%e8%a1%8c%e4%ba%8eCPU%e4%bf%9d%e6%8a%a4%e6%a8%a1%e5%bc%8f%e4%b8%8b%e7%9a%84%e6%93%8d%e4%bd%9c%e7%b3%bb%e7%bb%9f%e4%b8%ad%ef%bc%8c%e4%b8%8d%e7%90%86%e4%bc%9a%e6%93%8d%e4%bd%9c%e7%b3%bb%e7%bb%9f%ef%bc%8c%e7%94%a8%e6%b1%87%e7%bc%96%e8%af%ad%e8%a8%80%e5%8e%bb%e6%93%8d%e4%bd%9c%e7%9c%9f%e5%ae%9e%e7%9a%84%e7%a1%ac%e4%bb%b6%ef%bc%8c%e6%98%af%e6%a0%b9%e6%9c%ac%e4%b8%8d%e5%8f%af%e8%83%bd%e7%9a%84%e3%80%82%e7%a1%ac%e4%bb%b6%e5%b7%b2%e8%a2%ab%e8%bf%99%e4%ba%9b%e6%93%8d%e4%bd%9c%e7%b3%bb%e7%bb%9f%e5%88%a9%e7%94%a8%20CPU%20%e4%bf%9d%e6%8a%a4%e6%a8%a1%e5%bc%8f%e6%89%80%e6%8f%90%e4%be%9b%e7%9a%84%e5%8a%9f%e8%83%bd%e5%85%a8%e9%9d%a2%e8%80%8c%e4%b8%a5%e6%a0%bc%e5%9c%b0%e7%ae%a1%e7%90%86%e4%ba%86%e3%80%82"
+      aria-label="Tumblr"
+    >
       <i class="fab fa-tumblr " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f10%2f8086-assembly-learning-record%2f&t=8086%20%e6%b1%87%e7%bc%96%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95" aria-label="Hacker News">
-      <i class="fab fa-hacker-news " aria-hidden="true"></i>
     </a>
   </li>
 </ul>
 
     </div>
     
-    <div id="toc">
-      <nav id="TableOfContents">
+      <div id="toc">
+        <nav id="TableOfContents">
   <ul>
     <li><a href="#8086-pc-机内存地址空间分配">8086 PC 机内存地址空间分配</a></li>
     <li><a href="#段寄存器">段寄存器</a></li>
@@ -234,56 +257,73 @@
     <li><a href="#问题">问题</a></li>
   </ul>
 </nav>
-    </div>
+      </div>
     
   </span>
 </div>
-  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-    <header>
-      <h1 class="posttitle" itemprop="name headline">
-        8086 汇编学习记录
-      </h1>
-      <div class="meta">
-        
-        <div class="postdate">
-          
-          <time datetime="2022-10-04 23:18:24 &#43;0800 CST" itemprop="datePublished">2022-10-04</time>
-          
-        </div>
-        
-        
-        <div class="article-read-time">
-          <i class="far fa-clock"></i>
-          
-          7 minute read
-        </div>
-        
-        
-        <div class="article-category">
-            <i class="fas fa-archive"></i>
+
+      <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <header>
+          <h1 class="posttitle" itemprop="name headline">
+            8086 汇编学习记录
+          </h1>
+          <div class="meta">
+            
+            <div class="postdate">
+              
+              <time datetime="2022-10-04 23:18:24 &#43;0800 CST" itemprop="datePublished"
+                >2022-10-04</time
+              >
+              
+            </div>
             
             
-            <a class="category-link" href="/categories/language">Language</a>
+              <div class="article-read-time">
+                <i class="far fa-clock"></i>
+                
+                7 minute read
+              </div>
             
-        </div>
+            
+              <div class="article-category">
+                <i class="fas fa-archive"></i>
+                
+                  
+                  <a
+                    class="category-link"
+                    href="/categories/language"
+                    >Language</a
+                  >
+                
+              </div>
+            
+            
+              <div class="article-tag">
+                <i class="fas fa-tag"></i>
+                
+                  
+                  <a
+                    class="tag-link"
+                    href="/tags/assembly"
+                    rel="tag"
+                    >assembly</a
+                  >
+                
+                  , 
+                  <a
+                    class="tag-link"
+                    href="/tags/cpu"
+                    rel="tag"
+                    >cpu</a
+                  >
+                
+              </div>
+            
+          </div>
+        </header>
         
-        
-        <div class="article-tag">
-            <i class="fas fa-tag"></i>
-            
-            
-            <a class="tag-link" href="/tags/assembly" rel="tag">assembly</a>
-            
-             ,  
-            <a class="tag-link" href="/tags/cpu" rel="tag">cpu</a>
-            
-        </div>
-        
-      </div>
-    </header>
-    
-    <div class="content" itemprop="articleBody">
-      <h2 id="8086-pc-机内存地址空间分配">8086 PC 机内存地址空间分配</h2>
+        <div class="content" itemprop="articleBody">
+          <h2 id="8086-pc-机内存地址空间分配">8086 PC 机内存地址空间分配</h2>
 <ul>
 <li>00000~9FFFF: 主存储器地址空间（RAM）</li>
 <li>A0000~BFFFF: 显存地址空间</li>
@@ -375,9 +415,9 @@
 <li>王爽《汇编语言》</li>
 </ul>
 
-    </div>
-  </article>
-  
+        </div>
+      </article>
+      
   
 
 
@@ -409,16 +449,16 @@
   </div>
 
 
-    
-    <div id="fastSearch">
-      <input id="searchInput" tabindex="0"/>
-      <ul id="searchResults"></ul>
-    </div>
-  <div id="footer-post-container">
+      <div id="fastSearch">
+  <input id="searchInput" tabindex="0" />
+  <ul id="searchResults"></ul>
+</div>
+
+      <div id="footer-post-container">
   <div id="footer-post">
     
-    <div id="toc-footer" style="display: none">
-      <nav id="TableOfContents">
+      <div id="toc-footer" style="display: none">
+        <nav id="TableOfContents">
   <ul>
     <li><a href="#8086-pc-机内存地址空间分配">8086 PC 机内存地址空间分配</a></li>
     <li><a href="#段寄存器">段寄存器</a></li>
@@ -430,19 +470,23 @@
     <li><a href="#问题">问题</a></li>
   </ul>
 </nav>
-    </div>
-    
+      </div>
     
     <div id="nav-footer" style="display: none">
       
-      <ul style="display:inline;"><li><a href="/">Home</a></li></ul>
+        <ul style="display:inline;">
+          <li><a href="/">Home</a></li>
+        </ul>
       
-      <ul style="display:inline;"><li><a href="/posts">Archives</a></li></ul>
+        <ul style="display:inline;">
+          <li><a href="/posts">Posts</a></li>
+        </ul>
       
-      <ul style="display:inline;"><li><a href="/about">About</a></li></ul>
+        <ul style="display:inline;">
+          <li><a href="/about">About</a></li>
+        </ul>
       
     </div>
-
     <div id="share-footer" style="display: none">
       
       <ul>
@@ -452,106 +496,169 @@
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f10%2f8086-assembly-learning-record%2f" aria-label="Facebook">
+    <a
+      class="icon"
+      href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f10%2f8086-assembly-learning-record%2f"
+      aria-label="Facebook"
+    >
       <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f10%2f8086-assembly-learning-record%2f&text=8086%20%e6%b1%87%e7%bc%96%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95" aria-label="Twitter">
+    <a
+      class="icon"
+      href="https://twitter.com/share?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f10%2f8086-assembly-learning-record%2f&text=8086%20%e6%b1%87%e7%bc%96%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95"
+      aria-label="Twitter"
+    >
       <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f10%2f8086-assembly-learning-record%2f&title=8086%20%e6%b1%87%e7%bc%96%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95" aria-label="Linkedin">
+    <a
+      class="icon"
+      href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f10%2f8086-assembly-learning-record%2f&title=8086%20%e6%b1%87%e7%bc%96%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95"
+      aria-label="Linkedin"
+    >
       <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f10%2f8086-assembly-learning-record%2f&is_video=false&description=8086%20%e6%b1%87%e7%bc%96%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95" aria-label="Pinterest">
-      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="mailto:?subject=8086%20%e6%b1%87%e7%bc%96%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95&body=Check out this article: https%3a%2f%2fakynazh.site%2fposts%2f2022%2f10%2f8086-assembly-learning-record%2f" aria-label="Email">
+    <a
+      class="icon"
+      href="mailto:?subject=8086%20%e6%b1%87%e7%bc%96%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95&body=Check out this article: https%3a%2f%2fakynazh.site%2fposts%2f2022%2f10%2f8086-assembly-learning-record%2f"
+      aria-label="Email"
+    >
       <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f10%2f8086-assembly-learning-record%2f&title=8086%20%e6%b1%87%e7%bc%96%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95" aria-label="Pocket">
-      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f10%2f8086-assembly-learning-record%2f&title=8086%20%e6%b1%87%e7%bc%96%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95" aria-label="reddit">
+    <a
+      class="icon"
+      href="http://reddit.com/submit?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f10%2f8086-assembly-learning-record%2f&title=8086%20%e6%b1%87%e7%bc%96%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95"
+      aria-label="reddit"
+    >
       <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f10%2f8086-assembly-learning-record%2f&name=8086%20%e6%b1%87%e7%bc%96%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95&description=8086%20PC%20%e6%9c%ba%e5%86%85%e5%ad%98%e5%9c%b0%e5%9d%80%e7%a9%ba%e9%97%b4%e5%88%86%e9%85%8d%2000000~9FFFF%3a%20%e4%b8%bb%e5%ad%98%e5%82%a8%e5%99%a8%e5%9c%b0%e5%9d%80%e7%a9%ba%e9%97%b4%ef%bc%88RAM%ef%bc%89%20A0000~BFFFF%3a%20%e6%98%be%e5%ad%98%e5%9c%b0%e5%9d%80%e7%a9%ba%e9%97%b4%20C0000~FFFFF%3a%20%e5%90%84%e7%b1%bbROM%e5%9c%b0%e5%9d%80%e7%a9%ba%e9%97%b4%20%e6%ae%b5%e5%af%84%e5%ad%98%e5%99%a8%208086CPU%e4%b8%8d%e6%94%af%e6%8c%81%e5%b0%86%e6%95%b0%e6%8d%ae%e7%9b%b4%e6%8e%a5%e9%80%81%e5%85%a5%e6%ae%b5%e5%af%84%e5%ad%98%e5%99%a8%e7%9a%84%e6%93%8d%e4%bd%9c%ef%bc%8cds%20%e6%98%af%e4%b8%80%e4%b8%aa%e6%ae%b5%e5%af%84%e5%ad%98%e5%99%a8%ef%bc%8c%e6%89%80%e4%bb%a5mov%20ds%ef%bc%8c1000H%e8%bf%99%e6%9d%a1%e6%8c%87%e4%bb%a4%e6%98%af%e9%9d%9e%e6%b3%95%e7%9a%84%e3%80%82%0a%e8%a6%81%e5%b0%861000H%e9%80%81%e5%85%a5ds%ef%bc%8c%e5%8f%aa%e5%a5%bd%e7%94%a8%e4%b8%80%e4%b8%aa%e5%af%84%e5%ad%98%e5%99%a8%e6%9d%a5%e8%bf%9b%e8%a1%8c%e4%b8%ad%e8%bd%ac%ef%bc%8c%e5%8d%b3%e5%85%88%e5%b0%861000H%e9%80%81%e5%85%a5%e4%b8%80%e4%b8%aa%e4%b8%80%e8%88%ac%e7%9a%84%e5%af%84%e5%ad%98%e5%99%a8%ef%bc%8c%e5%a6%82bx%ef%bc%8c%e5%86%8d%e5%b0%86bx%e4%b8%ad%e7%9a%84%e5%86%85%e5%ae%b9%e9%80%81%e5%85%a5ds%e3%80%82%0a%e4%b8%ba%e4%bb%80%e4%b9%888086CPU%e4%b8%8d%e6%94%af%e6%8c%81%e5%b0%86%e6%95%b0%e6%8d%ae%e7%9b%b4%e6%8e%a5%e9%80%81%e5%85%a5%e6%ae%b5%e5%af%84%e5%ad%98%e5%99%a8%e7%9a%84%e6%93%8d%e4%bd%9c%3f%0a%e8%bf%99%e5%b1%9e%e4%ba%8e8086CPU%e7%a1%ac%e4%bb%b6%e8%ae%be%e8%ae%a1%e7%9a%84%e9%97%ae%e9%a2%98%e3%80%82%0a%e5%85%b3%e4%ba%8e%20SS%ef%bc%8cSP%208086CPU%e4%b8%ad%ef%bc%8c%e6%9c%89%e4%b8%a4%e4%b8%aa%e5%af%84%e5%ad%98%e5%99%a8%ef%bc%8c%e6%ae%b5%e5%af%84%e5%ad%98%e5%99%a8%20SS%20%e5%92%8c%e5%af%84%e5%ad%98%e5%99%a8%20SP%ef%bc%8c%e6%a0%88%e9%a1%b6%e7%9a%84%e6%ae%b5%e5%9c%b0%e5%9d%80%e5%ad%98%e6%94%be%e5%9c%a8SS%e4%b8%ad%ef%bc%8c%e5%81%8f%e7%a7%bb%e5%9c%b0%e5%9d%80%e5%ad%98%e6%94%be%e5%9c%a8SP%e4%b8%ad%e3%80%82%0a%e4%bb%bb%e6%84%8f%e6%97%b6%e5%88%bb%ef%bc%8cSS%e2%88%b6SP%e6%8c%87%e5%90%91%e6%a0%88%e9%a1%b6%e5%85%83%e7%b4%a0%e3%80%82push%e6%8c%87%e4%bb%a4%e5%92%8cpop%e6%8c%87%e4%bb%a4%e6%89%a7%e8%a1%8c%e6%97%b6%ef%bc%8cCPU%e4%bb%8eSS%e5%92%8cSP%e4%b8%ad%e5%be%97%e5%88%b0%e6%a0%88%e9%a1%b6%e7%9a%84%e5%9c%b0%e5%9d%80%e3%80%82%0a%e4%bc%aa%e6%8c%87%e4%bb%a4%20%e5%9c%a8%e6%b1%87%e7%bc%96%e8%af%ad%e8%a8%80%e6%ba%90%e7%a8%8b%e5%ba%8f%e4%b8%ad%ef%bc%8c%e5%8c%85%e5%90%ab%e4%b8%a4%e7%a7%8d%e6%8c%87%e4%bb%a4%ef%bc%8c%e4%b8%80%e7%a7%8d%e6%98%af%e6%b1%87%e7%bc%96%e6%8c%87%e4%bb%a4%ef%bc%8c%e4%b8%80%e7%a7%8d%e6%98%af%e4%bc%aa%e6%8c%87%e4%bb%a4%e3%80%82%0a%e6%b1%87%e7%bc%96%e6%8c%87%e4%bb%a4%e6%98%af%e6%9c%89%e5%af%b9%e5%ba%94%e7%9a%84%e6%9c%ba%e5%99%a8%e7%a0%81%e7%9a%84%e6%8c%87%e4%bb%a4%ef%bc%8c%e5%8f%af%e4%bb%a5%e8%a2%ab%e7%bc%96%e8%af%91%e4%b8%ba%e6%9c%ba%e5%99%a8%e6%8c%87%e4%bb%a4%ef%bc%8c%e6%9c%80%e7%bb%88%e4%b8%baCPU%e6%89%80%e6%89%a7%e8%a1%8c%e3%80%82%0a%e8%80%8c%e4%bc%aa%e6%8c%87%e4%bb%a4%e6%b2%a1%e6%9c%89%e5%af%b9%e5%ba%94%e7%9a%84%e6%9c%ba%e5%99%a8%e6%8c%87%e4%bb%a4%ef%bc%8c%e6%9c%80%e7%bb%88%e4%b8%8d%e8%a2%ab%20CPU%20%e6%89%80%e6%89%a7%e8%a1%8c%e3%80%82%e9%82%a3%e4%b9%88%e8%b0%81%e6%9d%a5%e6%89%a7%e8%a1%8c%e4%bc%aa%e6%8c%87%e4%bb%a4%e5%91%a2%3f%0a%e4%bc%aa%e6%8c%87%e4%bb%a4%e6%98%af%e7%94%b1%e7%bc%96%e8%af%91%e5%99%a8%e6%9d%a5%e6%89%a7%e8%a1%8c%e7%9a%84%e6%8c%87%e4%bb%a4%ef%bc%8c%e7%bc%96%e8%af%91%e5%99%a8%e6%a0%b9%e6%8d%ae%e4%bc%aa%e6%8c%87%e4%bb%a4%e6%9d%a5%e8%bf%9b%e8%a1%8c%e7%9b%b8%e5%85%b3%e7%9a%84%e7%bc%96%e8%af%91%e5%b7%a5%e4%bd%9c%e3%80%82%0a%e6%b1%87%e7%bc%96%e7%a8%8b%e5%ba%8f%20%e5%9c%a8%e6%b1%87%e7%bc%96%e6%ba%90%e7%a8%8b%e5%ba%8f%e4%b8%ad%ef%bc%8c%e6%95%b0%e6%8d%ae%e4%b8%8d%e8%83%bd%e4%bb%a5%e5%ad%97%e6%af%8d%e5%bc%80%e5%a4%b4%ef%bc%8c%e6%89%80%e4%bb%a5%e8%a6%81%e5%9c%a8%e5%89%8d%e9%9d%a2%e5%8a%a00%e3%80%82%e6%af%94%e5%a6%82%ef%bc%8c9138h%e5%9c%a8%e6%b1%87%e7%bc%96%e6%ba%90%e7%a8%8b%e5%ba%8f%e4%b8%ad%e5%8f%af%e4%bb%a5%e7%9b%b4%e6%8e%a5%e5%86%99%e4%b8%ba%e2%80%9c9138h%e2%80%9d%ef%bc%8c%e8%80%8cA000h%e5%9c%a8%e6%b1%87%e7%bc%96%e6%ba%90%e7%a8%8b%e5%ba%8f%e4%b8%ad%e8%a6%81%e5%86%99%e4%b8%ba%e2%80%9c0A000h%e2%80%9d%e3%80%82%0a%e5%af%b9%e4%ba%8emov%20al%2c%5b0%5d%ef%bc%8c%e6%98%af%e5%b0%86%e5%b8%b8%e9%87%8f0%e9%80%81%e5%85%a5al%e4%b8%ad%ef%bc%8c%e7%ad%89%e5%90%8c%e4%ba%8emov%20al%2c0%ef%bc%9b%20%e5%af%b9%e4%ba%8emov%20al%2cds%3a%5b0%5d%ef%bc%8c%e5%90%ab%e4%b9%89%e6%98%af%28al%29%3d%28%28ds%29%2a16%2b0%29%ef%bc%9b%20%e5%af%b9%e4%ba%8emov%20al%2c%5bbx%5d%ef%bc%8c%e5%90%ab%e4%b9%89%e6%98%af%28al%29%3d%28%28ds%29%2a16%2b%28bx%29%29%ef%bc%9b%20%e5%af%b9%e4%ba%8emov%20al%2cds%3a%5bbx%5d%ef%bc%8c%e5%90%ab%e4%b9%89%e7%ad%89%e5%90%8c%e4%ba%8e%e4%b8%8a%e8%80%85%e3%80%82%20Debug%20R%e5%91%bd%e4%bb%a4%ef%bc%9a%e6%9f%a5%e7%9c%8b%e3%80%81%e6%94%b9%e5%8f%98%20CPU%20%e5%af%84%e5%ad%98%e5%99%a8%e7%9a%84%e5%86%85%e5%ae%b9%ef%bc%9b%20D%e5%91%bd%e4%bb%a4%ef%bc%9a%e6%9f%a5%e7%9c%8b%e5%86%85%e5%ad%98%e4%b8%ad%e7%9a%84%e5%86%85%e5%ae%b9%ef%bc%9b%20E%e5%91%bd%e4%bb%a4%ef%bc%9a%e6%94%b9%e5%86%99%e5%86%85%e5%ad%98%e4%b8%ad%e7%9a%84%e5%86%85%e5%ae%b9%ef%bc%9b%20U%e5%91%bd%e4%bb%a4%ef%bc%9a%e5%b0%86%e5%86%85%e5%ad%98%e4%b8%ad%e7%9a%84%e6%9c%ba%e5%99%a8%e6%8c%87%e4%bb%a4%e7%bf%bb%e8%af%91%e6%88%90%e6%b1%87%e7%bc%96%e6%8c%87%e4%bb%a4%ef%bc%9b%20T%e5%91%bd%e4%bb%a4%ef%bc%9a%e6%89%a7%e8%a1%8c%e4%b8%80%e6%9d%a1%e6%9c%ba%e5%99%a8%e6%8c%87%e4%bb%a4%ef%bc%9b%20A%e5%91%bd%e4%bb%a4%ef%bc%9a%e4%bb%a5%e6%b1%87%e7%bc%96%e6%8c%87%e4%bb%a4%e7%9a%84%e6%a0%bc%e5%bc%8f%e5%9c%a8%e5%86%85%e5%ad%98%e4%b8%ad%e5%86%99%e5%85%a5%e4%b8%80%e6%9d%a1%e6%9c%ba%e5%99%a8%e6%8c%87%e4%bb%a4%ef%bc%9b%20P%e5%91%bd%e4%bb%a4%ef%bc%9a%e5%8f%af%e7%94%a8%e4%ba%8e%e5%bf%ab%e9%80%9f%e7%bb%93%e6%9d%9f%e4%b8%80%e6%ae%b5LOOP%ef%bc%8c%e9%81%87%e5%88%b0loop%e6%97%b6%e4%bd%bf%e7%94%a8%ef%bc%9b%20G%e5%91%bd%e4%bb%a4%ef%bc%9a%e5%8f%af%e4%bb%a5%e8%ae%a9%e6%8c%87%e4%bb%a4%e7%9b%b4%e6%8e%a5%e6%89%a7%e8%a1%8c%e5%88%b0%e6%9f%90%e4%b8%aa%e5%9c%b0%e5%9d%80%e5%a4%84%ef%bc%8c%e5%a6%82-g%200016%e6%89%a7%e8%a1%8c%e5%88%b00016%e5%a4%84%e4%bb%a3%e7%a0%81%e3%80%82%20%e5%ae%9e%e6%a8%a1%e5%bc%8f%e5%92%8c%e4%bf%9d%e6%8a%a4%e6%a8%a1%e5%bc%8f%20%e5%ae%9e%e6%a8%a1%e5%bc%8f%e6%98%afIntel%2080286%e5%92%8c%e4%b9%8b%e5%90%8e%e7%9a%84x86%e5%85%bc%e5%ae%b9CPU%e7%9a%84%e6%93%8d%e4%bd%9c%e6%a8%a1%e5%bc%8f%e3%80%82%0a%e5%ae%9e%e6%a8%a1%e5%bc%8f%e7%9a%84%e7%89%b9%e6%80%a7%e6%98%af%e4%b8%80%e4%b8%aa20%e4%bd%8d%e5%85%83%e7%9a%84%e5%8c%ba%e6%ae%b5%e5%ad%98%e5%82%a8%e5%99%a8%e5%9c%b0%e5%9d%80%e7%a9%ba%e9%97%b4%ef%bc%88%e6%84%8f%e6%80%9d%e4%b8%ba%e5%8f%aa%e6%9c%891MB%e7%9a%84%e5%ad%98%e5%82%a8%e5%99%a8%e5%8f%af%e4%bb%a5%e8%a2%ab%e5%af%bb%e5%9d%80%ef%bc%89%ef%bc%8c%e8%bd%af%e4%bb%b6%e5%8f%af%e4%bb%a5%e7%9b%b4%e6%8e%a5%e8%ae%bf%e9%97%aeBIOS%e4%be%8b%e7%a8%8b%e4%bb%a5%e5%8f%8a%e5%91%a8%e8%be%b9%e7%a1%ac%e4%bb%b6%ef%bc%8c%e6%b2%a1%e6%9c%89%e4%bb%bb%e4%bd%95%e7%a1%ac%e4%bb%b6%e7%ad%89%e7%ba%a7%e7%9a%84%e5%ad%98%e5%82%a8%e5%99%a8%e4%bf%9d%e6%8a%a4%e8%a7%82%e5%bf%b5%e6%88%96%e5%a4%9a%e4%bb%bb%e5%8a%a1%e3%80%82%0a%e4%bf%9d%e6%8a%a4%e6%a8%a1%e5%bc%8f%e6%98%af%e4%b8%80%e7%a7%8d80286%e7%b3%bb%e5%88%97%e5%92%8c%e4%b9%8b%e5%90%8e%e7%9a%84x86%e5%85%bc%e5%ae%b9CPU%e7%9a%84%e8%bf%90%e8%a1%8c%e6%a8%a1%e5%bc%8f%e3%80%82%0a%e4%bf%9d%e6%8a%a4%e6%a8%a1%e5%bc%8f%e6%9c%89%e4%b8%80%e4%ba%9b%e6%96%b0%e7%9a%84%e7%89%b9%e6%80%a7%ef%bc%8c%e5%a6%82%e5%ad%98%e5%82%a8%e5%99%a8%e4%bf%9d%e6%8a%a4%ef%bc%8c%e6%a0%87%e7%ad%be%e9%a1%b5%e7%b3%bb%e7%bb%9f%e4%bb%a5%e5%8f%8a%e7%a1%ac%e4%bb%b6%e6%94%af%e6%8c%81%e7%9a%84%e8%99%9a%e6%8b%9f%e5%86%85%e5%ad%98%ef%bc%8c%e8%83%bd%e5%a4%9f%e5%a2%9e%e5%bc%ba%e5%a4%9a%e4%bb%bb%e5%8a%a1%e5%a4%84%e7%90%86%e5%92%8c%e7%b3%bb%e7%bb%9f%e7%a8%b3%e5%ae%9a%e5%ba%a6%e3%80%82%0a%e7%8e%b0%e4%bb%8a%e5%a4%a7%e9%83%a8%e5%88%86%e7%9a%84x86%e6%93%8d%e4%bd%9c%e7%b3%bb%e7%bb%9f%e9%83%bd%e5%9c%a8%e4%bf%9d%e6%8a%a4%e6%a8%a1%e5%bc%8f%e4%b8%8b%e8%bf%90%e8%a1%8c%ef%bc%8c%e5%8c%85%e5%90%abLinux%e3%80%81FreeBSD%e3%80%81%e4%bb%a5%e5%8f%8a%e5%be%ae%e8%bd%afWindows%202.0%e5%92%8c%e4%b9%8b%e5%90%8e%e7%89%88%e6%9c%ac%e3%80%82%0a%e5%9c%a8%e7%ba%af%20DOS%20%e6%96%b9%e5%bc%8f%ef%bc%88%e5%ae%9e%e6%a8%a1%e5%bc%8f%ef%bc%89%e4%b8%8b%ef%bc%8c%e5%8f%af%e4%bb%a5%e4%b8%8d%e7%90%86%e4%bc%9a%20DOS%ef%bc%8c%e7%9b%b4%e6%8e%a5%e7%94%a8%e6%b1%87%e7%bc%96%e8%af%ad%e8%a8%80%e5%8e%bb%e6%93%8d%e4%bd%9c%e7%9c%9f%e5%ae%9e%e7%9a%84%e7%a1%ac%e4%bb%b6%e3%80%82%0a%e5%9b%a0%e4%b8%ba%e8%bf%90%e8%a1%8c%e5%9c%a8%20CPU%20%e5%ae%9e%e6%a8%a1%e5%bc%8f%e4%b8%8b%e7%9a%84%20DOS%ef%bc%8c%e6%b2%a1%e6%9c%89%e8%83%bd%e5%8a%9b%e5%af%b9%e7%a1%ac%e4%bb%b6%e7%b3%bb%e7%bb%9f%e8%bf%9b%e8%a1%8c%e5%85%a8%e9%9d%a2%e3%80%81%e4%b8%a5%e6%a0%bc%e7%9a%84%e7%ae%a1%e7%90%86%e3%80%82%0a%e4%bd%86%e5%9c%a8Windows%202000%e3%80%81Unix%20%e8%bf%99%e4%ba%9b%e8%bf%90%e8%a1%8c%e4%ba%8eCPU%e4%bf%9d%e6%8a%a4%e6%a8%a1%e5%bc%8f%e4%b8%8b%e7%9a%84%e6%93%8d%e4%bd%9c%e7%b3%bb%e7%bb%9f%e4%b8%ad%ef%bc%8c%e4%b8%8d%e7%90%86%e4%bc%9a%e6%93%8d%e4%bd%9c%e7%b3%bb%e7%bb%9f%ef%bc%8c%e7%94%a8%e6%b1%87%e7%bc%96%e8%af%ad%e8%a8%80%e5%8e%bb%e6%93%8d%e4%bd%9c%e7%9c%9f%e5%ae%9e%e7%9a%84%e7%a1%ac%e4%bb%b6%ef%bc%8c%e6%98%af%e6%a0%b9%e6%9c%ac%e4%b8%8d%e5%8f%af%e8%83%bd%e7%9a%84%e3%80%82%e7%a1%ac%e4%bb%b6%e5%b7%b2%e8%a2%ab%e8%bf%99%e4%ba%9b%e6%93%8d%e4%bd%9c%e7%b3%bb%e7%bb%9f%e5%88%a9%e7%94%a8%20CPU%20%e4%bf%9d%e6%8a%a4%e6%a8%a1%e5%bc%8f%e6%89%80%e6%8f%90%e4%be%9b%e7%9a%84%e5%8a%9f%e8%83%bd%e5%85%a8%e9%9d%a2%e8%80%8c%e4%b8%a5%e6%a0%bc%e5%9c%b0%e7%ae%a1%e7%90%86%e4%ba%86%e3%80%82" aria-label="Tumblr">
+    <a
+      class="icon"
+      href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f10%2f8086-assembly-learning-record%2f&name=8086%20%e6%b1%87%e7%bc%96%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95&description=8086%20PC%20%e6%9c%ba%e5%86%85%e5%ad%98%e5%9c%b0%e5%9d%80%e7%a9%ba%e9%97%b4%e5%88%86%e9%85%8d%2000000~9FFFF%3a%20%e4%b8%bb%e5%ad%98%e5%82%a8%e5%99%a8%e5%9c%b0%e5%9d%80%e7%a9%ba%e9%97%b4%ef%bc%88RAM%ef%bc%89%20A0000~BFFFF%3a%20%e6%98%be%e5%ad%98%e5%9c%b0%e5%9d%80%e7%a9%ba%e9%97%b4%20C0000~FFFFF%3a%20%e5%90%84%e7%b1%bbROM%e5%9c%b0%e5%9d%80%e7%a9%ba%e9%97%b4%20%e6%ae%b5%e5%af%84%e5%ad%98%e5%99%a8%208086CPU%e4%b8%8d%e6%94%af%e6%8c%81%e5%b0%86%e6%95%b0%e6%8d%ae%e7%9b%b4%e6%8e%a5%e9%80%81%e5%85%a5%e6%ae%b5%e5%af%84%e5%ad%98%e5%99%a8%e7%9a%84%e6%93%8d%e4%bd%9c%ef%bc%8cds%20%e6%98%af%e4%b8%80%e4%b8%aa%e6%ae%b5%e5%af%84%e5%ad%98%e5%99%a8%ef%bc%8c%e6%89%80%e4%bb%a5mov%20ds%ef%bc%8c1000H%e8%bf%99%e6%9d%a1%e6%8c%87%e4%bb%a4%e6%98%af%e9%9d%9e%e6%b3%95%e7%9a%84%e3%80%82%0a%e8%a6%81%e5%b0%861000H%e9%80%81%e5%85%a5ds%ef%bc%8c%e5%8f%aa%e5%a5%bd%e7%94%a8%e4%b8%80%e4%b8%aa%e5%af%84%e5%ad%98%e5%99%a8%e6%9d%a5%e8%bf%9b%e8%a1%8c%e4%b8%ad%e8%bd%ac%ef%bc%8c%e5%8d%b3%e5%85%88%e5%b0%861000H%e9%80%81%e5%85%a5%e4%b8%80%e4%b8%aa%e4%b8%80%e8%88%ac%e7%9a%84%e5%af%84%e5%ad%98%e5%99%a8%ef%bc%8c%e5%a6%82bx%ef%bc%8c%e5%86%8d%e5%b0%86bx%e4%b8%ad%e7%9a%84%e5%86%85%e5%ae%b9%e9%80%81%e5%85%a5ds%e3%80%82%0a%e4%b8%ba%e4%bb%80%e4%b9%888086CPU%e4%b8%8d%e6%94%af%e6%8c%81%e5%b0%86%e6%95%b0%e6%8d%ae%e7%9b%b4%e6%8e%a5%e9%80%81%e5%85%a5%e6%ae%b5%e5%af%84%e5%ad%98%e5%99%a8%e7%9a%84%e6%93%8d%e4%bd%9c%3f%0a%e8%bf%99%e5%b1%9e%e4%ba%8e8086CPU%e7%a1%ac%e4%bb%b6%e8%ae%be%e8%ae%a1%e7%9a%84%e9%97%ae%e9%a2%98%e3%80%82%0a%e5%85%b3%e4%ba%8e%20SS%ef%bc%8cSP%208086CPU%e4%b8%ad%ef%bc%8c%e6%9c%89%e4%b8%a4%e4%b8%aa%e5%af%84%e5%ad%98%e5%99%a8%ef%bc%8c%e6%ae%b5%e5%af%84%e5%ad%98%e5%99%a8%20SS%20%e5%92%8c%e5%af%84%e5%ad%98%e5%99%a8%20SP%ef%bc%8c%e6%a0%88%e9%a1%b6%e7%9a%84%e6%ae%b5%e5%9c%b0%e5%9d%80%e5%ad%98%e6%94%be%e5%9c%a8SS%e4%b8%ad%ef%bc%8c%e5%81%8f%e7%a7%bb%e5%9c%b0%e5%9d%80%e5%ad%98%e6%94%be%e5%9c%a8SP%e4%b8%ad%e3%80%82%0a%e4%bb%bb%e6%84%8f%e6%97%b6%e5%88%bb%ef%bc%8cSS%e2%88%b6SP%e6%8c%87%e5%90%91%e6%a0%88%e9%a1%b6%e5%85%83%e7%b4%a0%e3%80%82push%e6%8c%87%e4%bb%a4%e5%92%8cpop%e6%8c%87%e4%bb%a4%e6%89%a7%e8%a1%8c%e6%97%b6%ef%bc%8cCPU%e4%bb%8eSS%e5%92%8cSP%e4%b8%ad%e5%be%97%e5%88%b0%e6%a0%88%e9%a1%b6%e7%9a%84%e5%9c%b0%e5%9d%80%e3%80%82%0a%e4%bc%aa%e6%8c%87%e4%bb%a4%20%e5%9c%a8%e6%b1%87%e7%bc%96%e8%af%ad%e8%a8%80%e6%ba%90%e7%a8%8b%e5%ba%8f%e4%b8%ad%ef%bc%8c%e5%8c%85%e5%90%ab%e4%b8%a4%e7%a7%8d%e6%8c%87%e4%bb%a4%ef%bc%8c%e4%b8%80%e7%a7%8d%e6%98%af%e6%b1%87%e7%bc%96%e6%8c%87%e4%bb%a4%ef%bc%8c%e4%b8%80%e7%a7%8d%e6%98%af%e4%bc%aa%e6%8c%87%e4%bb%a4%e3%80%82%0a%e6%b1%87%e7%bc%96%e6%8c%87%e4%bb%a4%e6%98%af%e6%9c%89%e5%af%b9%e5%ba%94%e7%9a%84%e6%9c%ba%e5%99%a8%e7%a0%81%e7%9a%84%e6%8c%87%e4%bb%a4%ef%bc%8c%e5%8f%af%e4%bb%a5%e8%a2%ab%e7%bc%96%e8%af%91%e4%b8%ba%e6%9c%ba%e5%99%a8%e6%8c%87%e4%bb%a4%ef%bc%8c%e6%9c%80%e7%bb%88%e4%b8%baCPU%e6%89%80%e6%89%a7%e8%a1%8c%e3%80%82%0a%e8%80%8c%e4%bc%aa%e6%8c%87%e4%bb%a4%e6%b2%a1%e6%9c%89%e5%af%b9%e5%ba%94%e7%9a%84%e6%9c%ba%e5%99%a8%e6%8c%87%e4%bb%a4%ef%bc%8c%e6%9c%80%e7%bb%88%e4%b8%8d%e8%a2%ab%20CPU%20%e6%89%80%e6%89%a7%e8%a1%8c%e3%80%82%e9%82%a3%e4%b9%88%e8%b0%81%e6%9d%a5%e6%89%a7%e8%a1%8c%e4%bc%aa%e6%8c%87%e4%bb%a4%e5%91%a2%3f%0a%e4%bc%aa%e6%8c%87%e4%bb%a4%e6%98%af%e7%94%b1%e7%bc%96%e8%af%91%e5%99%a8%e6%9d%a5%e6%89%a7%e8%a1%8c%e7%9a%84%e6%8c%87%e4%bb%a4%ef%bc%8c%e7%bc%96%e8%af%91%e5%99%a8%e6%a0%b9%e6%8d%ae%e4%bc%aa%e6%8c%87%e4%bb%a4%e6%9d%a5%e8%bf%9b%e8%a1%8c%e7%9b%b8%e5%85%b3%e7%9a%84%e7%bc%96%e8%af%91%e5%b7%a5%e4%bd%9c%e3%80%82%0a%e6%b1%87%e7%bc%96%e7%a8%8b%e5%ba%8f%20%e5%9c%a8%e6%b1%87%e7%bc%96%e6%ba%90%e7%a8%8b%e5%ba%8f%e4%b8%ad%ef%bc%8c%e6%95%b0%e6%8d%ae%e4%b8%8d%e8%83%bd%e4%bb%a5%e5%ad%97%e6%af%8d%e5%bc%80%e5%a4%b4%ef%bc%8c%e6%89%80%e4%bb%a5%e8%a6%81%e5%9c%a8%e5%89%8d%e9%9d%a2%e5%8a%a00%e3%80%82%e6%af%94%e5%a6%82%ef%bc%8c9138h%e5%9c%a8%e6%b1%87%e7%bc%96%e6%ba%90%e7%a8%8b%e5%ba%8f%e4%b8%ad%e5%8f%af%e4%bb%a5%e7%9b%b4%e6%8e%a5%e5%86%99%e4%b8%ba%e2%80%9c9138h%e2%80%9d%ef%bc%8c%e8%80%8cA000h%e5%9c%a8%e6%b1%87%e7%bc%96%e6%ba%90%e7%a8%8b%e5%ba%8f%e4%b8%ad%e8%a6%81%e5%86%99%e4%b8%ba%e2%80%9c0A000h%e2%80%9d%e3%80%82%0a%e5%af%b9%e4%ba%8emov%20al%2c%5b0%5d%ef%bc%8c%e6%98%af%e5%b0%86%e5%b8%b8%e9%87%8f0%e9%80%81%e5%85%a5al%e4%b8%ad%ef%bc%8c%e7%ad%89%e5%90%8c%e4%ba%8emov%20al%2c0%ef%bc%9b%20%e5%af%b9%e4%ba%8emov%20al%2cds%3a%5b0%5d%ef%bc%8c%e5%90%ab%e4%b9%89%e6%98%af%28al%29%3d%28%28ds%29%2a16%2b0%29%ef%bc%9b%20%e5%af%b9%e4%ba%8emov%20al%2c%5bbx%5d%ef%bc%8c%e5%90%ab%e4%b9%89%e6%98%af%28al%29%3d%28%28ds%29%2a16%2b%28bx%29%29%ef%bc%9b%20%e5%af%b9%e4%ba%8emov%20al%2cds%3a%5bbx%5d%ef%bc%8c%e5%90%ab%e4%b9%89%e7%ad%89%e5%90%8c%e4%ba%8e%e4%b8%8a%e8%80%85%e3%80%82%20Debug%20R%e5%91%bd%e4%bb%a4%ef%bc%9a%e6%9f%a5%e7%9c%8b%e3%80%81%e6%94%b9%e5%8f%98%20CPU%20%e5%af%84%e5%ad%98%e5%99%a8%e7%9a%84%e5%86%85%e5%ae%b9%ef%bc%9b%20D%e5%91%bd%e4%bb%a4%ef%bc%9a%e6%9f%a5%e7%9c%8b%e5%86%85%e5%ad%98%e4%b8%ad%e7%9a%84%e5%86%85%e5%ae%b9%ef%bc%9b%20E%e5%91%bd%e4%bb%a4%ef%bc%9a%e6%94%b9%e5%86%99%e5%86%85%e5%ad%98%e4%b8%ad%e7%9a%84%e5%86%85%e5%ae%b9%ef%bc%9b%20U%e5%91%bd%e4%bb%a4%ef%bc%9a%e5%b0%86%e5%86%85%e5%ad%98%e4%b8%ad%e7%9a%84%e6%9c%ba%e5%99%a8%e6%8c%87%e4%bb%a4%e7%bf%bb%e8%af%91%e6%88%90%e6%b1%87%e7%bc%96%e6%8c%87%e4%bb%a4%ef%bc%9b%20T%e5%91%bd%e4%bb%a4%ef%bc%9a%e6%89%a7%e8%a1%8c%e4%b8%80%e6%9d%a1%e6%9c%ba%e5%99%a8%e6%8c%87%e4%bb%a4%ef%bc%9b%20A%e5%91%bd%e4%bb%a4%ef%bc%9a%e4%bb%a5%e6%b1%87%e7%bc%96%e6%8c%87%e4%bb%a4%e7%9a%84%e6%a0%bc%e5%bc%8f%e5%9c%a8%e5%86%85%e5%ad%98%e4%b8%ad%e5%86%99%e5%85%a5%e4%b8%80%e6%9d%a1%e6%9c%ba%e5%99%a8%e6%8c%87%e4%bb%a4%ef%bc%9b%20P%e5%91%bd%e4%bb%a4%ef%bc%9a%e5%8f%af%e7%94%a8%e4%ba%8e%e5%bf%ab%e9%80%9f%e7%bb%93%e6%9d%9f%e4%b8%80%e6%ae%b5LOOP%ef%bc%8c%e9%81%87%e5%88%b0loop%e6%97%b6%e4%bd%bf%e7%94%a8%ef%bc%9b%20G%e5%91%bd%e4%bb%a4%ef%bc%9a%e5%8f%af%e4%bb%a5%e8%ae%a9%e6%8c%87%e4%bb%a4%e7%9b%b4%e6%8e%a5%e6%89%a7%e8%a1%8c%e5%88%b0%e6%9f%90%e4%b8%aa%e5%9c%b0%e5%9d%80%e5%a4%84%ef%bc%8c%e5%a6%82-g%200016%e6%89%a7%e8%a1%8c%e5%88%b00016%e5%a4%84%e4%bb%a3%e7%a0%81%e3%80%82%20%e5%ae%9e%e6%a8%a1%e5%bc%8f%e5%92%8c%e4%bf%9d%e6%8a%a4%e6%a8%a1%e5%bc%8f%20%e5%ae%9e%e6%a8%a1%e5%bc%8f%e6%98%afIntel%2080286%e5%92%8c%e4%b9%8b%e5%90%8e%e7%9a%84x86%e5%85%bc%e5%ae%b9CPU%e7%9a%84%e6%93%8d%e4%bd%9c%e6%a8%a1%e5%bc%8f%e3%80%82%0a%e5%ae%9e%e6%a8%a1%e5%bc%8f%e7%9a%84%e7%89%b9%e6%80%a7%e6%98%af%e4%b8%80%e4%b8%aa20%e4%bd%8d%e5%85%83%e7%9a%84%e5%8c%ba%e6%ae%b5%e5%ad%98%e5%82%a8%e5%99%a8%e5%9c%b0%e5%9d%80%e7%a9%ba%e9%97%b4%ef%bc%88%e6%84%8f%e6%80%9d%e4%b8%ba%e5%8f%aa%e6%9c%891MB%e7%9a%84%e5%ad%98%e5%82%a8%e5%99%a8%e5%8f%af%e4%bb%a5%e8%a2%ab%e5%af%bb%e5%9d%80%ef%bc%89%ef%bc%8c%e8%bd%af%e4%bb%b6%e5%8f%af%e4%bb%a5%e7%9b%b4%e6%8e%a5%e8%ae%bf%e9%97%aeBIOS%e4%be%8b%e7%a8%8b%e4%bb%a5%e5%8f%8a%e5%91%a8%e8%be%b9%e7%a1%ac%e4%bb%b6%ef%bc%8c%e6%b2%a1%e6%9c%89%e4%bb%bb%e4%bd%95%e7%a1%ac%e4%bb%b6%e7%ad%89%e7%ba%a7%e7%9a%84%e5%ad%98%e5%82%a8%e5%99%a8%e4%bf%9d%e6%8a%a4%e8%a7%82%e5%bf%b5%e6%88%96%e5%a4%9a%e4%bb%bb%e5%8a%a1%e3%80%82%0a%e4%bf%9d%e6%8a%a4%e6%a8%a1%e5%bc%8f%e6%98%af%e4%b8%80%e7%a7%8d80286%e7%b3%bb%e5%88%97%e5%92%8c%e4%b9%8b%e5%90%8e%e7%9a%84x86%e5%85%bc%e5%ae%b9CPU%e7%9a%84%e8%bf%90%e8%a1%8c%e6%a8%a1%e5%bc%8f%e3%80%82%0a%e4%bf%9d%e6%8a%a4%e6%a8%a1%e5%bc%8f%e6%9c%89%e4%b8%80%e4%ba%9b%e6%96%b0%e7%9a%84%e7%89%b9%e6%80%a7%ef%bc%8c%e5%a6%82%e5%ad%98%e5%82%a8%e5%99%a8%e4%bf%9d%e6%8a%a4%ef%bc%8c%e6%a0%87%e7%ad%be%e9%a1%b5%e7%b3%bb%e7%bb%9f%e4%bb%a5%e5%8f%8a%e7%a1%ac%e4%bb%b6%e6%94%af%e6%8c%81%e7%9a%84%e8%99%9a%e6%8b%9f%e5%86%85%e5%ad%98%ef%bc%8c%e8%83%bd%e5%a4%9f%e5%a2%9e%e5%bc%ba%e5%a4%9a%e4%bb%bb%e5%8a%a1%e5%a4%84%e7%90%86%e5%92%8c%e7%b3%bb%e7%bb%9f%e7%a8%b3%e5%ae%9a%e5%ba%a6%e3%80%82%0a%e7%8e%b0%e4%bb%8a%e5%a4%a7%e9%83%a8%e5%88%86%e7%9a%84x86%e6%93%8d%e4%bd%9c%e7%b3%bb%e7%bb%9f%e9%83%bd%e5%9c%a8%e4%bf%9d%e6%8a%a4%e6%a8%a1%e5%bc%8f%e4%b8%8b%e8%bf%90%e8%a1%8c%ef%bc%8c%e5%8c%85%e5%90%abLinux%e3%80%81FreeBSD%e3%80%81%e4%bb%a5%e5%8f%8a%e5%be%ae%e8%bd%afWindows%202.0%e5%92%8c%e4%b9%8b%e5%90%8e%e7%89%88%e6%9c%ac%e3%80%82%0a%e5%9c%a8%e7%ba%af%20DOS%20%e6%96%b9%e5%bc%8f%ef%bc%88%e5%ae%9e%e6%a8%a1%e5%bc%8f%ef%bc%89%e4%b8%8b%ef%bc%8c%e5%8f%af%e4%bb%a5%e4%b8%8d%e7%90%86%e4%bc%9a%20DOS%ef%bc%8c%e7%9b%b4%e6%8e%a5%e7%94%a8%e6%b1%87%e7%bc%96%e8%af%ad%e8%a8%80%e5%8e%bb%e6%93%8d%e4%bd%9c%e7%9c%9f%e5%ae%9e%e7%9a%84%e7%a1%ac%e4%bb%b6%e3%80%82%0a%e5%9b%a0%e4%b8%ba%e8%bf%90%e8%a1%8c%e5%9c%a8%20CPU%20%e5%ae%9e%e6%a8%a1%e5%bc%8f%e4%b8%8b%e7%9a%84%20DOS%ef%bc%8c%e6%b2%a1%e6%9c%89%e8%83%bd%e5%8a%9b%e5%af%b9%e7%a1%ac%e4%bb%b6%e7%b3%bb%e7%bb%9f%e8%bf%9b%e8%a1%8c%e5%85%a8%e9%9d%a2%e3%80%81%e4%b8%a5%e6%a0%bc%e7%9a%84%e7%ae%a1%e7%90%86%e3%80%82%0a%e4%bd%86%e5%9c%a8Windows%202000%e3%80%81Unix%20%e8%bf%99%e4%ba%9b%e8%bf%90%e8%a1%8c%e4%ba%8eCPU%e4%bf%9d%e6%8a%a4%e6%a8%a1%e5%bc%8f%e4%b8%8b%e7%9a%84%e6%93%8d%e4%bd%9c%e7%b3%bb%e7%bb%9f%e4%b8%ad%ef%bc%8c%e4%b8%8d%e7%90%86%e4%bc%9a%e6%93%8d%e4%bd%9c%e7%b3%bb%e7%bb%9f%ef%bc%8c%e7%94%a8%e6%b1%87%e7%bc%96%e8%af%ad%e8%a8%80%e5%8e%bb%e6%93%8d%e4%bd%9c%e7%9c%9f%e5%ae%9e%e7%9a%84%e7%a1%ac%e4%bb%b6%ef%bc%8c%e6%98%af%e6%a0%b9%e6%9c%ac%e4%b8%8d%e5%8f%af%e8%83%bd%e7%9a%84%e3%80%82%e7%a1%ac%e4%bb%b6%e5%b7%b2%e8%a2%ab%e8%bf%99%e4%ba%9b%e6%93%8d%e4%bd%9c%e7%b3%bb%e7%bb%9f%e5%88%a9%e7%94%a8%20CPU%20%e4%bf%9d%e6%8a%a4%e6%a8%a1%e5%bc%8f%e6%89%80%e6%8f%90%e4%be%9b%e7%9a%84%e5%8a%9f%e8%83%bd%e5%85%a8%e9%9d%a2%e8%80%8c%e4%b8%a5%e6%a0%bc%e5%9c%b0%e7%ae%a1%e7%90%86%e4%ba%86%e3%80%82"
+      aria-label="Tumblr"
+    >
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f10%2f8086-assembly-learning-record%2f&t=8086%20%e6%b1%87%e7%bc%96%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95" aria-label="Hacker News">
-      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
     </a>
   </li>
 </ul>
 
     </div>
-
     <div id="actions-footer">
-        <a id="menu-toggle" class="icon-mobile-nav" href="#" onclick="$('#nav-footer').show();$('#toc-footer').hide();$('#share-footer').hide();return false;" aria-label="Menu">
-          <i class="fas fa-bars fa-lg" aria-hidden="true"></i></a>
-
-        
-        <a id="toc-toggle"class="icon-mobile-nav"  href="#" onclick="$('#toc-footer').show();$('#nav-footer').hide();$('#share-footer').hide();return false;" aria-label="TOC">
-          <i class="fas fa-list fa-lg" aria-hidden="true"></i></a>
-        
-
-        <a id="top" class="icon-mobile-nav" style="display:none" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
-          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i></a>
-
-        <a id="searchBtn1" class="icon-mobile-nav"  href="#" aria-label="Search">
-          <i class="fa fa-search fa-lg" aria-hidden="true"></i></a>
-
-        <a id="theme-change" class="icon-mobile-nav"><i class="fas fa-adjust fa-lg"></i></a>
-
-        <a id="share-toggle" class="icon-mobile-nav"  href="#" onclick="$('#share-footer').show();$('#toc-footer').hide();$('#nav-footer').hide();return false;" aria-label="Share">
-          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i></a>
+      
+      
+        <a
+          class="icon-mobile-nav"
+          href="https://akynazh.site/posts/2022/10/solution-and-thinking-about-hwbk/"
+          aria-label="Previous"
+        >
+          <i class="fas fa-chevron-left fa-lg" aria-hidden="true"></i>
+        </a>
+      
+      
+      <a
+        id="menu-toggle"
+        class="icon-mobile-nav"
+        href="#"
+        onclick="$('#nav-footer').show();$('#toc-footer').hide();$('#share-footer').hide();return false;"
+        aria-label="Menu"
+      >
+        <i class="fas fa-bars fa-lg" aria-hidden="true"></i
+      ></a>
+      
+      
+        <a
+          id="toc-toggle"
+          class="icon-mobile-nav"
+          href="#"
+          onclick="$('#toc-footer').show();$('#nav-footer').hide();$('#share-footer').hide();return false;"
+          aria-label="TOC"
+        >
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i
+        ></a>
+      
+      
+      <a
+        id="top"
+        class="icon-mobile-nav"
+        style="display:none"
+        href="#"
+        onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"
+        aria-label="Top of Page"
+      >
+        <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i
+      ></a>
+      
+      <a id="searchBtn1" class="icon-mobile-nav" href="#" aria-label="Search">
+        <i class="fa fa-search fa-lg" aria-hidden="true"></i
+      ></a>
+      
+      <a id="theme-change" class="icon-mobile-nav"
+        ><i class="fas fa-adjust fa-lg"></i
+      ></a>
+      
+      <a
+        id="share-toggle"
+        class="icon-mobile-nav"
+        href="#"
+        onclick="$('#share-footer').show();$('#toc-footer').hide();$('#nav-footer').hide();return false;"
+        aria-label="Share"
+      >
+        <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i
+      ></a>
+      
+      
+        <a class="icon" href="https://akynazh.site/posts/2022/10/docker-software-installation-record/" aria-label="Next">
+          <i class="fas fa-chevron-right fa-lg" aria-hidden="true"></i>
+        </a>
+      
     </div>
-
   </div>
 </div>
 
-  <footer id="footer">
+      <footer id="footer">
   <div class="footer-left">
-    Copyright  &copy; 2023  Jzh 
-    | <a href="https://beian.miit.gov.cn/" style="text-decoration:none;">陕ICP备2022007986号-1</a>
+    Copyright &copy;
+    2023
+    
+      Jzh
+    
+    |
+    <a href="https://beian.miit.gov.cn/" style="text-decoration:none;"
+      >陕ICP备2022007986号-1</a
+    >
   </div>
   <div class="footer-right">
     <nav>
       <ul>
-         
-        <li><a href="/">Home</a></li>
-         
-        <li><a href="/posts">Archives</a></li>
-         
-        <li><a href="/about">About</a></li>
+        
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/posts">Posts</a></li>
+        
+          <li><a href="/about">About</a></li>
         
       </ul>
     </nav>
   </div>
 </footer>
-  </div>
-</body>
-<script src="/js/fuse.min.js"></script>
-<script src="/js/fastsearch.js"></script>
-<script src="/js/jquery.min.js"></script>
-<script src="/js/main.js"></script>
 
-
-
-
-
+    </div>
+  </body>
+  <script src="/js/main.js"></script>
+  <script src="/js/fuse.min.js"></script>
+  <script src="/js/fastsearch.js"></script>
+  
+  
+  
+  
+  
 </html>

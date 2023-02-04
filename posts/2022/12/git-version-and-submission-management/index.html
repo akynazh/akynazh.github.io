@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title> Git 版本与提交管理 | Norwegian Wood</title>
-  <link rel='canonical' href='https://akynazh.site/posts/2022/12/git-version-and-submission-management/'>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="all,follow">
-  <meta name="googlebot" content="index,follow,snippet,archive">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Git 版本与提交管理 |Norwegian Wood</title>
+  <link rel="canonical" href="https://akynazh.site/posts/2022/12/git-version-and-submission-management/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="all,follow" />
+  <meta name="googlebot" content="index,follow,snippet,archive" />
   <meta property="og:title" content="Git 版本与提交管理" />
 <meta property="og:description" content="关于HEAD HEAD 代表当前分支的最新提交名称，它可以由一些修饰符进行修饰进而产生不同的含义。
 关于 HEAD~{n}
@@ -40,112 +40,126 @@ HEAD^ = HEAD^1 第一个父级提交 HEAD^2~1 第二个父级提交的上一次�
 
   
   
-  
+
   
   
 
   
   
   
-    <input value="light" id="theme-current" style="display: none;">
+    <input value="light" id="theme-current" style="display: none;" />
+    <link id="theme" rel="stylesheet" href="https://akynazh.site/css/styles_light.css" />
   
-  <input value="https://akynazh.site/css/styles_dark.css" id="styles-dark" style="display: none;">
-  <input value="https://akynazh.site/css/styles_light.css" id="styles-light" style="display: none;">
+  <input value="https://akynazh.site/css/styles_dark.css" id="styles-dark" style="display: none;" />
+  <input value="https://akynazh.site/css/styles_light.css" id="styles-light" style="display: none;" />
 
-  <input value="1" id="set-snow" style="display: none;">
-
-  <link id="theme" rel="stylesheet" href="">
-  <script src="/js/jquery.min.js"></script>
+  <input value="1" id="set-snow" style="display: none;" />
+  
   <script src="/js/snow.js"></script>
   <script src="/js/theme.js"></script>
-  <script>
-    theme = getCurrentTheme();
-    setTheme(theme);
-    setSnow = document.getElementById("set-snow").value;
-    if (theme === "dark" && setSnow === "1") {
-      startSnow()
-    }
-  </script>
+  <script src="/js/jquery.min.js"></script>
 
   
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  />
 
   
-  <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+
+
   
 
-  <link rel="shortcut icon" href="/favicon.png" type="image/png" />
-<link rel="icon" href="/favicon.png" type="image/png" />
-
-  
-  
   
 </head>
-<body class="max-width-blog mx-auto px3 ltr">
-  <div class="content index py4">
-  <div id="header-post">
+
+  <body class="max-width-blog mx-auto px3 ltr">
+    <div class="content index py4">
+      <div id="header-post">
   <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
-  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <a
+    id="top-icon-tablet"
+    href="#"
+    onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"
+    style="display:none;"
+    aria-label="Top of Page"
+    ><i class="fas fa-chevron-up fa-lg"></i
+  ></a>
   <span id="menu">
     <span id="nav">
       <ul>
-         
-        <li><a href="/">Home</a></li>
-         
-        <li><a href="/posts">Archives</a></li>
-         
-        <li><a href="/about">About</a></li>
+        
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/posts">Posts</a></li>
+        
+          <li><a href="/about">About</a></li>
         
       </ul>
     </span>
-    <br/>
+    <br />
     <span id="actions">
       <ul>
         
-        <li>
-          <a class="icon" href="https://akynazh.site/posts/2022/11/linux-software-installation-and-configuration-records/" aria-label="Previous">
-            <i class="fas fa-chevron-left" aria-hidden="true"></i>
-          </a>
-        </li>
+        
+          <li>
+            <a class="icon" href="https://akynazh.site/posts/2022/11/linux-software-installation-and-configuration-records/" aria-label="Previous">
+              <i class="fas fa-chevron-left" aria-hidden="true"></i>
+            </a>
+          </li>
+        
+        
+        
+          <li>
+            <a class="icon" href="https://akynazh.site/posts/2022/12/naming-standard-problems-encountered-in-development/" aria-label="Next">
+              <i class="fas fa-chevron-right" aria-hidden="true"></i>
+            </a>
+          </li>
         
         
         <li>
-          <a class="icon" href="https://akynazh.site/posts/2022/12/naming-standard-problems-encountered-in-development/" aria-label="Next">
-            <i class="fas fa-chevron-right" aria-hidden="true"></i>
-          </a>
-        </li>
-        
-        <li>
-          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <a
+            class="icon"
+            href="#"
+            onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"
+            aria-label="Top of Page"
+          >
             <i class="fas fa-chevron-up" aria-hidden="true"></i>
           </a>
         </li>
+        
         <li>
           <a class="icon" href="#" aria-label="Search" id="searchBtn">
             <i class="fa fa-search" aria-hidden="true"></i>
           </a>
         </li>
+        
         <li>
           <a class="icon" id="theme-change"><i class="fas fa-adjust"></i></a>
         </li>
+        
         <li>
-          <a class="icon" href="#" aria-label="Share" onclick="$('#share').toggle();return false;">
+          <a
+            class="icon"
+            href="#"
+            aria-label="Share"
+            onclick="$('#share').toggle();return false;"
+          >
             <i class="fas fa-share-alt" aria-hidden="true"></i>
           </a>
         </li>
       </ul>
-      <span id="i-prev" class="info" style="display:none;">Previous post</span>
-      <span id="i-prev" class="info" style="display:none;">Previous post</span>
-      <span id="i-next" class="info" style="display:none;">Next post</span>
-      <span id="i-top" class="info" style="display:none;">Back to top</span>
-      <span id="i-search" class="info" style="display:none;">Search</span>
-      <span id="i-share" class="info" style="display:none;">Share post</span>
     </span>
-    <br/>
+    <br />
     <div id="share" style="display: none">
       
       <ul>
@@ -155,56 +169,65 @@ HEAD^ = HEAD^1 第一个父级提交 HEAD^2~1 第二个父级提交的上一次�
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f12%2fgit-version-and-submission-management%2f" aria-label="Facebook">
+    <a
+      class="icon"
+      href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f12%2fgit-version-and-submission-management%2f"
+      aria-label="Facebook"
+    >
       <i class="fab fa-facebook " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f12%2fgit-version-and-submission-management%2f&text=Git%20%e7%89%88%e6%9c%ac%e4%b8%8e%e6%8f%90%e4%ba%a4%e7%ae%a1%e7%90%86" aria-label="Twitter">
+    <a
+      class="icon"
+      href="https://twitter.com/share?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f12%2fgit-version-and-submission-management%2f&text=Git%20%e7%89%88%e6%9c%ac%e4%b8%8e%e6%8f%90%e4%ba%a4%e7%ae%a1%e7%90%86"
+      aria-label="Twitter"
+    >
       <i class="fab fa-twitter " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f12%2fgit-version-and-submission-management%2f&title=Git%20%e7%89%88%e6%9c%ac%e4%b8%8e%e6%8f%90%e4%ba%a4%e7%ae%a1%e7%90%86" aria-label="Linkedin">
+    <a
+      class="icon"
+      href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f12%2fgit-version-and-submission-management%2f&title=Git%20%e7%89%88%e6%9c%ac%e4%b8%8e%e6%8f%90%e4%ba%a4%e7%ae%a1%e7%90%86"
+      aria-label="Linkedin"
+    >
       <i class="fab fa-linkedin " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f12%2fgit-version-and-submission-management%2f&is_video=false&description=Git%20%e7%89%88%e6%9c%ac%e4%b8%8e%e6%8f%90%e4%ba%a4%e7%ae%a1%e7%90%86" aria-label="Pinterest">
-      <i class="fab fa-pinterest " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="mailto:?subject=Git%20%e7%89%88%e6%9c%ac%e4%b8%8e%e6%8f%90%e4%ba%a4%e7%ae%a1%e7%90%86&body=Check out this article: https%3a%2f%2fakynazh.site%2fposts%2f2022%2f12%2fgit-version-and-submission-management%2f" aria-label="Email">
+    <a
+      class="icon"
+      href="mailto:?subject=Git%20%e7%89%88%e6%9c%ac%e4%b8%8e%e6%8f%90%e4%ba%a4%e7%ae%a1%e7%90%86&body=Check out this article: https%3a%2f%2fakynazh.site%2fposts%2f2022%2f12%2fgit-version-and-submission-management%2f"
+      aria-label="Email"
+    >
       <i class="fas fa-envelope " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f12%2fgit-version-and-submission-management%2f&title=Git%20%e7%89%88%e6%9c%ac%e4%b8%8e%e6%8f%90%e4%ba%a4%e7%ae%a1%e7%90%86" aria-label="Pocket">
-      <i class="fab fa-get-pocket " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f12%2fgit-version-and-submission-management%2f&title=Git%20%e7%89%88%e6%9c%ac%e4%b8%8e%e6%8f%90%e4%ba%a4%e7%ae%a1%e7%90%86" aria-label="reddit">
+    <a
+      class="icon"
+      href="http://reddit.com/submit?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f12%2fgit-version-and-submission-management%2f&title=Git%20%e7%89%88%e6%9c%ac%e4%b8%8e%e6%8f%90%e4%ba%a4%e7%ae%a1%e7%90%86"
+      aria-label="reddit"
+    >
       <i class="fab fa-reddit " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f12%2fgit-version-and-submission-management%2f&name=Git%20%e7%89%88%e6%9c%ac%e4%b8%8e%e6%8f%90%e4%ba%a4%e7%ae%a1%e7%90%86&description=%e5%85%b3%e4%ba%8eHEAD%20HEAD%20%e4%bb%a3%e8%a1%a8%e5%bd%93%e5%89%8d%e5%88%86%e6%94%af%e7%9a%84%e6%9c%80%e6%96%b0%e6%8f%90%e4%ba%a4%e5%90%8d%e7%a7%b0%ef%bc%8c%e5%ae%83%e5%8f%af%e4%bb%a5%e7%94%b1%e4%b8%80%e4%ba%9b%e4%bf%ae%e9%a5%b0%e7%ac%a6%e8%bf%9b%e8%a1%8c%e4%bf%ae%e9%a5%b0%e8%bf%9b%e8%80%8c%e4%ba%a7%e7%94%9f%e4%b8%8d%e5%90%8c%e7%9a%84%e5%90%ab%e4%b9%89%e3%80%82%0a%e5%85%b3%e4%ba%8e%20HEAD~%7bn%7d%0a~%20%e6%98%af%e7%94%a8%e6%9d%a5%e5%9c%a8%e5%bd%93%e5%89%8d%e6%8f%90%e4%ba%a4%e8%b7%af%e5%be%84%e4%b8%8a%e5%9b%9e%e6%ba%af%e7%9a%84%e4%bf%ae%e9%a5%b0%e7%ac%a6%e3%80%82%0aHEAD~%7bn%7d%20%e8%a1%a8%e7%a4%ba%e5%bd%93%e5%89%8d%e6%89%80%e5%9c%a8%e7%9a%84%e6%8f%90%e4%ba%a4%e8%b7%af%e5%be%84%e4%b8%8a%e7%9a%84%e5%89%8d%20n%20%e4%b8%aa%e6%8f%90%e4%ba%a4%ef%bc%88n%20%26gt%3b%3d%200%ef%bc%89%ef%bc%9a%0aHEAD%20%3d%20HEAD~0%20%ef%bc%88%e5%8d%b3%e5%bd%93%e5%89%8d%e6%9c%80%e6%96%b0%e7%9a%84%e4%b8%80%e6%ac%a1commit%ef%bc%89%20HEAD~%20%3d%20HEAD~1%20HEAD~~%20%3d%20HEAD~2%20%e5%85%b3%e4%ba%8e%20HEAD%5e%7bn%7d%0a%5e%20%e6%98%af%e7%94%a8%e6%9d%a5%e5%88%87%e6%8d%a2%e7%88%b6%e7%ba%a7%e6%8f%90%e4%ba%a4%e8%b7%af%e5%be%84%e7%9a%84%e4%bf%ae%e9%a5%b0%e7%ac%a6%e3%80%82%0a%e5%bd%93%e6%88%91%e4%bb%ac%e5%a7%8b%e7%bb%88%e5%9c%a8%e4%b8%80%e4%b8%aa%e5%88%86%e6%94%af%e6%af%94%e5%a6%82%20dev%20%e5%bc%80%e5%8f%91%2f%e6%8f%90%e4%ba%a4%e4%bb%a3%e7%a0%81%e6%97%b6%ef%bc%8c%e6%af%8f%e4%b8%aa%20commit%20%e9%83%bd%e5%8f%aa%e4%bc%9a%e6%9c%89%e4%b8%80%e4%b8%aa%e7%88%b6%e7%ba%a7%e6%8f%90%e4%ba%a4%ef%bc%8c%e5%b0%b1%e6%98%af%e4%b8%8a%e4%b8%80%e6%ac%a1%e6%8f%90%e4%ba%a4%e3%80%82%e6%ad%a4%e6%97%b6%20HEAD~1%20%e7%ad%89%e4%bb%b7%e4%ba%8e%20HEAD%5e%e3%80%82%0a%e5%bd%93%e5%b9%b6%e8%a1%8c%e5%a4%9a%e4%b8%aa%e5%88%86%e6%94%af%e5%bc%80%e5%8f%91%ef%bc%8cfeat1%2c%20feat2%2c%20feat3%ef%bc%8c%e5%ae%8c%e6%88%90%e5%90%8e%20merge%20feat1%20feat2%20feat3%20%e5%9b%9e%20dev%20%e5%88%86%e6%94%af%e5%90%8e%ef%bc%8c%e6%ad%a4%e6%ac%a1%e7%9a%84%20merge%20commit%20%e5%b0%b1%e4%bc%9a%e6%9c%89%e5%a4%9a%e4%b8%aa%e7%88%b6%e7%ba%a7%e6%8f%90%e4%ba%a4%e3%80%82%0aHEAD%5e%20%3d%20HEAD%5e1%20%e7%ac%ac%e4%b8%80%e4%b8%aa%e7%88%b6%e7%ba%a7%e6%8f%90%e4%ba%a4%20HEAD%5e2~1%20%e7%ac%ac%e4%ba%8c%e4%b8%aa%e7%88%b6%e7%ba%a7%e6%8f%90%e4%ba%a4%e7%9a%84%e4%b8%8a%e4%b8%80%e6%ac%a1%e6%8f%90%e4%ba%a4%20%e5%bc%ba%e8%a1%8c%e8%a6%86%e7%9b%96%e6%9c%ac%e5%9c%b0%e5%88%86%e6%94%af%ef%bc%88%e4%b8%8d%e5%85%b3%e5%bf%83%e6%9c%ac%e5%9c%b0%e4%bf%ae%e6%94%b9%ef%bc%89%20%e8%8b%a5%e5%9c%a8%e5%85%b6%e5%ae%83%e5%88%86%e6%94%af%e4%b8%8a%e8%bf%9b%e8%a1%8c%e4%ba%86%e4%bf%ae%e6%94%b9%ef%bc%8c%e8%80%8c%e6%9c%ac%e5%9c%b0%e4%b9%9f%e6%9c%89%e4%ba%86%e4%b8%80%e5%ae%9a%e7%9a%84%e4%bf%ae%e6%94%b9%ef%bc%8c%e4%bd%86%e6%9c%ac%e5%9c%b0%e7%9a%84%e4%bf%ae%e6%94%b9%e6%98%af%e5%8f%af%e4%bb%a5%e5%bf%bd%e7%95%a5%e7%9a%84%ef%bc%88%e6%88%96%e8%80%85%e4%bd%a0%e4%b8%8d%e5%b0%8f%e5%bf%83%e6%94%be%e5%85%a5%e4%ba%86%e4%b8%80%e4%ba%9b%e6%97%a0%e5%85%b3%e6%96%87%e4%bb%b6%ef%bc%89%ef%bc%8c%e9%82%a3%e4%b9%88%ef%bc%8c%e8%bf%99%e6%97%b6%e4%bd%a0%e5%be%88%e9%9c%80%e8%a6%81%e7%94%a8%e5%bc%ba%e8%a1%8c%e8%a6%86%e7%9b%96%e8%bf%99%e4%b8%aa%e6%93%8d%e4%bd%9c%e3%80%82%0a1git%20fetch%202git%20reset%20--hard%20HEAD%203git%20merge%20origin%2f%24CURRENT_BRANCH%20%23%20%e8%8b%a5%e5%b7%b2%e5%81%9a%e6%98%a0%e5%b0%84%ef%bc%9agit%20merge%20%e4%bf%ae%e6%94%b9%e6%8f%90%e4%ba%a4%e8%bf%87%e7%9a%84%e7%89%88%e6%9c%ac%20%e4%bf%ae%e6%94%b9%e4%b8%8a%e6%ac%a1%e6%8f%90%e4%ba%a4%20%e8%bf%99%e9%87%8c%e5%af%b9%e6%8f%90%e4%ba%a4%e7%9a%84%e4%bf%a1%e6%81%af%e5%92%8c%e4%bd%9c%e8%80%85%e8%bf%9b%e8%a1%8c%e4%bf%ae%e6%94%b9%ef%bc%8c%e6%b3%a8%e6%84%8f%e9%82%ae%e7%ae%b1%e4%b8%a4%e4%be%a7%e7%94%b1%26lt%3b%26gt%3b%e5%8c%85%e6%8b%ac%e4%bd%8f" aria-label="Tumblr">
+    <a
+      class="icon"
+      href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f12%2fgit-version-and-submission-management%2f&name=Git%20%e7%89%88%e6%9c%ac%e4%b8%8e%e6%8f%90%e4%ba%a4%e7%ae%a1%e7%90%86&description=%e5%85%b3%e4%ba%8eHEAD%20HEAD%20%e4%bb%a3%e8%a1%a8%e5%bd%93%e5%89%8d%e5%88%86%e6%94%af%e7%9a%84%e6%9c%80%e6%96%b0%e6%8f%90%e4%ba%a4%e5%90%8d%e7%a7%b0%ef%bc%8c%e5%ae%83%e5%8f%af%e4%bb%a5%e7%94%b1%e4%b8%80%e4%ba%9b%e4%bf%ae%e9%a5%b0%e7%ac%a6%e8%bf%9b%e8%a1%8c%e4%bf%ae%e9%a5%b0%e8%bf%9b%e8%80%8c%e4%ba%a7%e7%94%9f%e4%b8%8d%e5%90%8c%e7%9a%84%e5%90%ab%e4%b9%89%e3%80%82%0a%e5%85%b3%e4%ba%8e%20HEAD~%7bn%7d%0a~%20%e6%98%af%e7%94%a8%e6%9d%a5%e5%9c%a8%e5%bd%93%e5%89%8d%e6%8f%90%e4%ba%a4%e8%b7%af%e5%be%84%e4%b8%8a%e5%9b%9e%e6%ba%af%e7%9a%84%e4%bf%ae%e9%a5%b0%e7%ac%a6%e3%80%82%0aHEAD~%7bn%7d%20%e8%a1%a8%e7%a4%ba%e5%bd%93%e5%89%8d%e6%89%80%e5%9c%a8%e7%9a%84%e6%8f%90%e4%ba%a4%e8%b7%af%e5%be%84%e4%b8%8a%e7%9a%84%e5%89%8d%20n%20%e4%b8%aa%e6%8f%90%e4%ba%a4%ef%bc%88n%20%26gt%3b%3d%200%ef%bc%89%ef%bc%9a%0aHEAD%20%3d%20HEAD~0%20%ef%bc%88%e5%8d%b3%e5%bd%93%e5%89%8d%e6%9c%80%e6%96%b0%e7%9a%84%e4%b8%80%e6%ac%a1commit%ef%bc%89%20HEAD~%20%3d%20HEAD~1%20HEAD~~%20%3d%20HEAD~2%20%e5%85%b3%e4%ba%8e%20HEAD%5e%7bn%7d%0a%5e%20%e6%98%af%e7%94%a8%e6%9d%a5%e5%88%87%e6%8d%a2%e7%88%b6%e7%ba%a7%e6%8f%90%e4%ba%a4%e8%b7%af%e5%be%84%e7%9a%84%e4%bf%ae%e9%a5%b0%e7%ac%a6%e3%80%82%0a%e5%bd%93%e6%88%91%e4%bb%ac%e5%a7%8b%e7%bb%88%e5%9c%a8%e4%b8%80%e4%b8%aa%e5%88%86%e6%94%af%e6%af%94%e5%a6%82%20dev%20%e5%bc%80%e5%8f%91%2f%e6%8f%90%e4%ba%a4%e4%bb%a3%e7%a0%81%e6%97%b6%ef%bc%8c%e6%af%8f%e4%b8%aa%20commit%20%e9%83%bd%e5%8f%aa%e4%bc%9a%e6%9c%89%e4%b8%80%e4%b8%aa%e7%88%b6%e7%ba%a7%e6%8f%90%e4%ba%a4%ef%bc%8c%e5%b0%b1%e6%98%af%e4%b8%8a%e4%b8%80%e6%ac%a1%e6%8f%90%e4%ba%a4%e3%80%82%e6%ad%a4%e6%97%b6%20HEAD~1%20%e7%ad%89%e4%bb%b7%e4%ba%8e%20HEAD%5e%e3%80%82%0a%e5%bd%93%e5%b9%b6%e8%a1%8c%e5%a4%9a%e4%b8%aa%e5%88%86%e6%94%af%e5%bc%80%e5%8f%91%ef%bc%8cfeat1%2c%20feat2%2c%20feat3%ef%bc%8c%e5%ae%8c%e6%88%90%e5%90%8e%20merge%20feat1%20feat2%20feat3%20%e5%9b%9e%20dev%20%e5%88%86%e6%94%af%e5%90%8e%ef%bc%8c%e6%ad%a4%e6%ac%a1%e7%9a%84%20merge%20commit%20%e5%b0%b1%e4%bc%9a%e6%9c%89%e5%a4%9a%e4%b8%aa%e7%88%b6%e7%ba%a7%e6%8f%90%e4%ba%a4%e3%80%82%0aHEAD%5e%20%3d%20HEAD%5e1%20%e7%ac%ac%e4%b8%80%e4%b8%aa%e7%88%b6%e7%ba%a7%e6%8f%90%e4%ba%a4%20HEAD%5e2~1%20%e7%ac%ac%e4%ba%8c%e4%b8%aa%e7%88%b6%e7%ba%a7%e6%8f%90%e4%ba%a4%e7%9a%84%e4%b8%8a%e4%b8%80%e6%ac%a1%e6%8f%90%e4%ba%a4%20%e5%bc%ba%e8%a1%8c%e8%a6%86%e7%9b%96%e6%9c%ac%e5%9c%b0%e5%88%86%e6%94%af%ef%bc%88%e4%b8%8d%e5%85%b3%e5%bf%83%e6%9c%ac%e5%9c%b0%e4%bf%ae%e6%94%b9%ef%bc%89%20%e8%8b%a5%e5%9c%a8%e5%85%b6%e5%ae%83%e5%88%86%e6%94%af%e4%b8%8a%e8%bf%9b%e8%a1%8c%e4%ba%86%e4%bf%ae%e6%94%b9%ef%bc%8c%e8%80%8c%e6%9c%ac%e5%9c%b0%e4%b9%9f%e6%9c%89%e4%ba%86%e4%b8%80%e5%ae%9a%e7%9a%84%e4%bf%ae%e6%94%b9%ef%bc%8c%e4%bd%86%e6%9c%ac%e5%9c%b0%e7%9a%84%e4%bf%ae%e6%94%b9%e6%98%af%e5%8f%af%e4%bb%a5%e5%bf%bd%e7%95%a5%e7%9a%84%ef%bc%88%e6%88%96%e8%80%85%e4%bd%a0%e4%b8%8d%e5%b0%8f%e5%bf%83%e6%94%be%e5%85%a5%e4%ba%86%e4%b8%80%e4%ba%9b%e6%97%a0%e5%85%b3%e6%96%87%e4%bb%b6%ef%bc%89%ef%bc%8c%e9%82%a3%e4%b9%88%ef%bc%8c%e8%bf%99%e6%97%b6%e4%bd%a0%e5%be%88%e9%9c%80%e8%a6%81%e7%94%a8%e5%bc%ba%e8%a1%8c%e8%a6%86%e7%9b%96%e8%bf%99%e4%b8%aa%e6%93%8d%e4%bd%9c%e3%80%82%0a1git%20fetch%202git%20reset%20--hard%20HEAD%203git%20merge%20origin%2f%24CURRENT_BRANCH%20%23%20%e8%8b%a5%e5%b7%b2%e5%81%9a%e6%98%a0%e5%b0%84%ef%bc%9agit%20merge%20%e4%bf%ae%e6%94%b9%e6%8f%90%e4%ba%a4%e8%bf%87%e7%9a%84%e7%89%88%e6%9c%ac%20%e4%bf%ae%e6%94%b9%e4%b8%8a%e6%ac%a1%e6%8f%90%e4%ba%a4%20%e8%bf%99%e9%87%8c%e5%af%b9%e6%8f%90%e4%ba%a4%e7%9a%84%e4%bf%a1%e6%81%af%e5%92%8c%e4%bd%9c%e8%80%85%e8%bf%9b%e8%a1%8c%e4%bf%ae%e6%94%b9%ef%bc%8c%e6%b3%a8%e6%84%8f%e9%82%ae%e7%ae%b1%e4%b8%a4%e4%be%a7%e7%94%b1%26lt%3b%26gt%3b%e5%8c%85%e6%8b%ac%e4%bd%8f"
+      aria-label="Tumblr"
+    >
       <i class="fab fa-tumblr " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f12%2fgit-version-and-submission-management%2f&t=Git%20%e7%89%88%e6%9c%ac%e4%b8%8e%e6%8f%90%e4%ba%a4%e7%ae%a1%e7%90%86" aria-label="Hacker News">
-      <i class="fab fa-hacker-news " aria-hidden="true"></i>
     </a>
   </li>
 </ul>
 
     </div>
     
-    <div id="toc">
-      <nav id="TableOfContents">
+      <div id="toc">
+        <nav id="TableOfContents">
   <ul>
     <li><a href="#关于head">关于HEAD</a></li>
     <li><a href="#强行覆盖本地分支不关心本地修改">强行覆盖本地分支（不关心本地修改）</a></li>
@@ -222,53 +245,65 @@ HEAD^ = HEAD^1 第一个父级提交 HEAD^2~1 第二个父级提交的上一次�
     </li>
   </ul>
 </nav>
-    </div>
+      </div>
     
   </span>
 </div>
-  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-    <header>
-      <h1 class="posttitle" itemprop="name headline">
-        Git 版本与提交管理
-      </h1>
-      <div class="meta">
-        
-        <div class="postdate">
-          
-          <time datetime="2022-12-06 11:42:39 &#43;0800 CST" itemprop="datePublished">2022-12-06</time>
-          
-        </div>
-        
-        
-        <div class="article-read-time">
-          <i class="far fa-clock"></i>
-          
-          5 minute read
-        </div>
-        
-        
-        <div class="article-category">
-            <i class="fas fa-archive"></i>
+
+      <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <header>
+          <h1 class="posttitle" itemprop="name headline">
+            Git 版本与提交管理
+          </h1>
+          <div class="meta">
+            
+            <div class="postdate">
+              
+              <time datetime="2022-12-06 11:42:39 &#43;0800 CST" itemprop="datePublished"
+                >2022-12-06</time
+              >
+              
+            </div>
             
             
-            <a class="category-link" href="/categories/tool">Tool</a>
+              <div class="article-read-time">
+                <i class="far fa-clock"></i>
+                
+                5 minute read
+              </div>
             
-        </div>
+            
+              <div class="article-category">
+                <i class="fas fa-archive"></i>
+                
+                  
+                  <a
+                    class="category-link"
+                    href="/categories/tool"
+                    >Tool</a
+                  >
+                
+              </div>
+            
+            
+              <div class="article-tag">
+                <i class="fas fa-tag"></i>
+                
+                  
+                  <a
+                    class="tag-link"
+                    href="/tags/git"
+                    rel="tag"
+                    >git</a
+                  >
+                
+              </div>
+            
+          </div>
+        </header>
         
-        
-        <div class="article-tag">
-            <i class="fas fa-tag"></i>
-            
-            
-            <a class="tag-link" href="/tags/git" rel="tag">git</a>
-            
-        </div>
-        
-      </div>
-    </header>
-    
-    <div class="content" itemprop="articleBody">
-      <h2 id="关于head">关于HEAD</h2>
+        <div class="content" itemprop="articleBody">
+          <h2 id="关于head">关于HEAD</h2>
 <p>HEAD 代表当前分支的最新提交名称，它可以由一些修饰符进行修饰进而产生不同的含义。</p>
 <p><strong>关于 HEAD~{n}</strong></p>
 <p><code>~</code> 是用来在当前提交路径上回溯的修饰符。</p>
@@ -341,9 +376,9 @@ HEAD^ = HEAD^1 第一个父级提交 HEAD^2~1 第二个父级提交的上一次�
 </span></span></code></pre></div><p>接着进行提交即可：</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>git push origin master -f # origin为之前指定的远程分支
 </span></span></code></pre></div>
-    </div>
-  </article>
-  
+        </div>
+      </article>
+      
   
 
 
@@ -375,16 +410,16 @@ HEAD^ = HEAD^1 第一个父级提交 HEAD^2~1 第二个父级提交的上一次�
   </div>
 
 
-    
-    <div id="fastSearch">
-      <input id="searchInput" tabindex="0"/>
-      <ul id="searchResults"></ul>
-    </div>
-  <div id="footer-post-container">
+      <div id="fastSearch">
+  <input id="searchInput" tabindex="0" />
+  <ul id="searchResults"></ul>
+</div>
+
+      <div id="footer-post-container">
   <div id="footer-post">
     
-    <div id="toc-footer" style="display: none">
-      <nav id="TableOfContents">
+      <div id="toc-footer" style="display: none">
+        <nav id="TableOfContents">
   <ul>
     <li><a href="#关于head">关于HEAD</a></li>
     <li><a href="#强行覆盖本地分支不关心本地修改">强行覆盖本地分支（不关心本地修改）</a></li>
@@ -402,19 +437,23 @@ HEAD^ = HEAD^1 第一个父级提交 HEAD^2~1 第二个父级提交的上一次�
     </li>
   </ul>
 </nav>
-    </div>
-    
+      </div>
     
     <div id="nav-footer" style="display: none">
       
-      <ul style="display:inline;"><li><a href="/">Home</a></li></ul>
+        <ul style="display:inline;">
+          <li><a href="/">Home</a></li>
+        </ul>
       
-      <ul style="display:inline;"><li><a href="/posts">Archives</a></li></ul>
+        <ul style="display:inline;">
+          <li><a href="/posts">Posts</a></li>
+        </ul>
       
-      <ul style="display:inline;"><li><a href="/about">About</a></li></ul>
+        <ul style="display:inline;">
+          <li><a href="/about">About</a></li>
+        </ul>
       
     </div>
-
     <div id="share-footer" style="display: none">
       
       <ul>
@@ -424,106 +463,169 @@ HEAD^ = HEAD^1 第一个父级提交 HEAD^2~1 第二个父级提交的上一次�
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f12%2fgit-version-and-submission-management%2f" aria-label="Facebook">
+    <a
+      class="icon"
+      href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f12%2fgit-version-and-submission-management%2f"
+      aria-label="Facebook"
+    >
       <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f12%2fgit-version-and-submission-management%2f&text=Git%20%e7%89%88%e6%9c%ac%e4%b8%8e%e6%8f%90%e4%ba%a4%e7%ae%a1%e7%90%86" aria-label="Twitter">
+    <a
+      class="icon"
+      href="https://twitter.com/share?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f12%2fgit-version-and-submission-management%2f&text=Git%20%e7%89%88%e6%9c%ac%e4%b8%8e%e6%8f%90%e4%ba%a4%e7%ae%a1%e7%90%86"
+      aria-label="Twitter"
+    >
       <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f12%2fgit-version-and-submission-management%2f&title=Git%20%e7%89%88%e6%9c%ac%e4%b8%8e%e6%8f%90%e4%ba%a4%e7%ae%a1%e7%90%86" aria-label="Linkedin">
+    <a
+      class="icon"
+      href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f12%2fgit-version-and-submission-management%2f&title=Git%20%e7%89%88%e6%9c%ac%e4%b8%8e%e6%8f%90%e4%ba%a4%e7%ae%a1%e7%90%86"
+      aria-label="Linkedin"
+    >
       <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f12%2fgit-version-and-submission-management%2f&is_video=false&description=Git%20%e7%89%88%e6%9c%ac%e4%b8%8e%e6%8f%90%e4%ba%a4%e7%ae%a1%e7%90%86" aria-label="Pinterest">
-      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="mailto:?subject=Git%20%e7%89%88%e6%9c%ac%e4%b8%8e%e6%8f%90%e4%ba%a4%e7%ae%a1%e7%90%86&body=Check out this article: https%3a%2f%2fakynazh.site%2fposts%2f2022%2f12%2fgit-version-and-submission-management%2f" aria-label="Email">
+    <a
+      class="icon"
+      href="mailto:?subject=Git%20%e7%89%88%e6%9c%ac%e4%b8%8e%e6%8f%90%e4%ba%a4%e7%ae%a1%e7%90%86&body=Check out this article: https%3a%2f%2fakynazh.site%2fposts%2f2022%2f12%2fgit-version-and-submission-management%2f"
+      aria-label="Email"
+    >
       <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f12%2fgit-version-and-submission-management%2f&title=Git%20%e7%89%88%e6%9c%ac%e4%b8%8e%e6%8f%90%e4%ba%a4%e7%ae%a1%e7%90%86" aria-label="Pocket">
-      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f12%2fgit-version-and-submission-management%2f&title=Git%20%e7%89%88%e6%9c%ac%e4%b8%8e%e6%8f%90%e4%ba%a4%e7%ae%a1%e7%90%86" aria-label="reddit">
+    <a
+      class="icon"
+      href="http://reddit.com/submit?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f12%2fgit-version-and-submission-management%2f&title=Git%20%e7%89%88%e6%9c%ac%e4%b8%8e%e6%8f%90%e4%ba%a4%e7%ae%a1%e7%90%86"
+      aria-label="reddit"
+    >
       <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f12%2fgit-version-and-submission-management%2f&name=Git%20%e7%89%88%e6%9c%ac%e4%b8%8e%e6%8f%90%e4%ba%a4%e7%ae%a1%e7%90%86&description=%e5%85%b3%e4%ba%8eHEAD%20HEAD%20%e4%bb%a3%e8%a1%a8%e5%bd%93%e5%89%8d%e5%88%86%e6%94%af%e7%9a%84%e6%9c%80%e6%96%b0%e6%8f%90%e4%ba%a4%e5%90%8d%e7%a7%b0%ef%bc%8c%e5%ae%83%e5%8f%af%e4%bb%a5%e7%94%b1%e4%b8%80%e4%ba%9b%e4%bf%ae%e9%a5%b0%e7%ac%a6%e8%bf%9b%e8%a1%8c%e4%bf%ae%e9%a5%b0%e8%bf%9b%e8%80%8c%e4%ba%a7%e7%94%9f%e4%b8%8d%e5%90%8c%e7%9a%84%e5%90%ab%e4%b9%89%e3%80%82%0a%e5%85%b3%e4%ba%8e%20HEAD~%7bn%7d%0a~%20%e6%98%af%e7%94%a8%e6%9d%a5%e5%9c%a8%e5%bd%93%e5%89%8d%e6%8f%90%e4%ba%a4%e8%b7%af%e5%be%84%e4%b8%8a%e5%9b%9e%e6%ba%af%e7%9a%84%e4%bf%ae%e9%a5%b0%e7%ac%a6%e3%80%82%0aHEAD~%7bn%7d%20%e8%a1%a8%e7%a4%ba%e5%bd%93%e5%89%8d%e6%89%80%e5%9c%a8%e7%9a%84%e6%8f%90%e4%ba%a4%e8%b7%af%e5%be%84%e4%b8%8a%e7%9a%84%e5%89%8d%20n%20%e4%b8%aa%e6%8f%90%e4%ba%a4%ef%bc%88n%20%26gt%3b%3d%200%ef%bc%89%ef%bc%9a%0aHEAD%20%3d%20HEAD~0%20%ef%bc%88%e5%8d%b3%e5%bd%93%e5%89%8d%e6%9c%80%e6%96%b0%e7%9a%84%e4%b8%80%e6%ac%a1commit%ef%bc%89%20HEAD~%20%3d%20HEAD~1%20HEAD~~%20%3d%20HEAD~2%20%e5%85%b3%e4%ba%8e%20HEAD%5e%7bn%7d%0a%5e%20%e6%98%af%e7%94%a8%e6%9d%a5%e5%88%87%e6%8d%a2%e7%88%b6%e7%ba%a7%e6%8f%90%e4%ba%a4%e8%b7%af%e5%be%84%e7%9a%84%e4%bf%ae%e9%a5%b0%e7%ac%a6%e3%80%82%0a%e5%bd%93%e6%88%91%e4%bb%ac%e5%a7%8b%e7%bb%88%e5%9c%a8%e4%b8%80%e4%b8%aa%e5%88%86%e6%94%af%e6%af%94%e5%a6%82%20dev%20%e5%bc%80%e5%8f%91%2f%e6%8f%90%e4%ba%a4%e4%bb%a3%e7%a0%81%e6%97%b6%ef%bc%8c%e6%af%8f%e4%b8%aa%20commit%20%e9%83%bd%e5%8f%aa%e4%bc%9a%e6%9c%89%e4%b8%80%e4%b8%aa%e7%88%b6%e7%ba%a7%e6%8f%90%e4%ba%a4%ef%bc%8c%e5%b0%b1%e6%98%af%e4%b8%8a%e4%b8%80%e6%ac%a1%e6%8f%90%e4%ba%a4%e3%80%82%e6%ad%a4%e6%97%b6%20HEAD~1%20%e7%ad%89%e4%bb%b7%e4%ba%8e%20HEAD%5e%e3%80%82%0a%e5%bd%93%e5%b9%b6%e8%a1%8c%e5%a4%9a%e4%b8%aa%e5%88%86%e6%94%af%e5%bc%80%e5%8f%91%ef%bc%8cfeat1%2c%20feat2%2c%20feat3%ef%bc%8c%e5%ae%8c%e6%88%90%e5%90%8e%20merge%20feat1%20feat2%20feat3%20%e5%9b%9e%20dev%20%e5%88%86%e6%94%af%e5%90%8e%ef%bc%8c%e6%ad%a4%e6%ac%a1%e7%9a%84%20merge%20commit%20%e5%b0%b1%e4%bc%9a%e6%9c%89%e5%a4%9a%e4%b8%aa%e7%88%b6%e7%ba%a7%e6%8f%90%e4%ba%a4%e3%80%82%0aHEAD%5e%20%3d%20HEAD%5e1%20%e7%ac%ac%e4%b8%80%e4%b8%aa%e7%88%b6%e7%ba%a7%e6%8f%90%e4%ba%a4%20HEAD%5e2~1%20%e7%ac%ac%e4%ba%8c%e4%b8%aa%e7%88%b6%e7%ba%a7%e6%8f%90%e4%ba%a4%e7%9a%84%e4%b8%8a%e4%b8%80%e6%ac%a1%e6%8f%90%e4%ba%a4%20%e5%bc%ba%e8%a1%8c%e8%a6%86%e7%9b%96%e6%9c%ac%e5%9c%b0%e5%88%86%e6%94%af%ef%bc%88%e4%b8%8d%e5%85%b3%e5%bf%83%e6%9c%ac%e5%9c%b0%e4%bf%ae%e6%94%b9%ef%bc%89%20%e8%8b%a5%e5%9c%a8%e5%85%b6%e5%ae%83%e5%88%86%e6%94%af%e4%b8%8a%e8%bf%9b%e8%a1%8c%e4%ba%86%e4%bf%ae%e6%94%b9%ef%bc%8c%e8%80%8c%e6%9c%ac%e5%9c%b0%e4%b9%9f%e6%9c%89%e4%ba%86%e4%b8%80%e5%ae%9a%e7%9a%84%e4%bf%ae%e6%94%b9%ef%bc%8c%e4%bd%86%e6%9c%ac%e5%9c%b0%e7%9a%84%e4%bf%ae%e6%94%b9%e6%98%af%e5%8f%af%e4%bb%a5%e5%bf%bd%e7%95%a5%e7%9a%84%ef%bc%88%e6%88%96%e8%80%85%e4%bd%a0%e4%b8%8d%e5%b0%8f%e5%bf%83%e6%94%be%e5%85%a5%e4%ba%86%e4%b8%80%e4%ba%9b%e6%97%a0%e5%85%b3%e6%96%87%e4%bb%b6%ef%bc%89%ef%bc%8c%e9%82%a3%e4%b9%88%ef%bc%8c%e8%bf%99%e6%97%b6%e4%bd%a0%e5%be%88%e9%9c%80%e8%a6%81%e7%94%a8%e5%bc%ba%e8%a1%8c%e8%a6%86%e7%9b%96%e8%bf%99%e4%b8%aa%e6%93%8d%e4%bd%9c%e3%80%82%0a1git%20fetch%202git%20reset%20--hard%20HEAD%203git%20merge%20origin%2f%24CURRENT_BRANCH%20%23%20%e8%8b%a5%e5%b7%b2%e5%81%9a%e6%98%a0%e5%b0%84%ef%bc%9agit%20merge%20%e4%bf%ae%e6%94%b9%e6%8f%90%e4%ba%a4%e8%bf%87%e7%9a%84%e7%89%88%e6%9c%ac%20%e4%bf%ae%e6%94%b9%e4%b8%8a%e6%ac%a1%e6%8f%90%e4%ba%a4%20%e8%bf%99%e9%87%8c%e5%af%b9%e6%8f%90%e4%ba%a4%e7%9a%84%e4%bf%a1%e6%81%af%e5%92%8c%e4%bd%9c%e8%80%85%e8%bf%9b%e8%a1%8c%e4%bf%ae%e6%94%b9%ef%bc%8c%e6%b3%a8%e6%84%8f%e9%82%ae%e7%ae%b1%e4%b8%a4%e4%be%a7%e7%94%b1%26lt%3b%26gt%3b%e5%8c%85%e6%8b%ac%e4%bd%8f" aria-label="Tumblr">
+    <a
+      class="icon"
+      href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f12%2fgit-version-and-submission-management%2f&name=Git%20%e7%89%88%e6%9c%ac%e4%b8%8e%e6%8f%90%e4%ba%a4%e7%ae%a1%e7%90%86&description=%e5%85%b3%e4%ba%8eHEAD%20HEAD%20%e4%bb%a3%e8%a1%a8%e5%bd%93%e5%89%8d%e5%88%86%e6%94%af%e7%9a%84%e6%9c%80%e6%96%b0%e6%8f%90%e4%ba%a4%e5%90%8d%e7%a7%b0%ef%bc%8c%e5%ae%83%e5%8f%af%e4%bb%a5%e7%94%b1%e4%b8%80%e4%ba%9b%e4%bf%ae%e9%a5%b0%e7%ac%a6%e8%bf%9b%e8%a1%8c%e4%bf%ae%e9%a5%b0%e8%bf%9b%e8%80%8c%e4%ba%a7%e7%94%9f%e4%b8%8d%e5%90%8c%e7%9a%84%e5%90%ab%e4%b9%89%e3%80%82%0a%e5%85%b3%e4%ba%8e%20HEAD~%7bn%7d%0a~%20%e6%98%af%e7%94%a8%e6%9d%a5%e5%9c%a8%e5%bd%93%e5%89%8d%e6%8f%90%e4%ba%a4%e8%b7%af%e5%be%84%e4%b8%8a%e5%9b%9e%e6%ba%af%e7%9a%84%e4%bf%ae%e9%a5%b0%e7%ac%a6%e3%80%82%0aHEAD~%7bn%7d%20%e8%a1%a8%e7%a4%ba%e5%bd%93%e5%89%8d%e6%89%80%e5%9c%a8%e7%9a%84%e6%8f%90%e4%ba%a4%e8%b7%af%e5%be%84%e4%b8%8a%e7%9a%84%e5%89%8d%20n%20%e4%b8%aa%e6%8f%90%e4%ba%a4%ef%bc%88n%20%26gt%3b%3d%200%ef%bc%89%ef%bc%9a%0aHEAD%20%3d%20HEAD~0%20%ef%bc%88%e5%8d%b3%e5%bd%93%e5%89%8d%e6%9c%80%e6%96%b0%e7%9a%84%e4%b8%80%e6%ac%a1commit%ef%bc%89%20HEAD~%20%3d%20HEAD~1%20HEAD~~%20%3d%20HEAD~2%20%e5%85%b3%e4%ba%8e%20HEAD%5e%7bn%7d%0a%5e%20%e6%98%af%e7%94%a8%e6%9d%a5%e5%88%87%e6%8d%a2%e7%88%b6%e7%ba%a7%e6%8f%90%e4%ba%a4%e8%b7%af%e5%be%84%e7%9a%84%e4%bf%ae%e9%a5%b0%e7%ac%a6%e3%80%82%0a%e5%bd%93%e6%88%91%e4%bb%ac%e5%a7%8b%e7%bb%88%e5%9c%a8%e4%b8%80%e4%b8%aa%e5%88%86%e6%94%af%e6%af%94%e5%a6%82%20dev%20%e5%bc%80%e5%8f%91%2f%e6%8f%90%e4%ba%a4%e4%bb%a3%e7%a0%81%e6%97%b6%ef%bc%8c%e6%af%8f%e4%b8%aa%20commit%20%e9%83%bd%e5%8f%aa%e4%bc%9a%e6%9c%89%e4%b8%80%e4%b8%aa%e7%88%b6%e7%ba%a7%e6%8f%90%e4%ba%a4%ef%bc%8c%e5%b0%b1%e6%98%af%e4%b8%8a%e4%b8%80%e6%ac%a1%e6%8f%90%e4%ba%a4%e3%80%82%e6%ad%a4%e6%97%b6%20HEAD~1%20%e7%ad%89%e4%bb%b7%e4%ba%8e%20HEAD%5e%e3%80%82%0a%e5%bd%93%e5%b9%b6%e8%a1%8c%e5%a4%9a%e4%b8%aa%e5%88%86%e6%94%af%e5%bc%80%e5%8f%91%ef%bc%8cfeat1%2c%20feat2%2c%20feat3%ef%bc%8c%e5%ae%8c%e6%88%90%e5%90%8e%20merge%20feat1%20feat2%20feat3%20%e5%9b%9e%20dev%20%e5%88%86%e6%94%af%e5%90%8e%ef%bc%8c%e6%ad%a4%e6%ac%a1%e7%9a%84%20merge%20commit%20%e5%b0%b1%e4%bc%9a%e6%9c%89%e5%a4%9a%e4%b8%aa%e7%88%b6%e7%ba%a7%e6%8f%90%e4%ba%a4%e3%80%82%0aHEAD%5e%20%3d%20HEAD%5e1%20%e7%ac%ac%e4%b8%80%e4%b8%aa%e7%88%b6%e7%ba%a7%e6%8f%90%e4%ba%a4%20HEAD%5e2~1%20%e7%ac%ac%e4%ba%8c%e4%b8%aa%e7%88%b6%e7%ba%a7%e6%8f%90%e4%ba%a4%e7%9a%84%e4%b8%8a%e4%b8%80%e6%ac%a1%e6%8f%90%e4%ba%a4%20%e5%bc%ba%e8%a1%8c%e8%a6%86%e7%9b%96%e6%9c%ac%e5%9c%b0%e5%88%86%e6%94%af%ef%bc%88%e4%b8%8d%e5%85%b3%e5%bf%83%e6%9c%ac%e5%9c%b0%e4%bf%ae%e6%94%b9%ef%bc%89%20%e8%8b%a5%e5%9c%a8%e5%85%b6%e5%ae%83%e5%88%86%e6%94%af%e4%b8%8a%e8%bf%9b%e8%a1%8c%e4%ba%86%e4%bf%ae%e6%94%b9%ef%bc%8c%e8%80%8c%e6%9c%ac%e5%9c%b0%e4%b9%9f%e6%9c%89%e4%ba%86%e4%b8%80%e5%ae%9a%e7%9a%84%e4%bf%ae%e6%94%b9%ef%bc%8c%e4%bd%86%e6%9c%ac%e5%9c%b0%e7%9a%84%e4%bf%ae%e6%94%b9%e6%98%af%e5%8f%af%e4%bb%a5%e5%bf%bd%e7%95%a5%e7%9a%84%ef%bc%88%e6%88%96%e8%80%85%e4%bd%a0%e4%b8%8d%e5%b0%8f%e5%bf%83%e6%94%be%e5%85%a5%e4%ba%86%e4%b8%80%e4%ba%9b%e6%97%a0%e5%85%b3%e6%96%87%e4%bb%b6%ef%bc%89%ef%bc%8c%e9%82%a3%e4%b9%88%ef%bc%8c%e8%bf%99%e6%97%b6%e4%bd%a0%e5%be%88%e9%9c%80%e8%a6%81%e7%94%a8%e5%bc%ba%e8%a1%8c%e8%a6%86%e7%9b%96%e8%bf%99%e4%b8%aa%e6%93%8d%e4%bd%9c%e3%80%82%0a1git%20fetch%202git%20reset%20--hard%20HEAD%203git%20merge%20origin%2f%24CURRENT_BRANCH%20%23%20%e8%8b%a5%e5%b7%b2%e5%81%9a%e6%98%a0%e5%b0%84%ef%bc%9agit%20merge%20%e4%bf%ae%e6%94%b9%e6%8f%90%e4%ba%a4%e8%bf%87%e7%9a%84%e7%89%88%e6%9c%ac%20%e4%bf%ae%e6%94%b9%e4%b8%8a%e6%ac%a1%e6%8f%90%e4%ba%a4%20%e8%bf%99%e9%87%8c%e5%af%b9%e6%8f%90%e4%ba%a4%e7%9a%84%e4%bf%a1%e6%81%af%e5%92%8c%e4%bd%9c%e8%80%85%e8%bf%9b%e8%a1%8c%e4%bf%ae%e6%94%b9%ef%bc%8c%e6%b3%a8%e6%84%8f%e9%82%ae%e7%ae%b1%e4%b8%a4%e4%be%a7%e7%94%b1%26lt%3b%26gt%3b%e5%8c%85%e6%8b%ac%e4%bd%8f"
+      aria-label="Tumblr"
+    >
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f12%2fgit-version-and-submission-management%2f&t=Git%20%e7%89%88%e6%9c%ac%e4%b8%8e%e6%8f%90%e4%ba%a4%e7%ae%a1%e7%90%86" aria-label="Hacker News">
-      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
     </a>
   </li>
 </ul>
 
     </div>
-
     <div id="actions-footer">
-        <a id="menu-toggle" class="icon-mobile-nav" href="#" onclick="$('#nav-footer').show();$('#toc-footer').hide();$('#share-footer').hide();return false;" aria-label="Menu">
-          <i class="fas fa-bars fa-lg" aria-hidden="true"></i></a>
-
-        
-        <a id="toc-toggle"class="icon-mobile-nav"  href="#" onclick="$('#toc-footer').show();$('#nav-footer').hide();$('#share-footer').hide();return false;" aria-label="TOC">
-          <i class="fas fa-list fa-lg" aria-hidden="true"></i></a>
-        
-
-        <a id="top" class="icon-mobile-nav" style="display:none" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
-          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i></a>
-
-        <a id="searchBtn1" class="icon-mobile-nav"  href="#" aria-label="Search">
-          <i class="fa fa-search fa-lg" aria-hidden="true"></i></a>
-
-        <a id="theme-change" class="icon-mobile-nav"><i class="fas fa-adjust fa-lg"></i></a>
-
-        <a id="share-toggle" class="icon-mobile-nav"  href="#" onclick="$('#share-footer').show();$('#toc-footer').hide();$('#nav-footer').hide();return false;" aria-label="Share">
-          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i></a>
+      
+      
+        <a
+          class="icon-mobile-nav"
+          href="https://akynazh.site/posts/2022/11/linux-software-installation-and-configuration-records/"
+          aria-label="Previous"
+        >
+          <i class="fas fa-chevron-left fa-lg" aria-hidden="true"></i>
+        </a>
+      
+      
+      <a
+        id="menu-toggle"
+        class="icon-mobile-nav"
+        href="#"
+        onclick="$('#nav-footer').show();$('#toc-footer').hide();$('#share-footer').hide();return false;"
+        aria-label="Menu"
+      >
+        <i class="fas fa-bars fa-lg" aria-hidden="true"></i
+      ></a>
+      
+      
+        <a
+          id="toc-toggle"
+          class="icon-mobile-nav"
+          href="#"
+          onclick="$('#toc-footer').show();$('#nav-footer').hide();$('#share-footer').hide();return false;"
+          aria-label="TOC"
+        >
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i
+        ></a>
+      
+      
+      <a
+        id="top"
+        class="icon-mobile-nav"
+        style="display:none"
+        href="#"
+        onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"
+        aria-label="Top of Page"
+      >
+        <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i
+      ></a>
+      
+      <a id="searchBtn1" class="icon-mobile-nav" href="#" aria-label="Search">
+        <i class="fa fa-search fa-lg" aria-hidden="true"></i
+      ></a>
+      
+      <a id="theme-change" class="icon-mobile-nav"
+        ><i class="fas fa-adjust fa-lg"></i
+      ></a>
+      
+      <a
+        id="share-toggle"
+        class="icon-mobile-nav"
+        href="#"
+        onclick="$('#share-footer').show();$('#toc-footer').hide();$('#nav-footer').hide();return false;"
+        aria-label="Share"
+      >
+        <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i
+      ></a>
+      
+      
+        <a class="icon" href="https://akynazh.site/posts/2022/12/naming-standard-problems-encountered-in-development/" aria-label="Next">
+          <i class="fas fa-chevron-right fa-lg" aria-hidden="true"></i>
+        </a>
+      
     </div>
-
   </div>
 </div>
 
-  <footer id="footer">
+      <footer id="footer">
   <div class="footer-left">
-    Copyright  &copy; 2023  Jzh 
-    | <a href="https://beian.miit.gov.cn/" style="text-decoration:none;">陕ICP备2022007986号-1</a>
+    Copyright &copy;
+    2023
+    
+      Jzh
+    
+    |
+    <a href="https://beian.miit.gov.cn/" style="text-decoration:none;"
+      >陕ICP备2022007986号-1</a
+    >
   </div>
   <div class="footer-right">
     <nav>
       <ul>
-         
-        <li><a href="/">Home</a></li>
-         
-        <li><a href="/posts">Archives</a></li>
-         
-        <li><a href="/about">About</a></li>
+        
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/posts">Posts</a></li>
+        
+          <li><a href="/about">About</a></li>
         
       </ul>
     </nav>
   </div>
 </footer>
-  </div>
-</body>
-<script src="/js/fuse.min.js"></script>
-<script src="/js/fastsearch.js"></script>
-<script src="/js/jquery.min.js"></script>
-<script src="/js/main.js"></script>
 
-
-
-
-
+    </div>
+  </body>
+  <script src="/js/main.js"></script>
+  <script src="/js/fuse.min.js"></script>
+  <script src="/js/fastsearch.js"></script>
+  
+  
+  
+  
+  
 </html>

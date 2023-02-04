@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title> 外观模式 | Norwegian Wood</title>
-  <link rel='canonical' href='https://akynazh.site/posts/2022/08/appearance-mode/'>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="all,follow">
-  <meta name="googlebot" content="index,follow,snippet,archive">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>外观模式 |Norwegian Wood</title>
+  <link rel="canonical" href="https://akynazh.site/posts/2022/08/appearance-mode/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="all,follow" />
+  <meta name="googlebot" content="index,follow,snippet,archive" />
   <meta property="og:title" content="外观模式" />
 <meta property="og:description" content="外观模式 定义 外观模式提供了一个统一的接口，用来访问子系统中的一群接口，外观定义了一个高层接口，让子系统更容易使用。
 “最少知识”原则 减少对象之间的交互，只和“密友”谈话，也就是减少一个类所交互的类的数量。
@@ -30,112 +30,126 @@
 
   
   
-  
+
   
   
 
   
   
   
-    <input value="light" id="theme-current" style="display: none;">
+    <input value="light" id="theme-current" style="display: none;" />
+    <link id="theme" rel="stylesheet" href="https://akynazh.site/css/styles_light.css" />
   
-  <input value="https://akynazh.site/css/styles_dark.css" id="styles-dark" style="display: none;">
-  <input value="https://akynazh.site/css/styles_light.css" id="styles-light" style="display: none;">
+  <input value="https://akynazh.site/css/styles_dark.css" id="styles-dark" style="display: none;" />
+  <input value="https://akynazh.site/css/styles_light.css" id="styles-light" style="display: none;" />
 
-  <input value="1" id="set-snow" style="display: none;">
-
-  <link id="theme" rel="stylesheet" href="">
-  <script src="/js/jquery.min.js"></script>
+  <input value="1" id="set-snow" style="display: none;" />
+  
   <script src="/js/snow.js"></script>
   <script src="/js/theme.js"></script>
-  <script>
-    theme = getCurrentTheme();
-    setTheme(theme);
-    setSnow = document.getElementById("set-snow").value;
-    if (theme === "dark" && setSnow === "1") {
-      startSnow()
-    }
-  </script>
+  <script src="/js/jquery.min.js"></script>
 
   
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  />
 
   
-  <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+
+
   
 
-  <link rel="shortcut icon" href="/favicon.png" type="image/png" />
-<link rel="icon" href="/favicon.png" type="image/png" />
-
-  
-  
   
 </head>
-<body class="max-width-blog mx-auto px3 ltr">
-  <div class="content index py4">
-  <div id="header-post">
+
+  <body class="max-width-blog mx-auto px3 ltr">
+    <div class="content index py4">
+      <div id="header-post">
   <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
-  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <a
+    id="top-icon-tablet"
+    href="#"
+    onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"
+    style="display:none;"
+    aria-label="Top of Page"
+    ><i class="fas fa-chevron-up fa-lg"></i
+  ></a>
   <span id="menu">
     <span id="nav">
       <ul>
-         
-        <li><a href="/">Home</a></li>
-         
-        <li><a href="/posts">Archives</a></li>
-         
-        <li><a href="/about">About</a></li>
+        
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/posts">Posts</a></li>
+        
+          <li><a href="/about">About</a></li>
         
       </ul>
     </span>
-    <br/>
+    <br />
     <span id="actions">
       <ul>
         
-        <li>
-          <a class="icon" href="https://akynazh.site/posts/2022/08/adapter-mode/" aria-label="Previous">
-            <i class="fas fa-chevron-left" aria-hidden="true"></i>
-          </a>
-        </li>
+        
+          <li>
+            <a class="icon" href="https://akynazh.site/posts/2022/08/adapter-mode/" aria-label="Previous">
+              <i class="fas fa-chevron-left" aria-hidden="true"></i>
+            </a>
+          </li>
+        
+        
+        
+          <li>
+            <a class="icon" href="https://akynazh.site/posts/2022/08/template-method-mode/" aria-label="Next">
+              <i class="fas fa-chevron-right" aria-hidden="true"></i>
+            </a>
+          </li>
         
         
         <li>
-          <a class="icon" href="https://akynazh.site/posts/2022/08/template-method-mode/" aria-label="Next">
-            <i class="fas fa-chevron-right" aria-hidden="true"></i>
-          </a>
-        </li>
-        
-        <li>
-          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <a
+            class="icon"
+            href="#"
+            onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"
+            aria-label="Top of Page"
+          >
             <i class="fas fa-chevron-up" aria-hidden="true"></i>
           </a>
         </li>
+        
         <li>
           <a class="icon" href="#" aria-label="Search" id="searchBtn">
             <i class="fa fa-search" aria-hidden="true"></i>
           </a>
         </li>
+        
         <li>
           <a class="icon" id="theme-change"><i class="fas fa-adjust"></i></a>
         </li>
+        
         <li>
-          <a class="icon" href="#" aria-label="Share" onclick="$('#share').toggle();return false;">
+          <a
+            class="icon"
+            href="#"
+            aria-label="Share"
+            onclick="$('#share').toggle();return false;"
+          >
             <i class="fas fa-share-alt" aria-hidden="true"></i>
           </a>
         </li>
       </ul>
-      <span id="i-prev" class="info" style="display:none;">Previous post</span>
-      <span id="i-prev" class="info" style="display:none;">Previous post</span>
-      <span id="i-next" class="info" style="display:none;">Next post</span>
-      <span id="i-top" class="info" style="display:none;">Back to top</span>
-      <span id="i-search" class="info" style="display:none;">Search</span>
-      <span id="i-share" class="info" style="display:none;">Share post</span>
     </span>
-    <br/>
+    <br />
     <div id="share" style="display: none">
       
       <ul>
@@ -145,56 +159,65 @@
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fappearance-mode%2f" aria-label="Facebook">
+    <a
+      class="icon"
+      href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fappearance-mode%2f"
+      aria-label="Facebook"
+    >
       <i class="fab fa-facebook " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fappearance-mode%2f&text=%e5%a4%96%e8%a7%82%e6%a8%a1%e5%bc%8f" aria-label="Twitter">
+    <a
+      class="icon"
+      href="https://twitter.com/share?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fappearance-mode%2f&text=%e5%a4%96%e8%a7%82%e6%a8%a1%e5%bc%8f"
+      aria-label="Twitter"
+    >
       <i class="fab fa-twitter " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fappearance-mode%2f&title=%e5%a4%96%e8%a7%82%e6%a8%a1%e5%bc%8f" aria-label="Linkedin">
+    <a
+      class="icon"
+      href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fappearance-mode%2f&title=%e5%a4%96%e8%a7%82%e6%a8%a1%e5%bc%8f"
+      aria-label="Linkedin"
+    >
       <i class="fab fa-linkedin " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fappearance-mode%2f&is_video=false&description=%e5%a4%96%e8%a7%82%e6%a8%a1%e5%bc%8f" aria-label="Pinterest">
-      <i class="fab fa-pinterest " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="mailto:?subject=%e5%a4%96%e8%a7%82%e6%a8%a1%e5%bc%8f&body=Check out this article: https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fappearance-mode%2f" aria-label="Email">
+    <a
+      class="icon"
+      href="mailto:?subject=%e5%a4%96%e8%a7%82%e6%a8%a1%e5%bc%8f&body=Check out this article: https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fappearance-mode%2f"
+      aria-label="Email"
+    >
       <i class="fas fa-envelope " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fappearance-mode%2f&title=%e5%a4%96%e8%a7%82%e6%a8%a1%e5%bc%8f" aria-label="Pocket">
-      <i class="fab fa-get-pocket " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fappearance-mode%2f&title=%e5%a4%96%e8%a7%82%e6%a8%a1%e5%bc%8f" aria-label="reddit">
+    <a
+      class="icon"
+      href="http://reddit.com/submit?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fappearance-mode%2f&title=%e5%a4%96%e8%a7%82%e6%a8%a1%e5%bc%8f"
+      aria-label="reddit"
+    >
       <i class="fab fa-reddit " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fappearance-mode%2f&name=%e5%a4%96%e8%a7%82%e6%a8%a1%e5%bc%8f&description=%e5%a4%96%e8%a7%82%e6%a8%a1%e5%bc%8f%20%e5%ae%9a%e4%b9%89%20%e5%a4%96%e8%a7%82%e6%a8%a1%e5%bc%8f%e6%8f%90%e4%be%9b%e4%ba%86%e4%b8%80%e4%b8%aa%e7%bb%9f%e4%b8%80%e7%9a%84%e6%8e%a5%e5%8f%a3%ef%bc%8c%e7%94%a8%e6%9d%a5%e8%ae%bf%e9%97%ae%e5%ad%90%e7%b3%bb%e7%bb%9f%e4%b8%ad%e7%9a%84%e4%b8%80%e7%be%a4%e6%8e%a5%e5%8f%a3%ef%bc%8c%e5%a4%96%e8%a7%82%e5%ae%9a%e4%b9%89%e4%ba%86%e4%b8%80%e4%b8%aa%e9%ab%98%e5%b1%82%e6%8e%a5%e5%8f%a3%ef%bc%8c%e8%ae%a9%e5%ad%90%e7%b3%bb%e7%bb%9f%e6%9b%b4%e5%ae%b9%e6%98%93%e4%bd%bf%e7%94%a8%e3%80%82%0a%e2%80%9c%e6%9c%80%e5%b0%91%e7%9f%a5%e8%af%86%e2%80%9d%e5%8e%9f%e5%88%99%20%e5%87%8f%e5%b0%91%e5%af%b9%e8%b1%a1%e4%b9%8b%e9%97%b4%e7%9a%84%e4%ba%a4%e4%ba%92%ef%bc%8c%e5%8f%aa%e5%92%8c%e2%80%9c%e5%af%86%e5%8f%8b%e2%80%9d%e8%b0%88%e8%af%9d%ef%bc%8c%e4%b9%9f%e5%b0%b1%e6%98%af%e5%87%8f%e5%b0%91%e4%b8%80%e4%b8%aa%e7%b1%bb%e6%89%80%e4%ba%a4%e4%ba%92%e7%9a%84%e7%b1%bb%e7%9a%84%e6%95%b0%e9%87%8f%e3%80%82%0a%e4%bb%a3%e7%a0%81%e5%b1%95%e7%a4%ba%20%e6%89%a7%e8%a1%8c%e4%b8%80%e4%ba%9b%e5%a4%8d%e6%9d%82%e6%93%8d%e4%bd%9c%e9%9c%80%e8%a6%81%e4%b8%80%e6%ad%a5%e6%ad%a5%e6%89%a7%e8%a1%8c%e8%ae%b8%e5%a4%9a%e5%b0%8f%e6%93%8d%e4%bd%9c%ef%bc%8c%e9%82%a3%e4%b9%88%e5%8f%af%e4%bb%a5%e5%b0%86%e5%a4%8d%e6%9d%82%e6%93%8d%e4%bd%9c%e5%b0%81%e8%a3%85%e4%b8%ba%e4%b8%80%e4%b8%aa%e9%ab%98%e5%b1%82%e7%b1%bb%e4%b8%ad%e7%9a%84%e6%96%b9%e6%b3%95%ef%bc%8c%e5%b0%86%e6%89%80%e6%9c%89%e5%a4%8d%e6%9d%82%e6%93%8d%e4%bd%9c%e9%9c%80%e8%a6%81%e7%94%a8%e5%88%b0%e7%9a%84%e7%b1%bb%e4%bd%9c%e4%b8%ba%e9%ab%98%e5%b1%82%e7%b1%bb%e7%9a%84%e6%88%90%e5%91%98%ef%bc%8c%e5%9c%a8%e5%a4%8d%e6%9d%82%e6%93%8d%e4%bd%9c%e7%9a%84%e6%96%b9%e6%b3%95%e4%b8%ad%e5%8f%af%e4%bb%a5%e6%96%b9%e4%be%bf%e7%9a%84%e8%b0%83%e7%94%a8%e5%90%84%e4%b8%aa%e7%b1%bb%e6%89%a7%e8%a1%8c%e5%90%84%e8%87%aa%e7%9a%84%e5%8a%9f%e8%83%bd%e3%80%82%0a%e4%b8%8b%e9%9d%a2%e6%98%af%e4%b8%80%e4%b8%aa%e5%ae%b6%e5%ba%ad%e5%bd%b1%e9%99%a2%e7%9a%84%e4%be%8b%e5%ad%90%ef%bc%9a%0a1public%20class%20HomeTheaterFacade%20%7b%202%09Amplifier%20amp%3b%203%09Tuner%20tuner%3b%204%09StreamingPlayer%20player%3b%205%09CdPlayer%20cd%3b%206%09Projector%20projector%3b%207%09TheaterLights%20lights%3b%208%09Screen%20screen%3b%209%09PopcornPopper%20popper%3b%2010%2011%09public%20HomeTheaterFacade%28Amplifier%20amp%2c%2012%09Tuner%20tuner%2c%2013%09StreamingPlayer%20player%2c%2014%09Projector%20projector%2c%2015%09Screen%20screen%2c%2016%09TheaterLights%20lights%2c%2017%09PopcornPopper%20popper%29%20%7b%2018%2019%09this.amp%20%3d%20amp%3b%2020%09this.tuner%20%3d%20tuner%3b%2021%09this." aria-label="Tumblr">
+    <a
+      class="icon"
+      href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fappearance-mode%2f&name=%e5%a4%96%e8%a7%82%e6%a8%a1%e5%bc%8f&description=%e5%a4%96%e8%a7%82%e6%a8%a1%e5%bc%8f%20%e5%ae%9a%e4%b9%89%20%e5%a4%96%e8%a7%82%e6%a8%a1%e5%bc%8f%e6%8f%90%e4%be%9b%e4%ba%86%e4%b8%80%e4%b8%aa%e7%bb%9f%e4%b8%80%e7%9a%84%e6%8e%a5%e5%8f%a3%ef%bc%8c%e7%94%a8%e6%9d%a5%e8%ae%bf%e9%97%ae%e5%ad%90%e7%b3%bb%e7%bb%9f%e4%b8%ad%e7%9a%84%e4%b8%80%e7%be%a4%e6%8e%a5%e5%8f%a3%ef%bc%8c%e5%a4%96%e8%a7%82%e5%ae%9a%e4%b9%89%e4%ba%86%e4%b8%80%e4%b8%aa%e9%ab%98%e5%b1%82%e6%8e%a5%e5%8f%a3%ef%bc%8c%e8%ae%a9%e5%ad%90%e7%b3%bb%e7%bb%9f%e6%9b%b4%e5%ae%b9%e6%98%93%e4%bd%bf%e7%94%a8%e3%80%82%0a%e2%80%9c%e6%9c%80%e5%b0%91%e7%9f%a5%e8%af%86%e2%80%9d%e5%8e%9f%e5%88%99%20%e5%87%8f%e5%b0%91%e5%af%b9%e8%b1%a1%e4%b9%8b%e9%97%b4%e7%9a%84%e4%ba%a4%e4%ba%92%ef%bc%8c%e5%8f%aa%e5%92%8c%e2%80%9c%e5%af%86%e5%8f%8b%e2%80%9d%e8%b0%88%e8%af%9d%ef%bc%8c%e4%b9%9f%e5%b0%b1%e6%98%af%e5%87%8f%e5%b0%91%e4%b8%80%e4%b8%aa%e7%b1%bb%e6%89%80%e4%ba%a4%e4%ba%92%e7%9a%84%e7%b1%bb%e7%9a%84%e6%95%b0%e9%87%8f%e3%80%82%0a%e4%bb%a3%e7%a0%81%e5%b1%95%e7%a4%ba%20%e6%89%a7%e8%a1%8c%e4%b8%80%e4%ba%9b%e5%a4%8d%e6%9d%82%e6%93%8d%e4%bd%9c%e9%9c%80%e8%a6%81%e4%b8%80%e6%ad%a5%e6%ad%a5%e6%89%a7%e8%a1%8c%e8%ae%b8%e5%a4%9a%e5%b0%8f%e6%93%8d%e4%bd%9c%ef%bc%8c%e9%82%a3%e4%b9%88%e5%8f%af%e4%bb%a5%e5%b0%86%e5%a4%8d%e6%9d%82%e6%93%8d%e4%bd%9c%e5%b0%81%e8%a3%85%e4%b8%ba%e4%b8%80%e4%b8%aa%e9%ab%98%e5%b1%82%e7%b1%bb%e4%b8%ad%e7%9a%84%e6%96%b9%e6%b3%95%ef%bc%8c%e5%b0%86%e6%89%80%e6%9c%89%e5%a4%8d%e6%9d%82%e6%93%8d%e4%bd%9c%e9%9c%80%e8%a6%81%e7%94%a8%e5%88%b0%e7%9a%84%e7%b1%bb%e4%bd%9c%e4%b8%ba%e9%ab%98%e5%b1%82%e7%b1%bb%e7%9a%84%e6%88%90%e5%91%98%ef%bc%8c%e5%9c%a8%e5%a4%8d%e6%9d%82%e6%93%8d%e4%bd%9c%e7%9a%84%e6%96%b9%e6%b3%95%e4%b8%ad%e5%8f%af%e4%bb%a5%e6%96%b9%e4%be%bf%e7%9a%84%e8%b0%83%e7%94%a8%e5%90%84%e4%b8%aa%e7%b1%bb%e6%89%a7%e8%a1%8c%e5%90%84%e8%87%aa%e7%9a%84%e5%8a%9f%e8%83%bd%e3%80%82%0a%e4%b8%8b%e9%9d%a2%e6%98%af%e4%b8%80%e4%b8%aa%e5%ae%b6%e5%ba%ad%e5%bd%b1%e9%99%a2%e7%9a%84%e4%be%8b%e5%ad%90%ef%bc%9a%0a1public%20class%20HomeTheaterFacade%20%7b%202%09Amplifier%20amp%3b%203%09Tuner%20tuner%3b%204%09StreamingPlayer%20player%3b%205%09CdPlayer%20cd%3b%206%09Projector%20projector%3b%207%09TheaterLights%20lights%3b%208%09Screen%20screen%3b%209%09PopcornPopper%20popper%3b%2010%2011%09public%20HomeTheaterFacade%28Amplifier%20amp%2c%2012%09Tuner%20tuner%2c%2013%09StreamingPlayer%20player%2c%2014%09Projector%20projector%2c%2015%09Screen%20screen%2c%2016%09TheaterLights%20lights%2c%2017%09PopcornPopper%20popper%29%20%7b%2018%2019%09this.amp%20%3d%20amp%3b%2020%09this.tuner%20%3d%20tuner%3b%2021%09this."
+      aria-label="Tumblr"
+    >
       <i class="fab fa-tumblr " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fappearance-mode%2f&t=%e5%a4%96%e8%a7%82%e6%a8%a1%e5%bc%8f" aria-label="Hacker News">
-      <i class="fab fa-hacker-news " aria-hidden="true"></i>
     </a>
   </li>
 </ul>
 
     </div>
     
-    <div id="toc">
-      <nav id="TableOfContents">
+      <div id="toc">
+        <nav id="TableOfContents">
   <ul>
     <li><a href="#外观模式">外观模式</a>
       <ul>
@@ -205,56 +228,73 @@
     </li>
   </ul>
 </nav>
-    </div>
+      </div>
     
   </span>
 </div>
-  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-    <header>
-      <h1 class="posttitle" itemprop="name headline">
-        外观模式
-      </h1>
-      <div class="meta">
-        
-        <div class="postdate">
-          
-          <time datetime="2022-08-23 16:20:06 &#43;0800 CST" itemprop="datePublished">2022-08-23</time>
-          
-        </div>
-        
-        
-        <div class="article-read-time">
-          <i class="far fa-clock"></i>
-          
-          2 minute read
-        </div>
-        
-        
-        <div class="article-category">
-            <i class="fas fa-archive"></i>
+
+      <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <header>
+          <h1 class="posttitle" itemprop="name headline">
+            外观模式
+          </h1>
+          <div class="meta">
+            
+            <div class="postdate">
+              
+              <time datetime="2022-08-23 16:20:06 &#43;0800 CST" itemprop="datePublished"
+                >2022-08-23</time
+              >
+              
+            </div>
             
             
-            <a class="category-link" href="/categories/language">Language</a>
+              <div class="article-read-time">
+                <i class="far fa-clock"></i>
+                
+                2 minute read
+              </div>
             
-        </div>
+            
+              <div class="article-category">
+                <i class="fas fa-archive"></i>
+                
+                  
+                  <a
+                    class="category-link"
+                    href="/categories/language"
+                    >Language</a
+                  >
+                
+              </div>
+            
+            
+              <div class="article-tag">
+                <i class="fas fa-tag"></i>
+                
+                  
+                  <a
+                    class="tag-link"
+                    href="/tags/design"
+                    rel="tag"
+                    >design</a
+                  >
+                
+                  , 
+                  <a
+                    class="tag-link"
+                    href="/tags/java"
+                    rel="tag"
+                    >java</a
+                  >
+                
+              </div>
+            
+          </div>
+        </header>
         
-        
-        <div class="article-tag">
-            <i class="fas fa-tag"></i>
-            
-            
-            <a class="tag-link" href="/tags/design" rel="tag">design</a>
-            
-             ,  
-            <a class="tag-link" href="/tags/java" rel="tag">java</a>
-            
-        </div>
-        
-      </div>
-    </header>
-    
-    <div class="content" itemprop="articleBody">
-      <h2 id="外观模式">外观模式</h2>
+        <div class="content" itemprop="articleBody">
+          <h2 id="外观模式">外观模式</h2>
 <h3 id="定义">定义</h3>
 <p>外观模式提供了一个统一的接口，用来访问子系统中的一群接口，外观定义了一个高层接口，让子系统更容易使用。</p>
 <h3 id="最少知识原则">“最少知识”原则</h3>
@@ -350,9 +390,9 @@
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>homeTheater<span style="color:#ff79c6">.</span><span style="color:#50fa7b">watchMovie</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;Raiders of the Lost Ark&#34;</span><span style="color:#ff79c6">);</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>homeTheater<span style="color:#ff79c6">.</span><span style="color:#50fa7b">endMovie</span><span style="color:#ff79c6">();</span>
 </span></span></code></pre></div>
-    </div>
-  </article>
-  
+        </div>
+      </article>
+      
   
 
 
@@ -384,16 +424,16 @@
   </div>
 
 
-    
-    <div id="fastSearch">
-      <input id="searchInput" tabindex="0"/>
-      <ul id="searchResults"></ul>
-    </div>
-  <div id="footer-post-container">
+      <div id="fastSearch">
+  <input id="searchInput" tabindex="0" />
+  <ul id="searchResults"></ul>
+</div>
+
+      <div id="footer-post-container">
   <div id="footer-post">
     
-    <div id="toc-footer" style="display: none">
-      <nav id="TableOfContents">
+      <div id="toc-footer" style="display: none">
+        <nav id="TableOfContents">
   <ul>
     <li><a href="#外观模式">外观模式</a>
       <ul>
@@ -404,19 +444,23 @@
     </li>
   </ul>
 </nav>
-    </div>
-    
+      </div>
     
     <div id="nav-footer" style="display: none">
       
-      <ul style="display:inline;"><li><a href="/">Home</a></li></ul>
+        <ul style="display:inline;">
+          <li><a href="/">Home</a></li>
+        </ul>
       
-      <ul style="display:inline;"><li><a href="/posts">Archives</a></li></ul>
+        <ul style="display:inline;">
+          <li><a href="/posts">Posts</a></li>
+        </ul>
       
-      <ul style="display:inline;"><li><a href="/about">About</a></li></ul>
+        <ul style="display:inline;">
+          <li><a href="/about">About</a></li>
+        </ul>
       
     </div>
-
     <div id="share-footer" style="display: none">
       
       <ul>
@@ -426,106 +470,169 @@
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fappearance-mode%2f" aria-label="Facebook">
+    <a
+      class="icon"
+      href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fappearance-mode%2f"
+      aria-label="Facebook"
+    >
       <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fappearance-mode%2f&text=%e5%a4%96%e8%a7%82%e6%a8%a1%e5%bc%8f" aria-label="Twitter">
+    <a
+      class="icon"
+      href="https://twitter.com/share?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fappearance-mode%2f&text=%e5%a4%96%e8%a7%82%e6%a8%a1%e5%bc%8f"
+      aria-label="Twitter"
+    >
       <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fappearance-mode%2f&title=%e5%a4%96%e8%a7%82%e6%a8%a1%e5%bc%8f" aria-label="Linkedin">
+    <a
+      class="icon"
+      href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fappearance-mode%2f&title=%e5%a4%96%e8%a7%82%e6%a8%a1%e5%bc%8f"
+      aria-label="Linkedin"
+    >
       <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fappearance-mode%2f&is_video=false&description=%e5%a4%96%e8%a7%82%e6%a8%a1%e5%bc%8f" aria-label="Pinterest">
-      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="mailto:?subject=%e5%a4%96%e8%a7%82%e6%a8%a1%e5%bc%8f&body=Check out this article: https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fappearance-mode%2f" aria-label="Email">
+    <a
+      class="icon"
+      href="mailto:?subject=%e5%a4%96%e8%a7%82%e6%a8%a1%e5%bc%8f&body=Check out this article: https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fappearance-mode%2f"
+      aria-label="Email"
+    >
       <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fappearance-mode%2f&title=%e5%a4%96%e8%a7%82%e6%a8%a1%e5%bc%8f" aria-label="Pocket">
-      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fappearance-mode%2f&title=%e5%a4%96%e8%a7%82%e6%a8%a1%e5%bc%8f" aria-label="reddit">
+    <a
+      class="icon"
+      href="http://reddit.com/submit?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fappearance-mode%2f&title=%e5%a4%96%e8%a7%82%e6%a8%a1%e5%bc%8f"
+      aria-label="reddit"
+    >
       <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fappearance-mode%2f&name=%e5%a4%96%e8%a7%82%e6%a8%a1%e5%bc%8f&description=%e5%a4%96%e8%a7%82%e6%a8%a1%e5%bc%8f%20%e5%ae%9a%e4%b9%89%20%e5%a4%96%e8%a7%82%e6%a8%a1%e5%bc%8f%e6%8f%90%e4%be%9b%e4%ba%86%e4%b8%80%e4%b8%aa%e7%bb%9f%e4%b8%80%e7%9a%84%e6%8e%a5%e5%8f%a3%ef%bc%8c%e7%94%a8%e6%9d%a5%e8%ae%bf%e9%97%ae%e5%ad%90%e7%b3%bb%e7%bb%9f%e4%b8%ad%e7%9a%84%e4%b8%80%e7%be%a4%e6%8e%a5%e5%8f%a3%ef%bc%8c%e5%a4%96%e8%a7%82%e5%ae%9a%e4%b9%89%e4%ba%86%e4%b8%80%e4%b8%aa%e9%ab%98%e5%b1%82%e6%8e%a5%e5%8f%a3%ef%bc%8c%e8%ae%a9%e5%ad%90%e7%b3%bb%e7%bb%9f%e6%9b%b4%e5%ae%b9%e6%98%93%e4%bd%bf%e7%94%a8%e3%80%82%0a%e2%80%9c%e6%9c%80%e5%b0%91%e7%9f%a5%e8%af%86%e2%80%9d%e5%8e%9f%e5%88%99%20%e5%87%8f%e5%b0%91%e5%af%b9%e8%b1%a1%e4%b9%8b%e9%97%b4%e7%9a%84%e4%ba%a4%e4%ba%92%ef%bc%8c%e5%8f%aa%e5%92%8c%e2%80%9c%e5%af%86%e5%8f%8b%e2%80%9d%e8%b0%88%e8%af%9d%ef%bc%8c%e4%b9%9f%e5%b0%b1%e6%98%af%e5%87%8f%e5%b0%91%e4%b8%80%e4%b8%aa%e7%b1%bb%e6%89%80%e4%ba%a4%e4%ba%92%e7%9a%84%e7%b1%bb%e7%9a%84%e6%95%b0%e9%87%8f%e3%80%82%0a%e4%bb%a3%e7%a0%81%e5%b1%95%e7%a4%ba%20%e6%89%a7%e8%a1%8c%e4%b8%80%e4%ba%9b%e5%a4%8d%e6%9d%82%e6%93%8d%e4%bd%9c%e9%9c%80%e8%a6%81%e4%b8%80%e6%ad%a5%e6%ad%a5%e6%89%a7%e8%a1%8c%e8%ae%b8%e5%a4%9a%e5%b0%8f%e6%93%8d%e4%bd%9c%ef%bc%8c%e9%82%a3%e4%b9%88%e5%8f%af%e4%bb%a5%e5%b0%86%e5%a4%8d%e6%9d%82%e6%93%8d%e4%bd%9c%e5%b0%81%e8%a3%85%e4%b8%ba%e4%b8%80%e4%b8%aa%e9%ab%98%e5%b1%82%e7%b1%bb%e4%b8%ad%e7%9a%84%e6%96%b9%e6%b3%95%ef%bc%8c%e5%b0%86%e6%89%80%e6%9c%89%e5%a4%8d%e6%9d%82%e6%93%8d%e4%bd%9c%e9%9c%80%e8%a6%81%e7%94%a8%e5%88%b0%e7%9a%84%e7%b1%bb%e4%bd%9c%e4%b8%ba%e9%ab%98%e5%b1%82%e7%b1%bb%e7%9a%84%e6%88%90%e5%91%98%ef%bc%8c%e5%9c%a8%e5%a4%8d%e6%9d%82%e6%93%8d%e4%bd%9c%e7%9a%84%e6%96%b9%e6%b3%95%e4%b8%ad%e5%8f%af%e4%bb%a5%e6%96%b9%e4%be%bf%e7%9a%84%e8%b0%83%e7%94%a8%e5%90%84%e4%b8%aa%e7%b1%bb%e6%89%a7%e8%a1%8c%e5%90%84%e8%87%aa%e7%9a%84%e5%8a%9f%e8%83%bd%e3%80%82%0a%e4%b8%8b%e9%9d%a2%e6%98%af%e4%b8%80%e4%b8%aa%e5%ae%b6%e5%ba%ad%e5%bd%b1%e9%99%a2%e7%9a%84%e4%be%8b%e5%ad%90%ef%bc%9a%0a1public%20class%20HomeTheaterFacade%20%7b%202%09Amplifier%20amp%3b%203%09Tuner%20tuner%3b%204%09StreamingPlayer%20player%3b%205%09CdPlayer%20cd%3b%206%09Projector%20projector%3b%207%09TheaterLights%20lights%3b%208%09Screen%20screen%3b%209%09PopcornPopper%20popper%3b%2010%2011%09public%20HomeTheaterFacade%28Amplifier%20amp%2c%2012%09Tuner%20tuner%2c%2013%09StreamingPlayer%20player%2c%2014%09Projector%20projector%2c%2015%09Screen%20screen%2c%2016%09TheaterLights%20lights%2c%2017%09PopcornPopper%20popper%29%20%7b%2018%2019%09this.amp%20%3d%20amp%3b%2020%09this.tuner%20%3d%20tuner%3b%2021%09this." aria-label="Tumblr">
+    <a
+      class="icon"
+      href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fappearance-mode%2f&name=%e5%a4%96%e8%a7%82%e6%a8%a1%e5%bc%8f&description=%e5%a4%96%e8%a7%82%e6%a8%a1%e5%bc%8f%20%e5%ae%9a%e4%b9%89%20%e5%a4%96%e8%a7%82%e6%a8%a1%e5%bc%8f%e6%8f%90%e4%be%9b%e4%ba%86%e4%b8%80%e4%b8%aa%e7%bb%9f%e4%b8%80%e7%9a%84%e6%8e%a5%e5%8f%a3%ef%bc%8c%e7%94%a8%e6%9d%a5%e8%ae%bf%e9%97%ae%e5%ad%90%e7%b3%bb%e7%bb%9f%e4%b8%ad%e7%9a%84%e4%b8%80%e7%be%a4%e6%8e%a5%e5%8f%a3%ef%bc%8c%e5%a4%96%e8%a7%82%e5%ae%9a%e4%b9%89%e4%ba%86%e4%b8%80%e4%b8%aa%e9%ab%98%e5%b1%82%e6%8e%a5%e5%8f%a3%ef%bc%8c%e8%ae%a9%e5%ad%90%e7%b3%bb%e7%bb%9f%e6%9b%b4%e5%ae%b9%e6%98%93%e4%bd%bf%e7%94%a8%e3%80%82%0a%e2%80%9c%e6%9c%80%e5%b0%91%e7%9f%a5%e8%af%86%e2%80%9d%e5%8e%9f%e5%88%99%20%e5%87%8f%e5%b0%91%e5%af%b9%e8%b1%a1%e4%b9%8b%e9%97%b4%e7%9a%84%e4%ba%a4%e4%ba%92%ef%bc%8c%e5%8f%aa%e5%92%8c%e2%80%9c%e5%af%86%e5%8f%8b%e2%80%9d%e8%b0%88%e8%af%9d%ef%bc%8c%e4%b9%9f%e5%b0%b1%e6%98%af%e5%87%8f%e5%b0%91%e4%b8%80%e4%b8%aa%e7%b1%bb%e6%89%80%e4%ba%a4%e4%ba%92%e7%9a%84%e7%b1%bb%e7%9a%84%e6%95%b0%e9%87%8f%e3%80%82%0a%e4%bb%a3%e7%a0%81%e5%b1%95%e7%a4%ba%20%e6%89%a7%e8%a1%8c%e4%b8%80%e4%ba%9b%e5%a4%8d%e6%9d%82%e6%93%8d%e4%bd%9c%e9%9c%80%e8%a6%81%e4%b8%80%e6%ad%a5%e6%ad%a5%e6%89%a7%e8%a1%8c%e8%ae%b8%e5%a4%9a%e5%b0%8f%e6%93%8d%e4%bd%9c%ef%bc%8c%e9%82%a3%e4%b9%88%e5%8f%af%e4%bb%a5%e5%b0%86%e5%a4%8d%e6%9d%82%e6%93%8d%e4%bd%9c%e5%b0%81%e8%a3%85%e4%b8%ba%e4%b8%80%e4%b8%aa%e9%ab%98%e5%b1%82%e7%b1%bb%e4%b8%ad%e7%9a%84%e6%96%b9%e6%b3%95%ef%bc%8c%e5%b0%86%e6%89%80%e6%9c%89%e5%a4%8d%e6%9d%82%e6%93%8d%e4%bd%9c%e9%9c%80%e8%a6%81%e7%94%a8%e5%88%b0%e7%9a%84%e7%b1%bb%e4%bd%9c%e4%b8%ba%e9%ab%98%e5%b1%82%e7%b1%bb%e7%9a%84%e6%88%90%e5%91%98%ef%bc%8c%e5%9c%a8%e5%a4%8d%e6%9d%82%e6%93%8d%e4%bd%9c%e7%9a%84%e6%96%b9%e6%b3%95%e4%b8%ad%e5%8f%af%e4%bb%a5%e6%96%b9%e4%be%bf%e7%9a%84%e8%b0%83%e7%94%a8%e5%90%84%e4%b8%aa%e7%b1%bb%e6%89%a7%e8%a1%8c%e5%90%84%e8%87%aa%e7%9a%84%e5%8a%9f%e8%83%bd%e3%80%82%0a%e4%b8%8b%e9%9d%a2%e6%98%af%e4%b8%80%e4%b8%aa%e5%ae%b6%e5%ba%ad%e5%bd%b1%e9%99%a2%e7%9a%84%e4%be%8b%e5%ad%90%ef%bc%9a%0a1public%20class%20HomeTheaterFacade%20%7b%202%09Amplifier%20amp%3b%203%09Tuner%20tuner%3b%204%09StreamingPlayer%20player%3b%205%09CdPlayer%20cd%3b%206%09Projector%20projector%3b%207%09TheaterLights%20lights%3b%208%09Screen%20screen%3b%209%09PopcornPopper%20popper%3b%2010%2011%09public%20HomeTheaterFacade%28Amplifier%20amp%2c%2012%09Tuner%20tuner%2c%2013%09StreamingPlayer%20player%2c%2014%09Projector%20projector%2c%2015%09Screen%20screen%2c%2016%09TheaterLights%20lights%2c%2017%09PopcornPopper%20popper%29%20%7b%2018%2019%09this.amp%20%3d%20amp%3b%2020%09this.tuner%20%3d%20tuner%3b%2021%09this."
+      aria-label="Tumblr"
+    >
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fappearance-mode%2f&t=%e5%a4%96%e8%a7%82%e6%a8%a1%e5%bc%8f" aria-label="Hacker News">
-      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
     </a>
   </li>
 </ul>
 
     </div>
-
     <div id="actions-footer">
-        <a id="menu-toggle" class="icon-mobile-nav" href="#" onclick="$('#nav-footer').show();$('#toc-footer').hide();$('#share-footer').hide();return false;" aria-label="Menu">
-          <i class="fas fa-bars fa-lg" aria-hidden="true"></i></a>
-
-        
-        <a id="toc-toggle"class="icon-mobile-nav"  href="#" onclick="$('#toc-footer').show();$('#nav-footer').hide();$('#share-footer').hide();return false;" aria-label="TOC">
-          <i class="fas fa-list fa-lg" aria-hidden="true"></i></a>
-        
-
-        <a id="top" class="icon-mobile-nav" style="display:none" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
-          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i></a>
-
-        <a id="searchBtn1" class="icon-mobile-nav"  href="#" aria-label="Search">
-          <i class="fa fa-search fa-lg" aria-hidden="true"></i></a>
-
-        <a id="theme-change" class="icon-mobile-nav"><i class="fas fa-adjust fa-lg"></i></a>
-
-        <a id="share-toggle" class="icon-mobile-nav"  href="#" onclick="$('#share-footer').show();$('#toc-footer').hide();$('#nav-footer').hide();return false;" aria-label="Share">
-          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i></a>
+      
+      
+        <a
+          class="icon-mobile-nav"
+          href="https://akynazh.site/posts/2022/08/adapter-mode/"
+          aria-label="Previous"
+        >
+          <i class="fas fa-chevron-left fa-lg" aria-hidden="true"></i>
+        </a>
+      
+      
+      <a
+        id="menu-toggle"
+        class="icon-mobile-nav"
+        href="#"
+        onclick="$('#nav-footer').show();$('#toc-footer').hide();$('#share-footer').hide();return false;"
+        aria-label="Menu"
+      >
+        <i class="fas fa-bars fa-lg" aria-hidden="true"></i
+      ></a>
+      
+      
+        <a
+          id="toc-toggle"
+          class="icon-mobile-nav"
+          href="#"
+          onclick="$('#toc-footer').show();$('#nav-footer').hide();$('#share-footer').hide();return false;"
+          aria-label="TOC"
+        >
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i
+        ></a>
+      
+      
+      <a
+        id="top"
+        class="icon-mobile-nav"
+        style="display:none"
+        href="#"
+        onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"
+        aria-label="Top of Page"
+      >
+        <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i
+      ></a>
+      
+      <a id="searchBtn1" class="icon-mobile-nav" href="#" aria-label="Search">
+        <i class="fa fa-search fa-lg" aria-hidden="true"></i
+      ></a>
+      
+      <a id="theme-change" class="icon-mobile-nav"
+        ><i class="fas fa-adjust fa-lg"></i
+      ></a>
+      
+      <a
+        id="share-toggle"
+        class="icon-mobile-nav"
+        href="#"
+        onclick="$('#share-footer').show();$('#toc-footer').hide();$('#nav-footer').hide();return false;"
+        aria-label="Share"
+      >
+        <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i
+      ></a>
+      
+      
+        <a class="icon" href="https://akynazh.site/posts/2022/08/template-method-mode/" aria-label="Next">
+          <i class="fas fa-chevron-right fa-lg" aria-hidden="true"></i>
+        </a>
+      
     </div>
-
   </div>
 </div>
 
-  <footer id="footer">
+      <footer id="footer">
   <div class="footer-left">
-    Copyright  &copy; 2023  Jzh 
-    | <a href="https://beian.miit.gov.cn/" style="text-decoration:none;">陕ICP备2022007986号-1</a>
+    Copyright &copy;
+    2023
+    
+      Jzh
+    
+    |
+    <a href="https://beian.miit.gov.cn/" style="text-decoration:none;"
+      >陕ICP备2022007986号-1</a
+    >
   </div>
   <div class="footer-right">
     <nav>
       <ul>
-         
-        <li><a href="/">Home</a></li>
-         
-        <li><a href="/posts">Archives</a></li>
-         
-        <li><a href="/about">About</a></li>
+        
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/posts">Posts</a></li>
+        
+          <li><a href="/about">About</a></li>
         
       </ul>
     </nav>
   </div>
 </footer>
-  </div>
-</body>
-<script src="/js/fuse.min.js"></script>
-<script src="/js/fastsearch.js"></script>
-<script src="/js/jquery.min.js"></script>
-<script src="/js/main.js"></script>
 
-
-
-
-
+    </div>
+  </body>
+  <script src="/js/main.js"></script>
+  <script src="/js/fuse.min.js"></script>
+  <script src="/js/fastsearch.js"></script>
+  
+  
+  
+  
+  
 </html>

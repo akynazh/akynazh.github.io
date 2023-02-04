@@ -85,7 +85,8 @@ if (searchBtn) {
 }
 
 searchBtn1 = document.getElementById("searchBtn1");
-if (searchBtn1) { // checks for null and undefined
+if (searchBtn1) {
+  // checks for null and undefined
   searchBtn1.onclick = function (e) {
     $("#menu").css("visibility", "hidden");
     doSearch(e);

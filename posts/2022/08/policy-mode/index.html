@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title> 策略模式 | Norwegian Wood</title>
-  <link rel='canonical' href='https://akynazh.site/posts/2022/08/policy-mode/'>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="all,follow">
-  <meta name="googlebot" content="index,follow,snippet,archive">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>策略模式 |Norwegian Wood</title>
+  <link rel="canonical" href="https://akynazh.site/posts/2022/08/policy-mode/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="all,follow" />
+  <meta name="googlebot" content="index,follow,snippet,archive" />
   <meta property="og:title" content="策略模式" />
 <meta property="og:description" content="定义 策略模式定义了算法族，分别封装起来，让它们之间可以互相替换，此模式让算法的变化独立于使用算法的客户。
 比如对于鸭子而言，不同鸭子的叫声方式可能不一样也可能一样，我们可以定义一个叫声行为接口，然后通过创建不同的叫声行为实现这个接口，在实例化鸭子时设定叫声行为即可。
@@ -36,112 +36,126 @@
 
   
   
-  
+
   
   
 
   
   
   
-    <input value="light" id="theme-current" style="display: none;">
+    <input value="light" id="theme-current" style="display: none;" />
+    <link id="theme" rel="stylesheet" href="https://akynazh.site/css/styles_light.css" />
   
-  <input value="https://akynazh.site/css/styles_dark.css" id="styles-dark" style="display: none;">
-  <input value="https://akynazh.site/css/styles_light.css" id="styles-light" style="display: none;">
+  <input value="https://akynazh.site/css/styles_dark.css" id="styles-dark" style="display: none;" />
+  <input value="https://akynazh.site/css/styles_light.css" id="styles-light" style="display: none;" />
 
-  <input value="1" id="set-snow" style="display: none;">
-
-  <link id="theme" rel="stylesheet" href="">
-  <script src="/js/jquery.min.js"></script>
+  <input value="1" id="set-snow" style="display: none;" />
+  
   <script src="/js/snow.js"></script>
   <script src="/js/theme.js"></script>
-  <script>
-    theme = getCurrentTheme();
-    setTheme(theme);
-    setSnow = document.getElementById("set-snow").value;
-    if (theme === "dark" && setSnow === "1") {
-      startSnow()
-    }
-  </script>
+  <script src="/js/jquery.min.js"></script>
 
   
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  />
 
   
-  <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+
+
   
 
-  <link rel="shortcut icon" href="/favicon.png" type="image/png" />
-<link rel="icon" href="/favicon.png" type="image/png" />
-
-  
-  
   
 </head>
-<body class="max-width-blog mx-auto px3 ltr">
-  <div class="content index py4">
-  <div id="header-post">
+
+  <body class="max-width-blog mx-auto px3 ltr">
+    <div class="content index py4">
+      <div id="header-post">
   <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
-  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <a
+    id="top-icon-tablet"
+    href="#"
+    onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"
+    style="display:none;"
+    aria-label="Top of Page"
+    ><i class="fas fa-chevron-up fa-lg"></i
+  ></a>
   <span id="menu">
     <span id="nav">
       <ul>
-         
-        <li><a href="/">Home</a></li>
-         
-        <li><a href="/posts">Archives</a></li>
-         
-        <li><a href="/about">About</a></li>
+        
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/posts">Posts</a></li>
+        
+          <li><a href="/about">About</a></li>
         
       </ul>
     </span>
-    <br/>
+    <br />
     <span id="actions">
       <ul>
         
-        <li>
-          <a class="icon" href="https://akynazh.site/posts/2022/08/proxy-pattern/" aria-label="Previous">
-            <i class="fas fa-chevron-left" aria-hidden="true"></i>
-          </a>
-        </li>
+        
+          <li>
+            <a class="icon" href="https://akynazh.site/posts/2022/08/proxy-pattern/" aria-label="Previous">
+              <i class="fas fa-chevron-left" aria-hidden="true"></i>
+            </a>
+          </li>
+        
+        
+        
+          <li>
+            <a class="icon" href="https://akynazh.site/posts/2022/09/1q84book1-excerpt/" aria-label="Next">
+              <i class="fas fa-chevron-right" aria-hidden="true"></i>
+            </a>
+          </li>
         
         
         <li>
-          <a class="icon" href="https://akynazh.site/posts/2022/09/1q84book1-excerpt/" aria-label="Next">
-            <i class="fas fa-chevron-right" aria-hidden="true"></i>
-          </a>
-        </li>
-        
-        <li>
-          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <a
+            class="icon"
+            href="#"
+            onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"
+            aria-label="Top of Page"
+          >
             <i class="fas fa-chevron-up" aria-hidden="true"></i>
           </a>
         </li>
+        
         <li>
           <a class="icon" href="#" aria-label="Search" id="searchBtn">
             <i class="fa fa-search" aria-hidden="true"></i>
           </a>
         </li>
+        
         <li>
           <a class="icon" id="theme-change"><i class="fas fa-adjust"></i></a>
         </li>
+        
         <li>
-          <a class="icon" href="#" aria-label="Share" onclick="$('#share').toggle();return false;">
+          <a
+            class="icon"
+            href="#"
+            aria-label="Share"
+            onclick="$('#share').toggle();return false;"
+          >
             <i class="fas fa-share-alt" aria-hidden="true"></i>
           </a>
         </li>
       </ul>
-      <span id="i-prev" class="info" style="display:none;">Previous post</span>
-      <span id="i-prev" class="info" style="display:none;">Previous post</span>
-      <span id="i-next" class="info" style="display:none;">Next post</span>
-      <span id="i-top" class="info" style="display:none;">Back to top</span>
-      <span id="i-search" class="info" style="display:none;">Search</span>
-      <span id="i-share" class="info" style="display:none;">Share post</span>
     </span>
-    <br/>
+    <br />
     <div id="share" style="display: none">
       
       <ul>
@@ -151,56 +165,65 @@
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fpolicy-mode%2f" aria-label="Facebook">
+    <a
+      class="icon"
+      href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fpolicy-mode%2f"
+      aria-label="Facebook"
+    >
       <i class="fab fa-facebook " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fpolicy-mode%2f&text=%e7%ad%96%e7%95%a5%e6%a8%a1%e5%bc%8f" aria-label="Twitter">
+    <a
+      class="icon"
+      href="https://twitter.com/share?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fpolicy-mode%2f&text=%e7%ad%96%e7%95%a5%e6%a8%a1%e5%bc%8f"
+      aria-label="Twitter"
+    >
       <i class="fab fa-twitter " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fpolicy-mode%2f&title=%e7%ad%96%e7%95%a5%e6%a8%a1%e5%bc%8f" aria-label="Linkedin">
+    <a
+      class="icon"
+      href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fpolicy-mode%2f&title=%e7%ad%96%e7%95%a5%e6%a8%a1%e5%bc%8f"
+      aria-label="Linkedin"
+    >
       <i class="fab fa-linkedin " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fpolicy-mode%2f&is_video=false&description=%e7%ad%96%e7%95%a5%e6%a8%a1%e5%bc%8f" aria-label="Pinterest">
-      <i class="fab fa-pinterest " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="mailto:?subject=%e7%ad%96%e7%95%a5%e6%a8%a1%e5%bc%8f&body=Check out this article: https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fpolicy-mode%2f" aria-label="Email">
+    <a
+      class="icon"
+      href="mailto:?subject=%e7%ad%96%e7%95%a5%e6%a8%a1%e5%bc%8f&body=Check out this article: https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fpolicy-mode%2f"
+      aria-label="Email"
+    >
       <i class="fas fa-envelope " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fpolicy-mode%2f&title=%e7%ad%96%e7%95%a5%e6%a8%a1%e5%bc%8f" aria-label="Pocket">
-      <i class="fab fa-get-pocket " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fpolicy-mode%2f&title=%e7%ad%96%e7%95%a5%e6%a8%a1%e5%bc%8f" aria-label="reddit">
+    <a
+      class="icon"
+      href="http://reddit.com/submit?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fpolicy-mode%2f&title=%e7%ad%96%e7%95%a5%e6%a8%a1%e5%bc%8f"
+      aria-label="reddit"
+    >
       <i class="fab fa-reddit " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fpolicy-mode%2f&name=%e7%ad%96%e7%95%a5%e6%a8%a1%e5%bc%8f&description=%e5%ae%9a%e4%b9%89%20%e7%ad%96%e7%95%a5%e6%a8%a1%e5%bc%8f%e5%ae%9a%e4%b9%89%e4%ba%86%e7%ae%97%e6%b3%95%e6%97%8f%ef%bc%8c%e5%88%86%e5%88%ab%e5%b0%81%e8%a3%85%e8%b5%b7%e6%9d%a5%ef%bc%8c%e8%ae%a9%e5%ae%83%e4%bb%ac%e4%b9%8b%e9%97%b4%e5%8f%af%e4%bb%a5%e4%ba%92%e7%9b%b8%e6%9b%bf%e6%8d%a2%ef%bc%8c%e6%ad%a4%e6%a8%a1%e5%bc%8f%e8%ae%a9%e7%ae%97%e6%b3%95%e7%9a%84%e5%8f%98%e5%8c%96%e7%8b%ac%e7%ab%8b%e4%ba%8e%e4%bd%bf%e7%94%a8%e7%ae%97%e6%b3%95%e7%9a%84%e5%ae%a2%e6%88%b7%e3%80%82%0a%e6%af%94%e5%a6%82%e5%af%b9%e4%ba%8e%e9%b8%ad%e5%ad%90%e8%80%8c%e8%a8%80%ef%bc%8c%e4%b8%8d%e5%90%8c%e9%b8%ad%e5%ad%90%e7%9a%84%e5%8f%ab%e5%a3%b0%e6%96%b9%e5%bc%8f%e5%8f%af%e8%83%bd%e4%b8%8d%e4%b8%80%e6%a0%b7%e4%b9%9f%e5%8f%af%e8%83%bd%e4%b8%80%e6%a0%b7%ef%bc%8c%e6%88%91%e4%bb%ac%e5%8f%af%e4%bb%a5%e5%ae%9a%e4%b9%89%e4%b8%80%e4%b8%aa%e5%8f%ab%e5%a3%b0%e8%a1%8c%e4%b8%ba%e6%8e%a5%e5%8f%a3%ef%bc%8c%e7%84%b6%e5%90%8e%e9%80%9a%e8%bf%87%e5%88%9b%e5%bb%ba%e4%b8%8d%e5%90%8c%e7%9a%84%e5%8f%ab%e5%a3%b0%e8%a1%8c%e4%b8%ba%e5%ae%9e%e7%8e%b0%e8%bf%99%e4%b8%aa%e6%8e%a5%e5%8f%a3%ef%bc%8c%e5%9c%a8%e5%ae%9e%e4%be%8b%e5%8c%96%e9%b8%ad%e5%ad%90%e6%97%b6%e8%ae%be%e5%ae%9a%e5%8f%ab%e5%a3%b0%e8%a1%8c%e4%b8%ba%e5%8d%b3%e5%8f%af%e3%80%82%0a%e8%bf%99%e6%a0%b7%e7%9b%b8%e6%af%94%e4%ba%8e%e7%9b%b4%e6%8e%a5%e7%bb%a7%e6%89%bf%e6%8a%bd%e8%b1%a1%e9%b8%ad%e5%ad%90%e5%90%8e%e9%87%8d%e5%86%99%e5%8f%ab%e5%a3%b0%e8%a1%8c%e4%b8%ba%e6%96%b9%e6%b3%95%ef%bc%8c%e5%a5%bd%e5%a4%84%e6%98%af%e5%87%8f%e5%b0%91%e4%ba%86%e9%87%8d%e5%a4%8d%e4%bb%a3%e7%a0%81%ef%bc%8c%e8%80%8c%e5%9d%8f%e5%a4%84%e6%98%af%e5%a2%9e%e5%8a%a0%e4%ba%86%e7%b1%bb%e7%9a%84%e6%95%b0%e9%87%8f%e3%80%82%0a%e4%bb%a3%e7%a0%81%e5%b1%95%e7%a4%ba%20%e4%b8%8b%e9%9d%a2%e5%b0%b1%e4%bb%a5%e9%b8%ad%e5%ad%90%e4%b8%ba%e4%be%8b%e8%bf%9b%e8%a1%8c%e8%af%b4%e6%98%8e%e3%80%82%0a%e4%bb%8e%e6%8e%a5%e5%8f%a3%e5%bc%80%e5%a7%8b%20%e5%ae%9a%e4%b9%89%e4%b8%80%e4%b8%aa%e5%8f%ab%e5%a3%b0%e6%8e%a5%e5%8f%a3%ef%bc%9a%ef%bc%88%e5%85%b6%e5%ae%83%e6%8e%a5%e5%8f%a3%e7%9c%81%e7%95%a5%ef%bc%89%0a1public%20interface%20QuackBehavior%20%7b%202%09public%20void%20quack%28%29%3b%203%7d%20%e5%ae%9e%e7%8e%b0%e5%8f%ab%e5%a3%b0%e6%8e%a5%e5%8f%a3%201public%20class%20MuteQuack%20implements%20QuackBehavior%20%7b%202%09public%20void%20quack%28%29%20%7b%203%09System.out.println%28%26%2334%3b%26lt%3b%26lt%3b%20Silence%20%26gt%3b%26gt%3b%26%2334%3b%29%3b%204%09%7d%205%7d%20%e5%85%b6%e5%ae%83%e6%8e%a5%e5%8f%a3%e7%9c%81%e7%95%a5%e3%80%82%0a%e5%88%9b%e5%bb%ba%e6%8a%bd%e8%b1%a1%e9%b8%ad%e5%ad%90%20%e6%af%8f%e5%8f%aa%e9%b8%ad%e5%ad%90%e9%83%bd%e6%9c%89Fly%e5%92%8cQuack%e8%bf%99%e4%b8%a4%e7%a7%8d%e8%a1%8c%e4%b8%ba%e3%80%82%0a1public%20abstract%20class%20Duck%20%7b%202%09FlyBehavior%20flyBehavior%3b%203%09QuackBehavior%20quackBehavior%3b%204%205%09public%20Duck%28%29%20%7b%206%09%7d%207%208%09public%20void%20setFlyBehavior%28FlyBehavior%20fb%29%20%7b%209%09flyBehavior%20%3d%20fb%3b%2010%09%7d%2011%2012%09public%20void%20setQuackBehavior%28QuackBehavior%20qb%29%20%7b%2013%09quackBehavior%20%3d%20qb%3b%2014%09%7d%2015%2016%09abstract%20void%20display%28%29%3b%2017%2018%09public%20void%20performFly%28%29%20%7b%2019%09flyBehavior." aria-label="Tumblr">
+    <a
+      class="icon"
+      href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fpolicy-mode%2f&name=%e7%ad%96%e7%95%a5%e6%a8%a1%e5%bc%8f&description=%e5%ae%9a%e4%b9%89%20%e7%ad%96%e7%95%a5%e6%a8%a1%e5%bc%8f%e5%ae%9a%e4%b9%89%e4%ba%86%e7%ae%97%e6%b3%95%e6%97%8f%ef%bc%8c%e5%88%86%e5%88%ab%e5%b0%81%e8%a3%85%e8%b5%b7%e6%9d%a5%ef%bc%8c%e8%ae%a9%e5%ae%83%e4%bb%ac%e4%b9%8b%e9%97%b4%e5%8f%af%e4%bb%a5%e4%ba%92%e7%9b%b8%e6%9b%bf%e6%8d%a2%ef%bc%8c%e6%ad%a4%e6%a8%a1%e5%bc%8f%e8%ae%a9%e7%ae%97%e6%b3%95%e7%9a%84%e5%8f%98%e5%8c%96%e7%8b%ac%e7%ab%8b%e4%ba%8e%e4%bd%bf%e7%94%a8%e7%ae%97%e6%b3%95%e7%9a%84%e5%ae%a2%e6%88%b7%e3%80%82%0a%e6%af%94%e5%a6%82%e5%af%b9%e4%ba%8e%e9%b8%ad%e5%ad%90%e8%80%8c%e8%a8%80%ef%bc%8c%e4%b8%8d%e5%90%8c%e9%b8%ad%e5%ad%90%e7%9a%84%e5%8f%ab%e5%a3%b0%e6%96%b9%e5%bc%8f%e5%8f%af%e8%83%bd%e4%b8%8d%e4%b8%80%e6%a0%b7%e4%b9%9f%e5%8f%af%e8%83%bd%e4%b8%80%e6%a0%b7%ef%bc%8c%e6%88%91%e4%bb%ac%e5%8f%af%e4%bb%a5%e5%ae%9a%e4%b9%89%e4%b8%80%e4%b8%aa%e5%8f%ab%e5%a3%b0%e8%a1%8c%e4%b8%ba%e6%8e%a5%e5%8f%a3%ef%bc%8c%e7%84%b6%e5%90%8e%e9%80%9a%e8%bf%87%e5%88%9b%e5%bb%ba%e4%b8%8d%e5%90%8c%e7%9a%84%e5%8f%ab%e5%a3%b0%e8%a1%8c%e4%b8%ba%e5%ae%9e%e7%8e%b0%e8%bf%99%e4%b8%aa%e6%8e%a5%e5%8f%a3%ef%bc%8c%e5%9c%a8%e5%ae%9e%e4%be%8b%e5%8c%96%e9%b8%ad%e5%ad%90%e6%97%b6%e8%ae%be%e5%ae%9a%e5%8f%ab%e5%a3%b0%e8%a1%8c%e4%b8%ba%e5%8d%b3%e5%8f%af%e3%80%82%0a%e8%bf%99%e6%a0%b7%e7%9b%b8%e6%af%94%e4%ba%8e%e7%9b%b4%e6%8e%a5%e7%bb%a7%e6%89%bf%e6%8a%bd%e8%b1%a1%e9%b8%ad%e5%ad%90%e5%90%8e%e9%87%8d%e5%86%99%e5%8f%ab%e5%a3%b0%e8%a1%8c%e4%b8%ba%e6%96%b9%e6%b3%95%ef%bc%8c%e5%a5%bd%e5%a4%84%e6%98%af%e5%87%8f%e5%b0%91%e4%ba%86%e9%87%8d%e5%a4%8d%e4%bb%a3%e7%a0%81%ef%bc%8c%e8%80%8c%e5%9d%8f%e5%a4%84%e6%98%af%e5%a2%9e%e5%8a%a0%e4%ba%86%e7%b1%bb%e7%9a%84%e6%95%b0%e9%87%8f%e3%80%82%0a%e4%bb%a3%e7%a0%81%e5%b1%95%e7%a4%ba%20%e4%b8%8b%e9%9d%a2%e5%b0%b1%e4%bb%a5%e9%b8%ad%e5%ad%90%e4%b8%ba%e4%be%8b%e8%bf%9b%e8%a1%8c%e8%af%b4%e6%98%8e%e3%80%82%0a%e4%bb%8e%e6%8e%a5%e5%8f%a3%e5%bc%80%e5%a7%8b%20%e5%ae%9a%e4%b9%89%e4%b8%80%e4%b8%aa%e5%8f%ab%e5%a3%b0%e6%8e%a5%e5%8f%a3%ef%bc%9a%ef%bc%88%e5%85%b6%e5%ae%83%e6%8e%a5%e5%8f%a3%e7%9c%81%e7%95%a5%ef%bc%89%0a1public%20interface%20QuackBehavior%20%7b%202%09public%20void%20quack%28%29%3b%203%7d%20%e5%ae%9e%e7%8e%b0%e5%8f%ab%e5%a3%b0%e6%8e%a5%e5%8f%a3%201public%20class%20MuteQuack%20implements%20QuackBehavior%20%7b%202%09public%20void%20quack%28%29%20%7b%203%09System.out.println%28%26%2334%3b%26lt%3b%26lt%3b%20Silence%20%26gt%3b%26gt%3b%26%2334%3b%29%3b%204%09%7d%205%7d%20%e5%85%b6%e5%ae%83%e6%8e%a5%e5%8f%a3%e7%9c%81%e7%95%a5%e3%80%82%0a%e5%88%9b%e5%bb%ba%e6%8a%bd%e8%b1%a1%e9%b8%ad%e5%ad%90%20%e6%af%8f%e5%8f%aa%e9%b8%ad%e5%ad%90%e9%83%bd%e6%9c%89Fly%e5%92%8cQuack%e8%bf%99%e4%b8%a4%e7%a7%8d%e8%a1%8c%e4%b8%ba%e3%80%82%0a1public%20abstract%20class%20Duck%20%7b%202%09FlyBehavior%20flyBehavior%3b%203%09QuackBehavior%20quackBehavior%3b%204%205%09public%20Duck%28%29%20%7b%206%09%7d%207%208%09public%20void%20setFlyBehavior%28FlyBehavior%20fb%29%20%7b%209%09flyBehavior%20%3d%20fb%3b%2010%09%7d%2011%2012%09public%20void%20setQuackBehavior%28QuackBehavior%20qb%29%20%7b%2013%09quackBehavior%20%3d%20qb%3b%2014%09%7d%2015%2016%09abstract%20void%20display%28%29%3b%2017%2018%09public%20void%20performFly%28%29%20%7b%2019%09flyBehavior."
+      aria-label="Tumblr"
+    >
       <i class="fab fa-tumblr " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fpolicy-mode%2f&t=%e7%ad%96%e7%95%a5%e6%a8%a1%e5%bc%8f" aria-label="Hacker News">
-      <i class="fab fa-hacker-news " aria-hidden="true"></i>
     </a>
   </li>
 </ul>
 
     </div>
     
-    <div id="toc">
-      <nav id="TableOfContents">
+      <div id="toc">
+        <nav id="TableOfContents">
   <ul>
     <li><a href="#定义">定义</a></li>
     <li><a href="#代码展示">代码展示</a>
@@ -214,56 +237,73 @@
     </li>
   </ul>
 </nav>
-    </div>
+      </div>
     
   </span>
 </div>
-  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-    <header>
-      <h1 class="posttitle" itemprop="name headline">
-        策略模式
-      </h1>
-      <div class="meta">
-        
-        <div class="postdate">
-          
-          <time datetime="2022-08-26 16:04:19 &#43;0800 CST" itemprop="datePublished">2022-08-26</time>
-          
-        </div>
-        
-        
-        <div class="article-read-time">
-          <i class="far fa-clock"></i>
-          
-          2 minute read
-        </div>
-        
-        
-        <div class="article-category">
-            <i class="fas fa-archive"></i>
+
+      <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <header>
+          <h1 class="posttitle" itemprop="name headline">
+            策略模式
+          </h1>
+          <div class="meta">
+            
+            <div class="postdate">
+              
+              <time datetime="2022-08-26 16:04:19 &#43;0800 CST" itemprop="datePublished"
+                >2022-08-26</time
+              >
+              
+            </div>
             
             
-            <a class="category-link" href="/categories/language">Language</a>
+              <div class="article-read-time">
+                <i class="far fa-clock"></i>
+                
+                2 minute read
+              </div>
             
-        </div>
+            
+              <div class="article-category">
+                <i class="fas fa-archive"></i>
+                
+                  
+                  <a
+                    class="category-link"
+                    href="/categories/language"
+                    >Language</a
+                  >
+                
+              </div>
+            
+            
+              <div class="article-tag">
+                <i class="fas fa-tag"></i>
+                
+                  
+                  <a
+                    class="tag-link"
+                    href="/tags/design"
+                    rel="tag"
+                    >design</a
+                  >
+                
+                  , 
+                  <a
+                    class="tag-link"
+                    href="/tags/java"
+                    rel="tag"
+                    >java</a
+                  >
+                
+              </div>
+            
+          </div>
+        </header>
         
-        
-        <div class="article-tag">
-            <i class="fas fa-tag"></i>
-            
-            
-            <a class="tag-link" href="/tags/design" rel="tag">design</a>
-            
-             ,  
-            <a class="tag-link" href="/tags/java" rel="tag">java</a>
-            
-        </div>
-        
-      </div>
-    </header>
-    
-    <div class="content" itemprop="articleBody">
-      <h2 id="定义">定义</h2>
+        <div class="content" itemprop="articleBody">
+          <h2 id="定义">定义</h2>
 <p>策略模式定义了算法族，分别封装起来，让它们之间可以互相替换，此模式让算法的变化独立于使用算法的客户。</p>
 <p>比如对于鸭子而言，不同鸭子的叫声方式可能不一样也可能一样，我们可以定义一个叫声行为接口，然后通过创建不同的叫声行为实现这个接口，在实例化鸭子时设定叫声行为即可。</p>
 <p>这样相比于直接继承抽象鸭子后重写叫声行为方法，好处是减少了重复代码，而坏处是增加了类的数量。</p>
@@ -335,9 +375,9 @@
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span>model<span style="color:#ff79c6">.</span><span style="color:#50fa7b">setFlyBehavior</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">new</span> FlyRocketPowered<span style="color:#ff79c6">());</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span><span>model<span style="color:#ff79c6">.</span><span style="color:#50fa7b">performFly</span><span style="color:#ff79c6">();</span>
 </span></span></code></pre></div>
-    </div>
-  </article>
-  
+        </div>
+      </article>
+      
   
 
 
@@ -369,16 +409,16 @@
   </div>
 
 
-    
-    <div id="fastSearch">
-      <input id="searchInput" tabindex="0"/>
-      <ul id="searchResults"></ul>
-    </div>
-  <div id="footer-post-container">
+      <div id="fastSearch">
+  <input id="searchInput" tabindex="0" />
+  <ul id="searchResults"></ul>
+</div>
+
+      <div id="footer-post-container">
   <div id="footer-post">
     
-    <div id="toc-footer" style="display: none">
-      <nav id="TableOfContents">
+      <div id="toc-footer" style="display: none">
+        <nav id="TableOfContents">
   <ul>
     <li><a href="#定义">定义</a></li>
     <li><a href="#代码展示">代码展示</a>
@@ -392,19 +432,23 @@
     </li>
   </ul>
 </nav>
-    </div>
-    
+      </div>
     
     <div id="nav-footer" style="display: none">
       
-      <ul style="display:inline;"><li><a href="/">Home</a></li></ul>
+        <ul style="display:inline;">
+          <li><a href="/">Home</a></li>
+        </ul>
       
-      <ul style="display:inline;"><li><a href="/posts">Archives</a></li></ul>
+        <ul style="display:inline;">
+          <li><a href="/posts">Posts</a></li>
+        </ul>
       
-      <ul style="display:inline;"><li><a href="/about">About</a></li></ul>
+        <ul style="display:inline;">
+          <li><a href="/about">About</a></li>
+        </ul>
       
     </div>
-
     <div id="share-footer" style="display: none">
       
       <ul>
@@ -414,106 +458,169 @@
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fpolicy-mode%2f" aria-label="Facebook">
+    <a
+      class="icon"
+      href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fpolicy-mode%2f"
+      aria-label="Facebook"
+    >
       <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fpolicy-mode%2f&text=%e7%ad%96%e7%95%a5%e6%a8%a1%e5%bc%8f" aria-label="Twitter">
+    <a
+      class="icon"
+      href="https://twitter.com/share?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fpolicy-mode%2f&text=%e7%ad%96%e7%95%a5%e6%a8%a1%e5%bc%8f"
+      aria-label="Twitter"
+    >
       <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fpolicy-mode%2f&title=%e7%ad%96%e7%95%a5%e6%a8%a1%e5%bc%8f" aria-label="Linkedin">
+    <a
+      class="icon"
+      href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fpolicy-mode%2f&title=%e7%ad%96%e7%95%a5%e6%a8%a1%e5%bc%8f"
+      aria-label="Linkedin"
+    >
       <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fpolicy-mode%2f&is_video=false&description=%e7%ad%96%e7%95%a5%e6%a8%a1%e5%bc%8f" aria-label="Pinterest">
-      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="mailto:?subject=%e7%ad%96%e7%95%a5%e6%a8%a1%e5%bc%8f&body=Check out this article: https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fpolicy-mode%2f" aria-label="Email">
+    <a
+      class="icon"
+      href="mailto:?subject=%e7%ad%96%e7%95%a5%e6%a8%a1%e5%bc%8f&body=Check out this article: https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fpolicy-mode%2f"
+      aria-label="Email"
+    >
       <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fpolicy-mode%2f&title=%e7%ad%96%e7%95%a5%e6%a8%a1%e5%bc%8f" aria-label="Pocket">
-      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fpolicy-mode%2f&title=%e7%ad%96%e7%95%a5%e6%a8%a1%e5%bc%8f" aria-label="reddit">
+    <a
+      class="icon"
+      href="http://reddit.com/submit?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fpolicy-mode%2f&title=%e7%ad%96%e7%95%a5%e6%a8%a1%e5%bc%8f"
+      aria-label="reddit"
+    >
       <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fpolicy-mode%2f&name=%e7%ad%96%e7%95%a5%e6%a8%a1%e5%bc%8f&description=%e5%ae%9a%e4%b9%89%20%e7%ad%96%e7%95%a5%e6%a8%a1%e5%bc%8f%e5%ae%9a%e4%b9%89%e4%ba%86%e7%ae%97%e6%b3%95%e6%97%8f%ef%bc%8c%e5%88%86%e5%88%ab%e5%b0%81%e8%a3%85%e8%b5%b7%e6%9d%a5%ef%bc%8c%e8%ae%a9%e5%ae%83%e4%bb%ac%e4%b9%8b%e9%97%b4%e5%8f%af%e4%bb%a5%e4%ba%92%e7%9b%b8%e6%9b%bf%e6%8d%a2%ef%bc%8c%e6%ad%a4%e6%a8%a1%e5%bc%8f%e8%ae%a9%e7%ae%97%e6%b3%95%e7%9a%84%e5%8f%98%e5%8c%96%e7%8b%ac%e7%ab%8b%e4%ba%8e%e4%bd%bf%e7%94%a8%e7%ae%97%e6%b3%95%e7%9a%84%e5%ae%a2%e6%88%b7%e3%80%82%0a%e6%af%94%e5%a6%82%e5%af%b9%e4%ba%8e%e9%b8%ad%e5%ad%90%e8%80%8c%e8%a8%80%ef%bc%8c%e4%b8%8d%e5%90%8c%e9%b8%ad%e5%ad%90%e7%9a%84%e5%8f%ab%e5%a3%b0%e6%96%b9%e5%bc%8f%e5%8f%af%e8%83%bd%e4%b8%8d%e4%b8%80%e6%a0%b7%e4%b9%9f%e5%8f%af%e8%83%bd%e4%b8%80%e6%a0%b7%ef%bc%8c%e6%88%91%e4%bb%ac%e5%8f%af%e4%bb%a5%e5%ae%9a%e4%b9%89%e4%b8%80%e4%b8%aa%e5%8f%ab%e5%a3%b0%e8%a1%8c%e4%b8%ba%e6%8e%a5%e5%8f%a3%ef%bc%8c%e7%84%b6%e5%90%8e%e9%80%9a%e8%bf%87%e5%88%9b%e5%bb%ba%e4%b8%8d%e5%90%8c%e7%9a%84%e5%8f%ab%e5%a3%b0%e8%a1%8c%e4%b8%ba%e5%ae%9e%e7%8e%b0%e8%bf%99%e4%b8%aa%e6%8e%a5%e5%8f%a3%ef%bc%8c%e5%9c%a8%e5%ae%9e%e4%be%8b%e5%8c%96%e9%b8%ad%e5%ad%90%e6%97%b6%e8%ae%be%e5%ae%9a%e5%8f%ab%e5%a3%b0%e8%a1%8c%e4%b8%ba%e5%8d%b3%e5%8f%af%e3%80%82%0a%e8%bf%99%e6%a0%b7%e7%9b%b8%e6%af%94%e4%ba%8e%e7%9b%b4%e6%8e%a5%e7%bb%a7%e6%89%bf%e6%8a%bd%e8%b1%a1%e9%b8%ad%e5%ad%90%e5%90%8e%e9%87%8d%e5%86%99%e5%8f%ab%e5%a3%b0%e8%a1%8c%e4%b8%ba%e6%96%b9%e6%b3%95%ef%bc%8c%e5%a5%bd%e5%a4%84%e6%98%af%e5%87%8f%e5%b0%91%e4%ba%86%e9%87%8d%e5%a4%8d%e4%bb%a3%e7%a0%81%ef%bc%8c%e8%80%8c%e5%9d%8f%e5%a4%84%e6%98%af%e5%a2%9e%e5%8a%a0%e4%ba%86%e7%b1%bb%e7%9a%84%e6%95%b0%e9%87%8f%e3%80%82%0a%e4%bb%a3%e7%a0%81%e5%b1%95%e7%a4%ba%20%e4%b8%8b%e9%9d%a2%e5%b0%b1%e4%bb%a5%e9%b8%ad%e5%ad%90%e4%b8%ba%e4%be%8b%e8%bf%9b%e8%a1%8c%e8%af%b4%e6%98%8e%e3%80%82%0a%e4%bb%8e%e6%8e%a5%e5%8f%a3%e5%bc%80%e5%a7%8b%20%e5%ae%9a%e4%b9%89%e4%b8%80%e4%b8%aa%e5%8f%ab%e5%a3%b0%e6%8e%a5%e5%8f%a3%ef%bc%9a%ef%bc%88%e5%85%b6%e5%ae%83%e6%8e%a5%e5%8f%a3%e7%9c%81%e7%95%a5%ef%bc%89%0a1public%20interface%20QuackBehavior%20%7b%202%09public%20void%20quack%28%29%3b%203%7d%20%e5%ae%9e%e7%8e%b0%e5%8f%ab%e5%a3%b0%e6%8e%a5%e5%8f%a3%201public%20class%20MuteQuack%20implements%20QuackBehavior%20%7b%202%09public%20void%20quack%28%29%20%7b%203%09System.out.println%28%26%2334%3b%26lt%3b%26lt%3b%20Silence%20%26gt%3b%26gt%3b%26%2334%3b%29%3b%204%09%7d%205%7d%20%e5%85%b6%e5%ae%83%e6%8e%a5%e5%8f%a3%e7%9c%81%e7%95%a5%e3%80%82%0a%e5%88%9b%e5%bb%ba%e6%8a%bd%e8%b1%a1%e9%b8%ad%e5%ad%90%20%e6%af%8f%e5%8f%aa%e9%b8%ad%e5%ad%90%e9%83%bd%e6%9c%89Fly%e5%92%8cQuack%e8%bf%99%e4%b8%a4%e7%a7%8d%e8%a1%8c%e4%b8%ba%e3%80%82%0a1public%20abstract%20class%20Duck%20%7b%202%09FlyBehavior%20flyBehavior%3b%203%09QuackBehavior%20quackBehavior%3b%204%205%09public%20Duck%28%29%20%7b%206%09%7d%207%208%09public%20void%20setFlyBehavior%28FlyBehavior%20fb%29%20%7b%209%09flyBehavior%20%3d%20fb%3b%2010%09%7d%2011%2012%09public%20void%20setQuackBehavior%28QuackBehavior%20qb%29%20%7b%2013%09quackBehavior%20%3d%20qb%3b%2014%09%7d%2015%2016%09abstract%20void%20display%28%29%3b%2017%2018%09public%20void%20performFly%28%29%20%7b%2019%09flyBehavior." aria-label="Tumblr">
+    <a
+      class="icon"
+      href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fpolicy-mode%2f&name=%e7%ad%96%e7%95%a5%e6%a8%a1%e5%bc%8f&description=%e5%ae%9a%e4%b9%89%20%e7%ad%96%e7%95%a5%e6%a8%a1%e5%bc%8f%e5%ae%9a%e4%b9%89%e4%ba%86%e7%ae%97%e6%b3%95%e6%97%8f%ef%bc%8c%e5%88%86%e5%88%ab%e5%b0%81%e8%a3%85%e8%b5%b7%e6%9d%a5%ef%bc%8c%e8%ae%a9%e5%ae%83%e4%bb%ac%e4%b9%8b%e9%97%b4%e5%8f%af%e4%bb%a5%e4%ba%92%e7%9b%b8%e6%9b%bf%e6%8d%a2%ef%bc%8c%e6%ad%a4%e6%a8%a1%e5%bc%8f%e8%ae%a9%e7%ae%97%e6%b3%95%e7%9a%84%e5%8f%98%e5%8c%96%e7%8b%ac%e7%ab%8b%e4%ba%8e%e4%bd%bf%e7%94%a8%e7%ae%97%e6%b3%95%e7%9a%84%e5%ae%a2%e6%88%b7%e3%80%82%0a%e6%af%94%e5%a6%82%e5%af%b9%e4%ba%8e%e9%b8%ad%e5%ad%90%e8%80%8c%e8%a8%80%ef%bc%8c%e4%b8%8d%e5%90%8c%e9%b8%ad%e5%ad%90%e7%9a%84%e5%8f%ab%e5%a3%b0%e6%96%b9%e5%bc%8f%e5%8f%af%e8%83%bd%e4%b8%8d%e4%b8%80%e6%a0%b7%e4%b9%9f%e5%8f%af%e8%83%bd%e4%b8%80%e6%a0%b7%ef%bc%8c%e6%88%91%e4%bb%ac%e5%8f%af%e4%bb%a5%e5%ae%9a%e4%b9%89%e4%b8%80%e4%b8%aa%e5%8f%ab%e5%a3%b0%e8%a1%8c%e4%b8%ba%e6%8e%a5%e5%8f%a3%ef%bc%8c%e7%84%b6%e5%90%8e%e9%80%9a%e8%bf%87%e5%88%9b%e5%bb%ba%e4%b8%8d%e5%90%8c%e7%9a%84%e5%8f%ab%e5%a3%b0%e8%a1%8c%e4%b8%ba%e5%ae%9e%e7%8e%b0%e8%bf%99%e4%b8%aa%e6%8e%a5%e5%8f%a3%ef%bc%8c%e5%9c%a8%e5%ae%9e%e4%be%8b%e5%8c%96%e9%b8%ad%e5%ad%90%e6%97%b6%e8%ae%be%e5%ae%9a%e5%8f%ab%e5%a3%b0%e8%a1%8c%e4%b8%ba%e5%8d%b3%e5%8f%af%e3%80%82%0a%e8%bf%99%e6%a0%b7%e7%9b%b8%e6%af%94%e4%ba%8e%e7%9b%b4%e6%8e%a5%e7%bb%a7%e6%89%bf%e6%8a%bd%e8%b1%a1%e9%b8%ad%e5%ad%90%e5%90%8e%e9%87%8d%e5%86%99%e5%8f%ab%e5%a3%b0%e8%a1%8c%e4%b8%ba%e6%96%b9%e6%b3%95%ef%bc%8c%e5%a5%bd%e5%a4%84%e6%98%af%e5%87%8f%e5%b0%91%e4%ba%86%e9%87%8d%e5%a4%8d%e4%bb%a3%e7%a0%81%ef%bc%8c%e8%80%8c%e5%9d%8f%e5%a4%84%e6%98%af%e5%a2%9e%e5%8a%a0%e4%ba%86%e7%b1%bb%e7%9a%84%e6%95%b0%e9%87%8f%e3%80%82%0a%e4%bb%a3%e7%a0%81%e5%b1%95%e7%a4%ba%20%e4%b8%8b%e9%9d%a2%e5%b0%b1%e4%bb%a5%e9%b8%ad%e5%ad%90%e4%b8%ba%e4%be%8b%e8%bf%9b%e8%a1%8c%e8%af%b4%e6%98%8e%e3%80%82%0a%e4%bb%8e%e6%8e%a5%e5%8f%a3%e5%bc%80%e5%a7%8b%20%e5%ae%9a%e4%b9%89%e4%b8%80%e4%b8%aa%e5%8f%ab%e5%a3%b0%e6%8e%a5%e5%8f%a3%ef%bc%9a%ef%bc%88%e5%85%b6%e5%ae%83%e6%8e%a5%e5%8f%a3%e7%9c%81%e7%95%a5%ef%bc%89%0a1public%20interface%20QuackBehavior%20%7b%202%09public%20void%20quack%28%29%3b%203%7d%20%e5%ae%9e%e7%8e%b0%e5%8f%ab%e5%a3%b0%e6%8e%a5%e5%8f%a3%201public%20class%20MuteQuack%20implements%20QuackBehavior%20%7b%202%09public%20void%20quack%28%29%20%7b%203%09System.out.println%28%26%2334%3b%26lt%3b%26lt%3b%20Silence%20%26gt%3b%26gt%3b%26%2334%3b%29%3b%204%09%7d%205%7d%20%e5%85%b6%e5%ae%83%e6%8e%a5%e5%8f%a3%e7%9c%81%e7%95%a5%e3%80%82%0a%e5%88%9b%e5%bb%ba%e6%8a%bd%e8%b1%a1%e9%b8%ad%e5%ad%90%20%e6%af%8f%e5%8f%aa%e9%b8%ad%e5%ad%90%e9%83%bd%e6%9c%89Fly%e5%92%8cQuack%e8%bf%99%e4%b8%a4%e7%a7%8d%e8%a1%8c%e4%b8%ba%e3%80%82%0a1public%20abstract%20class%20Duck%20%7b%202%09FlyBehavior%20flyBehavior%3b%203%09QuackBehavior%20quackBehavior%3b%204%205%09public%20Duck%28%29%20%7b%206%09%7d%207%208%09public%20void%20setFlyBehavior%28FlyBehavior%20fb%29%20%7b%209%09flyBehavior%20%3d%20fb%3b%2010%09%7d%2011%2012%09public%20void%20setQuackBehavior%28QuackBehavior%20qb%29%20%7b%2013%09quackBehavior%20%3d%20qb%3b%2014%09%7d%2015%2016%09abstract%20void%20display%28%29%3b%2017%2018%09public%20void%20performFly%28%29%20%7b%2019%09flyBehavior."
+      aria-label="Tumblr"
+    >
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f08%2fpolicy-mode%2f&t=%e7%ad%96%e7%95%a5%e6%a8%a1%e5%bc%8f" aria-label="Hacker News">
-      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
     </a>
   </li>
 </ul>
 
     </div>
-
     <div id="actions-footer">
-        <a id="menu-toggle" class="icon-mobile-nav" href="#" onclick="$('#nav-footer').show();$('#toc-footer').hide();$('#share-footer').hide();return false;" aria-label="Menu">
-          <i class="fas fa-bars fa-lg" aria-hidden="true"></i></a>
-
-        
-        <a id="toc-toggle"class="icon-mobile-nav"  href="#" onclick="$('#toc-footer').show();$('#nav-footer').hide();$('#share-footer').hide();return false;" aria-label="TOC">
-          <i class="fas fa-list fa-lg" aria-hidden="true"></i></a>
-        
-
-        <a id="top" class="icon-mobile-nav" style="display:none" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
-          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i></a>
-
-        <a id="searchBtn1" class="icon-mobile-nav"  href="#" aria-label="Search">
-          <i class="fa fa-search fa-lg" aria-hidden="true"></i></a>
-
-        <a id="theme-change" class="icon-mobile-nav"><i class="fas fa-adjust fa-lg"></i></a>
-
-        <a id="share-toggle" class="icon-mobile-nav"  href="#" onclick="$('#share-footer').show();$('#toc-footer').hide();$('#nav-footer').hide();return false;" aria-label="Share">
-          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i></a>
+      
+      
+        <a
+          class="icon-mobile-nav"
+          href="https://akynazh.site/posts/2022/08/proxy-pattern/"
+          aria-label="Previous"
+        >
+          <i class="fas fa-chevron-left fa-lg" aria-hidden="true"></i>
+        </a>
+      
+      
+      <a
+        id="menu-toggle"
+        class="icon-mobile-nav"
+        href="#"
+        onclick="$('#nav-footer').show();$('#toc-footer').hide();$('#share-footer').hide();return false;"
+        aria-label="Menu"
+      >
+        <i class="fas fa-bars fa-lg" aria-hidden="true"></i
+      ></a>
+      
+      
+        <a
+          id="toc-toggle"
+          class="icon-mobile-nav"
+          href="#"
+          onclick="$('#toc-footer').show();$('#nav-footer').hide();$('#share-footer').hide();return false;"
+          aria-label="TOC"
+        >
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i
+        ></a>
+      
+      
+      <a
+        id="top"
+        class="icon-mobile-nav"
+        style="display:none"
+        href="#"
+        onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"
+        aria-label="Top of Page"
+      >
+        <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i
+      ></a>
+      
+      <a id="searchBtn1" class="icon-mobile-nav" href="#" aria-label="Search">
+        <i class="fa fa-search fa-lg" aria-hidden="true"></i
+      ></a>
+      
+      <a id="theme-change" class="icon-mobile-nav"
+        ><i class="fas fa-adjust fa-lg"></i
+      ></a>
+      
+      <a
+        id="share-toggle"
+        class="icon-mobile-nav"
+        href="#"
+        onclick="$('#share-footer').show();$('#toc-footer').hide();$('#nav-footer').hide();return false;"
+        aria-label="Share"
+      >
+        <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i
+      ></a>
+      
+      
+        <a class="icon" href="https://akynazh.site/posts/2022/09/1q84book1-excerpt/" aria-label="Next">
+          <i class="fas fa-chevron-right fa-lg" aria-hidden="true"></i>
+        </a>
+      
     </div>
-
   </div>
 </div>
 
-  <footer id="footer">
+      <footer id="footer">
   <div class="footer-left">
-    Copyright  &copy; 2023  Jzh 
-    | <a href="https://beian.miit.gov.cn/" style="text-decoration:none;">陕ICP备2022007986号-1</a>
+    Copyright &copy;
+    2023
+    
+      Jzh
+    
+    |
+    <a href="https://beian.miit.gov.cn/" style="text-decoration:none;"
+      >陕ICP备2022007986号-1</a
+    >
   </div>
   <div class="footer-right">
     <nav>
       <ul>
-         
-        <li><a href="/">Home</a></li>
-         
-        <li><a href="/posts">Archives</a></li>
-         
-        <li><a href="/about">About</a></li>
+        
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/posts">Posts</a></li>
+        
+          <li><a href="/about">About</a></li>
         
       </ul>
     </nav>
   </div>
 </footer>
-  </div>
-</body>
-<script src="/js/fuse.min.js"></script>
-<script src="/js/fastsearch.js"></script>
-<script src="/js/jquery.min.js"></script>
-<script src="/js/main.js"></script>
 
-
-
-
-
+    </div>
+  </body>
+  <script src="/js/main.js"></script>
+  <script src="/js/fuse.min.js"></script>
+  <script src="/js/fastsearch.js"></script>
+  
+  
+  
+  
+  
 </html>

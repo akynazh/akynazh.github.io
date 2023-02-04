@@ -1,10 +1,12 @@
 function setTheme(theme) {
-  let stylesDark = $("#styles-dark").attr("value");
-  let stylesLight = $("#styles-light").attr("value");
+  let stylesDark = document.getElementById("styles-dark").value;
+  let stylesLight = document.getElementById("styles-light").value;
   if (theme === "dark") {
-    $("#theme").attr("href", stylesDark);
+    document.getElementById("theme").setAttribute("href", stylesDark);
+    document.getElementById("logo").setAttribute("class", "logo-dark");
   } else if (theme === "light") {
-    $("#theme").attr("href", stylesLight);
+    document.getElementById("theme").setAttribute("href", stylesLight);
+    document.getElementById("logo").setAttribute("class", "logo-light");
   }
 }
 
@@ -14,13 +16,13 @@ function changeTheme(theme) {
   if (theme === "dark") {
     setUtterancesTheme("github-dark");
     if (setSnow === "1") {
-      startSnow()
+      startSnow();
     }
   } else if (theme === "light") {
     setUtterancesTheme("github-light");
-    stopSnow()
+    stopSnow();
   }
-  $("#theme-current").attr("value", theme);
+  document.getElementById("theme-current").setAttribute("value", theme);
   localStorage.setItem("userTheme", theme);
   // 设置超时时间： 24 小时
   let expire = new Date().getTime() + 1000 * 3600 * 24;
@@ -58,7 +60,9 @@ function getCurrentTheme() {
     userThemeExpire !== null &&
     userThemeExpire > new Date().getTime()
   ) {
-    $("#theme-current").attr("value", userTheme);
+    document.getElementById("theme-current").setAttribute("value", userTheme);
   }
-  return $("#theme-current").attr("value");
+  return document.getElementById("theme-current").value;
 }
+
+setTheme(getCurrentTheme());

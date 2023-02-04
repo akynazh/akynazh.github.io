@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title> Eureka 配置过程与理解 | Norwegian Wood</title>
-  <link rel='canonical' href='https://akynazh.site/posts/2022/07/eureka-configuration-process-and-understanding/'>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="all,follow">
-  <meta name="googlebot" content="index,follow,snippet,archive">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Eureka 配置过程与理解 |Norwegian Wood</title>
+  <link rel="canonical" href="https://akynazh.site/posts/2022/07/eureka-configuration-process-and-understanding/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="all,follow" />
+  <meta name="googlebot" content="index,follow,snippet,archive" />
   <meta property="og:title" content="Eureka 配置过程与理解" />
 <meta property="og:description" content="前言 起到微服务注册中心的作用，满足分布式系统中的AP原则，是弱一致性的。
 Eureka微服务架构图 服务接口采用集群模式，8001和8002端口都实现支付接口服务。 用户接口在运行在80端口，调用8001和8002的服务。 注册中心内部也采用集群模式，7001和7002端口都实现注册服务。 引入Eureka依赖说明 client端：
@@ -34,112 +34,126 @@ Eureka微服务架构图 服务接口采用集群模式，8001和8002端口都�
 
   
   
-  
+
   
   
 
   
   
   
-    <input value="light" id="theme-current" style="display: none;">
+    <input value="light" id="theme-current" style="display: none;" />
+    <link id="theme" rel="stylesheet" href="https://akynazh.site/css/styles_light.css" />
   
-  <input value="https://akynazh.site/css/styles_dark.css" id="styles-dark" style="display: none;">
-  <input value="https://akynazh.site/css/styles_light.css" id="styles-light" style="display: none;">
+  <input value="https://akynazh.site/css/styles_dark.css" id="styles-dark" style="display: none;" />
+  <input value="https://akynazh.site/css/styles_light.css" id="styles-light" style="display: none;" />
 
-  <input value="1" id="set-snow" style="display: none;">
-
-  <link id="theme" rel="stylesheet" href="">
-  <script src="/js/jquery.min.js"></script>
+  <input value="1" id="set-snow" style="display: none;" />
+  
   <script src="/js/snow.js"></script>
   <script src="/js/theme.js"></script>
-  <script>
-    theme = getCurrentTheme();
-    setTheme(theme);
-    setSnow = document.getElementById("set-snow").value;
-    if (theme === "dark" && setSnow === "1") {
-      startSnow()
-    }
-  </script>
+  <script src="/js/jquery.min.js"></script>
 
   
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  />
 
   
-  <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+
+
   
 
-  <link rel="shortcut icon" href="/favicon.png" type="image/png" />
-<link rel="icon" href="/favicon.png" type="image/png" />
-
-  
-  
   
 </head>
-<body class="max-width-blog mx-auto px3 ltr">
-  <div class="content index py4">
-  <div id="header-post">
+
+  <body class="max-width-blog mx-auto px3 ltr">
+    <div class="content index py4">
+      <div id="header-post">
   <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
-  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <a
+    id="top-icon-tablet"
+    href="#"
+    onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"
+    style="display:none;"
+    aria-label="Top of Page"
+    ><i class="fas fa-chevron-up fa-lg"></i
+  ></a>
   <span id="menu">
     <span id="nav">
       <ul>
-         
-        <li><a href="/">Home</a></li>
-         
-        <li><a href="/posts">Archives</a></li>
-         
-        <li><a href="/about">About</a></li>
+        
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/posts">Posts</a></li>
+        
+          <li><a href="/about">About</a></li>
         
       </ul>
     </span>
-    <br/>
+    <br />
     <span id="actions">
       <ul>
         
-        <li>
-          <a class="icon" href="https://akynazh.site/posts/2022/07/linux-display-content-configuration-record/" aria-label="Previous">
-            <i class="fas fa-chevron-left" aria-hidden="true"></i>
-          </a>
-        </li>
+        
+          <li>
+            <a class="icon" href="https://akynazh.site/posts/2022/07/linux-display-content-configuration-record/" aria-label="Previous">
+              <i class="fas fa-chevron-left" aria-hidden="true"></i>
+            </a>
+          </li>
+        
+        
+        
+          <li>
+            <a class="icon" href="https://akynazh.site/posts/2022/07/zookeeper-configuration-process-and-test/" aria-label="Next">
+              <i class="fas fa-chevron-right" aria-hidden="true"></i>
+            </a>
+          </li>
         
         
         <li>
-          <a class="icon" href="https://akynazh.site/posts/2022/07/zookeeper-configuration-process-and-test/" aria-label="Next">
-            <i class="fas fa-chevron-right" aria-hidden="true"></i>
-          </a>
-        </li>
-        
-        <li>
-          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <a
+            class="icon"
+            href="#"
+            onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"
+            aria-label="Top of Page"
+          >
             <i class="fas fa-chevron-up" aria-hidden="true"></i>
           </a>
         </li>
+        
         <li>
           <a class="icon" href="#" aria-label="Search" id="searchBtn">
             <i class="fa fa-search" aria-hidden="true"></i>
           </a>
         </li>
+        
         <li>
           <a class="icon" id="theme-change"><i class="fas fa-adjust"></i></a>
         </li>
+        
         <li>
-          <a class="icon" href="#" aria-label="Share" onclick="$('#share').toggle();return false;">
+          <a
+            class="icon"
+            href="#"
+            aria-label="Share"
+            onclick="$('#share').toggle();return false;"
+          >
             <i class="fas fa-share-alt" aria-hidden="true"></i>
           </a>
         </li>
       </ul>
-      <span id="i-prev" class="info" style="display:none;">Previous post</span>
-      <span id="i-prev" class="info" style="display:none;">Previous post</span>
-      <span id="i-next" class="info" style="display:none;">Next post</span>
-      <span id="i-top" class="info" style="display:none;">Back to top</span>
-      <span id="i-search" class="info" style="display:none;">Search</span>
-      <span id="i-share" class="info" style="display:none;">Share post</span>
     </span>
-    <br/>
+    <br />
     <div id="share" style="display: none">
       
       <ul>
@@ -149,56 +163,65 @@ Eureka微服务架构图 服务接口采用集群模式，8001和8002端口都�
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f07%2feureka-configuration-process-and-understanding%2f" aria-label="Facebook">
+    <a
+      class="icon"
+      href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f07%2feureka-configuration-process-and-understanding%2f"
+      aria-label="Facebook"
+    >
       <i class="fab fa-facebook " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f07%2feureka-configuration-process-and-understanding%2f&text=Eureka%20%e9%85%8d%e7%bd%ae%e8%bf%87%e7%a8%8b%e4%b8%8e%e7%90%86%e8%a7%a3" aria-label="Twitter">
+    <a
+      class="icon"
+      href="https://twitter.com/share?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f07%2feureka-configuration-process-and-understanding%2f&text=Eureka%20%e9%85%8d%e7%bd%ae%e8%bf%87%e7%a8%8b%e4%b8%8e%e7%90%86%e8%a7%a3"
+      aria-label="Twitter"
+    >
       <i class="fab fa-twitter " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f07%2feureka-configuration-process-and-understanding%2f&title=Eureka%20%e9%85%8d%e7%bd%ae%e8%bf%87%e7%a8%8b%e4%b8%8e%e7%90%86%e8%a7%a3" aria-label="Linkedin">
+    <a
+      class="icon"
+      href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f07%2feureka-configuration-process-and-understanding%2f&title=Eureka%20%e9%85%8d%e7%bd%ae%e8%bf%87%e7%a8%8b%e4%b8%8e%e7%90%86%e8%a7%a3"
+      aria-label="Linkedin"
+    >
       <i class="fab fa-linkedin " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f07%2feureka-configuration-process-and-understanding%2f&is_video=false&description=Eureka%20%e9%85%8d%e7%bd%ae%e8%bf%87%e7%a8%8b%e4%b8%8e%e7%90%86%e8%a7%a3" aria-label="Pinterest">
-      <i class="fab fa-pinterest " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="mailto:?subject=Eureka%20%e9%85%8d%e7%bd%ae%e8%bf%87%e7%a8%8b%e4%b8%8e%e7%90%86%e8%a7%a3&body=Check out this article: https%3a%2f%2fakynazh.site%2fposts%2f2022%2f07%2feureka-configuration-process-and-understanding%2f" aria-label="Email">
+    <a
+      class="icon"
+      href="mailto:?subject=Eureka%20%e9%85%8d%e7%bd%ae%e8%bf%87%e7%a8%8b%e4%b8%8e%e7%90%86%e8%a7%a3&body=Check out this article: https%3a%2f%2fakynazh.site%2fposts%2f2022%2f07%2feureka-configuration-process-and-understanding%2f"
+      aria-label="Email"
+    >
       <i class="fas fa-envelope " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f07%2feureka-configuration-process-and-understanding%2f&title=Eureka%20%e9%85%8d%e7%bd%ae%e8%bf%87%e7%a8%8b%e4%b8%8e%e7%90%86%e8%a7%a3" aria-label="Pocket">
-      <i class="fab fa-get-pocket " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f07%2feureka-configuration-process-and-understanding%2f&title=Eureka%20%e9%85%8d%e7%bd%ae%e8%bf%87%e7%a8%8b%e4%b8%8e%e7%90%86%e8%a7%a3" aria-label="reddit">
+    <a
+      class="icon"
+      href="http://reddit.com/submit?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f07%2feureka-configuration-process-and-understanding%2f&title=Eureka%20%e9%85%8d%e7%bd%ae%e8%bf%87%e7%a8%8b%e4%b8%8e%e7%90%86%e8%a7%a3"
+      aria-label="reddit"
+    >
       <i class="fab fa-reddit " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f07%2feureka-configuration-process-and-understanding%2f&name=Eureka%20%e9%85%8d%e7%bd%ae%e8%bf%87%e7%a8%8b%e4%b8%8e%e7%90%86%e8%a7%a3&description=%e5%89%8d%e8%a8%80%20%e8%b5%b7%e5%88%b0%e5%be%ae%e6%9c%8d%e5%8a%a1%e6%b3%a8%e5%86%8c%e4%b8%ad%e5%bf%83%e7%9a%84%e4%bd%9c%e7%94%a8%ef%bc%8c%e6%bb%a1%e8%b6%b3%e5%88%86%e5%b8%83%e5%bc%8f%e7%b3%bb%e7%bb%9f%e4%b8%ad%e7%9a%84AP%e5%8e%9f%e5%88%99%ef%bc%8c%e6%98%af%e5%bc%b1%e4%b8%80%e8%87%b4%e6%80%a7%e7%9a%84%e3%80%82%0aEureka%e5%be%ae%e6%9c%8d%e5%8a%a1%e6%9e%b6%e6%9e%84%e5%9b%be%20%e6%9c%8d%e5%8a%a1%e6%8e%a5%e5%8f%a3%e9%87%87%e7%94%a8%e9%9b%86%e7%be%a4%e6%a8%a1%e5%bc%8f%ef%bc%8c8001%e5%92%8c8002%e7%ab%af%e5%8f%a3%e9%83%bd%e5%ae%9e%e7%8e%b0%e6%94%af%e4%bb%98%e6%8e%a5%e5%8f%a3%e6%9c%8d%e5%8a%a1%e3%80%82%20%e7%94%a8%e6%88%b7%e6%8e%a5%e5%8f%a3%e5%9c%a8%e8%bf%90%e8%a1%8c%e5%9c%a880%e7%ab%af%e5%8f%a3%ef%bc%8c%e8%b0%83%e7%94%a88001%e5%92%8c8002%e7%9a%84%e6%9c%8d%e5%8a%a1%e3%80%82%20%e6%b3%a8%e5%86%8c%e4%b8%ad%e5%bf%83%e5%86%85%e9%83%a8%e4%b9%9f%e9%87%87%e7%94%a8%e9%9b%86%e7%be%a4%e6%a8%a1%e5%bc%8f%ef%bc%8c7001%e5%92%8c7002%e7%ab%af%e5%8f%a3%e9%83%bd%e5%ae%9e%e7%8e%b0%e6%b3%a8%e5%86%8c%e6%9c%8d%e5%8a%a1%e3%80%82%20%e5%bc%95%e5%85%a5Eureka%e4%be%9d%e8%b5%96%e8%af%b4%e6%98%8e%20client%e7%ab%af%ef%bc%9a%0a1%26lt%3bdependency%26gt%3b%202%20%26lt%3bgroupId%26gt%3borg.springframework.cloud%26lt%3b%2fgroupId%26gt%3b%203%20%26lt%3bartifactId%26gt%3bspring-cloud-starter-netflix-eureka-client%26lt%3b%2fartifactId%26gt%3b%204%26lt%3b%2fdependency%26gt%3b%20server%e7%ab%af%ef%bc%9a%0a1%26lt%3bdependency%26gt%3b%202%20%26lt%3bgroupId%26gt%3borg.springframework.cloud%26lt%3b%2fgroupId%26gt%3b%203%20%26lt%3bartifactId%26gt%3bspring-cloud-starter-netflix-eureka-server%26lt%3b%2fartifactId%26gt%3b%204%26lt%3b%2fdependency%26gt%3b%207001%e5%92%8c7002%e7%ab%af%e5%8f%a3%e5%85%b3%e9%94%ae%e9%85%8d%e7%bd%ae%e5%86%85%e5%ae%b9%20%e4%b8%80%e3%80%81%e5%90%af%e5%8a%a8%e7%b1%bb%e5%bc%80%e5%90%af%e6%b3%a8%e8%a7%a3%0a1%40SpringBootApplication%202%40EnableEurekaServer%203public%20class%20EurekaMain7001%20%7b%204%20public%20static%20void%20main%28String%5b%5d%20args%29%20%7b%205%20SpringApplication.run%28EurekaMain7001.class%2c%20args%29%3b%206%20%7d%207%7d%20%e4%ba%8c%e3%80%81application.yml%e6%96%87%e4%bb%b6%e9%85%8d%e7%bd%ae%0a%e5%af%b9%e4%ba%8e7001%e7%ab%af%e5%8f%a3%e6%9c%8d%e5%8a%a1%ef%bc%9a%ef%bc%887002%e7%ab%af%e5%8f%a3%e7%b1%bb%e4%bc%bc%ef%bc%89%0a1eureka%3a%202%20instance%3a%203%20hostname%3a%20eureka7001.com%204%20client%3a%205%20%23%20false%20%e8%a1%a8%e7%a4%ba%e4%b8%8d%e5%90%91%e6%b3%a8%e5%86%8c%e4%b8%ad%e5%bf%83%e6%b3%a8%e5%86%8c%e8%87%aa%e5%b7%b1%206%20register-with-eureka%3a%20false%207%20%23%20false%20%e8%a1%a8%e7%a4%ba%e8%87%aa%e5%b7%b1%e7%ab%af%e5%b0%b1%e6%98%af%e6%b3%a8%e5%86%8c%e4%b8%ad%e5%bf%83%ef%bc%8c%e6%88%91%e7%9a%84%e8%81%8c%e8%b4%a3%e5%b0%b1%e6%98%af%e7%bb%b4%e6%8a%a4%e6%9c%8d%e5%8a%a1%e5%ae%9e%e4%be%8b%ef%bc%8c%e5%b9%b6%e4%b8%8d%e9%9c%80%e8%a6%81%e5%8e%bb%e6%a3%80%e7%b4%a2%e6%9c%8d%e5%8a%a1%208%20fetch-registry%3a%20false%209%20service-url%3a%2010%20%23%20%e8%ae%be%e7%bd%ae%e4%b8%8eEureka%20Server%e4%ba%a4%e4%ba%92%e7%9a%84%e5%9c%b0%e5%9d%80%e6%9f%a5%e8%af%a2%e6%9c%8d%e5%8a%a1%e5%92%8c%e6%b3%a8%e5%86%8c%e6%9c%8d%e5%8a%a1%e9%83%bd%e9%9c%80%e8%a6%81%e4%be%9d%e8%b5%96%e8%bf%99%e4%b8%aa%e5%9c%b0%e5%9d%80%2011%20defaultZone%3a%20http%3a%2f%2feureka7002." aria-label="Tumblr">
+    <a
+      class="icon"
+      href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f07%2feureka-configuration-process-and-understanding%2f&name=Eureka%20%e9%85%8d%e7%bd%ae%e8%bf%87%e7%a8%8b%e4%b8%8e%e7%90%86%e8%a7%a3&description=%e5%89%8d%e8%a8%80%20%e8%b5%b7%e5%88%b0%e5%be%ae%e6%9c%8d%e5%8a%a1%e6%b3%a8%e5%86%8c%e4%b8%ad%e5%bf%83%e7%9a%84%e4%bd%9c%e7%94%a8%ef%bc%8c%e6%bb%a1%e8%b6%b3%e5%88%86%e5%b8%83%e5%bc%8f%e7%b3%bb%e7%bb%9f%e4%b8%ad%e7%9a%84AP%e5%8e%9f%e5%88%99%ef%bc%8c%e6%98%af%e5%bc%b1%e4%b8%80%e8%87%b4%e6%80%a7%e7%9a%84%e3%80%82%0aEureka%e5%be%ae%e6%9c%8d%e5%8a%a1%e6%9e%b6%e6%9e%84%e5%9b%be%20%e6%9c%8d%e5%8a%a1%e6%8e%a5%e5%8f%a3%e9%87%87%e7%94%a8%e9%9b%86%e7%be%a4%e6%a8%a1%e5%bc%8f%ef%bc%8c8001%e5%92%8c8002%e7%ab%af%e5%8f%a3%e9%83%bd%e5%ae%9e%e7%8e%b0%e6%94%af%e4%bb%98%e6%8e%a5%e5%8f%a3%e6%9c%8d%e5%8a%a1%e3%80%82%20%e7%94%a8%e6%88%b7%e6%8e%a5%e5%8f%a3%e5%9c%a8%e8%bf%90%e8%a1%8c%e5%9c%a880%e7%ab%af%e5%8f%a3%ef%bc%8c%e8%b0%83%e7%94%a88001%e5%92%8c8002%e7%9a%84%e6%9c%8d%e5%8a%a1%e3%80%82%20%e6%b3%a8%e5%86%8c%e4%b8%ad%e5%bf%83%e5%86%85%e9%83%a8%e4%b9%9f%e9%87%87%e7%94%a8%e9%9b%86%e7%be%a4%e6%a8%a1%e5%bc%8f%ef%bc%8c7001%e5%92%8c7002%e7%ab%af%e5%8f%a3%e9%83%bd%e5%ae%9e%e7%8e%b0%e6%b3%a8%e5%86%8c%e6%9c%8d%e5%8a%a1%e3%80%82%20%e5%bc%95%e5%85%a5Eureka%e4%be%9d%e8%b5%96%e8%af%b4%e6%98%8e%20client%e7%ab%af%ef%bc%9a%0a1%26lt%3bdependency%26gt%3b%202%20%26lt%3bgroupId%26gt%3borg.springframework.cloud%26lt%3b%2fgroupId%26gt%3b%203%20%26lt%3bartifactId%26gt%3bspring-cloud-starter-netflix-eureka-client%26lt%3b%2fartifactId%26gt%3b%204%26lt%3b%2fdependency%26gt%3b%20server%e7%ab%af%ef%bc%9a%0a1%26lt%3bdependency%26gt%3b%202%20%26lt%3bgroupId%26gt%3borg.springframework.cloud%26lt%3b%2fgroupId%26gt%3b%203%20%26lt%3bartifactId%26gt%3bspring-cloud-starter-netflix-eureka-server%26lt%3b%2fartifactId%26gt%3b%204%26lt%3b%2fdependency%26gt%3b%207001%e5%92%8c7002%e7%ab%af%e5%8f%a3%e5%85%b3%e9%94%ae%e9%85%8d%e7%bd%ae%e5%86%85%e5%ae%b9%20%e4%b8%80%e3%80%81%e5%90%af%e5%8a%a8%e7%b1%bb%e5%bc%80%e5%90%af%e6%b3%a8%e8%a7%a3%0a1%40SpringBootApplication%202%40EnableEurekaServer%203public%20class%20EurekaMain7001%20%7b%204%20public%20static%20void%20main%28String%5b%5d%20args%29%20%7b%205%20SpringApplication.run%28EurekaMain7001.class%2c%20args%29%3b%206%20%7d%207%7d%20%e4%ba%8c%e3%80%81application.yml%e6%96%87%e4%bb%b6%e9%85%8d%e7%bd%ae%0a%e5%af%b9%e4%ba%8e7001%e7%ab%af%e5%8f%a3%e6%9c%8d%e5%8a%a1%ef%bc%9a%ef%bc%887002%e7%ab%af%e5%8f%a3%e7%b1%bb%e4%bc%bc%ef%bc%89%0a1eureka%3a%202%20instance%3a%203%20hostname%3a%20eureka7001.com%204%20client%3a%205%20%23%20false%20%e8%a1%a8%e7%a4%ba%e4%b8%8d%e5%90%91%e6%b3%a8%e5%86%8c%e4%b8%ad%e5%bf%83%e6%b3%a8%e5%86%8c%e8%87%aa%e5%b7%b1%206%20register-with-eureka%3a%20false%207%20%23%20false%20%e8%a1%a8%e7%a4%ba%e8%87%aa%e5%b7%b1%e7%ab%af%e5%b0%b1%e6%98%af%e6%b3%a8%e5%86%8c%e4%b8%ad%e5%bf%83%ef%bc%8c%e6%88%91%e7%9a%84%e8%81%8c%e8%b4%a3%e5%b0%b1%e6%98%af%e7%bb%b4%e6%8a%a4%e6%9c%8d%e5%8a%a1%e5%ae%9e%e4%be%8b%ef%bc%8c%e5%b9%b6%e4%b8%8d%e9%9c%80%e8%a6%81%e5%8e%bb%e6%a3%80%e7%b4%a2%e6%9c%8d%e5%8a%a1%208%20fetch-registry%3a%20false%209%20service-url%3a%2010%20%23%20%e8%ae%be%e7%bd%ae%e4%b8%8eEureka%20Server%e4%ba%a4%e4%ba%92%e7%9a%84%e5%9c%b0%e5%9d%80%e6%9f%a5%e8%af%a2%e6%9c%8d%e5%8a%a1%e5%92%8c%e6%b3%a8%e5%86%8c%e6%9c%8d%e5%8a%a1%e9%83%bd%e9%9c%80%e8%a6%81%e4%be%9d%e8%b5%96%e8%bf%99%e4%b8%aa%e5%9c%b0%e5%9d%80%2011%20defaultZone%3a%20http%3a%2f%2feureka7002."
+      aria-label="Tumblr"
+    >
       <i class="fab fa-tumblr " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f07%2feureka-configuration-process-and-understanding%2f&t=Eureka%20%e9%85%8d%e7%bd%ae%e8%bf%87%e7%a8%8b%e4%b8%8e%e7%90%86%e8%a7%a3" aria-label="Hacker News">
-      <i class="fab fa-hacker-news " aria-hidden="true"></i>
     </a>
   </li>
 </ul>
 
     </div>
     
-    <div id="toc">
-      <nav id="TableOfContents">
+      <div id="toc">
+        <nav id="TableOfContents">
   <ul>
     <li><a href="#前言">前言</a></li>
     <li><a href="#eureka微服务架构图">Eureka微服务架构图</a></li>
@@ -209,56 +232,73 @@ Eureka微服务架构图 服务接口采用集群模式，8001和8002端口都�
     <li><a href="#效果展示">效果展示</a></li>
   </ul>
 </nav>
-    </div>
+      </div>
     
   </span>
 </div>
-  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-    <header>
-      <h1 class="posttitle" itemprop="name headline">
-        Eureka 配置过程与理解
-      </h1>
-      <div class="meta">
-        
-        <div class="postdate">
-          
-          <time datetime="2022-07-17 11:39:35 &#43;0800 CST" itemprop="datePublished">2022-07-17</time>
-          
-        </div>
-        
-        
-        <div class="article-read-time">
-          <i class="far fa-clock"></i>
-          
-          6 minute read
-        </div>
-        
-        
-        <div class="article-category">
-            <i class="fas fa-archive"></i>
+
+      <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <header>
+          <h1 class="posttitle" itemprop="name headline">
+            Eureka 配置过程与理解
+          </h1>
+          <div class="meta">
+            
+            <div class="postdate">
+              
+              <time datetime="2022-07-17 11:39:35 &#43;0800 CST" itemprop="datePublished"
+                >2022-07-17</time
+              >
+              
+            </div>
             
             
-            <a class="category-link" href="/categories/web">Web</a>
+              <div class="article-read-time">
+                <i class="far fa-clock"></i>
+                
+                6 minute read
+              </div>
             
-        </div>
+            
+              <div class="article-category">
+                <i class="fas fa-archive"></i>
+                
+                  
+                  <a
+                    class="category-link"
+                    href="/categories/web"
+                    >Web</a
+                  >
+                
+              </div>
+            
+            
+              <div class="article-tag">
+                <i class="fas fa-tag"></i>
+                
+                  
+                  <a
+                    class="tag-link"
+                    href="/tags/springcloud"
+                    rel="tag"
+                    >springcloud</a
+                  >
+                
+                  , 
+                  <a
+                    class="tag-link"
+                    href="/tags/microservice"
+                    rel="tag"
+                    >microservice</a
+                  >
+                
+              </div>
+            
+          </div>
+        </header>
         
-        
-        <div class="article-tag">
-            <i class="fas fa-tag"></i>
-            
-            
-            <a class="tag-link" href="/tags/springcloud" rel="tag">springcloud</a>
-            
-             ,  
-            <a class="tag-link" href="/tags/microservice" rel="tag">microservice</a>
-            
-        </div>
-        
-      </div>
-    </header>
-    
-    <div class="content" itemprop="articleBody">
-      <h2 id="前言">前言</h2>
+        <div class="content" itemprop="articleBody">
+          <h2 id="前言">前言</h2>
 <p>起到微服务注册中心的作用，满足分布式系统中的AP原则，是弱一致性的。</p>
 <h2 id="eureka微服务架构图">Eureka微服务架构图</h2>
 <p><img src="image/eureka1.png" alt="eureka1"></p>
@@ -389,9 +429,9 @@ Eureka微服务架构图 服务接口采用集群模式，8001和8002端口都�
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>    <span style="color:#ff79c6">&#34;data&#34;</span>:{<span style="color:#ff79c6">&#34;id&#34;</span>:<span style="color:#bd93f9">3</span>,<span style="color:#ff79c6">&#34;serial&#34;</span>:<span style="color:#f1fa8c">&#34;ajefskldfa&#34;</span>}
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>}
 </span></span></code></pre></div>
-    </div>
-  </article>
-  
+        </div>
+      </article>
+      
   
 
 
@@ -423,16 +463,16 @@ Eureka微服务架构图 服务接口采用集群模式，8001和8002端口都�
   </div>
 
 
-    
-    <div id="fastSearch">
-      <input id="searchInput" tabindex="0"/>
-      <ul id="searchResults"></ul>
-    </div>
-  <div id="footer-post-container">
+      <div id="fastSearch">
+  <input id="searchInput" tabindex="0" />
+  <ul id="searchResults"></ul>
+</div>
+
+      <div id="footer-post-container">
   <div id="footer-post">
     
-    <div id="toc-footer" style="display: none">
-      <nav id="TableOfContents">
+      <div id="toc-footer" style="display: none">
+        <nav id="TableOfContents">
   <ul>
     <li><a href="#前言">前言</a></li>
     <li><a href="#eureka微服务架构图">Eureka微服务架构图</a></li>
@@ -443,19 +483,23 @@ Eureka微服务架构图 服务接口采用集群模式，8001和8002端口都�
     <li><a href="#效果展示">效果展示</a></li>
   </ul>
 </nav>
-    </div>
-    
+      </div>
     
     <div id="nav-footer" style="display: none">
       
-      <ul style="display:inline;"><li><a href="/">Home</a></li></ul>
+        <ul style="display:inline;">
+          <li><a href="/">Home</a></li>
+        </ul>
       
-      <ul style="display:inline;"><li><a href="/posts">Archives</a></li></ul>
+        <ul style="display:inline;">
+          <li><a href="/posts">Posts</a></li>
+        </ul>
       
-      <ul style="display:inline;"><li><a href="/about">About</a></li></ul>
+        <ul style="display:inline;">
+          <li><a href="/about">About</a></li>
+        </ul>
       
     </div>
-
     <div id="share-footer" style="display: none">
       
       <ul>
@@ -465,106 +509,169 @@ Eureka微服务架构图 服务接口采用集群模式，8001和8002端口都�
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f07%2feureka-configuration-process-and-understanding%2f" aria-label="Facebook">
+    <a
+      class="icon"
+      href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f07%2feureka-configuration-process-and-understanding%2f"
+      aria-label="Facebook"
+    >
       <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f07%2feureka-configuration-process-and-understanding%2f&text=Eureka%20%e9%85%8d%e7%bd%ae%e8%bf%87%e7%a8%8b%e4%b8%8e%e7%90%86%e8%a7%a3" aria-label="Twitter">
+    <a
+      class="icon"
+      href="https://twitter.com/share?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f07%2feureka-configuration-process-and-understanding%2f&text=Eureka%20%e9%85%8d%e7%bd%ae%e8%bf%87%e7%a8%8b%e4%b8%8e%e7%90%86%e8%a7%a3"
+      aria-label="Twitter"
+    >
       <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f07%2feureka-configuration-process-and-understanding%2f&title=Eureka%20%e9%85%8d%e7%bd%ae%e8%bf%87%e7%a8%8b%e4%b8%8e%e7%90%86%e8%a7%a3" aria-label="Linkedin">
+    <a
+      class="icon"
+      href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f07%2feureka-configuration-process-and-understanding%2f&title=Eureka%20%e9%85%8d%e7%bd%ae%e8%bf%87%e7%a8%8b%e4%b8%8e%e7%90%86%e8%a7%a3"
+      aria-label="Linkedin"
+    >
       <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f07%2feureka-configuration-process-and-understanding%2f&is_video=false&description=Eureka%20%e9%85%8d%e7%bd%ae%e8%bf%87%e7%a8%8b%e4%b8%8e%e7%90%86%e8%a7%a3" aria-label="Pinterest">
-      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="mailto:?subject=Eureka%20%e9%85%8d%e7%bd%ae%e8%bf%87%e7%a8%8b%e4%b8%8e%e7%90%86%e8%a7%a3&body=Check out this article: https%3a%2f%2fakynazh.site%2fposts%2f2022%2f07%2feureka-configuration-process-and-understanding%2f" aria-label="Email">
+    <a
+      class="icon"
+      href="mailto:?subject=Eureka%20%e9%85%8d%e7%bd%ae%e8%bf%87%e7%a8%8b%e4%b8%8e%e7%90%86%e8%a7%a3&body=Check out this article: https%3a%2f%2fakynazh.site%2fposts%2f2022%2f07%2feureka-configuration-process-and-understanding%2f"
+      aria-label="Email"
+    >
       <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f07%2feureka-configuration-process-and-understanding%2f&title=Eureka%20%e9%85%8d%e7%bd%ae%e8%bf%87%e7%a8%8b%e4%b8%8e%e7%90%86%e8%a7%a3" aria-label="Pocket">
-      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f07%2feureka-configuration-process-and-understanding%2f&title=Eureka%20%e9%85%8d%e7%bd%ae%e8%bf%87%e7%a8%8b%e4%b8%8e%e7%90%86%e8%a7%a3" aria-label="reddit">
+    <a
+      class="icon"
+      href="http://reddit.com/submit?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f07%2feureka-configuration-process-and-understanding%2f&title=Eureka%20%e9%85%8d%e7%bd%ae%e8%bf%87%e7%a8%8b%e4%b8%8e%e7%90%86%e8%a7%a3"
+      aria-label="reddit"
+    >
       <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f07%2feureka-configuration-process-and-understanding%2f&name=Eureka%20%e9%85%8d%e7%bd%ae%e8%bf%87%e7%a8%8b%e4%b8%8e%e7%90%86%e8%a7%a3&description=%e5%89%8d%e8%a8%80%20%e8%b5%b7%e5%88%b0%e5%be%ae%e6%9c%8d%e5%8a%a1%e6%b3%a8%e5%86%8c%e4%b8%ad%e5%bf%83%e7%9a%84%e4%bd%9c%e7%94%a8%ef%bc%8c%e6%bb%a1%e8%b6%b3%e5%88%86%e5%b8%83%e5%bc%8f%e7%b3%bb%e7%bb%9f%e4%b8%ad%e7%9a%84AP%e5%8e%9f%e5%88%99%ef%bc%8c%e6%98%af%e5%bc%b1%e4%b8%80%e8%87%b4%e6%80%a7%e7%9a%84%e3%80%82%0aEureka%e5%be%ae%e6%9c%8d%e5%8a%a1%e6%9e%b6%e6%9e%84%e5%9b%be%20%e6%9c%8d%e5%8a%a1%e6%8e%a5%e5%8f%a3%e9%87%87%e7%94%a8%e9%9b%86%e7%be%a4%e6%a8%a1%e5%bc%8f%ef%bc%8c8001%e5%92%8c8002%e7%ab%af%e5%8f%a3%e9%83%bd%e5%ae%9e%e7%8e%b0%e6%94%af%e4%bb%98%e6%8e%a5%e5%8f%a3%e6%9c%8d%e5%8a%a1%e3%80%82%20%e7%94%a8%e6%88%b7%e6%8e%a5%e5%8f%a3%e5%9c%a8%e8%bf%90%e8%a1%8c%e5%9c%a880%e7%ab%af%e5%8f%a3%ef%bc%8c%e8%b0%83%e7%94%a88001%e5%92%8c8002%e7%9a%84%e6%9c%8d%e5%8a%a1%e3%80%82%20%e6%b3%a8%e5%86%8c%e4%b8%ad%e5%bf%83%e5%86%85%e9%83%a8%e4%b9%9f%e9%87%87%e7%94%a8%e9%9b%86%e7%be%a4%e6%a8%a1%e5%bc%8f%ef%bc%8c7001%e5%92%8c7002%e7%ab%af%e5%8f%a3%e9%83%bd%e5%ae%9e%e7%8e%b0%e6%b3%a8%e5%86%8c%e6%9c%8d%e5%8a%a1%e3%80%82%20%e5%bc%95%e5%85%a5Eureka%e4%be%9d%e8%b5%96%e8%af%b4%e6%98%8e%20client%e7%ab%af%ef%bc%9a%0a1%26lt%3bdependency%26gt%3b%202%20%26lt%3bgroupId%26gt%3borg.springframework.cloud%26lt%3b%2fgroupId%26gt%3b%203%20%26lt%3bartifactId%26gt%3bspring-cloud-starter-netflix-eureka-client%26lt%3b%2fartifactId%26gt%3b%204%26lt%3b%2fdependency%26gt%3b%20server%e7%ab%af%ef%bc%9a%0a1%26lt%3bdependency%26gt%3b%202%20%26lt%3bgroupId%26gt%3borg.springframework.cloud%26lt%3b%2fgroupId%26gt%3b%203%20%26lt%3bartifactId%26gt%3bspring-cloud-starter-netflix-eureka-server%26lt%3b%2fartifactId%26gt%3b%204%26lt%3b%2fdependency%26gt%3b%207001%e5%92%8c7002%e7%ab%af%e5%8f%a3%e5%85%b3%e9%94%ae%e9%85%8d%e7%bd%ae%e5%86%85%e5%ae%b9%20%e4%b8%80%e3%80%81%e5%90%af%e5%8a%a8%e7%b1%bb%e5%bc%80%e5%90%af%e6%b3%a8%e8%a7%a3%0a1%40SpringBootApplication%202%40EnableEurekaServer%203public%20class%20EurekaMain7001%20%7b%204%20public%20static%20void%20main%28String%5b%5d%20args%29%20%7b%205%20SpringApplication.run%28EurekaMain7001.class%2c%20args%29%3b%206%20%7d%207%7d%20%e4%ba%8c%e3%80%81application.yml%e6%96%87%e4%bb%b6%e9%85%8d%e7%bd%ae%0a%e5%af%b9%e4%ba%8e7001%e7%ab%af%e5%8f%a3%e6%9c%8d%e5%8a%a1%ef%bc%9a%ef%bc%887002%e7%ab%af%e5%8f%a3%e7%b1%bb%e4%bc%bc%ef%bc%89%0a1eureka%3a%202%20instance%3a%203%20hostname%3a%20eureka7001.com%204%20client%3a%205%20%23%20false%20%e8%a1%a8%e7%a4%ba%e4%b8%8d%e5%90%91%e6%b3%a8%e5%86%8c%e4%b8%ad%e5%bf%83%e6%b3%a8%e5%86%8c%e8%87%aa%e5%b7%b1%206%20register-with-eureka%3a%20false%207%20%23%20false%20%e8%a1%a8%e7%a4%ba%e8%87%aa%e5%b7%b1%e7%ab%af%e5%b0%b1%e6%98%af%e6%b3%a8%e5%86%8c%e4%b8%ad%e5%bf%83%ef%bc%8c%e6%88%91%e7%9a%84%e8%81%8c%e8%b4%a3%e5%b0%b1%e6%98%af%e7%bb%b4%e6%8a%a4%e6%9c%8d%e5%8a%a1%e5%ae%9e%e4%be%8b%ef%bc%8c%e5%b9%b6%e4%b8%8d%e9%9c%80%e8%a6%81%e5%8e%bb%e6%a3%80%e7%b4%a2%e6%9c%8d%e5%8a%a1%208%20fetch-registry%3a%20false%209%20service-url%3a%2010%20%23%20%e8%ae%be%e7%bd%ae%e4%b8%8eEureka%20Server%e4%ba%a4%e4%ba%92%e7%9a%84%e5%9c%b0%e5%9d%80%e6%9f%a5%e8%af%a2%e6%9c%8d%e5%8a%a1%e5%92%8c%e6%b3%a8%e5%86%8c%e6%9c%8d%e5%8a%a1%e9%83%bd%e9%9c%80%e8%a6%81%e4%be%9d%e8%b5%96%e8%bf%99%e4%b8%aa%e5%9c%b0%e5%9d%80%2011%20defaultZone%3a%20http%3a%2f%2feureka7002." aria-label="Tumblr">
+    <a
+      class="icon"
+      href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f07%2feureka-configuration-process-and-understanding%2f&name=Eureka%20%e9%85%8d%e7%bd%ae%e8%bf%87%e7%a8%8b%e4%b8%8e%e7%90%86%e8%a7%a3&description=%e5%89%8d%e8%a8%80%20%e8%b5%b7%e5%88%b0%e5%be%ae%e6%9c%8d%e5%8a%a1%e6%b3%a8%e5%86%8c%e4%b8%ad%e5%bf%83%e7%9a%84%e4%bd%9c%e7%94%a8%ef%bc%8c%e6%bb%a1%e8%b6%b3%e5%88%86%e5%b8%83%e5%bc%8f%e7%b3%bb%e7%bb%9f%e4%b8%ad%e7%9a%84AP%e5%8e%9f%e5%88%99%ef%bc%8c%e6%98%af%e5%bc%b1%e4%b8%80%e8%87%b4%e6%80%a7%e7%9a%84%e3%80%82%0aEureka%e5%be%ae%e6%9c%8d%e5%8a%a1%e6%9e%b6%e6%9e%84%e5%9b%be%20%e6%9c%8d%e5%8a%a1%e6%8e%a5%e5%8f%a3%e9%87%87%e7%94%a8%e9%9b%86%e7%be%a4%e6%a8%a1%e5%bc%8f%ef%bc%8c8001%e5%92%8c8002%e7%ab%af%e5%8f%a3%e9%83%bd%e5%ae%9e%e7%8e%b0%e6%94%af%e4%bb%98%e6%8e%a5%e5%8f%a3%e6%9c%8d%e5%8a%a1%e3%80%82%20%e7%94%a8%e6%88%b7%e6%8e%a5%e5%8f%a3%e5%9c%a8%e8%bf%90%e8%a1%8c%e5%9c%a880%e7%ab%af%e5%8f%a3%ef%bc%8c%e8%b0%83%e7%94%a88001%e5%92%8c8002%e7%9a%84%e6%9c%8d%e5%8a%a1%e3%80%82%20%e6%b3%a8%e5%86%8c%e4%b8%ad%e5%bf%83%e5%86%85%e9%83%a8%e4%b9%9f%e9%87%87%e7%94%a8%e9%9b%86%e7%be%a4%e6%a8%a1%e5%bc%8f%ef%bc%8c7001%e5%92%8c7002%e7%ab%af%e5%8f%a3%e9%83%bd%e5%ae%9e%e7%8e%b0%e6%b3%a8%e5%86%8c%e6%9c%8d%e5%8a%a1%e3%80%82%20%e5%bc%95%e5%85%a5Eureka%e4%be%9d%e8%b5%96%e8%af%b4%e6%98%8e%20client%e7%ab%af%ef%bc%9a%0a1%26lt%3bdependency%26gt%3b%202%20%26lt%3bgroupId%26gt%3borg.springframework.cloud%26lt%3b%2fgroupId%26gt%3b%203%20%26lt%3bartifactId%26gt%3bspring-cloud-starter-netflix-eureka-client%26lt%3b%2fartifactId%26gt%3b%204%26lt%3b%2fdependency%26gt%3b%20server%e7%ab%af%ef%bc%9a%0a1%26lt%3bdependency%26gt%3b%202%20%26lt%3bgroupId%26gt%3borg.springframework.cloud%26lt%3b%2fgroupId%26gt%3b%203%20%26lt%3bartifactId%26gt%3bspring-cloud-starter-netflix-eureka-server%26lt%3b%2fartifactId%26gt%3b%204%26lt%3b%2fdependency%26gt%3b%207001%e5%92%8c7002%e7%ab%af%e5%8f%a3%e5%85%b3%e9%94%ae%e9%85%8d%e7%bd%ae%e5%86%85%e5%ae%b9%20%e4%b8%80%e3%80%81%e5%90%af%e5%8a%a8%e7%b1%bb%e5%bc%80%e5%90%af%e6%b3%a8%e8%a7%a3%0a1%40SpringBootApplication%202%40EnableEurekaServer%203public%20class%20EurekaMain7001%20%7b%204%20public%20static%20void%20main%28String%5b%5d%20args%29%20%7b%205%20SpringApplication.run%28EurekaMain7001.class%2c%20args%29%3b%206%20%7d%207%7d%20%e4%ba%8c%e3%80%81application.yml%e6%96%87%e4%bb%b6%e9%85%8d%e7%bd%ae%0a%e5%af%b9%e4%ba%8e7001%e7%ab%af%e5%8f%a3%e6%9c%8d%e5%8a%a1%ef%bc%9a%ef%bc%887002%e7%ab%af%e5%8f%a3%e7%b1%bb%e4%bc%bc%ef%bc%89%0a1eureka%3a%202%20instance%3a%203%20hostname%3a%20eureka7001.com%204%20client%3a%205%20%23%20false%20%e8%a1%a8%e7%a4%ba%e4%b8%8d%e5%90%91%e6%b3%a8%e5%86%8c%e4%b8%ad%e5%bf%83%e6%b3%a8%e5%86%8c%e8%87%aa%e5%b7%b1%206%20register-with-eureka%3a%20false%207%20%23%20false%20%e8%a1%a8%e7%a4%ba%e8%87%aa%e5%b7%b1%e7%ab%af%e5%b0%b1%e6%98%af%e6%b3%a8%e5%86%8c%e4%b8%ad%e5%bf%83%ef%bc%8c%e6%88%91%e7%9a%84%e8%81%8c%e8%b4%a3%e5%b0%b1%e6%98%af%e7%bb%b4%e6%8a%a4%e6%9c%8d%e5%8a%a1%e5%ae%9e%e4%be%8b%ef%bc%8c%e5%b9%b6%e4%b8%8d%e9%9c%80%e8%a6%81%e5%8e%bb%e6%a3%80%e7%b4%a2%e6%9c%8d%e5%8a%a1%208%20fetch-registry%3a%20false%209%20service-url%3a%2010%20%23%20%e8%ae%be%e7%bd%ae%e4%b8%8eEureka%20Server%e4%ba%a4%e4%ba%92%e7%9a%84%e5%9c%b0%e5%9d%80%e6%9f%a5%e8%af%a2%e6%9c%8d%e5%8a%a1%e5%92%8c%e6%b3%a8%e5%86%8c%e6%9c%8d%e5%8a%a1%e9%83%bd%e9%9c%80%e8%a6%81%e4%be%9d%e8%b5%96%e8%bf%99%e4%b8%aa%e5%9c%b0%e5%9d%80%2011%20defaultZone%3a%20http%3a%2f%2feureka7002."
+      aria-label="Tumblr"
+    >
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f07%2feureka-configuration-process-and-understanding%2f&t=Eureka%20%e9%85%8d%e7%bd%ae%e8%bf%87%e7%a8%8b%e4%b8%8e%e7%90%86%e8%a7%a3" aria-label="Hacker News">
-      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
     </a>
   </li>
 </ul>
 
     </div>
-
     <div id="actions-footer">
-        <a id="menu-toggle" class="icon-mobile-nav" href="#" onclick="$('#nav-footer').show();$('#toc-footer').hide();$('#share-footer').hide();return false;" aria-label="Menu">
-          <i class="fas fa-bars fa-lg" aria-hidden="true"></i></a>
-
-        
-        <a id="toc-toggle"class="icon-mobile-nav"  href="#" onclick="$('#toc-footer').show();$('#nav-footer').hide();$('#share-footer').hide();return false;" aria-label="TOC">
-          <i class="fas fa-list fa-lg" aria-hidden="true"></i></a>
-        
-
-        <a id="top" class="icon-mobile-nav" style="display:none" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
-          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i></a>
-
-        <a id="searchBtn1" class="icon-mobile-nav"  href="#" aria-label="Search">
-          <i class="fa fa-search fa-lg" aria-hidden="true"></i></a>
-
-        <a id="theme-change" class="icon-mobile-nav"><i class="fas fa-adjust fa-lg"></i></a>
-
-        <a id="share-toggle" class="icon-mobile-nav"  href="#" onclick="$('#share-footer').show();$('#toc-footer').hide();$('#nav-footer').hide();return false;" aria-label="Share">
-          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i></a>
+      
+      
+        <a
+          class="icon-mobile-nav"
+          href="https://akynazh.site/posts/2022/07/linux-display-content-configuration-record/"
+          aria-label="Previous"
+        >
+          <i class="fas fa-chevron-left fa-lg" aria-hidden="true"></i>
+        </a>
+      
+      
+      <a
+        id="menu-toggle"
+        class="icon-mobile-nav"
+        href="#"
+        onclick="$('#nav-footer').show();$('#toc-footer').hide();$('#share-footer').hide();return false;"
+        aria-label="Menu"
+      >
+        <i class="fas fa-bars fa-lg" aria-hidden="true"></i
+      ></a>
+      
+      
+        <a
+          id="toc-toggle"
+          class="icon-mobile-nav"
+          href="#"
+          onclick="$('#toc-footer').show();$('#nav-footer').hide();$('#share-footer').hide();return false;"
+          aria-label="TOC"
+        >
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i
+        ></a>
+      
+      
+      <a
+        id="top"
+        class="icon-mobile-nav"
+        style="display:none"
+        href="#"
+        onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"
+        aria-label="Top of Page"
+      >
+        <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i
+      ></a>
+      
+      <a id="searchBtn1" class="icon-mobile-nav" href="#" aria-label="Search">
+        <i class="fa fa-search fa-lg" aria-hidden="true"></i
+      ></a>
+      
+      <a id="theme-change" class="icon-mobile-nav"
+        ><i class="fas fa-adjust fa-lg"></i
+      ></a>
+      
+      <a
+        id="share-toggle"
+        class="icon-mobile-nav"
+        href="#"
+        onclick="$('#share-footer').show();$('#toc-footer').hide();$('#nav-footer').hide();return false;"
+        aria-label="Share"
+      >
+        <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i
+      ></a>
+      
+      
+        <a class="icon" href="https://akynazh.site/posts/2022/07/zookeeper-configuration-process-and-test/" aria-label="Next">
+          <i class="fas fa-chevron-right fa-lg" aria-hidden="true"></i>
+        </a>
+      
     </div>
-
   </div>
 </div>
 
-  <footer id="footer">
+      <footer id="footer">
   <div class="footer-left">
-    Copyright  &copy; 2023  Jzh 
-    | <a href="https://beian.miit.gov.cn/" style="text-decoration:none;">陕ICP备2022007986号-1</a>
+    Copyright &copy;
+    2023
+    
+      Jzh
+    
+    |
+    <a href="https://beian.miit.gov.cn/" style="text-decoration:none;"
+      >陕ICP备2022007986号-1</a
+    >
   </div>
   <div class="footer-right">
     <nav>
       <ul>
-         
-        <li><a href="/">Home</a></li>
-         
-        <li><a href="/posts">Archives</a></li>
-         
-        <li><a href="/about">About</a></li>
+        
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/posts">Posts</a></li>
+        
+          <li><a href="/about">About</a></li>
         
       </ul>
     </nav>
   </div>
 </footer>
-  </div>
-</body>
-<script src="/js/fuse.min.js"></script>
-<script src="/js/fastsearch.js"></script>
-<script src="/js/jquery.min.js"></script>
-<script src="/js/main.js"></script>
 
-
-
-
-
+    </div>
+  </body>
+  <script src="/js/main.js"></script>
+  <script src="/js/fuse.min.js"></script>
+  <script src="/js/fastsearch.js"></script>
+  
+  
+  
+  
+  
 </html>

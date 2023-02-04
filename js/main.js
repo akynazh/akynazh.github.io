@@ -7,7 +7,7 @@ $(document).ready(function () {
     } else {
       newTheme = "light";
     }
-    changeTheme(newTheme)
+    changeTheme(newTheme);
   });
   /**
    * Shows the responsive navigation menu on mobile.

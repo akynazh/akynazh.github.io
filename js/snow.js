@@ -414,10 +414,6 @@
 });
 
 function startSnow() {
-  let pathName = window.location.pathname;
-  if (pathName.indexOf("/posts/") != -1 && pathName.length > 7) {
-    return
-  }
   // 生成雪类型一
   window.snow1 = new $Snow();
 

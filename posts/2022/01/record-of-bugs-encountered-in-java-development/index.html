@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title> Java 开发中遇到的 bug 记录 | Norwegian Wood</title>
-  <link rel='canonical' href='https://akynazh.site/posts/2022/01/record-of-bugs-encountered-in-java-development/'>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="all,follow">
-  <meta name="googlebot" content="index,follow,snippet,archive">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Java 开发中遇到的 bug 记录 |Norwegian Wood</title>
+  <link rel="canonical" href="https://akynazh.site/posts/2022/01/record-of-bugs-encountered-in-java-development/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="all,follow" />
+  <meta name="googlebot" content="index,follow,snippet,archive" />
   <meta property="og:title" content="Java 开发中遇到的 bug 记录" />
 <meta property="og:description" content="持续更新中。
 BufferedWriter 无法正确写出问题 这是一段客户端代码，向服务器端发送消息，然后接收服务器端的回复：
@@ -28,112 +28,126 @@ BufferedWriter 无法正确写出问题 这是一段客户端代码，向服务�
 
   
   
-  
+
   
   
 
   
   
   
-    <input value="light" id="theme-current" style="display: none;">
+    <input value="light" id="theme-current" style="display: none;" />
+    <link id="theme" rel="stylesheet" href="https://akynazh.site/css/styles_light.css" />
   
-  <input value="https://akynazh.site/css/styles_dark.css" id="styles-dark" style="display: none;">
-  <input value="https://akynazh.site/css/styles_light.css" id="styles-light" style="display: none;">
+  <input value="https://akynazh.site/css/styles_dark.css" id="styles-dark" style="display: none;" />
+  <input value="https://akynazh.site/css/styles_light.css" id="styles-light" style="display: none;" />
 
-  <input value="1" id="set-snow" style="display: none;">
-
-  <link id="theme" rel="stylesheet" href="">
-  <script src="/js/jquery.min.js"></script>
+  <input value="1" id="set-snow" style="display: none;" />
+  
   <script src="/js/snow.js"></script>
   <script src="/js/theme.js"></script>
-  <script>
-    theme = getCurrentTheme();
-    setTheme(theme);
-    setSnow = document.getElementById("set-snow").value;
-    if (theme === "dark" && setSnow === "1") {
-      startSnow()
-    }
-  </script>
+  <script src="/js/jquery.min.js"></script>
 
   
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  />
 
   
-  <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+
+
   
 
-  <link rel="shortcut icon" href="/favicon.png" type="image/png" />
-<link rel="icon" href="/favicon.png" type="image/png" />
-
-  
-  
   
 </head>
-<body class="max-width-blog mx-auto px3 ltr">
-  <div class="content index py4">
-  <div id="header-post">
+
+  <body class="max-width-blog mx-auto px3 ltr">
+    <div class="content index py4">
+      <div id="header-post">
   <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
-  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <a
+    id="top-icon-tablet"
+    href="#"
+    onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"
+    style="display:none;"
+    aria-label="Top of Page"
+    ><i class="fas fa-chevron-up fa-lg"></i
+  ></a>
   <span id="menu">
     <span id="nav">
       <ul>
-         
-        <li><a href="/">Home</a></li>
-         
-        <li><a href="/posts">Archives</a></li>
-         
-        <li><a href="/about">About</a></li>
+        
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/posts">Posts</a></li>
+        
+          <li><a href="/about">About</a></li>
         
       </ul>
     </span>
-    <br/>
+    <br />
     <span id="actions">
       <ul>
         
-        <li>
-          <a class="icon" href="https://akynazh.site/posts/2021/12/permission-management-of-linux-practical-operation/" aria-label="Previous">
-            <i class="fas fa-chevron-left" aria-hidden="true"></i>
-          </a>
-        </li>
+        
+          <li>
+            <a class="icon" href="https://akynazh.site/posts/2021/12/permission-management-of-linux-practical-operation/" aria-label="Previous">
+              <i class="fas fa-chevron-left" aria-hidden="true"></i>
+            </a>
+          </li>
+        
+        
+        
+          <li>
+            <a class="icon" href="https://akynazh.site/posts/2022/02/the-beauty-of-simplicity/" aria-label="Next">
+              <i class="fas fa-chevron-right" aria-hidden="true"></i>
+            </a>
+          </li>
         
         
         <li>
-          <a class="icon" href="https://akynazh.site/posts/2022/02/the-beauty-of-simplicity/" aria-label="Next">
-            <i class="fas fa-chevron-right" aria-hidden="true"></i>
-          </a>
-        </li>
-        
-        <li>
-          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <a
+            class="icon"
+            href="#"
+            onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"
+            aria-label="Top of Page"
+          >
             <i class="fas fa-chevron-up" aria-hidden="true"></i>
           </a>
         </li>
+        
         <li>
           <a class="icon" href="#" aria-label="Search" id="searchBtn">
             <i class="fa fa-search" aria-hidden="true"></i>
           </a>
         </li>
+        
         <li>
           <a class="icon" id="theme-change"><i class="fas fa-adjust"></i></a>
         </li>
+        
         <li>
-          <a class="icon" href="#" aria-label="Share" onclick="$('#share').toggle();return false;">
+          <a
+            class="icon"
+            href="#"
+            aria-label="Share"
+            onclick="$('#share').toggle();return false;"
+          >
             <i class="fas fa-share-alt" aria-hidden="true"></i>
           </a>
         </li>
       </ul>
-      <span id="i-prev" class="info" style="display:none;">Previous post</span>
-      <span id="i-prev" class="info" style="display:none;">Previous post</span>
-      <span id="i-next" class="info" style="display:none;">Next post</span>
-      <span id="i-top" class="info" style="display:none;">Back to top</span>
-      <span id="i-search" class="info" style="display:none;">Search</span>
-      <span id="i-share" class="info" style="display:none;">Share post</span>
     </span>
-    <br/>
+    <br />
     <div id="share" style="display: none">
       
       <ul>
@@ -143,110 +157,136 @@ BufferedWriter 无法正确写出问题 这是一段客户端代码，向服务�
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f01%2frecord-of-bugs-encountered-in-java-development%2f" aria-label="Facebook">
+    <a
+      class="icon"
+      href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f01%2frecord-of-bugs-encountered-in-java-development%2f"
+      aria-label="Facebook"
+    >
       <i class="fab fa-facebook " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f01%2frecord-of-bugs-encountered-in-java-development%2f&text=Java%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95" aria-label="Twitter">
+    <a
+      class="icon"
+      href="https://twitter.com/share?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f01%2frecord-of-bugs-encountered-in-java-development%2f&text=Java%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95"
+      aria-label="Twitter"
+    >
       <i class="fab fa-twitter " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f01%2frecord-of-bugs-encountered-in-java-development%2f&title=Java%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95" aria-label="Linkedin">
+    <a
+      class="icon"
+      href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f01%2frecord-of-bugs-encountered-in-java-development%2f&title=Java%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95"
+      aria-label="Linkedin"
+    >
       <i class="fab fa-linkedin " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f01%2frecord-of-bugs-encountered-in-java-development%2f&is_video=false&description=Java%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95" aria-label="Pinterest">
-      <i class="fab fa-pinterest " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="mailto:?subject=Java%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95&body=Check out this article: https%3a%2f%2fakynazh.site%2fposts%2f2022%2f01%2frecord-of-bugs-encountered-in-java-development%2f" aria-label="Email">
+    <a
+      class="icon"
+      href="mailto:?subject=Java%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95&body=Check out this article: https%3a%2f%2fakynazh.site%2fposts%2f2022%2f01%2frecord-of-bugs-encountered-in-java-development%2f"
+      aria-label="Email"
+    >
       <i class="fas fa-envelope " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f01%2frecord-of-bugs-encountered-in-java-development%2f&title=Java%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95" aria-label="Pocket">
-      <i class="fab fa-get-pocket " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f01%2frecord-of-bugs-encountered-in-java-development%2f&title=Java%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95" aria-label="reddit">
+    <a
+      class="icon"
+      href="http://reddit.com/submit?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f01%2frecord-of-bugs-encountered-in-java-development%2f&title=Java%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95"
+      aria-label="reddit"
+    >
       <i class="fab fa-reddit " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f01%2frecord-of-bugs-encountered-in-java-development%2f&name=Java%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95&description=%e6%8c%81%e7%bb%ad%e6%9b%b4%e6%96%b0%e4%b8%ad%e3%80%82%0aBufferedWriter%20%e6%97%a0%e6%b3%95%e6%ad%a3%e7%a1%ae%e5%86%99%e5%87%ba%e9%97%ae%e9%a2%98%20%e8%bf%99%e6%98%af%e4%b8%80%e6%ae%b5%e5%ae%a2%e6%88%b7%e7%ab%af%e4%bb%a3%e7%a0%81%ef%bc%8c%e5%90%91%e6%9c%8d%e5%8a%a1%e5%99%a8%e7%ab%af%e5%8f%91%e9%80%81%e6%b6%88%e6%81%af%ef%bc%8c%e7%84%b6%e5%90%8e%e6%8e%a5%e6%94%b6%e6%9c%8d%e5%8a%a1%e5%99%a8%e7%ab%af%e7%9a%84%e5%9b%9e%e5%a4%8d%ef%bc%9a%0a1try%20%28%202%20BufferedReader%20in%20%3d%20new%20BufferedReader%28new%20InputStreamReader%28socket.getInputStream%28%29%29%29%3b%203%20BufferedWriter%20out%20%3d%20new%20BufferedWriter%28new%20OutputStreamWriter%28socket.getOutputStream%28%29%29%29%204%29%20%7b%205%20String%20message%3b%206%20while%28%28message%20%3d%20stdIn.readLine%28%29%29%20%21%3d%20null%29%20%7b%207%20out.write%28message%29%3b%208%20out.flush%28%29%3b%209%20System.out.println%28%26%2334%3bReceive%20from%20server%3a%20%26%2334%3b%20%2b%20in.readLine%28%29%29%3b%2010%20%7d%2011%7d%20catch%20%28Exception%20e%29%20%7b%2012%20System.out.println%28e.getMessage%28%29%29%3b%2013%7d%20%e8%bf%99%e6%98%af%e6%9c%8d%e5%8a%a1%e7%ab%af%e4%bb%a3%e7%a0%81%e7%9a%84%e4%b8%80%e9%83%a8%e5%88%86%ef%bc%8c%e6%8e%a5%e6%94%b6%e5%ae%a2%e6%88%b7%e7%ab%af%e6%b6%88%e6%81%af%ef%bc%8c%e5%b9%b6%e5%90%91%e5%ae%a2%e6%88%b7%e7%ab%af%e5%9b%9e%e5%a4%8d%ef%bc%9a%0a1try%20%28%202%20BufferedReader%20in%20%3d%20new%20BufferedReader%28new%20InputStreamReader%28socket.getInputStream%28%29%29%29%3b%203%20BufferedWriter%20out%20%3d%20new%20BufferedWriter%28new%20OutputStreamWriter%28socket.getOutputStream%28%29%29%29%204%29%20%7b%205%20String%20message%3b%206%20while%28%28message%20%3d%20in." aria-label="Tumblr">
+    <a
+      class="icon"
+      href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f01%2frecord-of-bugs-encountered-in-java-development%2f&name=Java%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95&description=%e6%8c%81%e7%bb%ad%e6%9b%b4%e6%96%b0%e4%b8%ad%e3%80%82%0aBufferedWriter%20%e6%97%a0%e6%b3%95%e6%ad%a3%e7%a1%ae%e5%86%99%e5%87%ba%e9%97%ae%e9%a2%98%20%e8%bf%99%e6%98%af%e4%b8%80%e6%ae%b5%e5%ae%a2%e6%88%b7%e7%ab%af%e4%bb%a3%e7%a0%81%ef%bc%8c%e5%90%91%e6%9c%8d%e5%8a%a1%e5%99%a8%e7%ab%af%e5%8f%91%e9%80%81%e6%b6%88%e6%81%af%ef%bc%8c%e7%84%b6%e5%90%8e%e6%8e%a5%e6%94%b6%e6%9c%8d%e5%8a%a1%e5%99%a8%e7%ab%af%e7%9a%84%e5%9b%9e%e5%a4%8d%ef%bc%9a%0a1try%20%28%202%20BufferedReader%20in%20%3d%20new%20BufferedReader%28new%20InputStreamReader%28socket.getInputStream%28%29%29%29%3b%203%20BufferedWriter%20out%20%3d%20new%20BufferedWriter%28new%20OutputStreamWriter%28socket.getOutputStream%28%29%29%29%204%29%20%7b%205%20String%20message%3b%206%20while%28%28message%20%3d%20stdIn.readLine%28%29%29%20%21%3d%20null%29%20%7b%207%20out.write%28message%29%3b%208%20out.flush%28%29%3b%209%20System.out.println%28%26%2334%3bReceive%20from%20server%3a%20%26%2334%3b%20%2b%20in.readLine%28%29%29%3b%2010%20%7d%2011%7d%20catch%20%28Exception%20e%29%20%7b%2012%20System.out.println%28e.getMessage%28%29%29%3b%2013%7d%20%e8%bf%99%e6%98%af%e6%9c%8d%e5%8a%a1%e7%ab%af%e4%bb%a3%e7%a0%81%e7%9a%84%e4%b8%80%e9%83%a8%e5%88%86%ef%bc%8c%e6%8e%a5%e6%94%b6%e5%ae%a2%e6%88%b7%e7%ab%af%e6%b6%88%e6%81%af%ef%bc%8c%e5%b9%b6%e5%90%91%e5%ae%a2%e6%88%b7%e7%ab%af%e5%9b%9e%e5%a4%8d%ef%bc%9a%0a1try%20%28%202%20BufferedReader%20in%20%3d%20new%20BufferedReader%28new%20InputStreamReader%28socket.getInputStream%28%29%29%29%3b%203%20BufferedWriter%20out%20%3d%20new%20BufferedWriter%28new%20OutputStreamWriter%28socket.getOutputStream%28%29%29%29%204%29%20%7b%205%20String%20message%3b%206%20while%28%28message%20%3d%20in."
+      aria-label="Tumblr"
+    >
       <i class="fab fa-tumblr " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f01%2frecord-of-bugs-encountered-in-java-development%2f&t=Java%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95" aria-label="Hacker News">
-      <i class="fab fa-hacker-news " aria-hidden="true"></i>
     </a>
   </li>
 </ul>
 
     </div>
     
-    <div id="toc">
-      <nav id="TableOfContents">
+      <div id="toc">
+        <nav id="TableOfContents">
   <ul>
     <li><a href="#bufferedwriter-无法正确写出问题">BufferedWriter 无法正确写出问题</a></li>
   </ul>
 </nav>
-    </div>
+      </div>
     
   </span>
 </div>
-  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-    <header>
-      <h1 class="posttitle" itemprop="name headline">
-        Java 开发中遇到的 bug 记录
-      </h1>
-      <div class="meta">
-        
-        <div class="postdate">
-          
-          <time datetime="2022-01-06 17:23:00 &#43;0800 CST" itemprop="datePublished">2022-01-06</time>
-          
-        </div>
-        
-        
-        <div class="article-read-time">
-          <i class="far fa-clock"></i>
-          
-          2 minute read
-        </div>
-        
-        
-        <div class="article-category">
-            <i class="fas fa-archive"></i>
+
+      <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <header>
+          <h1 class="posttitle" itemprop="name headline">
+            Java 开发中遇到的 bug 记录
+          </h1>
+          <div class="meta">
+            
+            <div class="postdate">
+              
+              <time datetime="2022-01-06 17:23:00 &#43;0800 CST" itemprop="datePublished"
+                >2022-01-06</time
+              >
+              
+            </div>
             
             
-            <a class="category-link" href="/categories/language">Language</a>
+              <div class="article-read-time">
+                <i class="far fa-clock"></i>
+                
+                2 minute read
+              </div>
             
-        </div>
+            
+              <div class="article-category">
+                <i class="fas fa-archive"></i>
+                
+                  
+                  <a
+                    class="category-link"
+                    href="/categories/language"
+                    >Language</a
+                  >
+                
+              </div>
+            
+            
+              <div class="article-tag">
+                <i class="fas fa-tag"></i>
+                
+                  
+                  <a
+                    class="tag-link"
+                    href="/tags/java"
+                    rel="tag"
+                    >java</a
+                  >
+                
+                  , 
+                  <a
+                    class="tag-link"
+                    href="/tags/bug"
+                    rel="tag"
+                    >bug</a
+                  >
+                
+              </div>
+            
+          </div>
+        </header>
         
-        
-        <div class="article-tag">
-            <i class="fas fa-tag"></i>
-            
-            
-            <a class="tag-link" href="/tags/java" rel="tag">java</a>
-            
-             ,  
-            <a class="tag-link" href="/tags/bug" rel="tag">bug</a>
-            
-        </div>
-        
-      </div>
-    </header>
-    
-    <div class="content" itemprop="articleBody">
-      <p>持续更新中。</p>
+        <div class="content" itemprop="articleBody">
+          <p>持续更新中。</p>
 <h2 id="bufferedwriter-无法正确写出问题">BufferedWriter 无法正确写出问题</h2>
 <p>这是一段客户端代码，向服务器端发送消息，然后接收服务器端的回复：</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#ff79c6">try</span> <span style="color:#ff79c6">(</span>
@@ -284,9 +324,9 @@ BufferedWriter 无法正确写出问题 这是一段客户端代码，向服务�
 </span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#6272a4"></span>out<span style="color:#ff79c6">.</span><span style="color:#50fa7b">newLine</span><span style="color:#ff79c6">();</span>
 </span></span></code></pre></div><p>另一种更好的方法是使用 <code>PrintWriter</code>，使用它的写出操作 <code>println</code> 进行消息的输出。</p>
 
-    </div>
-  </article>
-  
+        </div>
+      </article>
+      
   
 
 
@@ -318,33 +358,37 @@ BufferedWriter 无法正确写出问题 这是一段客户端代码，向服务�
   </div>
 
 
-    
-    <div id="fastSearch">
-      <input id="searchInput" tabindex="0"/>
-      <ul id="searchResults"></ul>
-    </div>
-  <div id="footer-post-container">
+      <div id="fastSearch">
+  <input id="searchInput" tabindex="0" />
+  <ul id="searchResults"></ul>
+</div>
+
+      <div id="footer-post-container">
   <div id="footer-post">
     
-    <div id="toc-footer" style="display: none">
-      <nav id="TableOfContents">
+      <div id="toc-footer" style="display: none">
+        <nav id="TableOfContents">
   <ul>
     <li><a href="#bufferedwriter-无法正确写出问题">BufferedWriter 无法正确写出问题</a></li>
   </ul>
 </nav>
-    </div>
-    
+      </div>
     
     <div id="nav-footer" style="display: none">
       
-      <ul style="display:inline;"><li><a href="/">Home</a></li></ul>
+        <ul style="display:inline;">
+          <li><a href="/">Home</a></li>
+        </ul>
       
-      <ul style="display:inline;"><li><a href="/posts">Archives</a></li></ul>
+        <ul style="display:inline;">
+          <li><a href="/posts">Posts</a></li>
+        </ul>
       
-      <ul style="display:inline;"><li><a href="/about">About</a></li></ul>
+        <ul style="display:inline;">
+          <li><a href="/about">About</a></li>
+        </ul>
       
     </div>
-
     <div id="share-footer" style="display: none">
       
       <ul>
@@ -354,106 +398,169 @@ BufferedWriter 无法正确写出问题 这是一段客户端代码，向服务�
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f01%2frecord-of-bugs-encountered-in-java-development%2f" aria-label="Facebook">
+    <a
+      class="icon"
+      href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f01%2frecord-of-bugs-encountered-in-java-development%2f"
+      aria-label="Facebook"
+    >
       <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f01%2frecord-of-bugs-encountered-in-java-development%2f&text=Java%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95" aria-label="Twitter">
+    <a
+      class="icon"
+      href="https://twitter.com/share?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f01%2frecord-of-bugs-encountered-in-java-development%2f&text=Java%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95"
+      aria-label="Twitter"
+    >
       <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f01%2frecord-of-bugs-encountered-in-java-development%2f&title=Java%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95" aria-label="Linkedin">
+    <a
+      class="icon"
+      href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f01%2frecord-of-bugs-encountered-in-java-development%2f&title=Java%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95"
+      aria-label="Linkedin"
+    >
       <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f01%2frecord-of-bugs-encountered-in-java-development%2f&is_video=false&description=Java%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95" aria-label="Pinterest">
-      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="mailto:?subject=Java%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95&body=Check out this article: https%3a%2f%2fakynazh.site%2fposts%2f2022%2f01%2frecord-of-bugs-encountered-in-java-development%2f" aria-label="Email">
+    <a
+      class="icon"
+      href="mailto:?subject=Java%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95&body=Check out this article: https%3a%2f%2fakynazh.site%2fposts%2f2022%2f01%2frecord-of-bugs-encountered-in-java-development%2f"
+      aria-label="Email"
+    >
       <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f01%2frecord-of-bugs-encountered-in-java-development%2f&title=Java%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95" aria-label="Pocket">
-      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f01%2frecord-of-bugs-encountered-in-java-development%2f&title=Java%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95" aria-label="reddit">
+    <a
+      class="icon"
+      href="http://reddit.com/submit?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f01%2frecord-of-bugs-encountered-in-java-development%2f&title=Java%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95"
+      aria-label="reddit"
+    >
       <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f01%2frecord-of-bugs-encountered-in-java-development%2f&name=Java%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95&description=%e6%8c%81%e7%bb%ad%e6%9b%b4%e6%96%b0%e4%b8%ad%e3%80%82%0aBufferedWriter%20%e6%97%a0%e6%b3%95%e6%ad%a3%e7%a1%ae%e5%86%99%e5%87%ba%e9%97%ae%e9%a2%98%20%e8%bf%99%e6%98%af%e4%b8%80%e6%ae%b5%e5%ae%a2%e6%88%b7%e7%ab%af%e4%bb%a3%e7%a0%81%ef%bc%8c%e5%90%91%e6%9c%8d%e5%8a%a1%e5%99%a8%e7%ab%af%e5%8f%91%e9%80%81%e6%b6%88%e6%81%af%ef%bc%8c%e7%84%b6%e5%90%8e%e6%8e%a5%e6%94%b6%e6%9c%8d%e5%8a%a1%e5%99%a8%e7%ab%af%e7%9a%84%e5%9b%9e%e5%a4%8d%ef%bc%9a%0a1try%20%28%202%20BufferedReader%20in%20%3d%20new%20BufferedReader%28new%20InputStreamReader%28socket.getInputStream%28%29%29%29%3b%203%20BufferedWriter%20out%20%3d%20new%20BufferedWriter%28new%20OutputStreamWriter%28socket.getOutputStream%28%29%29%29%204%29%20%7b%205%20String%20message%3b%206%20while%28%28message%20%3d%20stdIn.readLine%28%29%29%20%21%3d%20null%29%20%7b%207%20out.write%28message%29%3b%208%20out.flush%28%29%3b%209%20System.out.println%28%26%2334%3bReceive%20from%20server%3a%20%26%2334%3b%20%2b%20in.readLine%28%29%29%3b%2010%20%7d%2011%7d%20catch%20%28Exception%20e%29%20%7b%2012%20System.out.println%28e.getMessage%28%29%29%3b%2013%7d%20%e8%bf%99%e6%98%af%e6%9c%8d%e5%8a%a1%e7%ab%af%e4%bb%a3%e7%a0%81%e7%9a%84%e4%b8%80%e9%83%a8%e5%88%86%ef%bc%8c%e6%8e%a5%e6%94%b6%e5%ae%a2%e6%88%b7%e7%ab%af%e6%b6%88%e6%81%af%ef%bc%8c%e5%b9%b6%e5%90%91%e5%ae%a2%e6%88%b7%e7%ab%af%e5%9b%9e%e5%a4%8d%ef%bc%9a%0a1try%20%28%202%20BufferedReader%20in%20%3d%20new%20BufferedReader%28new%20InputStreamReader%28socket.getInputStream%28%29%29%29%3b%203%20BufferedWriter%20out%20%3d%20new%20BufferedWriter%28new%20OutputStreamWriter%28socket.getOutputStream%28%29%29%29%204%29%20%7b%205%20String%20message%3b%206%20while%28%28message%20%3d%20in." aria-label="Tumblr">
+    <a
+      class="icon"
+      href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f01%2frecord-of-bugs-encountered-in-java-development%2f&name=Java%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95&description=%e6%8c%81%e7%bb%ad%e6%9b%b4%e6%96%b0%e4%b8%ad%e3%80%82%0aBufferedWriter%20%e6%97%a0%e6%b3%95%e6%ad%a3%e7%a1%ae%e5%86%99%e5%87%ba%e9%97%ae%e9%a2%98%20%e8%bf%99%e6%98%af%e4%b8%80%e6%ae%b5%e5%ae%a2%e6%88%b7%e7%ab%af%e4%bb%a3%e7%a0%81%ef%bc%8c%e5%90%91%e6%9c%8d%e5%8a%a1%e5%99%a8%e7%ab%af%e5%8f%91%e9%80%81%e6%b6%88%e6%81%af%ef%bc%8c%e7%84%b6%e5%90%8e%e6%8e%a5%e6%94%b6%e6%9c%8d%e5%8a%a1%e5%99%a8%e7%ab%af%e7%9a%84%e5%9b%9e%e5%a4%8d%ef%bc%9a%0a1try%20%28%202%20BufferedReader%20in%20%3d%20new%20BufferedReader%28new%20InputStreamReader%28socket.getInputStream%28%29%29%29%3b%203%20BufferedWriter%20out%20%3d%20new%20BufferedWriter%28new%20OutputStreamWriter%28socket.getOutputStream%28%29%29%29%204%29%20%7b%205%20String%20message%3b%206%20while%28%28message%20%3d%20stdIn.readLine%28%29%29%20%21%3d%20null%29%20%7b%207%20out.write%28message%29%3b%208%20out.flush%28%29%3b%209%20System.out.println%28%26%2334%3bReceive%20from%20server%3a%20%26%2334%3b%20%2b%20in.readLine%28%29%29%3b%2010%20%7d%2011%7d%20catch%20%28Exception%20e%29%20%7b%2012%20System.out.println%28e.getMessage%28%29%29%3b%2013%7d%20%e8%bf%99%e6%98%af%e6%9c%8d%e5%8a%a1%e7%ab%af%e4%bb%a3%e7%a0%81%e7%9a%84%e4%b8%80%e9%83%a8%e5%88%86%ef%bc%8c%e6%8e%a5%e6%94%b6%e5%ae%a2%e6%88%b7%e7%ab%af%e6%b6%88%e6%81%af%ef%bc%8c%e5%b9%b6%e5%90%91%e5%ae%a2%e6%88%b7%e7%ab%af%e5%9b%9e%e5%a4%8d%ef%bc%9a%0a1try%20%28%202%20BufferedReader%20in%20%3d%20new%20BufferedReader%28new%20InputStreamReader%28socket.getInputStream%28%29%29%29%3b%203%20BufferedWriter%20out%20%3d%20new%20BufferedWriter%28new%20OutputStreamWriter%28socket.getOutputStream%28%29%29%29%204%29%20%7b%205%20String%20message%3b%206%20while%28%28message%20%3d%20in."
+      aria-label="Tumblr"
+    >
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f01%2frecord-of-bugs-encountered-in-java-development%2f&t=Java%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95" aria-label="Hacker News">
-      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
     </a>
   </li>
 </ul>
 
     </div>
-
     <div id="actions-footer">
-        <a id="menu-toggle" class="icon-mobile-nav" href="#" onclick="$('#nav-footer').show();$('#toc-footer').hide();$('#share-footer').hide();return false;" aria-label="Menu">
-          <i class="fas fa-bars fa-lg" aria-hidden="true"></i></a>
-
-        
-        <a id="toc-toggle"class="icon-mobile-nav"  href="#" onclick="$('#toc-footer').show();$('#nav-footer').hide();$('#share-footer').hide();return false;" aria-label="TOC">
-          <i class="fas fa-list fa-lg" aria-hidden="true"></i></a>
-        
-
-        <a id="top" class="icon-mobile-nav" style="display:none" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
-          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i></a>
-
-        <a id="searchBtn1" class="icon-mobile-nav"  href="#" aria-label="Search">
-          <i class="fa fa-search fa-lg" aria-hidden="true"></i></a>
-
-        <a id="theme-change" class="icon-mobile-nav"><i class="fas fa-adjust fa-lg"></i></a>
-
-        <a id="share-toggle" class="icon-mobile-nav"  href="#" onclick="$('#share-footer').show();$('#toc-footer').hide();$('#nav-footer').hide();return false;" aria-label="Share">
-          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i></a>
+      
+      
+        <a
+          class="icon-mobile-nav"
+          href="https://akynazh.site/posts/2021/12/permission-management-of-linux-practical-operation/"
+          aria-label="Previous"
+        >
+          <i class="fas fa-chevron-left fa-lg" aria-hidden="true"></i>
+        </a>
+      
+      
+      <a
+        id="menu-toggle"
+        class="icon-mobile-nav"
+        href="#"
+        onclick="$('#nav-footer').show();$('#toc-footer').hide();$('#share-footer').hide();return false;"
+        aria-label="Menu"
+      >
+        <i class="fas fa-bars fa-lg" aria-hidden="true"></i
+      ></a>
+      
+      
+        <a
+          id="toc-toggle"
+          class="icon-mobile-nav"
+          href="#"
+          onclick="$('#toc-footer').show();$('#nav-footer').hide();$('#share-footer').hide();return false;"
+          aria-label="TOC"
+        >
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i
+        ></a>
+      
+      
+      <a
+        id="top"
+        class="icon-mobile-nav"
+        style="display:none"
+        href="#"
+        onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"
+        aria-label="Top of Page"
+      >
+        <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i
+      ></a>
+      
+      <a id="searchBtn1" class="icon-mobile-nav" href="#" aria-label="Search">
+        <i class="fa fa-search fa-lg" aria-hidden="true"></i
+      ></a>
+      
+      <a id="theme-change" class="icon-mobile-nav"
+        ><i class="fas fa-adjust fa-lg"></i
+      ></a>
+      
+      <a
+        id="share-toggle"
+        class="icon-mobile-nav"
+        href="#"
+        onclick="$('#share-footer').show();$('#toc-footer').hide();$('#nav-footer').hide();return false;"
+        aria-label="Share"
+      >
+        <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i
+      ></a>
+      
+      
+        <a class="icon" href="https://akynazh.site/posts/2022/02/the-beauty-of-simplicity/" aria-label="Next">
+          <i class="fas fa-chevron-right fa-lg" aria-hidden="true"></i>
+        </a>
+      
     </div>
-
   </div>
 </div>
 
-  <footer id="footer">
+      <footer id="footer">
   <div class="footer-left">
-    Copyright  &copy; 2023  Jzh 
-    | <a href="https://beian.miit.gov.cn/" style="text-decoration:none;">陕ICP备2022007986号-1</a>
+    Copyright &copy;
+    2023
+    
+      Jzh
+    
+    |
+    <a href="https://beian.miit.gov.cn/" style="text-decoration:none;"
+      >陕ICP备2022007986号-1</a
+    >
   </div>
   <div class="footer-right">
     <nav>
       <ul>
-         
-        <li><a href="/">Home</a></li>
-         
-        <li><a href="/posts">Archives</a></li>
-         
-        <li><a href="/about">About</a></li>
+        
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/posts">Posts</a></li>
+        
+          <li><a href="/about">About</a></li>
         
       </ul>
     </nav>
   </div>
 </footer>
-  </div>
-</body>
-<script src="/js/fuse.min.js"></script>
-<script src="/js/fastsearch.js"></script>
-<script src="/js/jquery.min.js"></script>
-<script src="/js/main.js"></script>
 
-
-
-
-
+    </div>
+  </body>
+  <script src="/js/main.js"></script>
+  <script src="/js/fuse.min.js"></script>
+  <script src="/js/fastsearch.js"></script>
+  
+  
+  
+  
+  
 </html>
