@@ -3,24 +3,39 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://akynazh.site/categories/</loc>
-    <lastmod>2023-01-31T17:22:29+08:00</lastmod>
+    <lastmod>2023-02-02T18:49:54+08:00</lastmod>
   </url><url>
-    <loc>https://akynazh.site/tags/crontab/</loc>
-    <lastmod>2023-01-31T17:22:29+08:00</lastmod>
+    <loc>https://akynazh.site/tags/css/</loc>
+    <lastmod>2023-02-02T18:49:54+08:00</lastmod>
+  </url><url>
+    <loc>https://akynazh.site/tags/hugo/</loc>
+    <lastmod>2023-02-02T18:49:54+08:00</lastmod>
+  </url><url>
+    <loc>https://akynazh.site/posts/2023/02/hugo-realizes-switching-between-deep-and-shallow-themes/</loc>
+    <lastmod>2023-02-02T18:49:54+08:00</lastmod>
+  </url><url>
+    <loc>https://akynazh.site/tags/js/</loc>
+    <lastmod>2023-02-02T18:49:54+08:00</lastmod>
   </url><url>
     <loc>https://akynazh.site/</loc>
+    <lastmod>2023-02-02T18:49:54+08:00</lastmod>
+  </url><url>
+    <loc>https://akynazh.site/posts/</loc>
+    <lastmod>2023-02-02T18:49:54+08:00</lastmod>
+  </url><url>
+    <loc>https://akynazh.site/tags/</loc>
+    <lastmod>2023-02-02T18:49:54+08:00</lastmod>
+  </url><url>
+    <loc>https://akynazh.site/categories/web/</loc>
+    <lastmod>2023-02-02T18:49:54+08:00</lastmod>
+  </url><url>
+    <loc>https://akynazh.site/tags/crontab/</loc>
     <lastmod>2023-01-31T17:22:29+08:00</lastmod>
   </url><url>
     <loc>https://akynazh.site/categories/os/</loc>
     <lastmod>2023-01-31T17:22:29+08:00</lastmod>
   </url><url>
-    <loc>https://akynazh.site/posts/</loc>
-    <lastmod>2023-01-31T17:22:29+08:00</lastmod>
-  </url><url>
     <loc>https://akynazh.site/tags/schtasks/</loc>
-    <lastmod>2023-01-31T17:22:29+08:00</lastmod>
-  </url><url>
-    <loc>https://akynazh.site/tags/</loc>
     <lastmod>2023-01-31T17:22:29+08:00</lastmod>
   </url><url>
     <loc>https://akynazh.site/posts/2023/01/summary-of-timed-tasks/</loc>
@@ -60,9 +75,6 @@
     <lastmod>2022-12-15T21:21:16+08:00</lastmod>
   </url><url>
     <loc>https://akynazh.site/tags/web/</loc>
-    <lastmod>2022-12-08T16:35:54+08:00</lastmod>
-  </url><url>
-    <loc>https://akynazh.site/categories/web/</loc>
     <lastmod>2022-12-08T16:35:54+08:00</lastmod>
   </url><url>
     <loc>https://akynazh.site/posts/2022/12/understanding-of-rest-style/</loc>
@@ -274,9 +286,6 @@
   </url><url>
     <loc>https://akynazh.site/posts/2022/07/understand-and-apply-fast-power-operation/</loc>
     <lastmod>2022-07-21T20:44:54+08:00</lastmod>
-  </url><url>
-    <loc>https://akynazh.site/tags/hugo/</loc>
-    <lastmod>2022-07-20T23:46:01+08:00</lastmod>
   </url><url>
     <loc>https://akynazh.site/posts/2022/07/hugo-adds-onsite-search-function-through-algolia/</loc>
     <lastmod>2022-07-20T23:46:01+08:00</lastmod>

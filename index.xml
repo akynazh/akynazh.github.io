@@ -9,7 +9,21 @@
     <managingEditor>akynazh@qq.com (Jzh)</managingEditor>
     <webMaster>akynazh@qq.com (Jzh)</webMaster>
     <copyright>Jzh</copyright>
-    <lastBuildDate>Tue, 31 Jan 2023 17:22:29 +0800</lastBuildDate><atom:link href="https://akynazh.site/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 02 Feb 2023 18:49:54 +0800</lastBuildDate><atom:link href="https://akynazh.site/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo 实现深浅主题的切换</title>
+      <link>https://akynazh.site/posts/2023/02/hugo-realizes-switching-between-deep-and-shallow-themes/</link>
+      <pubDate>Thu, 02 Feb 2023 18:49:54 +0800</pubDate>
+      <author>akynazh@qq.com (Jzh)</author>
+      <guid>https://akynazh.site/posts/2023/02/hugo-realizes-switching-between-deep-and-shallow-themes/</guid>
+      <description>实现深浅主题切换的方法不只一种，这里记录我所使用的一种。
+生成深浅主题对应的 css 文件 配置入口文件 我的博客通过 sass 构建样式，可以将写好的 scss 文件组合生成一个 css 文件。
+而组合成为 css 文件需要一个入口文件，在入口文件里指定主题。
+比如我在 assets/scss/colors 中指定了两种色调 dark.scss 和 light.scss, 那么可以在对应的入口文件中 import:
+1// assets/scss/styles_dark.scss 2@import &amp;#34;colors/dark&amp;#34;; 3 4@import &amp;#34;variables&amp;#34;; 5@import &amp;#34;util&amp;#34;; 6@import &amp;#34;mixins&amp;#34;; 7// ... 1// assets/scss/styles_light.scss 2@import &amp;#34;colors/light&amp;#34;; 3 4@import &amp;#34;variables&amp;#34;; 5@import &amp;#34;util&amp;#34;; 6@import &amp;#34;mixins&amp;#34;; 7// ... 通过 hugo 生成目标文件 接着，在 &amp;lt;head&amp;gt;&amp;lt;/head&amp;gt; 中指定入口文件进行操作：
+1{{ $opts := (dict &amp;#34;targetPath&amp;#34; &amp;#34;css/styles_dark.css&amp;#34; &amp;#34;outputStyle&amp;#34; &amp;#34;compressed&amp;#34;) }} 2{{ $styles_dark := resources.Get &amp;#34;scss/styles_dark.scss&amp;#34; | resources.</description>
+    </item>
+    
     <item>
       <title>关于定时任务的总结</title>
       <link>https://akynazh.site/posts/2023/01/summary-of-timed-tasks/</link>
