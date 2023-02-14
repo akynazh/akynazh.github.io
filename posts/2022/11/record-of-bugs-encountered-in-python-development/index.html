@@ -10,11 +10,10 @@
   <meta name="googlebot" content="index,follow,snippet,archive" />
   <meta property="og:title" content="Python 开发中遇到的 bug 记录" />
 <meta property="og:description" content="持续更新中。
+包冲突 1root@Server-Debian-Jzh:~/Codes/tg-jav-bot# python3 bot.py 2Traceback (most recent call last): 3 File &#34;/root/Codes/tg-jav-bot/bot.py&#34;, line 13, in &lt;module&gt; 4 import utils.util_javbus as util_javbus 5ModuleNotFoundError: No module named &#39;utils.util_javbus&#39;; &#39;utils&#39; is not a package 项目下的 utils 文件夹 &lt;-&gt; pip 某个依赖包中的 utils.py 文件名 &ldquo;utils&rdquo; 冲突！
+默认先扫描当前目录下包，但是识别不到 utils 包，因为 utils 文件夹下缺失了 __init__.py 文件！
 SSLError(SSLCertVerificationError) 使用 requests 库时出现 bug:
-1(Caused by SSLError(SSLCertVerificationError(1, &#39;[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:997)&#39;))) 解决方法：python-requests-throwing-sslerror
-From requests documentation on SSL verification:
-Requests can verify SSL certificates for HTTPS requests, just like a web browser. To check a host’s SSL certificate, you can use the verify argument:
-1requests.get(&#39;https://kennethreitz.com&#39;, verify=True) pipenv 无法正常 install 1PS C:\Users\akyna\Codes\test\test_py&gt; pipenv install 2Usage: pipenv install [OPTIONS] [PACKAGES]... 3 4ERROR:: --system is intended to be used for pre-existing Pipfile installation, not installation of specific packages." />
+1(Caused by SSLError(SSLCertVerificationError(1, &#39;[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:997)&#39;))) 解决方法：python-requests-throwing-sslerror" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://akynazh.site/posts/2022/11/record-of-bugs-encountered-in-python-development/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-11-04T22:53:34+08:00" />
@@ -23,11 +22,10 @@ Requests can verify SSL certificates for HTTPS requests, just like a web browser
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Python 开发中遇到的 bug 记录"/>
 <meta name="twitter:description" content="持续更新中。
+包冲突 1root@Server-Debian-Jzh:~/Codes/tg-jav-bot# python3 bot.py 2Traceback (most recent call last): 3 File &#34;/root/Codes/tg-jav-bot/bot.py&#34;, line 13, in &lt;module&gt; 4 import utils.util_javbus as util_javbus 5ModuleNotFoundError: No module named &#39;utils.util_javbus&#39;; &#39;utils&#39; is not a package 项目下的 utils 文件夹 &lt;-&gt; pip 某个依赖包中的 utils.py 文件名 &ldquo;utils&rdquo; 冲突！
+默认先扫描当前目录下包，但是识别不到 utils 包，因为 utils 文件夹下缺失了 __init__.py 文件！
 SSLError(SSLCertVerificationError) 使用 requests 库时出现 bug:
-1(Caused by SSLError(SSLCertVerificationError(1, &#39;[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:997)&#39;))) 解决方法：python-requests-throwing-sslerror
-From requests documentation on SSL verification:
-Requests can verify SSL certificates for HTTPS requests, just like a web browser. To check a host’s SSL certificate, you can use the verify argument:
-1requests.get(&#39;https://kennethreitz.com&#39;, verify=True) pipenv 无法正常 install 1PS C:\Users\akyna\Codes\test\test_py&gt; pipenv install 2Usage: pipenv install [OPTIONS] [PACKAGES]... 3 4ERROR:: --system is intended to be used for pre-existing Pipfile installation, not installation of specific packages."/>
+1(Caused by SSLError(SSLCertVerificationError(1, &#39;[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:997)&#39;))) 解决方法：python-requests-throwing-sslerror"/>
 
 
   
@@ -215,7 +213,7 @@ Requests can verify SSL certificates for HTTPS requests, just like a web browser
   <li>
     <a
       class="icon"
-      href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f11%2frecord-of-bugs-encountered-in-python-development%2f&name=Python%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95&description=%e6%8c%81%e7%bb%ad%e6%9b%b4%e6%96%b0%e4%b8%ad%e3%80%82%0aSSLError%28SSLCertVerificationError%29%20%e4%bd%bf%e7%94%a8%20requests%20%e5%ba%93%e6%97%b6%e5%87%ba%e7%8e%b0%20bug%3a%0a1%28Caused%20by%20SSLError%28SSLCertVerificationError%281%2c%20%26%2339%3b%5bSSL%3a%20CERTIFICATE_VERIFY_FAILED%5d%20certificate%20verify%20failed%3a%20unable%20to%20get%20local%20issuer%20certificate%20%28_ssl.c%3a997%29%26%2339%3b%29%29%29%20%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95%ef%bc%9apython-requests-throwing-sslerror%0aFrom%20requests%20documentation%20on%20SSL%20verification%3a%0aRequests%20can%20verify%20SSL%20certificates%20for%20HTTPS%20requests%2c%20just%20like%20a%20web%20browser.%20To%20check%20a%20host%e2%80%99s%20SSL%20certificate%2c%20you%20can%20use%20the%20verify%20argument%3a%0a1requests.get%28%26%2339%3bhttps%3a%2f%2fkennethreitz.com%26%2339%3b%2c%20verify%3dTrue%29%20pipenv%20%e6%97%a0%e6%b3%95%e6%ad%a3%e5%b8%b8%20install%201PS%20C%3a%5cUsers%5cakyna%5cCodes%5ctest%5ctest_py%26gt%3b%20pipenv%20install%202Usage%3a%20pipenv%20install%20%5bOPTIONS%5d%20%5bPACKAGES%5d...%203%204ERROR%3a%3a%20--system%20is%20intended%20to%20be%20used%20for%20pre-existing%20Pipfile%20installation%2c%20not%20installation%20of%20specific%20packages."
+      href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f11%2frecord-of-bugs-encountered-in-python-development%2f&name=Python%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95&description=%e6%8c%81%e7%bb%ad%e6%9b%b4%e6%96%b0%e4%b8%ad%e3%80%82%0a%e5%8c%85%e5%86%b2%e7%aa%81%201root%40Server-Debian-Jzh%3a~%2fCodes%2ftg-jav-bot%23%20python3%20bot.py%202Traceback%20%28most%20recent%20call%20last%29%3a%203%20File%20%26%2334%3b%2froot%2fCodes%2ftg-jav-bot%2fbot.py%26%2334%3b%2c%20line%2013%2c%20in%20%26lt%3bmodule%26gt%3b%204%20import%20utils.util_javbus%20as%20util_javbus%205ModuleNotFoundError%3a%20No%20module%20named%20%26%2339%3butils.util_javbus%26%2339%3b%3b%20%26%2339%3butils%26%2339%3b%20is%20not%20a%20package%20%e9%a1%b9%e7%9b%ae%e4%b8%8b%e7%9a%84%20utils%20%e6%96%87%e4%bb%b6%e5%a4%b9%20%26lt%3b-%26gt%3b%20pip%20%e6%9f%90%e4%b8%aa%e4%be%9d%e8%b5%96%e5%8c%85%e4%b8%ad%e7%9a%84%20utils.py%20%e6%96%87%e4%bb%b6%e5%90%8d%20%26ldquo%3butils%26rdquo%3b%20%e5%86%b2%e7%aa%81%ef%bc%81%0a%e9%bb%98%e8%ae%a4%e5%85%88%e6%89%ab%e6%8f%8f%e5%bd%93%e5%89%8d%e7%9b%ae%e5%bd%95%e4%b8%8b%e5%8c%85%ef%bc%8c%e4%bd%86%e6%98%af%e8%af%86%e5%88%ab%e4%b8%8d%e5%88%b0%20utils%20%e5%8c%85%ef%bc%8c%e5%9b%a0%e4%b8%ba%20utils%20%e6%96%87%e4%bb%b6%e5%a4%b9%e4%b8%8b%e7%bc%ba%e5%a4%b1%e4%ba%86%20__init__.py%20%e6%96%87%e4%bb%b6%ef%bc%81%0aSSLError%28SSLCertVerificationError%29%20%e4%bd%bf%e7%94%a8%20requests%20%e5%ba%93%e6%97%b6%e5%87%ba%e7%8e%b0%20bug%3a%0a1%28Caused%20by%20SSLError%28SSLCertVerificationError%281%2c%20%26%2339%3b%5bSSL%3a%20CERTIFICATE_VERIFY_FAILED%5d%20certificate%20verify%20failed%3a%20unable%20to%20get%20local%20issuer%20certificate%20%28_ssl.c%3a997%29%26%2339%3b%29%29%29%20%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95%ef%bc%9apython-requests-throwing-sslerror"
       aria-label="Tumblr"
       target="_blank"
     >
@@ -229,6 +227,7 @@ Requests can verify SSL certificates for HTTPS requests, just like a web browser
       <div id="toc">
         <nav id="TableOfContents">
   <ul>
+    <li><a href="#包冲突">包冲突</a></li>
     <li><a href="#sslerrorsslcertverificationerror">SSLError(SSLCertVerificationError)</a></li>
     <li><a href="#pipenv-无法正常-install">pipenv 无法正常 install</a></li>
     <li><a href="#requests-库-headers-字段编码错误">requests 库 headers 字段编码错误</a></li>
@@ -260,7 +259,7 @@ Requests can verify SSL certificates for HTTPS requests, just like a web browser
               <div class="article-read-time">
                 <i class="far fa-clock"></i>
                 
-                2 minute read
+                3 minute read
               </div>
             
             
@@ -303,6 +302,14 @@ Requests can verify SSL certificates for HTTPS requests, just like a web browser
         
         <div class="content" itemprop="articleBody">
           <p>持续更新中。</p>
+<h2 id="包冲突">包冲突</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-v" data-lang="v"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#8be9fd;font-style:italic">root</span><span style="color:#ff79c6">@</span><span style="color:#50fa7b">Server</span><span style="color:#ff79c6">-</span><span style="color:#50fa7b">Debian</span><span style="color:#ff79c6">-</span><span style="color:#50fa7b">Jzh</span>:<span style="color:#ff79c6">~/</span><span style="color:#50fa7b">Codes</span><span style="color:#ff79c6">/</span><span style="color:#8be9fd;font-style:italic">tg</span><span style="color:#ff79c6">-</span><span style="color:#8be9fd;font-style:italic">jav</span><span style="color:#ff79c6">-</span><span style="color:#8be9fd;font-style:italic">bot</span><span style="color:#ff79c6">#</span> <span style="color:#8be9fd;font-style:italic">python3</span> <span style="color:#8be9fd;font-style:italic">bot</span>.<span style="color:#8be9fd;font-style:italic">py</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#50fa7b">Traceback</span> (<span style="color:#8be9fd;font-style:italic">most</span> <span style="color:#8be9fd;font-style:italic">recent</span> <span style="color:#8be9fd;font-style:italic">call</span> <span style="color:#8be9fd;font-style:italic">last</span>):
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>  <span style="color:#50fa7b">File</span> <span style="color:#f1fa8c">&#34;/root/Codes/tg-jav-bot/bot.py&#34;</span>, <span style="color:#8be9fd;font-style:italic">line</span> <span style="color:#bd93f9">13</span>, <span style="color:#ff79c6">in</span> &lt;<span style="color:#ff79c6">module</span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>    <span style="color:#ff79c6">import</span> <span style="color:#8be9fd;font-style:italic">utils</span>.<span style="color:#8be9fd;font-style:italic">util_javbus</span> <span style="color:#ff79c6">as</span> <span style="color:#8be9fd;font-style:italic">util_javbus</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span><span style="color:#50fa7b">ModuleNotFoundError</span>: <span style="color:#50fa7b">No</span> <span style="color:#ff79c6">module</span> <span style="color:#8be9fd;font-style:italic">named</span> <span style="color:#f1fa8c">&#39;utils.util_javbus&#39;</span>; <span style="color:#f1fa8c">&#39;utils&#39;</span> <span style="color:#ff79c6">is</span> <span style="color:#8be9fd;font-style:italic">not</span> <span style="color:#8be9fd;font-style:italic">a</span> <span style="color:#8be9fd;font-style:italic">package</span>
+</span></span></code></pre></div><p>项目下的 utils 文件夹 &lt;-&gt; pip 某个依赖包中的 utils.py 文件名 &ldquo;utils&rdquo; 冲突！</p>
+<p>默认先扫描当前目录下包，但是识别不到 utils 包，因为 utils 文件夹下缺失了 <code>__init__.py</code> 文件！</p>
 <h2 id="sslerrorsslcertverificationerror">SSLError(SSLCertVerificationError)</h2>
 <p>使用 requests 库时出现 bug:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(Caused by SSLError(SSLCertVerificationError(1, &#39;[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:997)&#39;)))
@@ -388,6 +395,7 @@ Requests can verify SSL certificates for HTTPS requests, just like a web browser
       <div id="toc-footer" style="display: none">
         <nav id="TableOfContents">
   <ul>
+    <li><a href="#包冲突">包冲突</a></li>
     <li><a href="#sslerrorsslcertverificationerror">SSLError(SSLCertVerificationError)</a></li>
     <li><a href="#pipenv-无法正常-install">pipenv 无法正常 install</a></li>
     <li><a href="#requests-库-headers-字段编码错误">requests 库 headers 字段编码错误</a></li>
@@ -477,7 +485,7 @@ Requests can verify SSL certificates for HTTPS requests, just like a web browser
   <li>
     <a
       class="icon"
-      href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f11%2frecord-of-bugs-encountered-in-python-development%2f&name=Python%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95&description=%e6%8c%81%e7%bb%ad%e6%9b%b4%e6%96%b0%e4%b8%ad%e3%80%82%0aSSLError%28SSLCertVerificationError%29%20%e4%bd%bf%e7%94%a8%20requests%20%e5%ba%93%e6%97%b6%e5%87%ba%e7%8e%b0%20bug%3a%0a1%28Caused%20by%20SSLError%28SSLCertVerificationError%281%2c%20%26%2339%3b%5bSSL%3a%20CERTIFICATE_VERIFY_FAILED%5d%20certificate%20verify%20failed%3a%20unable%20to%20get%20local%20issuer%20certificate%20%28_ssl.c%3a997%29%26%2339%3b%29%29%29%20%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95%ef%bc%9apython-requests-throwing-sslerror%0aFrom%20requests%20documentation%20on%20SSL%20verification%3a%0aRequests%20can%20verify%20SSL%20certificates%20for%20HTTPS%20requests%2c%20just%20like%20a%20web%20browser.%20To%20check%20a%20host%e2%80%99s%20SSL%20certificate%2c%20you%20can%20use%20the%20verify%20argument%3a%0a1requests.get%28%26%2339%3bhttps%3a%2f%2fkennethreitz.com%26%2339%3b%2c%20verify%3dTrue%29%20pipenv%20%e6%97%a0%e6%b3%95%e6%ad%a3%e5%b8%b8%20install%201PS%20C%3a%5cUsers%5cakyna%5cCodes%5ctest%5ctest_py%26gt%3b%20pipenv%20install%202Usage%3a%20pipenv%20install%20%5bOPTIONS%5d%20%5bPACKAGES%5d...%203%204ERROR%3a%3a%20--system%20is%20intended%20to%20be%20used%20for%20pre-existing%20Pipfile%20installation%2c%20not%20installation%20of%20specific%20packages."
+      href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f11%2frecord-of-bugs-encountered-in-python-development%2f&name=Python%20%e5%bc%80%e5%8f%91%e4%b8%ad%e9%81%87%e5%88%b0%e7%9a%84%20bug%20%e8%ae%b0%e5%bd%95&description=%e6%8c%81%e7%bb%ad%e6%9b%b4%e6%96%b0%e4%b8%ad%e3%80%82%0a%e5%8c%85%e5%86%b2%e7%aa%81%201root%40Server-Debian-Jzh%3a~%2fCodes%2ftg-jav-bot%23%20python3%20bot.py%202Traceback%20%28most%20recent%20call%20last%29%3a%203%20File%20%26%2334%3b%2froot%2fCodes%2ftg-jav-bot%2fbot.py%26%2334%3b%2c%20line%2013%2c%20in%20%26lt%3bmodule%26gt%3b%204%20import%20utils.util_javbus%20as%20util_javbus%205ModuleNotFoundError%3a%20No%20module%20named%20%26%2339%3butils.util_javbus%26%2339%3b%3b%20%26%2339%3butils%26%2339%3b%20is%20not%20a%20package%20%e9%a1%b9%e7%9b%ae%e4%b8%8b%e7%9a%84%20utils%20%e6%96%87%e4%bb%b6%e5%a4%b9%20%26lt%3b-%26gt%3b%20pip%20%e6%9f%90%e4%b8%aa%e4%be%9d%e8%b5%96%e5%8c%85%e4%b8%ad%e7%9a%84%20utils.py%20%e6%96%87%e4%bb%b6%e5%90%8d%20%26ldquo%3butils%26rdquo%3b%20%e5%86%b2%e7%aa%81%ef%bc%81%0a%e9%bb%98%e8%ae%a4%e5%85%88%e6%89%ab%e6%8f%8f%e5%bd%93%e5%89%8d%e7%9b%ae%e5%bd%95%e4%b8%8b%e5%8c%85%ef%bc%8c%e4%bd%86%e6%98%af%e8%af%86%e5%88%ab%e4%b8%8d%e5%88%b0%20utils%20%e5%8c%85%ef%bc%8c%e5%9b%a0%e4%b8%ba%20utils%20%e6%96%87%e4%bb%b6%e5%a4%b9%e4%b8%8b%e7%bc%ba%e5%a4%b1%e4%ba%86%20__init__.py%20%e6%96%87%e4%bb%b6%ef%bc%81%0aSSLError%28SSLCertVerificationError%29%20%e4%bd%bf%e7%94%a8%20requests%20%e5%ba%93%e6%97%b6%e5%87%ba%e7%8e%b0%20bug%3a%0a1%28Caused%20by%20SSLError%28SSLCertVerificationError%281%2c%20%26%2339%3b%5bSSL%3a%20CERTIFICATE_VERIFY_FAILED%5d%20certificate%20verify%20failed%3a%20unable%20to%20get%20local%20issuer%20certificate%20%28_ssl.c%3a997%29%26%2339%3b%29%29%29%20%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95%ef%bc%9apython-requests-throwing-sslerror"
       aria-label="Tumblr"
       target="_blank"
     >

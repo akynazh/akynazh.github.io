@@ -200,11 +200,10 @@ HEAD^ = HEAD^1 第一个父级提交 HEAD^2~1 第二个父级提交的上一次�
       <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/posts/2022/11/record-of-bugs-encountered-in-python-development/</guid>
       <description>持续更新中。
+包冲突 1root@Server-Debian-Jzh:~/Codes/tg-jav-bot# python3 bot.py 2Traceback (most recent call last): 3 File &amp;#34;/root/Codes/tg-jav-bot/bot.py&amp;#34;, line 13, in &amp;lt;module&amp;gt; 4 import utils.util_javbus as util_javbus 5ModuleNotFoundError: No module named &amp;#39;utils.util_javbus&amp;#39;; &amp;#39;utils&amp;#39; is not a package 项目下的 utils 文件夹 &amp;lt;-&amp;gt; pip 某个依赖包中的 utils.py 文件名 &amp;ldquo;utils&amp;rdquo; 冲突！
+默认先扫描当前目录下包，但是识别不到 utils 包，因为 utils 文件夹下缺失了 __init__.py 文件！
 SSLError(SSLCertVerificationError) 使用 requests 库时出现 bug:
-1(Caused by SSLError(SSLCertVerificationError(1, &amp;#39;[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:997)&amp;#39;))) 解决方法：python-requests-throwing-sslerror
-From requests documentation on SSL verification:
-Requests can verify SSL certificates for HTTPS requests, just like a web browser. To check a host’s SSL certificate, you can use the verify argument:
-1requests.get(&amp;#39;https://kennethreitz.com&amp;#39;, verify=True) pipenv 无法正常 install 1PS C:\Users\akyna\Codes\test\test_py&amp;gt; pipenv install 2Usage: pipenv install [OPTIONS] [PACKAGES]... 3 4ERROR:: --system is intended to be used for pre-existing Pipfile installation, not installation of specific packages.</description>
+1(Caused by SSLError(SSLCertVerificationError(1, &amp;#39;[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:997)&amp;#39;))) 解决方法：python-requests-throwing-sslerror</description>
     </item>
     
     <item>
@@ -2016,10 +2015,10 @@ synchronized(obj){...} synchronized同步代码块对对象内部的实例加锁
       <pubDate>Sat, 01 May 2021 20:16:39 +0800</pubDate>
       <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/posts/2021/05/value-passing-and-reference-passing-parsing-in-java-and-c/</guid>
-      <description>先说结论：Java只有值传递，而C++既有值传递又有引用传递。
-Java的参数传递 先定义3个方法如下：
-1public static void change1(String str, int num) { 2 str = &amp;#34;world&amp;#34;; // 这里就相当与新new了一个对象! 3 num = 100; 4} 5public static void change2(User user) { 6 user.age = 1; 7 user.name = &amp;#34;mary&amp;#34;; 8} 9public static void change3(User user) { 10 user = new User(1, &amp;#34;mary&amp;#34;); 11} 进行测试：
-1public static void main(String[] args) { 2 String str = &amp;#34;hello&amp;#34;; 3 int num = 1; 4 System.out.println(str + &amp;#34; &amp;#34; + num); // hello 1 5 change1(str, num); 6 System.</description>
+      <description>先说结论：Java 只有值传递，而 C++ 既有值传递又有引用传递。
+Java 的参数传递 先定义 3 个方法如下：
+1public static void change1(String str, int num) { 2 str = &amp;#34;world&amp;#34;; // 这里就相当与新 new 了一个对象! 3 num = 100; 4} 5public static void change2(User user) { 6 user.age = 1; 7 user.name = &amp;#34;mary&amp;#34;; 8} 9public static void change3(User user) { 10 user = new User(1, &amp;#34;mary&amp;#34;); 11} 进行测试：
+1public static void main(String[] args) { 2 String str = &amp;#34;hello&amp;#34;; 3 int num = 1; 4 System.</description>
     </item>
     
     <item>

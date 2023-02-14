@@ -9,10 +9,10 @@
   <meta name="robots" content="all,follow" />
   <meta name="googlebot" content="index,follow,snippet,archive" />
   <meta property="og:title" content="Java 与 C&#43;&#43; 中的值传递和引用传递解析" />
-<meta property="og:description" content="先说结论：Java只有值传递，而C&#43;&#43;既有值传递又有引用传递。
-Java的参数传递 先定义3个方法如下：
-1public static void change1(String str, int num) { 2 str = &#34;world&#34;; // 这里就相当与新new了一个对象! 3 num = 100; 4} 5public static void change2(User user) { 6 user.age = 1; 7 user.name = &#34;mary&#34;; 8} 9public static void change3(User user) { 10 user = new User(1, &#34;mary&#34;); 11} 进行测试：
-1public static void main(String[] args) { 2 String str = &#34;hello&#34;; 3 int num = 1; 4 System.out.println(str &#43; &#34; &#34; &#43; num); // hello 1 5 change1(str, num); 6 System." />
+<meta property="og:description" content="先说结论：Java 只有值传递，而 C&#43;&#43; 既有值传递又有引用传递。
+Java 的参数传递 先定义 3 个方法如下：
+1public static void change1(String str, int num) { 2 str = &#34;world&#34;; // 这里就相当与新 new 了一个对象! 3 num = 100; 4} 5public static void change2(User user) { 6 user.age = 1; 7 user.name = &#34;mary&#34;; 8} 9public static void change3(User user) { 10 user = new User(1, &#34;mary&#34;); 11} 进行测试：
+1public static void main(String[] args) { 2 String str = &#34;hello&#34;; 3 int num = 1; 4 System." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://akynazh.site/posts/2021/05/value-passing-and-reference-passing-parsing-in-java-and-c/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-05-01T20:16:39+08:00" />
@@ -20,10 +20,10 @@ Java的参数传递 先定义3个方法如下：
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Java 与 C&#43;&#43; 中的值传递和引用传递解析"/>
-<meta name="twitter:description" content="先说结论：Java只有值传递，而C&#43;&#43;既有值传递又有引用传递。
-Java的参数传递 先定义3个方法如下：
-1public static void change1(String str, int num) { 2 str = &#34;world&#34;; // 这里就相当与新new了一个对象! 3 num = 100; 4} 5public static void change2(User user) { 6 user.age = 1; 7 user.name = &#34;mary&#34;; 8} 9public static void change3(User user) { 10 user = new User(1, &#34;mary&#34;); 11} 进行测试：
-1public static void main(String[] args) { 2 String str = &#34;hello&#34;; 3 int num = 1; 4 System.out.println(str &#43; &#34; &#34; &#43; num); // hello 1 5 change1(str, num); 6 System."/>
+<meta name="twitter:description" content="先说结论：Java 只有值传递，而 C&#43;&#43; 既有值传递又有引用传递。
+Java 的参数传递 先定义 3 个方法如下：
+1public static void change1(String str, int num) { 2 str = &#34;world&#34;; // 这里就相当与新 new 了一个对象! 3 num = 100; 4} 5public static void change2(User user) { 6 user.age = 1; 7 user.name = &#34;mary&#34;; 8} 9public static void change3(User user) { 10 user = new User(1, &#34;mary&#34;); 11} 进行测试：
+1public static void main(String[] args) { 2 String str = &#34;hello&#34;; 3 int num = 1; 4 System."/>
 
 
   
@@ -211,7 +211,7 @@ Java的参数传递 先定义3个方法如下：
   <li>
     <a
       class="icon"
-      href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f2021%2f05%2fvalue-passing-and-reference-passing-parsing-in-java-and-c%2f&name=Java%20%e4%b8%8e%20C%2b%2b%20%e4%b8%ad%e7%9a%84%e5%80%bc%e4%bc%a0%e9%80%92%e5%92%8c%e5%bc%95%e7%94%a8%e4%bc%a0%e9%80%92%e8%a7%a3%e6%9e%90&description=%e5%85%88%e8%af%b4%e7%bb%93%e8%ae%ba%ef%bc%9aJava%e5%8f%aa%e6%9c%89%e5%80%bc%e4%bc%a0%e9%80%92%ef%bc%8c%e8%80%8cC%2b%2b%e6%97%a2%e6%9c%89%e5%80%bc%e4%bc%a0%e9%80%92%e5%8f%88%e6%9c%89%e5%bc%95%e7%94%a8%e4%bc%a0%e9%80%92%e3%80%82%0aJava%e7%9a%84%e5%8f%82%e6%95%b0%e4%bc%a0%e9%80%92%20%e5%85%88%e5%ae%9a%e4%b9%893%e4%b8%aa%e6%96%b9%e6%b3%95%e5%a6%82%e4%b8%8b%ef%bc%9a%0a1public%20static%20void%20change1%28String%20str%2c%20int%20num%29%20%7b%202%20str%20%3d%20%26%2334%3bworld%26%2334%3b%3b%20%2f%2f%20%e8%bf%99%e9%87%8c%e5%b0%b1%e7%9b%b8%e5%bd%93%e4%b8%8e%e6%96%b0new%e4%ba%86%e4%b8%80%e4%b8%aa%e5%af%b9%e8%b1%a1%21%203%20num%20%3d%20100%3b%204%7d%205public%20static%20void%20change2%28User%20user%29%20%7b%206%20user.age%20%3d%201%3b%207%20user.name%20%3d%20%26%2334%3bmary%26%2334%3b%3b%208%7d%209public%20static%20void%20change3%28User%20user%29%20%7b%2010%20user%20%3d%20new%20User%281%2c%20%26%2334%3bmary%26%2334%3b%29%3b%2011%7d%20%e8%bf%9b%e8%a1%8c%e6%b5%8b%e8%af%95%ef%bc%9a%0a1public%20static%20void%20main%28String%5b%5d%20args%29%20%7b%202%20String%20str%20%3d%20%26%2334%3bhello%26%2334%3b%3b%203%20int%20num%20%3d%201%3b%204%20System.out.println%28str%20%2b%20%26%2334%3b%20%26%2334%3b%20%2b%20num%29%3b%20%2f%2f%20hello%201%205%20change1%28str%2c%20num%29%3b%206%20System."
+      href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f2021%2f05%2fvalue-passing-and-reference-passing-parsing-in-java-and-c%2f&name=Java%20%e4%b8%8e%20C%2b%2b%20%e4%b8%ad%e7%9a%84%e5%80%bc%e4%bc%a0%e9%80%92%e5%92%8c%e5%bc%95%e7%94%a8%e4%bc%a0%e9%80%92%e8%a7%a3%e6%9e%90&description=%e5%85%88%e8%af%b4%e7%bb%93%e8%ae%ba%ef%bc%9aJava%20%e5%8f%aa%e6%9c%89%e5%80%bc%e4%bc%a0%e9%80%92%ef%bc%8c%e8%80%8c%20C%2b%2b%20%e6%97%a2%e6%9c%89%e5%80%bc%e4%bc%a0%e9%80%92%e5%8f%88%e6%9c%89%e5%bc%95%e7%94%a8%e4%bc%a0%e9%80%92%e3%80%82%0aJava%20%e7%9a%84%e5%8f%82%e6%95%b0%e4%bc%a0%e9%80%92%20%e5%85%88%e5%ae%9a%e4%b9%89%203%20%e4%b8%aa%e6%96%b9%e6%b3%95%e5%a6%82%e4%b8%8b%ef%bc%9a%0a1public%20static%20void%20change1%28String%20str%2c%20int%20num%29%20%7b%202%20str%20%3d%20%26%2334%3bworld%26%2334%3b%3b%20%2f%2f%20%e8%bf%99%e9%87%8c%e5%b0%b1%e7%9b%b8%e5%bd%93%e4%b8%8e%e6%96%b0%20new%20%e4%ba%86%e4%b8%80%e4%b8%aa%e5%af%b9%e8%b1%a1%21%203%20num%20%3d%20100%3b%204%7d%205public%20static%20void%20change2%28User%20user%29%20%7b%206%20user.age%20%3d%201%3b%207%20user.name%20%3d%20%26%2334%3bmary%26%2334%3b%3b%208%7d%209public%20static%20void%20change3%28User%20user%29%20%7b%2010%20user%20%3d%20new%20User%281%2c%20%26%2334%3bmary%26%2334%3b%29%3b%2011%7d%20%e8%bf%9b%e8%a1%8c%e6%b5%8b%e8%af%95%ef%bc%9a%0a1public%20static%20void%20main%28String%5b%5d%20args%29%20%7b%202%20String%20str%20%3d%20%26%2334%3bhello%26%2334%3b%3b%203%20int%20num%20%3d%201%3b%204%20System."
       aria-label="Tumblr"
       target="_blank"
     >
@@ -225,9 +225,9 @@ Java的参数传递 先定义3个方法如下：
       <div id="toc">
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#java的参数传递">Java的参数传递</a></li>
-    <li><a href="#c的参数传递">C++的参数传递</a></li>
-    <li><a href="#为什么java取消了引用传递">为什么Java取消了引用传递</a></li>
+    <li><a href="#java-的参数传递">Java 的参数传递</a></li>
+    <li><a href="#c-的参数传递">C++ 的参数传递</a></li>
+    <li><a href="#为什么-java-取消了引用传递">为什么 Java 取消了引用传递</a></li>
   </ul>
 </nav>
       </div>
@@ -296,11 +296,11 @@ Java的参数传递 先定义3个方法如下：
         </header>
         
         <div class="content" itemprop="articleBody">
-          <p><strong>先说结论：Java只有值传递，而C++既有值传递又有引用传递。</strong></p>
-<h2 id="java的参数传递">Java的参数传递</h2>
-<p>先定义3个方法如下：</p>
+          <p><strong>先说结论：Java 只有值传递，而 C++ 既有值传递又有引用传递。</strong></p>
+<h2 id="java-的参数传递">Java 的参数传递</h2>
+<p>先定义 3 个方法如下：</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">change1</span><span style="color:#ff79c6">(</span>String str<span style="color:#ff79c6">,</span> <span style="color:#8be9fd">int</span> num<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>    str <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;world&#34;</span><span style="color:#ff79c6">;</span> <span style="color:#6272a4">// 这里就相当与新new了一个对象!
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>    str <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;world&#34;</span><span style="color:#ff79c6">;</span> <span style="color:#6272a4">// 这里就相当与新 new 了一个对象!
 </span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span><span style="color:#6272a4"></span>    num <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">100</span><span style="color:#ff79c6">;</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span><span style="color:#ff79c6">}</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">change2</span><span style="color:#ff79c6">(</span>User user<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
@@ -332,14 +332,13 @@ Java的参数传递 先定义3个方法如下：
 </span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span><span style="color:#6272a4"></span>    change3<span style="color:#ff79c6">(</span>user<span style="color:#ff79c6">);</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>    System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span>user<span style="color:#ff79c6">.</span><span style="color:#50fa7b">name</span> <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#34; &#34;</span> <span style="color:#ff79c6">+</span> user<span style="color:#ff79c6">.</span><span style="color:#50fa7b">age</span><span style="color:#ff79c6">);</span> <span style="color:#6272a4">// peter 123
 </span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span><span style="color:#6272a4"></span><span style="color:#ff79c6">}</span>
-</span></span></code></pre></div><p>由change2和3可知，对于引用类型，java是值传递，在函数中只能改变形参对应的实参所引用的对象，而<strong>无法改变实参本身</strong>，也就是说形参传递的是实参所引用的对象，而不是实参本身。</p>
-<p>由change1可知，对于基本数据类型，java是值传递。</p>
-<p>对于String类型，应作特殊理解：String本身属于引用类型，String底层由char数组维护，是final类型的，本身是不可改变，通过&quot;=&ldquo;赋值即相当于
-通过new新创建了一个对象，本质就是change3的操作。</p>
-<h2 id="c的参数传递">C++的参数传递</h2>
-<p>解释了java的参数传递，可能会陷入困惑，到底什么才是引用传递呢？</p>
-<p>我们再来看看C++的参数传递：</p>
-<p>定义2个方法如下：</p>
+</span></span></code></pre></div><p>由 change2 和 change3 可知，对于引用类型，java 是值传递，在函数中只能改变形参对应的实参所引用的对象，而<strong>无法改变实参本身</strong>，也就是说形参传递的是实参所引用的对象，而不是实参本身。</p>
+<p>由 change1可知，对于基本数据类型，java 是值传递。</p>
+<p>对于 String 类型，应作特殊理解：String 本身属于引用类型，String 底层由 char 数组维护，是final 类型的，本身是不可改变，通过 &ldquo;=&rdquo; 赋值即相当于通过 new 新创建了一个对象，本质就是 change3 的操作。</p>
+<h2 id="c-的参数传递">C++ 的参数传递</h2>
+<p>解释了 java 的参数传递，可能会陷入困惑，到底什么才是引用传递呢？</p>
+<p>我们再来看看 C++ 的参数传递：</p>
+<p>定义 2 个方法如下：</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#8be9fd">void</span> <span style="color:#50fa7b">change1</span>(User<span style="color:#ff79c6">*</span> user) {
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>    user<span style="color:#ff79c6">-&gt;</span>age <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">999</span>;
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>    user<span style="color:#ff79c6">-&gt;</span>name <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;mary&#34;</span>;
@@ -350,14 +349,14 @@ Java的参数传递 先定义3个方法如下：
 </span></span></code></pre></div><p>进行测试：</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>User<span style="color:#ff79c6">*</span> user1 <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> User(<span style="color:#bd93f9">21</span>, <span style="color:#f1fa8c">&#34;peter&#34;</span>);
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>cout <span style="color:#ff79c6">&lt;&lt;</span> user1<span style="color:#ff79c6">-&gt;</span>age <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#f1fa8c">&#34; &#34;</span> <span style="color:#ff79c6">&lt;&lt;</span> user1<span style="color:#ff79c6">-&gt;</span>name <span style="color:#ff79c6">&lt;&lt;</span> endl; <span style="color:#6272a4">// 21 peter
-</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#6272a4"></span>change2(user1);
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#6272a4"></span>change1(user1);
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>cout <span style="color:#ff79c6">&lt;&lt;</span> user1<span style="color:#ff79c6">-&gt;</span>age <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#f1fa8c">&#34; &#34;</span> <span style="color:#ff79c6">&lt;&lt;</span> user1<span style="color:#ff79c6">-&gt;</span>name <span style="color:#ff79c6">&lt;&lt;</span> endl; <span style="color:#6272a4">// 999 mary
 </span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span><span style="color:#6272a4"></span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>User<span style="color:#ff79c6">*</span> user2 <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> User(<span style="color:#bd93f9">21</span>, <span style="color:#f1fa8c">&#34;peter&#34;</span>);
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span>cout <span style="color:#ff79c6">&lt;&lt;</span> user2<span style="color:#ff79c6">-&gt;</span>age <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#f1fa8c">&#34; &#34;</span> <span style="color:#ff79c6">&lt;&lt;</span> user2<span style="color:#ff79c6">-&gt;</span>name <span style="color:#ff79c6">&lt;&lt;</span> endl; <span style="color:#6272a4">// 21 peter
-</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span><span><span style="color:#6272a4"></span>change3(user2);
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span><span><span style="color:#6272a4"></span>change2(user2);
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9</span><span>cout <span style="color:#ff79c6">&lt;&lt;</span> user2<span style="color:#ff79c6">-&gt;</span>age <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#f1fa8c">&#34; &#34;</span> <span style="color:#ff79c6">&lt;&lt;</span> user2<span style="color:#ff79c6">-&gt;</span>name <span style="color:#ff79c6">&lt;&lt;</span> endl; <span style="color:#6272a4">// 21 peter
-</span></span></span></code></pre></div><p>这样的效果和java测试中的change2和3是一致的，都是传递了实参引用的对象！</p>
+</span></span></span></code></pre></div><p>这样的效果和 java 测试中的 change2 和 change3 是一致的，都是传递了实参引用的对象！</p>
 <p>下面看看如何实现引用传递吧：</p>
 <p>这里形参就传递了实参本身！</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#8be9fd">void</span> <span style="color:#50fa7b">change3</span>(User<span style="color:#ff79c6">*&amp;</span> user) {
@@ -366,10 +365,10 @@ Java的参数传递 先定义3个方法如下：
 </span></span></code></pre></div><p>测试如下：</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>User<span style="color:#ff79c6">*</span> user3 <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> User(<span style="color:#bd93f9">21</span>, <span style="color:#f1fa8c">&#34;peter&#34;</span>);
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>cout <span style="color:#ff79c6">&lt;&lt;</span> user3<span style="color:#ff79c6">-&gt;</span>age <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#f1fa8c">&#34; &#34;</span> <span style="color:#ff79c6">&lt;&lt;</span> user3<span style="color:#ff79c6">-&gt;</span>name <span style="color:#ff79c6">&lt;&lt;</span> endl; <span style="color:#6272a4">// 21 peter
-</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#6272a4"></span>change4(user3);
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#6272a4"></span>change3(user3);
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>cout <span style="color:#ff79c6">&lt;&lt;</span> user3<span style="color:#ff79c6">-&gt;</span>age <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#f1fa8c">&#34; &#34;</span> <span style="color:#ff79c6">&lt;&lt;</span> user3<span style="color:#ff79c6">-&gt;</span>name <span style="color:#ff79c6">&lt;&lt;</span> endl; <span style="color:#6272a4">// 999 mary
 </span></span></span></code></pre></div><p>可见在函数中实现了对形参所对应实参本身的修改！</p>
-<h2 id="为什么java取消了引用传递">为什么Java取消了引用传递</h2>
+<h2 id="为什么-java-取消了引用传递">为什么 Java 取消了引用传递</h2>
 <p>应该是为了更简单，更安全的开发吧。</p>
 <p>函数调用无法修改实参，这样一定程度上避免了很多错误的发生，但同时限制了可以做的事情，可以说有利有弊。</p>
 
@@ -418,9 +417,9 @@ Java的参数传递 先定义3个方法如下：
       <div id="toc-footer" style="display: none">
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#java的参数传递">Java的参数传递</a></li>
-    <li><a href="#c的参数传递">C++的参数传递</a></li>
-    <li><a href="#为什么java取消了引用传递">为什么Java取消了引用传递</a></li>
+    <li><a href="#java-的参数传递">Java 的参数传递</a></li>
+    <li><a href="#c-的参数传递">C++ 的参数传递</a></li>
+    <li><a href="#为什么-java-取消了引用传递">为什么 Java 取消了引用传递</a></li>
   </ul>
 </nav>
       </div>
@@ -505,7 +504,7 @@ Java的参数传递 先定义3个方法如下：
   <li>
     <a
       class="icon"
-      href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f2021%2f05%2fvalue-passing-and-reference-passing-parsing-in-java-and-c%2f&name=Java%20%e4%b8%8e%20C%2b%2b%20%e4%b8%ad%e7%9a%84%e5%80%bc%e4%bc%a0%e9%80%92%e5%92%8c%e5%bc%95%e7%94%a8%e4%bc%a0%e9%80%92%e8%a7%a3%e6%9e%90&description=%e5%85%88%e8%af%b4%e7%bb%93%e8%ae%ba%ef%bc%9aJava%e5%8f%aa%e6%9c%89%e5%80%bc%e4%bc%a0%e9%80%92%ef%bc%8c%e8%80%8cC%2b%2b%e6%97%a2%e6%9c%89%e5%80%bc%e4%bc%a0%e9%80%92%e5%8f%88%e6%9c%89%e5%bc%95%e7%94%a8%e4%bc%a0%e9%80%92%e3%80%82%0aJava%e7%9a%84%e5%8f%82%e6%95%b0%e4%bc%a0%e9%80%92%20%e5%85%88%e5%ae%9a%e4%b9%893%e4%b8%aa%e6%96%b9%e6%b3%95%e5%a6%82%e4%b8%8b%ef%bc%9a%0a1public%20static%20void%20change1%28String%20str%2c%20int%20num%29%20%7b%202%20str%20%3d%20%26%2334%3bworld%26%2334%3b%3b%20%2f%2f%20%e8%bf%99%e9%87%8c%e5%b0%b1%e7%9b%b8%e5%bd%93%e4%b8%8e%e6%96%b0new%e4%ba%86%e4%b8%80%e4%b8%aa%e5%af%b9%e8%b1%a1%21%203%20num%20%3d%20100%3b%204%7d%205public%20static%20void%20change2%28User%20user%29%20%7b%206%20user.age%20%3d%201%3b%207%20user.name%20%3d%20%26%2334%3bmary%26%2334%3b%3b%208%7d%209public%20static%20void%20change3%28User%20user%29%20%7b%2010%20user%20%3d%20new%20User%281%2c%20%26%2334%3bmary%26%2334%3b%29%3b%2011%7d%20%e8%bf%9b%e8%a1%8c%e6%b5%8b%e8%af%95%ef%bc%9a%0a1public%20static%20void%20main%28String%5b%5d%20args%29%20%7b%202%20String%20str%20%3d%20%26%2334%3bhello%26%2334%3b%3b%203%20int%20num%20%3d%201%3b%204%20System.out.println%28str%20%2b%20%26%2334%3b%20%26%2334%3b%20%2b%20num%29%3b%20%2f%2f%20hello%201%205%20change1%28str%2c%20num%29%3b%206%20System."
+      href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f2021%2f05%2fvalue-passing-and-reference-passing-parsing-in-java-and-c%2f&name=Java%20%e4%b8%8e%20C%2b%2b%20%e4%b8%ad%e7%9a%84%e5%80%bc%e4%bc%a0%e9%80%92%e5%92%8c%e5%bc%95%e7%94%a8%e4%bc%a0%e9%80%92%e8%a7%a3%e6%9e%90&description=%e5%85%88%e8%af%b4%e7%bb%93%e8%ae%ba%ef%bc%9aJava%20%e5%8f%aa%e6%9c%89%e5%80%bc%e4%bc%a0%e9%80%92%ef%bc%8c%e8%80%8c%20C%2b%2b%20%e6%97%a2%e6%9c%89%e5%80%bc%e4%bc%a0%e9%80%92%e5%8f%88%e6%9c%89%e5%bc%95%e7%94%a8%e4%bc%a0%e9%80%92%e3%80%82%0aJava%20%e7%9a%84%e5%8f%82%e6%95%b0%e4%bc%a0%e9%80%92%20%e5%85%88%e5%ae%9a%e4%b9%89%203%20%e4%b8%aa%e6%96%b9%e6%b3%95%e5%a6%82%e4%b8%8b%ef%bc%9a%0a1public%20static%20void%20change1%28String%20str%2c%20int%20num%29%20%7b%202%20str%20%3d%20%26%2334%3bworld%26%2334%3b%3b%20%2f%2f%20%e8%bf%99%e9%87%8c%e5%b0%b1%e7%9b%b8%e5%bd%93%e4%b8%8e%e6%96%b0%20new%20%e4%ba%86%e4%b8%80%e4%b8%aa%e5%af%b9%e8%b1%a1%21%203%20num%20%3d%20100%3b%204%7d%205public%20static%20void%20change2%28User%20user%29%20%7b%206%20user.age%20%3d%201%3b%207%20user.name%20%3d%20%26%2334%3bmary%26%2334%3b%3b%208%7d%209public%20static%20void%20change3%28User%20user%29%20%7b%2010%20user%20%3d%20new%20User%281%2c%20%26%2334%3bmary%26%2334%3b%29%3b%2011%7d%20%e8%bf%9b%e8%a1%8c%e6%b5%8b%e8%af%95%ef%bc%9a%0a1public%20static%20void%20main%28String%5b%5d%20args%29%20%7b%202%20String%20str%20%3d%20%26%2334%3bhello%26%2334%3b%3b%203%20int%20num%20%3d%201%3b%204%20System."
       aria-label="Tumblr"
       target="_blank"
     >

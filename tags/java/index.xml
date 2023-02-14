@@ -335,10 +335,10 @@ synchronized(obj){...} synchronized同步代码块对对象内部的实例加锁
       <pubDate>Sat, 01 May 2021 20:16:39 +0800</pubDate>
       <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/posts/2021/05/value-passing-and-reference-passing-parsing-in-java-and-c/</guid>
-      <description>先说结论：Java只有值传递，而C++既有值传递又有引用传递。
-Java的参数传递 先定义3个方法如下：
-1public static void change1(String str, int num) { 2 str = &amp;#34;world&amp;#34;; // 这里就相当与新new了一个对象! 3 num = 100; 4} 5public static void change2(User user) { 6 user.age = 1; 7 user.name = &amp;#34;mary&amp;#34;; 8} 9public static void change3(User user) { 10 user = new User(1, &amp;#34;mary&amp;#34;); 11} 进行测试：
-1public static void main(String[] args) { 2 String str = &amp;#34;hello&amp;#34;; 3 int num = 1; 4 System.out.println(str + &amp;#34; &amp;#34; + num); // hello 1 5 change1(str, num); 6 System.</description>
+      <description>先说结论：Java 只有值传递，而 C++ 既有值传递又有引用传递。
+Java 的参数传递 先定义 3 个方法如下：
+1public static void change1(String str, int num) { 2 str = &amp;#34;world&amp;#34;; // 这里就相当与新 new 了一个对象! 3 num = 100; 4} 5public static void change2(User user) { 6 user.age = 1; 7 user.name = &amp;#34;mary&amp;#34;; 8} 9public static void change3(User user) { 10 user = new User(1, &amp;#34;mary&amp;#34;); 11} 进行测试：
+1public static void main(String[] args) { 2 String str = &amp;#34;hello&amp;#34;; 3 int num = 1; 4 System.</description>
     </item>
     
     <item>
