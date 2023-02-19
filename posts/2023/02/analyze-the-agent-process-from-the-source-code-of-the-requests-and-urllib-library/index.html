@@ -415,9 +415,11 @@
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47</span><span>        <span style="color:#6272a4"># proxies already set up to be empty so nothing to do</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48</span><span>        <span style="color:#ff79c6">pass</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49</span><span>    <span style="color:#ff79c6">return</span> proxies
-</span></span></code></pre></div><p>win32 使用注册表存储代理值，位置在 <code>HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings</code>，通过读取其中的值即可找到系统代理。</p>
+</span></span></code></pre></div><p>win32 使用注册表存储代理值，位置在：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings
+</span></span></code></pre></div><p>通过读取其中的值即可找到系统代理。</p>
 <p>其中 <code>ProxyEnable</code> 字段为 1 则表示开启代理，读取 <code>ProxyServer</code> 即可找到代理服务器的地址。</p>
-<p>这部分的代码也就是文首提到的 2022.5.12 被解决的 bug 所在位置，原来的 https 代理变量是 https:// 加上代理服务器地址，这是错误的，代理服务位于本地，并不需要 https。</p>
+<p>这部分的代码也就是文首提到的被解决的 bug 所在位置，原来的 https 代理变量是 https:// 加上代理服务器地址，这是错误的，代理服务位于本地，并不需要 https。</p>
 <p>最后我们回到 requests 源码，看看是如何合并代理变量的：</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#6272a4"># requests/sessions.py</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#ff79c6">def</span> <span style="color:#50fa7b">merge_environment_settings</span>(self, url, proxies, stream, verify, cert):
