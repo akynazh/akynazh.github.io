@@ -22,7 +22,6 @@ $(document).ready(function () {
    */
   if ($(".post").length) {
     var menu = $("#menu");
-    var nav = $("#menu > #nav");
     var menuIcon = $("#menu-icon, #menu-icon-tablet");
 
     /**
@@ -31,6 +30,9 @@ $(document).ready(function () {
     if ($(document).width() >= 1440) {
       menu.css("visibility", "visible");
       menuIcon.addClass("active");
+    } else {
+      menu.css("visibility", "hidden");
+      menuIcon.removeClass("active");
     }
 
     /**
