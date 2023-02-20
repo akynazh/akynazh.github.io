@@ -14,9 +14,10 @@ function setTheme(theme) {
 function changeTheme(theme) {
   setTheme(theme);
   let setSnow = document.getElementById("set-snow").value;
+  let noSnow = document.getElementById("no-snow"); // 含有 no-snow 标签的页面不下雪
   if (theme === "dark") {
     setUtterancesTheme("github-dark");
-    if (setSnow === "1") {
+    if (setSnow === "1" && noSnow == null) {
       startSnow();
     }
   } else if (theme === "light") {
