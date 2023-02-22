@@ -17,8 +17,7 @@
 汇编指令是有对应的机器码的指令，可以被编译为机器指令，最终为 CPU 所执行。
 而伪指令没有对应的机器指令，最终不被 CPU 所执行。那么谁来执行伪指令呢?
 伪指令是由编译器来执行的指令，编译器根据伪指令来进行相关的编译工作。
-汇编程序 在汇编源程序中，数据不能以字母开头，所以要在前面加 0。比如，9138h 在汇编源程序中可以直接写为 9138h，而 A000h 在汇编源程序中要写为 0A000h。
-对于 mov al, [0]，是将常量 0 送入 al 中，等同于 mov al, 0 对于 mov al, ds:[0]，含义是 (al)=((ds)*16&#43;0) 对于 mov al, [bx]，含义是 (al)=((ds)*16&#43;(bx)) 对于 mov al, ds:[bx]，含义等同于上者 Debug R命令：查看、改变 CPU 寄存器的内容； D命令：查看内存中的内容； E命令：改写内存中的内容； U命令：将内存中的机器指令翻译成汇编指令； T命令：执行一条机器指令； A命令：以汇编指令的格式在内存中写入一条机器指令； P命令：可用于快速结束一段LOOP，遇到loop时使用； G命令：可以让指令直接执行到某个地址处，如-g 0016执行到0016处代码。 实模式和保护模式 实模式是 Intel 80286 和之后的 x86 兼容 CPU 操作模式。" />
+寻址方式 立即寻址：mov ax, 1234H or mov ax, VARW or mov ax, [VARW] （VARW 是内存字变量） 直接寻址：mov ax, [1234H] 寄存器直接寻址：mov ax, bx 寄存器间接寻址：mov ax, [bx] 寄存器相对寻址：mov ax, [bx&#43;1] 基址&#43;变址寻址：mov ax, [bx&#43;si] or mov ax, [bx][si] 基址&#43;变址&#43;相对寻址：mov ax, [bx&#43;si&#43;1] 注：在汇编源程序中，数据不能以字母开头，所以要在前面加 0。比如，9138h 在汇编源程序中可以直接写为 9138h，而 A000h 在汇编源程序中要写为 0A000h。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://akynazh.site/posts/2022/10/8086-assembly-learning-record/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-10-04T23:18:24+08:00" />
@@ -34,8 +33,7 @@
 汇编指令是有对应的机器码的指令，可以被编译为机器指令，最终为 CPU 所执行。
 而伪指令没有对应的机器指令，最终不被 CPU 所执行。那么谁来执行伪指令呢?
 伪指令是由编译器来执行的指令，编译器根据伪指令来进行相关的编译工作。
-汇编程序 在汇编源程序中，数据不能以字母开头，所以要在前面加 0。比如，9138h 在汇编源程序中可以直接写为 9138h，而 A000h 在汇编源程序中要写为 0A000h。
-对于 mov al, [0]，是将常量 0 送入 al 中，等同于 mov al, 0 对于 mov al, ds:[0]，含义是 (al)=((ds)*16&#43;0) 对于 mov al, [bx]，含义是 (al)=((ds)*16&#43;(bx)) 对于 mov al, ds:[bx]，含义等同于上者 Debug R命令：查看、改变 CPU 寄存器的内容； D命令：查看内存中的内容； E命令：改写内存中的内容； U命令：将内存中的机器指令翻译成汇编指令； T命令：执行一条机器指令； A命令：以汇编指令的格式在内存中写入一条机器指令； P命令：可用于快速结束一段LOOP，遇到loop时使用； G命令：可以让指令直接执行到某个地址处，如-g 0016执行到0016处代码。 实模式和保护模式 实模式是 Intel 80286 和之后的 x86 兼容 CPU 操作模式。"/>
+寻址方式 立即寻址：mov ax, 1234H or mov ax, VARW or mov ax, [VARW] （VARW 是内存字变量） 直接寻址：mov ax, [1234H] 寄存器直接寻址：mov ax, bx 寄存器间接寻址：mov ax, [bx] 寄存器相对寻址：mov ax, [bx&#43;1] 基址&#43;变址寻址：mov ax, [bx&#43;si] or mov ax, [bx][si] 基址&#43;变址&#43;相对寻址：mov ax, [bx&#43;si&#43;1] 注：在汇编源程序中，数据不能以字母开头，所以要在前面加 0。比如，9138h 在汇编源程序中可以直接写为 9138h，而 A000h 在汇编源程序中要写为 0A000h。"/>
 
 
   
@@ -214,7 +212,7 @@
   <li>
     <a
       class="icon"
-      href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f10%2f8086-assembly-learning-record%2f&name=8086%20%e6%b1%87%e7%bc%96%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95&description=8086%20PC%20%e6%9c%ba%e5%86%85%e5%ad%98%e5%9c%b0%e5%9d%80%e7%a9%ba%e9%97%b4%e5%88%86%e9%85%8d%2000000~9FFFF%3a%20%e4%b8%bb%e5%ad%98%e5%82%a8%e5%99%a8%e5%9c%b0%e5%9d%80%e7%a9%ba%e9%97%b4%ef%bc%88RAM%ef%bc%89%20A0000~BFFFF%3a%20%e6%98%be%e5%ad%98%e5%9c%b0%e5%9d%80%e7%a9%ba%e9%97%b4%20C0000~FFFFF%3a%20%e5%90%84%e7%b1%bbROM%e5%9c%b0%e5%9d%80%e7%a9%ba%e9%97%b4%20%e6%ae%b5%e5%af%84%e5%ad%98%e5%99%a8%208086CPU%20%e4%b8%8d%e6%94%af%e6%8c%81%e5%b0%86%e6%95%b0%e6%8d%ae%e7%9b%b4%e6%8e%a5%e9%80%81%e5%85%a5%e6%ae%b5%e5%af%84%e5%ad%98%e5%99%a8%e7%9a%84%e6%93%8d%e4%bd%9c%ef%bc%8cds%20%e6%98%af%e4%b8%80%e4%b8%aa%e6%ae%b5%e5%af%84%e5%ad%98%e5%99%a8%ef%bc%8c%e6%89%80%e4%bb%a5%20mov%20ds%ef%bc%8c1000H%20%e8%bf%99%e6%9d%a1%e6%8c%87%e4%bb%a4%e6%98%af%e9%9d%9e%e6%b3%95%e7%9a%84%e3%80%82%0a%e8%a6%81%e5%b0%86%201000H%20%e9%80%81%e5%85%a5%20ds%ef%bc%8c%e5%8f%aa%e5%a5%bd%e7%94%a8%e4%b8%80%e4%b8%aa%e5%af%84%e5%ad%98%e5%99%a8%e6%9d%a5%e8%bf%9b%e8%a1%8c%e4%b8%ad%e8%bd%ac%ef%bc%8c%e5%8d%b3%e5%85%88%e5%b0%86%201000H%20%e9%80%81%e5%85%a5%e4%b8%80%e4%b8%aa%e4%b8%80%e8%88%ac%e7%9a%84%e5%af%84%e5%ad%98%e5%99%a8%ef%bc%8c%e5%a6%82%20bx%ef%bc%8c%e5%86%8d%e5%b0%86%20bx%20%e4%b8%ad%e7%9a%84%e5%86%85%e5%ae%b9%e9%80%81%e5%85%a5%20ds%e3%80%82%0a%e5%85%b3%e4%ba%8e%20SS%ef%bc%8cSP%208086CPU%20%e4%b8%ad%ef%bc%8c%e6%9c%89%e4%b8%a4%e4%b8%aa%e5%af%84%e5%ad%98%e5%99%a8%ef%bc%8c%e6%ae%b5%e5%af%84%e5%ad%98%e5%99%a8%20SS%20%e5%92%8c%e5%af%84%e5%ad%98%e5%99%a8%20SP%ef%bc%8c%e6%a0%88%e9%a1%b6%e7%9a%84%e6%ae%b5%e5%9c%b0%e5%9d%80%e5%ad%98%e6%94%be%e5%9c%a8%20SS%20%e4%b8%ad%ef%bc%8c%e5%81%8f%e7%a7%bb%e5%9c%b0%e5%9d%80%e5%ad%98%e6%94%be%e5%9c%a8%20SP%20%e4%b8%ad%e3%80%82%0a%e4%bb%bb%e6%84%8f%e6%97%b6%e5%88%bb%ef%bc%8cSS%3aSP%20%e6%8c%87%e5%90%91%e6%a0%88%e9%a1%b6%e5%85%83%e7%b4%a0%e3%80%82push%20%e6%8c%87%e4%bb%a4%e5%92%8c%20pop%20%e6%8c%87%e4%bb%a4%e6%89%a7%e8%a1%8c%e6%97%b6%ef%bc%8cCPU%20%e4%bb%8e%20SS%20%e5%92%8c%20SP%20%e4%b8%ad%e5%be%97%e5%88%b0%e6%a0%88%e9%a1%b6%e7%9a%84%e5%9c%b0%e5%9d%80%e3%80%82%0a%e4%bc%aa%e6%8c%87%e4%bb%a4%20%e5%9c%a8%e6%b1%87%e7%bc%96%e8%af%ad%e8%a8%80%e6%ba%90%e7%a8%8b%e5%ba%8f%e4%b8%ad%ef%bc%8c%e5%8c%85%e5%90%ab%e4%b8%a4%e7%a7%8d%e6%8c%87%e4%bb%a4%ef%bc%8c%e4%b8%80%e7%a7%8d%e6%98%af%e6%b1%87%e7%bc%96%e6%8c%87%e4%bb%a4%ef%bc%8c%e4%b8%80%e7%a7%8d%e6%98%af%e4%bc%aa%e6%8c%87%e4%bb%a4%e3%80%82%0a%e6%b1%87%e7%bc%96%e6%8c%87%e4%bb%a4%e6%98%af%e6%9c%89%e5%af%b9%e5%ba%94%e7%9a%84%e6%9c%ba%e5%99%a8%e7%a0%81%e7%9a%84%e6%8c%87%e4%bb%a4%ef%bc%8c%e5%8f%af%e4%bb%a5%e8%a2%ab%e7%bc%96%e8%af%91%e4%b8%ba%e6%9c%ba%e5%99%a8%e6%8c%87%e4%bb%a4%ef%bc%8c%e6%9c%80%e7%bb%88%e4%b8%ba%20CPU%20%e6%89%80%e6%89%a7%e8%a1%8c%e3%80%82%0a%e8%80%8c%e4%bc%aa%e6%8c%87%e4%bb%a4%e6%b2%a1%e6%9c%89%e5%af%b9%e5%ba%94%e7%9a%84%e6%9c%ba%e5%99%a8%e6%8c%87%e4%bb%a4%ef%bc%8c%e6%9c%80%e7%bb%88%e4%b8%8d%e8%a2%ab%20CPU%20%e6%89%80%e6%89%a7%e8%a1%8c%e3%80%82%e9%82%a3%e4%b9%88%e8%b0%81%e6%9d%a5%e6%89%a7%e8%a1%8c%e4%bc%aa%e6%8c%87%e4%bb%a4%e5%91%a2%3f%0a%e4%bc%aa%e6%8c%87%e4%bb%a4%e6%98%af%e7%94%b1%e7%bc%96%e8%af%91%e5%99%a8%e6%9d%a5%e6%89%a7%e8%a1%8c%e7%9a%84%e6%8c%87%e4%bb%a4%ef%bc%8c%e7%bc%96%e8%af%91%e5%99%a8%e6%a0%b9%e6%8d%ae%e4%bc%aa%e6%8c%87%e4%bb%a4%e6%9d%a5%e8%bf%9b%e8%a1%8c%e7%9b%b8%e5%85%b3%e7%9a%84%e7%bc%96%e8%af%91%e5%b7%a5%e4%bd%9c%e3%80%82%0a%e6%b1%87%e7%bc%96%e7%a8%8b%e5%ba%8f%20%e5%9c%a8%e6%b1%87%e7%bc%96%e6%ba%90%e7%a8%8b%e5%ba%8f%e4%b8%ad%ef%bc%8c%e6%95%b0%e6%8d%ae%e4%b8%8d%e8%83%bd%e4%bb%a5%e5%ad%97%e6%af%8d%e5%bc%80%e5%a4%b4%ef%bc%8c%e6%89%80%e4%bb%a5%e8%a6%81%e5%9c%a8%e5%89%8d%e9%9d%a2%e5%8a%a0%200%e3%80%82%e6%af%94%e5%a6%82%ef%bc%8c9138h%20%e5%9c%a8%e6%b1%87%e7%bc%96%e6%ba%90%e7%a8%8b%e5%ba%8f%e4%b8%ad%e5%8f%af%e4%bb%a5%e7%9b%b4%e6%8e%a5%e5%86%99%e4%b8%ba%209138h%ef%bc%8c%e8%80%8c%20A000h%20%e5%9c%a8%e6%b1%87%e7%bc%96%e6%ba%90%e7%a8%8b%e5%ba%8f%e4%b8%ad%e8%a6%81%e5%86%99%e4%b8%ba%200A000h%e3%80%82%0a%e5%af%b9%e4%ba%8e%20mov%20al%2c%20%5b0%5d%ef%bc%8c%e6%98%af%e5%b0%86%e5%b8%b8%e9%87%8f%200%20%e9%80%81%e5%85%a5%20al%20%e4%b8%ad%ef%bc%8c%e7%ad%89%e5%90%8c%e4%ba%8e%20mov%20al%2c%200%20%e5%af%b9%e4%ba%8e%20mov%20al%2c%20ds%3a%5b0%5d%ef%bc%8c%e5%90%ab%e4%b9%89%e6%98%af%20%28al%29%3d%28%28ds%29%2a16%2b0%29%20%e5%af%b9%e4%ba%8e%20mov%20al%2c%20%5bbx%5d%ef%bc%8c%e5%90%ab%e4%b9%89%e6%98%af%20%28al%29%3d%28%28ds%29%2a16%2b%28bx%29%29%20%e5%af%b9%e4%ba%8e%20mov%20al%2c%20ds%3a%5bbx%5d%ef%bc%8c%e5%90%ab%e4%b9%89%e7%ad%89%e5%90%8c%e4%ba%8e%e4%b8%8a%e8%80%85%20Debug%20R%e5%91%bd%e4%bb%a4%ef%bc%9a%e6%9f%a5%e7%9c%8b%e3%80%81%e6%94%b9%e5%8f%98%20CPU%20%e5%af%84%e5%ad%98%e5%99%a8%e7%9a%84%e5%86%85%e5%ae%b9%ef%bc%9b%20D%e5%91%bd%e4%bb%a4%ef%bc%9a%e6%9f%a5%e7%9c%8b%e5%86%85%e5%ad%98%e4%b8%ad%e7%9a%84%e5%86%85%e5%ae%b9%ef%bc%9b%20E%e5%91%bd%e4%bb%a4%ef%bc%9a%e6%94%b9%e5%86%99%e5%86%85%e5%ad%98%e4%b8%ad%e7%9a%84%e5%86%85%e5%ae%b9%ef%bc%9b%20U%e5%91%bd%e4%bb%a4%ef%bc%9a%e5%b0%86%e5%86%85%e5%ad%98%e4%b8%ad%e7%9a%84%e6%9c%ba%e5%99%a8%e6%8c%87%e4%bb%a4%e7%bf%bb%e8%af%91%e6%88%90%e6%b1%87%e7%bc%96%e6%8c%87%e4%bb%a4%ef%bc%9b%20T%e5%91%bd%e4%bb%a4%ef%bc%9a%e6%89%a7%e8%a1%8c%e4%b8%80%e6%9d%a1%e6%9c%ba%e5%99%a8%e6%8c%87%e4%bb%a4%ef%bc%9b%20A%e5%91%bd%e4%bb%a4%ef%bc%9a%e4%bb%a5%e6%b1%87%e7%bc%96%e6%8c%87%e4%bb%a4%e7%9a%84%e6%a0%bc%e5%bc%8f%e5%9c%a8%e5%86%85%e5%ad%98%e4%b8%ad%e5%86%99%e5%85%a5%e4%b8%80%e6%9d%a1%e6%9c%ba%e5%99%a8%e6%8c%87%e4%bb%a4%ef%bc%9b%20P%e5%91%bd%e4%bb%a4%ef%bc%9a%e5%8f%af%e7%94%a8%e4%ba%8e%e5%bf%ab%e9%80%9f%e7%bb%93%e6%9d%9f%e4%b8%80%e6%ae%b5LOOP%ef%bc%8c%e9%81%87%e5%88%b0loop%e6%97%b6%e4%bd%bf%e7%94%a8%ef%bc%9b%20G%e5%91%bd%e4%bb%a4%ef%bc%9a%e5%8f%af%e4%bb%a5%e8%ae%a9%e6%8c%87%e4%bb%a4%e7%9b%b4%e6%8e%a5%e6%89%a7%e8%a1%8c%e5%88%b0%e6%9f%90%e4%b8%aa%e5%9c%b0%e5%9d%80%e5%a4%84%ef%bc%8c%e5%a6%82-g%200016%e6%89%a7%e8%a1%8c%e5%88%b00016%e5%a4%84%e4%bb%a3%e7%a0%81%e3%80%82%20%e5%ae%9e%e6%a8%a1%e5%bc%8f%e5%92%8c%e4%bf%9d%e6%8a%a4%e6%a8%a1%e5%bc%8f%20%e5%ae%9e%e6%a8%a1%e5%bc%8f%e6%98%af%20Intel%2080286%20%e5%92%8c%e4%b9%8b%e5%90%8e%e7%9a%84%20x86%20%e5%85%bc%e5%ae%b9%20CPU%20%e6%93%8d%e4%bd%9c%e6%a8%a1%e5%bc%8f%e3%80%82"
+      href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f10%2f8086-assembly-learning-record%2f&name=8086%20%e6%b1%87%e7%bc%96%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95&description=8086%20PC%20%e6%9c%ba%e5%86%85%e5%ad%98%e5%9c%b0%e5%9d%80%e7%a9%ba%e9%97%b4%e5%88%86%e9%85%8d%2000000~9FFFF%3a%20%e4%b8%bb%e5%ad%98%e5%82%a8%e5%99%a8%e5%9c%b0%e5%9d%80%e7%a9%ba%e9%97%b4%ef%bc%88RAM%ef%bc%89%20A0000~BFFFF%3a%20%e6%98%be%e5%ad%98%e5%9c%b0%e5%9d%80%e7%a9%ba%e9%97%b4%20C0000~FFFFF%3a%20%e5%90%84%e7%b1%bbROM%e5%9c%b0%e5%9d%80%e7%a9%ba%e9%97%b4%20%e6%ae%b5%e5%af%84%e5%ad%98%e5%99%a8%208086CPU%20%e4%b8%8d%e6%94%af%e6%8c%81%e5%b0%86%e6%95%b0%e6%8d%ae%e7%9b%b4%e6%8e%a5%e9%80%81%e5%85%a5%e6%ae%b5%e5%af%84%e5%ad%98%e5%99%a8%e7%9a%84%e6%93%8d%e4%bd%9c%ef%bc%8cds%20%e6%98%af%e4%b8%80%e4%b8%aa%e6%ae%b5%e5%af%84%e5%ad%98%e5%99%a8%ef%bc%8c%e6%89%80%e4%bb%a5%20mov%20ds%ef%bc%8c1000H%20%e8%bf%99%e6%9d%a1%e6%8c%87%e4%bb%a4%e6%98%af%e9%9d%9e%e6%b3%95%e7%9a%84%e3%80%82%0a%e8%a6%81%e5%b0%86%201000H%20%e9%80%81%e5%85%a5%20ds%ef%bc%8c%e5%8f%aa%e5%a5%bd%e7%94%a8%e4%b8%80%e4%b8%aa%e5%af%84%e5%ad%98%e5%99%a8%e6%9d%a5%e8%bf%9b%e8%a1%8c%e4%b8%ad%e8%bd%ac%ef%bc%8c%e5%8d%b3%e5%85%88%e5%b0%86%201000H%20%e9%80%81%e5%85%a5%e4%b8%80%e4%b8%aa%e4%b8%80%e8%88%ac%e7%9a%84%e5%af%84%e5%ad%98%e5%99%a8%ef%bc%8c%e5%a6%82%20bx%ef%bc%8c%e5%86%8d%e5%b0%86%20bx%20%e4%b8%ad%e7%9a%84%e5%86%85%e5%ae%b9%e9%80%81%e5%85%a5%20ds%e3%80%82%0a%e5%85%b3%e4%ba%8e%20SS%ef%bc%8cSP%208086CPU%20%e4%b8%ad%ef%bc%8c%e6%9c%89%e4%b8%a4%e4%b8%aa%e5%af%84%e5%ad%98%e5%99%a8%ef%bc%8c%e6%ae%b5%e5%af%84%e5%ad%98%e5%99%a8%20SS%20%e5%92%8c%e5%af%84%e5%ad%98%e5%99%a8%20SP%ef%bc%8c%e6%a0%88%e9%a1%b6%e7%9a%84%e6%ae%b5%e5%9c%b0%e5%9d%80%e5%ad%98%e6%94%be%e5%9c%a8%20SS%20%e4%b8%ad%ef%bc%8c%e5%81%8f%e7%a7%bb%e5%9c%b0%e5%9d%80%e5%ad%98%e6%94%be%e5%9c%a8%20SP%20%e4%b8%ad%e3%80%82%0a%e4%bb%bb%e6%84%8f%e6%97%b6%e5%88%bb%ef%bc%8cSS%3aSP%20%e6%8c%87%e5%90%91%e6%a0%88%e9%a1%b6%e5%85%83%e7%b4%a0%e3%80%82push%20%e6%8c%87%e4%bb%a4%e5%92%8c%20pop%20%e6%8c%87%e4%bb%a4%e6%89%a7%e8%a1%8c%e6%97%b6%ef%bc%8cCPU%20%e4%bb%8e%20SS%20%e5%92%8c%20SP%20%e4%b8%ad%e5%be%97%e5%88%b0%e6%a0%88%e9%a1%b6%e7%9a%84%e5%9c%b0%e5%9d%80%e3%80%82%0a%e4%bc%aa%e6%8c%87%e4%bb%a4%20%e5%9c%a8%e6%b1%87%e7%bc%96%e8%af%ad%e8%a8%80%e6%ba%90%e7%a8%8b%e5%ba%8f%e4%b8%ad%ef%bc%8c%e5%8c%85%e5%90%ab%e4%b8%a4%e7%a7%8d%e6%8c%87%e4%bb%a4%ef%bc%8c%e4%b8%80%e7%a7%8d%e6%98%af%e6%b1%87%e7%bc%96%e6%8c%87%e4%bb%a4%ef%bc%8c%e4%b8%80%e7%a7%8d%e6%98%af%e4%bc%aa%e6%8c%87%e4%bb%a4%e3%80%82%0a%e6%b1%87%e7%bc%96%e6%8c%87%e4%bb%a4%e6%98%af%e6%9c%89%e5%af%b9%e5%ba%94%e7%9a%84%e6%9c%ba%e5%99%a8%e7%a0%81%e7%9a%84%e6%8c%87%e4%bb%a4%ef%bc%8c%e5%8f%af%e4%bb%a5%e8%a2%ab%e7%bc%96%e8%af%91%e4%b8%ba%e6%9c%ba%e5%99%a8%e6%8c%87%e4%bb%a4%ef%bc%8c%e6%9c%80%e7%bb%88%e4%b8%ba%20CPU%20%e6%89%80%e6%89%a7%e8%a1%8c%e3%80%82%0a%e8%80%8c%e4%bc%aa%e6%8c%87%e4%bb%a4%e6%b2%a1%e6%9c%89%e5%af%b9%e5%ba%94%e7%9a%84%e6%9c%ba%e5%99%a8%e6%8c%87%e4%bb%a4%ef%bc%8c%e6%9c%80%e7%bb%88%e4%b8%8d%e8%a2%ab%20CPU%20%e6%89%80%e6%89%a7%e8%a1%8c%e3%80%82%e9%82%a3%e4%b9%88%e8%b0%81%e6%9d%a5%e6%89%a7%e8%a1%8c%e4%bc%aa%e6%8c%87%e4%bb%a4%e5%91%a2%3f%0a%e4%bc%aa%e6%8c%87%e4%bb%a4%e6%98%af%e7%94%b1%e7%bc%96%e8%af%91%e5%99%a8%e6%9d%a5%e6%89%a7%e8%a1%8c%e7%9a%84%e6%8c%87%e4%bb%a4%ef%bc%8c%e7%bc%96%e8%af%91%e5%99%a8%e6%a0%b9%e6%8d%ae%e4%bc%aa%e6%8c%87%e4%bb%a4%e6%9d%a5%e8%bf%9b%e8%a1%8c%e7%9b%b8%e5%85%b3%e7%9a%84%e7%bc%96%e8%af%91%e5%b7%a5%e4%bd%9c%e3%80%82%0a%e5%af%bb%e5%9d%80%e6%96%b9%e5%bc%8f%20%e7%ab%8b%e5%8d%b3%e5%af%bb%e5%9d%80%ef%bc%9amov%20ax%2c%201234H%20or%20mov%20ax%2c%20VARW%20or%20mov%20ax%2c%20%5bVARW%5d%20%ef%bc%88VARW%20%e6%98%af%e5%86%85%e5%ad%98%e5%ad%97%e5%8f%98%e9%87%8f%ef%bc%89%20%e7%9b%b4%e6%8e%a5%e5%af%bb%e5%9d%80%ef%bc%9amov%20ax%2c%20%5b1234H%5d%20%e5%af%84%e5%ad%98%e5%99%a8%e7%9b%b4%e6%8e%a5%e5%af%bb%e5%9d%80%ef%bc%9amov%20ax%2c%20bx%20%e5%af%84%e5%ad%98%e5%99%a8%e9%97%b4%e6%8e%a5%e5%af%bb%e5%9d%80%ef%bc%9amov%20ax%2c%20%5bbx%5d%20%e5%af%84%e5%ad%98%e5%99%a8%e7%9b%b8%e5%af%b9%e5%af%bb%e5%9d%80%ef%bc%9amov%20ax%2c%20%5bbx%2b1%5d%20%e5%9f%ba%e5%9d%80%2b%e5%8f%98%e5%9d%80%e5%af%bb%e5%9d%80%ef%bc%9amov%20ax%2c%20%5bbx%2bsi%5d%20or%20mov%20ax%2c%20%5bbx%5d%5bsi%5d%20%e5%9f%ba%e5%9d%80%2b%e5%8f%98%e5%9d%80%2b%e7%9b%b8%e5%af%b9%e5%af%bb%e5%9d%80%ef%bc%9amov%20ax%2c%20%5bbx%2bsi%2b1%5d%20%e6%b3%a8%ef%bc%9a%e5%9c%a8%e6%b1%87%e7%bc%96%e6%ba%90%e7%a8%8b%e5%ba%8f%e4%b8%ad%ef%bc%8c%e6%95%b0%e6%8d%ae%e4%b8%8d%e8%83%bd%e4%bb%a5%e5%ad%97%e6%af%8d%e5%bc%80%e5%a4%b4%ef%bc%8c%e6%89%80%e4%bb%a5%e8%a6%81%e5%9c%a8%e5%89%8d%e9%9d%a2%e5%8a%a0%200%e3%80%82%e6%af%94%e5%a6%82%ef%bc%8c9138h%20%e5%9c%a8%e6%b1%87%e7%bc%96%e6%ba%90%e7%a8%8b%e5%ba%8f%e4%b8%ad%e5%8f%af%e4%bb%a5%e7%9b%b4%e6%8e%a5%e5%86%99%e4%b8%ba%209138h%ef%bc%8c%e8%80%8c%20A000h%20%e5%9c%a8%e6%b1%87%e7%bc%96%e6%ba%90%e7%a8%8b%e5%ba%8f%e4%b8%ad%e8%a6%81%e5%86%99%e4%b8%ba%200A000h%e3%80%82"
       aria-label="Tumblr"
       target="_blank"
     >
@@ -232,14 +230,14 @@
     <li><a href="#段寄存器">段寄存器</a></li>
     <li><a href="#关于-sssp">关于 SS，SP</a></li>
     <li><a href="#伪指令">伪指令</a></li>
-    <li><a href="#汇编程序">汇编程序</a></li>
+    <li><a href="#寻址方式">寻址方式</a></li>
     <li><a href="#debug">Debug</a></li>
     <li><a href="#实模式和保护模式">实模式和保护模式</a></li>
-    <li><a href="#问题">问题</a></li>
     <li><a href="#mul-与-div">Mul 与 Div</a></li>
     <li><a href="#有符号和无符号比较">有符号和无符号比较</a></li>
     <li><a href="#标志位">标志位</a></li>
     <li><a href="#in-和-out">In 和 Out</a></li>
+    <li><a href="#问题">问题</a></li>
   </ul>
 </nav>
       </div>
@@ -266,7 +264,7 @@
               <div class="article-read-time">
                 <i class="far fa-clock"></i>
                 
-                8 minute
+                9 minute
               </div>
             
             
@@ -325,14 +323,17 @@
 <p>汇编指令是有对应的机器码的指令，可以被编译为机器指令，最终为 CPU 所执行。</p>
 <p>而伪指令<strong>没有对应的机器指令</strong>，最终不被 CPU 所执行。那么谁来执行伪指令呢?</p>
 <p>伪指令是由<strong>编译器</strong>来执行的指令，编译器根据伪指令来进行相关的编译工作。</p>
-<h2 id="汇编程序">汇编程序</h2>
-<p>在汇编源程序中，数据不能以字母开头，所以要在前面加 0。比如，9138h 在汇编源程序中可以直接写为 9138h，而 A000h 在汇编源程序中要写为 0A000h。</p>
+<h2 id="寻址方式">寻址方式</h2>
 <ul>
-<li>对于 <code>mov al, [0]</code>，是将常量 0 送入 al 中，等同于 <code>mov al, 0</code></li>
-<li>对于 <code>mov al, ds:[0]</code>，含义是 <code>(al)=((ds)*16+0)</code></li>
-<li>对于 <code>mov al, [bx]</code>，含义是 <code>(al)=((ds)*16+(bx))</code></li>
-<li>对于 <code>mov al, ds:[bx]</code>，含义等同于上者</li>
+<li>立即寻址：<code>mov ax, 1234H</code> or <code>mov ax, VARW</code> or <code>mov ax, [VARW]</code> （VARW 是内存字变量）</li>
+<li>直接寻址：<code>mov ax, [1234H]</code></li>
+<li>寄存器直接寻址：<code>mov ax, bx</code></li>
+<li>寄存器间接寻址：<code>mov ax, [bx]</code></li>
+<li>寄存器相对寻址：<code>mov ax, [bx+1]</code></li>
+<li>基址+变址寻址：<code>mov ax, [bx+si]</code> or <code>mov ax, [bx][si]</code></li>
+<li>基址+变址+相对寻址：<code>mov ax, [bx+si+1]</code></li>
 </ul>
+<p>注：在汇编源程序中，数据不能以字母开头，所以要在前面加 0。比如，9138h 在汇编源程序中可以直接写为 9138h，而 A000h 在汇编源程序中要写为 0A000h。</p>
 <h2 id="debug">Debug</h2>
 <ul>
 <li>R命令：查看、改变 CPU 寄存器的内容；</li>
@@ -353,7 +354,42 @@
 <p>在纯 DOS 方式（实模式）下，可以不理会 DOS，直接用汇编语言去操作真实的硬件。</p>
 <p>因为运行在 CPU 实模式下的 DOS，没有能力对硬件系统进行全面、严格的管理。</p>
 <p>但在 Windows 2000、Unix 这些运行于 CPU 保护模式下的操作系统中，不理会操作系统，用汇编语言去操作真实的硬件，是根本不可能的。硬件已被这些操作系统利用 CPU 保护模式所提供的功能全面而严格地管理了。</p>
-<h2 id="问题">问题</h2>
+<h2 id="mul-与-div">Mul 与 Div</h2>
+<ul>
+<li>mul bl ; al * bl =&gt; ax</li>
+<li>mul bx ; ax * bx =&gt; dx(H) ax(L)</li>
+<li>div bl ; ax / bl =&gt; ah(余) al(商)</li>
+<li>div bx ; dx(H) ax(L) / bx =&gt; dx(余) ax(商)</li>
+</ul>
+<h2 id="有符号和无符号比较">有符号和无符号比较</h2>
+<p>cmp:</p>
+<p>无符号比较：</p>
+<p>JA JB JNAE: above | below | equal | not</p>
+<p>有符号比较：</p>
+<p>JG JL JNGE: great | low | equal | not</p>
+<h2 id="标志位">标志位</h2>
+<ul>
+<li>OF overflow，溢出标志，针对有符号数，1 =&gt; 溢出</li>
+<li>DF direction，方向标志，控制数据串操作指令的步进方向，1 =&gt; 递减</li>
+<li>IF interupt，中断允许标志，1 =&gt; 开中断</li>
+<li>TF trap，陷阱标志，1 =&gt; CPU 单步执行指令（程序调试）</li>
+<li>SF sign，符号标志，最高位为 0/1</li>
+<li>ZF zero，零标志，1 =&gt; 结果为零</li>
+<li>AF auxiliary carry，辅助进位标志，供 BCD 码使用，1 =&gt; D3 位出现进位或借位</li>
+<li>PF parity，奇偶标志，1 =&gt; 有偶个“1”出现</li>
+<li>CF carry，进位标志，针对无符号数，1 =&gt; 进位</li>
+</ul>
+<h2 id="in-和-out">In 和 Out</h2>
+<p>在 in 和 out 指令中，只能使用 ax 或 al 来存放从端口中读入的数据或要发送到端口中的数据。</p>
+<p>访问 8 位端口时用al，访问 16 位端口时用 ax。</p>
+<p>对 0~255 以内的端口进行读写时：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>in al, 20h ; 从 20h 端口读入一个字节
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>out 20h, al ; 往 20h 端口写入一个字节
+</span></span></code></pre></div><p>对 256~65535 的端口进行读写时，端口号放在 dx 中：（超出 8 位的接口地址必须用 dx 提供）</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>mov dx, 3f8h ; 将端口号 3f8h 送入dx
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>in al, dx ; 从 3f8h 端口读入一个字节
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>out dx, al ; 向 3f8h 端口写入一个字节
+</span></span></code></pre></div><h2 id="问题">问题</h2>
 <p><strong>向内存 0:200~0:23F 依次传送 0~63(3FH)：</strong></p>
 <p>注意 0:200~0:23F 等同于 0020:0~0020:3f，它们描述的是同一内存单元。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>assume cs:code
@@ -391,41 +427,6 @@
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>    int 21h
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>code ends
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>end
-</span></span></code></pre></div><h2 id="mul-与-div">Mul 与 Div</h2>
-<ul>
-<li>mul bl ; al * bl =&gt; ax</li>
-<li>mul bx ; ax * bx =&gt; dx(H) ax(L)</li>
-<li>div bl ; ax / bl =&gt; ah(余) al(商)</li>
-<li>div bx ; dx(H) ax(L) / bx =&gt; dx(余) ax(商)</li>
-</ul>
-<h2 id="有符号和无符号比较">有符号和无符号比较</h2>
-<p>cmp:</p>
-<p>无符号比较：</p>
-<p>JA JB JNAE: above | below | equal | not</p>
-<p>有符号比较：</p>
-<p>JG JL JNGE: great | low | equal | not</p>
-<h2 id="标志位">标志位</h2>
-<ul>
-<li>OF overflow，溢出标志，针对有符号数，1 溢出</li>
-<li>DF ？</li>
-<li>IF interupt，中断屏蔽标志，1 开中断</li>
-<li>TF ？</li>
-<li>SF sign，符号标志，最高位为 0/1</li>
-<li>ZF zero，零标志，1 结果为零</li>
-<li>AF auxiliary carry ？</li>
-<li>PF parity，奇偶标志，1 有偶个“1”出现</li>
-<li>CF carry，进位标志，针对无符号数，1 进位</li>
-</ul>
-<h2 id="in-和-out">In 和 Out</h2>
-<p>在 in 和 ou 指令中，只能使用 ax 或 al 来存放从端口中读入的数据或要发送到端口中的数据。</p>
-<p>访问 8 位端口时用al，访问 16 位端口时用 ax。</p>
-<p>对 0~255 以内的端口进行读写时：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>in al, 20h ; 从 20h 端口读入一个字节
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>out 20h, al ; 往 20h 端口写入一个字节
-</span></span></code></pre></div><p>对 256~65535 的端口进行读写时，端口号放在 dx 中：（超出 8 位的接口地址必须用 dx 提供）</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>mov dx, 3f8h ; 将端口号 3f8h 送入dx
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>in al, dx ; 从 3f8h 端口读入一个字节
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>out dx, al ; 向 3f8h 端口写入一个字节
 </span></span></code></pre></div><hr>
 <p><strong>参考：</strong></p>
 <ul>
@@ -482,14 +483,14 @@
     <li><a href="#段寄存器">段寄存器</a></li>
     <li><a href="#关于-sssp">关于 SS，SP</a></li>
     <li><a href="#伪指令">伪指令</a></li>
-    <li><a href="#汇编程序">汇编程序</a></li>
+    <li><a href="#寻址方式">寻址方式</a></li>
     <li><a href="#debug">Debug</a></li>
     <li><a href="#实模式和保护模式">实模式和保护模式</a></li>
-    <li><a href="#问题">问题</a></li>
     <li><a href="#mul-与-div">Mul 与 Div</a></li>
     <li><a href="#有符号和无符号比较">有符号和无符号比较</a></li>
     <li><a href="#标志位">标志位</a></li>
     <li><a href="#in-和-out">In 和 Out</a></li>
+    <li><a href="#问题">问题</a></li>
   </ul>
 </nav>
       </div>
@@ -574,7 +575,7 @@
   <li>
     <a
       class="icon"
-      href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f10%2f8086-assembly-learning-record%2f&name=8086%20%e6%b1%87%e7%bc%96%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95&description=8086%20PC%20%e6%9c%ba%e5%86%85%e5%ad%98%e5%9c%b0%e5%9d%80%e7%a9%ba%e9%97%b4%e5%88%86%e9%85%8d%2000000~9FFFF%3a%20%e4%b8%bb%e5%ad%98%e5%82%a8%e5%99%a8%e5%9c%b0%e5%9d%80%e7%a9%ba%e9%97%b4%ef%bc%88RAM%ef%bc%89%20A0000~BFFFF%3a%20%e6%98%be%e5%ad%98%e5%9c%b0%e5%9d%80%e7%a9%ba%e9%97%b4%20C0000~FFFFF%3a%20%e5%90%84%e7%b1%bbROM%e5%9c%b0%e5%9d%80%e7%a9%ba%e9%97%b4%20%e6%ae%b5%e5%af%84%e5%ad%98%e5%99%a8%208086CPU%20%e4%b8%8d%e6%94%af%e6%8c%81%e5%b0%86%e6%95%b0%e6%8d%ae%e7%9b%b4%e6%8e%a5%e9%80%81%e5%85%a5%e6%ae%b5%e5%af%84%e5%ad%98%e5%99%a8%e7%9a%84%e6%93%8d%e4%bd%9c%ef%bc%8cds%20%e6%98%af%e4%b8%80%e4%b8%aa%e6%ae%b5%e5%af%84%e5%ad%98%e5%99%a8%ef%bc%8c%e6%89%80%e4%bb%a5%20mov%20ds%ef%bc%8c1000H%20%e8%bf%99%e6%9d%a1%e6%8c%87%e4%bb%a4%e6%98%af%e9%9d%9e%e6%b3%95%e7%9a%84%e3%80%82%0a%e8%a6%81%e5%b0%86%201000H%20%e9%80%81%e5%85%a5%20ds%ef%bc%8c%e5%8f%aa%e5%a5%bd%e7%94%a8%e4%b8%80%e4%b8%aa%e5%af%84%e5%ad%98%e5%99%a8%e6%9d%a5%e8%bf%9b%e8%a1%8c%e4%b8%ad%e8%bd%ac%ef%bc%8c%e5%8d%b3%e5%85%88%e5%b0%86%201000H%20%e9%80%81%e5%85%a5%e4%b8%80%e4%b8%aa%e4%b8%80%e8%88%ac%e7%9a%84%e5%af%84%e5%ad%98%e5%99%a8%ef%bc%8c%e5%a6%82%20bx%ef%bc%8c%e5%86%8d%e5%b0%86%20bx%20%e4%b8%ad%e7%9a%84%e5%86%85%e5%ae%b9%e9%80%81%e5%85%a5%20ds%e3%80%82%0a%e5%85%b3%e4%ba%8e%20SS%ef%bc%8cSP%208086CPU%20%e4%b8%ad%ef%bc%8c%e6%9c%89%e4%b8%a4%e4%b8%aa%e5%af%84%e5%ad%98%e5%99%a8%ef%bc%8c%e6%ae%b5%e5%af%84%e5%ad%98%e5%99%a8%20SS%20%e5%92%8c%e5%af%84%e5%ad%98%e5%99%a8%20SP%ef%bc%8c%e6%a0%88%e9%a1%b6%e7%9a%84%e6%ae%b5%e5%9c%b0%e5%9d%80%e5%ad%98%e6%94%be%e5%9c%a8%20SS%20%e4%b8%ad%ef%bc%8c%e5%81%8f%e7%a7%bb%e5%9c%b0%e5%9d%80%e5%ad%98%e6%94%be%e5%9c%a8%20SP%20%e4%b8%ad%e3%80%82%0a%e4%bb%bb%e6%84%8f%e6%97%b6%e5%88%bb%ef%bc%8cSS%3aSP%20%e6%8c%87%e5%90%91%e6%a0%88%e9%a1%b6%e5%85%83%e7%b4%a0%e3%80%82push%20%e6%8c%87%e4%bb%a4%e5%92%8c%20pop%20%e6%8c%87%e4%bb%a4%e6%89%a7%e8%a1%8c%e6%97%b6%ef%bc%8cCPU%20%e4%bb%8e%20SS%20%e5%92%8c%20SP%20%e4%b8%ad%e5%be%97%e5%88%b0%e6%a0%88%e9%a1%b6%e7%9a%84%e5%9c%b0%e5%9d%80%e3%80%82%0a%e4%bc%aa%e6%8c%87%e4%bb%a4%20%e5%9c%a8%e6%b1%87%e7%bc%96%e8%af%ad%e8%a8%80%e6%ba%90%e7%a8%8b%e5%ba%8f%e4%b8%ad%ef%bc%8c%e5%8c%85%e5%90%ab%e4%b8%a4%e7%a7%8d%e6%8c%87%e4%bb%a4%ef%bc%8c%e4%b8%80%e7%a7%8d%e6%98%af%e6%b1%87%e7%bc%96%e6%8c%87%e4%bb%a4%ef%bc%8c%e4%b8%80%e7%a7%8d%e6%98%af%e4%bc%aa%e6%8c%87%e4%bb%a4%e3%80%82%0a%e6%b1%87%e7%bc%96%e6%8c%87%e4%bb%a4%e6%98%af%e6%9c%89%e5%af%b9%e5%ba%94%e7%9a%84%e6%9c%ba%e5%99%a8%e7%a0%81%e7%9a%84%e6%8c%87%e4%bb%a4%ef%bc%8c%e5%8f%af%e4%bb%a5%e8%a2%ab%e7%bc%96%e8%af%91%e4%b8%ba%e6%9c%ba%e5%99%a8%e6%8c%87%e4%bb%a4%ef%bc%8c%e6%9c%80%e7%bb%88%e4%b8%ba%20CPU%20%e6%89%80%e6%89%a7%e8%a1%8c%e3%80%82%0a%e8%80%8c%e4%bc%aa%e6%8c%87%e4%bb%a4%e6%b2%a1%e6%9c%89%e5%af%b9%e5%ba%94%e7%9a%84%e6%9c%ba%e5%99%a8%e6%8c%87%e4%bb%a4%ef%bc%8c%e6%9c%80%e7%bb%88%e4%b8%8d%e8%a2%ab%20CPU%20%e6%89%80%e6%89%a7%e8%a1%8c%e3%80%82%e9%82%a3%e4%b9%88%e8%b0%81%e6%9d%a5%e6%89%a7%e8%a1%8c%e4%bc%aa%e6%8c%87%e4%bb%a4%e5%91%a2%3f%0a%e4%bc%aa%e6%8c%87%e4%bb%a4%e6%98%af%e7%94%b1%e7%bc%96%e8%af%91%e5%99%a8%e6%9d%a5%e6%89%a7%e8%a1%8c%e7%9a%84%e6%8c%87%e4%bb%a4%ef%bc%8c%e7%bc%96%e8%af%91%e5%99%a8%e6%a0%b9%e6%8d%ae%e4%bc%aa%e6%8c%87%e4%bb%a4%e6%9d%a5%e8%bf%9b%e8%a1%8c%e7%9b%b8%e5%85%b3%e7%9a%84%e7%bc%96%e8%af%91%e5%b7%a5%e4%bd%9c%e3%80%82%0a%e6%b1%87%e7%bc%96%e7%a8%8b%e5%ba%8f%20%e5%9c%a8%e6%b1%87%e7%bc%96%e6%ba%90%e7%a8%8b%e5%ba%8f%e4%b8%ad%ef%bc%8c%e6%95%b0%e6%8d%ae%e4%b8%8d%e8%83%bd%e4%bb%a5%e5%ad%97%e6%af%8d%e5%bc%80%e5%a4%b4%ef%bc%8c%e6%89%80%e4%bb%a5%e8%a6%81%e5%9c%a8%e5%89%8d%e9%9d%a2%e5%8a%a0%200%e3%80%82%e6%af%94%e5%a6%82%ef%bc%8c9138h%20%e5%9c%a8%e6%b1%87%e7%bc%96%e6%ba%90%e7%a8%8b%e5%ba%8f%e4%b8%ad%e5%8f%af%e4%bb%a5%e7%9b%b4%e6%8e%a5%e5%86%99%e4%b8%ba%209138h%ef%bc%8c%e8%80%8c%20A000h%20%e5%9c%a8%e6%b1%87%e7%bc%96%e6%ba%90%e7%a8%8b%e5%ba%8f%e4%b8%ad%e8%a6%81%e5%86%99%e4%b8%ba%200A000h%e3%80%82%0a%e5%af%b9%e4%ba%8e%20mov%20al%2c%20%5b0%5d%ef%bc%8c%e6%98%af%e5%b0%86%e5%b8%b8%e9%87%8f%200%20%e9%80%81%e5%85%a5%20al%20%e4%b8%ad%ef%bc%8c%e7%ad%89%e5%90%8c%e4%ba%8e%20mov%20al%2c%200%20%e5%af%b9%e4%ba%8e%20mov%20al%2c%20ds%3a%5b0%5d%ef%bc%8c%e5%90%ab%e4%b9%89%e6%98%af%20%28al%29%3d%28%28ds%29%2a16%2b0%29%20%e5%af%b9%e4%ba%8e%20mov%20al%2c%20%5bbx%5d%ef%bc%8c%e5%90%ab%e4%b9%89%e6%98%af%20%28al%29%3d%28%28ds%29%2a16%2b%28bx%29%29%20%e5%af%b9%e4%ba%8e%20mov%20al%2c%20ds%3a%5bbx%5d%ef%bc%8c%e5%90%ab%e4%b9%89%e7%ad%89%e5%90%8c%e4%ba%8e%e4%b8%8a%e8%80%85%20Debug%20R%e5%91%bd%e4%bb%a4%ef%bc%9a%e6%9f%a5%e7%9c%8b%e3%80%81%e6%94%b9%e5%8f%98%20CPU%20%e5%af%84%e5%ad%98%e5%99%a8%e7%9a%84%e5%86%85%e5%ae%b9%ef%bc%9b%20D%e5%91%bd%e4%bb%a4%ef%bc%9a%e6%9f%a5%e7%9c%8b%e5%86%85%e5%ad%98%e4%b8%ad%e7%9a%84%e5%86%85%e5%ae%b9%ef%bc%9b%20E%e5%91%bd%e4%bb%a4%ef%bc%9a%e6%94%b9%e5%86%99%e5%86%85%e5%ad%98%e4%b8%ad%e7%9a%84%e5%86%85%e5%ae%b9%ef%bc%9b%20U%e5%91%bd%e4%bb%a4%ef%bc%9a%e5%b0%86%e5%86%85%e5%ad%98%e4%b8%ad%e7%9a%84%e6%9c%ba%e5%99%a8%e6%8c%87%e4%bb%a4%e7%bf%bb%e8%af%91%e6%88%90%e6%b1%87%e7%bc%96%e6%8c%87%e4%bb%a4%ef%bc%9b%20T%e5%91%bd%e4%bb%a4%ef%bc%9a%e6%89%a7%e8%a1%8c%e4%b8%80%e6%9d%a1%e6%9c%ba%e5%99%a8%e6%8c%87%e4%bb%a4%ef%bc%9b%20A%e5%91%bd%e4%bb%a4%ef%bc%9a%e4%bb%a5%e6%b1%87%e7%bc%96%e6%8c%87%e4%bb%a4%e7%9a%84%e6%a0%bc%e5%bc%8f%e5%9c%a8%e5%86%85%e5%ad%98%e4%b8%ad%e5%86%99%e5%85%a5%e4%b8%80%e6%9d%a1%e6%9c%ba%e5%99%a8%e6%8c%87%e4%bb%a4%ef%bc%9b%20P%e5%91%bd%e4%bb%a4%ef%bc%9a%e5%8f%af%e7%94%a8%e4%ba%8e%e5%bf%ab%e9%80%9f%e7%bb%93%e6%9d%9f%e4%b8%80%e6%ae%b5LOOP%ef%bc%8c%e9%81%87%e5%88%b0loop%e6%97%b6%e4%bd%bf%e7%94%a8%ef%bc%9b%20G%e5%91%bd%e4%bb%a4%ef%bc%9a%e5%8f%af%e4%bb%a5%e8%ae%a9%e6%8c%87%e4%bb%a4%e7%9b%b4%e6%8e%a5%e6%89%a7%e8%a1%8c%e5%88%b0%e6%9f%90%e4%b8%aa%e5%9c%b0%e5%9d%80%e5%a4%84%ef%bc%8c%e5%a6%82-g%200016%e6%89%a7%e8%a1%8c%e5%88%b00016%e5%a4%84%e4%bb%a3%e7%a0%81%e3%80%82%20%e5%ae%9e%e6%a8%a1%e5%bc%8f%e5%92%8c%e4%bf%9d%e6%8a%a4%e6%a8%a1%e5%bc%8f%20%e5%ae%9e%e6%a8%a1%e5%bc%8f%e6%98%af%20Intel%2080286%20%e5%92%8c%e4%b9%8b%e5%90%8e%e7%9a%84%20x86%20%e5%85%bc%e5%ae%b9%20CPU%20%e6%93%8d%e4%bd%9c%e6%a8%a1%e5%bc%8f%e3%80%82"
+      href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f2022%2f10%2f8086-assembly-learning-record%2f&name=8086%20%e6%b1%87%e7%bc%96%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95&description=8086%20PC%20%e6%9c%ba%e5%86%85%e5%ad%98%e5%9c%b0%e5%9d%80%e7%a9%ba%e9%97%b4%e5%88%86%e9%85%8d%2000000~9FFFF%3a%20%e4%b8%bb%e5%ad%98%e5%82%a8%e5%99%a8%e5%9c%b0%e5%9d%80%e7%a9%ba%e9%97%b4%ef%bc%88RAM%ef%bc%89%20A0000~BFFFF%3a%20%e6%98%be%e5%ad%98%e5%9c%b0%e5%9d%80%e7%a9%ba%e9%97%b4%20C0000~FFFFF%3a%20%e5%90%84%e7%b1%bbROM%e5%9c%b0%e5%9d%80%e7%a9%ba%e9%97%b4%20%e6%ae%b5%e5%af%84%e5%ad%98%e5%99%a8%208086CPU%20%e4%b8%8d%e6%94%af%e6%8c%81%e5%b0%86%e6%95%b0%e6%8d%ae%e7%9b%b4%e6%8e%a5%e9%80%81%e5%85%a5%e6%ae%b5%e5%af%84%e5%ad%98%e5%99%a8%e7%9a%84%e6%93%8d%e4%bd%9c%ef%bc%8cds%20%e6%98%af%e4%b8%80%e4%b8%aa%e6%ae%b5%e5%af%84%e5%ad%98%e5%99%a8%ef%bc%8c%e6%89%80%e4%bb%a5%20mov%20ds%ef%bc%8c1000H%20%e8%bf%99%e6%9d%a1%e6%8c%87%e4%bb%a4%e6%98%af%e9%9d%9e%e6%b3%95%e7%9a%84%e3%80%82%0a%e8%a6%81%e5%b0%86%201000H%20%e9%80%81%e5%85%a5%20ds%ef%bc%8c%e5%8f%aa%e5%a5%bd%e7%94%a8%e4%b8%80%e4%b8%aa%e5%af%84%e5%ad%98%e5%99%a8%e6%9d%a5%e8%bf%9b%e8%a1%8c%e4%b8%ad%e8%bd%ac%ef%bc%8c%e5%8d%b3%e5%85%88%e5%b0%86%201000H%20%e9%80%81%e5%85%a5%e4%b8%80%e4%b8%aa%e4%b8%80%e8%88%ac%e7%9a%84%e5%af%84%e5%ad%98%e5%99%a8%ef%bc%8c%e5%a6%82%20bx%ef%bc%8c%e5%86%8d%e5%b0%86%20bx%20%e4%b8%ad%e7%9a%84%e5%86%85%e5%ae%b9%e9%80%81%e5%85%a5%20ds%e3%80%82%0a%e5%85%b3%e4%ba%8e%20SS%ef%bc%8cSP%208086CPU%20%e4%b8%ad%ef%bc%8c%e6%9c%89%e4%b8%a4%e4%b8%aa%e5%af%84%e5%ad%98%e5%99%a8%ef%bc%8c%e6%ae%b5%e5%af%84%e5%ad%98%e5%99%a8%20SS%20%e5%92%8c%e5%af%84%e5%ad%98%e5%99%a8%20SP%ef%bc%8c%e6%a0%88%e9%a1%b6%e7%9a%84%e6%ae%b5%e5%9c%b0%e5%9d%80%e5%ad%98%e6%94%be%e5%9c%a8%20SS%20%e4%b8%ad%ef%bc%8c%e5%81%8f%e7%a7%bb%e5%9c%b0%e5%9d%80%e5%ad%98%e6%94%be%e5%9c%a8%20SP%20%e4%b8%ad%e3%80%82%0a%e4%bb%bb%e6%84%8f%e6%97%b6%e5%88%bb%ef%bc%8cSS%3aSP%20%e6%8c%87%e5%90%91%e6%a0%88%e9%a1%b6%e5%85%83%e7%b4%a0%e3%80%82push%20%e6%8c%87%e4%bb%a4%e5%92%8c%20pop%20%e6%8c%87%e4%bb%a4%e6%89%a7%e8%a1%8c%e6%97%b6%ef%bc%8cCPU%20%e4%bb%8e%20SS%20%e5%92%8c%20SP%20%e4%b8%ad%e5%be%97%e5%88%b0%e6%a0%88%e9%a1%b6%e7%9a%84%e5%9c%b0%e5%9d%80%e3%80%82%0a%e4%bc%aa%e6%8c%87%e4%bb%a4%20%e5%9c%a8%e6%b1%87%e7%bc%96%e8%af%ad%e8%a8%80%e6%ba%90%e7%a8%8b%e5%ba%8f%e4%b8%ad%ef%bc%8c%e5%8c%85%e5%90%ab%e4%b8%a4%e7%a7%8d%e6%8c%87%e4%bb%a4%ef%bc%8c%e4%b8%80%e7%a7%8d%e6%98%af%e6%b1%87%e7%bc%96%e6%8c%87%e4%bb%a4%ef%bc%8c%e4%b8%80%e7%a7%8d%e6%98%af%e4%bc%aa%e6%8c%87%e4%bb%a4%e3%80%82%0a%e6%b1%87%e7%bc%96%e6%8c%87%e4%bb%a4%e6%98%af%e6%9c%89%e5%af%b9%e5%ba%94%e7%9a%84%e6%9c%ba%e5%99%a8%e7%a0%81%e7%9a%84%e6%8c%87%e4%bb%a4%ef%bc%8c%e5%8f%af%e4%bb%a5%e8%a2%ab%e7%bc%96%e8%af%91%e4%b8%ba%e6%9c%ba%e5%99%a8%e6%8c%87%e4%bb%a4%ef%bc%8c%e6%9c%80%e7%bb%88%e4%b8%ba%20CPU%20%e6%89%80%e6%89%a7%e8%a1%8c%e3%80%82%0a%e8%80%8c%e4%bc%aa%e6%8c%87%e4%bb%a4%e6%b2%a1%e6%9c%89%e5%af%b9%e5%ba%94%e7%9a%84%e6%9c%ba%e5%99%a8%e6%8c%87%e4%bb%a4%ef%bc%8c%e6%9c%80%e7%bb%88%e4%b8%8d%e8%a2%ab%20CPU%20%e6%89%80%e6%89%a7%e8%a1%8c%e3%80%82%e9%82%a3%e4%b9%88%e8%b0%81%e6%9d%a5%e6%89%a7%e8%a1%8c%e4%bc%aa%e6%8c%87%e4%bb%a4%e5%91%a2%3f%0a%e4%bc%aa%e6%8c%87%e4%bb%a4%e6%98%af%e7%94%b1%e7%bc%96%e8%af%91%e5%99%a8%e6%9d%a5%e6%89%a7%e8%a1%8c%e7%9a%84%e6%8c%87%e4%bb%a4%ef%bc%8c%e7%bc%96%e8%af%91%e5%99%a8%e6%a0%b9%e6%8d%ae%e4%bc%aa%e6%8c%87%e4%bb%a4%e6%9d%a5%e8%bf%9b%e8%a1%8c%e7%9b%b8%e5%85%b3%e7%9a%84%e7%bc%96%e8%af%91%e5%b7%a5%e4%bd%9c%e3%80%82%0a%e5%af%bb%e5%9d%80%e6%96%b9%e5%bc%8f%20%e7%ab%8b%e5%8d%b3%e5%af%bb%e5%9d%80%ef%bc%9amov%20ax%2c%201234H%20or%20mov%20ax%2c%20VARW%20or%20mov%20ax%2c%20%5bVARW%5d%20%ef%bc%88VARW%20%e6%98%af%e5%86%85%e5%ad%98%e5%ad%97%e5%8f%98%e9%87%8f%ef%bc%89%20%e7%9b%b4%e6%8e%a5%e5%af%bb%e5%9d%80%ef%bc%9amov%20ax%2c%20%5b1234H%5d%20%e5%af%84%e5%ad%98%e5%99%a8%e7%9b%b4%e6%8e%a5%e5%af%bb%e5%9d%80%ef%bc%9amov%20ax%2c%20bx%20%e5%af%84%e5%ad%98%e5%99%a8%e9%97%b4%e6%8e%a5%e5%af%bb%e5%9d%80%ef%bc%9amov%20ax%2c%20%5bbx%5d%20%e5%af%84%e5%ad%98%e5%99%a8%e7%9b%b8%e5%af%b9%e5%af%bb%e5%9d%80%ef%bc%9amov%20ax%2c%20%5bbx%2b1%5d%20%e5%9f%ba%e5%9d%80%2b%e5%8f%98%e5%9d%80%e5%af%bb%e5%9d%80%ef%bc%9amov%20ax%2c%20%5bbx%2bsi%5d%20or%20mov%20ax%2c%20%5bbx%5d%5bsi%5d%20%e5%9f%ba%e5%9d%80%2b%e5%8f%98%e5%9d%80%2b%e7%9b%b8%e5%af%b9%e5%af%bb%e5%9d%80%ef%bc%9amov%20ax%2c%20%5bbx%2bsi%2b1%5d%20%e6%b3%a8%ef%bc%9a%e5%9c%a8%e6%b1%87%e7%bc%96%e6%ba%90%e7%a8%8b%e5%ba%8f%e4%b8%ad%ef%bc%8c%e6%95%b0%e6%8d%ae%e4%b8%8d%e8%83%bd%e4%bb%a5%e5%ad%97%e6%af%8d%e5%bc%80%e5%a4%b4%ef%bc%8c%e6%89%80%e4%bb%a5%e8%a6%81%e5%9c%a8%e5%89%8d%e9%9d%a2%e5%8a%a0%200%e3%80%82%e6%af%94%e5%a6%82%ef%bc%8c9138h%20%e5%9c%a8%e6%b1%87%e7%bc%96%e6%ba%90%e7%a8%8b%e5%ba%8f%e4%b8%ad%e5%8f%af%e4%bb%a5%e7%9b%b4%e6%8e%a5%e5%86%99%e4%b8%ba%209138h%ef%bc%8c%e8%80%8c%20A000h%20%e5%9c%a8%e6%b1%87%e7%bc%96%e6%ba%90%e7%a8%8b%e5%ba%8f%e4%b8%ad%e8%a6%81%e5%86%99%e4%b8%ba%200A000h%e3%80%82"
       aria-label="Tumblr"
       target="_blank"
     >
