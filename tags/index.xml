@@ -9,7 +9,25 @@
     <managingEditor>akynazh@qq.com (Jzh)</managingEditor>
     <webMaster>akynazh@qq.com (Jzh)</webMaster>
     <copyright>Cactus &amp; Jzh</copyright>
-    <lastBuildDate>Sun, 19 Feb 2023 11:01:46 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 22 Feb 2023 22:35:25 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>database</title>
+      <link>https://akynazh.site/tags/database/</link>
+      <pubDate>Wed, 22 Feb 2023 22:35:25 +0800</pubDate>
+      <author>akynazh@qq.com (Jzh)</author>
+      <guid>https://akynazh.site/tags/database/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sql</title>
+      <link>https://akynazh.site/tags/sql/</link>
+      <pubDate>Wed, 22 Feb 2023 22:35:25 +0800</pubDate>
+      <author>akynazh@qq.com (Jzh)</author>
+      <guid>https://akynazh.site/tags/sql/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>proxy</title>
       <link>https://akynazh.site/tags/proxy/</link>
@@ -385,15 +403,6 @@
       <pubDate>Sun, 06 Feb 2022 21:42:50 +0800</pubDate>
       <author>akynazh@qq.com (Jzh)</author>
       <guid>https://akynazh.site/tags/thinking/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>database</title>
-      <link>https://akynazh.site/tags/database/</link>
-      <pubDate>Mon, 20 Dec 2021 10:15:05 +0800</pubDate>
-      <author>akynazh@qq.com (Jzh)</author>
-      <guid>https://akynazh.site/tags/database/</guid>
       <description></description>
     </item>
     

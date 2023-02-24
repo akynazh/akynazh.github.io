@@ -1,7 +1,7 @@
 $(document).ready(function () {
   // button: change theme
   $("#logo, #theme-change").click(function () {
-    let newTheme;
+    var newTheme;
     if (getCurrentTheme() === "light") {
       newTheme = "dark";
     } else {

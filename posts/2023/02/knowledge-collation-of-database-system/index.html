@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>数据库系统知识整理 | Norwegian Wood</title>
+  <link rel="canonical" href="https://akynazh.site/posts/2023/02/knowledge-collation-of-database-system/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="all,follow" />
+  <meta name="googlebot" content="index,follow,snippet,archive" />
+  <meta property="og:title" content="数据库系统知识整理" />
+<meta property="og:description" content="关系语言的种类 关系代数 关系演算（元组演算和域演算） SQL 关系的定义 候选码 (Candidate Key)：能唯一标识元组的属性(组)。 主码 (Primary Key)：多个候选码中选定一个作主码。 主属性 (Prime Attribute)：候选码中的诸属性。 非主属性 (Non-Key Attribute)：不出现在任何候选码中的属性。 传统的关系运算 并 (Union) 交 (Intersection) 差 (Difference) 广义笛卡尔积 (Extended Cartesian Product) 专门的关系运算 选择 ($\sigma$): 在某个关系中选择满足给定条件的诸元组(WHERE) 投影 ($\pi$): 从某个关系中选择出若干属性列组成新的关系(SELECT) 连接 ($\bowtie$): 从两个关系的笛卡尔积中选取属性间满足一定条件的元组 除 ($\div$): 设关系 R 除以关系 S 的结果为关系 T，则 T 包含所有在 R 但不在 S 中的属性及其值，且 T 的元组与 S 的元组的所有组合都在 R 中 重命名 ($\rho$): 将某个关系重命名为其它关系名 关系演算 关系演算就是用谓词来描述关系的构成(查询的结果)。按照谓词变元的不同分为元组关系演算和域关系演算，分别简称为元组演算和域演算。
+元组演算例子 给出关系模式：
+S (Sno, Sname, Ssex, Sage, Sdep) C (Cno, Cname, Ccredit, Cpno) SC (Sno, Cno, Grade) 查询选修学号为“95002”的学生所选全部课程的学生学号。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://akynazh.site/posts/2023/02/knowledge-collation-of-database-system/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-02-22T22:35:25+08:00" />
+<meta property="article:modified_time" content="2023-02-22T22:35:25+08:00" /><meta property="og:site_name" content="Norwegian Wood" />
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="数据库系统知识整理"/>
+<meta name="twitter:description" content="关系语言的种类 关系代数 关系演算（元组演算和域演算） SQL 关系的定义 候选码 (Candidate Key)：能唯一标识元组的属性(组)。 主码 (Primary Key)：多个候选码中选定一个作主码。 主属性 (Prime Attribute)：候选码中的诸属性。 非主属性 (Non-Key Attribute)：不出现在任何候选码中的属性。 传统的关系运算 并 (Union) 交 (Intersection) 差 (Difference) 广义笛卡尔积 (Extended Cartesian Product) 专门的关系运算 选择 ($\sigma$): 在某个关系中选择满足给定条件的诸元组(WHERE) 投影 ($\pi$): 从某个关系中选择出若干属性列组成新的关系(SELECT) 连接 ($\bowtie$): 从两个关系的笛卡尔积中选取属性间满足一定条件的元组 除 ($\div$): 设关系 R 除以关系 S 的结果为关系 T，则 T 包含所有在 R 但不在 S 中的属性及其值，且 T 的元组与 S 的元组的所有组合都在 R 中 重命名 ($\rho$): 将某个关系重命名为其它关系名 关系演算 关系演算就是用谓词来描述关系的构成(查询的结果)。按照谓词变元的不同分为元组关系演算和域关系演算，分别简称为元组演算和域演算。
+元组演算例子 给出关系模式：
+S (Sno, Sname, Ssex, Sage, Sdep) C (Cno, Cname, Ccredit, Cpno) SC (Sno, Cno, Grade) 查询选修学号为“95002”的学生所选全部课程的学生学号。"/>
+
+
+  
+  
+
+  
+  
+
+  
+  
+  
+    <input value="dark" id="theme-current" style="display: none;" />
+    <link id="theme-css" rel="stylesheet" href="https://akynazh.site/css/styles_dark.css" />
+  
+  <input value="https://akynazh.site/css/styles_dark.css" id="styles-dark" style="display: none;" />
+  <input value="https://akynazh.site/css/styles_light.css" id="styles-light" style="display: none;" />
+
+  <input value="1" id="set-snow" style="display: none;" />
+  
+  <script src="/js/snow.js"></script>
+  <script src="/js/theme.js"></script>
+  <script src="/js/jquery.min.js"></script>
+
+  
+  <script src="/js/fontawesome5.js"></script>
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+
+
+  
+
+  
+</head>
+
+  <input value="" id="no-snow" style="display: none;" />
+  <body class="max-width-blog mx-auto px3 ltr">
+    <div class="content index py4">
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a
+    id="top-icon-tablet"
+    href="#"
+    onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"
+    style="display:none;"
+    aria-label="Top of Page"
+    ><i class="fas fa-chevron-up fa-lg"></i
+  ></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/posts">Posts</a></li>
+        
+          <li><a href="/tags">Tags</a></li>
+        
+          <li><a href="/about">About</a></li>
+        
+      </ul>
+    </span>
+    <br />
+    <span id="actions">
+      <ul>
+        
+        
+          <li>
+            <a class="icon" href="https://akynazh.site/posts/2023/02/analyze-the-agent-process-from-the-source-code-of-the-requests-and-urllib-library/" aria-label="Previous">
+              <i class="fas fa-chevron-left" aria-hidden="true"></i>
+            </a>
+          </li>
+        
+        
+        
+        
+        <li>
+          <a
+            class="icon"
+            href="#"
+            onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"
+            aria-label="Top of Page"
+          >
+            <i class="fas fa-chevron-up" aria-hidden="true"></i>
+          </a>
+        </li>
+        
+        <li>
+          <a class="icon" href="#" aria-label="Search" id="searchBtn">
+            <i class="fa fa-search" aria-hidden="true"></i>
+          </a>
+        </li>
+        
+        <li>
+          <a class="icon" id="theme-change"><i class="fas fa-adjust"></i></a>
+        </li>
+        
+        <li>
+          <a
+            class="icon"
+            href="#"
+            aria-label="Share"
+            onclick="$('#share').toggle();return false;"
+          >
+            <i class="fas fa-share-alt" aria-hidden="true"></i>
+          </a>
+        </li>
+      </ul>
+    </span>
+    <br />
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a
+      class="icon"
+      href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fakynazh.site%2fposts%2f2023%2f02%2fknowledge-collation-of-database-system%2ft=%e6%95%b0%e6%8d%ae%e5%ba%93%e7%b3%bb%e7%bb%9f%e7%9f%a5%e8%af%86%e6%95%b4%e7%90%86"
+      aria-label="Facebook"
+      target="_blank"
+    >
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a
+      class="icon"
+      href="https://twitter.com/share?url=https%3a%2f%2fakynazh.site%2fposts%2f2023%2f02%2fknowledge-collation-of-database-system%2f&text=%e6%95%b0%e6%8d%ae%e5%ba%93%e7%b3%bb%e7%bb%9f%e7%9f%a5%e8%af%86%e6%95%b4%e7%90%86"
+      aria-label="Twitter"
+      target="_blank"
+    >
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a
+      class="icon"
+      href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fakynazh.site%2fposts%2f2023%2f02%2fknowledge-collation-of-database-system%2f&title=%e6%95%b0%e6%8d%ae%e5%ba%93%e7%b3%bb%e7%bb%9f%e7%9f%a5%e8%af%86%e6%95%b4%e7%90%86"
+      aria-label="Linkedin"
+      target="_blank"
+    >
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a
+      class="icon"
+      href="mailto:?subject=%e6%95%b0%e6%8d%ae%e5%ba%93%e7%b3%bb%e7%bb%9f%e7%9f%a5%e8%af%86%e6%95%b4%e7%90%86&body=Check out this article: https%3a%2f%2fakynazh.site%2fposts%2f2023%2f02%2fknowledge-collation-of-database-system%2f"
+      aria-label="Email"
+      target="_blank"
+    >
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a
+      class="icon"
+      href="http://reddit.com/submit?url=https%3a%2f%2fakynazh.site%2fposts%2f2023%2f02%2fknowledge-collation-of-database-system%2f&title=%e6%95%b0%e6%8d%ae%e5%ba%93%e7%b3%bb%e7%bb%9f%e7%9f%a5%e8%af%86%e6%95%b4%e7%90%86"
+      aria-label="reddit"
+      target="_blank"
+    >
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a
+      class="icon"
+      href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f2023%2f02%2fknowledge-collation-of-database-system%2f&name=%e6%95%b0%e6%8d%ae%e5%ba%93%e7%b3%bb%e7%bb%9f%e7%9f%a5%e8%af%86%e6%95%b4%e7%90%86&description=%e5%85%b3%e7%b3%bb%e8%af%ad%e8%a8%80%e7%9a%84%e7%a7%8d%e7%b1%bb%20%e5%85%b3%e7%b3%bb%e4%bb%a3%e6%95%b0%20%e5%85%b3%e7%b3%bb%e6%bc%94%e7%ae%97%ef%bc%88%e5%85%83%e7%bb%84%e6%bc%94%e7%ae%97%e5%92%8c%e5%9f%9f%e6%bc%94%e7%ae%97%ef%bc%89%20SQL%20%e5%85%b3%e7%b3%bb%e7%9a%84%e5%ae%9a%e4%b9%89%20%e5%80%99%e9%80%89%e7%a0%81%20%28Candidate%20Key%29%ef%bc%9a%e8%83%bd%e5%94%af%e4%b8%80%e6%a0%87%e8%af%86%e5%85%83%e7%bb%84%e7%9a%84%e5%b1%9e%e6%80%a7%28%e7%bb%84%29%e3%80%82%20%e4%b8%bb%e7%a0%81%20%28Primary%20Key%29%ef%bc%9a%e5%a4%9a%e4%b8%aa%e5%80%99%e9%80%89%e7%a0%81%e4%b8%ad%e9%80%89%e5%ae%9a%e4%b8%80%e4%b8%aa%e4%bd%9c%e4%b8%bb%e7%a0%81%e3%80%82%20%e4%b8%bb%e5%b1%9e%e6%80%a7%20%28Prime%20Attribute%29%ef%bc%9a%e5%80%99%e9%80%89%e7%a0%81%e4%b8%ad%e7%9a%84%e8%af%b8%e5%b1%9e%e6%80%a7%e3%80%82%20%e9%9d%9e%e4%b8%bb%e5%b1%9e%e6%80%a7%20%28Non-Key%20Attribute%29%ef%bc%9a%e4%b8%8d%e5%87%ba%e7%8e%b0%e5%9c%a8%e4%bb%bb%e4%bd%95%e5%80%99%e9%80%89%e7%a0%81%e4%b8%ad%e7%9a%84%e5%b1%9e%e6%80%a7%e3%80%82%20%e4%bc%a0%e7%bb%9f%e7%9a%84%e5%85%b3%e7%b3%bb%e8%bf%90%e7%ae%97%20%e5%b9%b6%20%28Union%29%20%e4%ba%a4%20%28Intersection%29%20%e5%b7%ae%20%28Difference%29%20%e5%b9%bf%e4%b9%89%e7%ac%9b%e5%8d%a1%e5%b0%94%e7%a7%af%20%28Extended%20Cartesian%20Product%29%20%e4%b8%93%e9%97%a8%e7%9a%84%e5%85%b3%e7%b3%bb%e8%bf%90%e7%ae%97%20%e9%80%89%e6%8b%a9%20%28%24%5csigma%24%29%3a%20%e5%9c%a8%e6%9f%90%e4%b8%aa%e5%85%b3%e7%b3%bb%e4%b8%ad%e9%80%89%e6%8b%a9%e6%bb%a1%e8%b6%b3%e7%bb%99%e5%ae%9a%e6%9d%a1%e4%bb%b6%e7%9a%84%e8%af%b8%e5%85%83%e7%bb%84%28WHERE%29%20%e6%8a%95%e5%bd%b1%20%28%24%5cpi%24%29%3a%20%e4%bb%8e%e6%9f%90%e4%b8%aa%e5%85%b3%e7%b3%bb%e4%b8%ad%e9%80%89%e6%8b%a9%e5%87%ba%e8%8b%a5%e5%b9%b2%e5%b1%9e%e6%80%a7%e5%88%97%e7%bb%84%e6%88%90%e6%96%b0%e7%9a%84%e5%85%b3%e7%b3%bb%28SELECT%29%20%e8%bf%9e%e6%8e%a5%20%28%24%5cbowtie%24%29%3a%20%e4%bb%8e%e4%b8%a4%e4%b8%aa%e5%85%b3%e7%b3%bb%e7%9a%84%e7%ac%9b%e5%8d%a1%e5%b0%94%e7%a7%af%e4%b8%ad%e9%80%89%e5%8f%96%e5%b1%9e%e6%80%a7%e9%97%b4%e6%bb%a1%e8%b6%b3%e4%b8%80%e5%ae%9a%e6%9d%a1%e4%bb%b6%e7%9a%84%e5%85%83%e7%bb%84%20%e9%99%a4%20%28%24%5cdiv%24%29%3a%20%e8%ae%be%e5%85%b3%e7%b3%bb%20R%20%e9%99%a4%e4%bb%a5%e5%85%b3%e7%b3%bb%20S%20%e7%9a%84%e7%bb%93%e6%9e%9c%e4%b8%ba%e5%85%b3%e7%b3%bb%20T%ef%bc%8c%e5%88%99%20T%20%e5%8c%85%e5%90%ab%e6%89%80%e6%9c%89%e5%9c%a8%20R%20%e4%bd%86%e4%b8%8d%e5%9c%a8%20S%20%e4%b8%ad%e7%9a%84%e5%b1%9e%e6%80%a7%e5%8f%8a%e5%85%b6%e5%80%bc%ef%bc%8c%e4%b8%94%20T%20%e7%9a%84%e5%85%83%e7%bb%84%e4%b8%8e%20S%20%e7%9a%84%e5%85%83%e7%bb%84%e7%9a%84%e6%89%80%e6%9c%89%e7%bb%84%e5%90%88%e9%83%bd%e5%9c%a8%20R%20%e4%b8%ad%20%e9%87%8d%e5%91%bd%e5%90%8d%20%28%24%5crho%24%29%3a%20%e5%b0%86%e6%9f%90%e4%b8%aa%e5%85%b3%e7%b3%bb%e9%87%8d%e5%91%bd%e5%90%8d%e4%b8%ba%e5%85%b6%e5%ae%83%e5%85%b3%e7%b3%bb%e5%90%8d%20%e5%85%b3%e7%b3%bb%e6%bc%94%e7%ae%97%20%e5%85%b3%e7%b3%bb%e6%bc%94%e7%ae%97%e5%b0%b1%e6%98%af%e7%94%a8%e8%b0%93%e8%af%8d%e6%9d%a5%e6%8f%8f%e8%bf%b0%e5%85%b3%e7%b3%bb%e7%9a%84%e6%9e%84%e6%88%90%28%e6%9f%a5%e8%af%a2%e7%9a%84%e7%bb%93%e6%9e%9c%29%e3%80%82%e6%8c%89%e7%85%a7%e8%b0%93%e8%af%8d%e5%8f%98%e5%85%83%e7%9a%84%e4%b8%8d%e5%90%8c%e5%88%86%e4%b8%ba%e5%85%83%e7%bb%84%e5%85%b3%e7%b3%bb%e6%bc%94%e7%ae%97%e5%92%8c%e5%9f%9f%e5%85%b3%e7%b3%bb%e6%bc%94%e7%ae%97%ef%bc%8c%e5%88%86%e5%88%ab%e7%ae%80%e7%a7%b0%e4%b8%ba%e5%85%83%e7%bb%84%e6%bc%94%e7%ae%97%e5%92%8c%e5%9f%9f%e6%bc%94%e7%ae%97%e3%80%82%0a%e5%85%83%e7%bb%84%e6%bc%94%e7%ae%97%e4%be%8b%e5%ad%90%20%e7%bb%99%e5%87%ba%e5%85%b3%e7%b3%bb%e6%a8%a1%e5%bc%8f%ef%bc%9a%0aS%20%28Sno%2c%20Sname%2c%20Ssex%2c%20Sage%2c%20Sdep%29%20C%20%28Cno%2c%20Cname%2c%20Ccredit%2c%20Cpno%29%20SC%20%28Sno%2c%20Cno%2c%20Grade%29%20%e6%9f%a5%e8%af%a2%e9%80%89%e4%bf%ae%e5%ad%a6%e5%8f%b7%e4%b8%ba%e2%80%9c95002%e2%80%9d%e7%9a%84%e5%ad%a6%e7%94%9f%e6%89%80%e9%80%89%e5%85%a8%e9%83%a8%e8%af%be%e7%a8%8b%e7%9a%84%e5%ad%a6%e7%94%9f%e5%ad%a6%e5%8f%b7%e3%80%82"
+      aria-label="Tumblr"
+      target="_blank"
+    >
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    
+      <div id="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#关系语言的种类">关系语言的种类</a></li>
+    <li><a href="#关系的定义">关系的定义</a></li>
+    <li><a href="#传统的关系运算">传统的关系运算</a></li>
+    <li><a href="#专门的关系运算">专门的关系运算</a></li>
+    <li><a href="#关系演算">关系演算</a>
+      <ul>
+        <li><a href="#元组演算例子">元组演算例子</a></li>
+        <li><a href="#域演算例子">域演算例子</a></li>
+      </ul>
+    </li>
+    <li><a href="#sql-行为">SQL 行为</a></li>
+    <li><a href="#sql-三级模式">SQL 三级模式</a></li>
+    <li><a href="#sql-数据定义">SQL 数据定义</a>
+      <ul>
+        <li><a href="#建表删表改表">建表，删表，改表</a></li>
+        <li><a href="#索引">索引</a></li>
+      </ul>
+    </li>
+    <li><a href="#sql-数据查询">SQL 数据查询</a>
+      <ul>
+        <li><a href="#select--where">SELECT &amp; WHERE</a></li>
+        <li><a href="#字符串匹配">字符串匹配</a></li>
+        <li><a href="#外连接">外连接</a></li>
+        <li><a href="#集函数">集函数</a></li>
+        <li><a href="#any-all-exists">ANY, ALL, EXISTS</a></li>
+        <li><a href="#集合查询">集合查询</a></li>
+      </ul>
+    </li>
+    <li><a href="#sql-优化">SQL 优化</a></li>
+    <li><a href="#sql-数据更新">SQL 数据更新</a></li>
+    <li><a href="#sql-视图">SQL 视图</a></li>
+    <li><a href="#sql-数据控制">SQL 数据控制</a>
+      <ul>
+        <li><a href="#授权">授权</a></li>
+        <li><a href="#收回权限">收回权限</a></li>
+      </ul>
+    </li>
+    <li><a href="#关于游标">关于游标</a></li>
+    <li><a href="#事务">事务</a>
+      <ul>
+        <li><a href="#定义">定义</a></li>
+        <li><a href="#acid-特性">ACID 特性</a></li>
+        <li><a href="#并发导致的问题">并发导致的问题</a></li>
+        <li><a href="#隔离级别">隔离级别</a></li>
+      </ul>
+    </li>
+    <li><a href="#封锁">封锁</a>
+      <ul>
+        <li><a href="#封锁协议">封锁协议</a></li>
+        <li><a href="#锁的种类">锁的种类</a></li>
+        <li><a href="#两段锁协议-2pl">两段锁协议 2PL</a></li>
+        <li><a href="#活锁">活锁</a></li>
+        <li><a href="#死锁">死锁</a></li>
+        <li><a href="#可串行化调度">可串行化调度</a></li>
+        <li><a href="#封锁粒度">封锁粒度</a></li>
+      </ul>
+    </li>
+    <li><a href="#范式">范式</a></li>
+  </ul>
+</nav>
+      </div>
+    
+  </span>
+</div>
+
+      <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <header>
+          <h1 class="posttitle" itemprop="name headline">
+            数据库系统知识整理
+          </h1>
+          <div class="meta">
+            
+            <div class="postdate">
+              
+              <time datetime="2023-02-22 22:35:25 &#43;0800 CST" itemprop="datePublished"
+                >2023-02-22</time
+              >
+              
+            </div>
+            
+            
+              <div class="article-read-time">
+                <i class="far fa-clock"></i>
+                
+                24 minute
+              </div>
+            
+            
+              <div class="article-category">
+                <i class="fas fa-archive"></i>
+                
+                  
+                  <a
+                    class="category-link"
+                    href="/categories/language"
+                    >Language</a
+                  >
+                
+              </div>
+            
+            
+              <div class="article-tag">
+                <i class="fas fa-tag"></i>
+                
+                  
+                  <a
+                    class="tag-link"
+                    href="/tags/sql"
+                    rel="tag"
+                    >sql</a
+                  >
+                
+                  , 
+                  <a
+                    class="tag-link"
+                    href="/tags/database"
+                    rel="tag"
+                    >database</a
+                  >
+                
+              </div>
+            
+          </div>
+        </header>
+        
+        <div class="content" itemprop="articleBody">
+          <h2 id="关系语言的种类">关系语言的种类</h2>
+<ul>
+<li>关系代数</li>
+<li>关系演算（元组演算和域演算）</li>
+<li>SQL</li>
+</ul>
+<h2 id="关系的定义">关系的定义</h2>
+<ul>
+<li>候选码 (Candidate Key)：能<strong>唯一标识</strong>元组的属性(组)。</li>
+<li>主码 (Primary Key)：多个候选码中<strong>选定一个</strong>作主码。</li>
+<li>主属性 (Prime Attribute)：候选码中的诸属性。</li>
+<li>非主属性 (Non-Key Attribute)：不出现在任何候选码中的属性。</li>
+</ul>
+<h2 id="传统的关系运算">传统的关系运算</h2>
+<ul>
+<li>并 (Union)</li>
+<li>交 (Intersection)</li>
+<li>差 (Difference)</li>
+<li>广义笛卡尔积 (Extended Cartesian Product)</li>
+</ul>
+<h2 id="专门的关系运算">专门的关系运算</h2>
+<ul>
+<li>选择 ($\sigma$): 在某个关系中选择满足给定条件的诸元组(WHERE)</li>
+<li>投影 ($\pi$): 从某个关系中选择出若干属性列组成新的关系(SELECT)</li>
+<li>连接 ($\bowtie$): 从两个关系的笛卡尔积中选取属性间满足一定条件的元组</li>
+<li>除 ($\div$): 设关系 R 除以关系 S 的结果为关系 T，则 T 包含所有在 R 但不在 S 中的属性及其值，且 T 的元组与 S 的元组的所有组合都在 R 中</li>
+<li>重命名 ($\rho$): 将某个关系重命名为其它关系名</li>
+</ul>
+<h2 id="关系演算">关系演算</h2>
+<p><strong>关系演算</strong>就是用谓词来描述关系的构成(查询的结果)。按照谓词变元的不同分为元组关系演算和域关系演算，分别简称为元组演算和域演算。</p>
+<h3 id="元组演算例子">元组演算例子</h3>
+<p>给出关系模式：</p>
+<ul>
+<li>S (Sno, Sname, Ssex, Sage, Sdep)</li>
+<li>C (Cno, Cname, Ccredit, Cpno)</li>
+<li>SC (Sno, Cno, Grade)</li>
+</ul>
+<p>查询选修学号为“95002”的学生所选全部课程的学生学号。</p>
+<p>{</p>
+<p>$t|\exists u(SC(u) \land \forall v(SC(v) \land v['Sno']='95002'$</p>
+<p>$\rightarrow \exists w(SC(w) \land w['Sno']=u['Sno'] \land w['Cno']=v['Cno']))$</p>
+<p>$\land t['Sno']=u['Sno'])$</p>
+<p>}</p>
+<h3 id="域演算例子">域演算例子</h3>
+<p>同上关系模式，查询选修了 C2 课程的学生学号和成绩。</p>
+<p>{</p>
+<p>$t_1, t_2 | \exists u_1 \exists u_2 \exists u_3 (SC(u_1, u_2, u_3) \land u_2='c2' \land t_1=u_1 \land t_2=u_3)$</p>
+<p>}</p>
+<p>or</p>
+<p>{</p>
+<p>$t_1, t_2 | SC(t_1, 'C2', t_2)$</p>
+<p>}</p>
+<h2 id="sql-行为">SQL 行为</h2>
+<ul>
+<li>数据查询：SELECT</li>
+<li>数据定义：CREATE，DROP，ALTER</li>
+<li>数据操纵：INSERT，UPDATE，DELETE</li>
+<li>数据控制：GRANT，REVOKE，COMMIT，ROLLBACK</li>
+</ul>
+<h2 id="sql-三级模式">SQL 三级模式</h2>
+<p><img src="image/1677161476093.png" alt="1677161476093"></p>
+<ul>
+<li>外模式：对应图中视图层</li>
+<li>模式：对应基本表层</li>
+<li>内模式：对应存储文件层</li>
+</ul>
+<h2 id="sql-数据定义">SQL 数据定义</h2>
+<h3 id="建表删表改表">建表，删表，改表</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#ff79c6">CREATE</span> <span style="color:#ff79c6">TABLE</span> <span style="color:#ff79c6">&lt;</span>表名<span style="color:#ff79c6">&gt;</span> ( 
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>    <span style="color:#ff79c6">&lt;</span>列名<span style="color:#ff79c6">&gt;</span> <span style="color:#ff79c6">&lt;</span>数据类型<span style="color:#ff79c6">&gt;</span> [ <span style="color:#ff79c6">&lt;</span>列级完整性约束条件<span style="color:#ff79c6">&gt;</span> ]
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>    [，<span style="color:#ff79c6">&lt;</span>列名<span style="color:#ff79c6">&gt;</span> <span style="color:#ff79c6">&lt;</span>数据类型<span style="color:#ff79c6">&gt;</span>[ <span style="color:#ff79c6">&lt;</span>列级完整性约束条件<span style="color:#ff79c6">&gt;</span>] ] …
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>    [，<span style="color:#ff79c6">&lt;</span>表级完整性约束条件<span style="color:#ff79c6">&gt;</span> ]  
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span><span style="color:#ff79c6">DROP</span>  <span style="color:#ff79c6">TABLE</span> <span style="color:#ff79c6">&lt;</span>表名<span style="color:#ff79c6">&gt;</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span><span style="color:#ff79c6">ALTER</span> <span style="color:#ff79c6">TABLE</span> <span style="color:#ff79c6">&lt;</span>表名<span style="color:#ff79c6">&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>[ <span style="color:#ff79c6">ADD</span>  <span style="color:#ff79c6">&lt;</span>新列名<span style="color:#ff79c6">&gt;</span>  <span style="color:#ff79c6">&lt;</span>数据类型<span style="color:#ff79c6">&gt;</span>  [ 完整性约束 ] ]
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>[ <span style="color:#ff79c6">DROP</span>  <span style="color:#ff79c6">&lt;</span>完整性约束名<span style="color:#ff79c6">&gt;</span>  <span style="color:#ff79c6">&lt;</span>列名<span style="color:#ff79c6">&gt;</span>]
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>[ <span style="color:#ff79c6">ALTER</span>  <span style="color:#ff79c6">&lt;</span>列名<span style="color:#ff79c6">&gt;</span> <span style="color:#ff79c6">&lt;</span>数据类型<span style="color:#ff79c6">&gt;</span> ];
+</span></span></code></pre></div><p><strong>常用完整性约束：</strong></p>
+<ul>
+<li>主码约束： PRIMARY  KEY</li>
+<li>唯一性约束：UNIQUE (不能取相同值但允许多个空值)</li>
+<li>非空值约束：NOT NULL</li>
+<li>参照完整性约束：</li>
+<li>FOREIGN KEY (&lt;列名&gt;) REFERENCES &lt;表名&gt;(&lt;列名&gt;)</li>
+<li>CHECK 约束：CHECK (&lt;谓词&gt;)</li>
+<li>断言(Assertion)约束</li>
+</ul>
+<h3 id="索引">索引</h3>
+<ul>
+<li>单一索引 (Unique Index)：每一个索引值只对应唯一的数据记录。</li>
+<li>聚簇索引 (Cluster Index)：索引项顺序与表中数据记录的物理顺序一致。</li>
+<li>普通索引：允许一个Search-key项对应多条存储记录。</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#ff79c6">CREATE</span> [<span style="color:#ff79c6">UNIQUE</span>] [<span style="color:#ff79c6">CLUSTER</span>] <span style="color:#ff79c6">INDEX</span> <span style="color:#ff79c6">&lt;</span>索引名<span style="color:#ff79c6">&gt;</span> 
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#ff79c6">ON</span> <span style="color:#ff79c6">&lt;</span>表名<span style="color:#ff79c6">&gt;</span>(<span style="color:#ff79c6">&lt;</span>列名<span style="color:#ff79c6">&gt;</span>[<span style="color:#ff79c6">&lt;</span>次序<span style="color:#ff79c6">&gt;</span>][,<span style="color:#ff79c6">&lt;</span>列名<span style="color:#ff79c6">&gt;</span>[<span style="color:#ff79c6">&lt;</span>次序<span style="color:#ff79c6">&gt;</span>] ]…);
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span><span style="color:#ff79c6">DROP</span> <span style="color:#ff79c6">INDEX</span> <span style="color:#ff79c6">&lt;</span>索引名<span style="color:#ff79c6">&gt;</span>;
+</span></span></code></pre></div><h2 id="sql-数据查询">SQL 数据查询</h2>
+<h3 id="select--where">SELECT &amp; WHERE</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#ff79c6">SELECT</span> [ <span style="color:#ff79c6">ALL</span>(默认) <span style="color:#ff79c6">|</span> <span style="color:#ff79c6">DISTINCT</span> ] <span style="color:#ff79c6">&lt;</span>目标列表达式<span style="color:#bd93f9">1</span><span style="color:#ff79c6">&gt;</span> [, <span style="color:#ff79c6">&lt;</span>目标列表达式<span style="color:#bd93f9">2</span><span style="color:#ff79c6">&gt;</span>] …
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#ff79c6">FROM</span>  <span style="color:#ff79c6">&lt;</span>表名或视图名<span style="color:#bd93f9">1</span><span style="color:#ff79c6">&gt;</span>[,  <span style="color:#ff79c6">&lt;</span>表名或视图名<span style="color:#bd93f9">2</span><span style="color:#ff79c6">&gt;</span> ] …
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>[ <span style="color:#ff79c6">WHERE</span>  <span style="color:#ff79c6">&lt;</span>条件表达式<span style="color:#ff79c6">&gt;</span> ]
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>[ <span style="color:#ff79c6">GROUP</span> <span style="color:#ff79c6">BY</span>  <span style="color:#ff79c6">&lt;</span>列名<span style="color:#bd93f9">1</span><span style="color:#ff79c6">&gt;</span> [ <span style="color:#ff79c6">HAVING</span> <span style="color:#ff79c6">&lt;</span>条件表达式<span style="color:#ff79c6">&gt;</span> ] ]
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>[ <span style="color:#ff79c6">ORDER</span> <span style="color:#ff79c6">BY</span>  <span style="color:#ff79c6">&lt;</span>列名<span style="color:#bd93f9">2</span><span style="color:#ff79c6">&gt;</span> [ <span style="color:#ff79c6">ASC</span>(默认) <span style="color:#ff79c6">|</span> <span style="color:#ff79c6">DESC</span> ] ] ;
+</span></span></code></pre></div><p>WHERE 采用查询条件：</p>
+<ul>
+<li>比较 (NOT) =, &lt;, &gt;, &lt;=, &gt;=, &lt;&gt;, !=, !&gt;, !&lt;</li>
+<li>确定范围 (NOT) BETWEEN … AND …</li>
+<li>确定集合 (NOT) IN</li>
+<li>字符匹配 (NOT) LIKE</li>
+<li>空值 IS (NOT) NULL</li>
+<li>多重条件 AND, OR</li>
+</ul>
+<h3 id="字符串匹配">字符串匹配</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>[<span style="color:#ff79c6">NOT</span>] <span style="color:#ff79c6">LIKE</span> ‘<span style="color:#ff79c6">&lt;</span>匹配模板<span style="color:#ff79c6">&gt;</span>’ [<span style="color:#ff79c6">ESCAPE</span> ‘<span style="color:#ff79c6">&lt;</span>换码字符<span style="color:#ff79c6">&gt;</span>’]
+</span></span></code></pre></div><p>% (百分号)：代表任意长度(可以为 0)的字符串。</p>
+<p>_ (下横线)：代表任意单个字符。</p>
+<h3 id="外连接">外连接</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#ff79c6">SELECT</span>  [ <span style="color:#ff79c6">ALL</span> <span style="color:#ff79c6">|</span> <span style="color:#ff79c6">DISTINCT</span> ] <span style="color:#ff79c6">&lt;</span>目标列表达式<span style="color:#bd93f9">1</span><span style="color:#ff79c6">&gt;</span> [, <span style="color:#ff79c6">&lt;</span>目标列表达式<span style="color:#bd93f9">2</span><span style="color:#ff79c6">&gt;</span>] …
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#ff79c6">FROM</span>  <span style="color:#ff79c6">&lt;</span>table_source1<span style="color:#ff79c6">&gt;</span> 
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#ff79c6">INNER</span><span style="color:#ff79c6">|</span>{<span style="color:#ff79c6">LEFT</span> <span style="color:#ff79c6">|</span> <span style="color:#ff79c6">RIGHT</span> <span style="color:#ff79c6">|</span> <span style="color:#ff79c6">FULL</span> [<span style="color:#ff79c6">OUTER</span>]} <span style="color:#ff79c6">JOIN</span> <span style="color:#ff79c6">&lt;</span>table_source2<span style="color:#ff79c6">&gt;</span> 
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span><span style="color:#ff79c6">ON</span> <span style="color:#ff79c6">&lt;</span>search_condition <span style="color:#ff79c6">&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>[ <span style="color:#ff79c6">WHERE</span>  <span style="color:#ff79c6">&lt;</span>条件表达式<span style="color:#ff79c6">&gt;</span> ]
+</span></span></code></pre></div><p>外连接与普通连接的区别：</p>
+<p>普通连接操作只输出满足连接条件的元组，外连接操作以指定表为连接主体，将主体表中不满足连接条件的元组一并输出。</p>
+<p>左外连接（⟕）：连接条件右边出现空行
+右外连接（⟖）：连接条件左边出现空行
+左右外连接（全外连接，⟗）：在连接条件的左右两边出现空行</p>
+<p>“左”外连接，即以“左”表为主表。</p>
+<h3 id="集函数">集函数</h3>
+<ul>
+<li>COUNT（[DISTINCT | ALL] *）</li>
+<li>COUNT（[DISTINCT | ALL] &lt;列名&gt;）</li>
+<li>SUM（[DISTINCT | ALL] &lt;列名&gt;）</li>
+<li>AVG（[DISTINCT | ALL] &lt;列名&gt;）</li>
+<li>MAX（[DISTINCT | ALL] &lt;列名&gt;）</li>
+<li>MIN（[DISTINCT | ALL] &lt;列名&gt;）</li>
+</ul>
+<p><strong>集函数只能用于 SELECT 子句和 HAVING 短语之中，而绝对不能出现在 WHERE 子句中。</strong></p>
+<h3 id="any-all-exists">ANY, ALL, EXISTS</h3>
+<ul>
+<li>ANY：某些值</li>
+<li>ALL：所有值</li>
+<li>EXISTS：对应存在量词 $\exists$，不返回数据，只产生逻辑真/假值</li>
+</ul>
+<p>关于 EXISTS 的一些知识点：</p>
+<ul>
+<li>一些带EXISTS或NOT EXISTS谓词的子查询不能被其它形式的子查询等价替换。</li>
+<li>所有带 IN 谓词、比较运算符、ANY 和 ALL 谓词的子查询都能用带 EXISTS 谓词的子查询等价替换。</li>
+<li>[NOT] EXISTS 子查询的效率要<strong>优于连接查询和集合查询</strong>（IN 谓词查询）。</li>
+<li>EXISTS 通常引入的是相关子查询，而 IN 更多的是不相关子查询。</li>
+</ul>
+<p>一个例子：</p>
+<p>还是之前那个例子，查询至少选修学生95002所选全部课程的学生学号：</p>
+<p>通过之前编写的元组演算表达式，通过等价转换：$p \rightarrow q \iff \neg p \vee q$，可以消去全称量词，得到使用存在量词的表达式，然后可以简单地写出一下语句：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#ff79c6">SELECT</span> Sno
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#ff79c6">FROM</span> SC SCX
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span><span style="color:#ff79c6">WHERE</span> <span style="color:#ff79c6">NOT</span> <span style="color:#ff79c6">EXISTS</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>    (<span style="color:#ff79c6">SELECT</span> <span style="color:#ff79c6">*</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>     <span style="color:#ff79c6">FROM</span> SC SCY
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>     <span style="color:#ff79c6">WHERE</span> SCY.Sno<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;95002&#39;</span> <span style="color:#ff79c6">AND</span> <span style="color:#ff79c6">NOT</span> <span style="color:#ff79c6">EXISTS</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>        (<span style="color:#ff79c6">SELECT</span>  <span style="color:#ff79c6">*</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>         <span style="color:#ff79c6">FROM</span> SC SCZ
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>         <span style="color:#ff79c6">WHERE</span> SCZ.Sno<span style="color:#ff79c6">=</span>SCX.Sno <span style="color:#ff79c6">AND</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>               SCZ.Cno<span style="color:#ff79c6">=</span>SCY.Cno));
+</span></span></code></pre></div><h3 id="集合查询">集合查询</h3>
+<p>将两个 SELECT – FROM – WHERE 查询块用集合操作语句联结起来。</p>
+<ul>
+<li>并操作 (UNION)</li>
+<li>交操作 (INTERSECT)</li>
+<li>差操作 (MINUS, SQL Server 中用 EXCEPT)</li>
+</ul>
+<h2 id="sql-优化">SQL 优化</h2>
+<ol>
+<li>在 WHERE 子句中应把最具限制性的条件放在最前面</li>
+<li>WHERE 子句中字段的顺序应和索引中字段顺序一致</li>
+<li>[NOT] EXISTS 子查询的效率要<strong>优于连接查询和集合查询</strong></li>
+</ol>
+<h2 id="sql-数据更新">SQL 数据更新</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#ff79c6">INSERT</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#ff79c6">INTO</span>  <span style="color:#ff79c6">&lt;</span>表名<span style="color:#ff79c6">&gt;</span>  [(<span style="color:#ff79c6">&lt;</span>属性列<span style="color:#bd93f9">1</span><span style="color:#ff79c6">&gt;</span>[, <span style="color:#ff79c6">&lt;</span>属性列<span style="color:#bd93f9">2</span> <span style="color:#ff79c6">&gt;</span>…)]
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span><span style="color:#ff79c6">VALUES</span>  (<span style="color:#ff79c6">&lt;</span>常量<span style="color:#bd93f9">1</span><span style="color:#ff79c6">&gt;</span> [, <span style="color:#ff79c6">&lt;</span>常量<span style="color:#bd93f9">2</span><span style="color:#ff79c6">&gt;</span>]    … );
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span><span style="color:#ff79c6">UPDATE</span>  <span style="color:#ff79c6">&lt;</span>表名<span style="color:#ff79c6">&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span><span style="color:#ff79c6">SET</span>  <span style="color:#ff79c6">&lt;</span>列名<span style="color:#ff79c6">&gt;=&lt;</span>表达式<span style="color:#ff79c6">&gt;</span>[, <span style="color:#ff79c6">&lt;</span>列名<span style="color:#ff79c6">&gt;=&lt;</span>表达式<span style="color:#ff79c6">&gt;</span>]…
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>[<span style="color:#ff79c6">WHERE</span>  <span style="color:#ff79c6">&lt;</span>条件<span style="color:#ff79c6">&gt;</span>];
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span><span style="color:#ff79c6">DELETE</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span><span style="color:#ff79c6">FROM</span>  <span style="color:#ff79c6">&lt;</span>表名<span style="color:#ff79c6">&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>[<span style="color:#ff79c6">WHERE</span>  <span style="color:#ff79c6">&lt;</span>条件，缺省表示要修改表中的所有元组<span style="color:#ff79c6">&gt;</span>];
+</span></span></code></pre></div><h2 id="sql-视图">SQL 视图</h2>
+<p>视图是从一个或几个基本表（或视图）导出的表，它与基本表不同，是一个虚表，它对应三级模式/两级映象中体系结构中的外模式和外模式/模式的映象。</p>
+<p>注：两级映象指的是：外模式／模式映象 和 模式／内模式映象</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#ff79c6">CREATE</span>  <span style="color:#ff79c6">VIEW</span>  <span style="color:#ff79c6">&lt;</span>视图名<span style="color:#ff79c6">&gt;</span>  [(<span style="color:#ff79c6">&lt;</span>列名<span style="color:#ff79c6">&gt;</span>  [，<span style="color:#ff79c6">&lt;</span>列名<span style="color:#ff79c6">&gt;</span>]…)]
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#ff79c6">AS</span>  <span style="color:#ff79c6">&lt;</span>子查询<span style="color:#ff79c6">&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>[<span style="color:#ff79c6">WITH</span>  <span style="color:#ff79c6">CHECK</span>  <span style="color:#ff79c6">OPTION</span>];
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span><span style="color:#ff79c6">DROP</span>  <span style="color:#ff79c6">VIEW</span>  <span style="color:#ff79c6">&lt;</span>视图名<span style="color:#ff79c6">&gt;</span>;
+</span></span></code></pre></div><p>关于 “WITH  CHECK  OPTION”，对该视图进行操作时，将自动带上该条件，如果不满足则拒绝操作。</p>
+<h2 id="sql-数据控制">SQL 数据控制</h2>
+<p>数据控制是指 DBMS 用来保证数据库正确稳定运行所提供的对数据的管理机制。</p>
+<p>SQL中的数据控制包括事务管理和数据保护。</p>
+<h3 id="授权">授权</h3>
+<p>将数据库中的某些对象的某些操作权限赋予某些用户</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#ff79c6">GRANT</span> <span style="color:#ff79c6">&lt;</span>权限<span style="color:#ff79c6">&gt;</span>[,<span style="color:#ff79c6">&lt;</span>权限<span style="color:#ff79c6">&gt;</span>]... 
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>    [<span style="color:#ff79c6">ON</span> <span style="color:#ff79c6">&lt;</span>对象类型<span style="color:#ff79c6">&gt;</span> <span style="color:#ff79c6">&lt;</span>对象名<span style="color:#ff79c6">&gt;</span>]
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>    <span style="color:#ff79c6">TO</span> <span style="color:#ff79c6">&lt;</span>用户<span style="color:#ff79c6">&gt;</span>[,<span style="color:#ff79c6">&lt;</span>用户<span style="color:#ff79c6">&gt;</span>]...
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>    [<span style="color:#ff79c6">WITH</span> <span style="color:#ff79c6">GRANT</span> <span style="color:#ff79c6">OPTION</span>];
+</span></span></code></pre></div><p>指定了 WITH GRANT OPTION 子句, 获得某种权限的用户还可以把这种权限再授予别的用户。</p>
+<p>一些例子：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#ff79c6">GRANT</span>  <span style="color:#ff79c6">ALL</span>  PRIVILIGES <span style="color:#6272a4">/* 所有权限 */</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#ff79c6">ON</span>  <span style="color:#ff79c6">TABLE</span>  Student, Course 
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span><span style="color:#ff79c6">TO</span>  U2, U3
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span><span style="color:#ff79c6">WITH</span>  <span style="color:#ff79c6">GRANT</span>  <span style="color:#ff79c6">OPTION</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span><span style="color:#ff79c6">GRANT</span>  <span style="color:#ff79c6">SELECT</span> 
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span><span style="color:#ff79c6">ON</span>  <span style="color:#ff79c6">TABLE</span>  SC 
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span><span style="color:#ff79c6">TO</span>  <span style="color:#ff79c6">PUBLIC</span>; <span style="color:#6272a4">/* 所有用户 */</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span><span style="color:#ff79c6">GRANT</span>  <span style="color:#ff79c6">UPDATE</span> (Sno),  <span style="color:#ff79c6">SELECT</span> 
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span><span style="color:#ff79c6">ON</span>  <span style="color:#ff79c6">TABLE</span>  Student 
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span><span style="color:#ff79c6">TO</span>  U4;
+</span></span></code></pre></div><h3 id="收回权限">收回权限</h3>
+<p>从指定用户那里收回对指定对象的指定权限。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#ff79c6">REVOKE</span>  <span style="color:#ff79c6">&lt;</span>权限<span style="color:#ff79c6">&gt;</span>[,<span style="color:#ff79c6">&lt;</span>权限<span style="color:#ff79c6">&gt;</span>]... 
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>[<span style="color:#ff79c6">ON</span>  <span style="color:#ff79c6">&lt;</span>对象类型<span style="color:#ff79c6">&gt;</span> <span style="color:#ff79c6">&lt;</span>对象名<span style="color:#ff79c6">&gt;</span>]
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#ff79c6">FROM</span>  <span style="color:#ff79c6">&lt;</span>用户<span style="color:#ff79c6">&gt;</span>[,<span style="color:#ff79c6">&lt;</span>用户<span style="color:#ff79c6">&gt;</span>]...;
+</span></span></code></pre></div><h2 id="关于游标">关于游标</h2>
+<p>游标是嵌入式 SQL 引入的机制，是 SQL 查询语句向宿主语言提供查询结果集的一段公共缓冲区。</p>
+<p>嵌入式 SQL 提供了逐条处理游标记录的功能，将当前记录各字段值推入主变量，并移动游标指针。</p>
+<p>游标解决了 SQL 语言只有记录处理能力的问题，将记录的各字段赋给主变量，交由宿主语言进行单值处理。</p>
+<h2 id="事务">事务</h2>
+<h3 id="定义">定义</h3>
+<p>事务 (Transaction) 是用户定义的一个数据库操作序列，这些操作要么全做，要么全不做，是一个不可分割的工作单位。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#ff79c6">BEGIN</span> <span style="color:#ff79c6">TRANSACTION</span> 
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#ff79c6">SQL</span> 语句<span style="color:#bd93f9">1</span> 
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#ff79c6">SQL</span> 语句<span style="color:#bd93f9">2</span> 
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>…… 
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span><span style="color:#ff79c6">ROLLBACK</span>
+</span></span></code></pre></div><h3 id="acid-特性">ACID 特性</h3>
+<ul>
+<li>原子性（Atomicity）：事务中包括的诸操作要么都做，要么都不做。</li>
+<li>一致性（Consistency）：事务执行的结果必须是使数据库从一个一致性状态变到另一个一致性状态。</li>
+<li>隔离性（Isolation）：一个事务的执行不能被其他事务干扰，而影响它对数据的正确使用和修改。</li>
+<li>持久性（Durability）：一个事务一旦提交，它对数据库中数据的改变就应该是永久性的，接下来的其他操作或故障不应该对其执行结果有任何影响。</li>
+</ul>
+<h3 id="并发导致的问题">并发导致的问题</h3>
+<p>一、丢失修改（lost update）</p>
+<p>当两个事务并发执行但没有锁的控制，可能导致其中一个事务的处理结果被覆盖，也就是丢失了修改。</p>
+<p>二、不可重复读（non-repeatable read）</p>
+<p>事务 1 读取某一数据后：</p>
+<ol>
+<li>事务 2 对其做了修改，当事务 1 再次读该数据时，得到与前一次不同的值</li>
+<li>事务 2 插入或删除了部分记录，当事务 1 再次读取数据时，发现某些记录消失了或多了（也称为幻读）</li>
+</ol>
+<p>三、脏读（dirty read）</p>
+<p>事务 1 修改某一数据，并将其写回磁盘，事务 2 读取同一数据后，事务 1 由于某种原因进行回滚。事务 2 之前读到的数据就与数据库中的数据不一致，是不正确的数据，又称为“脏”数据。</p>
+<h3 id="隔离级别">隔离级别</h3>
+<p><strong>(1) Read Uncommitted</strong></p>
+<p>一个事务读的时候允许其他事务操作，写的时候其他事物只能读不能写，允许读到未提交的事务。</p>
+<p>解决了丢失修改问题。</p>
+<p><strong>(2) Read Committed</strong></p>
+<p>一个事务读的时候允许其他事务操作，修改的时候不允许任何其它事务读写，只允许读已提交的事务。</p>
+<p>解决了丢失修改问题和脏读问题。</p>
+<p><strong>(3) Repeatable Read</strong></p>
+<p>一个事务读取的时候其他事务不可修改（允许读），写事务的时候禁止其他任何事务。</p>
+<p>解决了丢失修改问题，脏读问题和不可重复读的第一种问题（未解决幻读问题）。</p>
+<p><strong>(4) Serializable</strong></p>
+<p>事务可串行化执行，使用表级锁，解决之前提到的所有问题。</p>
+<h2 id="封锁">封锁</h2>
+<h3 id="封锁协议">封锁协议</h3>
+<p>封锁就是事务 T 在对某个数据对象（例如表、记录等）操作之前，先向系统发出请求，对其加锁。</p>
+<p>加锁后事务 T 就对该数据对象有了一定的控制，在事务 T 释放它的锁之前，其它的事务不能更新此数据对象。</p>
+<h3 id="锁的种类">锁的种类</h3>
+<p>1、排它锁（eXclusive lock，简记为 X 锁，又称为写锁）</p>
+<p>若事务 T 对数据对象 A 加上 X 锁，则只允许 T 读取和修改 A，其它任何事务都不能再对 A 加任何类型的锁，直到 T 释放 A 上的锁。</p>
+<p>2、共享锁（Share lock，简记为 S 锁，又称为读锁）</p>
+<p>若事务 T 对数据对象 A 加上 S 锁，则其它事务只能再对 A 加 S 锁，而不能加 X 锁，直到 T 释放 A 上的 S 锁。</p>
+<p>X 和 X, S 锁是不相容的，S 和 S 锁是相容的。</p>
+<h3 id="两段锁协议-2pl">两段锁协议 2PL</h3>
+<p>事务分为两个阶段</p>
+<ol>
+<li>第一阶段是获得封锁，也称为扩展阶段</li>
+<li>第二阶段是释放封锁，也称为收缩阶段</li>
+</ol>
+<p>一个封锁序列：</p>
+<p>Slock A &hellip; Slock B &hellip; Xlock C &hellip; Unlock B &hellip; Unlock A &hellip; Unlock C</p>
+<h3 id="活锁">活锁</h3>
+<p>由于系统调度的原因，某些事务的加锁请求得不到响应而永远等待下去，称为活锁。</p>
+<p>解决方法：采用合理的调度方法，如先来先服务 (FCFS) 策略。</p>
+<h3 id="死锁">死锁</h3>
+<p>两个或多个事务都已封锁了一些数据对象，然后又都请求对已被其他事务封锁的数据对象加锁，从而出现死等待。</p>
+<p>解决方法：</p>
+<ol>
+<li>预防死锁
+<ol>
+<li>一次封锁法：要求每个事务必须一次将所有要使用的数据全部加锁，否则就不能继续执行。</li>
+<li>顺序封锁法：顺序封锁法是预先对数据对象规定一个封锁顺序，所有事务都按这个顺序实行封锁。</li>
+</ol>
+</li>
+<li>诊断死锁
+<ol>
+<li>超时法：如果一个事务的等待时间超过了规定的时限，就认为发生了死锁。</li>
+<li>等待图法：用事务等待图动态反映所有事务的等待情况。</li>
+</ol>
+</li>
+<li>解除死锁：选择一个处理死锁代价最小的事务，将其撤消，释放此事务持有的所有的锁，使其它事务能继续运行下去。</li>
+</ol>
+<p>其中，事务等待图是一个有向图 G=(T，U)，T 为结点的集合，每个结点表示正运行的事务，U 为边的集合，每条边表示事务等待的情况。</p>
+<p>若 T1 等待 T2，则 T1，T2 之间划一条有向边，从 T1 指向 T2。</p>
+<p>并发控制子系统周期性地（比如每隔 1 min）检测事务等待图，如果发现图中存在回路，则表示系统中出现了死锁。</p>
+<h3 id="可串行化调度">可串行化调度</h3>
+<p>几个事务的并行执行是正确的，当且仅当其结果与按某一次序串行地执行它们时的结果相同。这种并发调度策略称为可串行化（Serializable）的调度。</p>
+<p>事务遵守两段锁协议是可串行化调度的<strong>充分条件</strong>，而不是必要条件。</p>
+<h3 id="封锁粒度">封锁粒度</h3>
+<p>X 锁和 S 锁都是加在某一个数据对象上的，封锁的对象可以是:</p>
+<ul>
+<li>逻辑单元: 属性值、属性值集合、元组、关系、索引项、整个索引、整个数据库等</li>
+<li>物理单元：页（数据页或索引页）、物理记录等</li>
+</ul>
+<p>封锁对象的<strong>大小</strong>称为封锁的粒度 (Granularity)。</p>
+<p>多粒度封锁 (multiple granularity locking)：在一个系统中<strong>同时支持多种封锁粒度</strong>供不同的事务选择。</p>
+<h2 id="范式">范式</h2>
+<ol>
+<li>1NF: 关系模式 R 的所有属性都是不可分的基本数据项</li>
+<li>2NF: 关系模式 $R \in 1NF$，且每一个非主属性都完全函数依赖于 R 的码（而不是部分依赖）</li>
+<li>3NF: 关系模式 $R \in 2NF$，且不存在非主属性对码的传递依赖</li>
+<li>BCNF: 关系模式 $R \in 3NF$，且对于 R 的每个函数依赖 $X \rightarrow Y (Y \nsubseteq X)$，X 必包含码</li>
+</ol>
+
+        </div>
+      </article>
+      
+  
+
+
+
+
+  <div class="blog-post-comments">
+    
+      <div id="disquss_thread">
+  <script type="text/javascript">
+    let utterancesTheme = getCurrentTheme() == "light" ? "github-light" : "github-dark";
+    let script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.setAttribute("repo", "akynazh\/hugo-comment");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute(
+      "label",
+      "akynazh"
+    );
+    script.setAttribute("theme", utterancesTheme);
+    script.setAttribute("crossOrigin", "anonymous");
+    script.setAttribute("async", true);
+    comments = document.getElementById("disquss_thread");
+    comments.appendChild(script);
+  </script>
+</div>
+
+    
+  </div>
+
+
+      <div id="fastSearch">
+  <input id="searchInput" tabindex="0" />
+  <ul id="searchResults"></ul>
+</div>
+
+      <div id="footer-post-container">
+  <div id="footer-post">
+    
+      <div id="toc-footer" style="display: none">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#关系语言的种类">关系语言的种类</a></li>
+    <li><a href="#关系的定义">关系的定义</a></li>
+    <li><a href="#传统的关系运算">传统的关系运算</a></li>
+    <li><a href="#专门的关系运算">专门的关系运算</a></li>
+    <li><a href="#关系演算">关系演算</a>
+      <ul>
+        <li><a href="#元组演算例子">元组演算例子</a></li>
+        <li><a href="#域演算例子">域演算例子</a></li>
+      </ul>
+    </li>
+    <li><a href="#sql-行为">SQL 行为</a></li>
+    <li><a href="#sql-三级模式">SQL 三级模式</a></li>
+    <li><a href="#sql-数据定义">SQL 数据定义</a>
+      <ul>
+        <li><a href="#建表删表改表">建表，删表，改表</a></li>
+        <li><a href="#索引">索引</a></li>
+      </ul>
+    </li>
+    <li><a href="#sql-数据查询">SQL 数据查询</a>
+      <ul>
+        <li><a href="#select--where">SELECT &amp; WHERE</a></li>
+        <li><a href="#字符串匹配">字符串匹配</a></li>
+        <li><a href="#外连接">外连接</a></li>
+        <li><a href="#集函数">集函数</a></li>
+        <li><a href="#any-all-exists">ANY, ALL, EXISTS</a></li>
+        <li><a href="#集合查询">集合查询</a></li>
+      </ul>
+    </li>
+    <li><a href="#sql-优化">SQL 优化</a></li>
+    <li><a href="#sql-数据更新">SQL 数据更新</a></li>
+    <li><a href="#sql-视图">SQL 视图</a></li>
+    <li><a href="#sql-数据控制">SQL 数据控制</a>
+      <ul>
+        <li><a href="#授权">授权</a></li>
+        <li><a href="#收回权限">收回权限</a></li>
+      </ul>
+    </li>
+    <li><a href="#关于游标">关于游标</a></li>
+    <li><a href="#事务">事务</a>
+      <ul>
+        <li><a href="#定义">定义</a></li>
+        <li><a href="#acid-特性">ACID 特性</a></li>
+        <li><a href="#并发导致的问题">并发导致的问题</a></li>
+        <li><a href="#隔离级别">隔离级别</a></li>
+      </ul>
+    </li>
+    <li><a href="#封锁">封锁</a>
+      <ul>
+        <li><a href="#封锁协议">封锁协议</a></li>
+        <li><a href="#锁的种类">锁的种类</a></li>
+        <li><a href="#两段锁协议-2pl">两段锁协议 2PL</a></li>
+        <li><a href="#活锁">活锁</a></li>
+        <li><a href="#死锁">死锁</a></li>
+        <li><a href="#可串行化调度">可串行化调度</a></li>
+        <li><a href="#封锁粒度">封锁粒度</a></li>
+      </ul>
+    </li>
+    <li><a href="#范式">范式</a></li>
+  </ul>
+</nav>
+      </div>
+    
+    <div id="nav-footer" style="display: none">
+      
+        <ul style="display:inline;">
+          <li><a href="/">Home</a></li>
+        </ul>
+      
+        <ul style="display:inline;">
+          <li><a href="/posts">Posts</a></li>
+        </ul>
+      
+        <ul style="display:inline;">
+          <li><a href="/tags">Tags</a></li>
+        </ul>
+      
+        <ul style="display:inline;">
+          <li><a href="/about">About</a></li>
+        </ul>
+      
+    </div>
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a
+      class="icon"
+      href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fakynazh.site%2fposts%2f2023%2f02%2fknowledge-collation-of-database-system%2ft=%e6%95%b0%e6%8d%ae%e5%ba%93%e7%b3%bb%e7%bb%9f%e7%9f%a5%e8%af%86%e6%95%b4%e7%90%86"
+      aria-label="Facebook"
+      target="_blank"
+    >
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a
+      class="icon"
+      href="https://twitter.com/share?url=https%3a%2f%2fakynazh.site%2fposts%2f2023%2f02%2fknowledge-collation-of-database-system%2f&text=%e6%95%b0%e6%8d%ae%e5%ba%93%e7%b3%bb%e7%bb%9f%e7%9f%a5%e8%af%86%e6%95%b4%e7%90%86"
+      aria-label="Twitter"
+      target="_blank"
+    >
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a
+      class="icon"
+      href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fakynazh.site%2fposts%2f2023%2f02%2fknowledge-collation-of-database-system%2f&title=%e6%95%b0%e6%8d%ae%e5%ba%93%e7%b3%bb%e7%bb%9f%e7%9f%a5%e8%af%86%e6%95%b4%e7%90%86"
+      aria-label="Linkedin"
+      target="_blank"
+    >
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a
+      class="icon"
+      href="mailto:?subject=%e6%95%b0%e6%8d%ae%e5%ba%93%e7%b3%bb%e7%bb%9f%e7%9f%a5%e8%af%86%e6%95%b4%e7%90%86&body=Check out this article: https%3a%2f%2fakynazh.site%2fposts%2f2023%2f02%2fknowledge-collation-of-database-system%2f"
+      aria-label="Email"
+      target="_blank"
+    >
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a
+      class="icon"
+      href="http://reddit.com/submit?url=https%3a%2f%2fakynazh.site%2fposts%2f2023%2f02%2fknowledge-collation-of-database-system%2f&title=%e6%95%b0%e6%8d%ae%e5%ba%93%e7%b3%bb%e7%bb%9f%e7%9f%a5%e8%af%86%e6%95%b4%e7%90%86"
+      aria-label="reddit"
+      target="_blank"
+    >
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a
+      class="icon"
+      href="http://www.tumblr.com/share/link?url=https%3a%2f%2fakynazh.site%2fposts%2f2023%2f02%2fknowledge-collation-of-database-system%2f&name=%e6%95%b0%e6%8d%ae%e5%ba%93%e7%b3%bb%e7%bb%9f%e7%9f%a5%e8%af%86%e6%95%b4%e7%90%86&description=%e5%85%b3%e7%b3%bb%e8%af%ad%e8%a8%80%e7%9a%84%e7%a7%8d%e7%b1%bb%20%e5%85%b3%e7%b3%bb%e4%bb%a3%e6%95%b0%20%e5%85%b3%e7%b3%bb%e6%bc%94%e7%ae%97%ef%bc%88%e5%85%83%e7%bb%84%e6%bc%94%e7%ae%97%e5%92%8c%e5%9f%9f%e6%bc%94%e7%ae%97%ef%bc%89%20SQL%20%e5%85%b3%e7%b3%bb%e7%9a%84%e5%ae%9a%e4%b9%89%20%e5%80%99%e9%80%89%e7%a0%81%20%28Candidate%20Key%29%ef%bc%9a%e8%83%bd%e5%94%af%e4%b8%80%e6%a0%87%e8%af%86%e5%85%83%e7%bb%84%e7%9a%84%e5%b1%9e%e6%80%a7%28%e7%bb%84%29%e3%80%82%20%e4%b8%bb%e7%a0%81%20%28Primary%20Key%29%ef%bc%9a%e5%a4%9a%e4%b8%aa%e5%80%99%e9%80%89%e7%a0%81%e4%b8%ad%e9%80%89%e5%ae%9a%e4%b8%80%e4%b8%aa%e4%bd%9c%e4%b8%bb%e7%a0%81%e3%80%82%20%e4%b8%bb%e5%b1%9e%e6%80%a7%20%28Prime%20Attribute%29%ef%bc%9a%e5%80%99%e9%80%89%e7%a0%81%e4%b8%ad%e7%9a%84%e8%af%b8%e5%b1%9e%e6%80%a7%e3%80%82%20%e9%9d%9e%e4%b8%bb%e5%b1%9e%e6%80%a7%20%28Non-Key%20Attribute%29%ef%bc%9a%e4%b8%8d%e5%87%ba%e7%8e%b0%e5%9c%a8%e4%bb%bb%e4%bd%95%e5%80%99%e9%80%89%e7%a0%81%e4%b8%ad%e7%9a%84%e5%b1%9e%e6%80%a7%e3%80%82%20%e4%bc%a0%e7%bb%9f%e7%9a%84%e5%85%b3%e7%b3%bb%e8%bf%90%e7%ae%97%20%e5%b9%b6%20%28Union%29%20%e4%ba%a4%20%28Intersection%29%20%e5%b7%ae%20%28Difference%29%20%e5%b9%bf%e4%b9%89%e7%ac%9b%e5%8d%a1%e5%b0%94%e7%a7%af%20%28Extended%20Cartesian%20Product%29%20%e4%b8%93%e9%97%a8%e7%9a%84%e5%85%b3%e7%b3%bb%e8%bf%90%e7%ae%97%20%e9%80%89%e6%8b%a9%20%28%24%5csigma%24%29%3a%20%e5%9c%a8%e6%9f%90%e4%b8%aa%e5%85%b3%e7%b3%bb%e4%b8%ad%e9%80%89%e6%8b%a9%e6%bb%a1%e8%b6%b3%e7%bb%99%e5%ae%9a%e6%9d%a1%e4%bb%b6%e7%9a%84%e8%af%b8%e5%85%83%e7%bb%84%28WHERE%29%20%e6%8a%95%e5%bd%b1%20%28%24%5cpi%24%29%3a%20%e4%bb%8e%e6%9f%90%e4%b8%aa%e5%85%b3%e7%b3%bb%e4%b8%ad%e9%80%89%e6%8b%a9%e5%87%ba%e8%8b%a5%e5%b9%b2%e5%b1%9e%e6%80%a7%e5%88%97%e7%bb%84%e6%88%90%e6%96%b0%e7%9a%84%e5%85%b3%e7%b3%bb%28SELECT%29%20%e8%bf%9e%e6%8e%a5%20%28%24%5cbowtie%24%29%3a%20%e4%bb%8e%e4%b8%a4%e4%b8%aa%e5%85%b3%e7%b3%bb%e7%9a%84%e7%ac%9b%e5%8d%a1%e5%b0%94%e7%a7%af%e4%b8%ad%e9%80%89%e5%8f%96%e5%b1%9e%e6%80%a7%e9%97%b4%e6%bb%a1%e8%b6%b3%e4%b8%80%e5%ae%9a%e6%9d%a1%e4%bb%b6%e7%9a%84%e5%85%83%e7%bb%84%20%e9%99%a4%20%28%24%5cdiv%24%29%3a%20%e8%ae%be%e5%85%b3%e7%b3%bb%20R%20%e9%99%a4%e4%bb%a5%e5%85%b3%e7%b3%bb%20S%20%e7%9a%84%e7%bb%93%e6%9e%9c%e4%b8%ba%e5%85%b3%e7%b3%bb%20T%ef%bc%8c%e5%88%99%20T%20%e5%8c%85%e5%90%ab%e6%89%80%e6%9c%89%e5%9c%a8%20R%20%e4%bd%86%e4%b8%8d%e5%9c%a8%20S%20%e4%b8%ad%e7%9a%84%e5%b1%9e%e6%80%a7%e5%8f%8a%e5%85%b6%e5%80%bc%ef%bc%8c%e4%b8%94%20T%20%e7%9a%84%e5%85%83%e7%bb%84%e4%b8%8e%20S%20%e7%9a%84%e5%85%83%e7%bb%84%e7%9a%84%e6%89%80%e6%9c%89%e7%bb%84%e5%90%88%e9%83%bd%e5%9c%a8%20R%20%e4%b8%ad%20%e9%87%8d%e5%91%bd%e5%90%8d%20%28%24%5crho%24%29%3a%20%e5%b0%86%e6%9f%90%e4%b8%aa%e5%85%b3%e7%b3%bb%e9%87%8d%e5%91%bd%e5%90%8d%e4%b8%ba%e5%85%b6%e5%ae%83%e5%85%b3%e7%b3%bb%e5%90%8d%20%e5%85%b3%e7%b3%bb%e6%bc%94%e7%ae%97%20%e5%85%b3%e7%b3%bb%e6%bc%94%e7%ae%97%e5%b0%b1%e6%98%af%e7%94%a8%e8%b0%93%e8%af%8d%e6%9d%a5%e6%8f%8f%e8%bf%b0%e5%85%b3%e7%b3%bb%e7%9a%84%e6%9e%84%e6%88%90%28%e6%9f%a5%e8%af%a2%e7%9a%84%e7%bb%93%e6%9e%9c%29%e3%80%82%e6%8c%89%e7%85%a7%e8%b0%93%e8%af%8d%e5%8f%98%e5%85%83%e7%9a%84%e4%b8%8d%e5%90%8c%e5%88%86%e4%b8%ba%e5%85%83%e7%bb%84%e5%85%b3%e7%b3%bb%e6%bc%94%e7%ae%97%e5%92%8c%e5%9f%9f%e5%85%b3%e7%b3%bb%e6%bc%94%e7%ae%97%ef%bc%8c%e5%88%86%e5%88%ab%e7%ae%80%e7%a7%b0%e4%b8%ba%e5%85%83%e7%bb%84%e6%bc%94%e7%ae%97%e5%92%8c%e5%9f%9f%e6%bc%94%e7%ae%97%e3%80%82%0a%e5%85%83%e7%bb%84%e6%bc%94%e7%ae%97%e4%be%8b%e5%ad%90%20%e7%bb%99%e5%87%ba%e5%85%b3%e7%b3%bb%e6%a8%a1%e5%bc%8f%ef%bc%9a%0aS%20%28Sno%2c%20Sname%2c%20Ssex%2c%20Sage%2c%20Sdep%29%20C%20%28Cno%2c%20Cname%2c%20Ccredit%2c%20Cpno%29%20SC%20%28Sno%2c%20Cno%2c%20Grade%29%20%e6%9f%a5%e8%af%a2%e9%80%89%e4%bf%ae%e5%ad%a6%e5%8f%b7%e4%b8%ba%e2%80%9c95002%e2%80%9d%e7%9a%84%e5%ad%a6%e7%94%9f%e6%89%80%e9%80%89%e5%85%a8%e9%83%a8%e8%af%be%e7%a8%8b%e7%9a%84%e5%ad%a6%e7%94%9f%e5%ad%a6%e5%8f%b7%e3%80%82"
+      aria-label="Tumblr"
+      target="_blank"
+    >
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    <div id="actions-footer">
+      
+      
+        <a
+          class="icon-mobile-nav"
+          href="https://akynazh.site/posts/2023/02/analyze-the-agent-process-from-the-source-code-of-the-requests-and-urllib-library/"
+          aria-label="Previous"
+        >
+          <i class="fas fa-chevron-left fa-lg" aria-hidden="true"></i>
+        </a>
+      
+      
+      <a
+        id="menu-toggle"
+        class="icon-mobile-nav"
+        href="#"
+        onclick="$('#nav-footer').show();$('#toc-footer').hide();$('#share-footer').hide();return false;"
+        aria-label="Menu"
+      >
+        <i class="fas fa-bars fa-lg" aria-hidden="true"></i
+      ></a>
+      
+      
+        <a
+          id="toc-toggle"
+          class="icon-mobile-nav"
+          href="#"
+          onclick="$('#toc-footer').show();$('#nav-footer').hide();$('#share-footer').hide();return false;"
+          aria-label="TOC"
+        >
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i
+        ></a>
+      
+      
+      <a
+        id="top"
+        class="icon-mobile-nav"
+        style="display:none"
+        href="#"
+        onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"
+        aria-label="Top of Page"
+      >
+        <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i
+      ></a>
+      
+      <a id="searchBtn1" class="icon-mobile-nav" href="#" aria-label="Search">
+        <i class="fa fa-search fa-lg" aria-hidden="true"></i
+      ></a>
+      
+      <a id="theme-change" class="icon-mobile-nav"
+        ><i class="fas fa-adjust fa-lg"></i
+      ></a>
+      
+      <a
+        id="share-toggle"
+        class="icon-mobile-nav"
+        href="#"
+        onclick="$('#share-footer').show();$('#toc-footer').hide();$('#nav-footer').hide();return false;"
+        aria-label="Share"
+      >
+        <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i
+      ></a>
+      
+      
+    </div>
+  </div>
+</div>
+
+      <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    2023
+    
+      Cactus &amp; Jzh
+    
+    |
+    <a href="https://beian.miit.gov.cn/" style="text-decoration:none;"
+      >陕ICP备2022007986号-1</a
+    >
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/posts">Posts</a></li>
+        
+          <li><a href="/tags">Tags</a></li>
+        
+          <li><a href="/about">About</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+  </body>
+  <script src="/js/main.js"></script>
+  <script src="/js/fuse.min.js"></script>
+  <script src="/js/fastsearch.js"></script>
+  
+  
+  
+  
+    
+  
+  
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+        },
+        svg: {
+          fontCache: "global",
+        },
+      };
+    </script>
+    <script
+      type="text/javascript"
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+  
+</html>

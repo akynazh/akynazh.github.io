@@ -367,7 +367,9 @@
 <p>JA JB JNAE: above | below | equal | not</p>
 <p>有符号比较：</p>
 <p>JG JL JNGE: great | low | equal | not</p>
-<h2 id="标志位">标志位</h2>
+<p>如果是立即数的比较，cmp 不会识别是 8 位还是 16 位。如果通过 <code>word ptr</code> 或 <code>byte ptr</code> 进行指定：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>cmp byte ptr[di], 55h
+</span></span></code></pre></div><h2 id="标志位">标志位</h2>
 <ul>
 <li>OF overflow，溢出标志，针对有符号数，1 =&gt; 溢出</li>
 <li>DF direction，方向标志，控制数据串操作指令的步进方向，1 =&gt; 递减</li>

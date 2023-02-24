@@ -9,7 +9,18 @@
     <managingEditor>akynazh@qq.com (Jzh)</managingEditor>
     <webMaster>akynazh@qq.com (Jzh)</webMaster>
     <copyright>Cactus &amp; Jzh</copyright>
-    <lastBuildDate>Sun, 19 Feb 2023 11:01:46 +0800</lastBuildDate><atom:link href="https://akynazh.site/categories/language/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 22 Feb 2023 22:35:25 +0800</lastBuildDate><atom:link href="https://akynazh.site/categories/language/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>数据库系统知识整理</title>
+      <link>https://akynazh.site/posts/2023/02/knowledge-collation-of-database-system/</link>
+      <pubDate>Wed, 22 Feb 2023 22:35:25 +0800</pubDate>
+      <author>akynazh@qq.com (Jzh)</author>
+      <guid>https://akynazh.site/posts/2023/02/knowledge-collation-of-database-system/</guid>
+      <description>关系语言的种类 关系代数 关系演算（元组演算和域演算） SQL 关系的定义 候选码 (Candidate Key)：能唯一标识元组的属性(组)。 主码 (Primary Key)：多个候选码中选定一个作主码。 主属性 (Prime Attribute)：候选码中的诸属性。 非主属性 (Non-Key Attribute)：不出现在任何候选码中的属性。 传统的关系运算 并 (Union) 交 (Intersection) 差 (Difference) 广义笛卡尔积 (Extended Cartesian Product) 专门的关系运算 选择 ($\sigma$): 在某个关系中选择满足给定条件的诸元组(WHERE) 投影 ($\pi$): 从某个关系中选择出若干属性列组成新的关系(SELECT) 连接 ($\bowtie$): 从两个关系的笛卡尔积中选取属性间满足一定条件的元组 除 ($\div$): 设关系 R 除以关系 S 的结果为关系 T，则 T 包含所有在 R 但不在 S 中的属性及其值，且 T 的元组与 S 的元组的所有组合都在 R 中 重命名 ($\rho$): 将某个关系重命名为其它关系名 关系演算 关系演算就是用谓词来描述关系的构成(查询的结果)。按照谓词变元的不同分为元组关系演算和域关系演算，分别简称为元组演算和域演算。
+元组演算例子 给出关系模式：
+S (Sno, Sname, Ssex, Sage, Sdep) C (Cno, Cname, Ccredit, Cpno) SC (Sno, Cno, Grade) 查询选修学号为“95002”的学生所选全部课程的学生学号。</description>
+    </item>
+    
     <item>
       <title>从 Requests 和 urllib 库源码分析代理过程</title>
       <link>https://akynazh.site/posts/2023/02/analyze-the-agent-process-from-the-source-code-of-the-requests-and-urllib-library/</link>
