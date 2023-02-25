@@ -246,6 +246,12 @@ S (Sno, Sname, Ssex, Sage, Sdep) C (Cno, Cname, Ccredit, Cpno) SC (Sno, Cno, Gra
       </ul>
     </li>
     <li><a href="#关于游标">关于游标</a></li>
+    <li><a href="#sql-存储过程及触发器">SQL 存储过程及触发器</a>
+      <ul>
+        <li><a href="#存储过程">存储过程</a></li>
+        <li><a href="#触发器">触发器</a></li>
+      </ul>
+    </li>
     <li><a href="#事务">事务</a>
       <ul>
         <li><a href="#定义">定义</a></li>
@@ -266,6 +272,21 @@ S (Sno, Sname, Ssex, Sage, Sdep) C (Cno, Cname, Ccredit, Cpno) SC (Sno, Cno, Gra
       </ul>
     </li>
     <li><a href="#范式">范式</a></li>
+    <li><a href="#数据库设计">数据库设计</a>
+      <ul>
+        <li><a href="#需求分析">需求分析</a></li>
+        <li><a href="#概念模型设计">概念模型设计</a></li>
+        <li><a href="#逻辑结构设计">逻辑结构设计</a></li>
+      </ul>
+    </li>
+    <li><a href="#数据库恢复技术">数据库恢复技术</a>
+      <ul>
+        <li><a href="#故障种类">故障种类</a></li>
+        <li><a href="#数据转储backup">数据转储（backup）</a></li>
+        <li><a href="#登记日志文件logging">登记日志文件（logging）</a></li>
+        <li><a href="#恢复策略">恢复策略</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
       </div>
@@ -292,7 +313,7 @@ S (Sno, Sname, Ssex, Sage, Sdep) C (Cno, Cname, Ccredit, Cpno) SC (Sno, Cno, Gra
               <div class="article-read-time">
                 <i class="far fa-clock"></i>
                 
-                24 minute
+                33 minute
               </div>
             
             
@@ -568,6 +589,85 @@ S (Sno, Sname, Ssex, Sage, Sdep) C (Cno, Cname, Ccredit, Cpno) SC (Sno, Cno, Gra
 <p>游标是嵌入式 SQL 引入的机制，是 SQL 查询语句向宿主语言提供查询结果集的一段公共缓冲区。</p>
 <p>嵌入式 SQL 提供了逐条处理游标记录的功能，将当前记录各字段值推入主变量，并移动游标指针。</p>
 <p>游标解决了 SQL 语言只有记录处理能力的问题，将记录的各字段赋给主变量，交由宿主语言进行单值处理。</p>
+<h2 id="sql-存储过程及触发器">SQL 存储过程及触发器</h2>
+<h3 id="存储过程">存储过程</h3>
+<p>存储过程（Stored Procedure） 是一组为了完成特定功能的 SQL 语句集，经编译后存储在服务器端数据库中，用户通过指定存储过程的名字并给定参数（如果该存储过程带有参数）来执行它。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#ff79c6">CREATE</span> [ <span style="color:#ff79c6">OR</span> <span style="color:#ff79c6">ALTER</span> ] { PROC <span style="color:#ff79c6">|</span> <span style="color:#ff79c6">PROCEDURE</span> }
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>    [<span style="color:#ff79c6">schema_name</span>.] procedure_name [ ; <span style="color:#8be9fd;font-style:italic">number</span> ]
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>    [ { <span style="color:#ff79c6">@</span>parameter_name [ type_schema_name. ] data_type }
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>        [ <span style="color:#8be9fd;font-style:italic">VARYING</span> ] [ <span style="color:#ff79c6">NULL</span> ] [ <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">default</span> ] [ <span style="color:#ff79c6">OUT</span> <span style="color:#ff79c6">|</span> <span style="color:#ff79c6">OUTPUT</span>] <span style="color:#ff79c6">|</span> [READONLY]
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>    ] [ ,...n ]
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>[ <span style="color:#ff79c6">WITH</span> <span style="color:#ff79c6">&lt;</span>procedure_option<span style="color:#ff79c6">&gt;</span> [ ,...n ] ]
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>[ <span style="color:#ff79c6">FOR</span> REPLICATION ]
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span><span style="color:#ff79c6">AS</span> { [ <span style="color:#ff79c6">BEGIN</span> ] sql_statement [;] [ ...n ] [ <span style="color:#ff79c6">END</span> ] }
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>[;]
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span><span style="color:#ff79c6">&lt;</span>procedure_option<span style="color:#ff79c6">&gt;</span> ::<span style="color:#ff79c6">=</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>    [ ENCRYPTION ]
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>    [ RECOMPILE ]
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>    [ <span style="color:#ff79c6">EXECUTE</span> <span style="color:#ff79c6">AS</span> Clause ]
+</span></span></code></pre></div><p>一个例子：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>USE pubs
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#ff79c6">GO</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span><span style="color:#ff79c6">if</span> <span style="color:#ff79c6">exists</span> (<span style="color:#ff79c6">SELECT</span> name  <span style="color:#ff79c6">FROM</span> sysobjects
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>	<span style="color:#ff79c6">WHERE</span> name <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;titles_sum&#39;</span> <span style="color:#ff79c6">AND</span> <span style="color:#ff79c6">type</span> <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;p &#39;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>      <span style="color:#ff79c6">DROP</span>  <span style="color:#ff79c6">PROCEDURE</span> titles_sum
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span><span style="color:#ff79c6">GO</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span><span style="color:#ff79c6">CREATE</span> <span style="color:#ff79c6">PROCEDURE</span> titles_sum <span style="color:#ff79c6">@</span>stor_id <span style="color:#8be9fd;font-style:italic">char</span>(<span style="color:#bd93f9">4</span>), <span style="color:#ff79c6">@</span><span style="color:#ff79c6">sum</span> <span style="color:#8be9fd;font-style:italic">smallint</span> 
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span><span style="color:#ff79c6">OUTPUT</span> <span style="color:#ff79c6">AS</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>	<span style="color:#ff79c6">SELECT</span>  ord_num, ord_date, payterms, title_id, qty
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>	<span style="color:#ff79c6">FROM</span> sales
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>	<span style="color:#ff79c6">WHERE</span>  stor_id <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">@</span>stor_id
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>	<span style="color:#ff79c6">SELECT</span>  <span style="color:#ff79c6">@</span><span style="color:#ff79c6">sum</span> <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">sum</span> (qty)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>	<span style="color:#ff79c6">FROM</span> sales
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>	<span style="color:#ff79c6">WHERE</span>  stor_id <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">@</span>stor_id
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>	<span style="color:#ff79c6">Return</span> (<span style="color:#bd93f9">0</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span><span style="color:#ff79c6">GO</span>
+</span></span></code></pre></div><h3 id="触发器">触发器</h3>
+<p>触发器是一种特殊类型的存储过程。它与存储过程的区别：触发器主要是<strong>通过事件进行触发</strong>而被执行的，而存储过程可以通过存储过程名字被直接调用执行。</p>
+<p>当对某一表进行诸如 UPDATE、 INSERT、DELETE 这些操作时，SQL Server 就会自动执行触发器所定义的 SQL 语句。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#ff79c6">CREATE</span> [ <span style="color:#ff79c6">OR</span> <span style="color:#ff79c6">ALTER</span> ] <span style="color:#ff79c6">TRIGGER</span> [ <span style="color:#ff79c6">schema_name</span> . ]<span style="color:#ff79c6">trigger_name</span>   
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#ff79c6">ON</span> { <span style="color:#ff79c6">table</span> <span style="color:#ff79c6">|</span> <span style="color:#ff79c6">view</span> }   
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>[ <span style="color:#ff79c6">WITH</span> <span style="color:#ff79c6">&lt;</span>dml_trigger_option<span style="color:#ff79c6">&gt;</span> [ ,...n ] ]  
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>{ <span style="color:#ff79c6">FOR</span> <span style="color:#ff79c6">|</span> <span style="color:#ff79c6">AFTER</span> <span style="color:#ff79c6">|</span> <span style="color:#ff79c6">INSTEAD</span> <span style="color:#ff79c6">OF</span> }   
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>{ [ <span style="color:#ff79c6">INSERT</span> ] [ , ] [ <span style="color:#ff79c6">UPDATE</span> ] [ , ] [ <span style="color:#ff79c6">DELETE</span> ] }   
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>[ <span style="color:#ff79c6">WITH</span> APPEND ]  
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>[ <span style="color:#ff79c6">NOT</span> <span style="color:#ff79c6">FOR</span> REPLICATION ]   
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span><span style="color:#ff79c6">AS</span> { sql_statement  [ ; ] [ ,...n ] <span style="color:#ff79c6">|</span> <span style="color:#ff79c6">EXTERNAL</span> NAME <span style="color:#ff79c6">&lt;</span><span style="color:#ff79c6">method</span> specifier [ ; ] <span style="color:#ff79c6">&gt;</span> }  
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>  
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span><span style="color:#ff79c6">&lt;</span>dml_trigger_option<span style="color:#ff79c6">&gt;</span> ::<span style="color:#ff79c6">=</span>  
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>    [ ENCRYPTION ]  
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>    [ <span style="color:#ff79c6">EXECUTE</span> <span style="color:#ff79c6">AS</span> Clause ]  
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>  
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span><span style="color:#ff79c6">&lt;</span>method_specifier<span style="color:#ff79c6">&gt;</span> ::<span style="color:#ff79c6">=</span>  
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>    assembly_name.class_name.method_name  
+</span></span></code></pre></div><p>一个例子：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#ff79c6">CREATE</span>  <span style="color:#ff79c6">TRIGGER</span>  utitle1 <span style="color:#ff79c6">ON</span> titles
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#ff79c6">FOR</span>  <span style="color:#ff79c6">UPDATE</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span><span style="color:#ff79c6">AS</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span><span style="color:#ff79c6">declare</span> <span style="color:#ff79c6">@</span><span style="color:#ff79c6">rows</span> <span style="color:#8be9fd;font-style:italic">int</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span><span style="color:#ff79c6">SELECT</span>  <span style="color:#ff79c6">@</span><span style="color:#ff79c6">rows</span><span style="color:#ff79c6">=@@</span>rowcount
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span><span style="color:#ff79c6">if</span> <span style="color:#ff79c6">@</span><span style="color:#ff79c6">rows</span><span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>     <span style="color:#ff79c6">RETURN</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span><span style="color:#ff79c6">if</span> <span style="color:#ff79c6">UPDATE</span> (title_id)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span><span style="color:#ff79c6">BEGIN</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>    <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">@</span><span style="color:#ff79c6">rows</span> <span style="color:#ff79c6">&gt;</span> <span style="color:#bd93f9">1</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>    <span style="color:#ff79c6">BEGIN</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>            raiserror( <span style="color:#f1fa8c">&#39;update to primary keys of multiple row is not permitted&#39;</span> , \\
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>		<span style="color:#bd93f9">16</span>,<span style="color:#bd93f9">10</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>            <span style="color:#ff79c6">ROLLBACK</span>  <span style="color:#ff79c6">TRANSACTION</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>            <span style="color:#ff79c6">RETURN</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>     <span style="color:#ff79c6">END</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>     <span style="color:#ff79c6">UPDATE</span>  t <span style="color:#ff79c6">SET</span> t.title_id<span style="color:#ff79c6">=</span>i.title_id
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>     <span style="color:#ff79c6">FROM</span>  titleauthor  t,  inserted  i, deleted  d
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>     <span style="color:#ff79c6">WHERE</span>   t.title_id<span style="color:#ff79c6">=</span>d.title_id
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span><span style="color:#ff79c6">END</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span><span style="color:#ff79c6">RETURN</span>
+</span></span></code></pre></div><p><strong>原理解析：</strong></p>
+<p>在触发器的执行过程中，系统会自动建立和管理两个逻辑表：插入表（inserted）和删除表（deleted）。</p>
+<p>这两个表与触发器所对应的基本表有着完全相同的结构，但为只读表，驻留于内存之中，直到触发器执行完毕，系统会自动删除。</p>
+<p>这两个表是事务回滚的重要依据。</p>
 <h2 id="事务">事务</h2>
 <h3 id="定义">定义</h3>
 <p>事务 (Transaction) 是用户定义的一个数据库操作序列，这些操作要么全做，要么全不做，是一个不可分割的工作单位。</p>
@@ -666,6 +766,68 @@ S (Sno, Sname, Ssex, Sage, Sdep) C (Cno, Cname, Ccredit, Cpno) SC (Sno, Cno, Gra
 <li>3NF: 关系模式 $R \in 2NF$，且不存在非主属性对码的传递依赖</li>
 <li>BCNF: 关系模式 $R \in 3NF$，且对于 R 的每个函数依赖 $X \rightarrow Y (Y \nsubseteq X)$，X 必包含码</li>
 </ol>
+<h2 id="数据库设计">数据库设计</h2>
+<p>数据库设计是指对于一个给定的应用环境，构造最优的数据库模式，建立数据库及其应用系统，使之能够有效地存储数据，满足各种用户的应用需求（信息要求和处理要求）。</p>
+<p><img src="image/1677306003225.png" alt="1677306003225"></p>
+<h3 id="需求分析">需求分析</h3>
+<p>需求分析就是通过详细调查现实世界要处理的对象（现实业务），充分了解原系统（手工系统或计算机系统），明确用户的各种需求，并在此基础上确定新系统的功能。需求分析包括两个步骤：需求信息的收集和分析。</p>
+<p><strong>需求信息的收集</strong>又称为系统调查，即了解用户的组织机构设置、主要业务活动和职能，以及对新系统的要求。</p>
+<p><strong>需求信息的分析</strong>就是对收集到的需求信息进行加工整理，以数据流图和数据字典的形式进行描述，作为需求分析阶段的成果，这也是下一步设计的基础。</p>
+<h3 id="概念模型设计">概念模型设计</h3>
+<p>概念结构设计就是将现实事物以不依赖于任何数据模型的方式加以描述，目的在于以符号化的形式正确地反映现实事物及事物与事物之间的联系。</p>
+<p>概念结构设计的内容就是建立概念模型。</p>
+<p>这是一个通过 E-R 图构建概念模型的例子：</p>
+<p><img src="image/1677305887153.png" alt="1677305887153"></p>
+<h3 id="逻辑结构设计">逻辑结构设计</h3>
+<p>逻辑结构设计是对数据在计算机中的组织形式的设计，即依照 DBMS 支持的数据模型，设计用户数据的组织形式(模式设计)。同样，逻辑结构设计也是建立在概念结构设计的基础上，为下一步数据的存储设计(物理设计)作准备。</p>
+<h2 id="数据库恢复技术">数据库恢复技术</h2>
+<p>恢复操作的基本原理是<strong>冗余</strong>，即利用存储在系统其它地方的冗余数据来重建数据库中已被破坏或不正确的那部分数据。</p>
+<h3 id="故障种类">故障种类</h3>
+<ul>
+<li>事务故障：某个事务在运行过程中，由于种种原因未运行至正常，终止点就夭折了</li>
+<li>系统故障：整个系统的正常运行突然被破坏，所有正在运行的事务都非正常终止，内存中数据库缓冲区的信息全部丢失，外部存储设备上的数据未受影响</li>
+<li>介质（硬件）故障：存储数据库的设备（如硬盘）发生故障，使存储在其上的数据部分丢失或全部丢失</li>
+</ul>
+<h3 id="数据转储backup">数据转储（backup）</h3>
+<p>转储是指 DBA 将整个数据库复制到磁带或另一个磁盘上保存起来的过程。
+这些备用的数据文本称为后备副本或后援副本。</p>
+<p>转储操作的分类：</p>
+<ol>
+<li>静态转储：在系统中无运行事务时进行转储，转储开始时数据库处于一致性状态，转储期间不允许对数据库的任何存取、修改活动。</li>
+<li>动态转储：转储操作与用户事务并发进行，转储期间允许对数据库进行存取或修改。</li>
+<li>海量转储：每次转储全部数据库。</li>
+<li>增量转储: 只转储上次转储后更新过的数据。</li>
+</ol>
+<h3 id="登记日志文件logging">登记日志文件（logging）</h3>
+<p>日志文件（log）是用来记录事务对数据库的更新操作的文件。</p>
+<p>日志文件的格式及内容：</p>
+<ul>
+<li>以记录为单位的日志文件
+<ul>
+<li>各个事务的开始标记(BEGIN TRANSACTION)</li>
+<li>各个事务的结束标记(COMMIT或ROLLBACK)</li>
+<li>各个事务的所有更新操作</li>
+<li>与事务有关的内部更新操作</li>
+</ul>
+</li>
+<li>以数据块为单位的日志文件
+<ul>
+<li>事务标识</li>
+<li>操作类型（插入、删除或修改）</li>
+<li>操作对象（记录ID、Block NO.）</li>
+<li>更新前数据的旧值（对插入操作而言，此项为空值）</li>
+<li>更新后数据的新值（对删除操作而言, 此项为空值）</li>
+</ul>
+</li>
+</ul>
+<h3 id="恢复策略">恢复策略</h3>
+<p>数据恢复就是在发生故障、数据被破坏时，根据后被副本和事务日志文件，将数据库恢复到故障前的正确状态（一致性状态）。</p>
+<p>根据故障各类的不同，有不同的恢复方法：</p>
+<ul>
+<li>事务故障：由恢复子系统应利用日志文件撤消（UNDO）此事务已对数据库进行的修改。</li>
+<li>系统故障：Undo 故障发生时未完成的事务，Redo 已完成的事务。</li>
+<li>介质故障：重装数据库，使数据库恢复到一致性状态，重做已完成的事务。</li>
+</ul>
 
         </div>
       </article>
@@ -750,6 +912,12 @@ S (Sno, Sname, Ssex, Sage, Sdep) C (Cno, Cname, Ccredit, Cpno) SC (Sno, Cno, Gra
       </ul>
     </li>
     <li><a href="#关于游标">关于游标</a></li>
+    <li><a href="#sql-存储过程及触发器">SQL 存储过程及触发器</a>
+      <ul>
+        <li><a href="#存储过程">存储过程</a></li>
+        <li><a href="#触发器">触发器</a></li>
+      </ul>
+    </li>
     <li><a href="#事务">事务</a>
       <ul>
         <li><a href="#定义">定义</a></li>
@@ -770,6 +938,21 @@ S (Sno, Sname, Ssex, Sage, Sdep) C (Cno, Cname, Ccredit, Cpno) SC (Sno, Cno, Gra
       </ul>
     </li>
     <li><a href="#范式">范式</a></li>
+    <li><a href="#数据库设计">数据库设计</a>
+      <ul>
+        <li><a href="#需求分析">需求分析</a></li>
+        <li><a href="#概念模型设计">概念模型设计</a></li>
+        <li><a href="#逻辑结构设计">逻辑结构设计</a></li>
+      </ul>
+    </li>
+    <li><a href="#数据库恢复技术">数据库恢复技术</a>
+      <ul>
+        <li><a href="#故障种类">故障种类</a></li>
+        <li><a href="#数据转储backup">数据转储（backup）</a></li>
+        <li><a href="#登记日志文件logging">登记日志文件（logging）</a></li>
+        <li><a href="#恢复策略">恢复策略</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
       </div>
