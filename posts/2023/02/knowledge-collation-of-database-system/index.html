@@ -48,6 +48,26 @@ S (Sno, Sname, Ssex, Sage, Sdep) C (Cno, Cname, Ccredit, Cpno) SC (Sno, Cno, Gra
   
   <script src="/js/fontawesome5.js"></script>
 
+  
+  
+  
+    
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        extensions: ["tex2jax.js"],
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+          processEscapes: true
+        },
+        "CommonHTML": { linebreaks: { automatic: true } }
+      });
+    </script>
+    <script src="http://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  
+
   <link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
 <link rel="icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
 
@@ -393,20 +413,12 @@ S (Sno, Sname, Ssex, Sage, Sdep) C (Cno, Cname, Ccredit, Cpno) SC (Sno, Cno, Gra
 <li>SC (Sno, Cno, Grade)</li>
 </ul>
 <p>查询选修学号为“95002”的学生所选全部课程的学生学号。</p>
-<p>{</p>
-<p>$t|\exists u(SC(u) \land \forall v(SC(v) \land v['Sno']='95002'$</p>
-<p>$\rightarrow \exists w(SC(w) \land w['Sno']=u['Sno'] \land w['Cno']=v['Cno']))$</p>
-<p>$\land t['Sno']=u['Sno'])$</p>
-<p>}</p>
+<p>$\{ t|\exists u(SC(u) \land \forall v(SC(v) \land v['Sno']='95002' \rightarrow \exists w(SC(w) \land w['Sno']=u['Sno'] \land w['Cno']=v['Cno'])) \land t['Sno']=u['Sno']) \}$</p>
 <h3 id="域演算例子">域演算例子</h3>
 <p>同上关系模式，查询选修了 C2 课程的学生学号和成绩。</p>
-<p>{</p>
-<p>$t_1, t_2 | \exists u_1 \exists u_2 \exists u_3 (SC(u_1, u_2, u_3) \land u_2='c2' \land t_1=u_1 \land t_2=u_3)$</p>
-<p>}</p>
+<p>$\{t_1, t_2 | \exists u_1 \exists u_2 \exists u_3 (SC(u_1, u_2, u_3) \land u_2='c2' \land t_1=u_1 \land t_2=u_3)\}$</p>
 <p>or</p>
-<p>{</p>
-<p>$t_1, t_2 | SC(t_1, 'C2', t_2)$</p>
-<p>}</p>
+<p>$\{t_1, t_2 | SC(t_1, 'C2', t_2)\}$</p>
 <h2 id="sql-行为">SQL 行为</h2>
 <ul>
 <li>数据查询：SELECT</li>
@@ -1145,35 +1157,8 @@ S (Sno, Sname, Ssex, Sage, Sdep) C (Cno, Cname, Ccredit, Cpno) SC (Sno, Cno, Gra
 </footer>
 
     </div>
+    <script src="/js/main.js"></script>
+    <script src="/js/fuse.min.js"></script>
+    <script src="/js/fastsearch.js"></script>
   </body>
-  <script src="/js/main.js"></script>
-  <script src="/js/fuse.min.js"></script>
-  <script src="/js/fastsearch.js"></script>
-  
-  
-  
-  
-    
-  
-  
-    <script>
-      MathJax = {
-        tex: {
-          inlineMath: [
-            ["$", "$"],
-            ["\\(", "\\)"],
-          ],
-        },
-        svg: {
-          fontCache: "global",
-        },
-      };
-    </script>
-    <script
-      type="text/javascript"
-      id="MathJax-script"
-      async
-      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
-    ></script>
-  
 </html>
