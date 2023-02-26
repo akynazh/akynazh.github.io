@@ -336,7 +336,7 @@ S (Sno, Sname, Ssex, Sage, Sdep) C (Cno, Cname, Ccredit, Cpno) SC (Sno, Cno, Gra
               <div class="article-read-time">
                 <i class="far fa-clock"></i>
                 
-                33 minute
+                34 minute
               </div>
             
             
@@ -451,12 +451,17 @@ S (Sno, Sname, Ssex, Sage, Sdep) C (Cno, Cname, Ccredit, Cpno) SC (Sno, Cno, Gra
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>[ <span style="color:#ff79c6">DROP</span>  <span style="color:#ff79c6">&lt;</span>完整性约束名<span style="color:#ff79c6">&gt;</span>  <span style="color:#ff79c6">&lt;</span>列名<span style="color:#ff79c6">&gt;</span>]
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>[ <span style="color:#ff79c6">ALTER</span>  <span style="color:#ff79c6">&lt;</span>列名<span style="color:#ff79c6">&gt;</span> <span style="color:#ff79c6">&lt;</span>数据类型<span style="color:#ff79c6">&gt;</span> ];
 </span></span></code></pre></div><p><strong>常用完整性约束：</strong></p>
+<p>1、实体完整性约束</p>
+<p>主码不能取空值。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#ff79c6">PRIMARY</span> <span style="color:#ff79c6">KEY</span> (<span style="color:#ff79c6">&lt;</span>列名<span style="color:#ff79c6">&gt;</span>)
+</span></span></code></pre></div><p>2、参照完整性约束</p>
+<p>在两个表之间建立关系时，要求外键中必须有一个与主键中的值相匹配的值。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#ff79c6">FOREIGN</span> <span style="color:#ff79c6">KEY</span> (<span style="color:#ff79c6">&lt;</span>列名<span style="color:#ff79c6">&gt;</span>) <span style="color:#ff79c6">REFERENCES</span> <span style="color:#ff79c6">&lt;</span>表名<span style="color:#ff79c6">&gt;</span>(<span style="color:#ff79c6">&lt;</span>列名<span style="color:#ff79c6">&gt;</span>)
+</span></span></code></pre></div><p>3、用户定义完整性约束</p>
+<p>用户定义的完整性可以帮助用户更好地控制自己的数据，以及更好地实现自己的目标。</p>
 <ul>
-<li>主码约束： PRIMARY  KEY</li>
 <li>唯一性约束：UNIQUE (不能取相同值但允许多个空值)</li>
 <li>非空值约束：NOT NULL</li>
-<li>参照完整性约束：</li>
-<li>FOREIGN KEY (&lt;列名&gt;) REFERENCES &lt;表名&gt;(&lt;列名&gt;)</li>
 <li>CHECK 约束：CHECK (&lt;谓词&gt;)</li>
 <li>断言(Assertion)约束</li>
 </ul>
