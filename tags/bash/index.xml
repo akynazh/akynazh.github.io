@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>bash on Norwegian Wood</title>
+    <link>https://akynazh.site/tags/bash/</link>
+    <description>Recent content in bash on Norwegian Wood</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <managingEditor>akynazh@qq.com (Jzh)</managingEditor>
+    <webMaster>akynazh@qq.com (Jzh)</webMaster>
+    <copyright>Cactus/Jzh</copyright>
+    <lastBuildDate>Fri, 03 Feb 2023 22:44:10 +0800</lastBuildDate><atom:link href="https://akynazh.site/tags/bash/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Shell 基本操作总结</title>
+      <link>https://akynazh.site/posts/2023/02/shell-basic-operation-summary/</link>
+      <pubDate>Fri, 03 Feb 2023 22:44:10 +0800</pubDate>
+      <author>akynazh@qq.com (Jzh)</author>
+      <guid>https://akynazh.site/posts/2023/02/shell-basic-operation-summary/</guid>
+      <description>shell 参数 $# 参数个数 $@ / $* 取出所有参数 $0 取出命令中第一个字符串 $1 取出第一个参数 1if [ &amp;#34;$1&amp;#34; == &amp;#34;-u&amp;#34; ] 2then 3 echo update 4fi 5echo $0 ans:
+1[root =&amp;gt; ~]$ ./test.sh 2./test.sh 3[root =&amp;gt; ~]$ ./test.sh -u 4update 5./test.sh $@ 与 $* 的区别：（from stackoverflow）
+$@ behaves like $* except that when quoted the arguments are broken up properly if there are spaces in them.
+Take this script for example (taken from the linked answer):</description>
+    </item>
+    
+  </channel>
+</rss>

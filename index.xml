@@ -39,6 +39,18 @@ S (Sno, Sname, Ssex, Sage, Sdep) C (Cno, Cname, Ccredit, Cpno) SC (Sno, Cno, Gra
     </item>
     
     <item>
+      <title>Shell 基本操作总结</title>
+      <link>https://akynazh.site/posts/2023/02/shell-basic-operation-summary/</link>
+      <pubDate>Fri, 03 Feb 2023 22:44:10 +0800</pubDate>
+      <author>akynazh@qq.com (Jzh)</author>
+      <guid>https://akynazh.site/posts/2023/02/shell-basic-operation-summary/</guid>
+      <description>shell 参数 $# 参数个数 $@ / $* 取出所有参数 $0 取出命令中第一个字符串 $1 取出第一个参数 1if [ &amp;#34;$1&amp;#34; == &amp;#34;-u&amp;#34; ] 2then 3 echo update 4fi 5echo $0 ans:
+1[root =&amp;gt; ~]$ ./test.sh 2./test.sh 3[root =&amp;gt; ~]$ ./test.sh -u 4update 5./test.sh $@ 与 $* 的区别：（from stackoverflow）
+$@ behaves like $* except that when quoted the arguments are broken up properly if there are spaces in them.
+Take this script for example (taken from the linked answer):</description>
+    </item>
+    
+    <item>
       <title>Hugo 实现深浅主题的切换</title>
       <link>https://akynazh.site/posts/2023/02/hugo-realizes-switching-between-deep-and-shallow-themes/</link>
       <pubDate>Thu, 02 Feb 2023 18:49:54 +0800</pubDate>
@@ -232,18 +244,6 @@ HEAD^ = HEAD^1 第一个父级提交 HEAD^2~1 第二个父级提交的上一次�
 默认先扫描当前目录下包，但是识别不到 utils 包，因为 utils 文件夹下缺失了 __init__.py 文件！
 SSLError(SSLCertVerificationError) 使用 requests 库时出现 bug:
 1(Caused by SSLError(SSLCertVerificationError(1, &amp;#39;[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:997)&amp;#39;))) 解决方法：python-requests-throwing-sslerror</description>
-    </item>
-    
-    <item>
-      <title>Shell 基本操作总结</title>
-      <link>https://akynazh.site/posts/2022/10/shell-basic-operation-summary/</link>
-      <pubDate>Wed, 19 Oct 2022 22:44:10 +0800</pubDate>
-      <author>akynazh@qq.com (Jzh)</author>
-      <guid>https://akynazh.site/posts/2022/10/shell-basic-operation-summary/</guid>
-      <description>shell 参数 $# 参数个数 $@ / $* 取出所有参数 $0 取出第一个参数 1if [ &amp;#34;$1&amp;#34; = &amp;#34;-u&amp;#34; ] 2then 3 echo update 4fi 5echo $0 ans:
-1[root =&amp;gt; ~]$ ./test.sh 2./test.sh 3[root =&amp;gt; ~]$ ./test.sh -u 4update 5./test.sh $@ 与 $* 的区别：（from stackoverflow）
-$@ behaves like $* except that when quoted the arguments are broken up properly if there are spaces in them.
-Take this script for example (taken from the linked answer):</description>
     </item>
     
     <item>
