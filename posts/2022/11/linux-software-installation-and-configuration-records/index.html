@@ -245,15 +245,16 @@
         <li><a href="#镜像">镜像</a></li>
       </ul>
     </li>
-    <li><a href="#node-npm">node npm</a>
+    <li><a href="#node-npm-yarn">node npm yarn</a>
       <ul>
-        <li><a href="#安装-3">安装</a></li>
+        <li><a href="#安装和更新-node--npm">安装和更新 node / npm</a></li>
+        <li><a href="#安装-yarn">安装 yarn</a></li>
         <li><a href="#镜像-1">镜像</a></li>
       </ul>
     </li>
     <li><a href="#mysql">mysql</a>
       <ul>
-        <li><a href="#安装-4">安装</a></li>
+        <li><a href="#安装-3">安装</a></li>
         <li><a href="#配置root密码">配置root密码</a></li>
       </ul>
     </li>
@@ -261,7 +262,7 @@
     <li><a href="#cc">c/c++</a></li>
     <li><a href="#git">git</a>
       <ul>
-        <li><a href="#安装-5">安装</a></li>
+        <li><a href="#安装-4">安装</a></li>
         <li><a href="#配置密钥">配置密钥</a></li>
         <li><a href="#配置提交人信息">配置提交人信息</a></li>
         <li><a href="#http代理">http代理</a></li>
@@ -461,19 +462,33 @@
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>  &lt;url&gt;http://maven.aliyun.com/nexus/content/groups/public/&lt;/url&gt;
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>  &lt;mirrorOf&gt;central&lt;/mirrorOf&gt;
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>&lt;/mirror&gt;
-</span></span></code></pre></div><h2 id="node-npm">node npm</h2>
-<h3 id="安装-3">安装</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>curl --silent --location https://rpm.nodesource.com/setup_16.x | bash -
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>yum -y install nodejs
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>--------------------------------------------
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>apt install nodejs npm
+</span></span></code></pre></div><h2 id="node-npm-yarn">node npm yarn</h2>
+<h3 id="安装和更新-node--npm">安装和更新 node / npm</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span># install nvm pkg manager
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span># close and reopen your terminal to start using nvm
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>nvm install node # This will install the latest version of Node.js and npm.
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>node -v
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>npm -v
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>nvm current
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span># list all the available versions of Node.js that you can install
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>nvm ls-remote
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span># Identify the latest version of Node.js and install it using the following command:
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>nvm install &lt;version&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span># nvm install 16.8.0
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span># If you want to set the newly installed version of Node.js as the default version, you can run the following command:
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>nvm alias default &lt;version&gt;
+</span></span></code></pre></div><h3 id="安装-yarn">安装 yarn</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>npm install --global yarn
 </span></span></code></pre></div><h3 id="镜像-1">镜像</h3>
 <p>设置成淘宝源</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>npm config set registry https://registry.npm.taobao.org
 </span></span></code></pre></div><h2 id="mysql">mysql</h2>
-<h3 id="安装-4">安装</h3>
+<h3 id="安装-3">安装</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>wget https://dev.mysql.com/get/mysql80-community-release-el7-3.noarch.rpm
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>rpm -Uvh mysql80-community-release-el7-3.noarch.rpm
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-2022
@@ -494,7 +509,7 @@
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>yum install gcc-c++ -y
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>yum install gdb -y
 </span></span></code></pre></div><h2 id="git">git</h2>
-<h3 id="安装-5">安装</h3>
+<h3 id="安装-4">安装</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>yum install git -y
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>------------------------------------
@@ -603,15 +618,16 @@
         <li><a href="#镜像">镜像</a></li>
       </ul>
     </li>
-    <li><a href="#node-npm">node npm</a>
+    <li><a href="#node-npm-yarn">node npm yarn</a>
       <ul>
-        <li><a href="#安装-3">安装</a></li>
+        <li><a href="#安装和更新-node--npm">安装和更新 node / npm</a></li>
+        <li><a href="#安装-yarn">安装 yarn</a></li>
         <li><a href="#镜像-1">镜像</a></li>
       </ul>
     </li>
     <li><a href="#mysql">mysql</a>
       <ul>
-        <li><a href="#安装-4">安装</a></li>
+        <li><a href="#安装-3">安装</a></li>
         <li><a href="#配置root密码">配置root密码</a></li>
       </ul>
     </li>
@@ -619,7 +635,7 @@
     <li><a href="#cc">c/c++</a></li>
     <li><a href="#git">git</a>
       <ul>
-        <li><a href="#安装-5">安装</a></li>
+        <li><a href="#安装-4">安装</a></li>
         <li><a href="#配置密钥">配置密钥</a></li>
         <li><a href="#配置提交人信息">配置提交人信息</a></li>
         <li><a href="#http代理">http代理</a></li>
